@@ -2,6 +2,8 @@ Another word for options contracts. The primary driver of liquidity. The method 
 
 Their origins are often debated.
 ![[Untitled 4 6.jpg]]
-This king has 
+This king has created the first 'put' option of sorts for the farmer, giving him the ability to walk away from his debt without paying.
+
+![[Untitled 4 7.jpg]]
 [https://www.researchgate.net/profile/Christian-Pauletto/publication/349485381_The_History_of_Derivatives_A_Few_Milestones/links/6032c655a6fdcc37a8424883/The-History-of-Derivatives-A-Few-Milestones.pdf](https://www.researchgate.net/profile/Christian-Pauletto/publication/349485381_The_History_of_Derivatives_A_Few_Milestones/links/6032c655a6fdcc37a8424883/The-History-of-Derivatives-A-Few-Milestones.pdf "https://www.researchgate.net/profile/Christian-Pauletto/publication/349485381_The_History_of_Derivatives_A_Few_Milestones/links/6032c655a6fdcc37a8424883/The-History-of-Derivatives-A-Few-Milestones.pdf")
 
