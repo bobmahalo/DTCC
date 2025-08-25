@@ -24,3 +24,5 @@ even the ancients had difficulty enforcing rules against SHF.
 You want to know where the hidden costs are in government. 
 
 https://www.federalreserve.gov/boarddocs/speeches/1996/19961005.htm
+
+The [[DTCC]] has a service called the [[Trade Information Warehouse (TIW)]] established in 2006.
