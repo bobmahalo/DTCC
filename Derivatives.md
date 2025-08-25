@@ -18,4 +18,9 @@ even the ancients had difficulty enforcing rules against SHF.
 
 [https://www.researchgate.net/profile/Christian-Pauletto/publication/349485381_The_History_of_Derivatives_A_Few_Milestones/links/6032c655a6fdcc37a8424883/The-History-of-Derivatives-A-Few-Milestones.pdf](https://www.researchgate.net/profile/Christian-Pauletto/publication/349485381_The_History_of_Derivatives_A_Few_Milestones/links/6032c655a6fdcc37a8424883/The-History-of-Derivatives-A-Few-Milestones.pdf "https://www.researchgate.net/profile/Christian-Pauletto/publication/349485381_The_History_of_Derivatives_A_Few_Milestones/links/6032c655a6fdcc37a8424883/The-History-of-Derivatives-A-Few-Milestones.pdf")
 
+![[Untitled 4 12.jpg]]
 
+![[Untitled 4 13.jpg]]
+you want to know where the hidden costs are in government. 
+
+https://www.federalreserve.gov/boarddocs/speeches/1996/19961005.htm
