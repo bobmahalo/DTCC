@@ -21,6 +21,6 @@ even the ancients had difficulty enforcing rules against SHF.
 ![[Untitled 4 12.jpg]]
 
 ![[Untitled 4 13.jpg]]
-you want to know where the hidden costs are in government. 
+You want to know where the hidden costs are in government. 
 
 https://www.federalreserve.gov/boarddocs/speeches/1996/19961005.htm
