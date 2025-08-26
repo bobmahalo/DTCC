@@ -1,0 +1,1 @@
+a term often tossed around by wall street news. but when explored a little further, the secondary markets, where sto
