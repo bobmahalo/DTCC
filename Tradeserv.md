@@ -4,4 +4,4 @@ Formerly DSMatch
 
 https://osttra.com/trade-processing-for-credit/
 
-[[Novation]] has recently come up in another area in the tock market plumbing.
+[[Novation]] has recently come up in another area in the stock market plumbing.
