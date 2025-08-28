@@ -6,3 +6,5 @@ https://www.dtcc.com/asset-services/securities-processing/direct-registration-sy
 ![[Untitled 4 29.jpg]]
 https://www.whydrs.org/post/history-of-drs-book-entry-holding
 
+![[Untitled 4 37.jpg]]
+https://www.federalregister.gov/documents/2015/12/31/2015-32755/transfer-agent-regulations
