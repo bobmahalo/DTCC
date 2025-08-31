@@ -1,1 +1,4 @@
-NYSE, NASDQ, etc. the [[secondary market]]. a place to sell [[street name]] registered [[securities]].
+NYSE, NASDQ, OTC etc. the [[secondary market]]. a place to sell [[street name]] registered [[securities]].
+
+in order for an issuer to be eligible to trade on the stock market, they must comply with [[DTCC]] [[OA]]. which states that the shares be held by the [[nominee]] [[Cede & Co]]. 
+
