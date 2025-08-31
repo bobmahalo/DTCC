@@ -7,4 +7,4 @@ https://app.achievable.me/study/finra-series-7/learn/73ede6fc-3dfe-4ac9-870d-bd5
 
 see also [[rule 5110]] [[rule 5121]] and [[rule 2310]].
 
-[[underwriting]] is typically filed with [[FINRA]] 
+[[underwriting]] is typically filed with [[FINRA]] .
