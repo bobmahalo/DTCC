@@ -1,4 +1,4 @@
-a term often tossed around by wall street news. but when explored a little further, the secondary markets, where stocks trade, there is no more capital formation for issuers.
+a term often tossed around by wall street news. but when explored a little further, the secondary markets, where stocks trade, there is no more capital formation for [[issuer]]s.
 
 ![[Untitled 4 18.jpg]]
 
