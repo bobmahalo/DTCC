@@ -1,1 +1,1 @@
-the TA is the [[participant]] who typically sponsors a new issuer for eligibility for [[DTCC]] services.
+the TA is the [[Participant]] who typically sponsors a new issuer for eligibility for [[DTCC]] services.
