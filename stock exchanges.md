@@ -1,0 +1,1 @@
+NYSE, NASDQ, etc. the [[secondary market]]. a place to sell [[street name]] registered [[securities]].
