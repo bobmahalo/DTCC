@@ -2,3 +2,7 @@ Depository Trust Clearing Corporation(DTCC) settlement services offered through 
 
 DTC is a member of the [[U.S. Federal Reserve System]], a limited-purpose trust company under New York State banking law and a registered clearing agency with the U.S. Securities and Exchange Commission([[SEC]]).
 https://www.dtcc.com/about/businesses-and-subsidiaries/dtc
+
+a rather telling statement, and could explain the lack of SEC enforcement on retails behalf.
+![[Untitled 4 45.jpg]]
+https://www.sechistorical.org/collection/papers/2010/2010_0701_DTCCServices.pdf
