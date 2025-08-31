@@ -1,4 +1,4 @@
-the third bullet point seems to elude that the [[IPO]] is already in [[book entry]] form prior to the syndicates involvement.
+the third bullet point seems to elude that the [[IPO]] is already in book entry form prior to the syndicates involvement.
 
 ![[Untitled 4 32.jpg]]
 
