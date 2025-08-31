@@ -1,4 +1,4 @@
-Another word for options contracts. The primary driver of liquidity. The method that has allowed for synthetic share creation by future dated expirations.
+Another word for options contracts. The primary driver of [[liquidity]]. The method that has allowed for [[synthetic share]] creation by future dated expirations.
 
 Their origins are often debated.
 ![[Untitled 4 6.jpg]]
@@ -12,7 +12,7 @@ This king has created the first 'put' option of sorts for the farmer, giving him
 
 ![[Untitled 4 10.jpg]]
 
-even the ancients had difficulty enforcing rules against SHF. 
+even the ancients had difficulty enforcing rules against [[SHF]]. 
 
 ![[Untitled 4 11.jpg]]
 
