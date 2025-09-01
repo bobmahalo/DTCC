@@ -1,0 +1,17 @@
+
+
+![[Untitled 4 67.jpg]]
+
+![[Untitled 4 68.jpg]]
+If your brokers propietary position is in conflict with your companies mission,...*too bad*.
+![[Untitled 4 69.jpg]]
+
+![[Untitled 4 70.jpg]]
+
+![[Untitled 4 71.jpg]]
+[https://www.sec.gov/spotlight/proxyprocess/proxyvotingbrief.htm](https://www.sec.gov/spotlight/proxyprocess/proxyvotingbrief.htm "https://www.sec.gov/spotlight/proxyprocess/proxyvotingbrief.htm")
+
+![[Untitled 4 72.jpg]]
+[https://katten.com/files/21384_proxy-vote-processing-issues.pdf](https://katten.com/files/21384_proxy-vote-processing-issues.pdf "https://katten.com/files/21384_proxy-vote-processing-issues.pdf")
+
+
