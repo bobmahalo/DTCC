@@ -1,0 +1,3 @@
+A Follow-on Registered Offering  (FRO) is a registered offering of securities by a public company whose securities already trade in the secondary market (e.g., to raise capital for various corporate purposes, such as capital expenditures, operations, or acquisitions). The FRO may also involve an offering of securities by the issuer’s insiders or other existing shareholders.
+
+https://www.sec.gov/data-research/statistics-data-visualizations/follow-registered-offerings-fros

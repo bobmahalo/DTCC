@@ -1,0 +1,1 @@
+Loose language describing [[EOD]] settlement.
