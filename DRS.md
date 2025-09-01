@@ -11,3 +11,7 @@ https://www.federalregister.gov/documents/2015/12/31/2015-32755/transfer-agent-r
 
 ![[Untitled 5 10.jpg]]
 https://www.whydrs.org/what-is-drs
+
+Stock purchase plans run by the [[Transfer Agent]] need an additional step to become [[DRS]]ed.
+![[Untitled 4 65.jpg]]
+https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-97
