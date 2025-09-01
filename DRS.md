@@ -1,6 +1,6 @@
 The Direct Registration System was created in 1996.
 
-DRS enables investors to elect to hold their assets in [[book entry]] form directly with the [[Issuer]] by leveraging [[DTC]]’s connectivity with [[FAST]] [[Transfer Agent]]s. Through DTC’s DRS Service, assets can be electronically transferred to and from the transfer agent and broker/dealer to easily move shares in and out of DRS.
+DRS enables investors to elect to hold their assets in [[Book-entry]] form directly with the [[Issuer]] by leveraging [[DTC]]’s connectivity with [[FAST]] [[Transfer Agent]]s. Through DTC’s DRS Service, assets can be electronically transferred to and from the transfer agent and broker/dealer to easily move shares in and out of DRS.
 https://www.dtcc.com/asset-services/securities-processing/direct-registration-system
 
 ![[Untitled 4 29.jpg]]
