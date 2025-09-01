@@ -1,4 +1,4 @@
-
+[[Proxy]] voting happens because [[Custody]] of the actual [[Securities]] is with the [[DTC]]s [[Nominee]] [[Cede & Co]]. [[Broker]]s are given some latitude is submitting the [[vote]] to the [[Transfer Agent]] who typically hires a [[Tabulator]] to conduct the official vote count.
 
 ![[Untitled 4 67.jpg]]
 
