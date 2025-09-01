@@ -9,6 +9,6 @@ see also [[Rule 5110]] [[Rule 5121]] and [[Rule 2310]].
 
 [[underwriting]] is typically filed with [[FINRA]] .
 
-Also known as [[FRO]]. The [[Capital Formation]] happens once the [[securities]] have been through the [[Underwriting]] process and the [[Syndicate]] negotiates a price. After this the [[Secondary market]] handles the rest and the [[Issuer]] has no more involvement with the stock other than treasury s
+Also known as [[FRO]]. The [[Capital Formation]] happens once the [[securities]] have been through the [[Underwriting]] process and the [[Syndicate]] negotiates a price. After this the [[Secondary market]] handles the rest and the [[Issuer]] has no more involvement with the stock other than [[treasury stock]].
 ![[Untitled 4 55.jpg]]
-https://www.sec.gov/data-research/statistics-data-visualizations/follow-registered-offe
+https://www.sec.gov/data-research/statistics-data-visualizations/follow-registered-offerings-fros
