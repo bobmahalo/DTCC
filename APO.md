@@ -1,4 +1,4 @@
-Additional Public Offering or [[follow on offering]]. A Follow-on Registered Offering  (FRO) is a registered offering of securities by a public company whose securities already trade in the secondary market.
+Additional Public Offering or [[follow on offering]]. A Follow-on Registered Offering  (FRO) is a registered offering of securities by a public company whose securities already trade in the secondary market to raise additional capital.
 
 ![[Untitled 4 21.jpg]]
 
