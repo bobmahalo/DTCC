@@ -1,4 +1,4 @@
-the electronic registration and creation of new [[Securities]].
+The electronic registration and creation of new [[Securities]].
 
 ![[Untitled 4 25.jpg]]
 
