@@ -1,4 +1,4 @@
-speed up [[settlement]] at the cost of [[Custody]]. the need for board resolutions or medallion signatures goes away if [[The Corporation]] holds custody of the securities.
+speed up [[settlement]] at the cost of [[Custody]]. the need for board resolutions or medallion signatures goes away if [[The Corporation]] holds custody of the [[securities]].
 
 ![[Untitled 5 3.jpg]]
 https://natlawreview.com/article/why-does-dtc-need-nominee
