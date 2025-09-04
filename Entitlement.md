@@ -1,4 +1,4 @@
-The [[beneficially owned]] portion of the stock the investor has rights to. This could be [[voting rights]], [[dividend rights]], information rights, rights to attend meetings, beneficially owned share transfer rights, and rights to assets upon dissolution.
+The [[Beneficial Owner]] portion of the stock the investor has rights to. This could be [[voting rights]], [[dividend rights]], information rights, rights to attend meetings, beneficially owned share transfer rights, and rights to assets upon dissolution.
 
 
 ![[Untitled 4 63.jpg]]

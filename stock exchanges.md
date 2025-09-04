@@ -1,4 +1,4 @@
-[[NYSE]], [[NASDQ]], [[OTC]] etc. the [[Secondary market]]. a place to sell [[Street Name]] [[beneficially owned]] [[Securities]].
+[[NYSE]], [[NASDQ]], [[OTC]] etc. the [[Secondary market]]. a place to sell [[Street Name]] [[Beneficial Owner]] [[Securities]].
 
 in order for an issuer to be eligible to trade on the stock market, they must comply with [[DTCC]] [[OA]]. which states that the shares be held by the [[Nominee]] [[Cede & Co]]. 
 
