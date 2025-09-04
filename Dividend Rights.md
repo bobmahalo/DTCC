@@ -1,0 +1,2 @@
+
+As an [[Entitlement]] holder, you have the right to receive dividends indirectly from the company through your [[Securities]] [[intermediary]], such as a [[Broker]]age. Your dividend rights differ from a direct registered([[DRS]]) shareholder's rights in that your broker, not the company, is responsible for passing the dividend payment to you.
