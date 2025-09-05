@@ -1,4 +1,4 @@
-the [[DTCC]] operational arrangements must be agreed to prior to any [[Issuer]] being eligible for corporation services...which include being listed on the [[Stock Exchanges]].
+the [[DTCC]] operational arrangements must be agreed to prior to any [[Issuer]] being eligible for corporation services...which include being listed on the [[Stock Exchange]].
 
 
 ![[Untitled 4 42.jpg]]
