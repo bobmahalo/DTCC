@@ -6,7 +6,9 @@ This king has created the first 'put' option of sorts for the farmer, giving him
 
 ![[Untitled 4 7.jpg]]
 
-![[Untitled 4 8.jpg]]
+
+A Call Option in ancient Greece.
+![[Untitled 4 85.jpg]]
 
 ![[Untitled 4 9.jpg]]
 
