@@ -1,3 +1,5 @@
+Consistent with the statute, Rule 192 provides exceptions for risk-mitigating hedging activities, [[Liquidity]] commitments, and [[Bonafide Market Making]] activities of a securitization participant. These exceptions permit certain market activities, subject to satisfaction of the specified conditions, which will allow securitization participants to continue important risk management, liquidity commitment, and market-making activities.
 
-![[Untitled 4 83.jpg]]
+Under new [[SEC]] Rule 192, conflicted transactions include [[short selling]] of the relevant [[ABS]], the purchase of a credit default swap or other credit [[derivatives]] that entitles the securitization [[Participant]] to receive payments upon the occurrence of specified credit events in respect of the ABS, or a transaction that is substantially the economic equivalent of the aforementioned transactions, other than any transaction that only hedges general interest rate or currency exchange risk.
+
 https://www.sec.gov/newsroom/press-releases/2023-240
