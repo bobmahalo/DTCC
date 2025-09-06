@@ -1,0 +1,3 @@
+The failure to make timely payment of [interest](https://www.nasdaq.com/glossary/i/interest) or [principal](https://www.nasdaq.com/glossary/p/principal) on a [debt](https://www.nasdaq.com/glossary/d/debt) [security](https://www.nasdaq.com/glossary/s/security) or to otherwise comply with the provisions of a [bond indenture](https://www.nasdaq.com/glossary/b/bond-indenture). A breach of a [covenant](https://www.nasdaq.com/glossary/c/covenant). In context of project financing, a technical default signals a project parameter is outside defined or agreed limits or a legal matter is not yet resolved.
+
+https://www.nasdaq.com/glossary/d/default
