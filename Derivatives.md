@@ -16,7 +16,8 @@ even the ancients had difficulty enforcing rules against [[SHF]].
 
 ![[Untitled 4 11.jpg]]
 
-[https://www.researchgate.net/profile/Christian-Pauletto/publication/349485381_The_History_of_Derivatives_A_Few_Milestones/links/6032c655a6fdcc37a8424883/The-History-of-Derivatives-A-Few-Milestones.pdf](https://www.researchgate.net/profile/Christian-Pauletto/publication/349485381_The_History_of_Derivatives_A_Few_Milestones/links/6032c655a6fdcc37a8424883/The-History-of-Derivatives-A-Few-Milestones.pdf "https://www.researchgate.net/profile/Christian-Pauletto/publication/349485381_The_History_of_Derivatives_A_Few_Milestones/links/6032c655a6fdcc37a8424883/The-History-of-Derivatives-A-Few-Milestones.pdf")
+https://imgur.com/a/VUkwKjK
+
 
 ![[Untitled 4 12.jpg]]
 
