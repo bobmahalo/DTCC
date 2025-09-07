@@ -1,0 +1,5 @@
+[[DTC]]’s Security Position Reports (SPR) is a web service that enables [[Issuer]]s, trustees and authorized third-party agents to see the position holdings of DTC [[Participant]]s in the issuer’s security as of a specified time period. The position reports also include contact information, through which issuers can notify DTC participants regarding corporate-related events such as annual meetings. DTC participants are responsible for distribution of this information to their customers, including ultimate [[Beneficial Owner]]s.
+
+Registered users login to the web service to request security position reports for their firm. Security Position Reports are available for a fee via subscription or by special request as needed. Subscriptions are for various intervals such as daily and monthly and are for a one-year minimum period. Registered users can choose from a variety of convenient report delivery methods, including browser, spreadsheet, and computer-to-computer facility ([[CCF]]) transmission. (Note: CCF delivery not available for Dividend Record Date Reports.)
+https://www.dtcc.com/asset-services/issuer-services/security-position-reports
+
