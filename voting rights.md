@@ -1,0 +1,2 @@
+One of your key rights as a [[Street Name]] registered shareholder is the right to vote your shares in corporate elections. Shareholder voting rights give you the power to elect directors at annual or special meetings and make your views known to company management and directors on significant issues that may affect the value of your shares.
+https://www.investor.gov/book/export/html/1129

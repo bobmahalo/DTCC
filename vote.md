@@ -1,0 +1,2 @@
+Proxy advisory firms, or “[[Proxy]] voting advice businesses” (PVABs), help shareholders exercise their right to vote on matters at issue in the public companies they own by providing advice according to predetermined policies and facilitating the vote execution process. Investors rely on proxy advisory firms to stay informed about company and shareholder proposals.
+https://www.sec.gov/files/34-95266-fact-sheet.pdf

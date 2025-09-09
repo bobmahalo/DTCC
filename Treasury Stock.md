@@ -1,4 +1,4 @@
-Treasury stock consists of a company's own shares that it repurchases from the open market, and the [[SEC]] governs the rules for how publicly traded companies must report these activities. The repurchase of shares can be a strategic move to return capital to shareholders, increase earnings per share, and signal management's confidence in the company's value.
+Treasury stock consists of a company's own shares that it repurchases from the open [[Stock Exchange]], and the [[SEC]] governs the rules for how publicly traded companies must report these activities. The repurchase of shares can be a strategic move to return capital to shareholders, increase earnings per share, and signal management's confidence in the company's value.
 
 Public companies execute share buybacks for a variety of strategic reasons: 
 
