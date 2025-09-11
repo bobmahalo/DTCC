@@ -1,0 +1,10 @@
+When a company distributes—in the form of cash or stock—a portion of its earnings to shareholders, it’s called a dividend. A cash dividend gives you a sum of money for each share owned, and a stock dividend gives you additional shares in the company. For example, a stock dividend of 10 percent means that for every 10 shares you own, you will get one additional share. Companies with substantial retained earnings might pay a dividend to pass the benefit on to its shareholders.
+https://www.finra.org/investors/insights/corporate-actions-public-companies-what-you-should-know
+
+When companies are profitable, they can choose to distribute some of those earnings to shareholders by paying a dividend. You can either take the dividends in cash or reinvest them to purchase more [[shares]] in the company. Investors seeking predictable income may turn to stocks that pay dividends. Stocks that pay a higher-than-average dividend are called "income stocks."
+https://www.finra.org/investors/investing/investment-products/stocks
+
+**Sec. 501. NOTICE OF DIVIDEND**
+
+A company ([[Issuer]]) is required to publicize and notify the [[SEC]] immediately of any action taken by it in respect to the payment or non-payment of dividends. The form of notice is described in [[Section 503]] below. Prompt notice must be given to the Exchange as to any dividend action or action relating to a stock distribution in respect of a listed stock (including the omission or postponement of a dividend action at the customary time as well as the declaration of a dividend). Such notice is in addition to immediate publicity and should be given at least ten days in advance of the record date. The dividend notice should be given to the Exchange in accordance with [[Section 405]]. Notice should be given as soon as possible after declaration. In the case of notices provided to the Exchange on or after April 1, 2018, such notice must be given to the Exchange no later than 10 minutes before the announcement to the news media (including when the notice is to be issued outside of Exchange trading hours).
+https://www.sec.gov/files/rules/sro/nyseamer/2018/34-82864-ex5.pdf
