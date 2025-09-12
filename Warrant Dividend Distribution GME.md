@@ -2,7 +2,7 @@ GameStop FAQ
 9/9/2025
 
 
-What is a [[Warrants]]?
+What is a [[Warrant]]s?
 
 A warrant is an option to buy common shares issued directly by a company. It gives the
 
@@ -270,15 +270,15 @@ section of the prospectus supplement, which GameStop expects to file with the SE
 
 distribution date.
 
-4Can I access a copy of the full warrant agreement?
+Can I access a copy of the full warrant agreement?
 
 Yes. GameStop expects to file the full warrant agreement with the SEC on the distribution
 
-date. It will be available via the SEC EDGAR system at www.sec.gov and linked on the
+date. It will be available via the [[SEC]] [[EDGAR]] system at www.sec.gov and linked on the
 
 GameStop Investor Relations page at investor.gamestop.com.
 
-5Disclaimers
+Disclaimers
 
 Forward Looking Statements
 
