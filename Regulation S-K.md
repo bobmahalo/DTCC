@@ -1,0 +1,3 @@
+Regulation S-K sets forth requirements for disclosure (other than financial statement disclosure) under both the [[Securities Act of 1933]] and the [[Securities Exchange Act of 1934]] and is applicable to both [[public offering]]s and ongoing reporting requirements. It is a key part of the Commission’s([[SEC]]) “integrated disclosure system,” which was created in 1982 following many years of analysis of the disclosure rules under the Securities Act and the Exchange Act. Under the integrated disclosure system, most registration and reporting forms under the Securities Act and the Exchange Act refer to Regulation S-K for many of their substantive disclosure requirements.
+
+https://www.sec.gov/files/reg-sk-disclosure-requirements-review.pdf
