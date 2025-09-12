@@ -1,4 +1,4 @@
-Another word for options contracts. The primary driver of [[Liquidity]]. The method that has allowed for [[synthetic share]] creation by future dated expirations.
+Another word for options contracts. The primary driver of [[Liquidity]]. The method that has allowed for [[Synthetic Share]] creation by future dated expirations.
 
 Their origins are often debated.
 ![[Untitled 4 6.jpg]]
