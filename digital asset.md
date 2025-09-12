@@ -1,6 +1,4 @@
 
-
-
 If you are considering an Initial Coin Offering, sometimes referred to as an “[[ICO]],” or otherwise engaging in the [[public offering]], sale, or distribution of a digital asset, you need to consider whether the U.S. federal securities laws apply. A threshold issue is whether the digital asset is a “security” under those laws The term “security” includes an “investment contract,” as well as other instruments such as stocks, bonds, and transferable shares. A digital asset should be analyzed to determine whether it has the characteristics of any product that meets the definition of “security” under the federal [[Securities]] laws. In this guidance, we provide a framework for analyzing whether a digital asset has the characteristics of one particular type of security – an “investment contract.” Both the Commission and the federal courts frequently use the “investment contract” analysis to determine whether unique or novel instruments or arrangements, such as digital assets, are securities subject to the federal securities laws.
 
 The U.S. Supreme Court’s [[Howey Case]] and subsequent case law have found that an
