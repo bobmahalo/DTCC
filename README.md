@@ -4,4 +4,6 @@ This vault will explore some of the machinations of the corporation that umbrell
 
 One small ask is to please provide links to sources you use for notes. and if those sources could be reputable(preferably not wikipedia and investopedia)
 
-Chives: I'm committing these changes as a test to see if it syncs backwards to your mobile Obsidian instance.
+This video gives a brief explanation of how to link a repository with your local obsidian. 
+https://youtu.be/5YZz38U20ws?si=QaN2OkIHZyCe0SMH
+
