@@ -1,0 +1,2 @@
+The Government Securities Division (GSD) of the Fixed Income Clearing Corporation ([[FICC]]), a subsidiary of [[DTCC]], provides real-time trade matching, clearing, risk management and netting for trades in US Government debt issues, including repurchase agreements or repos.
+https://www.dtcc.com/about/businesses-and-subsidiaries/ficc
