@@ -1,0 +1,6 @@
+The terms on which [[FINRA]] member firms ([[Broker]]s) can extend credit for [[Securities]] transactions are governed by federal regulation and by the rules of FINRA.
+
+Some [[Securities]] cannot be purchased on margin, which means the customer must deposit 100 percent of the purchase price in their account. These securities may still be purchased and held in a margin account.
+
+In general, under Federal Reserve Board [Regulation T](http://www.ecfr.gov/cgi-bin/text-idx?tpl=/ecfrbrowse/Title12/12cfr220_main_02.tpl) ([[Reg T]]), brokers can lend a customer up to 50 percent of the total purchase price of a margin equity security for new purchases. Regulation T only sets the initial margin requirements on equity securities but FINRA’s margin [[rule 4210]], adds initial margin requirements on securities that Reg T does not set specific requirements like corporate bond. Additionally, Rule 4210, specifies maintenance requirements that set a limit to the value that an account can lose. If an account drops below these limits (creating a “margin deficiency”), a customer is required to either deposit additional [[collateral]] or liquidate positions in the account. Importantly, brokers, at their discretion, may liquidate an account at any time to eliminate a margin deficiency.
+https://www.finra.org/rules-guidance/key-topics/margin-accounts
