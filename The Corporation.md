@@ -1,1 +1,1 @@
-the corporation generally refers to the [[DTCC]]
+The 'Corporation' generally refers to the [[DTCC]].
