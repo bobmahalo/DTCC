@@ -5,3 +5,5 @@
 	(i) the nature of the conflict of interest;
 	(ii) the name of the member acting as qualified independent underwriter; and
 	(iii) a brief statement regarding the role and responsibilities of the qualified independent underwriter.
+
+https://www.finra.org/rules-guidance/rulebooks/finra-rules/5121#:~:text=(12)%20Qualified%20Independent%20Underwriter,past%20three%20years%2C%20the%20member:
