@@ -3,7 +3,7 @@ Issuers can also raise capital through **additional public offerings (APOs)**, 
 In each circumstance, _**[[Primary Market]] transactions create proceeds for the issuer**_. IPOs, APOs, and private placements are the most common forms of primary market sales. In the next section, we’ll dive deeper into the IPO process.
 
 Sometimes new shares are offered to the public, but the proceeds do not go to the issuer.
-Known as **[[secondary offerings]]**, these transactions are typically the result of large shareholders (usually company executives) selling a significant portion of shares.
+Known as **[[Secondary Offerings]]**, these transactions are typically the result of large shareholders (usually company executives) selling a significant portion of shares.
 
 https://app.achievable.me/study/finra-series-7/learn/73ede6fc-3dfe-4ac9-870d-bd558faedce5
 
