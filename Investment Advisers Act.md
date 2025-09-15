@@ -1,0 +1,10 @@
+This law regulates investment advisers. With certain exceptions, this Act requires that firms or sole practitioners compensated for advising others about [[Securities]] investments must register with the [[SEC]] and conform to regulations designed to protect investors. Since the Act was amended in 1996 and 2010, generally only advisers who have at least $100 million of assets under management or advise a registered investment company must register with the Commission. Other investment advisers typically register with the state in which the investment adviser maintains its principal place of business.
+https://www.sec.gov/investment/laws-and-rules
+
+SEC. 201. 80b–1 Upon the basis of facts disclosed by the record and report of the Securities and Exchange Commission made pursuant to section 30 of the Public Utility Holding Company Act of 1935, and facts otherwise disclosed and ascertained, it is hereby found that investment advisers are of national concern, in that, among other things—
+(1) their advice, counsel, publications, writings, analyses, and reports are furnished and distributed, and their contracts, subscription agreements, and other arrangements with clients are negotiated and performed, by the use of the mails and means and instrumentalities of interstate commerce;
+(2) their advice, counsel, publications, writings, analyses, and reports customarily relate to the purchase and sale of securities traded on national securities exchanges and in interstate over-the-counter markets, securities issued by companies engaged in business in interstate commerce, and securities issued by national banks and member banks of the [[U.S. Federal Reserve System]]; and
+(3) the foregoing transactions occur in such volume as substantially to affect interstate commerce, national securities exchanges, and other securities markets, the national banking system and the national economy.
+
+link to the full text of the act:
+https://www.govinfo.gov/content/pkg/COMPS-1878/pdf/COMPS-1878.pdf
