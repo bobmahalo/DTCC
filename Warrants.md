@@ -1,0 +1,4 @@
+A stock warrant is a financial instrument issued by a company, granting the holder the right to purchase the company’s stock at a specific price (called the [exercise or strike price](https://growthequityinterviewguide.com/venture-capital/startup-equity-ownership/strike-price)) before the warrant’s expiration date. 
+
+Warrants are often issued as part of a larger financial deal, such as bond offerings or capital-raising initiatives, to make the investment more attractive. They can have long-term expiration periods, sometimes lasting several years. However, the typical expiration period for warrants is generally one to two years, with some warrants having longer maturities.
+https://growthequityinterviewguide.com/venture-capital/startup-equity-ownership/warrants-vs-options
