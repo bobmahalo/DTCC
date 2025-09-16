@@ -16,23 +16,5 @@ SEC. 302. 77bbb (a) Upon the basis of facts disclosed by the reports of the Secu
 (6) when, by reason of the fact that trust indentures are commonly prepared by the obligor or underwriter in advance of the public offering of the securities to be issued thereunder, such investors are unable to participate in the preparation thereof, and, by reason of their lack of understanding of the situation, such investors would in any event be unable to procure the correction of the defects enumerated in this subsection.
 
 (b) Practices of the character above enumerated have existed
-to such an extent that, unless regulated, the public offering of
-
-notes, bonds, debentures, evidences of indebtedness, and certifi-
-
-cates of interest or participation therein, by the use of means that
-
-instruments of transportation and communication in interstate
-
-commerce and of the mails, is injurious to the capital markets, to
-
-investors, and to the general public; and it is hereby declared to be
-
-the policy of this title, in accordance with which policy all the pro-
-
-visions of this title shall be interpreted, to meet the problems and
-
-eliminate the practices, enumerated in this section, connected with
-
-such public offerings.
+to such an extent that, unless regulated, the public offering of notes, bonds, debentures, evidences of indebtedness, and certificates of interest or participation therein, by the use of means that instruments of transportation and communication in interstate commerce and of the mails, is injurious to the capital markets, to investors, and to the general public; and it is hereby declared to be the policy of this title, in accordance with which policy all the provisions of this title shall be interpreted, to meet the problems and eliminate the practices, enumerated in this section, connected with such public offerings.
 https://www.govinfo.gov/content/pkg/COMPS-1888/pdf/COMPS-1888.pdf
