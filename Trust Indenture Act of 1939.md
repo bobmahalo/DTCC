@@ -1,33 +1,11 @@
 AN ACT To provide for the regulation of the sale of certain [[Securities]] in interstate and foreign commerce and through the mails, and the regulation of the trust indentures under which the same are issued, and for other purposes.
 Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, That the Act entitled ‘‘An Act to provide full and fair disclosure of the character of securities sold in interstate and foreign commerce and through the mails, and to prevent frauds in the sale thereof, and for other purposes’’, approved May 27, 1933, as amended, is amended by adding at the end thereof the following:
 
-SEC. 302. ø77bbb¿ (a) Upon the basis of facts disclosed by the
+SEC. 302. 77bbb (a) Upon the basis of facts disclosed by the
 
-reports of the Securities and Exchange Commission made to the
+reports of the Securities and Exchange Commission([[SEC]]) made to the Congress pursuant to section 211 of the [[Securities Exchange Act of 1934]] and otherwise disclosed and ascertained, it is hereby declared that the national public interest and the interest of investors in notes, bonds, debentures, evidences of indebtedness, and certificates of interest or participation therein, which are offered to the public, are adversely affected—
 
-Congress pursuant to section 211 of the Securities Exchange Act of
-
-1934 and otherwise disclosed and ascertained, it is hereby declared
-
-that the national public interest and the interest of investors in
-
-notes, bonds, debentures, evidences of indebtedness, and certifi-
-
-cates of interest or participation therein, which are offered to the
-
-public, are adversely affected—
-
-(1) when the obligor fails to provide a trustee to protect
-
-and enforce the rights and to represent the interests of such
-
-investors, notwithstanding the fact that (A) individual action
-
-by such investors for the purpose of protecting and enforcing
-
-their rights is rendered impracticable by reason of the dis-
-
-proportionate expense of taking such action, and (B) concerted
+(1) when the obligor fails to provide a trustee to protect and enforce the rights and to represent the interests of such investors, notwithstanding the fact that (A) individual action by such investors for the purpose of protecting and enforcing their rights is rendered impracticable by reason of the disproportionate expense of taking such action, and (B) concerted
 
 action by such investors in their common interest through rep-
 
