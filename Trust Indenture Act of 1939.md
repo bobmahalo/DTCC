@@ -9,43 +9,11 @@ SEC. 302. 77bbb (a) Upon the basis of facts disclosed by the reports of the Secu
 
 (3) when the trustee does not have resources commensurate with its responsibilities, or has any relationship to or connection with the obligor or any [[Underwriter]] of any securities of the obligor, or holds, beneficially or otherwise, any interest in the obligor, or any such underwriter, which relationship, connection, or interest involves a material conflict with the interests of such investors;
 
-(4) when the obligor is not obligated to furnish to the trustee under the indenture and to such investors adequate current information as to its financial condition, and as to the
+(4) when the obligor is not obligated to furnish to the trustee under the indenture and to such investors adequate current information as to its financial condition, and as to the performance of its obligations with respect to the securities outstanding under such indenture; or when the communication of such information to such investors is impeded by the fact that information as to the names and addresses of such investors generally is not available to the trustee and to such investors;
 
-performance of its obligations with respect to the securities
+(5) when the indenture contains provisions which are misleading or deceptive, or when full and fair disclosure is not made to prospective investors of the effect of important indenture provisions; or
 
-outstanding under such indenture; or when the communication
-
-of such information to such investors is impeded by the fact
-
-that information as to the names and addresses of such inves-
-
-tors generally is not available to the trustee and to such inves-
-
-tors;
-
-(5) when the indenture contains provisions which are mis-
-
-leading or deceptive, or when full and fair disclosure is not
-
-made to prospective investors of the effect of important inden-
-
-ture provisions; or
-
-(6) when, by reason of the fact that trust indentures are
-
-commonly prepared by the obligor or underwriter in advance
-
-of the public offering of the securities to be issued thereunder,
-
-such investors are unable to participate in the preparation
-
-thereof, and, by reason of their lack of understanding of the
-
-situation, such investors would in any event be unable to pro-
-
-cure the correction of the defects enumerated in this sub-
-
-section.
+(6) when, by reason of the fact that trust indentures are commonly prepared by the obligor or underwriter in advance of the public offering of the securities to be issued thereunder, such investors are unable to participate in the preparation thereof, and, by reason of their lack of understanding of the situation, such investors would in any event be unable to procure the correction of the defects enumerated in this subsection.
 
 (b) Practices of the character above enumerated have existed
 
