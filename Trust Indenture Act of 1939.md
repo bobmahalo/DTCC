@@ -5,29 +5,9 @@ SEC. 302. 77bbb (a) Upon the basis of facts disclosed by the
 
 reports of the Securities and Exchange Commission([[SEC]]) made to the Congress pursuant to section 211 of the [[Securities Exchange Act of 1934]] and otherwise disclosed and ascertained, it is hereby declared that the national public interest and the interest of investors in notes, bonds, debentures, evidences of indebtedness, and certificates of interest or participation therein, which are offered to the public, are adversely affected—
 
-(1) when the obligor fails to provide a trustee to protect and enforce the rights and to represent the interests of such investors, notwithstanding the fact that (A) individual action by such investors for the purpose of protecting and enforcing their rights is rendered impracticable by reason of the disproportionate expense of taking such action, and (B) concerted
+(1) when the obligor fails to provide a trustee to protect and enforce the rights and to represent the interests of such investors, notwithstanding the fact that (A) individual action by such investors for the purpose of protecting and enforcing their rights is rendered impracticable by reason of the disproportionate expense of taking such action, and (B) concerted action by such investors in their common interest through representatives of their own selection is impeded by reason of the wide dispersion of such investors through many States, and by reason of the fact that information as to the names and addresses of such investors generally is not available to such investors;
 
-action by such investors in their common interest through rep-
-
-resentatives of their own selection is impeded by reason of the
-
-wide dispersion of such investors through many States, and by
-
-reason of the fact that information as to the names and ad-
-
-dresses of such investors generally is not available to such in-
-
-vestors;
-
-(2) when the trustee does not have adequate rights and
-
-powers, or adequate duties and responsibilities, in connection
-
-with matters relating to the protection and enforcement of the
-
-rights of such investors; when, notwithstanding the obstacles
-
-to concerted action by such investors, and the general and rea-
+(2) when the trustee does not have adequate rights and powers, or adequate duties and responsibilities, in connection with matters relating to the protection and enforcement of the rights of such investors; when, notwithstanding the obstacles to concerted action by such investors, and the general and rea-
 
 sonable assumption by such investors that the trustee is under
 
