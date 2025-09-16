@@ -1,0 +1,3 @@
+Public float is calculated by multiplying the number of the company’s common shares held by non-affiliates by the market price and, in the case of an [[IPO]], adding to that number the product obtained by multiplying the common shares covered by the registration statement by their estimated [[public offering]] price. A company([[Issuer]]) may have no public float because it has no public common shares outstanding or because there is no market price for its common shares.
+
+https://www.sec.gov/resources-small-businesses/going-public/smaller-reporting-companies

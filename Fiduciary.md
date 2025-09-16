@@ -1,0 +1,2 @@
+A fiduciary is someone who manages money or property for someone else. When you’re named a fiduciary and accept the role, you must – by law – manage the person’s money and property for their benefit, not yours.
+https://www.consumerfinance.gov/ask-cfpb/what-is-a-fiduciary-en-1769/
