@@ -1,0 +1,5 @@
+In general, under Federal Reserve Board Regulation T(Reg T), [[Broker]]s can lend a customer up to 50 percent of the total purchase price of a [[Margin]] equity security for new purchases. Regulation T only sets the initial margin requirements on equity [[Securities]] but [[FINRA]]’s margin [[rule 4210]], adds initial margin requirements on securities that Reg T does not set specific requirements like corporate bond. Additionally, Rule 4210, specifies maintenance requirements that set a limit to the value that an account can lose. If an account drops below these limits (creating a “margin deficiency”), a customer is required to either deposit additional collateral or liquidate positions in the account. Importantly, brokers, at their discretion, may liquidate an account at any time to eliminate a margin deficiency.
+https://www.finra.org/rules-guidance/key-topics/margin-accounts
+
+![[Untitled 4 87.jpg]]
+https://securitiesce.com/definitions/6042-regulation-t/?srsltid=AfmBOorKv6NK8Q4JuSQG_lv6tT_bREfX7vXtBD9AnSk7Cn-nc2hNsMN6
