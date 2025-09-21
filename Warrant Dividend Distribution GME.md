@@ -2,7 +2,7 @@ GameStop FAQ
 9/9/2025
 
 
-What is a [[Warrant]]s?
+What is a [[Warrants]]?
 
 A warrant is an option to buy common shares issued directly by a company. It gives the
 
