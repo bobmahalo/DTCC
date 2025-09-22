@@ -1,3 +1,8 @@
+Capital Acquisition Broker (“[[CAB]]”)
+CABs are [[Broker]]-dealers that help promote capital formation through specified functions, essentially acting as placement agents for sales of unregistered [[Securities]] to institutional investors; acting as [[intermediary]]s in connection with the change of control of privately held companies; and advising companies and private equity funds on capital raising and corporate restructuring. Member firms that meet the CAB criteria may elect to be governed by the CAB Rules. CABs’ specified functions do not include broader broker-dealer activities, such as accepting customers’ trading orders, carrying customer accounts, handling customers’ funds or securities, or engaging in proprietary trading or [[Market Making]].
+https://www.sec.gov/files/rules/sro/finra/2025/34-103216.pdf
+
+
 A term often tossed around by [[Wall Street]] news. but when explored a little further, the [[secondary market]]s, where stocks trade, there is no more capital formation for [[Issuer]]s.
 
 ![[Untitled 4 18.jpg]]
