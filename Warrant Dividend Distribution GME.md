@@ -14,7 +14,7 @@ holder the right, but not the obligation, to purchase a share of common stock at
 
 What is a warrant dividend?
 
-A warrant dividend is a distribution of warrants by the company [[pro-rata]] to all existing
+A warrant dividend is a distribution of warrants by the company [[Pro-Rata]] to all existing
 
 common shareholders. As with a cash dividend, shareholders do not need to pay any
 
