@@ -17,6 +17,6 @@ _Accredited investor_ shall mean any person who comes within any of the followi
 8. Any entity owning investments in excess of $5,000,000.
 9. Any natural person holding in good standing one or more professional certifications or designations or credentials from an accredited educational institution that the Commission has designated as qualifying an individual for accredited investor status.
 10. Any natural person who is a knowledgeable employee.
-11. Any [[family office]].
+11. Any [[Family Office]].
 12. Any family client.
 https://www.ecfr.gov/current/title-17/chapter-II/part-230#230.501
