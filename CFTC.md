@@ -1,6 +1,6 @@
 ### CFTC Mission Statement
 
-The mission of the Commodity Futures Trading Commission is to promote the integrity, resilience, and vibrancy of the U.S. [[Derivatives]] markets through sound regulation.
+The mission of the Commodity Futures Trading Commission is to promote the integrity, resilience, and vibrancy of the U.S. Derivatives markets through sound regulation.
 
 ### CFTC Vision Statement
 
