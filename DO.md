@@ -1,4 +1,4 @@
-A Deliver Order (DO) is a [[Book-entry]] movement of [[shares]] of a particular security between two [[DTC]] [[Participant]]s. The delivery program allows you to settle [[Securities]] transactions by making book entry deliveries to another participant's account. The securities are [[immobilized]] in DTC's [[Custody]], eliminating the need for physical movement of [[Physical Securities Certificates]]. DTC reduces the deliverer’s position and increases the receiver’s position without the need to move physical certificates. Deliveries can be made with or without the condition of money payment, depending on your delivery instructions. Once you enter a deliver order, it is routed for processing unless you have established secondary approval.
+A Deliver Order (DO) is a [[Book-entry]] movement of [[shares]] of a particular security between two [[DTC]] [[Participant]]s. The delivery program allows you to settle [[Securities]] transactions by making book entry deliveries to another participant's account. The securities are immobilized in [[DTC]]'s [[Custody]], eliminating the need for physical movement of [[Physical Securities Certificates]]. DTC reduces the deliverer’s position and increases the receiver’s position without the need to move physical certificates. Deliveries can be made with or without the condition of money payment, depending on your delivery instructions. Once you enter a deliver order, it is routed for processing unless you have established secondary approval.
 
 ## What does Submitting a Deliver Order to DTC Do?
 
@@ -22,5 +22,4 @@ This function allows you to input instructions to deliver securities f
 
 - Supports straight-through processing of Depositary Receipt cancellations/release of ordinary shares by using a valid reason code.
 
-
-
+https://www.dtcc.com/products/training/helpfiles/settlement/settlement_help/help/do/about_deliver_orders_and_movement_of_shares.htm
