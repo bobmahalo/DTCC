@@ -9,7 +9,7 @@ Our mission requires tireless commitment and unique expertise from our staff of 
 
 The [federal securities laws](https://www.sec.gov/rules-regulations/statutes-regulations) we oversee are based on a simple and straightforward concept: everyone should be treated fairly and have access to certain facts about investments and those who sell them.
 
-Companies offering securities for sale to the public must tell the truth about their business, the securities they are selling, and the investment risks. And those who sell and trade securities and offer advice to investors – such as brokers-dealers, investment advisers, and exchanges – must treat investors fairly and honestly.
+Companies offering [[Securities]] for sale to the public must tell the truth about their business, the securities they are selling, and the investment risks. And those who sell and trade securities and offer advice to investors – such as [[Broker]]s-dealers, investment advisers, and exchanges – must treat investors fairly and honestly.
 
 We protect investors by vigorously enforcing the federal securities laws to ensure truth and fairness. We deter misconduct, hold wrongdoers accountable, and [provide resources](http://www.investor.gov/) to help investors evaluate their investment choices and protect themselves against fraud.
 
@@ -17,7 +17,7 @@ We protect investors by vigorously enforcing the federal securities laws to 
 
 Our U.S. capital markets are the deepest, most dynamic, and most liquid in the world. They also have evolved to become increasingly fast and extraordinarily complex.
 
-As we oversee more than $100 trillion in securities trading on U.S. equity markets annually, it is our job to be responsive and innovative in the face of significant market developments and trends.
+As we oversee more than $100 trillion in securities trading on U.S. [[Equity]] markets annually, it is our job to be responsive and innovative in the face of significant market developments and trends.
 
 As technological advancements have changed how our securities markets operate, our ability to remain an effective regulator requires us to continuously monitor the market environment and, as appropriate, adjust and modernize our rules, regulations, and oversight tools and activities.
 
