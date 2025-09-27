@@ -80,7 +80,7 @@ noteholder as of the October 3, 2025 record date and you have not lent out your 
 
 notes to your [[Broker]] or other parties. Contact your broker or, to the extent your shares are
 
-held in a registered account with GameStop’s [[transfer agent]], contact Client Services at
+held in a registered account with GameStop’s [[Transfer Agent]], contact Client Services at
 
 Computershare Trust Company, N.A., for details.
 
