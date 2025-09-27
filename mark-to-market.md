@@ -6,7 +6,7 @@ The party who is partially unsecured by reason of a change in the market value o
 
 **(b) Assignment of Contract**
 
-Either party to a contract in securities may assign the contract, either at the time the transaction is effected or at the time a request is made for funds to "mark to the market," provided the other party to the contract assents to the assignment.
+Either party to a contract in [[securities]] may assign the contract, either at the time the transaction is effected or at the time a request is made for funds to "mark to the market," provided the other party to the contract assents to the assignment.
 
 **(c) Refund of Deposit**
 

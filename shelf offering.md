@@ -1,5 +1,5 @@
 
-A shelf offering is an offering of [[Securities]] registered by an [[Issuer]] pursuant to [[SEC]] [[Rule 415]], where the securities are expected to be sold on a delayed or continuous basis, provided that the issuer meets the SEC's eligibility requirements for use of Form S-3, F-3 or any other Form filed with the SEC for that purpose. [[FINRA]]’s Corporate Financing Department recognizes that issuers and members engaged in the distribution of a shelf offering may need to access the market very quickly.
+A shelf offering is an offering of [[Securities]] registered by an [[Issuer]] pursuant to [[SEC]] [[Rule 415]], where the [[securities]] are expected to be sold on a delayed or continuous basis, provided that the issuer meets the SEC's eligibility requirements for use of Form S-3, F-3 or any other Form filed with the SEC for that purpose. [[FINRA]]’s Corporate Financing Department recognizes that issuers and members engaged in the distribution of a shelf offering may need to access the market very quickly.
 
 The review process for shelf offerings provides FINRA members with clearance (24/7) for shelf filings, including those of Well-Known Seasoned Issuers (WKSIs).
 

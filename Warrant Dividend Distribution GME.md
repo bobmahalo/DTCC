@@ -86,7 +86,7 @@ Computershare Trust Company, N.A., for details.
 
 Can I sell my warrants? Will they trade publicly?
 
-Except for applicable securities laws and company policies that may apply to insiders, we
+Except for applicable [[securities]] laws and company policies that may apply to insiders, we
 
 are not aware of any restrictions on buying or selling the warrants. We intend to apply for
 
@@ -282,7 +282,7 @@ Disclaimers
 
 Forward Looking Statements
 
-This FAQ contains forward-looking statements within the meaning of the Private Securities
+This FAQ contains forward-looking statements within the meaning of the Private [[securities]]
 
 Litigation Reform Act of 1995, including statements concerning the anticipated warrant
 
@@ -320,7 +320,7 @@ of a market for those warrants; and stockholder and noteholder participation in 
 
 distribution. These and other risks are more fully described in GameStop’s filings with the
 
-Securities and Exchange Commission (“SEC”), including in the section entitled “Risk
+securities and Exchange Commission (“SEC”), including in the section entitled “Risk
 
 Factors” in its Annual Report on Form 10-K for the fiscal year ended February 1, 2025 and
 
