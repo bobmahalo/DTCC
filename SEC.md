@@ -9,7 +9,7 @@ Our mission requires tireless commitment and unique expertise from our staff of 
 
 The [federal securities laws](https://www.sec.gov/rules-regulations/statutes-regulations) we oversee are based on a simple and straightforward concept: everyone should be treated fairly and have access to certain facts about investments and those who sell them.
 
-Companies offering [[Securities]] for sale to the public must tell the truth about their business, the securities they are selling, and the investment risks. And those who sell and trade securities and offer advice to [[Investor]]s – such as [[Broker]]s-dealers, investment advisers, and exchanges – must treat [[Investor]]s fairly and honestly.
+[[Companies]] offering [[Securities]] for sale to the public must tell the truth about their business, the securities they are selling, and the investment risks. And those who sell and trade securities and offer advice to [[Investor]]s – such as [[Broker]]s-dealers, investment advisers, and exchanges – must treat [[Investor]]s fairly and honestly.
 
 We protect [[Investor]]s by vigorously enforcing the federal securities laws to ensure truth and fairness. We deter misconduct, hold wrongdoers accountable, and [provide resources](http://www.investor.gov/) to help [[Investor]]s evaluate their investment choices and protect themselves against fraud.
 
@@ -23,7 +23,7 @@ As technological advancements have changed how our securities markets operate, o
 
 ## Facilitating Capital Formation
 
-Our regulatory governance provides companies and entrepreneurs with a variety of avenues to access the U.S. economy's capital markets to help them create jobs, develop life-changing innovations and technology, and provide financial opportunities for those who invest in them.
+Our regulatory governance provides [[Companies]] and entrepreneurs with a variety of avenues to access the U.S. economy's capital markets to help them create jobs, develop life-changing innovations and technology, and provide financial opportunities for those who invest in them.
 
 Access to capital is particularly critical for small businesses, which create approximately two-thirds of all new jobs in the U.S. economy.
 
