@@ -1,3 +1,5 @@
-Any tangible or intangible item that has value in an exchange. A bank account, a home, or shares of stock are all examples of assets.
+Any tangible or intangible item that has value in an exchange. A bank account, a home, or [[shares]] of stock are all examples of assets.
 https://www.investor.gov/introduction-investing/investing-basics/glossary/asset
 
+Assets are generally listed based on how quickly they will be converted into cash ([[Liquidity]]). Current assets are things a company expects to convert to cash within one year. A good example is inventory. Most [[Companies]] expect to sell their inventory for cash within one year. Noncurrent assets are things a company does not expect to convert to cash within one year or that would take longer than one year to sell. Noncurrent assets include fixed assets. Fixed assets are those assets used to operate the business but that are not available for sale, such as trucks, office furniture and other property.
+https://www.sec.gov/about/reports-publications/beginners-guide-financial-statements#:~:text=Current%20assets%20are%20things%20a,the%20accounts%20during%20the%20period.
