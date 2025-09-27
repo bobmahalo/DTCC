@@ -1,4 +1,4 @@
-SBLOCs are a type of [[Securities]]-based lending offered to investors. Other types include stock-based loan programs.
+SBLOCs are a type of [[Securities]]-based lending offered to [[Investor]]s. Other types include stock-based loan programs.
 
 Set up as a revolving line of credit, an SBLOC allows you to borrow money using securities held in your investment accounts as [[Collateral]]. An SBLOC requires you to make monthly, interest-only payments, and the loan remains outstanding until you repay it. You can repay some (or all) of the outstanding principal at any time, then borrow again later.
 

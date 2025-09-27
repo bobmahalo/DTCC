@@ -260,7 +260,7 @@ for tax purposes?
 
 The U.S. federal income tax treatment of the warrant distribution, and any future exercise of
 
-the warrants, may vary based on an investor’s specific circumstances. GameStop does not
+the warrants, may vary based on an [[Investor]]’s specific circumstances. GameStop does not
 
 provide tax advice. Regardless of tax domicile, all investors are encouraged to consult their
 

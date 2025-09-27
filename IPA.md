@@ -1,6 +1,6 @@
 **Institute for Portfolio Alternatives**
 
-IPA is the only association to represent the top sponsors and distributors of alternative investments. IPA and our members address policy issues that are vital to the national economy and investor choice. IPA’s unique position ensures that our members speak with a single voice about issues of national importance.  
+IPA is the only association to represent the top sponsors and distributors of alternative investments. IPA and our members address policy issues that are vital to the national economy and [[Investor]] choice. IPA’s unique position ensures that our members speak with a single voice about issues of national importance.  
   
 For almost four decades, IPA has served as the preeminent trade organization championing alternatives—including private real estate, private credit, private [[Equity]], infrastructure, and other alternative assets. IPA advocates for asset managers, [[Broker]]-dealers, registered investment advisers, family offices and other industry participants.  
   

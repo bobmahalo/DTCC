@@ -1,12 +1,12 @@
-What is the role of accredited [[investor]]s?
+What is the role of accredited [[Investor]]s?
 
-For many companies raising capital in the private [[Stock Exchange]], the accredited [[investor]] definition may define who is in their pool of potential [[investor]]s, and for [[investor]]s whether they are eligible to invest. Many of the offering exemptions under [[SEC]] laws limit participation to accredited [[investor]]s or contain restrictions on participation by non-accredited [[investor]]s.
+For many companies raising capital in the private [[Stock Exchange]], the accredited [[Investor]] definition may define who is in their pool of potential [[Investor]]s, and for [[Investor]]s whether they are eligible to invest. Many of the offering exemptions under [[SEC]] laws limit participation to accredited [[Investor]]s or contain restrictions on participation by non-accredited [[Investor]]s.
 https://www.sec.gov/resources-small-businesses/capital-raising-building-blocks/accredited-[[investor]]s
 
-Certain [[Securities]] offerings that are exempt from registration may only be offered to, or purchased by, persons who are “accredited [[investor]]s.”
+Certain [[Securities]] offerings that are exempt from registration may only be offered to, or purchased by, persons who are “accredited [[Investor]]s.”
 https://www.sec.gov/resources-small-businesses/exempt-offerings/frequently-asked-questions-about-exempt-offerings?auHash=rh5WfJi9h3wRzP6X2anOmgYLdhPHNuo-3Vw0YNZyR_M#faq2
 
-_Accredited [[investor]]_ shall mean any person who comes within any of the following categories, or who the [[Issuer]] reasonably believes comes within any of the following categories, at the time of the sale of the securities to that person:
+_Accredited [[Investor]]_ shall mean any person who comes within any of the following categories, or who the [[Issuer]] reasonably believes comes within any of the following categories, at the time of the sale of the securities to that person:
 1. Any Bank
 2. Any private Development Business Company
 3. Any organization described in section 501(c)3
@@ -15,7 +15,7 @@ _Accredited [[investor]]_ shall mean any person who comes within any of the fol
 6. Any natural person who had an individual income in excess of $200,000 in each of the two most recent years.
 7. Any trust, with total assets in excess of $5,000,000.
 8. Any entity owning investments in excess of $5,000,000.
-9. Any natural person holding in good standing one or more professional certifications or designations or credentials from an accredited educational institution that the Commission has designated as qualifying an individual for accredited [[investor]] status.
+9. Any natural person holding in good standing one or more professional certifications or designations or credentials from an accredited educational institution that the Commission has designated as qualifying an individual for accredited [[Investor]] status.
 10. Any natural person who is a knowledgeable employee.
 11. Any [[Family Office]].
 12. Any family client.

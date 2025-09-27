@@ -1,1 +1,1 @@
-also known as [[Wall Street]], the secondary markets are where [[Institutions]] and individuals buy and sell [[Securities]] entitlements. The [[Primary Market]] is where an issuer sells the securities to [[Prime Banks]] and [[Accredited Investors]].
+also known as [[Wall Street]], the secondary markets are where [[Institutions]] and individuals buy and sell [[Securities]] entitlements. The [[Primary Market]] is where an issuer sells the securities to [[Prime Banks]] and [[Accredited [[Investor]]s]].

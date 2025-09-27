@@ -1,4 +1,4 @@
-Dark pools, a type of alternative trading system [[ATS]] that was designed, in general, to handle large trades for institutional investors anonymously.
+Dark pools, a type of alternative trading system [[ATS]] that was designed, in general, to handle large trades for institutional [[Investor]]s anonymously.
 https://www.finra.org/investors/insights/can-you-swim-dark-pool
 
 ![[Untitled 4 81.jpg]]
