@@ -1,0 +1,6 @@
+The [[SEC]]'s Regulation M is designed to prevent manipulation by individuals with an interest in the outcome of an offering, and prohibits activities and conduct that could artificially influence the market for an offered security.
+
+As part of its program to monitor firms for compliance with Regulation M, [[FINRA]]'s Market Regulation Department reviews over-the-counter trading([[OTC]]) and quoting activity for prohibited purchases, bids or attempts to induce bids or purchases during the applicable restricted period, and for prohibited [[short sale]]s during the five-day period prior to pricing the offering. Per FINRA rules, firms must provide FINRA with pertinent distribution-related information in a timely fashion to facilitate this component of its Regulation M compliance program.
+
+Firms are reminded that in addition to the Regulation M-related reporting requirements under FINRA rules, discussed in detail in [Regulatory Notice 08-74](https://www.finra.org/node/7419), they may have other reporting obligations, e.g., under the FINRA transaction reporting rules or the Regulation M-related rules of a national [[Stock Exchange]].
+https://www.finra.org/filing-reporting/regulation-m-filings
