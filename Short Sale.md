@@ -1,0 +1,9 @@
+A short sale is generally the sale of a [[Stock]] you do not own (or that you will borrow for delivery). Short sellers believe the price of the stock will fall, or are seeking to hedge against potential price volatility in [[Securities]] that they own.
+
+If the price of the stock drops, short sellers buy the stock at the lower price and make a profit. If the price of the stock rises, short sellers will incur a loss. [[short selling]] is used for many purposes, including to profit from an expected downward price movement, to provide [[Liquidity]] in response to unanticipated buyer demand, or to hedge the risk of a long position in the same security or a related security.
+
+Typically, when you sell short, your [[Broker]]age firm loans you the stock. The stock you borrow comes from either the firm’s own inventory, the margin account of other brokerage firm clients, or another lender. As with buying stock on [[Margin]], your brokerage firm will charge you interest on the loan, and you are subject to the margin rules. If the stock you borrow pays a [[Dividend]], you must pay the [[Dividend]] to the person or firm making the loan.
+
+Although the vast majority of short sales are legal, abusive short sale practices are illegal. For example, it is prohibited for any person to engage in a series of transactions in order to create actual or apparent active trading in a security or to depress the price of a security for the purpose of inducing the purchase or sale of the security by others. Thus, short sales effected to manipulate the price of a stock are prohibited.
+
+https://www.sec.gov/investor/pubs/regsho.htm
