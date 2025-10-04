@@ -1,0 +1,4 @@
+The stock registrar ([[Transfer Agent]]) function operates to guard against the overissuance of [[Securities]]. Finally, subsequent to cancellation, transfer agents must retain cancelled [[Physical Securities Certificates]] in a secure location to ensure that they are not used in fraudulent transactions.
+
+When an overissuance of securities occurs the number of [[shares]] overissued must be reduced, either by recovering the overissued shares from those to whom they were issued or by the person or entity responsible for the overissuance buying that number of shares on the open market and retiring the shares, which in effect represents a loss to that person or entity.
+https://www.fdic.gov/bank-examinations/section-11-fdic-registered-transfer-agent-examination-manual
