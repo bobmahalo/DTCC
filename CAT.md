@@ -1,0 +1,16 @@
+
+The Commission adopted [[Rule 613]] to create a comprehensive [[Consolidated Audit Trail]] that would allow regulators to efficiently and accurately track all activity throughout the U.S. markets in National Market System ([[NMS]]) [[Securities]]. Among other things, the rule requires the self-regulatory organizations ([[SRO]]s) to jointly submit a plan – called an [[NMS plan]] – to create, implement and maintain a [[Consolidated Audit Trail]]. The rule specifies the type of data to be collected and when the data is to be reported to a central repository.
+
+In particular, the rule mandates that the NMS plan:
+
+- Require each national securities exchange and [[FINRA]], as well as their respective members, to provide certain detailed information to a newly created central repository regarding each quote and order in an NMS security, and each reportable event with respect to each quote and order, such as origination, modification, cancellation, routing, and execution.
+- Require certain data to be reported to the central repository by 8 a.m. Eastern Time the following trading day, and be subsequently available to regulators for their analysis.
+- Require all reportable events to be reported to the central repository in a way that allows the central repository to efficiently and accurately link them to an order through its entire life cycle from generation through routing, modification, cancellation, or execution.
+- Require each broker-dealer and national securities exchange to be assigned a code that uniquely and consistently identifies such broker-dealer or national securities exchange that will be reported to the central repository along with every reportable event.
+- Require each account holder, as well as any person who has trading discretion over an account holder’s account, to be assigned a code that uniquely and consistently identifies such account holder or person with trading discretion over the account, that will be reported to the central repository for every order originated.
+- Require SROs and their members to synchronize the business clocks they use to record the date and time of any reportable event, and require timestamps for each reportable event to the central repository to be in millisecond or finer increments.
+
+The rule allows the SROs to determine the specifics of how market participants would report data to the central repository. While this might allow for multiple electronic formats, the data must be reported in a way that enables the central repository to send it to regulators in a uniform electronic format.
+
+The SROs have made available a wide range of information about the current status of the system including FAQs, technical specifications for reporting and related activities and phase/reporting time lines at [www.catnmsplan.com](https://www.catnmsplan.com/).
+https://www.sec.gov/about/divisions-offices/division-trading-markets/rule-613-consolidated-audit-trail
