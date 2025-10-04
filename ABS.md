@@ -1,4 +1,4 @@
-Asset-backed securities (ABS) are created by buying and bundling loans – such as residential mortgage loans, commercial loans or student loans – and creating [[Securities]] backed by those assets, which are then sold to [[Investor]]s. Often, a bundle of loans is divided into separate securities with different levels of risk and returns. Payments on the loans are distributed to the holders of the lower-risk, lower-interest securities first, and then to the holders of the higher-risk securities. 
+[[Asset]]-backed securities (ABS) are created by buying and bundling loans – such as residential mortgage loans, commercial loans or student loans – and creating [[Securities]] backed by those assets, which are then sold to [[Investor]]s. Often, a bundle of loans is divided into separate securities with different levels of risk and returns. Payments on the loans are distributed to the holders of the lower-risk, lower-interest securities first, and then to the holders of the higher-risk securities. 
 
 Most public offerings of ABS are conducted through expedited SEC registration procedures known as “[[shelf offering]]s.” ABS offerings also are sold as private placements which are exempt from [[SEC]] registration. Privately-issued ABS are typically sold to large institutional [[Investor]]s known as qualified institutional buyers or [[QIB]]s. 
 
@@ -6,7 +6,7 @@ During the financial crisis, ABS holders suffered significant losses. The crisis
 
 In April 2010, the Commission proposed certain revisions to the existing rules applicable to ABS transactions, including:
 
-- Requiring the filing of tagged, computer-readable, standardized information about the specific assets, or loans, in the pool. This so-called “loan-level information” would be provided at the time the asset is securitized _and_ on an ongoing basis.  
+- Requiring the filing of tagged, computer-readable, standardized information about the specific assets, or loans, in the pool. This so-called “loan-level information” would be provided at the time the [[asset]] is securitized _and_ on an ongoing basis.  
      
 - Requiring the ABS issuer to file on the SEC website a computer program that provides [[Investor]]s with a tool to analyze information about specific loans within the pool of assets. This computer program would show the effect of the so-called “waterfall” so [[Investor]]s can analyze how the borrowers’ loan payments are distributed to [[Investor]]s in the ABS, how losses or lack of payment on those loans will be divided among the [[Investor]]s, and when administrative expenses, such as loan servicing fees, are paid to service providers.  
      

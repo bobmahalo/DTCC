@@ -7,7 +7,7 @@ DTC provides securities movements for [[NSCC]]'s net settlements, and settlement
 DTC's core services include:
 
 - [Settlement Services](https://www.dtcc.com/clearing-and-settlement-services/settlement)
-- [Corporate Actions Processing](https://www.dtcc.com/asset-services/corporate-actions-processing) 
+- [Corporate Actions Processing](https://www.dtcc.com/[[asset]]-services/corporate-actions-processing) 
 - [Securities Processing](https://www.dtcc.com/asset-services/securities-processing)
 - [Issuer Services](https://www.dtcc.com/asset-services/issuer-services)
 - [Underwriting Services](https://www.dtcc.com/asset-services/underwriting)

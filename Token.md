@@ -1,0 +1,1 @@
+[[ICO]] and [[STO]] are examples of tokens and have the ability to have [[Smart Contract]]s.
