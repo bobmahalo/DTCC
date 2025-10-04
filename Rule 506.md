@@ -1,0 +1,17 @@
+[Rule 506](http://www.ecfr.gov/cgi-bin/text-idx?SID=0a94ea1a8a9ecce212ec25025efed3af&node=17:3.0.1.1.12.0.46.181&rgn=div8) of [[Regulation D]] provides two distinct exemptions from registration for companies when they offer and sell [[Securities]]. Companies relying on the Rule 506 exemptions can raise an unlimited amount of money.
+
+Under Rule 506(b), a “safe harbor” under Section 4(a)(2) of the [[Securities Act of 1933]], a company can be assured it is within the Section 4(a)(2) exemption by satisfying certain requirements, including the following:
+
+- The company cannot use general solicitation or advertising to market the [[Securities]].
+- The company may sell its securities to an unlimited number of [[accredited investors]] and up to 35 other purchasers. All non-accredited investors, either alone or with a purchaser representative, must be sophisticated—that is, they must have sufficient knowledge and experience in financial and business matters to make them capable of evaluating the merits and risks of the prospective investment.
+- Companies must decide what information to give to accredited investors, so long as it does not violate the antifraud prohibitions of the federal securities laws. This means that any information a company provides to investors must be free from false or misleading statements. Similarly, a company should not exclude any information if the omission makes what is provided to investors false or misleading. Companies must give non-accredited investors disclosure documents that are generally the same as those used in [[Regulation A]] or registered offerings, including financial statements, which in some cases may need to be certified or audited by an accountant. If a company provides information to accredited investors, it must make this information available to non-accredited investors as well.
+- The company must be available to answer questions by prospective purchasers.
+
+Under Rule 506(c), a company can broadly solicit and generally advertise the offering and still be deemed to be in compliance with the exemption’s requirements if:
+
+- The investors in the offering are all accredited investors; and
+- The company takes reasonable steps to verify that the investors are accredited investors, which could include reviewing documentation, such as W-2s, tax returns, bank and brokerage statements, credit reports and the like.
+
+Purchasers of securities offered pursuant to Rule 506 receive [[restricted securities]], meaning that the securities cannot be sold for at least six months or a year without registering them.
+
+Companies that comply with the requirements of Rule 506(b) or (c) do not have to register their offering of [[Securities]] with the [[SEC]], but they must file what is known as a "[Form D](http://www.sec.gov/about/forms/formd.pdf)" electronically with the SEC after they first sell their securities. Form D is a brief notice that includes the names and addresses of the company’s promoters, executive officers and directors, and some details about the offering, but contains little other information about the company.  You can access the SEC’s [EDGAR database](http://www.sec.gov/edgar.shtml) to determine whether the company has filed a Form D.
