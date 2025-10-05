@@ -5,5 +5,5 @@ Subject to the requirements of NASD [[Rule 3210]]
 
 Where, for five consecutive settlement days, there are aggregate fails to deliver at a registered clearing agency of 10,000 shares or more and the reported last sale during normal market hours would value the aggregate fail to deliver position at $50,000 or more.
 
-When this occurs, the security becomes subject to mandatory [[Close-out Requirement]]s outlined in NASD Rule 3210.
+When this occurs, the security becomes subject to mandatory Close-out Requirements outlined in NASD Rule 3210.
 https://www.nasdaqtrader.com/Trader.aspx?id=RegShoDefs#:~:text=Rule%2032101&text=Where%2C%20for%20five%20consecutive%20settlement,out%20requirements%20of%20Rule%203210.
