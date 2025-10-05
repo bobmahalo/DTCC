@@ -3,7 +3,7 @@
 ![[Untitled 4 67.jpg]]
 
 ![[Untitled 4 68.jpg]]
-If your brokers propietary position is in conflict with your companies mission,...*too bad*.
+If your brokers propietary position is in conflict with your [[Companies]] mission,...*too bad*.
 ![[Untitled 4 69.jpg]]
 
 ![[Untitled 4 70.jpg]]

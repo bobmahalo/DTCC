@@ -1,7 +1,7 @@
-When a company distributes—in the form of cash or stock—a portion of its earnings to shareholders, it’s called a dividend. A cash dividend gives you a sum of money for each share owned, and a stock dividend gives you additional shares in the company. For example, a stock dividend of 10 percent means that for every 10 shares you own, you will get one additional share. Companies with substantial retained earnings might pay a dividend to pass the benefit on to its shareholders.
+When a company distributes—in the form of cash or stock—a portion of its earnings to shareholders, it’s called a dividend. A cash dividend gives you a sum of money for each share owned, and a stock dividend gives you additional shares in the company. For example, a stock dividend of 10 percent means that for every 10 shares you own, you will get one additional share. [[Companies]] with substantial retained earnings might pay a dividend to pass the benefit on to its shareholders.
 https://www.finra.org/investors/insights/corporate-actions-public-companies-what-you-should-know
 
-When companies are profitable, they can choose to distribute some of those earnings to shareholders by paying a dividend. You can either take the dividends in cash or reinvest them to purchase more [[shares]] in the company. [[Investor]]s seeking predictable income may turn to stocks that pay dividends. Stocks that pay a higher-than-average dividend are called "income stocks."
+When [[Companies]] are profitable, they can choose to distribute some of those earnings to shareholders by paying a dividend. You can either take the dividends in cash or reinvest them to purchase more [[shares]] in the company. [[Investor]]s seeking predictable income may turn to stocks that pay dividends. Stocks that pay a higher-than-average dividend are called "income stocks."
 https://www.finra.org/investors/investing/investment-products/stocks
 
 **Sec. 501. NOTICE OF DIVIDEND**

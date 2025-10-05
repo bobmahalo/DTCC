@@ -1,5 +1,5 @@
 Capital markets are where [[Securities]] such as [[Stock]]s and bonds are issued and traded. U.S. capital markets instruments include (1) stocks, also called equity or [[shares]], referring to ownership of a firm; (2) bonds, also called fixed income or debt securities, referring to the creditorship of a firm or a government entity; (3) shares of investment funds, which are pooled investment vehicles that consolidate money from [[Investor]]s; and (4) digital [[asset]] securities, referring to digital representations of value in securities form. 
 
-As a main segment of the financial system, capital markets provide the largest sources of financing for U.S. nonfinancial companies. U.S. capital markets provided 74% of the financing for nonfinancial firms in 2023. By contrast, capital markets play a less prominent role in other major economies, which rely more on bank financing.
+As a main segment of the financial system, capital markets provide the largest sources of financing for U.S. nonfinancial [[Companies]]. U.S. capital markets provided 74% of the financing for nonfinancial firms in 2023. By contrast, capital markets play a less prominent role in other major economies, which rely more on bank financing.
 
 https://www.congress.gov/crs-product/IF11062

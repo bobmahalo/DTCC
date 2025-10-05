@@ -1,6 +1,6 @@
 What is the role of accredited [[Investor]]s?
 
-For many companies raising capital in the private [[Stock Exchange]], the accredited [[Investor]] definition may define who is in their pool of potential [[Investor]]s, and for [[Investor]]s whether they are eligible to invest. Many of the offering exemptions under [[SEC]] laws limit participation to accredited [[Investor]]s or contain restrictions on participation by non-accredited [[Investor]]s.
+For many [[Companies]] raising capital in the private [[Stock Exchange]], the accredited [[Investor]] definition may define who is in their pool of potential [[Investor]]s, and for [[Investor]]s whether they are eligible to invest. Many of the offering exemptions under [[SEC]] laws limit participation to accredited [[Investor]]s or contain restrictions on participation by non-accredited [[Investor]]s.
 https://www.sec.gov/resources-small-businesses/capital-raising-building-blocks/accredited-[[investor]]s
 
 Certain [[Securities]] offerings that are exempt from registration may only be offered to, or purchased by, persons who are “accredited [[Investor]]s.”

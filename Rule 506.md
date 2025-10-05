@@ -1,4 +1,4 @@
-[Rule 506](http://www.ecfr.gov/cgi-bin/text-idx?SID=0a94ea1a8a9ecce212ec25025efed3af&node=17:3.0.1.1.12.0.46.181&rgn=div8) of [[Regulation D]] provides two distinct exemptions from registration for companies when they offer and sell [[Securities]]. Companies relying on the Rule 506 exemptions can raise an unlimited amount of money.
+[Rule 506](http://www.ecfr.gov/cgi-bin/text-idx?SID=0a94ea1a8a9ecce212ec25025efed3af&node=17:3.0.1.1.12.0.46.181&rgn=div8) of [[Regulation D]] provides two distinct exemptions from registration for [[Companies]] when they offer and sell [[Securities]]. Companies relying on the Rule 506 exemptions can raise an unlimited amount of money.
 
 Under Rule 506(b), a “safe harbor” under Section 4(a)(2) of the [[Securities Act of 1933]], a company can be assured it is within the Section 4(a)(2) exemption by satisfying certain requirements, including the following:
 
