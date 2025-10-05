@@ -12,6 +12,6 @@ Under Rule 506(c), a company can broadly solicit and generally advertise the off
 - The investors in the offering are all [[accredited investors]]; and
 - The company takes reasonable steps to verify that the investors are [[accredited investors]], which could include reviewing documentation, such as W-2s, tax returns, bank and brokerage statements, credit reports and the like.
 
-Purchasers of securities offered pursuant to Rule 506 receive [[restricted securities]], meaning that the securities cannot be sold for at least six months or a year without registering them.
+Purchasers of securities offered pursuant to Rule 506 receive [[Restricted Securities]], meaning that the securities cannot be sold for at least six months or a year without registering them.
 
 Companies that comply with the requirements of Rule 506(b) or (c) do not have to register their offering of [[Securities]] with the [[SEC]], but they must file what is known as a "[Form D](http://www.sec.gov/about/forms/formd.pdf)" electronically with the SEC after they first sell their securities. Form D is a brief notice that includes the names and addresses of the company’s promoters, executive officers and directors, and some details about the offering, but contains little other information about the company.  You can access the SEC’s [EDGAR database](http://www.sec.gov/edgar.shtml) to determine whether the company has filed a Form D.
