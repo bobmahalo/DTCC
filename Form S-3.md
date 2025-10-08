@@ -1,4 +1,4 @@
-Form S-3 is the registration statement that the Securities and Exchange Commission ([[SEC]]) requires reporting company [[Issuer]]s to file in order to issue [[shelf offering]]s.
+Form S-3 is the registration statement that the [[Securities and Exchange Commission]] ([[SEC]]) requires reporting company [[Issuer]]s to file in order to issue [[shelf offering]]s.
 
 Generally, under Section 5 of the [[Securities Act of 1933]], an issuer must file a registration statement to offer securities to the public. [[Rule 415]] of the Securities Act, however, provides “[[Securities]] may be registered for an offering to be made on a continuous or delayed basis in the future,” i.e. it enables shelf offerings. Issuers file shelf offerings with Form S-3. 
 

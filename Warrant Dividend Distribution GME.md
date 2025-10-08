@@ -320,7 +320,7 @@ of a market for those warrants; and stockholder and noteholder participation in 
 
 distribution. These and other risks are more fully described in GameStop’s filings with the
 
-securities and Exchange Commission (“SEC”), including in the section entitled “Risk
+[[securities and Exchange Commission]] (“SEC”), including in the section entitled “Risk
 
 Factors” in its Annual Report on Form 10-K for the fiscal year ended February 1, 2025 and
 

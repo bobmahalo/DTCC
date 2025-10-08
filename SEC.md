@@ -37,7 +37,7 @@ As we continue to monitor the activities of more than 28,000 entities in the sec
 
 https://www.sec.gov/about/mission
 
-The federal securities laws empower the Securities and Exchange Commission with broad authority over all aspects of the [[Securities]] industry. The [SEC’s mission](https://www.sec.gov/about/mission "Mission") is to protect [[Investor]]s; maintain fair, orderly, and efficient [[Capital Markets]]; and facilitate [[Capital Formation]].
+The federal securities laws empower the [[Securities and Exchange Commission]] with broad authority over all aspects of the [[Securities]] industry. The [SEC’s mission](https://www.sec.gov/about/mission "Mission") is to protect [[Investor]]s; maintain fair, orderly, and efficient [[Capital Markets]]; and facilitate [[Capital Formation]].
 
    
 The SEC has up to five Commissioners appointed by the President on the advice and consent of the Senate. No more than three Commissioners can be members of the same political party.
