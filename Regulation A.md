@@ -1,4 +1,5 @@
-Regulation A is an exemption from registration for public offerings. Regulation A has two offering tiers: Tier 1, for offerings of up to $20 million in a 12-month period; and Tier 2, for offerings of up to $75 million in a 12-month period. For offerings of up to $20 million, companies can elect to proceed under the requirements for either Tier 1 or Tier 2.
+Regulation A is an exemption from registration for [[public offering]]s. Regulation A has two offering tiers: Tier 1, for offerings of up to $20 million in a 12-month period; and Tier 2, for offerings of up to $75 million in a 12-month period. For offerings of up to $20 million, companies can elect to proceed under the requirements for either Tier 1 or Tier 2.
 
 There are certain basic requirements applicable to both Tier 1 and Tier 2 offerings, including company eligibility requirements, bad actor disqualification provisions, disclosure, and other matters. Additional requirements apply to Tier 2 offerings, including limitations on the amount of money a non-accredited investor may invest in a Tier 2 offering, requirements for audited financial statements and the filing of ongoing reports. Issuers in Tier 2 offerings are not required to register or qualify their offerings with state securities regulators.
+[[SEC]]
 https://www.sec.gov/resources-small-businesses/exempt-offerings/regulation
