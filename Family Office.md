@@ -27,7 +27,7 @@ Any company that:
     
     - Any non-profit or charitable organization funded exclusively by family clients;
         
-    - Any estate of a family member, former family member, key employee, or subject to certain conditions, a former key employee;
+    - Any estate of a family [[Member]], former family [[Member]], key employee, or subject to certain conditions, a former key employee;
         
     - Certain family client trusts; and
         

@@ -4,7 +4,7 @@ For the Depository Trust and Clearing Corporation ([[DTCC]]), CCF and [[CCFII]] 
 
 CCF (Computer-to-Computer Facility)
 
-- **A proprietary protocol:** CCF is a proprietary file format used by DTCC's subsidiaries, primarily the Depository Trust Company ([[DTC]]), to exchange information with member firms.
+- **A proprietary protocol:** CCF is a proprietary file format used by DTCC's subsidiaries, primarily the Depository Trust Company ([[DTC]]), to exchange information with [[Member]] firms.
 - **Record-based files:** In CCF, participants receive a data file with a single header record followed by the detailed transaction records.
 - **Used for various functions:** CCF is used for a wide variety of functions, including securities processing and transmitting information on daily collateral loan balances.
 

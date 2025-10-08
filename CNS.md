@@ -1,7 +1,7 @@
-The CNS System is [[NSCC]]’s core netting, allotting and fail-control engine. Within CNS, each security is netted to one position per Member, with NSCC as its central counterparty ([[Novation]]). 
+The CNS System is [[NSCC]]’s core netting, allotting and fail-control engine. Within CNS, each security is netted to one position per [[Member]], with NSCC as its central counterparty ([[Novation]]). 
 
 
-Within CNS, NSCC acts as the central counterparty for clearance and settlement for virtually all [[Broker]]-to-broker [[Equity]], corporate and municipal bond and unit investment trust trading in the United States. CNS settles trades from the nation's major [[Stock Exchange]]s, markets and other sources and nets these transactions to one security position per Member per day. Typically, NSCC’s trade guarantee will attach to CNS transactions that reach point of validation. 
+Within CNS, NSCC acts as the central counterparty for clearance and settlement for virtually all [[Broker]]-to-broker [[Equity]], corporate and municipal bond and unit investment trust trading in the United States. CNS settles trades from the nation's major [[Stock Exchange]]s, markets and other sources and nets these transactions to one security position per [[Member]] per day. Typically, NSCC’s trade guarantee will attach to CNS transactions that reach point of validation. 
 
 CNS processes include an automated [[Book-entry]] accounting system that centralizes [[settlement]] and maintains an orderly flow of security and money balances. 
 
