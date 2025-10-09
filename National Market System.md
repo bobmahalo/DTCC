@@ -1,0 +1,4 @@
+National Market System ([[NMS]])
+
+Refers to over-the-counter trading. System of trading [[OTC]] stocks under the sponsorship of the [[National Association of Securities Dealers]]. Must meet certain criteria for size, profitability and trading activity. More comprehensive information is available for NMS [[Stock]]s than for non-NMS stocks traded [[OTC]](high, low, and last-sale prices, cumulative volume figures, and bid and ask quotations throughout the day). This is due to the fact that [[Market Maker]]s  must report the actual price and number of [[shares]] in each transaction within 90 seconds verses nonreal-time reporting for non-NMS stocks (thus, last sales prices and minute-to-minute volume updates are not possible).
+https://www.nasdaq.com/glossary/n/national-market-system

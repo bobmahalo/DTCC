@@ -1,5 +1,5 @@
 
-The Commission adopted [[Rule 613]] to create a comprehensive [[Consolidated Audit Trail]] that would allow regulators to efficiently and accurately track all activity throughout the U.S. markets in National Market System ([[NMS]]) [[Securities]]. Among other things, the rule requires the self-regulatory organizations ([[SRO]]s) to jointly submit a plan – called an [[NMS plan]] – to create, implement and maintain a [[Consolidated Audit Trail]]. The rule specifies the type of data to be collected and when the data is to be reported to a central repository.
+The Commission adopted [[Rule 613]] to create a comprehensive [[Consolidated Audit Trail]] that would allow regulators to efficiently and accurately track all activity throughout the U.S. markets in [[National Market System]] ([[NMS]]) [[Securities]]. Among other things, the rule requires the self-regulatory organizations ([[SRO]]s) to jointly submit a plan – called an [[NMS plan]] – to create, implement and maintain a [[Consolidated Audit Trail]]. The rule specifies the type of data to be collected and when the data is to be reported to a central repository.
 
 In particular, the rule mandates that the NMS plan:
 
