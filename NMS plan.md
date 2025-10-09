@@ -1,0 +1,2 @@
+The Securities and Exchange Commission ([[SEC]]) requires that each [[Participant]] in an effective [[National Market System]] Plan (NMS Plan) ensure that a current and complete version of the NMS Plan is posted on a central web site. Below are links to the central web sites that provide copies of each of the NMS Plans in which [[FINRA]] participates. In addition, each of the web sites provides any proposed amendments to these plans that are pending with the [[SEC]].
+https://www.finra.org/rules-guidance/guidance/national-market-system-plans
