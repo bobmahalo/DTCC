@@ -4,7 +4,7 @@
 (2) A stock split or reverse split; or
 (3) A rights or other subscription offering.
 (b) Notice shall be deemed to have been given in accordance with this section only if:
-(1) Given to the National Association of Securities Dealers, Inc., no later than 10 days prior to the record date involved or, in case of a rights subscription or other offering if such 10 days advance notice is not practical, on or before the record date and in no event later than the effective date of the registration statement to which the offering relates, and such notice includes:
+(1) Given to the [[National Association of Securities Dealers]], Inc., no later than 10 days prior to the record date involved or, in case of a rights subscription or other offering if such 10 days advance notice is not practical, on or before the record date and in no event later than the effective date of the registration statement to which the offering relates, and such notice includes:
 (i) Title of the security to which the declaration relates;
 (ii) Date of declaration;
 (iii) Date of record for determining holders entitled to receive the [[Dividend]] or other distribution or to participate in the stock or reverse split;
