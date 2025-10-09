@@ -1,0 +1,1 @@
+# This rule is no longer applicable. Incorporated [[NYSE]] Rule Interpretation 405 has been superseded by [[FINRA]] [[Rule 2090]]. Please consult the appropriate FINRA Rule.
