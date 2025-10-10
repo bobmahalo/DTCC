@@ -1,0 +1,3 @@
+Trades based on signals from computer programs, usually entered directly from the trader's computer in to the market's computer system and executed automatically. Applies to [[Derivatives]] products. A process of electronic execution of trading of a basket of stocks simultaneously, for index arbitrage, portfolio restructuring, or outright buy/sell interests.
+See: [super dot](https://www.nasdaq.com/glossary/s/super-d.o.t.).
+https://www.nasdaq.com/glossary/p/program-trading
