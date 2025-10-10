@@ -29,3 +29,11 @@ No contract shall be closed pursuant to paragraph (e) of this Rule prior to the 
 The party making such offsetting purchase or sale contracts shall as promptly as possible on the day on which they are made (1) notify the other party via letter, facsimile transmission, electronic mail, or other comparable written media, and (2) mail or deliver formal confirmation of same to the other party and a copy of said confirmation to the Committee.
 https://www.finra.org/rules-guidance/rulebooks/finra-rules/11740
 
+If you qualify for the trader tax status, you may want to consider if making an election under section 475 of the tax code to mark-to-market all your trades could help you save on taxes. This election is not for everyone, but it can offer additional tax benefits in the right situation. Just be aware, if you make this election, you can only undo it with permission from the IRS.
+
+The primary benefit of making this election is that you no longer have to worry about the [wash sale rule](https://www.schwab.com/learn/story/understanding-wash-sale-rule)and any trading losses you generate are treated as a business loss, which means those losses can offset your ordinary income without the normal $3,000 annual limit. In addition, all gains, losses, and expenses are reported in a business tax return (e.g., schedule C).
+
+However, those tax benefits do have a cost, and you'll be required to realize all gains and losses at year-end, no matter if you sold the investment or not. Because you mark-to-market all trades at year-end, the cost basis of all assets are also adjusted to match the market price at the end of the year. That way, any future gains and losses in the following year will account for the fact that you already realized a portion of the trade in the prior year. 
+
+To make the mark-to-market election, you'll need to file [Form 3115](https://www.irs.gov/forms-pubs/about-form-3115) (Application for Change in Accounting Method). [IRS Publication 550](https://www.irs.gov/pub/irs-pdf/p550.pdf) describes the procedures in making this election with the IRS.
+https://www.schwab.com/learn/story/mark-to-market-trader-taxes
