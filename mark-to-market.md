@@ -27,7 +27,5 @@ No contract shall be closed pursuant to paragraph (e) of this Rule prior to the 
 **(g) Notice of Offsetting Purchase or Sale**
 
 The party making such offsetting purchase or sale contracts shall as promptly as possible on the day on which they are made (1) notify the other party via letter, facsimile transmission, electronic mail, or other comparable written media, and (2) mail or deliver formal confirmation of same to the other party and a copy of said confirmation to the Committee.
+https://www.finra.org/rules-guidance/rulebooks/finra-rules/11740
 
-|                                                                                                     |
-| --------------------------------------------------------------------------------------------------- |
-| Amended by SR-[[FINRA]]-2010-030 eff. Dec. 15, 2010.  <br>Amended eff. Feb. 21, 1969; Mar. 1, 1970. |
