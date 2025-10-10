@@ -1,4 +1,4 @@
-Companies can choose to “list” their [[Securities]] for trading on a national securities exchange, such as the [[NASDQ]] [[Stock Exchange]] or the New York Stock Exchange ([[NYSE]]). Find a list of [national securities exchanges](https://www.sec.gov/rules-regulations/self-regulatory-organization-rulemaking "Self-Regulatory Organization Rulemaking") that have been registered with the [[SEC]].
+Companies can choose to “list” their [[Securities]] for trading on a national securities exchange, such as the [[NASDAQ]] [[Stock Exchange]] or the New York Stock Exchange ([[NYSE]]). Find a list of [national securities exchanges](https://www.sec.gov/rules-regulations/self-regulatory-organization-rulemaking "Self-Regulatory Organization Rulemaking") that have been registered with the [[SEC]].
 
 Listing securities may provide increased [[Liquidity]] for a company’s shareholders by making it easier for shareholders to sell their securities to other [[Investor]]s in the public market, sometimes called [secondary trading](https://www.sec.gov/jargon-z#SM).
 
