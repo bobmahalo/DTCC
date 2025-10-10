@@ -1,1 +1,1 @@
-[[The National Association of Securities Dealers]]
+[[National Association of Securities Dealers]]
