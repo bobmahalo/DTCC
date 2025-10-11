@@ -32,7 +32,7 @@ Member organizations which have in their possession or under their control [[Bon
 
 **(3)** the systems and the manner in which such securities are held as referred to in (c)(1) and (c)(2) and the right of customers under subparagraph (C)(4) are disclosed to all customers prior to the member organization's depositing in bulk or prior to the customer purchasing such securities, such disclosure to be made in writing prior to deposit or purchase except in the case of a new account, provided notice as herein described is sent to the customer prior to settlement date; and
 
-**(4)** customers have the right to withdraw uncalled fully paid securities from the firm at any time prior to a partial call, and also to withdraw excess margin securities provided that the customers' accounts are not subject to restriction under Regulation T or such withdrawals will not cause a [[Rule 431]] undermargined condition.
+**(4)** customers have the right to withdraw uncalled fully paid securities from the firm at any time prior to a partial call, and also to withdraw excess margin securities provided that the customers' accounts are not subject to restriction under [[Regulation T]] or such withdrawals will not cause a [[Rule 431]] undermargined condition.
 
 In the event there is any call of such securities referred to in (b) and (c) above which is favorable to the called parties, the member organization shall not allocate any such called securities to any account in which it or its general, limited, or special partners, officers, directors, approved persons or employees have an interest until all other customers' positions in such securities have been satisfied.
 https://www.finra.org/rules-guidance/rulebooks/retired-rules/rule-402
