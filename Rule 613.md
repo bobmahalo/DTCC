@@ -2,10 +2,10 @@ The Commission adopted Rule 613 to create a comprehensive [[Consolidated Audit T
 
 In particular, the rule mandates that the NMS plan:
 
-- Require each national securities exchange and [[FINRA]], as well as their respective members, to provide certain detailed information to a newly created central repository regarding each quote and order in an NMS security, and each reportable event with respect to each quote and order, such as origination, modification, cancellation, routing, and execution.
+- Require each [[national securities exchange]] and [[FINRA]], as well as their respective members, to provide certain detailed information to a newly created central repository regarding each quote and order in an NMS security, and each reportable event with respect to each quote and order, such as origination, modification, cancellation, routing, and execution.
 - Require certain data to be reported to the central repository by 8 a.m. Eastern Time the following trading day, and be subsequently available to regulators for their analysis.
 - Require all reportable events to be reported to the central repository in a way that allows the central repository to efficiently and accurately link them to an order through its entire life cycle from generation through routing, modification, cancellation, or execution.
-- Require each [[Broker]]-dealer and national securities exchange to be assigned a code that uniquely and consistently identifies such broker-dealer or national securities exchange that will be reported to the central repository along with every reportable event.
+- Require each [[Broker]]-dealer and [[national securities exchange]] to be assigned a code that uniquely and consistently identifies such broker-dealer or [[national securities exchange]] that will be reported to the central repository along with every reportable event.
 - Require each account holder, as well as any person who has trading discretion over an account holder’s account, to be assigned a code that uniquely and consistently identifies such account holder or person with trading discretion over the account, that will be reported to the central repository for every order originated.
 - Require SROs and their members to synchronize the business clocks they use to record the date and time of any reportable event, and require timestamps for each reportable event to the central repository to be in millisecond or finer increments.
 

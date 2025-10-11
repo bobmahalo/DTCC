@@ -1,5 +1,5 @@
 240.10b–17 Untimely announcements of record dates.
-(a) It shall constitute a ‘‘manipulative or deceptive device or contrivance’’ as used in section 10(b) of the Act for any [[Issuer]] of a class of [[Securities]] publicly traded by the use of any means or instrumentality of interstate commerce or of the mails or of any facility of any national securities exchange to fail to give notice in accordance with paragraph (b) of this section of the following actions relating to such class of [[Securities]]:
+(a) It shall constitute a ‘‘manipulative or deceptive device or contrivance’’ as used in section 10(b) of the Act for any [[Issuer]] of a class of [[Securities]] publicly traded by the use of any means or instrumentality of interstate commerce or of the mails or of any facility of any [[national securities exchange]] to fail to give notice in accordance with paragraph (b) of this section of the following actions relating to such class of [[Securities]]:
 (1) A [[Dividend]] or other distribution in cash or in kind, except an ordinary interest payment on a debt security, but including a [[Dividend]] or distribution of any security of the same or another [[Issuer]];
 (2) A stock split or reverse split; or
 (3) A rights or other subscription offering.
@@ -20,6 +20,6 @@
 (viii) The case of stock or reverse split in addition to the aforementioned information;
 (a) The name and address of the transfer or exchange agent; or
 (2) The Commission, upon written request or upon its own motion, exempts the issuer from compliance with paragraph (b)(1) of this section either unconditionally or on specified terms or conditions, as not constituting a manipulative or deceptive device or contrivance comprehended within the purpose of this section; or
-(3) Given in accordance with procedures of the national securities exchange or exchanges upon which a security of such issuer is registered pursuant to section 12 of the Act which contain requirements substantially comparable to those set forth in paragraph (b)(1) of this section.
+(3) Given in accordance with procedures of the [[national securities exchange]] or exchanges upon which a security of such issuer is registered pursuant to section 12 of the Act which contain requirements substantially comparable to those set forth in paragraph (b)(1) of this section.
 (c) The provisions of this rule shall not apply, however, to redeemable securities issued by open-end investment companies and unit investment trusts ([[UIT]]) registered with the Commission under the [[Investment Company Act]] of 1940.
 https://www.govinfo.gov/content/pkg/CFR-2025-title17-vol4/pdf/CFR-2025-title17-vol4-sec240-10b-17.pdf
