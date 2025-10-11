@@ -1,0 +1,2 @@
+[[Rehypothecation]] is an alternative name for [[Repledging]]. In the [[Derivatives]] market, rehypothecation is sometimes called _re-use_. However, the term ‘re-use’ is also applied in the repo market for the onward outright sale of [[Collateral]] by a repo buyer to a third party in the cash market. This has caused some confusion.
+https://www.icmagroup.org/market-practice-and-regulatory-policy/repo-and-collateral-markets/icma-ercc-publications/frequently-asked-questions-on-repo/10-what-is-rehypothecation-of-collateral/
