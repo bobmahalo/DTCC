@@ -1,0 +1,9 @@
+**Exemptions from Investment Adviser Registration for Advisers to Small Business Investment Companies**
+
+**AGENCY:** [[Securities and Exchange Commission]].
+
+**ACTION:** Final rule.
+
+**SUMMARY:** We are adopting amendments to the rule that defines a venture capital fund (rule 203(_l_)-1) and the rule that implements the private fund adviser exemption (rule 203(m)-1) under the [[Investment Advisers Act]] of 1940 (the “Advisers Act”) in order to reflect changes made by title LXXIV, sections 74001 and 74002 of the Fixing America’s Surface Transportation Act of 2015 (the “FAST Act”), which amended sections 203(_l_) and 203(m) of the Advisers Act. Title LXXIV, section 74001 of the FAST Act amended the exemption from investment adviser registration for any adviser solely to one or more “venture capital funds” in Advisers Act section 203(_l_) by deeming “small business investment companies” to be “venture capital funds” for purposes of the exemption. Accordingly, we are amending the definition of a venture capital fund to include “small business investment companies.” Title LXXIV, section 74002 of the FAST Act amended the exemption from investment adviser registration for any adviser solely to “private funds” with less than $150 million in assets under management in Advisers Act section 203(m) by excluding the assets of “small business investment companies” when calculating “private fund assets” towards the registration threshold of $150 million. Accordingly, we are amending the definition of “assets under management” in the rule that implements the private fund adviser exemption to exclude the assets of “small business investment companies.”
+**DATES:** Effective March 12, 2018.
+https://www.sec.gov/files/rules/final/2018/ia-4839.pdf
