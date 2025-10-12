@@ -1,0 +1,3 @@
+
+This refers to a large financial institution that offers services to large institutional clients or [[Hedge Fund]]s. It is possible for a firm to have more than one prime broker. Importantly, the firm is not obligated to all of its business through the prime broker. The prime broker offers a variety of services which includes but is not limited to execution of trades, [[settlement]], financing and [[Custody]].
+https://www.nasdaq.com/glossary/p/prime-broker
