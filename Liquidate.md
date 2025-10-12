@@ -1,0 +1,2 @@
+If a startup decides to wind down operations, it will likely sell—or liquidate—its assets at market value and use the revenue to pay off obligations, returning the rest to shareholders in order of [liquidation preference](https://www.sec.gov/jargon-z#LiquidP).
+https://www.sec.gov/resources-small-businesses/capital-raising-building-blocks/exit-strategies-liquidity#:~:text=Liquidation%20of%20Assets,in%20order%20of%20liquidation%20preference.
