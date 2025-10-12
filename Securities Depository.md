@@ -1,6 +1,9 @@
 Years before the [[Paperwork Crisis]] the pilot program began. This prompts the question was the paperwork crisis created to implement the securities depository?
 
-![[Untitled 4 2.jpg]]
+In mid-196I the [[NYSE]], together with Bankers Trust Company, The Chase Manhattan Bank, NA, and First National City Bank of New York initiated the "Pilot Operation for Central Handling of [[Securities]]." Beginning with 15 [[Securities]] and 31 firms, deliveries were made between members by [[Book-entry]] and without the physical movement of certificates. Over the course of the pilot, which ended in early 1962, 14 million shares were delivered demonstrating [[Book-entry]] delivery's practicality.
+
+Throughout 1970 and much of 1971, [[BASIC]] acted on 14 projects designed to reduce the costs and improve the process of [[Securities]] operations. The most significant of these was the establishment of a Comprehensive Securities Depository System ([[CSDS]]) expanding upon the [[NYSE]]'s Central Certificate Service([[CCS]]). In September of 1971, BASIC announced the signing of a Memorandum of Understanding among the New York and American Stock Exchanges, the National Association of Securities Dealers([[NASD]]) and the eleven member banks of the New York Clearing House Association, toward this end. Regional markets and banks soon joined in the process and a National Coordinating Group (NCG) was formed. The planning to implement the elements of the Memorandum of Understanding was begun immediately, but in an atmosphere of uncertainty due to events unfolding at the Federal level.
 [https://www.sechistorical.org/collection/papers/1990/1999_0101_DTCHistory.pdf](https://www.sechistorical.org/collection/papers/1990/1999_0101_DTCHistory.pdf "https://www.sechistorical.org/collection/papers/1990/1999_0101_DTCHistory.pdf")
 
-The [[DTC]] was formed from the [[CCS]] on may 11, 1973. https://x.com/yuvalbenrobd/status/1953472418627891288
+The [[DTC]] was formed from the [[CCS]] on may 11, 1973.
+https://x.com/yuvalbenrobd/status/1953472418627891288
