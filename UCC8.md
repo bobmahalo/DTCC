@@ -1,10 +1,9 @@
-![[Untitled 4 3.jpg]]
+
+Before a certificate processing and safekeeping service could be initiated, it was necessary to secure amendments to Article 8 of the Uniform Commercial Code (UCC) that would sanction the transfer of ownership or pledge of [[Securities]] by depository book-entry in lieu of delivering [[Physical Securities Certificates]]. That effort began in 1962 and the last state's amendment was obtained in 1970. However, by the mid-1960s enough states had passed enabling legislation to encourage the New York Stock Exchange ([[NYSE]]), together with a core of New York Clearing House (NYCH) banks, to proceed to work out the details of the proposed service.
 [https://www.sechistorical.org/collection/papers/1990/1999_0101_DTCHistory.pdf](https://www.sechistorical.org/collection/papers/1990/1999_0101_DTCHistory.pdf "https://www.sechistorical.org/collection/papers/1990/1999_0101_DTCHistory.pdf")
 
 
-![[Untitled 4 38.jpg]]
-https://www.federalregister.gov/documents/2015/12/31/2015-32755/transfer-agent-regulations
+A number of legal and regulatory changes also led to increased participation at [[Securities]] depositories among banks and [[Broker]]-dealers. For example, in 1978, the UCC was revised to substitute the concept of delivery of [[Securities]] specific to the physical delivery of certificated securities with the concept of “transfer” by [[Book-entry]] on the books of a central depository. As a result, the only [[Book-entry]] transfers that qualified the transferee for protected purchaser rights under the UCC, as discussed above in Section II.A, were those made on the books of a clearing corporation.
 
-i believe this is AKA book entry.
-![[Untitled 4 39.jpg]]
+In 1977, the concept of the “uncertificated security” was introduced in Article 8 of the UCC. This innovation allowed issuers to issue uncertificated ( _i.e.,_ certificateless) book-entry securities, the transfer of which is greatly simplified compared to the transfer of certificated securities because transfer can be effected and protected purchaser status can be achieved by simply registering the transferee's name on the books of the issuer.
 https://www.federalregister.gov/documents/2015/12/31/2015-32755/transfer-agent-regulations
