@@ -3,7 +3,7 @@ https://osttra.com/wp-content/uploads/2022/09/TradeServ_FAQ.pdf
 
 Formerly DSMatch
 
-![[Untitled 4 17.jpg]]
+Since then we have provided the credit [[Derivatives]] market with trade matching, legal confirmation, [[Novation]] consent, regulatory reporting and much more. OSTTRA TradeServ is built on micro-service architecture that delivers higher levels of flexibility and customisation, with a new graphical user interface.
 
 https://osttra.com/trade-processing-for-credit/
 
