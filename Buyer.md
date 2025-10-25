@@ -1,0 +1,2 @@
+When an individual purchases either a [[Call option]] or [[Put Option]], they are referred to as the [[Option]] buyer. This gives them the [[right]], but not the [[obligation]], to take on a [[futures]] position. In other words, they have the choice to buy or sell the [[underlying]] asset at a predetermined price within a specific time frame. This is also known as being the [[holder]] of the [[Option]].
+https://www.angelone.in/finance-wiki/options-and-futures/option-buyer

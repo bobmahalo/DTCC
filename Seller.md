@@ -1,0 +1,3 @@
+An [[option]] seller is an individual who receives a [[Premium]] in exchange for selling an option and is responsible for fulfilling their [[obligation]] when the [[holder]] chooses to [[exercise]] their [[right]] under the [[Option]] [[contract]]. This role is also known as the [[writer]] or [[granter]]. As a knowledgeable professor in finance, it is important to understand the responsibilities and terminology associated with being an option seller. Let us delve further into this concept.
+
+https://www.angelone.in/finance-wiki/options-and-futures/option-seller
