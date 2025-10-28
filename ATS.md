@@ -3,3 +3,8 @@ An alternative trading system (ATS) is an [[SEC]]-regulated trading venue in whi
 For purposes of this Guidance, a prospective applicant for new membership should carefully review, in particular, Rules [1012](https://www.finra.org/rules-guidance/rulebooks/finra-rules/1012)(General Provisions), [1013](https://www.finra.org/rules-guidance/rulebooks/finra-rules/1013) (New Member Application and Interview), [1014](https://www.finra.org/rules-guidance/rulebooks/finra-rules/1014) (Department Decision), and for an existing [[Member]] that is contemplating the operation of an ATS, Rules 1012, 1014, and [1017](https://www.finra.org/rules-guidance/rulebooks/finra-rules/1017) (Application for Approval of Change in Ownership, Control, or Business Operations).
 
 https://www.finra.org/compliance-tools/map-tools/alternative-trading-systems-guidance
+
+Equity ATSs are required to submit weekly volume and transaction numbers, and FINRA publishes the weekly data
+
+on the ATS Transparency Data Website that is viewable by all users alike.
+https://www.finra.org/sites/default/files/ATS-transparency-data-website-user-guide-version3.pdf
