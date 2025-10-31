@@ -14,3 +14,6 @@ DTC's core services include:
 - [Global Tax Services](https://www.dtcc.com/asset-services/global-tax-services)
 
 https://www.dtcc.com/about/businesses-and-subsidiaries/dtc
+
+If an [[Issuer]] is not DTC eligible, then its [[shares]] cannot be transferred between brokerage accounts electronically, which basically means its shares cannot be traded easily.   Major Exchanges such as [[NYSE]] and [[NASDAQ]] require DTC eligibility.
+https://stctransfer.com/dtc-eligibility-information/#:~:text=If%20an%20issuer%20is%20not,available%20on%20DTC's%20web%20site
