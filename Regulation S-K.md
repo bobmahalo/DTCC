@@ -1,6 +1,87 @@
 Regulation S-K sets forth requirements for disclosure (other than financial statement disclosure) under both the [[Securities Act of 1933]] and the [[Securities Exchange Act of 1934]] and is applicable to both [[public offering]]s and ongoing reporting requirements. It is a key part of the Commission’s([[SEC]]) “integrated disclosure system,” which was created in 1982 following many years of analysis of the disclosure rules under the Securities Act and the Exchange Act. Under the integrated disclosure system, most registration and reporting forms under the Securities Act and the Exchange Act refer to Regulation S-K for many of their substantive disclosure requirements. Item 403 – Security Ownership of Certain Beneficial Owners and Management
 
 _General background._
-This requirement is derived from the provision in [[Schedule A]] of the [[Securities Act of 1933]] calling for the amount of [[Securities]] held by each member of management and owners of more than 10% of any class of the [[Issuer]]’s [[Stock]] and the amount for which each has indicated an intention to subscribe. In 1933, the Commission’s predecessor included similar provisions in [[Form A-1]]. In 1935, the Commission adopted more streamlined requirements in [[Form A-2]], but still called for the name and address of both the record holder and the [[Beneficial Owner]] (if known). In 1947, the Commission adopted revisions to [[Form S-1]], consolidating the requirements relating to security holdings into one item and amending requirements for individual reporting of share ownership of management with a requirement for aggregate amounts of equity [[Securities]] owned by directors and officers as a group. In 1948, the Commission simplified the format of the tabular presentation. In 1977, following the passage of the Williams Act in 1968 (which added Section 13(d) to the Exchange Act) and a series of public hearings held in 1974 by the Commission and Congress on beneficial ownership reporting, the Commission adopted beneficial ownership reporting requirements to provide more objective standards for the application of Section 13(d) of the Exchange Act and, in doing so, integrated the information concerning beneficial ownership of securities of publicly owned corporations into registration statement disclosure and periodic reporting requirements. In 1978, the requirement was added to Regulation S-K, combining the requirements from various forms into a new Item 6.1_Summary of past substantive changes to the requirement._ In 1982, as part of the expansion and reorganization of Regulation S-K, the requirements of former Item 6 were moved to Item 403, without substantive changes. Later in 1982, the Commission adopted amendments to the instructions to Item 403 in order to clarify beneficial ownership disclosure requirements. In 1992, the Commission added a requirement for separate disclosure of the security ownership of each named executive officer. In 2006, the Commission adopted additional requirements for disclosure of shares pledged as collateral by named executive officers, directors and director nominees, as well as the disclosure of directors’ qualifying shares.
+This requirement is derived from the provision in [[Schedule A]] of the [[Securities Act of 1933]] calling for the amount of [[Securities]] held by each member of management and owners of more than 10% of any class of the [[Issuer]]’s [[Stock]] and the amount for which each has indicated an intention to subscribe. In 1933, the Commission’s predecessor included similar provisions in [[Form A-1]]. In 1935, the Commission adopted more streamlined requirements in [[Form A-2]], but still called for the name and address of both the record holder and the [[Beneficial Owner]] (if known). In 1947, the Commission adopted revisions to [[Form S-1]], consolidating the requirements relating to security holdings into one item and amending requirements for individual reporting of share ownership of management with a requirement for aggregate amounts of equity [[Securities]] owned by directors and officers as a group. In 1948, the Commission simplified the format of the tabular presentation. In 1977, following the passage of the [[Williams Act]] in 1968 (which added [[Section 13(d)]] to the Exchange Act) and a series of public hearings held in 1974 by the Commission and Congress on [[Beneficial Owner]]ship reporting, the Commission adopted beneficial ownership reporting requirements to provide more objective standards for the application of [[Section 13(d)]] of the Exchange Act and, in doing so, integrated the information concerning beneficial ownership of [[Securities]] of publicly owned corporations into registration statement disclosure and periodic reporting requirements. In 1978, the requirement was added to Regulation S-K, combining the requirements from various forms into a new [[Item 6]].
+_Summary of past substantive changes to the requirement._
+In 1982, as part of the expansion and reorganization of Regulation S-K, the requirements of former [[Item 6]] were moved to [[Item 403]], without substantive changes. Later in 1982, the Commission adopted amendments to the instructions to [[Item 403]] in order to clarify beneficial ownership disclosure requirements. In 1992, the Commission added a requirement for separate disclosure of the security ownership of each named executive officer. In 2006, the Commission adopted additional requirements for disclosure of shares pledged as collateral by named executive officers, directors and director nominees, as well as the disclosure of directors’ qualifying shares.
+
+**D.** **Requirements Relating to the Registrant’s Securities**
+
+Item 201 – Market Price of and Dividends on the Registrant’s Common Equity and Related
+
+Stockholder Matters
+
+_General background._ In 1933, the Commission’s predecessor included as part of Form A-
+
+1 a requirement for disclosure of historical dividend rates and method of payment for three years
+
+in connection with each outstanding class of capital stock.222 In 1964, the Commission published
+
+Guide 10 calling for a statement of dividend policy,
+
+223 later revised as Guide 26 in 1968,
+
+224 and
+
+published Guide 13 calling for information about market quotations or disclosure of the absence
+
+of an established trading market.225 In 1980, a requirement for disclosure of market price and
+
+dividends on common equity was added to Regulation S-K,
+
+226 aggregating the requirements of
+
+paragraph (8) of Rule 14a-3 (which required market price information to be included in the annual
+
+report to security holders), Guide 26, Guide 13, and Item 9 of the previous Form 10-K (which
+
+required information as to the approximate number of equity security holders).
+
+_Summary of past substantive changes to the requirement._ In 1982, in connection with the
+
+reorganization and expansion of Regulation S-K, the requirement was re-designated as Item
+
+201,227 and, later that year, instructions were added relating to disclosure by foreign private issuers
+regarding securities issued in bearer form or as American Depositary Receipts.228 In 2001, the
+
+Commission adopted additional requirements for tabular disclosure regarding securities
+
+authorized for issuance under equity compensation plans, including number of securities,
+
+weighted average exercise price, securities available for future issuance and a description of any
+
+equity compensation plan that was adopted without the approval of security holders.229 In 2006,
+
+in connection with revisions to executive compensation disclosure requirements, the stock
+
+performance graph was moved from Item 402 to new paragraph (e) of Item 201.230
+
+_Scaled requirements or exemptions for specified classes of registrants._ Smaller reporting
+
+companies are not required to provide the stock performance graph.
+
+231 In addition, the stock performance graph is only required in an annual report to security holders that precedes or
+
+accompanies a proxy or information statement relating to the election of directors.232
+
+_Comments submitted to the Commission’s JOBS Act website._ One commenter
+
+recommended the elimination of historical stock price disclosure requirements because “data
+
+manipulation tools and daily stock information on most finance websites have made the historical
+
+stock price disclosures mandated by Item 201 of Regulation S-K largely obsolete.”233
+
+Two commenters recommended the elimination of requirements under Item 201(d)
+
+relating to the securities issued under compensation plans approved by shareholders and those not
+
+approved by shareholders, on the basis that it provides limited information not otherwise available
+
+to investors and that information is of marginal significance.234 In contrast, another commenter
+
+strongly opposed that recommendation, noting that such information is meaningful for
+
+institutional investors.235
 
 https://www.sec.gov/files/reg-sk-disclosure-requirements-review.pdf
