@@ -11,53 +11,12 @@ Item 201 – Market Price of and Dividends on the Registrant’s Common Equity a
 
 Stockholder Matters
 
-_General background._ In 1933, the Commission’s predecessor included as part of Form A-
+_General background._ In 1933, the Commission’s predecessor included as part of [[Form A-1]] a requirement for disclosure of historical [[Dividend]] rates and method of payment for three years in connection with each outstanding class of capital stock. In 1964, the Commission published [[Guide 10]] calling for a statement of dividend policy, later revised as [[Guide 26]] in 1968, and published [[Guide 13]] calling for information about market quotations or disclosure of the absence of an established trading market. In 1980, a requirement for disclosure of market price and dividends on common equity was added to Regulation S-K, aggregating the requirements of paragraph (8) of [[Rule 14a-3]] (which required market price information to be included in the annual report to security holders), [[Guide 26]], [[Guide 13]], and [[Item 9]] of the previous [[Form 10-K]] (which required information as to the approximate number of equity security holders).
 
-1 a requirement for disclosure of historical dividend rates and method of payment for three years
-
-in connection with each outstanding class of capital stock.222 In 1964, the Commission published
-
-Guide 10 calling for a statement of dividend policy,
-
-223 later revised as Guide 26 in 1968,
-
-224 and
-
-published Guide 13 calling for information about market quotations or disclosure of the absence
-
-of an established trading market.225 In 1980, a requirement for disclosure of market price and
-
-dividends on common equity was added to Regulation S-K,
-
-226 aggregating the requirements of
-
-paragraph (8) of Rule 14a-3 (which required market price information to be included in the annual
-
-report to security holders), Guide 26, Guide 13, and Item 9 of the previous Form 10-K (which
-
-required information as to the approximate number of equity security holders).
-
-_Summary of past substantive changes to the requirement._ In 1982, in connection with the
-
-reorganization and expansion of Regulation S-K, the requirement was re-designated as Item
-
-201,227 and, later that year, instructions were added relating to disclosure by foreign private issuers
-regarding securities issued in bearer form or as American Depositary Receipts.228 In 2001, the
-
-Commission adopted additional requirements for tabular disclosure regarding securities
-
-authorized for issuance under equity compensation plans, including number of securities,
-
-weighted average exercise price, securities available for future issuance and a description of any
-
-equity compensation plan that was adopted without the approval of security holders.229 In 2006,
-
-in connection with revisions to executive compensation disclosure requirements, the stock
-
-performance graph was moved from Item 402 to new paragraph (e) of Item 201.230
+_Summary of past substantive changes to the requirement._ In 1982, in connection with the reorganization and expansion of Regulation S-K, the requirement was re-designated as [[Item 201]], and, later that year, instructions were added relating to disclosure by foreign private [[Issuer]]s regarding [[Securities]] issued in bearer form or as American Depositary Receipts([[ADR]]). In 2001, the Commission adopted additional requirements for tabular disclosure regarding securities authorized for issuance under equity compensation plans, including number of securities, weighted average exercise price, securities available for future issuance and a description of any equity compensation plan that was adopted without the approval of security holders. In 2006, in connection with revisions to executive compensation disclosure requirements, the stock performance graph was moved from [[Item 402]] to new paragraph (e) of [[Item 201]].
 
 _Scaled requirements or exemptions for specified classes of registrants._ Smaller reporting companies are not required to provide the stock performance graph. In addition, the stock performance graph is only required in an annual report to security holders that precedes or accompanies a proxy or information statement relating to the election of directors.
 
-_Comments submitted to the Commission’s JOBS Act website._ One commenter recommended the elimination of historical stock price disclosure requirements because “data manipulation tools and daily stock information on most finance websites have made the historical stock price disclosures mandated by Item 201 of Regulation S-K largely obsolete.” Two commenters recommended the elimination of requirements under Item 201(d) relating to the securities issued under compensation plans approved by shareholders and those not approved by shareholders, on the basis that it provides limited information not otherwise available to investors and that information is of marginal significance. In contrast, another commenter strongly opposed that recommendation, noting that such information is meaningful for institutional investors.
+_Comments submitted to the Commission’s JOBS Act website._ One commenter recommended the elimination of historical stock price disclosure requirements because “data manipulation tools and daily stock information on most finance websites have made the historical stock price disclosures mandated by [[Item 201]] of Regulation S-K largely obsolete.” Two commenters recommended the elimination of requirements under Item 201(d) relating to the securities issued under compensation plans approved by shareholders and those not approved by shareholders, on the basis that it provides limited information not otherwise available to investors and that information is of marginal significance. In contrast, another commenter strongly opposed that recommendation, noting that such information is meaningful for institutional investors.
 
 https://www.sec.gov/files/reg-sk-disclosure-requirements-review.pdf
