@@ -19,4 +19,3 @@ _Scaled requirements or exemptions for specified classes of registrants._ Smalle
 
 _Comments submitted to the Commission’s JOBS Act website._ One commenter recommended the elimination of historical stock price disclosure requirements because “data manipulation tools and daily stock information on most finance websites have made the historical stock price disclosures mandated by [[Item 201]] of Regulation S-K largely obsolete.” Two commenters recommended the elimination of requirements under Item 201(d) relating to the securities issued under compensation plans approved by shareholders and those not approved by shareholders, on the basis that it provides limited information not otherwise available to investors and that information is of marginal significance. In contrast, another commenter strongly opposed that recommendation, noting that such information is meaningful for institutional investors.
 
-https://www.sec.gov/files/reg-sk-disclosure-requirements-review.pdf
