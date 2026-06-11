@@ -1,0 +1,248 @@
+---
+title: "92-Day Exemption Qualified Notice General Information Announcement User Guide"
+source_pdf: "file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/gtx110_92day_ex_qual_notice_ug20221212.pdf"
+pages: 13
+size: "1584.7 KB"
+category: "Tax_Legal"
+ingested_on: "2026-06-05"
+---
+
+# 92-Day Exemption Qualified Notice General Information Announcement User Guide
+
+**Original File:** [gtx110_92day_ex_qual_notice_ug20221212.pdf](file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/gtx110_92day_ex_qual_notice_ug20221212.pdf)  
+**Category:** Tax_Legal  
+**Total Pages:** 13  
+**File Size:** 1584.7 KB  
+
+---
+
+## Page 1
+
+GLOBALTAXSERVICES
+92-DAYEXEMPTIONQUALIFIEDNOTICEGENERALINFORMATION
+ANNOUNCEMENTUSERGUIDE
+VERSION1.4
+DECEMBER11,2022
+
+
+---
+
+## Page 2
+
+©2022DTCC.Allrightsreserved.[[DTCC]],[[DTCC]](Stylized),ADVANCINGFINANCIALMARKETS.
+TOGETHER,andtheInterlockergraphicareregisteredandunregisteredtrademarksofTheDepository
+Trust&ClearingCorporation.
+Theservicesdescribedhereinareprovidedunderthe“[[DTCC]]”brandnamebycertainaffiliatesofThe
+DepositoryTrust&ClearingCorporation(“[[DTCC]]”).DTCCitselfdoesnotprovidesuchservices.Eachof
+theseaffiliatesisaseparatelegalentity,subjecttothelawsandregulationsoftheparticularcountryor
+countriesinwhichsuchentityoperates.Pleaseseewww.[[DTCC]].comformoreinformationonDTCC,its
+affiliatesandtheservicestheyoffer.
+DocInfo:December11,2022
+PublicationCode:GTX110
+Service:GlobalTaxServices
+Title:92-DayExemptionQualifiedNoticeGeneralInformationAnnouncementUserGuide
+
+---
+
+## Page 3
+
+TABLEOFCONTENTS
+Overview 4
+FAQs 5
+MyDTCC(DTCCPortal) 6
+CorporateActionsWeb 6
+Howtosearchfor92-DayExemptionQualifiedNoticeAnnouncements? 6
+DeclaredPublicationDateSearch 7
+SpecialSearches 9
+SearchResults 10
+CAWeb92-DayExemptionQualifiedNoticeAnnouncement 10
+Event-LevelInformation 10
+DownloadQualifiedNotices 11
+ISO20022Messaging 12
+EventIdentification 12
+RelevantISO20022Messages 12
+DTCCWebsite 12
+
+---
+
+## Page 4
+
+Overview 4
+OVERVIEW
+[[DTC]]'s92-DayExemptionQualifiedNoticeAnnouncementsprovidethepostingdate("PostedDate")1 ofcertain
+QualifiedNoticesissuedbypubliclytradedpartnerships("PTPs").Thesequalifiednoticesprovidebrokerswithan
+exceptiontowithholding,for92days,ontransfersofaPTPbynon-USpartners2.Thisguideexplainshowtolocate
+92-DayExemptionQualifiedNoticeAnnouncementsfromPTPinCorporateActionsWeb("CAWeb").
+DTCwillprovidethe92-DayExemptionQualifiedNoticeAnnouncementswiththePostedDateasprovidedbyaPTP,
+andDTCparticipantswillbeabletoutilizetheannouncementtodeterminethe92-Dayexemptionperiodfortheir
+1446(f)withholdingobligations.
+Thetopicsdiscussedinthisguideinclude:
+l FAQs
+l AccessingCAWeb
+l Searchingfora92-DayExemptionQualifiedNoticeEventannouncement
+l ISOMessaging
+1 SeeTreasuryregulation1.446-4(b)(4)
+2 SeeTreasuryregulations1.1446(f)-4(b)(3)
+92-DayExemptionQualifiedNoticeGeneralInformationAnnouncementUserGuide
+
+---
+
+## Page 5
+
+FAQs 5
+FAQS
+1. HowdoIsearchfor92-DayExemptionQualifiedNoticeGeneralAnnouncements?
+a. UsetheCAWebEventLevelsearchfunction.Refertopage7formoreinformation.
+2. CanIdownloadtheQualifiedNoticeasprovidedbythePTP?
+a. Yes,theannouncementwillalsohaveaDocumentationtabforparticipantstodownloadthequalified
+noticeasreceivedfromthePTP.Refertopage11formoreinformation.
+3. Whatinformationisprovidedinthe92-DayExemptionQualifiedNoticeAnnouncement?
+a. TheCAWebeventwillprovidethePostedDate,whichwillbeprovidedintheDeclaredPublicationDate
+field.
+4. WhatistheDeclaredPublicationDate?
+a. InCAWeb,the92-DayExemptionQualifiedNoticeAnnouncementwillhavethisfieldwithacalendardate.
+ThisdaterepresentsthePostedDatefromthePTP’squalifiednotice.
+5. WhataretheISO20022specificationsfor92-DayExemptionQualifiedNoticeAnnouncements?
+a. EventType:INFO
+b. SubEventType:QN92
+c. TNDPIndicator:US05
+6. WhataretheCAWebspecifications?
+a. EventType:GeneralInformation
+b. SubEventType:92-DayExemptionQualifiedNotice
+92-DayExemptionQualifiedNoticeGeneralInformationAnnouncementUserGuide
+
+---
+
+## Page 6
+
+MyDTCC(DTCCPortal) 6
+MYDTCC(DTCCPORTAL)
+MyDTCC,theportalhomepageforDTCC,listsvarioussystemstowhichparticipantscanrequestaccess.Forthe
+purposesofthisguide,CAWebistheprimaryresource.
+CorporateActionsWeb
+CAWeballowsyoutoviewandworkwithcorporateactioneventinformationinavarietyofwaysincludingallocations
+andthenumberofannouncementscreateddaily.
+Howtosearchfor92-DayExemptionQualifiedNoticeAnnouncements?
+Todemonstratehowtosearchforandfinda92-DayExemptionQualifiedNoticeAnnouncement,we’llbeginby
+searchingforGeneralInformationCAWebeventtypeannouncementdata.
+92-DayExemptionQualifiedNoticeGeneralInformationAnnouncementUserGuide
+
+---
+
+## Page 7
+
+MyDTCC(DTCCPortal) 7
+1. PleasestartbyselectingAnnouncements>EventSearchfromthemainmenubar.
+2. ClicktheAdvancedSearchtab.
+ThiswalkthroughcontinuesintheDeclaredPublicationDateSearchsectionbelow.
+DeclaredPublicationDateSearch
+Thepublicationdateislikelythebestcriteriatousewhensearchingfora92-DayExemptionQualifiedNotice
+announcement.Yourneedsmayvary.
+92-DayExemptionQualifiedNoticeGeneralInformationAnnouncementUserGuide
+
+---
+
+## Page 8
+
+MyDTCC(DTCCPortal) 8
+Note
+CAWeblimitsto90-daysearches.Pleaseconductanothersearchtocapturetheremainingtwodays.This90-day
+searchlimitcanimpactwhetheryoufindanExemptionQualifiedNoticeAnnouncement.Werecommendthatyou
+performmultiplesearchestoensureyoudetectanyannouncementsthathappenbetween90-92days.For
+example,ifyouweretoconductasearchon4/15/2022fora92-dayExemptionQualifiedNoticeAnnouncement,
+youshouldconductasearch“04/15/2022Minus90Days”andalsoasearch“01/15/2022Minus90days”–thiswill
+ensureyouaremadeawareofanyannouncementthathappenedbetween90and92daysago.
+1. UnderEventGroup,check“Distributions”.
+2. UnderEvent/SubType,selectGeneralInformationand,thespecificeventtype:
+l 92-DayExemptionQualifiedNotice
+3. IntheDatearea,selectDateCriteria.
+l DeclaredPublicationDate:Chooseadatesuchas01/01/XXXXor03/31/XXXX.
+l Enter“+”toviewdaysforwardor“-“ toviewdayspriortotheselecteddate.90daysisthemaximumtime
+youcanchoosebeforeorafteryourselecteddate.
+92-DayExemptionQualifiedNoticeGeneralInformationAnnouncementUserGuide
+
+---
+
+## Page 9
+
+MyDTCC(DTCCPortal) 9
+4. Afterenteringtheseparameters,clickSearch.
+SpecialSearches
+Theoptionbelowisusedforspecificscenariossuchasannouncementeditsorlatestupdates.Ifyouarelookingfor
+thesetypeofsearchfeatures,pleasecontinuebelow:
+1. IntheDatearea,selectSystemDateCriteria.
+l CreateDateandTime:Displaysannouncementsthatwereinitiallycreatedwithinthespecifiedtimeframe.
+l UpdatedDateandTime:Displaysannouncementsthathadanyofthefieldsupdatedwithinthespecified
+timeframe:forexample,Comments.
+92-DayExemptionQualifiedNoticeGeneralInformationAnnouncementUserGuide
+
+---
+
+## Page 10
+
+MyDTCC(DTCCPortal) 10
+l Enteranappropriatedateanddurationofinterest:“+”daysforwardor“-“ dayspriortotheselecteddate.90
+daysisthemaximumtimeperiodbeforeorafteryourselecteddate.
+2. Afterenteringtheseparameters,clickSearch.
+SearchResults
+Afterlocatingtheresults,thescreendisplaysallCAWebeventslocatedinthedatarangedeterminedbyyoursearch
+criteria.Theannouncementssearchresultscanbefilteredtoshowalleventsoronlyeventsinwhichyouholda
+position.Bydefault,thescreendisplaysallavailablecolumns.Thesecanbenarroweddowntowhatyoudeem
+relevantbyclickingtheCustomizeResultColumnsicon.
+CAWeb92-DayExemptionQualifiedNoticeAnnouncement
+TheCAWeb92-DayExemptionQualifiedAnnouncementcontainsinformationaboutthePTP’sposteddate.This
+guidepresentsexamplesfromoneevent.
+Event-LevelInformation
+EacheventhasauniquecorporationactionidentifierundertheCAIDcolumn.ThisexamplereferencesCAID
+135592585.
+l EventTypeGeneralInformation:Thiseventtypeprovidesinformationfortheparticipantsthatdoesn’tneces-
+sarilyrefertoadistribution. 
+l SubEventType:92-DayExemptionQualifiedNotice
+l DeclaredPublicationDate:The“PostedDate”fromthePTP’sQualifiedNotice
+92-DayExemptionQualifiedNoticeGeneralInformationAnnouncementUserGuide
+
+---
+
+## Page 11
+
+MyDTCC(DTCCPortal) 11
+DownloadQualifiedNotices
+ThePTP’squalifiednoticewillbeavailablefordownloadintheDocumentstab.
+92-DayExemptionQualifiedNoticeGeneralInformationAnnouncementUserGuide
+
+---
+
+## Page 12
+
+ISO20022Messaging 12
+ISO20022MESSAGING
+ISO20022messagingprovidesthemostup-to-dateprocessforreceivingreal-timedata.TogetstartedwithISO
+20022messagingforyourfirm,contacttheCorporateActionsTransformationmailboxat
+camodernization@[[DTCC]].com.Whiletesting,clientsmaysubmitinquiriesand/orcommentstothismailboxaswell.
+Onceyourcompanyisactiveintheproductionenvironment,inquiriesshouldbedirectedtotheCustomerHelpCenter
+at888-382-2721.
+EventIdentification
+Alleventsareidentifiedbyasingleidentificationnumber(itsCAID,or“COAF”asitisknowninISO20022)that
+followstheeventthroughitslifecycle.Allsubsequentmessagesandcommunicationsrelatingtothiseventare
+referencedbythisnumber.
+RelevantISO20022Messages
+ThemessagesthataresentconcerningTaxEventannouncementsinclude:
+l CorporateActionNotification(CANO).Thismessagecontainsalloftheinformationknownaboutacorporate
+action:eventdetails,eventstatus,securitydescriptionanddetails,relevantdates,andmore.
+DTCCWebsite
+TheDTCCwebsite([[DTCC]].com)istheprimaryrepositoryforgeneralinformationanddocumentationconcerningthe
+latestCorporateActionsfunctionality.Clientscanreviewthepublisheddocumentation,downloaduserguides,and
+usethewebsitetostayuptodateonnewdevelopments.
+Seehttp://www.[[DTCC]].com/[[settlement]]-and-[[Asset]]-services/corporate-actions-processing/iso-20022-messaging-
+specificationsforthelatestmessagingspecificationsbycategory.
+92-DayExemptionQualifiedNoticeGeneralInformationAnnouncementUserGuide
+
+---
+
+## Page 13
+
+FORMOREINFORMATION
+EmailDTCCLearningat:
+CoreLearning@[[DTCC]].com
+orvisitusonthewebat:
+www.dtcclearning.com

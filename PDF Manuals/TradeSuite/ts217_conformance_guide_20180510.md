@@ -1,0 +1,1716 @@
+---
+title: "Conformance Guide"
+source_pdf: "file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/ts217_conformance_guide_20180510.pdf"
+pages: 45
+size: "1170.7 KB"
+category: "TradeSuite"
+ingested_on: "2026-06-05"
+---
+
+# Conformance Guide
+
+**Original File:** [ts217_conformance_guide_20180510.pdf](file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/ts217_conformance_guide_20180510.pdf)  
+**Category:** TradeSuite  
+**Total Pages:** 45  
+**File Size:** 1170.7 KB  
+
+---
+
+## Page 1
+
+TRADESUITEID™
+CONFORMANCEGUIDE
+VERSION8.0.5
+MAY10,2018
+
+
+---
+
+## Page 2
+
+Copyright©2018DTCC.Allrightsreserved.
+Thiswork(including,withoutlimitation,alltext,images,logos,compilationanddesign)isproprietaryandprotected
+bycopyright,andisfortheexclusiveuseofusersauthorizedbyDTCC.IfthisworkisreceivedfromDTCCinany
+electronicmedium,authorizedusersofthisworkaregrantedalimited,non-exclusive,non-transferable,non-
+sublicensableandfreelyrevocablelicensetomakereproductionsandtransmissionsnecessaryfordownloading
+andstorageofthisworkontheusers'computersandtoprintoneormorepapercopiesfromtheelectronicversion
+fortheirownuse.Otherthantothislimitedextent,nopartofthiswork(includinganypapercopiesthereoforprint
+versionsthereof)maybeprinted,copied,altered,modified,posted,reproduced,displayed,published,sold,
+licensed,usedordistributed(includingbytransmission)inanyformorbyanymeans,orstoredinanyinformation
+storageandretrievalsystem,withoutDTCC'spriorwrittenpermission.
+Allproductorservicenamesarethepropertyoftheirrespectiveowners.
+“[[DTCC]]”isthebrandnameunderwhichcertainaffiliatesofTheDepositoryTrust&ClearingCorporationprovide
+servicesinparticulargeographicareas.TheDepositoryTrust&ClearingCorporationdoesnotprovideservicesto
+clients.EachofTheDepositoryTrust&ClearingCorporation’saffiliatesisalegallyseparateandindependent
+entity,andeachissubjecttothelawsandregulationsoftheparticularcountryinwhichitoperates.Pleasesee
+www.[[DTCC]].comformoreinformationonthelegalstructureofTheDepositoryTrust&ClearingCorporationandits
+relatedentities.
+PublicationDate:May10,2018
+PublicationCode:TS217
+Service:TradeSuiteID
+Title:ConformanceGuide
+
+---
+
+## Page 3
+
+TABLEOFCONTENTS
+1.Preface 6
+Audience 6
+ChangesinthisVersion 6
+RelatedDocumentsandTraining 6
+Questions? 6
+2.Introduction 7
+Overviewoftheconformanceprocess 7
+ClientRequirements 7
+Terms 8
+3.RepoTestingMessages 11
+AbouttheTests 14
+DVP/RVPRepoMessage 14
+Record5(ExtensionofRecord1) 14
+Record6(Financing/RepoTransactions) 14
+Record1(GeneralTradeInput) 15
+SubstitutionRepoMessages 16
+Record5(ExtensionofRecord1) 16
+Record6(Financing/Repotransactions) 17
+Record1(Generaltradeinput) 17
+RolloverRepomessages 18
+Record5(ExtensionofRecord1) 18
+Record6(Financing/RepoTransactions) 18
+Record1(GeneralTradeInput) 20
+MarginCollateralCallRepomessages 21
+Record5(ExtensionofRecord1) 21
+Record6(Financing/Repotransactions) 21
+
+---
+
+## Page 4
+
+Record1(GeneralTradeInput) 21
+Hold-In-CustodyRepomessages 22
+Record5(extensionofRecord1) 22
+Record6(Financing/RepoTransactions) 23
+Record1(GeneralTradeInput) 23
+Tri-PartyRepoMessages 24
+Record5(ExtensionofRecord1) 24
+Record6(Financing/RepoTransactions) 24
+Record1(GeneralTradeInput) 25
+PhysicalRepomessages 26
+Record5(ExtensionofRecord1) 26
+Record6(Financing/RepoTransactions) 26
+Record1(GeneralTradeInput) 27
+ReversalRepoMessages 28
+Record5(ExtensionofRecord1) 28
+Record6(Financing/RepoTransactions) 28
+Record1(GeneralTradeInput) 28
+Sell/BuybackMessages 29
+Record5(ExEtensionofRecord1) 29
+Record6(Financing/RepoTransactions) 29
+Record1(GeneralTradeInput) 30
+SecurityLendingMessages 31
+Record5(ExtensionofRecord1) 31
+Record6(Financing/RepoTransactions) 31
+Record1(GeneralTradeInput) 32
+4.TradeSuiteIDtestingmessages 33
+10b-10testMessages 33
+Record5(extensionofRecord1) 33
+Record1(GeneralTradeInput) 34
+
+---
+
+## Page 5
+
+Record2(MunicipalSecuritiesInput) 34
+System-DefinedCriteriaUsingAssetClassEnrichment 35
+Record5(ExtensionofRecord1) 35
+Record1(GeneralTradeInput) 35
+System-DEefinedCcriteriaUusingSecurityTypeandSettlementLocation 36
+Record5(ExtensionofRecord1) 36
+Record1(GeneralTradeInput) 37
+User-DefinedCodes 38
+Record5(ExtensionofRecord1) 38
+Record1(GeneralTradeInput) 38
+ConfirmDisclosureBypassIndicator 39
+Record5(ExtensionofRecord1) 39
+Record1(GeneralTradeInput) 39
+A.TypicalFieldsinaRepoMessage 41
+Record5(ExtensionofRecord1) 41
+Record6(Financing/RepoTransactions) 41
+Record1(GeneralTradeInput) 43
+Record2(MunicipalSecuritiesInput) 43
+Record4(Mortgage-BackedSecuritiesInput) 44
+
+---
+
+## Page 6
+
+Preface 6
+1.PREFACE
+Thisdocumentprovidesbroker/dealersandinvestmentmanagersasetofcriteriatovalidatetheir
+application'scompatibilityusingTradeSuiteID™repurchaseagreement(repo)confirmations,which
+electronicallyalleviaterelianceonpaperconfirms.ClientscanleveragetheirexistingTradeSuiteID
+confirm/affirmprocesstohandlethissecuritytype.Thisdocumentconsistsofaseriesofmessagetestsand
+otherteststhatverifythatyourapplicationisacompatibleTradeSuiteIDservice,andyoursystemcan
+recoverfromatotalnetworkfailure.
+Audience
+Thisdocumentisforsystemsanalysts,programmers,andothersinvolvedincreatingandreceiving
+messagesthatflowbetweenorderers(usuallyinvestmentmanagers),executors([[Broker]]/dealers),othertrade
+parties,andtheTradeSuiteIDreposervice.
+ChangesinthisVersion
+Thisversionhasarevampedappearanceandlayoutofthedocumentationtoensureconsistencyacrossall
+DTCCapplications.
+RelatedDocumentsandTraining
+UsethisdocumentinconjunctionwiththeTradeSuiteID ConfirmArchiveReferencedocumentavailablein
+theConfirmArchivesectionoftheInstitutionalTradeProcessingLearningCenter.
+Forotherrelatedcontentandallreferencesinthisdocument,seetheTradeSuiteID8.0sectionofthe
+InstitutionalTradeProcessing-TradeSuiteIDLearningCenter.
+Questions?
+TheDTCC ClientCenterprovidesgeneralassistanceandtechnicalhelp.Visitwww.[[DTCC]].com/client-center
+to:
+l Enteraservicerequestorcheckthestatusofanexistingrequest
+l Searchtheknowledgebase
+l Obtaincontactinformation
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 7
+
+Introduction 7
+2.INTRODUCTION
+Thissectionintroducestheconformanceprocessanddescribesclientrequirements.Itcontainsthefollowing
+sections:
+l Overviewoftheconformanceprocess
+l Clientrequirements
+l Terms
+Overviewoftheconformanceprocess
+TheTradeSuiteIDrepoconformanceprocessisaseriesoftestsyouperformwiththeaidoftheDTCC
+IntegrationteamtotesttheTradeSuiteIDrepomessageflowsandtheabilityofyourapplicationtohandle
+certainsituationsfurtherdescribedinthisguide.Thepurposeoftheconformanceprocessistoguaranteethat
+yourapplicationcanmanagethefullfeaturesoftheTradeSuiteIDrepoproductionenvironment.Youmust
+successfullycompletetheconformanceprocessbeforetheIntegrationandTechnologyteamsimplement
+yourapplicationinaproductionenvironment.
+Whenyouareconfidentthatyourapplicationmeetsthefunctionalrequirementsandisrobustenoughtoinstall
+inaproductionenvironment,anintegrationconsultantschedulesatimefortheconformancetesting.Where
+possible,sendmessagestoexternalcounterpartieswhohaveasuitabletestenvironmentavailableaspartof
+yourinternaltesting.Thisexerciseactsasaproof-of-conceptandbenefitsallpartiesinvolved.Thisway,
+whentheapplicationmigratestotheproductionenvironment,unexpectedoutcomesareavoided.
+ThesectionsthatfollowoutlinetheteststhatyouandyourcounterpartyperformwiththeaidoftheDTCC
+Integrationteam.Whereapplicable,theIntegrationteamperformsthetasksrequiredtoproducespecific
+scenariostosuccessfullycompleteatest.Forexample,theIntegrationteamworkswithyoutosimulatea
+reposubstitutionconfirmmessagethattestsyourapplicationtohandlesuchasituation.
+ClientRequirements
+Youmustcodetothelatestmessagespecificationtotakeadvantageofnewfieldsforrepoprocessing.In
+addition,youmustfulfillthefollowingrequirementstosuccessfullycompleteconformancetesting:
+l CompletealltestsinternallybeforeDTCCallocatesthetimeforconformancetesting.Westrongly
+encourageyoutousethisdocumentaspartofyourinternaltestingstrategy.
+l PopulateallmandatorymessagefieldstocertifythefullfeaturesoftheDTCCtraderepo
+environment.
+Ifyoudonotneedthefullfeaturesavailable,certificationisstillpossiblewithanagreementandsign-
+off.Beforetesting,discussanyfeaturesthatyouwanttoexcludefromtheapplicationwithan
+Integrationconsultant.
+Ifyouaddanyenhancementstoyourapplicationaftercompletingtheconformancetesting,testthe
+entireapplicationagaininthetestenvironmentbeforemigratingtotheproductionenvironment.After
+youareintheproductionenvironment,donotmakeanyfunctionalchangestotheapplication
+withoutfullassessment,appraisal,andsign-offbyDTCCIntegrationconsultant.
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 8
+
+Introduction 8
+Terms
+Table2.1showsthetermsusedinthisdocument.
+Term Definition
+blocktrade Denotesanaggregatedtransaction.Usingablocktradeenablescounterpartiestoagreetoatrade
+inputatthesummarylevelandsubmitspecifictradeinput.Eachinputcorrespondingtoasingle
+pieceofcollateralthroughoutthecourseofadayasatradegetsfilled.Thespecifictradeinputscan
+betiedbacktotheblocktradeinputbyspecifyingareferencenumberidentifyingtheblock.
+Whileitisexpectedthatgeneralcollateralisthedominantcollateraltypechoiceforblocktrades,
+specificcollateral(asinthecaseofrepos)isnotprecludedfromblocktradetransactions.
+Submissionofablocktradeisoptional.
+Thefollowingoptionsareavailableforabroker/dealerusingtheblocktradeinputfunction:
+l AsingleconfirmcontainingtradeinputforboththeOnLegandOffLegtradeinput.
+l Individualconfirms,onefortheOnLegtradeinputandonefortheOffLegtradeinput.
+l Ablocklevelconfirmcontainingtradeinputasanaggregatedtransactionandparentreference
+numberoftheblockthatispopulatedontheconfirmsofthecollateraltradeinputs.
+l Noblocklevelconfirm,butareferencenumberpopulatedontheconfirmsofthecollateraltrade
+inputs,effectivelylinkingmultipletradeinputs
+[[collateral]]
+substitution
+Eitherpartycanrecallsecuritiesdeliveredandreceivedinassociationwithreposfromtimetotime
+asthesecuritiescanbesoldorotherwiseneededbytheoriginalparty.Suchcircumstancescanbe
+stipulatedintheoriginaltradeagreementandsuitablereplacementcollateralcanbeidentifiedso
+thattheoriginalcollateralcanbereplaced,ifnecessary.
+duebillrepo Seehold-in-[[custody]](HIC) repo.
+DVP/RVP
+repo
+DeliveryVersusPayment(DVP)/ReceiveVersusPayment(RVP)isatypeofrepothatgivesa
+perfectedinteresttothepurchaserofthereposecurity.Byvirtueofpayingforandpossessingthe
+reposecurity,therepopurchasercansellthesamecollateral,ifnecessary.Inthecaseof
+counterparty,defaultonreturnoftherepototherepodealerfromwhichitwaspurchased.
+equityrepo Reposonequitysecurities,suchascommonorordinaryshares.Theunderlyingsecurityformost
+repotransactionsisintheformofmoneymarketsecurities.
+financing Inthecontextofrepotrading,[[Broker]]/dealersandtheircustomerscanconfirmtradesunderdifferent
+headings.Theconsiderationsfortheseheadingsvary,butcertaintransactionslendthemselvesto
+thefinancingmonikerinsteadofarepo.Oneproductthatyoucanconfirmthiswayisoutright
+sell/buybacksandoutrightbuy/sellbacks.[[Broker]]/dealerscanlabelthesetradesasfinancing
+transactions,insteadofconfirmingthemasreposorsellsandbuys.
+GC Generalcollateral (GC)isacollateraltypeandageneralizeddescriptionoftheunderlying
+collateralwithinspecificparameters.Treasuries5–10isanexamplethatindicatesthatunderlying
+collateralisTreasurysecuritieswithmaturitydatesbetween5and10years.Thesecurity
+descriptionforGCcanbeindustryaccepted,dummyCUSIPnumbers,orcounterparty-defined.
+hold-in-
+[[custody]]
+(HIC) repo
+Thecollateralpledgedbythe(cash)borrowerisnotactuallydeliveredtothecashlender.Instead,it
+isplacedinaninternalaccount(heldincustody)bytheborrowerforthelenderthroughoutthe
+durationofthetrade.Thispracticehasbecomelesscommonastherepomarkethasgrown,
+particularlyowingtothecreationofcentralizedcounterparties.Duetothehighrisktothecash
+lender,thesearegenerallyonlytransactedamonglarge,financiallystableinstitutions.
+Table2.1Abbreviations,Acronyms,andRerms
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 9
+
+Introduction 9
+Term Definition
+interest
+clean-up
+Repotrackingcaninvolvecalculationofaccruedinterestand/orcouponpaymentsonrepo
+collateralduetothenatureofvariousfixedincomeproductsandaccompanyingcontractterms.
+Detailsofthesecalculationscanincludethecouponofthesecurity,reporate,interestdays,and
+interestaccrualmethodused.Thereisoftenapredeterminedscheduleforcalculatingaccrued
+interestontradesontermrepos.Paymentsarethenmadetotheappropriatepartytothetrade.
+openrepo Arepurchaseagreement(repo)madeonaday-to-daybasisthateithertheborrowerorthelender
+canterminate.Theratepaidishigherthanonanovernightrepoandissubjecttoadjustmentif
+ratesfluctuate.
+outrightbuy
+orsell
+Forthepurposesofthisguide,anoutrightbuyorsellisanon-repopurchaseorsaletransaction.
+repooffleg Thecloseofarepotransactionoccursthedaythesecurityisreturnedtothesell-sidedealereither
+bydeliveryorunpledgingtheassociatedrepocollateral.Therepoisclosedwhenprincipaland
+interestispaidtotheinitialrepopurchaser.
+repoonleg Arepotransactionalwaysinvolvesasaleandrepurchaseofanasset.Thetransactionstartsonthe
+tradedatewhenconditionsofthesalearedeterminedandagreedtoamongparties.Repointerest
+beginstoaccrueonthestartdate.Securitiesaredeliveredorpledgedtotherepotradeatthistime
+andprincipalmoneyispaidbythebuyeroftherepo.
+repurchase
+agreements
+(repo)
+Repurchaseagreementsorreposarefinancialinstrumentsusedinthemoneymarketsandcapital
+markets.Amoreaccurateanddescriptivetermissaleandrepurchaseagreement,sincewhat
+occursisthatacashreceiver(reposeller)sellssecurities,inreturnforcash,tothecashprovider
+(repobuyer),andagreestorepurchasethosesecuritiesfromthecashproviderforagreatersumof
+cashatsomelaterdate.Thatgreatersumisallofthecashlentandsomeextracash(constituting
+theimplicitinterestrate,knownasthereporate).Treasuryorothergovernmentbills,corporateand
+treasury/governmentbonds,andstocks,mayallbeusedassecuritiesinarepotransaction.
+Arepoiseconomicallysimilartoasecuredloan,withthebuyerreceivingsecuritiesascollateralto
+protectagainstdefault.However,thelegaltitletothesecuritiesclearlypassesfromthesellertothe
+[[Buyer]](orinvestor).Couponsareinstallmentpaymentsthatarepayabletotheownerofthe
+securitieswhiletherepobuyerownsthesecurities,couponsareusuallypasseddirectlyontothe
+reposellerwhichmightseemcounterintuitive,astheownershipofthecollateraltechnicallyrests
+withthebuyerduringtherepoagreement.Alternatively,itispossibletopassonthecouponby
+alteringthecashpaidattheendoftheagreement,thoughthisismoretypicalofsell/buybacks.
+Althoughtheunderlyingnatureofthetransactionisthatofaloan,theterminologydiffersfromthat
+usedforloansbecausetheselleractuallyrepurchasesthelegalownershipofthesecuritiesfrom
+thebuyerattheendoftheagreement.Althoughtheactualeffectofthewholetransactionis
+identicaltoacashloan,inusingtherepurchaseterminology,theemphasisisplacedonthelegal
+ownershipandtransferofownershipofthecollateralsecuritiesbytheparties.
+Althoughreposaretypicallyshort-term,itisnotuncommontoseereposwithamaturityaslongas
+twoyears.
+Table2.1Abbreviations,Acronyms,andRerms(continued)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 10
+
+Introduction 10
+Term Definition
+reverserepoArepurchaseagreementdescribedfromthecashprovider'sperspective.Thecashproviderisnot
+therepurchasingparty,butthereverse—thereselling.Thecashreceiverexecutingthetransaction
+mightdescribeitasarepo,whilethecashproviderinthesametransactionwoulddescribeitselfas
+executingareverserepo.Therefore,arepoandreverserepoaresimilartypesoftransaction,but
+describedfromoppositeviewpoints.
+sell/buybacksThespotsaleandaforwardrepurchaseofasecurity.Thebasicmotivationofsell/buybacksis
+generallythesameasforaclassicrepo(attemptingtobenefitfromthelowerfinancingrates
+generallyavailableforcollateralized,asopposedtonon-secured,borrowing).
+Thereareanumberofdifferencesbetweenthetwostructures.Arepoistechnicallyasingle
+transactionwhileasell/buybackisapairoftransactions(asellandabuy).Asell/buybackdoesnot
+requireanyspeciallegaldocumentation,whilearepogenerallyrequiresamasteragreementtobe
+inplacebetweenthebuyerandseller(typicallyaGMRA/ISMAorPSA/ISMA).
+Anycouponpaymentontheunderlyingsecurityduringthelifeofthesell/buybackisgenerally
+passedbacktothesellerofthesecuritybyadjustingthecashpaidattheterminationofthe
+sell/buyback.
+Throughthedesignintwoseparateddeals,reposubstitutionsandopenreposarenotpossiblein
+sellandbuybacks.
+Sell/buybacksareprimarilyassociatedwithcross-bordertradingentities.
+tri-partyrepoThedistinguishingfeatureofatri-partyrepoisthatacustodianbankorinternationalclearing
+organizationactsasanintermediarybetweenthecounterpartiesinarepo.Thetri-partyagentis
+responsiblefortheadministrationofthetransaction,includingcollateralallocation,marking-to-
+market,andsubstitutingcollateral.Boththelenderandborrowerofcashenterintothese
+transactionstoavoidtheadministrativeburdenofbilateralrepos.Sincethecollateralisheldbyan
+agent,counterpartyriskisreduced.Atri-partyrepoisanoutgrowthoftheduebillrepoorhold-in-
+[[custody]](HIC) repo,wherethecollateralisheldbyaneutralthird-party.
+wholeloan
+repo
+Aformofrepowherethetransactioniscollateralizedbyphysicalloanpapersorotherphysicalform
+ofobligation(suchasmortgagereceivables)ratherthanabookentrysecurity.
+Table2.1Abbreviations,Acronyms,andRerms(continued)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 11
+
+RepoTestingMessages 11
+3.REPOTESTINGMESSAGES
+Thissectionprovidesmessagetestsforconfirmingrepossenttosecuritiesclearancefacilities.Itdescribes
+thebusinesscasetestswhereabroker/dealersendsaconfirmmessagetoaninvestmentmanagerfor
+affirmationsothatatradecanbestagedforsettlement.Thetestsalsovalidateyourapplication’sabilityto
+sendasetofmessagescontainingmandatoryfieldsandvalidatereceptionofthemessagesfromanaffirm
+generatedbythehostoratestinvestmentmanager.Table3.1showstheconfirmmessages.
+Message TestName Businesscase
+DVP/RVP
+Repo
+DVP/RVP Thisisastand-aloneconfirmDVP/RVPtestandbasisforthenext
+fourreposubstitutiontests(ReceivePaymentAmount,Deliver
+PaymentAmount,DeliverCancel,andDeliverCorrection).
+Substitutions
+Repo
+ReceivePaymentAmount Thebroker/dealerproducesabuyconfirmationforthecollateral
+beingreturnedforprincipaldollarsandinstructsitsbankto
+receivetheoldcollateralbeingreturned.
+Delivery Payment AmountThebroker/dealerproducesasaleconfirmationforthe
+replacementsecuritiesforprincipaldollarsandinstructsitsbank
+todeliverthereplacementcollateral.
+DeliveryCancel Thebroker/dealercancelstheoriginaltradeconfirmation.
+DeliveryCorrection Thebroker/dealersendsacorrectedconfirmlistingthenew
+collateralandtheoriginaltermsofthetrade.
+Rollover
+Repo
+Receive No [[collateral]] MovementTherepoterminatesonmaturitydatewithprincipalandinterest
+payabletotheinvestor,typicallytransactedwithanOffLeg
+confirmationthatincludesalltradedetails(Receiveinformation)
+onit.
+Ifthetradeisbeingrolledover,theticketshouldhavespecial
+deliveryorothertextualinstructionsnotingthatcollateralwillnot
+bereturnedandfundswillbepaidinconjunctionwithanew
+deliveryconfirmprincipalamount.ConfirmPurposefieldis05-
+Rollover.
+DeliveryNoCollateralMovementAdeliveryconfirmationispreparedwithspecialdeliveryfield
+textualinstructionsstatingthatcollateraldeliveryisnottobe
+madeandtheConfirmPurposefieldis05-Rollover.
+Theprincipalbalancefromthissaleticketshouldbecomparedto
+theprincipalandinterestbalanceonthematuringrepoandthe
+differenceinfundsshouldbemovedtoorfromtheinvestor.
+Table3.1Testmessagedescriptions
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 12
+
+RepoTestingMessages 12
+Message TestName Businesscase
+Various MarginCollateralCallRepo Thisisarepotrademaintenancefunctionwherecollateralcan
+bemovedtoorfromaninvestorasthevalueoftheunderlying
+securityreactstomarketvolatility.EithertheConfirmPurpose
+fieldis04-MarginRe-Price/CollCallortheSecurityLending
+fieldis03-MarginRe-Price/CashCall.
+Hold-in-[[custody]](HIC)Repo DoesnotinvolvesecuritiesdeliveryandalsoknownasaDueBill
+orTrustMerepo.Historically,thiswasaprevalenttypeofrepo,
+butitwasabusedonanumberofoccasionsandhasfalleninto
+disfavor.Inahold-in-[[custody]](HIC)repo,specificsecuritiesare
+pledgedbyabroker/dealertoacustomerandsecuredina
+customersegregationaccountatthebroker/dealer’scustodial
+clearingagent.Thisrepotransactionistheleastsecureandis
+usuallyonlyenteredintobythemostreputablerepo
+[[Broker]]/dealers.
+Tri-PartyRepo Thesearethemostsecurerepotransactionsavailable.Theyare
+transactedbetweenabroker/dealer,itsclient,andacustodial
+bankingentity.Thepurchaserofthesereposhasacustomer
+agreementsignedwiththebroker/dealerandthecollateral
+agent.Thegeneraldetailsofthetrade(principalamountand
+collateralaredecidedbetweenthebroker/dealerandclient).The
+collateraldetails(specificsecurities)aredeterminedbythe
+custodianbank.
+PhysicalRepo Thistransactionusesphysicalsecuritiesascollateralandthe
+deliveryislikelymadetoareceivingentitiesagentbank
+securitiesreceivingwindowversuswirepaymentorfederalfunds
+check.Althoughrare,itisstilldonetofinanceWholeLoansand
+otherunsecuritizedphysicalfinancialinstruments.
+ReverseRepo Thisisthetemporarypurchaseofclientcollateraltosatisfyafirm
+strategy.Thestrategiesarenumeroussuchascollecting
+collateralforaStrips,CollateralizedMortgageObligation,or
+Matched-Booktradingopportunity.ReverseRepo'scomeinas
+manyvariationsasrepotransactions,buttheyareshort-term
+purchases,notsales.
+Table3.1Testmessagedescriptions(continued)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 13
+
+RepoTestingMessages 13
+Message TestName Businesscase
+Sell/BuybackSell/BuybackOnLeg OnLegisthestartofarepotransaction;however,thesale
+transactionincludesinterestassociatedwiththeunderlying
+collateralandthesaleisusuallydoneataspotprice.Reference
+totherepurchasedatemayormaynotbemadeinthe
+TradeSuiteIDfree-forminstructionsfieldsatthediscretionofthe
+[[Broker]]/dealerandorinvestmentmanager’s.Thisconfirmation
+shouldlooklikearegularsaletransactionconfirm.
+Sell/BuybackOffLeg OffLegistheendofarepotransaction;howevertherepurchase
+transactionincludesinterestassociatedwiththeunderlying
+collateralandthebuybackisusuallydoneataforwardprice.
+RepointerestisalsospecifiedandincludedintheNetAmountof
+thetrade.Itisimportantthatthebuyback(OffLeg)confirmgoout
+tothecounterpartyatthesametimeasthesaleconfirmto
+completeconfirmationofthetwo-sidedtradesale/buyback.
+Security
+Lending
+SecurityLendingOnLeg Securitylendingactivityismostoftenassociatedwithequity
+[[securities]].Thetransactionitselfmaybesecuredbycashorother
+collateralbutusuallycash.Thetermofthetransactionmaybe
+termoropen.Theusualreasonforsecuritylendingistocover
+failsorshorts.Thereisusuallyafeeassociatedwiththese
+transactionsratherthanarate.Thefeemaybedistributedto
+variousentitiesbasedonhowtheloanwastransacted.
+SecurityLendingOffLeg ThesecuritieslendingOffLegconfirmationshouldindicatethe
+close-outorenddateoftheloanaswellasapplyanyfeesor
+rebateassociatedwiththeloan.
+Table3.1Testmessagedescriptions(continued)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 14
+
+RepoTestingMessages 14
+AbouttheTests
+Thefieldsinthetesttablesinthissectioncontainthefollowinginformation:
+l Field–Indicatesthefieldintherecordthatisincludedintheconfirm.
+l Mandatory,Optional,orConditional–Indicateswhetherafieldis:
+o Mandatory–Essentialtothepurposeandmeaningoftheapplicationorgivenecessaryclarityto
+thetransactionbeingconfirmed.
+o Optional–Providesadditionalmeaningorclaritytocertaintransactionsthatmightrequiremore
+informationaboutparticulartrades.
+o Conditional–Requiredonlyundercertainconditions.
+l NotesandSampleValues/Placeholders–Indicatessampledataforafield.Providesa
+placeholderinthecaseofXXXXXXXXXXX,butnotnecessarilyforthatnumberofcharactersina
+field.
+Note
+Formoreinformationabouteachfieldinarecord,seetheInput/OutputInformation,ConfirmTrade
+InputMessageSpecification,andConfirmTradeOutputMessageSpecificationdocumentsavailablein
+theTradeSuiteID8.0sectionoftheInstitutionalTradeProcessing-TradeSuiteIDLearningCenter.
+DVP/RVPRepoMessage
+ThissectiondescribesthetypicalfieldsinaDVP/RVPRepomessage,whichtestswhetherornotyour
+applicationcansendaDVP/RVPconfirmtothehost.
+Record5(ExtensionofRecord1)
+Table3.2showsthetypicalfieldsinRecord5,whichisanextensionofRecord1.
+Field NotesandSampleValues/Placeholders
+ConfirmPurpose(optional) 01-Original
+DeliveryMethod(mandatory) 04-DVP/RVP
+DisclosureLink(optional) Outputonly
+DisclosureReferenceNumber(optional) Outputonly
+Table3.2DVP/RVPRepoMessage:Record5(ExtensionofRecord1)
+Record6(Financing/RepoTransactions)
+Table3.3showsthetypicalfieldsinRecord6–Financing/Repotransactions.
+Field NotesandSampleValues/Placeholders
+TradeType(mandatory) 01-Repo
+LegIdentifier(mandatory) LB-Both
+CollateralType(mandatory) 01-Treasuries
+StartDate(optional) 20071101
+EndDate/MaturityDate(optional) 20071224
+Table3.3DVP/RVPRepoMessage:Record6(Financing/RepoTransactions)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 15
+
+RepoTestingMessages 15
+Field NotesandSampleValues/Placeholders
+Numberofpiecesofcollateral(optional) 1
+ParentReferenceNumber(optional) XXXXXXXXXXX
+FINRate(optional) 4.375
+FINRateType(optional) F-Fixed
+AccrualMethod(optional) 01-30/360
+InterestDays(optional) 54
+AccruedInterestDueatMaturity(optional) XXXXXXXXXXX
+[[Haircut]]%(optional) XXXXXXXXXXX
+Table3.3DVP/RVPRepoMessage:Record6(Financing/RepoTransactions)(continued)
+Record1(GeneralTradeInput)
+Table3.4showsthetypicalfieldsinRecord1–Generaltradeinput.
+Field NotesandSampleValues/Placeholders
+[[shares]]/FaceValue(mandatory) XXXXXXXXXXX
+EXPSecurityType(mandatory) FIN
+[[Broker]]-DealerConfirmNumber(mandatory) XXXXXXXXXXX
+SideCode(mandatory) XXXXXXXXXXX
+Role(mandatory) XXXXXXXXXXX
+SettlementType(mandatory) XXXXXXXXXXX
+MarketCode(mandatory) XXXXXXXXXXX
+AgentIDNumber(optional) XXXXXXXXXXX
+DealerName(optional) XXXXXXXXXXX
+AccountType(mandatory) XXXXXXXXXXX
+ExecutingBroker/DealerIDNumber(mandatory) XXXXXXXXXXX
+InstitutionIDNumber(mandatory) XXXXXXXXXXX
+TradeDate(mandatory) 110107
+SettlementDate(mandatory) 110107
+SettlementLocation(mandatory) XXXXXXXXXXX
+SecurityNumberingSystem(mandatory) US
+SecurityIdentifier(mandatory) XXXXXXXXXXX
+CurrencyCode(mandatory) USD
+SecurityDescriptionLine1(optional) XXXXXXXXXXX
+Price(mandatory) XXXXXXXXXXX
+PrincipalAmount(mandatory) XXXXXXXXXXX
+NetAmount(mandatory) XXXXXXXXXXX
+TransactionType(mandatory) XXXXXXXXXXX
+Table3.4DVP/RVPRepoMessage:Record1(GeneralTradeInputt)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 16
+
+RepoTestingMessages 16
+SubstitutionRepoMessages
+ThissectiondescribesthetypicalfieldsintheSubstitutionRepomessagetypes.
+Record5(ExtensionofRecord1)
+Table3.5showsthetypicalfieldsinRecord5,whichisanextensionofRecord1.
+Field Receiveconfirmation
+forcollateralinterm
+DVP—principaldollars
+Deliveryconfirmation
+fornewcollateral
+usingsameParentID
+#
+Cancellationof
+originalDVP
+delivery
+confirmation
+Correcteddelivery
+confirmationreflectingnew
+collateraldeliveryandsame
+ParentID#
+Confirm
+Purpose
+(optional)
+02-Substitution 02-Substitution 02-Substitution02-Substitution
+Delivery
+Method
+(mandatory)
+04-DVP/RVP 04-DVP/RVP 04-DVP/RVP 04-DVP/RVP
+Special
+Instructions-
+Lines9-18
+XXXXXXXXXXX XXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXX
+Disclosure
+Link
+(optional)
+Outputonly Outputonly Outputonly Outputonly
+Disclosure
+Reference
+Number
+(optional)
+Outputonly Outputonly Outputonly Outputonly
+Table3.5SubstitutionRepomessages:Record5(ExtensionofRecord1)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 17
+
+RepoTestingMessages 17
+Record6(Financing/Repotransactions)
+Table3.6showsthetypicalfieldsinRecord6–Financing/Repotransactions.
+Field
+TradeType(mandatory) 01-Repo 01-Repo 01-Repo 01-Repo
+LegIdentifier(mandatory) LB-Both LB-Both LB-Both LB-Both
+CollateralType(mandatory) 01-Treasuries01-Treasuries01-Treasuries01-Treasuries
+StartDate(optional) 20071101 20071101 20071101 20071101
+EndDate/MaturityDate(optional) 20071224 20071224 20071224 20071224
+Numberofpiecesofcollateral(optional)1 1 1 1
+ParentReferenceNumber(optional) XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+FINRate(optional) 4.375 4.375 4.375 4.375
+FINRateType(optional) F-Fixed F-Fixed F-Fixed F-Fixed
+AccrualMethod(optional) 01-30/360 01-30/360 01-30/360 01-30/360
+AccruedInterestdueatMaturity(optional)XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+[[Haircut]]%(optional) XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+SubstitutionType(optional) M-MoneyFilledM-MoneyFilledM-MoneyFilledM-MoneyFilled
+Face(Par)orCashFillRepo(optional) C-CashFill C-CashFill C-CashFill C-CashFill
+Table3.6SubstitutionRepomessages:Record6(Financing/Repotransactions)
+Record1(Generaltradeinput)
+Table3.7showsthetypicalfieldsinRecord1–Generaltradeinput.
+Field
+[[shares]]/FaceValue(mandatory) XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+EXPSecurityType(mandatory) FIN FIN FIN FIN
+[[Broker]]-DealerConfirmNumber(mandatory)XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+SideCode(mandatory) XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Role(mandatory) XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+SettlementType(mandatory) XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+MarketCode(mandatory) XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+AgentIDNumber(optional) XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+DealerName(optional) XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+AccountType(mandatory) XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+ExecutingBroker/DealerIDNumber
+(mandatory)
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+InstitutionIDNumber(mandatory) XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+TradeDate(mandatory) 110107 110107 110107 110107
+SettlementDate(mandatory) =(dateofSub) =(dateofSub) 110107 110107
+Table3.7SubstitutionRepomessages:Record1(Generaltradeinput)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 18
+
+RepoTestingMessages 18
+Field
+SettlementLocation(mandatory) XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+SecurityNumberingSystem(mandatory) US US US US
+SecurityIdentifier(mandatory) XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+CurrencyCode(mandatory) USD USD USD USD
+SecurityDescriptionLine1(optional) XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Price(mandatory) XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+PrincipalAmount(mandatory) XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+NetAmount(mandatory) XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+TransactionType(mandatory) XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+OriginalBrokerConfirmNumber
+(conditional)
+XXXXXXXXXXX
+Table3.7SubstitutionRepomessages:Record1(Generaltradeinput)(continued)
+RolloverRepomessages
+ThissectiondescribesthetypicalfieldsintheRolloverRepomessagetypes.
+Record5(ExtensionofRecord1)
+Table3.8showsthetypicalfieldsinRecord5,whichisanextensionofRecord1
+Field Receive—nocollateralmovementDelivery—nocollateral
+movement
+ConfirmPurpose(optional) 05-Rollover 05-Rollover
+DeliveryMethod(mandatory) 05-Cashor99-Other 05-Cashor99-Other
+DeliveryInstructionsLine1(optional) Pair-Off/DonotRec Pair-Off/DonotDel
+WireInstructions(optional) XXXXXXXXXXX XXXXXXXXXXX
+SpecialInstructions-Lines9-18 XXXXXXXXXXX XXXXXXXXXXX
+DisclosureLink(optional)
+DisclosureReferenceNumber
+(optional)
+Table3.8RolloverRepomessages:Record5(ExtensionofRecord1)
+Record6(Financing/RepoTransactions)
+Table3.9showsthetypicalfieldsinRecord6–Financing/Repotransactions.
+Field Receive—nocollateral
+movement
+Delivery—nocollateral
+movement
+TradeType(mandatory) 01-Repo 01-Repo
+LegIdentifier(mandatory) LB-Both LB-Both
+CollateralType(mandatory) 01-Treasuries 01-Treasuries
+Table3.9RolloverRepoMessages:Record6(Financing/RepoTransactions)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 19
+
+RepoTestingMessages 19
+Field Receive—nocollateral
+movement
+Delivery—nocollateral
+movement
+StartDate(optional) 20071101 20071101
+EndDate/MaturityDate(optional) 20071224 FutureDate
+Numberofpiecesofcollateral(optional)1 1
+ParentReferenceNumber(optional) XXXXXXXXXXX XXXXXXXXXXX
+FINRate(optional) 4.375 NEW
+FINRateType(optional) F-Fixed XXXXXXXXXXX
+AccrualMethod(optional) XXXXXXXXXXX XXXXXXXXXXX
+AccruedInterestdueatMaturity
+(optional)
+XXXXXXXXXXX XXXXXXXXXXX
+[[Haircut]]%(optional) XXXXXXXXXXX XXXXXXXXXXX
+Table3.9RolloverRepoMessages:Record6(Financing/RepoTransactions)(continued)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 20
+
+RepoTestingMessages 20
+Record1(GeneralTradeInput)
+Table3.10showsthetypicalfieldsinRecord1–Generaltradeinput.
+Field Receive—nocollateral
+movement
+Delivery—nocollateral
+movement
+[[shares]]/FaceValue(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+EXPSecurityType(mandatory) FIN FIN
+[[Broker]]-DealerConfirmNumber(mandatory)XXXXXXXXXXX XXXXXXXXXXX
+SideCode(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+Role(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+SettlementType(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+MarketCode(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+AgentIDNumber(optional) XXXXXXXXXXX XXXXXXXXXXX
+DealerName(optional) XXXXXXXXXXX XXXXXXXXXXX
+AccountType(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+ExecutingBroker/DealerIDNumber
+(mandatory)
+XXXXXXXXXXX XXXXXXXXXXX
+InstitutionIDNumber(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+TradeDate(mandatory) 110107 RolloverDate
+SettlementDate(mandatory) RolloverDate FutureDate
+SettlementLocation(mandatory) NFS NFS
+SecurityNumberingSystem(mandatory) US US
+SecurityIdentifier(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+CurrencyCode(mandatory) USD USD
+SecurityDescriptionLine1(optional) XXXXXXXXXXX XXXXXXXXXXX
+Price(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+PrincipalAmount(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+NetAmount(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+TransactionType(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+Table3.10RolloverRepomessages:Record1(GeneralTradeInput)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 21
+
+RepoTestingMessages 21
+MarginCollateralCallRepomessages
+ThissectiondescribesthetypicalfieldsinaMarginCollateralCallRepomessage.
+Record5(ExtensionofRecord1)
+Table3.11showsthetypicalfieldsinRecord5,whichisanextensionofRecord1.
+Field NotesandSampleValues/Placeholders
+ConfirmPurpose(optional) 04-MarginRe-priceCollateralCall
+DeliveryMethod(mandatory) 01-Free
+DisclosureLink(optional) Outputonly
+DisclosureReferenceNumber(optional) Outputonly
+Table3.11MarginCollateralCallRepoMessages: Record5(ExtensionofRecord1)
+Record6(Financing/Repotransactions)
+Table3.12showsthetypicalfieldsinRecord6–Financing/Repotransactions.
+Field NotesandSampleValues/Placeholders
+TradeType(mandatory) 01-Repo
+LegIdentifier(mandatory) LB-Both
+CollateralType(mandatory) 01-Treasuries
+StartDate(optional) 20071101
+EndDate/MaturityDate(optional) 20071124
+Numberofpiecesofcollateral(optional) 1
+ParentReferenceNumber(optional) XXXXXXXXXXX
+Table3.12Record6(Financing/Repotransactions)
+Record1(GeneralTradeInput)
+Record1fields,[[shares]]/FaceValue,Price,PrincipalAmount,andNetAmountcanbeemptywhenthe
+SettlementTypefieldiseither3-WhenDistributedor4-WhenIssuedandDistributed.Otherwise,these
+fieldsrequiresomevalue(01).
+Table3.13showsthetypicalfieldsinRecord1–Generaltradeinput.
+Field NotesandSampleValues/Placeholders
+[[shares]]/FaceValue(mandatory) XXXXXXXXXXX
+EXPSecurityType(mandatory) COL
+[[Broker]]-DealerConfirmNumber(mandatory) XXXXXXXXXXX
+SideCode(mandatory) XXXXXXXXXXX
+Role(mandatory) XXXXXXXXXXX
+SettlementType(mandatory) XXXXXXXXXXX
+MarketCode(mandatory) XXXXXXXXXXX
+AgentIDNumber(optional) XXXXXXXXXXX
+Table3.13MarginCollateralCallRepoMessages: Record1(GeneralTradeInput)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 22
+
+RepoTestingMessages 22
+Field NotesandSampleValues/Placeholders
+DealerName(optional) XXXXXXXXXXX
+AccountType(mandatory) XXXXXXXXXXX
+ExecutingBroker/DealerIDNumber(mandatory) XXXXXXXXXXX
+InstitutionIDNumber(mandatory) XXXXXXXXXXX
+TradeDate(mandatory) SecurityDeliveryDate
+SettlementDate(mandatory) SecurityDeliveryDate
+SettlementLocation(mandatory) US
+SecurityNumberingSystem(mandatory) US
+SecurityIdentifier(mandatory) XXXXXXXXXXX
+CurrencyCode(mandatory) USD
+SecurityDescriptionLine1(optional) XXXXXXXXXXX
+Price(mandatory) XXXXXXXXXXX
+PrincipalAmount(mandatory) XXXXXXXXXXX
+NetAmount(mandatory) XXXXXXXXXXX
+TransactionType(mandatory) XXXXXXXXXXX
+Table3.13MarginCollateralCallRepoMessages: Record1(GeneralTradeInput)(continued)
+Hold-In-CustodyRepomessages
+ThissectiondescribesthetypicalfieldsinaHold-in-CustodyRepomessage.
+Record5(extensionofRecord1)
+Table3.14showsthetypicalfieldsinRecord5,whichisanextensionofRecord1.
+Field NotesandSampleValues/Placeholders
+ConfirmPurpose 01-Original
+DeliveryMethod(mandatory) 06-Hold-In-[[custody]]
+DisclosureLink(optional) Outputonly
+DisclosureReferenceNumber(optional) Outputonly
+Table3.14Hold-In-CustodyRepoMessages:Record5(ExtensionofRecord1)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 23
+
+RepoTestingMessages 23
+Record6(Financing/RepoTransactions)
+Table3.15showsthetypicalfieldsinRecord6–Financing/Repotransactions.
+Field NotesandSampleValues/Placeholders
+TradeType(mandatory) 01-Repo
+LegIdentifier(mandatory) LB-Both
+CollateralType(mandatory) 01-Treasuries
+StartDate(optional) 20071101
+EndDate/MaturityDate(optional) 20071102
+Numberofpiecesofcollateral(optional) 1
+ParentReferenceNumber(optional) XXXXXXXXXXX
+FINRate(optional) 4.375
+FINRateType(optional) F-Fixed
+AccrualMethod(optional) 01-30/360
+InterestDays(optional) 1
+AccruedInterestdueatMaturity(optional) XXXXXXXXXXX
+[[Haircut]]%(optional) XXXXXXXXXXX
+Table3.15Hold-In-CustodyRepoMessages:Record6(Financing/Repotransactions)
+Record1(GeneralTradeInput)
+Table3.16showsthetypicalfieldsinRecord1–Generaltradeinput.
+Field NotesandSampleValues/Placeholders
+[[shares]]/FaceValue(mandatory) XXXXXXXXXXX
+EXPSecurityType(mandatory) FIN
+[[Broker]]-DealerConfirmNumber(mandatory) XXXXXXXXXXX
+SideCode(mandatory) XXXXXXXXXXX
+Role(mandatory) XXXXXXXXXXX
+SettlementType(mandatory) XXXXXXXXXXX
+MarketCode(mandatory) XXXXXXXXXXX
+AgentIDNumber(optional) XXXXXXXXXXX
+DealerName(optional) XXXXXXXXXXX
+AccountType(mandatory) XXXXXXXXXXX
+ExecutingBroker/dealerIDNumber(mandatory) XXXXXXXXXXX
+InstitutionIDNumber(mandatory) XXXXXXXXXXX
+TradeDate(mandatory) 110107
+SettlementDate(mandatory) 110107
+SettlementLocation(mandatory) NFS
+SecurityNumberingSystem(mandatory) US
+Table3.16Hold-In-CustodyRepomessages:Record1(Generaltradeinput)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 24
+
+RepoTestingMessages 24
+Field NotesandSampleValues/Placeholders
+SecurityIdentifier(mandatory) XXXXXXXXXXX
+CurrencyCode(mandatory) USD
+SecurityDescriptionLine1(optional) XXXXXXXXXXX
+Price(mandatory) XXXXXXXXXXX
+PrincipalAmount(mandatory) XXXXXXXXXXX
+NetAmount(mandatory) XXXXXXXXXXX
+TransactionType(mandatory) XXXXXXXXXXX
+Table3.16Hold-In-CustodyRepomessages:Record1(Generaltradeinput)(continued)
+Tri-PartyRepoMessages
+ThissectioncontainsthetypicalfieldsintheTri-partyRepomessages.
+Record5(ExtensionofRecord1)
+Table3.17showsthetypicalfieldsinRecord5,whichisanextensionofRecord1.
+Field NotesandSampleValues/Placeholders
+ConfirmPurpose(optional) 01-Original
+DeliveryMethod(mandatory) 07-Tri-Party
+BlockTradeIndicator(optional) XXXXXXXXXXX
+WireInstructions(optional) XXXXXXXXXXX
+DisclosureLink(optional) Outputonly
+DisclosureReferenceNumber(optional) Outputonly
+Table3.17Tri-partyRepoMessages:Record5(ExtensionofRecord1)
+Record6(Financing/RepoTransactions)
+Table3.18showsthetypicalfieldsinRecord6–Financing/Repotransactions.
+Field NotesandSampleValues/Placeholders
+TradeType(mandatory) 01-Repo
+LegIdentifier(mandatory) LB-Both
+CollateralType(mandatory) 01-Treasuries
+Tri-PartyAgent(optional) BONY
+StartDate(optional) 20071101
+EndDate/MaturityDate(optional) 20071102
+Numberofpiecesofcollateral(optional) 1
+ParentReferenceNumber(optional) XXXXXXXXXXX
+FINRate(optional) 4.375
+FINRateType(optional) F-Fixed
+Table3.18Tri-partyRepoMessages:Record6(Financing/Repotransactions)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 25
+
+RepoTestingMessages 25
+Field NotesandSampleValues/Placeholders
+AccrualMethod(optional) 01-30/360
+InterestDays(optional) 1
+AccruedInterestdueatMaturity(optional) XXXXXXXXXXX
+[[Haircut]]%(optional) XXXXXXXXXXX
+Table3.18Tri-partyRepoMessages:Record6(Financing/Repotransactions)(continued)
+Record1(GeneralTradeInput)
+Table3.19showsthetypicalfieldsinRecord1–Generaltradeinput.
+Field NotesandSampleValues/Placeholders
+[[shares]]/FaceValue(mandatory) XXXXXXXXXXX
+EXPSecurityType(mandatory) FIN
+[[Broker]]-DealerConfirmNumber(mandatory) XXXXXXXXXXX
+SideCode(mandatory) XXXXXXXXXXX
+Role(mandatory) XXXXXXXXXXX
+SettlementType(mandatory) XXXXXXXXXXX
+MarketCode(mandatory) XXXXXXXXXXX
+AgentIDNumber(optional) XXXXXXXXXXX
+DealerName(optional) XXXXXXXXXXX
+AccountType(mandatory) XXXXXXXXXXX
+ExecutingBroker/DealerIDNumber(mandatory) XXXXXXXXXXX
+InstitutionIDNumber(mandatory) XXXXXXXXXXX
+TradeDate(mandatory) 110107
+SettlementDate(mandatory) 110107
+SettlementLocation(mandatory) NFS
+SecurityNumberingSystem(mandatory) US
+SecurityIdentifier(mandatory) XXXXXXXXXXX
+CurrencyCode(mandatory) USD
+SecurityDescriptionLine1(optional) XXXXXXXXXXX
+Price(mandatory) XXXXXXXXXXX
+PrincipalAmount(mandatory) XXXXXXXXXXX
+NetAmount(mandatory) XXXXXXXXXXX
+TransactionType(mandatory) XXXXXXXXXXX
+Table3.19Tri-partyRepoMessages:Record1(GeneralTradeInput)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 26
+
+RepoTestingMessages 26
+PhysicalRepomessages
+ThissectioncontainsthetypicalfieldsinaPhysicalRepomessage.
+Record5(ExtensionofRecord1)
+Table3.20showsthetypicalfieldsinRecord5,whichisanextensionofRecord1.
+Field NotesandSampleValues/Placeholders
+ConfirmPurpose(optional) 01-Original
+DeliveryMethod(mandatory) 03-Physical
+DeliveryInstructions1(optional) XXXXXXXXXXX
+DeliveryInstructions2(optional) XXXXXXXXXXX
+WireInstructions(optional) XXXXXXXXXXX
+DisclosureLink(optional) Outputonly
+DisclosureReferenceNumber(optional) Outputonly
+Table3.20PhysicalRepoMessages:Record5(ExtensionofRecord1)
+Record6(Financing/RepoTransactions)
+Table3.21showsthetypicalfieldsinRecord6–Financing/Repotransactions.
+Field NotesandSampleValues/Placeholders
+TradeType(mandatory) 01-Repo
+LegIdentifier(mandatory) LB-Both
+CollateralType(mandatory) 10-WholeLoans
+StartDate(optional) 20071101
+EndDate/MaturityDate(optional) 20071102
+Numberofpiecesofcollateral(optional) 1
+ParentReferenceNumber(optional) XXXXXXXXXXX
+FINRate(optional) 4.375
+FINRateType(optional) F-Fixed
+AccrualMethod(optional) 01-30/360
+InterestDays(optional) 1
+AccruedInterestdueatMaturity(optional) XXXXXXXXXXX
+[[Haircut]]%(optional) XXXXXXXXXXX
+Table3.21PhysicalRepoMessages:Record6(Financing/RepoTransactions)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 27
+
+RepoTestingMessages 27
+Record1(GeneralTradeInput)
+Table3.22showsthetypicalfieldsinRecord1–Generaltradeinput.
+Field NotesandSampleValues/Placeholders
+[[shares]]/FaceValue(mandatory) XXXXXXXXXXX
+EXPSecurityType(mandatory) FIN
+[[Broker]]-DealerConfirmNumber(mandatory) XXXXXXXXXXX
+SideCode(mandatory) XXXXXXXXXXX
+Role(mandatory) XXXXXXXXXXX
+SettlementType(mandatory) XXXXXXXXXXX
+MarketCode(mandatory) XXXXXXXXXXX
+AgentIDNumber(optional) XXXXXXXXXXX
+DealerName(optional) XXXXXXXXXXX
+AccountType(mandatory) XXXXXXXXXXX
+ExecutingBroker/DealerIDNumber(mandatory) XXXXXXXXXXX
+InstitutionIDNumber(mandatory) XXXXXXXXXXX
+TradeDate(mandatory) 110107
+SettlementDate(mandatory) 110107
+SettlementLocation(mandatory) US
+SecurityNumberingSystem(mandatory) US
+SecurityIdentifier(mandatory) XXXXXXXXXXX
+CurrencyCode(mandatory) USD
+SecurityDescriptionLine1(optional) XXXXXXXXXXX
+Price(mandatory) XXXXXXXXXXX
+PrincipalAmount(mandatory) XXXXXXXXXXX
+NetAmount(mandatory) XXXXXXXXXXX
+TransactionType(mandatory) XXXXXXXXXXX
+Table3.22PhysicalRepoMessages:Record1(GeneralTradeInput)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 28
+
+RepoTestingMessages 28
+ReversalRepoMessages
+ThissectioncontainsthetypicalfieldsinaReverseRepomessagebasedonanoriginalDVP/RVPmessage
+type.
+Record5(ExtensionofRecord1)
+Table3.23showsthetypicalfieldsinRecord5,whichisanextensionofRecord1.
+Field NotesandSampleValues/Placeholders
+ConfirmPurpose(optional) 01-Original
+DeliveryMethod(mandatory) 04-DVP/RVP
+DisclosureLink(optional) Outputonly
+DisclosureReferenceNumber(optional) Outputonly
+Table3.23ReversalRepoMessages:Record5(ExtensionofRecord1)
+Record6(Financing/RepoTransactions)
+Table3.24showsthetypicalfieldsinRecord6–Financing/Repotransactions.
+Field NotesandSampleValues/Placeholders
+TradeType(mandatory) ReverseRepo
+LegIdentifier(mandatory) LB-Both
+CollateralType(mandatory) 01-Treasuries
+StartDate(optional) 20071101
+EndDate/MaturityDate(optional) 20071102
+Numberofpiecesofcollateral(optional) 1
+ParentReferenceNumber(optional) XXXXXXXXXXX
+FINRate(optional) 4.375
+FINRateType(optional) F-Fixed
+AccrualMethod(optional) 01-30/360
+InterestDays(optional) 1
+AccruedInterestdueatMaturity(optional) XXXXXXXXXXX
+[[Haircut]]%(optional) XXXXXXXXXXX
+Table3.24ReversalRepoMessages:Record6(Financing/RepoTransactions)
+Record1(GeneralTradeInput)
+Table3.25showsthetypicalfieldsinRecord1–Generaltradeinput.
+Field NotesandSampleValues/Placeholders
+[[shares]]/FaceValue(mandatory) XXXXXXXXXXX
+EXPSecurityType(mandatory) FIN
+[[Broker]]-DealerConfirmNumber(mandatory) XXXXXXXXXXX
+SideCode(mandatory) XXXXXXXXXXX
+Table3.25ReversalRepoMessages:Record1(GeneralTradeInput)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 29
+
+RepoTestingMessages 29
+Field NotesandSampleValues/Placeholders
+Role(mandatory) XXXXXXXXXXX
+SettlementType(mandatory) XXXXXXXXXXX
+MarketCode(mandatory) XXXXXXXXXXX
+AgentIDNumber(optional) XXXXXXXXXXX
+DealerName(optional) XXXXXXXXXXX
+AccountType(mandatory) XXXXXXXXXXX
+ExecutingBroker/DealerIDNumber(mandatory) XXXXXXXXXXX
+InstitutionIDNumber(mandatory) XXXXXXXXXXX
+TradeDate(mandatory) 110107
+SettlementDate(mandatory) 110107
+SettlementLocation(mandatory) XXXXXXXXXXX
+SecurityNumberingSystem(mandatory) US
+SecurityIdentifier(mandatory) XXXXXXXXXXX
+CurrencyCode(mandatory) USD
+SecurityDescriptionLine1(optional) XXXXXXXXXXX
+Price(mandatory) XXXXXXXXXXX
+PrincipalAmount(mandatory) XXXXXXXXXXX
+NetAmount(mandatory) XXXXXXXXXXX
+TransactionType(mandatory) XXXXXXXXXXX
+Table3.25ReversalRepoMessages:Record1(GeneralTradeInput)(continued)
+Sell/BuybackMessages
+ThissectiondescribesthetypicalfieldsinSell/Buybackmessages.
+Record5(ExEtensionofRecord1)
+Table3.26showsthetypicalfieldsinRecord5,whichisanextensionofRecord1.
+Field Sell/Buyback(OnLeg) Sell/Buyback(OffLeg)
+ConfirmPurpose(optional) 01-Original 01-Original
+DeliveryMethod(mandatory) 04-DVP/RVP 04-DVP/RVP
+PriceType(optional) 01-Spot 04-Forward
+DisclosureLink(optional) Outputonly Outputonly
+DisclosureReferenceNumber(optional) Outputonly Outputonly
+Table3.26Sell/BuybackMessages:Record5(ExtensionofRecord1)
+Record6(Financing/RepoTransactions)
+Table3.27showsthetypicalfieldsinRecord6–Financing/Repotransactions.
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 30
+
+RepoTestingMessages 30
+Field Sell/Buyback(OnLeg) Sell/Buyback(OffLeg)
+TradeType(mandatory) 03-SellBuyback 03-SellBuyback
+LegIdentifier(mandatory) LO-OnLeg LC-OffLeg
+CollateralType(mandatory) 08-CorporateBonds 08-CorporateBonds
+StartDate(optional) 20071101 20071101
+EndDate/MaturityDate(optional) 20071224
+Numberofpiecesofcollateral(optional) 1 1
+ParentReferenceNumber(optional) XXXXXXXXXXX XXXXXXXXXXX
+FINRate(optional) 4.375 4.375
+FINRateType(optional) F-Fixed F-Fixed
+AccrualMethod(optional) 06-Actual/Actual 06-Actual/Actual
+AccruedInterestdueatMaturity(optional) XXXXXXXXXXX
+[[Haircut]]%(optional) XXXXXXXXXXX XXXXXXXXXXX
+SubstitutionType(optional) N/A N/A
+SubstitutionNumber(optional) N/A N/A
+SubstitutionVariance(optional) N/A N/A
+SubstitutionFrequency(optional) N/A N/A
+PremiumAmount(optional) XXXXXXXXXXX
+Table3.27Sell/BuybackMessages:Record6(Financing/RepoTransactions)
+Record1(GeneralTradeInput)
+Table3.28showsthetypicalfieldsinRecord1–Generaltradeinput.
+Field Sell/Buyback(OnLeg) Sell/Buyback(OffLeg)
+[[shares]]/FaceValue(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+EXPSecurityType(mandatory) FIN FIN
+[[Broker]]-DealerConfirmNumber(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+SideCode(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+Role(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+SettlementType(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+MarketCode XXXXXXXXXXX XXXXXXXXXXX
+AgentIDNumber(optional) XXXXXXXXXXX XXXXXXXXXXX
+DealerName(optional) XXXXXXXXXXX XXXXXXXXXXX
+AccountType(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+ExecutingBroker/DealerIDNumber(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+InstitutionIDNumber(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+TradeDate(mandatory) 110107 110107
+SettlementDate(mandatory) 110107 122407
+Table3.28Sell/BuybackMessages:Record1(GeneralTradeInput)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 31
+
+RepoTestingMessages 31
+Field Sell/Buyback(OnLeg) Sell/Buyback(OffLeg)
+SettlementLocation(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+SecurityNumberingSystem(mandatory) US US
+SecurityIdentifier(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+CurrencyCode(mandatory) USD USD
+SecurityDescriptionLine1(optional) XXXXXXXXXXX XXXXXXXXXXX
+Price(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+PrincipalAmount(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+NetAmount(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+TransactionType(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+Table3.28Sell/BuybackMessages:Record1(GeneralTradeInput)(continued)
+SecurityLendingMessages
+ThissectiondescribesthetypicalfieldsintheSecurityLendingmessages.
+Record5(ExtensionofRecord1)
+Table3.29showsthetypicalfieldsinRecord5,whichisanextensionofRecord1.
+Field SecurityLending(OnLeg) SecurityLending(OffLeg)
+ConfirmPurpose(optional) 01-Original 01-Original
+DeliveryMethod(mandatory) 04-DVP/RVP 04-DVP/RVP
+SpecialInstructionsLine9(optional) XXXXXXXXXXX XXXXXXXXXXX
+DisclosureLink(optional) Outputonly Outputonly
+DisclosureReferenceNumber(optional) Outputonly Outputonly
+Table3.29SecurityLendingMessages:Record5(ExtensionofRecord1)
+Record6(Financing/RepoTransactions)
+Table3.30showsthetypicalfieldsinRecord6–Financing/Repotransactions.
+Field SecurityLending(OnLeg) SecurityLending(OffLeg)
+TradeType(mandatory) 06-SecurityLending 06-SecurityLending
+LegIdentifier(mandatory) LO-OnLeg LC-OffLeg
+CollateralType(mandatory) 06-Equities 06-Equities
+StartDate(optional) 20071101 20071101
+EndDate/MaturityDate(optional) OPEN 20071224
+Numberofpiecesofcollateral(optional) 1 1
+ParentReferenceNumber(optional) XXXXXXXXXXX XXXXXXXXXXX
+[[SEC]].LendingFee(optional) XXXXXXXXXXX XXXXXXXXXXX
+[[Haircut]]%(optional) XXXXXXXXXXX XXXXXXXXXXX
+Table3.30SecurityLendingMessages:Record6(Financing/RepoTransactions)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 32
+
+RepoTestingMessages 32
+Field SecurityLending(OnLeg) SecurityLending(OffLeg)
+SubstitutionType(optional) N/A N/A
+SubstitutionNumber(optional) N/A N/A
+SubstitutionVariance(optional) N/A N/A
+SubstitutionFrequency(optional) N/A N/A
+Table3.30SecurityLendingMessages:Record6(Financing/RepoTransactions)(continued)
+Record1(GeneralTradeInput)
+Table3.31showsthetypicalfieldsinRecord1–Generaltradeinput.
+Field SecurityLending(OnLeg) SecurityLending(OffLeg)
+[[shares]]/FaceValue(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+EXPSecurityType(mandatory) FIN FIN
+[[Broker]]-DealerConfirmNumber(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+SideCode(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+Role(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+SettlementType(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+MarketCode(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+AgentIDNumber(optional) XXXXXXXXXXX XXXXXXXXXXX
+DealerName(optional) XXXXXXXXXXX XXXXXXXXXXX
+AccountType(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+ExecutingBroker/DealerIDNumber(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+InstitutionIDNumber(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+TradeDate(mandatory) 110107 110107
+SettlementDate(mandatory) 110107 110107
+SettlementLocation(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+SecurityNumberingSystem(mandatory) US US
+SecurityIdentifier(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+CurrencyCode(mandatory) USD USD
+SecurityDescriptionLine1(optional) XXXXXXXXXXX XXXXXXXXXXX
+Price(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+PrincipalAmount(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+NetAmount(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+TransactionType(mandatory) XXXXXXXXXXX XXXXXXXXXXX
+Table3.31SecurityLendingmessages:Record1(GeneralTradeInput)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 33
+
+TradeSuiteIDtestingmessages 33
+4.TRADESUITEIDTESTINGMESSAGES
+Thissectionprovidesmessagetestsfor10b-10dataandconfirmdisclosuressenttosecuritiesclearance
+facilities.Itcontainsthefollowingsections:
+l 10b-10testMessages
+l System-DefinedCriteriaUsingAssetClassEnrichment
+l System-DEefinedCcriteriaUusingSecurityTypeandSettlementLocation
+l User-DefinedCodes
+l ConfirmDisclosureBypassIndicator
+10b-10testMessages
+Thissectioncontainsthetypicalfieldsina10b-10message.Thistestistoensurethatyoursystemcansend
+thenew10b-10fieldstothehost.
+Record5(extensionofRecord1)
+Table4.1showsthetypicalfieldsinRecord5,whichisanextensionofRecord1.
+Field NotesandSampleValues/Placeholders
+DeliveryMethod(mandatory) DVP/RVP
+SIPCMember(optional) Y/N
+FINRAMember(optional) Y/N
+NYSEMember(optional) Y/N
+MarketMaker(optional) Y/N
+SpecialInstructions—Line1(optional) XXXXXXXXXXX
+MarkUp/MarkDownSign(optional) +/-
+MarkUp/MarkDown(optional) .######
+3rdPartyRenumerationReceived(optional) Y/N
+[[Broker]]/DealerTelephoneNumber(optional) XXXXXXXXXXX
+Table4.110b-10TestMessages:Record5(ExtensionofRecord1)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 34
+
+TradeSuiteIDtestingmessages 34
+Record1(GeneralTradeInput)
+Table4.2showsthetypicalfieldsinRecord1–Generaltradeinput.
+Field NotesandSampleValues/Placeholders
+[[shares]]/FaceValue(mandatory) XXXXXXXXXXX
+EXPSecurityType(mandatory) XXXXXXXXXXX
+[[Broker]]-DealerConfirmNumber(mandatory) XXXXXXXXXXX
+SideCode(mandatory) XXXXXXXXXXX
+Role(mandatory) 1-9
+SettlementType(mandatory) XXXXXXXXXXX
+MarketCode(mandatory) XXXXXXXXXXX
+AgentIDNumber(optional) XXXXXXXXXXX
+DealerName(optional) XXXXXXXXXXX
+AccountType(mandatory) XXXXXXXXXXX
+ExecutingBroker/DealerIDNumber(mandatory) XXXXXXXXXXX
+InstitutionIDNumber(mandatory) XXXXXXXXXXX
+Counterparty-AccountNumber(SubAccount) XXXXXXXXXXX
+TradeDate(mandatory) MMDDYY
+SettlementDate(mandatory) MMDDYY
+SettlementLocation(mandatory) XXXXXXXXXXX
+SecurityNumberingSystem(mandatory) US
+SecurityIdentifier(mandatory) XXXXXXXXXXX
+CurrencyCode(mandatory) USD
+SecurityDescriptionLine1(optional) XXXXXXXXXXX
+Price(mandatory) XXXXXXXXXXX
+PrincipalAmount(mandatory) XXXXXXXXXXX
+NetAmount(mandatory) XXXXXXXXXXX
+TransactionType(mandatory) XXXXXXXXXXX
+AllocationSource(optional) X
+Table4.210b-10TestMessages:Record1(GeneralTradeInput)
+Record2(MunicipalSecuritiesInput)
+Table4.3showsthetypicalfieldsinRecord2–municipalsecuritiesinput.
+Field NotesandSampleValues/Placeholders
+CurrentYield(optional) XXXXXXXXXXX
+YieldtoMaturity(optional) XXXXXXXXXXX
+YieldtoCall/Redemption(optional) XXXXXXXXXXX
+DatedDate(optional) CCYYMMDD
+Table4.310b-10testmessages:Record2(MunicipalSecuritiesInput)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 35
+
+TradeSuiteIDtestingmessages 35
+System-DefinedCriteriaUsingAssetClassEnrichment
+Thissectioncontainsthetypicalfieldsinaconfirmdisclosuremessageusingassetclassenrichment.
+Record5(ExtensionofRecord1)
+Table4.4showsthetypicalfieldsinRecord5,whichisanextensionofRecord1.
+Field NotesandSampleValues/Placeholders
+DeliveryMethod(mandatory) 04-DVP/RVP
+SpecialInstructions-Lines9-18 XXXXXXXXXXX
+DisclosureLink(optional) Outputonly
+DisclosureReferenceNumber(optional) Outputonly
+ConfirmDisclosureFoundIndicator Outputonly
+Table4.4System-DefinedCriteriaUsingAssetClassEnrichment:Record5(ExtensionofRecord1)
+Record1(GeneralTradeInput)
+Table4.5showsthetypicalfieldsinRecord1–Generaltradeinput.
+Field NotesandSampleValues/Placeholders
+[[shares]]/FaceValue(mandatory) XXXXXXXXXXX
+EXPSecurityType(mandatory) l EQU
+l FXI
+l ALL
+[[Broker]]-DealerConfirmNumber(mandatory) XXXXXXXXXXX
+SideCode(mandatory) XXXXXXXXXXX
+Role(mandatory) XXXXXXXXXXX
+SettlementType(mandatory) XXXXXXXXXXX
+MarketCode(mandatory) XXXXXXXXXXX
+AgentIDNumber(optional) XXXXXXXXXXX
+DealerName(optional) XXXXXXXXXXX
+AccountType(mandatory) XXXXXXXXXXX
+ExecutingBroker/DealerIDNumber(mandatory) XXXXXXXXXXX
+InstitutionIDNumber(mandatory) XXXXXXXXXXX
+CounterpartyName(optional) XXXXXXXXXXX
+CounterpartyAccountNumber(SubAccount) XXXXXXXXXXX
+TradeDate(mandatory) MMDDYY
+SettlementDate(mandatory) MMDDYY
+SettlementLocation(mandatory) ALL
+SecurityNumberingSystem(mandatory) US
+SecurityIdentifier(mandatory) XXXXXXXXXXX
+CurrencyCode(mandatory) USD
+Table4.5System-DefinedCriteriaUsingAssetClassEnrichment:Record1(GeneralTradeInput)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 36
+
+TradeSuiteIDtestingmessages 36
+Field NotesandSampleValues/Placeholders
+SecurityDescriptionLine1(optional) XXXXXXXXXXX
+Price(mandatory) XXXXXXXXXXX
+PrincipalAmount(mandatory) XXXXXXXXXXX
+NetAmount(mandatory) XXXXXXXXXXX
+TransactionType(mandatory) XXXXXXXXXXX
+Table4.5System-DefinedCriteriaUsingAssetClassEnrichment:Record1(GeneralTradeInput)
+(continued)
+System-DEefinedCcriteriaUusingSecurityTypeandSettlementLocation
+ThissectioncontainsthetypicalfieldsinaconfirmdisclosuremessageusingSecurityTypeandSettlement
+Locationenrichment.
+Record5(ExtensionofRecord1)
+Table4.6showsthetypicalfieldsinRecord5,whichisanextensionofRecord1.
+Field NotesandSampleValues/Placeholders
+DeliveryMethod(mandatory) 04-DVP/RVP
+SpecialInstructions-Lines9-18 XXXXXXXXXXX
+DisclosureLink(optional) Outputonly
+DisclosureReferenceNumber(optional) Outputonly
+ConfirmDisclosureFoundIndicator Outputonly
+Table4.6System-DefinedCriteriaUsingSecurityTypeandSettlementLocation:Record5
+(ExtensionofRecord1)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 37
+
+TradeSuiteIDtestingmessages 37
+Record1(GeneralTradeInput)
+Table4.7showsthetypicalfieldsinRecord1–Generaltradeinput.
+Field NotesandSampleValues/Placeholders
+[[shares]]/FaceValue(mandatory) XXXXXXXXXXX
+EXPSecurityType(mandatory) l EQU—Equities
+l CDS—CorporateDebtSecurities
+l GDS—GovernmentDebtSecurities
+l MBS—MortgageBackedSecurities
+l MMI—MoneyMarketInstruments
+[[Broker]]-DealerConfirmNumber(mandatory) XXXXXXXXXXX
+SideCode(mandatory) XXXXXXXXXXX
+Role(mandatory) XXXXXXXXXXX
+SettlementType(mandatory) XXXXXXXXXXX
+MarketCode(mandatory) XXXXXXXXXXX
+AgentIDNumber(optional) XXXXXXXXXXX
+DealerName(optional) XXXXXXXXXXX
+AccountType(mandatory) XXXXXXXXXXX
+ExecutingBroker/DealerIDNumber(mandatory) XXXXXXXXXXX
+InstitutionIDNumber(mandatory) XXXXXXXXXXX
+CounterpartyName(optional) XXXXXXXXXXX
+CounterpartyAccountNumber(SubAccount) XXXXXXXXXXX
+TradeDate(mandatory) MMSDDYY
+SettlementDate(mandatory) MMSDDYY
+SettlementLocation(mandatory) l [[DTC]]—DepositoryTrustCompany
+l FED—TheFederalReserveBank
+l BRC—BrokerCustody
+l US—UnitedStates
+SecurityNumberingSystem(mandatory) US
+SecurityIdentifier(mandatory) XXXXXXXXXXX
+CurrencyCode(mandatory) USD
+SecurityDescriptionLine1(optional) XXXXXXXXXXX
+Price(mandatory) XXXXXXXXXXX
+PrincipalAmount(mandatory) XXXXXXXXXXX
+NetAmount(mandatory) XXXXXXXXXXX
+TransactionType(mandatory) XXXXXXXXXXX
+Table4.7System-DefinedCriteriaUsingSecurityTypeandSettlementLocation:Record1(General
+TradeInput)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 38
+
+TradeSuiteIDtestingmessages 38
+User-DefinedCodes
+Thissectioncontainsthetypicalfieldsinaconfirmdisclosuremessageusinguser-definedcode.
+Record5(ExtensionofRecord1)
+Table4.8showsthetypicalfieldsinRecord5,whichisanextensionofRecord1.
+Field NotesandSampleValues/Placeholders
+DeliveryMethod(mandatory) 04-DVP/RVP
+SpecialInstructions-Lines9-18 XXXXXXXXXXX
+DisclosureLink(optional) Outputonly
+DisclosureReferenceNumber(optional) Outputonly
+ConfirmDisclosureFoundIndicator Outputonly
+UserDefinedDisclosureCode XXXXXXXXXXX
+Table4.8User-DefinedCodes:Record5(ExtensionofRecord1)
+Record1(GeneralTradeInput)
+Table4.9showsthetypicalfieldsinRecord1–Generaltradeinput.
+Field NotesandSampleValues/Placeholders
+[[shares]]/FaceValue(mandatory) XXXXXXXXXXX
+EXPSecurityType(mandatory) XXXXXXXXXXX
+[[Broker]]-DealerConfirmNumber(mandatory) XXXXXXXXXXX
+SideCode(mandatory) XXXXXXXXXXX
+Role(mandatory) XXXXXXXXXXX
+SettlementType(mandatory) XXXXXXXXXXX
+MarketCode(mandatory) XXXXXXXXXXX
+AgentIDNumber(optional) XXXXXXXXXXX
+DealerName(optional) XXXXXXXXXXX
+AccountType(mandatory) XXXXXXXXXXX
+ExecutingBroker/DealerIDNumber(mandatory) XXXXXXXXXXX
+InstitutionIDNumber(mandatory) XXXXXXXXXXX
+CounterpartyName(optional) XXXXXXXXXXX
+CounterpartyAccountNumber(SubAccount) XXXXXXXXXXX
+TradeDate(mandatory) MMDDYY
+SettlementDate(mandatory) MMDDYY
+SettlementLocation(mandatory) XXXXXXXXXXX
+SecurityNumberingSystem(mandatory) US
+SecurityIdentifier(mandatory) XXXXXXXXXXX
+CurrencyCode(mandatory) USD
+SecurityDescriptionLine1(optional) XXXXXXXXXXX
+Table4.9User-DefinedCodes:Record1(GeneralTradeInput)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 39
+
+TradeSuiteIDtestingmessages 39
+Field NotesandSampleValues/Placeholders
+Price(mandatory) XXXXXXXXXXX
+PrincipalAmount(mandatory) XXXXXXXXXXX
+NetAmount(mandatory) XXXXXXXXXXX
+TransactionType(mandatory) XXXXXXXXXXX
+Table4.9User-DefinedCodes:Record1(GeneralTradeInput)(continued)
+ConfirmDisclosureBypassIndicator
+ThissectioncontainsthetypicalfieldsaconfirmdisclosuremessageusingtheConfirmDisclosureBypass
+indicator.
+Record5(ExtensionofRecord1)
+Table4.10showsthetypicalfieldsinRecord5,whichisanextensionofRecord1.
+Field NotesandSampleValues/Placeholders
+DeliveryMethod(mandatory) 04-DVP/RVP
+SpecialInstructions-Lines9-18 XXXXXXXXXXX
+ConfirmDisclosureBypassIndicator B
+Table4.10ConfirmDisclosureBypassIndicator:Record5(ExtensionofRecord1)
+Record1(GeneralTradeInput)
+Table4.11showsthetypicalfieldsinRecord1–Generaltradeinput.
+Field NotesandSampleValues/Placeholders
+[[shares]]/FaceValue(mandatory) XXXXXXXXXXX
+EXPSecurityType(mandatory) XXXXXXXXXXX
+[[Broker]]-DealerConfirmNumber(mandatory) XXXXXXXXXXX
+SideCode(mandatory) XXXXXXXXXXX
+Role(mandatory) XXXXXXXXXXX
+SettlementType(mandatory) XXXXXXXXXXX
+MarketCode(mandatory) XXXXXXXXXXX
+AgentIDNumber(optional) XXXXXXXXXXX
+DealerName(optional) XXXXXXXXXXX
+AccountType(mandatory) XXXXXXXXXXX
+ExecutingBroker/DealerIDNumber(mandatory) XXXXXXXXXXX
+InstitutionIDNumber(mandatory) XXXXXXXXXXX
+CounterpartyName(optional) XXXXXXXXXXX
+CounterpartyAccountNumber(SubAccount) XXXXXXXXXXX
+TradeDate(mandatory) MMDDYY
+Table4.11ConfirmDisclosureBypassIndicator:Record1(GeneralTradeInput)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 40
+
+TradeSuiteIDtestingmessages 40
+Field NotesandSampleValues/Placeholders
+SettlementDate(mandatory) MMDDYY
+SettlementLocation(mandatory) XXXXXXXXXXX
+SecurityNumberingSystem(mandatory) US
+SecurityIdentifier(mandatory) XXXXXXXXXXX
+CurrencyCode(mandatory) USD
+SecurityDescriptionLine1(optional) XXXXXXXXXXX
+Price(mandatory) XXXXXXXXXXX
+PrincipalAmount(mandatory) XXXXXXXXXXX
+NetAmount(mandatory) XXXXXXXXXXX
+TransactionType(mandatory) XXXXXXXXXXX
+Table4.11ConfirmDisclosureBypassIndicator:Record1(GeneralTradeInput)(continued)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 41
+
+TypicalFieldsinaRepoMessage 41
+A.TYPICALFIELDSINAREPOMESSAGE
+Thissectionprovidestypicalfieldsthatareincludedinconfirmsforrepos.Themandatoryfieldsarerequired,
+butanyotherfieldsyouincludedependonyourbusinessworkflow.
+Note
+Formoreinformationabouteachfieldinarecord,seetheInput/OutputInformationavailableinthe
+TradeSuiteID8.0sectionoftheInstitutionalTradeProcessing-TradeSuiteIDLearningCenterr.
+EachtableinthissectioncontainsaMandatory,Optional,orConditionalcolumn.Thiscolumnprovides
+informationabouttheconfirmedtransactionasdescribedinTableA.1.
+Legend Description
+Mandatory Containsessentialdetails.
+Optional Suppliesextrameaningorclarity.
+Conditional Containsinformationrequiredonlyincertaincircumstances.
+TableA.1Mandatory,Optional,orConditionalColumn
+Record5(ExtensionofRecord1)
+TableA.2showsthetypicalfieldsinRecord5,whichisanextensionofRecord1.
+Field Mandatory,Optional,orConditional
+ConfirmPurpose Optional
+DeliveryMethod Mandatory
+PriceType Optional
+BlockTradeIndicator Optional
+Give-UpBroker Optional
+BrokerSalesman Optional
+TradeExecutionTime Optional
+TradeExecutionTimeZone Optional
+SIPCMember Optional
+NASDMember Optional
+NYSEMember Optional
+MarketMaker Optional
+DeliveryInstructionsLinesand2(2fields) Optional
+WireInstructions Optional
+SpecialInstructions-Line9-18(10fields) Optional
+DisclosureLink Optional
+DisclosureReferenceNumber Optional
+TableA.2Record5(ExtensionofRecord1)
+Record6(Financing/RepoTransactions)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 42
+
+TypicalFieldsinaRepoMessage 42
+TableA.3showsthetypicalfieldsinRecord6–Financing/Repotransactions.
+Field Mandatory,Optional,orConditional
+TradeType Mandatory
+LegIdentifier Mandatory
+CollateralType Mandatory
+Tri-PartyAgent Optional(Mandatoryinatri-partyrepo)
+StartDate Optional
+EndDate/MaturityDate Optional
+Numberofpiecesofcollateral Optional
+ParentReferenceNumber Optional
+AdditionalReferenceNumbers1,2 Optional
+FINRateSign Optional
+FINRate Optional
+FINRateType Optional
+[[SEC]].LendingFee Optional
+AccrualMethod Optional
+InterestDaysSign Optional
+InterestDays Optional
+AccruedInterestdueatMaturitySign Optional
+AccruedInterestdueatMaturity Optional
+Index(benchmark) Optional
+SpreadtoBenchmarkSign Optional
+SpreadtoBenchmarkorIndex(forFloatingRate) Optional
+[[Haircut]]% Optional
+SubstitutionType Optional
+SubstitutionNumber Optional
+SubstitutionVariance Optional
+SubstitutionFrequency Optional
+Face(Par)orCashFillRepo Optional
+RepoValue Optional
+PremiumAmount Optional
+InterestPaymentCalendarFrequency Optional
+1stInterestCleanupDate Optional
+Lookbackdays(forFloatingRate) Optional
+ResetIntervalFrequency(forFloatingRates) Optional
+1stRateResetDate Optional
+FlexRepoPaybackFrequency Optional
+TableA.3Record6(Financing/RepoTransactions)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 43
+
+TypicalFieldsinaRepoMessage 43
+Field Mandatory,Optional,orConditional
+1stFlexRepaymentDate Optional
+CallDelay Optional
+TableA.3Record6(Financing/RepoTransactions)(continued)
+Record1(GeneralTradeInput)
+TableA.4showsthetypicalfieldsinRecord1–Generaltradeinput.
+Field Mandatory,Optional,orConditional
+[[shares]]/FaceValue Mandatory
+EXPSecurityType Mandatory
+[[Broker]]-DealerConfirmNumber Mandatory
+SideCode Mandatory
+Role Mandatory
+SettlementType Mandatory
+MarketCode Mandatory
+AgentIDNumber Optional
+DealerName Optional
+AccountType Mandatory
+ExecutingBroker/dealerIDNumber Mandatory
+InstitutionIDNumber Mandatory
+TradeDate Mandatory
+SettlementDate Mandatory
+SettlementLocation Mandatory
+SecurityNumberingSystem Mandatory
+SecurityIdentifier Mandatory
+CurrencyCode Mandatory
+AlternateCurrencyConversionRate Optional
+AlternateCurrencyISOCode Conditional
+AlternateCurrencyNetAmount Optional
+SecurityDescriptionLine1 Optional
+Price Mandatory
+PrincipalAmount Mandatory
+NetAmount Mandatory
+TransactionType Mandatory
+CancellationReasonCode Optional
+OriginalBrokerConfirmNumber Conditional
+TableA.4Record1(GeneralTradeInput)
+Record2(MunicipalSecuritiesInput)
+TableA.5showsthetypicalfieldsinRecord2–municipalsecuritiesinput.
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 44
+
+TypicalFieldsinaRepoMessage 44
+Field Mandatory,Optional,orConditional
+Moody’sCreditRating Optional
+StandardandPoor’sCreditRating Optional
+TableA.5Record2(municipalsecuritiesinput)
+Record4(Mortgage-BackedSecuritiesInput)
+TableA.6showsthetypicalfieldsinRecord4–mortgage-backedsecuritiesinput.
+Field Mandatory,Optional,orConditional
+CurrentFace Optional
+TableA.6Record4(Mortgage-BackedSecuritiesInput)
+TradeSuiteIDConformanceGuide
+
+---
+
+## Page 45
+
+FORMOREINFORMATION
+EmailDTCCLearningat:
+DTCCLearning@[[DTCC]].com
+orvisitusonthewebat:
+www.dtcclearning.com

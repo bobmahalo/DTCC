@@ -1,0 +1,1544 @@
+---
+title: "CNS Dashboard User Guide"
+source_pdf: "file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/cns124_dashboard_ug_2020Apr27.pdf"
+pages: 52
+size: "2527.2 KB"
+category: "CNS"
+ingested_on: "2026-06-05"
+---
+
+# CNS Dashboard User Guide
+
+**Original File:** [cns124_dashboard_ug_2020Apr27.pdf](file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/cns124_dashboard_ug_2020Apr27.pdf)  
+**Category:** CNS  
+**Total Pages:** 52  
+**File Size:** 2527.2 KB  
+
+---
+
+## Page 1
+
+[[CNS]]®
+CNSDASHBOARDUSERGUIDE
+APRIL27,2020
+
+
+---
+
+## Page 2
+
+©2020DTCC.Allrightsreserved.[[DTCC]],[[DTCC]](Stylized),ADVANCINGFINANCIALMARKETS.TOGETHER,
+andtheInterlockergraphicareregisteredandunregisteredtrademarksofTheDepositoryTrust&Clearing
+Corporation.
+Theservicesdescribedhereinareprovidedunderthe“[[DTCC]]”brandnamebycertainaffiliatesofThe
+DepositoryTrust&ClearingCorporation(“[[DTCC]]”).DTCCitselfdoesnotprovidesuchservices.Eachof
+theseaffiliatesisaseparatelegalentity,subjecttothelawsandregulationsoftheparticularcountryor
+countriesinwhichsuchentityoperates.Pleaseseewww.[[DTCC]].comformoreinformationonDTCC,its
+affiliatesandtheservicestheyoffer.
+PublicationDate:April27,2020
+PublicationCode:CNS124
+Service:[[CNS]]®
+Title: CNSDashboardUserGuide
+
+---
+
+## Page 3
+
+TABLEOFCONTENTS
+TABLEOFCONTENTS 3
+PREFACE 5
+RelatedDocumentsandTraining 5
+ContactUs 5
+1.CNSOVERVIEW 6
+Roles 6
+AccessingCNS 7
+SelectingaParticipantID 8
+ElementsoftheCNSSystem 9
+2.CNSPOSITIONS 10
+PositionInquiry 10
+ViewingthePositionInquiry 11
+ViewingthePositionInquirySearchResults 12
+LongBuy-in 13
+ViewingtheLongBuy-inPosition 14
+ViewingtheLongBuy-inSearchResults 15
+CalculatingandDisplayingtheBuy-inQuantity 16
+EditingOriginalBuy-inOrders 17
+CancelingOriginalBuy-inOrders 17
+ShortBuy-in 18
+ViewingtheShortBuy-inPosition 18
+ViewingtheShortBuy-inSearchResults 20
+ViewingthePositionDetailPage 21
+3.RECONCILIATION 23
+CashReconciliationStatement 23
+ViewingtheCashReconciliationStatementResults 24
+ViewingtheCashReconciliationStatementSearchResults 26
+4.PARTICIPANTINSTRUCTIONS 28
+Fully-Paid-ForInstructions 28
+ViewingFully-Paid-ForInstructions 29
+ViewingtheFully-Paid-ForInstructionsSearchResults 30
+AddingFully-Paid-ForInstructions 31
+UpdatingFully-PaidForInstructions 33
+DeletingFully-PaidForInstructions 34
+ExportingFully-PaidForInstructions 35
+PriorityInstructions 36
+ViewingPriorityInstructions 36
+ViewingthePriorityInstructionsSearchResults 38
+AddingPriorityInstructions 39
+CNSDashboardUserGuide
+
+---
+
+## Page 4
+
+EditingPriorityInstructions 40
+DeletingPriorityInstructions 41
+PriorityInstructionDetailPage 42
+ExemptionInstructions 43
+ViewingExemptionInstructions 43
+ViewingtheExemptionInstructionsSearchResults 45
+AddingExemptionInstructions 46
+EditingExemptionInstructions 48
+DeletingExemptionInstructions 49
+ExemptionInstructionDetailPage 50
+CNSDashboardUserGuide
+
+---
+
+## Page 5
+
+Preface 5
+PREFACE
+TheprimarypurposeofthisguideistofamiliarizeNationalSecuritiesClearingCorporation([[NSCC]])members
+withtheCNS®systeminquiryandprocessingscreens.
+Thisguideisnotintendedtoserveasalegaldocument.Allbrokeragefirmsandmembernumbersarefictional
+andusedforillustrationonly.Nostatementinthisguideshouldbeconstruedasalegallybindingruleor
+[[regulation]],orascreatinganobligationonthepartofNSCCoranyperson.SeetheRules&Proceduresfor
+NSCCandotherapplicablepartiesforthelegalobligationsofallpartiesconcerned.
+RelatedDocumentsandTraining
+Forrelateddocumentsandtraining,intheDTCCLearningCenter,gotoEquitiesClearing-[[CNS]]®sectionof
+theLearningCenter.
+ContactUs
+UsethefollowingNSCCcontactsforinformationaboutCNS.YoucanalsocontactyourDTCCRelationship
+ManagerorobtaingeneralassistancebyvisitingtheDTCCClientCenter.
+For... Contact...
+Generalquestionsand
+productsupport
+NSCCSupportbyemailatNSCCSupport@[[DTCC]].com.
+Setupandtesting NSCCIntegrationbyemailatNSCCIntegration@[[DTCC]].com.
+Issueswithloggingonto
+thesystem
+DTCCClientSupport.Callthefollowingnumber,andthenfollowthe
+promptforproductsupport.
+o ForUSandCanada,call1888–382–2721.
+o FortheUK,Europe,andAsia,call+1212–855–8099.
+CNSDashboardUserGuide
+
+---
+
+## Page 6
+
+CNSOverview 6
+1.CNSOVERVIEW
+FromtheCNSsystem,youcan
+l SearchforopenCNSpositions,includinglongandshortbuy-inpositions.
+l ViewtheCNScashbalanceforyourparticipantaccount.
+l Add,edit,delete,andsearchforexistingfully-paid-for,exemption,andpriorityinstructions.
+ThissectionexplainshowtoaccesstheCNSsystemandmenuoptionsavailabletoyouforcontinuousnet
+[[settlement]].Italsoprovidesyouwithinformationabouttherolesyouneedtogainaccesstotheproduct.
+Roles
+BeforeaccessingtheCNSsystem,yourfirm'ssuperaccesscoordinator(SAC)mustassignyourlogin
+credentialswithroles.Yourassignedrolesdefinetheoptionsthatareavailabletoyou.Allusersmusthave
+accesstotheClearingDashboard;therefore,youneedtheCLD Userrole.Inadditiontothisrole,thefollowing
+tabledescribestheavailableCNSroles:
+Role Description
+CLDUser AllowsyoutoaccesstheClearingDashboardfromtheDTCCportal.
+[[CNS]] External User RoleAllowsyoutoviewtheCNSmenu.
+CNSInquiry AllowsyoutoaccesstheCNSinquiryfunctions.
+CNSBuy-InUpdate Allowsyoutoreduceandcancelpreviouslysubmittedbuy-inorderinstructions
+only.
+Note:Originalbuy-inorderinstructionsaresubmittedthroughSMART/Trackfor
+Buy-insapplication.
+CNSExternalFully-Paid-
+Foredit
+Allowsaccesstoadd,edit,anddeleteinstructionsforthefully-paid-foraccount.
+CNSPriorities-update Allowsyoutoadd,edit,anddeletepriorityinstructions.
+[[CNS]] Exemptions-updateAllowsyoutoadd,edit,anddeletemanualexemptions.
+Table1.1Roles
+CNSDashboardUserGuide
+
+---
+
+## Page 7
+
+CNSOverview 7
+AccessingCNS
+ToaccessCNS([[CNS]]),youmusthaveaccesstotheClearingDashboard.Yourfirm’sSACsetsupyourlogin
+credentialswiththeCLDUserroletoenableaccesstotheClearingDashboard(CLD).TheSACalsoenables
+accesstotheCNSsystemandassociatedroles,asoutlinedinTable1.1.
+ToaccessCNS:
+1. FromtheDTCCportalavailableathttps://portal.[[DTCC]].com, typeyourusernameandpassword,andthen
+clickLogin. Uponsuccessfullyloggingin,theMyAccesspage,showninFigure1.1, appears.
+Figure1.1ClearingDashboard
+2. ClicktheClearingDashboardlink,showninFigure1.1. FromtheClearingDashboard(CLD),shownin
+Figure1.2, clickCNS.
+Figure1.2CNS
+CNSDashboardUserGuide
+
+---
+
+## Page 8
+
+CNSOverview 8
+TheCNShomepage,showninFigure1.3, appears.
+l IfyouhavemultipleparticipantIDsassociatedwithyourloginaccount,youmustfirstselectaparticipant
+[[ID]].Formoreinformation,seeSelectingaParticipantID.
+l Theoptionsavailabletoyoualsodependontherolesassociatedwithyourloginaccount.Formore
+information,seeRolesonpage 6
+l FormoreinformationaboutthemenuoptionsavailableinCNS,seeElementsoftheCNSSystem.
+Figure1.3CNSHomePage
+SelectingaParticipantID
+TheparticipantID isauniqueidentifierassociatedwithyourloginaccount.IfyouhaveoneparticipantID,the
+identifierisprepopulatedthroughouttheapplication.IfyouhavemultipleparticipantIDsassociatedwithyour
+loginaccount,selectanIDfromtheSelectParticipantpage,showninFigure1.4. TheparticipantIDthatyou
+select,becomesthedefault.
+Figure1.4MultipleParticipantIDs
+YoucanchangetheparticipantIDatanytimetoactuponadifferentparticipantIDassociatedwithyourlogin
+account.
+CNSDashboardUserGuide
+
+---
+
+## Page 9
+
+CNSOverview 9
+TochangetheparticipantID:
+1. SelecttheparticipantIDdrop-down,asshowninthefollowingfigure.
+Figure1.5SelectingaParticipantID
+2. ClickChangeBroker.
+3. FromtheSelectParticipantpage,showninFigure1.4, selectaparticipantID.
+4. Click
+ Submit.
+ElementsoftheCNSSystem
+Yourassignedroles,asoutlinedinTable1.1, definetheoptionsthatareavailabletoyou.FromtheCNS
+system,youmighthaveaccesstothefollowingtabs,dependingonyourassignedroles:
+l CNSPositions–Accessinformationaboutthepositioninquiry,longbuy-in,andshortbuy-inpositions.
+l Reconciliation–Viewdetailsaboutthecashreconciliationstatement.
+l ParticipantInstructions–Viewandsubmitfully-paid-for,priority,andexemptioninstructions.
+ThefollowingfigureshowstheCNShome pagewiththetabsopen.
+Figure1.6CNSHomePage
+Thefollowingtopicsprovidemoreinformationforeachtab:
+l CNSPositions
+l Reconciliation
+l ParticipantInstructions
+CNSDashboardUserGuide
+
+---
+
+## Page 10
+
+CNSPositions 10
+2.CNSPOSITIONS
+ThefollowingfigureshowstheCNSPositiondrop-downoptionsavailablefromCNS([[CNS]]):
+Figure2.1CNSPositions
+FormoreinformationabouteachoptionintheCNSPositionsdrop-down,seethefollowingtopics:
+l PositionInquiry
+l LongBuy-in
+l ShortBuy-in
+PositionInquiry
+ThePositionInquirypage,showninFigure2.2, allowsyoutosearchforapositionheldbyyourfirmusing
+varioussearchcriteria.TheParticipantIDandSettlementDatefieldsarerequiredtoperformasearch.
+CNSDashboardUserGuide
+
+---
+
+## Page 11
+
+CNSPositions 11
+ViewingthePositionInquiry
+Toviewthepositioninquiry:
+1. FromCNS([[CNS]]),asshowninFigure1.6, clickCNSPositions>PositionInquiry. Thefollowing
+PositionInquirypageappears.
+Figure2.2PositionInquiryPage
+2. Typeorselectinformationinalloftherequiredfieldsandanyapplicableoptionalfieldsaccordingtothe
+fielddescriptionsshowninthefollowingtable.
+Field Description
+ParticipantID DefaultstotheparticipantIDassociatedwithyourloginID.Ifyouhaveone
+participantID,youcannotmodifythisfield.IfyouhavemultipleparticipantIDs
+associatedwithyourloginID,accesstheSelectParticipantpagetochangethe
+defaultID.Formoreinformation,seeSelectingaParticipantIDonpage 8
+SecurityID Entera9byteCommitteeonUniformSecuritiesIdentificationProcedures
+([[CUSIP]])or12byteinternationalsecurityidentificationnumber(ISIN)securityID
+usinguppercaseandlowercaseletterstoperformasearch.Ifyoudonotentera
+securityID,thesystemsearchesforallsecurities
+Subaccount Selectallsubaccountsoraspecificsubaccountfromthefollowingvalidvalues:
+•AllSubaccounts([[default]])
+•A–GeneralAccount
+•E–FullyPaidAccount
+•G–Reorg1Account
+•H–Reorg2Account
+•R–ACATSLong
+•S–ACATSShort
+[[settlement]] DateSelectthesettlementdatefromthedrop-down,whichispopulatedbasedonthe
+Currentsettlementdate,thedefault.Otheravailablesettlementdatesinclude:
+l Settlementdateminus4settlementdates
+l Settlementdateminus3settlementdates
+l Settlementdateminus2settlementdates
+l Settlementdateminus1settlementdate
+Table2.1PositionInquiryFieldDefinitions
+CNSDashboardUserGuide
+
+---
+
+## Page 12
+
+CNSPositions 12
+3. Click
+ Search.Afterthesearchvaluesthatyouenteredarevalidated,thesearchresultspage,as
+showninthefollowingfigure,appears.
+Figure2.3PositionInquiry-SearchResults
+NextSteps
+l Formoreinformationaboutthesearchresults,seeViewingthePositionInquirySearchResults.
+l FormoreinformationaboutusingtheSecurityIDlinktoaccessthePositionDetailpage,seetheViewing
+thePositionDetailPage.
+ViewingthePositionInquirySearchResults
+ThePositionInquirySearchResultspage,showninFigure2.3, displaystheresultsofthesearchperformed.
+Bydefault,theSearchResultspagedisplaystenrecordsperpage.Todisplaymorethantenrecordsper
+page,withamaximumofupto100recordsperpage,selectyourpreferencefromthe 
+Displayingdrop-down.Usetheprevious,next,first,andlastarrowsandthepagenumberstoreviewother
+pages.
+Tosorttherecordsbyascendinganddescendingorder, clickthe
+ upanddownarrowsforaspecific
+column.Recordsdisplayedonthecurrentpageandallotherpagesaresortedbasedontheselectedcolumn.
+Tofilterthesearchresultsdisplayedonthepage, clickthe
+ Filterbyoption.
+ToexportthesearchresultstoExcel, select
+ Export.TheresultsexportedtoExcelincludes
+alloftheresults,notjustthosedisplayedontheSearchResultspage.
+7
+CNSDashboardUserGuide
+
+---
+
+## Page 13
+
+CNSPositions 13
+Field Description
+SecurityID DisplaystheISINofthesecurity.IfyouselecttheSecurityIDlink,thePosition
+Detailpageappears.Formoreinformationaboutthispage,seetheViewingthe
+PositionDetailPage.
+Security DescriptionDisplaysthedescriptionofthesecurity.
+ParticipantID DisplaystheIDoftheparticipant.
+ParticipantName Displaysthenameoftheparticipant.
+Subaccount Displaysthesubaccountassignedtotheposition.
+CNSPosition DisplaysthequantityforthecurrentCNSpositioninthatsecurityinthat
+subaccount.
+CNSValue Displaystheread-onlyvalueofthatsecurityinthatsubaccount.
+Table2.2PositionInquirySearchResultsFieldDefinitions
+LongBuy-in
+TheLongBuy-inpageallowsyoutosearchforlongbuy-inpositionssubmittedbyyourfirmwheretheoriginal
+buy-inintentorbuy-inretransmittalpositionwasacceptedbyCNSthroughtheSMART/TrackforBuy-ins
+application.Thelongbuy-inpositionsdisplayedincludeallDay2longbuy-inpositionsforyourfirm,regardless
+ofwhetherabuy-inorderwassubmittedonthatpositionintheSMART/TrackforBuy-insapplication.This
+informationbecomesavailableforviewingat10:00A.M.EasternTimeeachCNSprocessingday.
+CNSDashboardUserGuide
+
+---
+
+## Page 14
+
+CNSPositions 14
+ViewingtheLongBuy-inPosition
+Youcanviewthelongbuy-inpositionandpositiondetails.Youcanfilterthesearchresultsfordisplayonthe
+pageandexportthedatatoanExcelfile.
+Toviewthelongbuy-inposition:
+1. FromCNS([[CNS]]),asshowninFigure1.6, clickCNSPositions>LongBuy-in. ThefollowingLongBuy-
+inpageappears.
+Figure2.4LongBuy-in
+2. Typeorselectinformationinallofthefieldsaccordingtothefielddescriptionsshowninthefollowing
+table.TheParticipantIDfieldistheonlyrequiredfield.
+Field Description
+[[participant]]
+[[ID]]
+DefaultstotheparticipantIDassociatedwithyourloginID.Ifyouhaveoneparticipant
+[[ID]],youcannotmodifythisfield.IfyouhavemultipleparticipantIDsassociatedwith
+yourloginID,accesstheSelectParticipantpagetochangethedefaultID.Formore
+information,seeSelectingaParticipantIDonpage 8
+Security
+[[ID]]
+Entera9byteCommitteeonUniformSecuritiesIdentificationProcedures([[CUSIP]])or
+12byteinternationalsecurityidentificationnumber(ISIN)securityIDusinguppercase
+andlowercaseletterstoperformasearch.IfyoudonotenterasecurityID,thesystem
+searchesforallsecurities
+Table2.3LongBuy-inFieldDefinitions
+3. Click
+ Search.Afterthesearchvaluesthatyouenteredarevalidated,thesearchresultspage,as
+showninthefollowingfigure,appears.
+CNSDashboardUserGuide
+
+---
+
+## Page 15
+
+CNSPositions 15
+Figure2.5LongBuy-in-SearchResults
+NextSteps
+l Formoreinformationaboutthesearchresults,seeViewingtheLongBuy-inSearchResults.
+l FormoreinformationaboutusingtheSecurityIDlinktoaccessthePositionDetailpage,seetheViewing
+thePositionDetailPage.
+ViewingtheLongBuy-inSearchResults
+TheLongBuy-inSearchResultspage,showninFigure2.5, displaystheresultsofthesearchperformed.
+Bydefault,theSearchResultspagedisplaystenrecordsperpage.Todisplaymorethantenrecordsper
+page,withamaximumofupto100recordsperpage,selectyourpreferencefromthe 
+Displayingdrop-down.Usetheprevious,next,first,andlastarrowsandthepagenumberstoreviewother
+pages.
+Tosorttherecordsbyascendinganddescendingorder, clickthe
+ upanddownarrowsforaspecific
+column.Recordsdisplayedonthecurrentpageandallotherpagesaresortedbasedontheselectedcolumn.
+Tofilterthesearchresultsdisplayedonthepage, clickthe
+ Filterbyoption.
+ToexportthesearchresultstoExcel, select
+ Export.TheresultsexportedtoExcelincludes
+alloftheresults,notjustthosedisplayedontheSearchResultspage.
+CNSDashboardUserGuide
+
+---
+
+## Page 16
+
+CNSPositions 16
+ThefollowingtableshowsthefielddefinitionsavailablefromtheLongBuy-inSearchResultspage.
+Field Description
+SecurityID DisplaystheISINofthesecurity.IfyouselecttheSecurityIDlink,thePositionDetail
+pageappears.Formoreinformationaboutthispage,seetheViewingthePosition
+DetailPage.
+Security
+Description
+Displaysthedescriptionofthesecurity.
+RetransmittalIndicatesifthebuy-inhasaretransmittal.Validvaluesare
+l Yes
+l No
+[[participant]]
+[[ID]]
+DisplaystheIDoftheparticipant.
+SubaccountDisplaysthesubaccountassignedtotheposition.
+CurrentCNS
+Position
+DisplaysthequantityofthecurrentCNSposition.
+Buy-in
+Accepted
+Displaysthequantityoftheacceptedbuy-inintent,buy-inretransmittal,orboth.
+BuyOrder
+Submitted
+Displaysthequantityofanybuy-inordersubmitted.
+Allocations Displaysthequantityofallocationsinthatsubaccount.
+Buy-in
+Quantity
+Outstanding
+Displaysthequantityofanyoutstandingbuy-in.
+Action Displaysthe
+ Editand
+ Cancelicons.
+Table2.4LongBuy-inSearchResultsFieldDefinitions
+CalculatingandDisplayingtheBuy-inQuantity
+Thefollowingexamplesshowhowthebuy-inquantityiscalculatedanddisplayed:
+l Example1–Aparticipantislong1,000shares,submitsabuy-inintentfor500shares,andnoshareshave
+beenallocated.Abuy-inorderissubmittedfor500shares.Thebuy-inquantityoutstandingdisplayedis500
+[[shares]].
+l Example2–Aparticipantislong1,000shares,submitsabuy-inintentfor500sharesandgetsallocated
+200shares.Abuy-inorderissubmittedfor300shares.Thebuy-inquantityoutstandingdisplayedis300
+[[shares]].
+l Example3–Aparticipantislong1,000shares,submitsabuy-inintentfor500sharesandgetsallocated
+200shares.Abuy-inorderissubmittedfor100shares.Thebuy-inquantityoutstandingdisplayedis100
+[[shares]].
+l Example4–Aparticipantislong1,000shares,submitsabuy-inretransmittalfor500sharesandgets
+allocated200shares.Abuy-inorderissubmittedfor100shares.Thebuy-inquantityoutstandingdisplayed
+is100shares.Theparticipantgetsallocatedanadditional150sharesandthebuy-inquantityoutstanding
+displayedisstill100shares.Theparticipantgetsallocatedanadditional150sharesandthebuy-inquantity
+outstandingdisplayedis0shares.
+CNSDashboardUserGuide
+
+---
+
+## Page 17
+
+CNSPositions 17
+EditingOriginalBuy-inOrders
+CNSallowslongmemberstoeditorreducetheiroriginalbuy-inordersubmittedquantityoriginallyinstructed
+throughtheSMART/TrackforBuy-insapplication.Theupdatedquantitymustbelessthanthequantitythat
+wasoriginallysubmitted.The
+ Editicononlydisplaysifthefollowingconditionsaremet:
+l CNSpositionsexistforthebuy-inorders.
+l Buyorderstatusisconfirmed.
+l Buyordersubmittedquantityisgreaterthanzero.
+Youarepermittedtoeditoriginalbuy-inordersonlyuntil2:00P.M.EasternTime.Ifyouselectthe
+ Edit
+iconoutsideofthespecifiedbusinesshours,thefollowingmessagedisplays:
+Functionisonlyavailableduringthestatedtimeframes.
+Toeditanoriginalbuy-inorder:
+1. AccesstheLongBuy-inSearchResultspage.Formoreinformation,seeViewingtheLongBuy-inSearch
+Results.
+2. Fromtherowcontainingthebuy-inorderthatyouwanttoupdate,clickthe
+ Editicon.TheUpdateLong
+Buy-inPositionpageappears.
+3. Updatethefields,andthenclick
+ Save.TheLongBuy-inPositionSearchResultspageappears
+withtheupdatestotheinstructions.
+4. Verifytheinstructionsareaccurate.
+CancelingOriginalBuy-inOrders
+CNSallowslongmemberstocanceltheiroriginalbuy-inordersubmittedquantityoriginallyinstructedthrough
+theSMART/TrackforBuy-insapplication.The
+ Cancelicononlydisplaysifthefollowingconditionsare
+met:
+l CNSpositionsexistforthebuy-inorders.
+l Buyorderstatusisconfirmed.
+l Buyordersubmittedquantityisgreaterthanzero.
+Youarepermittedtocancelanoriginalbuy-inorderonlyuntil2:00P.MEasternTime.Ifyouselectthe
+CanceliconaftertheCNScutofftime,thefollowingmessageappears:
+Functionisonlyavailableduringthestatedtimeframes.
+Tocancelanoriginalbuy-inorder:
+1. AccesstheLongBuy-inSearchResultspage.Formoreinformation,seeViewingtheLongBuy-inSearch
+Results.
+2. FromtheLongBuy-inSearchResultspage,click
+ Cancel.Thefollowingconfirmationmessage
+appears:
+PleaseconfirmtocancelthisBuy-inOrder.
+3. Toconfirmthecancellation,clickYes. Ifyoudecidenottocanceltheorder,clickNotoreturntothe
+SearchResultspagewithnoactiontaken.
+CNSDashboardUserGuide
+
+---
+
+## Page 18
+
+CNSPositions 18
+ShortBuy-in
+TheShortBuy-inpageallowsyoutosearchforshortbuy-inpositionswhereyourfirmstillhasbuy-inliability
+outstandingpositionsonDay2,executionday,ofthebuy-inprocess.Thepositionsdisplayedonlyincludes
+thoseliabilitieswheretheoriginallongmemberdidnotgetallocatedtheirbuy-inquantitypositionandthis
+memberalsosubmittedabuy-inorderinstructionforthatpositiononDay2ofthebuy-in.Thispagebecomes
+availableforviewingat10:00A.M.EasternTimeeachCNSprocessingday.TheParticipantIDistheonly
+requiredfield.
+ViewingtheShortBuy-inPosition
+Youcanviewtheshortbuy-inpositionandpositiondetails.Youcanfilterthesearchresultsfordisplayonthe
+pageandexportthedatatoanExcelfile.
+Toviewtheshortbuy-inposition:
+1. FromCNS([[CNS]]),asshowninFigure1.6, clickCNSPositions>ShortBuy-in. ThefollowingShort
+Buy-inpageappears.
+Figure2.6ShortBuy-inPage
+2. Typeorselectinformationinallofthefieldsaccordingtothefielddescriptionsshowninthefollowing
+table.TheParticipantIDfieldistheonlyrequiredfield.
+Field Description
+[[participant]] IDDefaultstotheparticipantIDassociatedwithyourloginID.Ifyouhaveone
+participantID,youcannotmodifythisfield.IfyouhavemultipleparticipantIDs
+associatedwithyourloginID,accesstheSelectParticipantpagetochangethe
+defaultID.Formoreinformation,seeSelectingaParticipantIDonpage 8
+SecurityID Entera9byteCommitteeonUniformSecuritiesIdentificationProcedures([[CUSIP]])
+or12byteinternationalsecurityidentificationnumber(ISIN)securityIDusing
+uppercaseandlowercaseletterstoperformasearch.Ifyoudonotenterasecurity
+[[ID]],thesystemsearchesforallsecurities
+Table2.5ShortBuy-inFieldDefinitions
+CNSDashboardUserGuide
+
+---
+
+## Page 19
+
+CNSPositions 19
+3. Click
+ Search.Afterthesearchvaluesthatyouenteredarevalidated,thesearchresultspage,as
+showninthefollowingfigure,appears.
+Figure2.7ShortBuy-in-SearchResults
+NextSteps
+l Formoreinformationaboutthesearchresults,seeViewingtheShortBuy-inSearchResults.
+l FormoreinformationaboutusingtheSecurityIDlinktoaccessthePositionDetailpage,seetheViewing
+thePositionDetailPage.
+CNSDashboardUserGuide
+
+---
+
+## Page 20
+
+CNSPositions 20
+ViewingtheShortBuy-inSearchResults
+TheShortBuy-inSearchResultspage,showninFigure2.7, displaystheresultsofthesearchperformed.
+Bydefault,theSearchResultspagedisplaystenrecordsperpage.Todisplaymorethantenrecordsper
+page,withamaximumofupto100recordsperpage,selectyourpreferencefromthe 
+Displayingdrop-down.Usetheprevious,next,first,andlastarrowsandthepagenumberstoreviewother
+pages.
+Tosorttherecordsbyascendinganddescendingorder, clickthe
+ upanddownarrowsforaspecific
+column.Recordsdisplayedonthecurrentpageandallotherpagesaresortedbasedontheselectedcolumn.
+Tofilterthesearchresultsdisplayedonthepage, clickthe
+ Filterbyoption.
+ToexportthesearchresultstoExcel, select
+ Export.TheresultsexportedtoExcelincludes
+alloftheresults,notjustthosedisplayedontheSearchResultspage.
+ThefollowingtableshowsthefielddefinitionsavailablefromtheShortBuy-inSearchResultspage.
+Field Description
+SecurityID DisplaystheISINofthesecurity.IfyouselecttheSecurityIDlink,
+thePositionDetailpageappears.Formoreinformationabout
+thispage,seetheViewingthePositionDetailPage.
+Security Description Displaysthedescriptionofthesecurity.
+ParticipantID DisplaystheIDoftheparticipant.
+Subaccount Displaysthesubaccountassignedtotheposition.
+CurrentCNSPosition DisplaysthequantityforthecurrentCNSposition.
+Allocations Displaysthequantityofallocationsinthatsubaccount.
+Buy-in Liability Quantity OutstandingDisplaysthequantityofanyliableoutstandingbuy-in.
+Table2.6ShortBuy-inSearchResultsFieldDefinitions
+CNSDashboardUserGuide
+
+---
+
+## Page 21
+
+CNSPositions 21
+ViewingthePositionDetailPage
+ThePositionDetailpage,showninFigure2.8, isaccessiblefromthePositionInquiry,LongBuy-In,andShort
+Buy-inSearchResultspagesbyselectingthesecurityIDhyperlink.Thispageprovidesvaluableinformation,
+suchastheposition,allocation,andbuy-ininformationforasecurity.
+Figure2.8PositionDetailPage
+CNSDashboardUserGuide
+
+---
+
+## Page 22
+
+CNSPositions 22
+ThefollowingtableshowsthefielddefinitionsavailablefromthePositionDetailpage.
+Section Field Description
+Position
+Detail
+ParticipantID DisplaystheIDoftheparticipant.
+SecurityID DisplaystheISINanddescriptionofthesecurity.Ifyouselect
+theSecurityIDlinkfromtheSearchResultspage,this
+PositionDetailpageappears.
+Subaccount Displaysthesubaccountthesecurityisassignedto.
+CNSPrice DisplaysthecurrentCNSpriceforthesecurity.
+Note:ThevalueispopulatedonlywhentheCurrent
+settlementdateisselected.
+Position Open Displaysthequantityofopeningpositionforthatsecurity.
+Current Displaysthequantityofcurrentpositionforthatsecurity.
+Value Displaysthevalueforthatsecurity.
+Note:ThevalueispopulatedonlywhentheCurrent
+settlementdateisselected.
+Activity StockDividend Displaysanystockdividendforthatsecurity.
+SettlingTrades Displaysthequantityforanysettlingtrades.
+Miscellaneous [[shares]] Displaysthequantityforanymiscellaneousshares.
+AllocationYesterday’sDayCycle Displaysthequantityofpositioninyesterday’sdaycycle.
+Today’sNightCycle Displaysthequantityofpositionsintoday’snightcycle.
+Today’sDayCycle Displaysthequantityofpositionsintoday’sdaycycle.
+Buy-in
+Priority
+Buy-inDueToday Displaysthequantityofthebuy-induetoday.
+RetransmittalDueToday Displaysthequantityoftheretransmittalduetoday.
+Buy-inDueTomorrow Displaysthequantityofthebuy-induetomorrow.
+Retransmittal Due TomorrowDisplaysthequantityoftheretransmittalduetomorrow.
+Buy-in
+Liability
+DueToday Displaysthequantityofliablebuy-insduetoday.
+Note:ThevalueispopulatedonlywhentheCurrent
+settlementdateisselected.
+DueTomorrow Displaysthequantityofliablebuy-insduetomorrow.
+Table2.7PositionDetailFieldDefinitions
+CNSDashboardUserGuide
+
+---
+
+## Page 23
+
+Reconciliation 23
+3.RECONCILIATION
+ThefollowingfigureshowstheReconciliationdrop-downoptionsavailablefromCNS([[CNS]]):
+Figure3.1Reconciliation
+FormoreinformationabouttheCashReconciliationStatementoption,seeCashReconciliationStatement.
+CashReconciliationStatement
+TheCashReconciliationStatementpageprovidesyouwiththeabilitytosearchtheCNScashbalanceof
+yourparticipantaccountforagivensettlementdate.Formoreinformation,seeViewingtheCash
+ReconciliationStatementResultsonthenextpage
+CNSDashboardUserGuide
+
+---
+
+## Page 24
+
+Reconciliation 24
+ViewingtheCashReconciliationStatementResults
+Youcanviewthecashreconciliationstatementbyselectingforavalidsettlementdate.Youcanfilterthe
+searchresultsfordisplayonthepageandexportthedatatoanExcelfile.
+Toviewthecashreconciliationstatementresults:
+1. FromCNS([[CNS]]),asshowninFigure1.6, clickReconciliation>CashReconciliationStatement. The
+followingCashReconciliationStatementpageappears.
+Figure3.2CashReconciliationStatementPage
+2. Typeorselectinformationinallofthefieldsaccordingtothefielddescriptionsshowninthefollowing
+table:
+Field Description
+[[participant]] IDDefaultstotheparticipantIDassociatedwithyourloginID.Ifyouhaveone
+participantID,youcannotmodifythisfield.IfyouhavemultipleparticipantIDs
+associatedwithyourloginID,accesstheSelectParticipantpagetochangethe
+defaultID.Formoreinformation,seeSelectingaParticipantIDonpage 8
+[[settlement]] DateSelectthesettlementdatefromthedrop-down,whichispopulatedbasedonthe
+Currentsettlementdate,thedefault.Otheravailablesettlementdatesinclude:
+l Settlementdateminus4settlementdates
+l Settlementdateminus3settlementdates
+l Settlementdateminus2settlementdates
+l Settlementdateminus1settlementdate
+Table3.1CashReconciliationStatementFieldDefinitions
+CNSDashboardUserGuide
+
+---
+
+## Page 25
+
+Reconciliation 25
+3. Click
+ Search.Afterthesearchvaluesthatyouenteredarevalidated,thesearchresultspage,as
+showninthefollowingfigure,appears.
+Figure3.3CashReconciliationStatement-SearchResults
+NextSteps
+l Formoreinformationaboutthesearchresults,seeViewingtheCashReconciliationStatementSearch
+Results.
+CNSDashboardUserGuide
+
+---
+
+## Page 26
+
+Reconciliation 26
+ViewingtheCashReconciliationStatementSearchResults
+TheCashReconciliationStatementSearchResultspage,showninFigure3.3, displaystheresultsofthe
+searchperformed.
+ToexportthesearchresultstoExcel, select
+ Export.TheresultsexportedtoExcelincludes
+alloftheresults,notjustthosedisplayedontheSearchResultspage.
+ToprinttheCashReconciliationStatementpage, click
+ Print.
+ThefollowingtableshowsthefielddefinitionsavailablefromtheCashReconciliationStatementSearch
+Resultspage.
+Line
+Number
+Field Description
+MoneyRecap
+Thesearchresultsmayhaveadebitvalue,creditvalue,orbothdebitandcreditvalues.The
+appropriateDebitandCreditcolumnsarepopulatedbasedonthesearchresults
+1 Yesterday'sClosingMoneyBalance Displaysyesterday’sclosingmoney
+balance.
+2 Yesterday'sCNSMoneySettlement Displaysyesterday’sCNSmoney
+[[settlement]].
+3 Today'sSettlingTrades(FromComparedTrade
+Summary)
+Displaystoday’ssettlingtrades.
+4 Today'sCashDividends Displaystoday’scashdividends.
+5 MiscellaneousMoneyEntries Displaysmiscellaneousmoney
+entries.
+6 Yesterday'sClearingDeposit Displaysyesterdaysclearingdeposit.
+7 Today'sClearingDeposit Displaystoday’sclearingdeposit.
+8 Today'sClosingMoneyBalance Displaystoday’sclosingmoney
+balance.
+CurrentMarketValueRecap
+Thesearchresultsmayhavealongmarketvalue,shortmarketvalue,orbothlongandshortmarket
+values.TheappropriateLongMarketValueandShortMarketValuecolumnsarepopulatedbasedon
+thesearchresults.TheHeaderCurrentMarketValueisalsodisplayed.
+9 MarketValueofToday'sOpeningPositions Displaysthemarketvalueoftoday’s
+openingpositions.
+10 MarketValueofToday'sSettlingTrades Displaysthemarketvalueoftoday’s
+settlingtrades.
+11 MarketValueofToday'sStockDividends Displaysthemarketvalueoftoday’s
+stockdividends.
+12 MarketValueofToday'sMiscellaneousStock
+Entries
+Displaysthemarketvalueoftoday’s
+miscellaneousstockentries.
+13 NetValueDuetoSettleToday(BeforeSettlement
+Activity- Lines9,10,11,12)
+Displaysthenetvalueduetosettle
+today.
+Table3.2CashReconciliationStatementSearchResultsFieldDefinitions
+CNSDashboardUserGuide
+
+---
+
+## Page 27
+
+Reconciliation 27
+Line
+Number
+Field Description
+14 MarketValueofLastNight'sSettlements Displaysthemarketvalueoflast
+night’spositions.
+15 NetValueofPositionsStillOpen(BeforeDaytime
+[[settlement]])
+Displaysthenetvalueofpositionsstill
+open.
+SettlementReconciliation
+Thesearchresultsmayhavealongmarketvalue,shortmarketvalue,orbothlongandshortmarket
+values.TheappropriateLongMarketValueandShortMarketValuecolumnsarepopulatedbasedon
+thesearchresults.
+16 Today'sClosingMoneyBalance(FromLine8) Displaystoday’sclosingmoney
+balance.
+17 LessNetValueofOpenPositions(FromLine15) Displaysthenetvalueofopen
+positions.
+18 CurrentMoneySettlement(BeforeDaytime
+[[settlement]]- Line16MinusLine17)
+Displayscurrentmoneysettlement.
+19 PostCreditforYourDaytimeDeliveries([[CNS]]
+ReceiptstoDepository- ShownasLMVon
+SettlementActivityReport)
+Displayscreditfordaytimedeliveries.
+20 PostDebitforYourDaytimeReceipts([[CNS]]
+DeliveriestoDepository- ShownasSMVon
+SettlementActivityReport)
+Displaysdebitfordaytimereceipts.
+21 FinalCNSMoneySettlement(NetofLines18,19,
+and20)
+DisplaysfinalCNSmoneysettlement.
+Table3.2CashReconciliationStatementSearchResultsFieldDefinitions(Continued)
+CNSDashboardUserGuide
+
+---
+
+## Page 28
+
+ParticipantInstructions 28
+4.PARTICIPANTINSTRUCTIONS
+ThefollowingfigureshowstheParticipantInstructionsdrop-downoptionsavailablefromCNS([[CNS]]):
+Figure4.1ParticipantInstructions
+FormoreinformationabouteachoptionintheParticipantInstructionsdrop-down,seethefollowingtopics.
+l Fully-Paid-ForInstructions–seeFully-Paid-ForInstructions.
+l PriorityInstructions–seePriorityInstructions.
+l ExemptionInstructions–seeExemptionInstructions.
+Fully-Paid-ForInstructions
+InCNS,afully-paid-foraccountisasubaccountthatassistsyouinmaintainingcompliancewithpossession
+andcontrolrequirementspursuanttoRule15c3-3oftheSecuritiesExchangeAct.Italsoallowsyoutodeliver
+institutionaltransactionswithDepositoryTrustCorporation([[DTC]])usingyourfully-paid-forsecuritiesin
+anticipationthattheintendedrecipientsreceivethesesecuritiesfromCNS.YouinstructNSCCtomoveyour
+expectedlongallocationsfromthegeneralCNSASubaccountintoafully-paid-forlocation(ESubaccount).
+Youarethenpermittedtousefully-paid-forpositionstocompleteinstitutionaldeliveriesinDTC.
+TheFully-Paid-ForInstructionspage,showninFigure4.2, enablesyoutoaddandsearchforfully-paid-for
+instructions.Afterviewingtheinstructions,youcanthenupdate,delete,orexportthem.Formoreinformation
+abouttheoptionsavailablefromtheFully-Paid-ForInstructionspage,seethefollowingtopics:
+l ViewingFully-Paid-ForInstructions
+l AddingPriorityInstructions
+CNSDashboardUserGuide
+
+---
+
+## Page 29
+
+ParticipantInstructions 29
+ViewingFully-Paid-ForInstructions
+Toviewafully-paid-forinstruction:
+1. FromCNS([[CNS]]),showninFigure1.6, clickParticipantInstructions>Fully-Paid-ForInstructions.
+ThefollowingFully-Paid-ForInstructionspageappears:
+Figure4.2Fully-Paid-ForInstructionsPage
+2. Typeorselectinformationinallofthefieldsaccordingtothefielddescriptionsshowninthefollowing
+table.TheParticipantIDfieldistheonlyrequiredfield.
+Field Description
+[[participant]] IDDefaultstotheparticipantIDassociatedwithyourloginID.Ifyouhaveone
+participantID,youcannotmodifythisfield.Ifyouhavemultipleparticipant
+IDsassociatedwithyourloginID,accesstheSelectParticipantpageto
+changethedefaultID.Formoreinformation,seeSelectingaParticipantID
+onpage 8
+SecurityID Entera9byteCommitteeonUniformSecuritiesIdentificationProcedures
+([[CUSIP]])or12byteinternationalsecurityidentificationnumber(ISIN)security
+IDusinguppercaseandlowercaseletterstoperformasearch.Ifyoudonot
+enterasecurityID,thesystemsearchesforallsecurities
+[[settlement]] DateSelectthesettlementdatefromthedrop-down,whichispopulatedbasedon
+theCurrentsettlementdate,thedefault.Otheravailablesettlementdates
+include:
+l Settlementdateminus4settlementdates
+l Settlementdateminus3settlementdates
+l Settlementdateminus2settlementdates
+l Settlementdateminus1settlementdate
+Table4.1Fully-PaidForFieldDefinitions
+CNSDashboardUserGuide
+
+---
+
+## Page 30
+
+ParticipantInstructions 30
+3. Click
+ Search.Afterthesearchvaluesthatyouenteredarevalidated,theSearchResultspage,
+asshowninthefollowingfigure,appears.
+Figure4.3Fully-Paid-ForInstructions-SearchResults
+Formoreinformationaboutthesearchresults,seeViewingtheFully-Paid-ForInstructionsSearchResults.
+ViewingtheFully-Paid-ForInstructionsSearchResults
+TheFully-Paid-ForInstructionsSearchResultspage,showninFigure4.3, displaystheresultsofthesearch
+thatyouperformed.
+Bydefault,theSearchResultspagedisplaystenrecordsperpage.Todisplaymorethantenrecordsper
+page,withamaximumofupto100recordsperpage,selectyourpreferencefromthe 
+Displayingdrop-down.Usetheprevious,next,first,andlastarrowsandthepagenumberstoreviewother
+pages.
+Tosorttherecordsbyascendinganddescendingorder, clickthe
+ upanddownarrowsforaspecific
+column.Recordsdisplayedonthecurrentpageandallotherpagesaresortedbasedontheselectedcolumn.
+Tofilterthesearchresultsdisplayedonthepage, clickthe
+ Filterbyoption.
+ToexportthesearchresultstoExcel, select
+ Export.TheresultsexportedtoExcelincludes
+alloftheresults,notjustthosedisplayedontheSearchResultspage.
+ThefollowingtableshowsthefielddefinitionsavailablefromtheFully-Paid-ForInstructionsSearchResults
+page.
+CNSDashboardUserGuide
+
+---
+
+## Page 31
+
+ParticipantInstructions 31
+Field Description
+ParticipantID DisplaystheIDoftheparticipant.
+ParticipantName Displaysthenameoftheparticipant.
+FromSubaccount Displaysthesubaccountthesharesaremovedfromforthesecurity.
+ToSubaccount Displaysthesubaccountthesharesaremovedtoforthesecurity.
+SecurityID DisplaystheISINofthesecurity.
+Security DescriptionDisplaysthedescriptionofthesecurity.
+Quantity Displaysthequantityofsharesthataremoved.
+Action Displaysthe
+ Editand
+ Deleteicons.
+Table4.2Fully-Paid-ForInstructionsSearchResultsFieldDefinitions
+FormoreinformationabouttheoptionsavailablefromtheFully-Paid-ForInstructionsSearchResultspage,
+seethefollowingtopics:
+ll AddingFully-Paid-ForInstructions
+l UpdatingFully-PaidForInstructions
+l DeletingFully-PaidForInstructions
+l ExportingFully-PaidForInstructions
+AddingFully-Paid-ForInstructions
+Toaddafully-paid-forinstruction:
+1. AccesstheFully-Paid-ForInstructions.Formoreinformation,seeViewingFully-Paid-ForInstructions.
+2. Fromthelower-leftsectionoftheFully-Paid-ForInstructionsorSearchResultspage,clickthe
+AddFully-PaidForlink.
+Notes
+l CNSonlydisplaythe
+ AddFully-PaidForlinkforsearchesperformedforthecurrentsettlementdate(today).
+l AddCNSfully-paid-forinstructionsonlybetween6:00A.M.-2:30P.M.EasternTime.
+3. FromtheAddFull-Paid-ForInstructionspage,showninFigure4.4, youcanaddaninstructiontomove
+oneormultiplepositionstoorfromthefully-paid-foraccount.Youcanmovesharestoandfromthe
+followingsubaccounts:
+o SubaccountAtoSubaccountE
+o SubaccountEtoSubaccountA
+CNSDashboardUserGuide
+
+---
+
+## Page 32
+
+ParticipantInstructions 32
+Figure4.4showsanexampleofaddingfully-paid-forinstructionsforatransferof1,000sharesfrom
+SubaccountAtoSubaccountE.
+Figure4.4AddFully-Paid-ForInstructionExample
+4. Asintheexample,toaddinstructions,completeeachfieldasoutlinedinthefollowingtable:
+Note
+Anorangeasterisk(*)indicatesarequiredfield.
+Field Description
+[[settlement]] DateDisplaystheread-onlycurrentsettlementdateusedintheinstruction.
+ParticipantID* Displaysyourread-onlyparticipantID,whichyoucannotchange.
+From SubaccountSubaccounttomovesharesfrom,includingthefollowingvalidvalues:
+l A- GeneralAccount
+l E- FullyPaidAccount
+ToSubaccount* Subaccounttomovesharesto,includingthefollowingvalidvalues:
+l A- GeneralAccount
+l E- FullyPaidAccount
+SecurityID* SecurityIDofthesharesintheformatofa9-byteCUSIPor12-byteISIN.You
+canuseupperandlowercaseletterstoperformasuccessfulsearch.
+Quantity* Quantityofsharestomovefromonesubaccounttoanothersubaccount.Format
+thenumberasfollows:
+l Nodecimalsorcommas
+l Numbergreaterthanzero
+l Upto9digits
+Table4.3AddFully-Paid-ForInstructionsFieldDefinitions
+CNSDashboardUserGuide
+
+---
+
+## Page 33
+
+ParticipantInstructions 33
+5. Completethefields,andthenclick
+ Submit.Thenewly-addedInstructionappearsintheSearch
+ResultssectionoftheFully-Paid-ForInstructionspage.
+Figure4.5Fully-PaidForInstructions-SearchResults
+UpdatingFully-PaidForInstructions
+EachinstructioncontainsanActioncolumncontaining
+ Editand
+ Deleteicons.Formoreinformation
+aboutdeletinginstructions,seeDeletingFully-PaidForInstructions. Iftheinstructionmeetsthefollowing
+criteria,youcanupdateit:
+l Instructioniswaitingtobeprocessedandifthesettlementdateoftheinstructionisthecurrentsettlement
+date(today).
+l Between6:00A.M-2:30P.M.EasternTime.
+Iftheinstructionhasbeenprocessed,ProcessedappearsintheActioncolumn,andyoucannotmakeany
+updatestothatinstruction.Youalsocannotupdateinstructionsoutsideofthespecifiedbusinesshours.Ifyou
+attempttoupdateaninstructionafterhours,thefollowingmessagedisplays:
+Functionis onlyavailableduringthestatedtimeframes.
+Toupdateafully-paid-forinstruction:
+1. AccesstheFully-Paid-ForInstructionsSearchResultspage.Formoreinformation,seeViewingFully-
+Paid-ForInstructions.
+CNSDashboardUserGuide
+
+---
+
+## Page 34
+
+ParticipantInstructions 34
+2. Fromtherowcontainingtheinstructionthatyouwanttoupdate,clickthe
+  Editicon.TheUpdateFully-
+Paid-ForInstructionspage,showninthefollowingfigure,appears.
+Figure4.6UpdateFully-Paid-ForInstructionPage
+3. Updatethefields,andthenclick
+ Save.TheFully-Paid-ForInstructionsSearchResultspage
+appearswiththeupdatestotheinstructions.
+4. Verifytheinstructionsareaccurate.
+DeletingFully-PaidForInstructions
+Aswithupdatinginstructions,youcandeleteinstructionsduringcertaintimes.Iftheinstructionmeetsthe
+followingcriteria,youcandeleteit:
+l Instructioniswaitingtobeprocessedandifthesettlementdateoftheinstructionisthecurrentsettlement
+date(today).
+l Between6:00A.M-2:30P.M.EasternTime.
+Youcannotdeleteinstructionsoutsideofthespecifiedbusinesshours.Ifyouattempttodeleteaninstruction
+afterhours,thefollowingmessagedisplays:
+Functionis onlyavailableduringthestatedtimeframes.
+CNSDashboardUserGuide
+
+---
+
+## Page 35
+
+ParticipantInstructions 35
+Todeleteafully-paid-forinstruction:
+1. AccesstheFully-Paid-ForInstructionsSearchResultspage.Formoreinformation,seeViewingFully-
+Paid-ForInstructions.
+2. Fromtherowcontainingtheinstructionthatyouwanttodelete,clickthe 
+ Deleteicon.TheDeleteFully-
+Paid-ForInstructionspage,showninFigure4.7, appears.
+Figure4.7DeleteFully-Paid-ForInstructionMessage
+3. Toconfirmthedeletionoftheinstruction,click
+ Delete.Ifyoudecidenottodeletetheinstruction,
+clickCanceltoreturntotheSearchResultspagewithnoactiontaken.
+AfterCNSdeletestheInstruction,theSearchResultsscreen,showninFigure4.8, appearswithDeletedin
+theActioncolumnfortheinstruction.
+Figure4.8DeletedInstruction
+ExportingFully-PaidForInstructions
+YoucanexportsearchresultstoaMicrosoftOffice®Excel®file.IntheSearchResultspage,click
+.
+TheFully-Paid-Forresultsareexportedtoalocationthatyouspecify.Figure4.9showstheexportedExcelfile
+withanexampleofsharesmovingfromsubaccountEtosubaccountA.
+Figure4.9ExportedFully-PaidForInstructionsInstruction
+CNSDashboardUserGuide
+
+---
+
+## Page 36
+
+ParticipantInstructions 36
+PriorityInstructions
+ThePriorityInstructionspage,showninFigure4.10, enablesyoutoaddandsearchforpriorityinstructions.
+Afterviewingtheinstructions,youcanthenupdate,delete,orexportthem.Aftersearchingforapriority
+instruction,thePriorityInstructionsSearchResultspageenablesyoutosortandfiltertheinstructions.You
+canalsoexporttheinformationtoanExcelspreadsheet.Formoreinformation,seeViewingPriority
+Instructions.
+ViewingPriorityInstructions
+Toviewapriorityinstruction:
+1. FromCNS([[CNS]]),asshowninFigure1.6, clickParticipantInstructions>PriorityInstructions. The
+followingFully-Paid-ForInstructionspageappears:
+Figure4.10PriorityInstructionsPage
+2. Typeorselectinformationinallofthefieldsaccordingtothefielddescriptionsshowninthefollowing
+table.TheParticipantIDfieldistheonlyrequiredfield.
+Field Description
+[[participant]] IDDefaultstotheparticipantIDassociatedwithyourloginID.Ifyouhaveone
+participantID,youcannotmodifythisfield.IfyouhavemultipleparticipantIDs
+associatedwithyourloginID,accesstheSelectParticipantpagetochangethe
+defaultID.Formoreinformation,seeSelectingaParticipantIDonpage 8
+SecurityID Entera9byteCommitteeonUniformSecuritiesIdentificationProcedures
+([[CUSIP]])or12byteinternationalsecurityidentificationnumber(ISIN)securityID
+usinguppercaseandlowercaseletterstoperformasearch.Ifyoudonotentera
+securityID,thesystemsearchesforallsecurities
+[[settlement]] DateSelectthesettlementdatefromthedrop-down,whichispopulatedbasedonthe
+Currentsettlementdate,thedefault.Otheravailablesettlementdatesinclude:
+l Settlementdateminus4settlementdates
+l Settlementdateminus3settlementdates
+l Settlementdateminus2settlementdates
+l Settlementdateminus1settlementdate
+l Settlementdateplus1settlementdate
+Table4.4PriorityInstructionsFieldDefinitions
+CNSDashboardUserGuide
+
+---
+
+## Page 37
+
+ParticipantInstructions 37
+3. Click
+ Search.Afterthesearchvaluesthatyouenteredarevalidated,theSearchResultspage,
+asshowninthefollowingfigure,appears.
+Figure4.11PriorityInstructions-SearchResults
+NextSteps
+l Formoreinformationaboutthesearchresults,seeViewingthePriorityInstructionsSearchResults.
+l FormoreinformationaboutusingtheSecurityIDlinktoaccessthePriorityInstructionDetailpage,seethe
+PriorityInstructionDetailPage.
+CNSDashboardUserGuide
+
+---
+
+## Page 38
+
+ParticipantInstructions 38
+ViewingthePriorityInstructionsSearchResults
+ThePriorityInstructionsSearchResultspage,showninFigure4.11, displaystheresultsofthesearchthat
+youperformed.
+Bydefault,theSearchResultspagedisplaystenrecordsperpage.Todisplaymorethantenrecordsper
+page,withamaximumofupto100recordsperpage,selectyourpreferencefromthe 
+Displayingdrop-down.Usetheprevious,next,first,andlastarrowsandthepagenumberstoreviewother
+pages.
+Tosorttherecordsbyascendinganddescendingorder, clickthe
+ upanddownarrowsforaspecific
+column.Recordsdisplayedonthecurrentpageandallotherpagesaresortedbasedontheselectedcolumn.
+Tofilterthesearchresultsdisplayedonthepage, clickthe
+ Filterbyoption.
+ToexportthesearchresultstoExcel, select
+ Export.TheresultsexportedtoExcelincludes
+alloftheresults,notjustthosedisplayedontheSearchResultspage.
+ThefollowingtableshowsthefielddefinitionsavailablefromthePriorityInstructionsSearchResultspage.
+Field Description
+SecurityID DisplaystheISINofthesecurity.IfyouselecttheSecurityIDlink,thePriority
+InstructionDetailpageappears.Formoreinformationaboutthispage,seethe
+PriorityInstructionDetailPage.
+Security DescriptionDisplaysthedescriptionofthesecurity.
+Subaccount Displaysthesubaccountforthesecurity.
+Status Displayswhethertheinstructionisvalid
+Priority Displaysthepriorityleveloftheinstruction.Validvaluesare:
+l HI-HI([[default]])
+l HI-LO
+l LO-LO
+Action Displaysthe
+ Editand
+ Cancelicons.
+Table4.5PriorityInstructionsSearchResultsFieldDefinitions
+Formoreinformationaboutmanagingpriorityinstructions,seethefollowingtopics:
+l AddingPriorityInstructions
+l EditingPriorityInstructions
+l DeletingPriorityInstructions
+CNSDashboardUserGuide
+
+---
+
+## Page 39
+
+ParticipantInstructions 39
+AddingPriorityInstructions
+Youcanaddamaximumoftenpriorityinstructions.
+Notes
+YoucanonlyaddpriorityinstructionsbeforetheCNScutofftimeof6:30P.M.Eastern
+Time.Ifyouattempttoaddpriorityinstructionsoutsideofthespecifiedbusiness
+hours,thefollowingmessageappears:
+Functionisonlyavailableduringthestatedtimeframes.
+Toaddapriorityinstruction:
+1. AccessthePriorityInstructionsorthePriorityInstructionsSearchResultspage.Formoreinformation,
+seeViewingPriorityInstructions.
+2. Fromthelower-leftsectionofthepage,click
+ +AddPriority.
+3. FromtheAddPriorityInstructionspage,showninFigure4.12, addapriorityinstruction.
+Figure4.12AddPriorityInstructionPage
+4. Typeorselectinformationinallofthefieldsaccordingtothefielddescriptionsshowninthefollowing
+table:
+Field Description
+[[settlement]] DateDisplaystheCNSnextsettlementdateusedintheinstruction.
+ParticipantID DefaultstotheparticipantIDassociatedwithyourloginID.Ifyouhave
+oneparticipantID,youcannotmodifythisfield.Ifyouhavemultiple
+participantIDsassociatedwithyourloginID,accesstheSelect
+ParticipantpagetochangethedefaultID.Formoreinformation,see
+SelectingaParticipantIDonpage 8
+TheParticipantIDfieldisarequiredfield.
+Subaccount Subaccounttomovesharesfromisshownasthefollowingvalidvalue:
+l A- GeneralAccount
+Thisisarequiredfield.
+Table4.6AddPriorityInstructionsFieldDefinitions
+CNSDashboardUserGuide
+
+---
+
+## Page 40
+
+ParticipantInstructions 40
+Field Description
+SecurityID Entera9byteCommitteeonUniformSecuritiesIdentificationProcedures
+([[CUSIP]])or12byteinternationalsecurityidentificationnumber(ISIN)
+securityIDusinguppercaseandlowercaseletterstoperformasearch.If
+youdonotenterasecurityID,thesystemsearchesforallsecurities
+Priority Selectaprioritytoaddtothesecurityfromthefollowingvalidvalues:
+l HI-HI([[default]])
+l HI-LO
+l LO-LO
+Action Displaysthe
+ Deleteicon.
+Table4.6AddPriorityInstructionsFieldDefinitions(Continued)
+5. Toaddasecuritytothepriorityinstructions,click
+ +AddSecurity.Youcanadduptoa
+maximumoftensecurities.
+6. Completethefields,andthenclick
+ Submit.
+Thenewly-addedInstructionappearsintheSearchResultssectionofthePriorityInstructionspage.
+EditingPriorityInstructions
+EachinstructioncontainsanActioncolumncontainingan
+ Editanda
+ Deleteicon.Formore
+informationaboutdeletinginstructions,seeDeletingPriorityInstructions. Iftheinstructionmeetsthefollowing
+criteria,youcanupdateit:
+l Instructioniswaitingtobeprocessedandifthesettlementdateoftheinstructionisthenextsettlement
+date.
+l Before6:30P.M.EasternTime.
+Iftheinstructionhasbeenprocessed,ProcessedappearsintheActioncolumn,andyoucannotmakeany
+updatestothatinstruction.Youalsocannotupdateinstructionsoutsideofthespecifiedbusinesshours.Ifyou
+attempttoupdateaninstructionafterthespecifiedhours,thefollowingmessagedisplays:
+Functionis onlyavailableduringthestatedtimeframes.
+Toeditapriorityinstruction:
+1. AccessthePriorityInstructionsSearchResultspage.Formoreinformation,seeViewingPriority
+Instructions.
+2. Fromtherowcontainingtheinstructionthatyouwanttoupdate,clickthe
+  Editicon.
+3. Updatethefields,andthenclick
+ Save.ThePriorityInstructionsSearchResultspageappearswith
+theupdatestotheinstructions.
+4. Verifytheinstructionsareaccurate.
+CNSDashboardUserGuide
+
+---
+
+## Page 41
+
+ParticipantInstructions 41
+DeletingPriorityInstructions
+Aswithupdatinginstructions,youcandeleteinstructionsduringcertaintimes.Iftheinstructionmeetsthe
+followingcriteria,youcandeleteit:
+l Instructioniswaitingtobeprocessedandifthesettlementdateoftheinstructionisthenextsettlement
+date.
+l BeforetheCNS cutofftimeof6:30P.M.EasternTime.
+Youcannotupdateinstructionsoutsideofthespecifiedbusinesshours.Ifyouattempttoupdatean
+instructionafterhours,thefollowingmessagedisplays:
+Functionisonlyavailableduringthestatedtimeframes.
+Todeleteapriorityinstruction:
+1. AccessthePriorityInstructionsSearchResultspage.Formoreinformation,seeViewingPriority
+Instructions.
+2. Fromtherowcontainingtheinstructionthatyouwanttodelete,clickthe 
+ Deleteicon.Thefollowing
+messageappears:
+Pleaseconfirmtodeletethisinstructionforsecurity<SecurityID>.
+3. Toconfirmthedeletionoftheinstruction,click
+ Delete.Ifyoudecidenottodeletetheinstruction,
+clickCanceltoreturntotheSearchResultspagewithnoactiontaken.
+CNSdeletestheinstructionandreturnsyoutothePriorityInstructions-SearchResultspage.
+CNSDashboardUserGuide
+
+---
+
+## Page 42
+
+ParticipantInstructions 42
+PriorityInstructionDetailPage
+ThePriorityInstructionDetailpage,showninFigure4.13, isaccessiblefromthePriorityInstructionsSearch
+ResultspagebyselectingthesecurityIDlink.
+Figure4.13PriorityInstructionDetailPage
+l ToprintthePriorityInstructionDetailpage, click
+ Print.
+l Toeditthepriorityinstruction, click
+ Edit,updatethefields,andsavetheinformation.
+l Todeletethepriorityinstruction, click
+ Delete.
+ThefollowingtableshowsthefielddefinitionsavailablefromthePriorityInstructionDetailpage.
+Field Description
+[[participant]] DisplaystheparticipantIDandname.
+SecurityID Displaysthe12characterISINofthesecurityanddescription.
+Subaccount Displaysthesubaccountontheinstruction.
+Priority Displaysthepriorityassignedtotheposition.
+Status Displaysthestatusofthepriorityinstruction.
+CNSDashboardUserGuide
+
+---
+
+## Page 43
+
+ParticipantInstructions 43
+Field Description
+SettlementDate Displaysthesettlementdatefortheposition.
+Source Displaysthesourceofthepriorityinstruction.
+Last Updated By DisplaystheIDoftheuserorsystemthatupdatedtheinstruction.
+LastUpdatedOn Displaysthedateandtimeofthelastupdatetotheinstruction.
+ExemptionInstructions
+TheExemptionInstructionspage,enablesyoutoaddandsearchforexistingexemptioninstructions.After
+viewingtheinstructions,youcanthenupdate,delete,orexportthem.Formoreinformationabouttheoptions
+availablefromtheExemptionInstructionspage,seethefollowingtopics:
+l ViewingExemptionInstructions
+l AddingExemptionInstructions
+ViewingExemptionInstructions
+Toviewaexemptioninstruction:
+1. FromtheCNShomepage,clickParticipantInstructions>ExemptionInstructions. Thefollowing
+ExemptionInstructionspageappears:
+2. Typeorselectinformationinallofthefieldsaccordingtothefielddescriptionsshowninthefollowing
+table.TheParticipantIDfieldistheonlyrequiredfield.
+CNSDashboardUserGuide
+
+---
+
+## Page 44
+
+ParticipantInstructions 44
+Field Description
+[[participant]] IDDefaultstotheparticipantIDassociatedwithyourloginID.Ifyouhaveone
+participantID,youcannotmodifythisfield.IfyouhavemultipleparticipantIDs
+associatedwithyourloginID,accesstheSelectParticipantpagetochangethe
+defaultID.Formoreinformation,seeSelectingaParticipantIDonpage 8
+SecurityID Entera9byteCommitteeonUniformSecuritiesIdentificationProcedures
+([[CUSIP]])or12byteinternationalsecurityidentificationnumber(ISIN)securityID
+usinguppercaseandlowercaseletterstoperformasearch.Ifyoudonotentera
+securityID,thesystemsearchesforallsecurities
+[[settlement]] DateSelectthesettlementdatefromthedrop-down,whichispopulatedbasedonthe
+Currentsettlementdate,thedefault.Otheravailablesettlementdatesinclude:
+l Settlementdateminus4settlementdates
+l Settlementdateminus3settlementdates
+l Settlementdateminus2settlementdates
+l Settlementdateminus1settlementdate
+l Settlementdateplus1settlementdate
+Table4.7ExemptionInstructionsFieldDefinitions
+3. Click
+ Search.Afterthesearchvaluesthatyouenteredarevalidated,theSearchResultspage,
+asshowninthefollowingfigure,appears.
+Figure4.14ExemptionInstructions-SearchResults
+CNSDashboardUserGuide
+
+---
+
+## Page 45
+
+ParticipantInstructions 45
+NextSteps
+l Formoreinformationaboutthesearchresults,seeViewingtheExemptionInstructionsSearchResults.
+l FormoreinformationaboutusingtheSecurityIDlinktoaccesstheExemptionInstructionsDetailpage,
+seetheExemptionInstructionDetailPage.
+ViewingtheExemptionInstructionsSearchResults
+TheExemptionInstructionsSearchResultspage,showninFigure4.14, displaystheresultsofthesearch
+thatyouperformed.
+Bydefault,theSearchResultspagedisplaystenrecordsperpage.Todisplaymorethantenrecordsper
+page,withamaximumofupto100recordsperpage,selectyourpreferencefromthe 
+Displayingdrop-down.Usetheprevious,next,first,andlastarrowsandthepagenumberstoreviewother
+pages.
+Tosorttherecordsbyascendinganddescendingorder, clickthe
+ upanddownarrowsforaspecific
+column.Recordsdisplayedonthecurrentpageandallotherpagesaresortedbasedontheselectedcolumn.
+Tofilterthesearchresultsdisplayedonthepage, clickthe
+ Filterbyoption.
+ToexportthesearchresultstoExcel, select
+ Export.TheresultsexportedtoExcelincludes
+alloftheresults,notjustthosedisplayedontheSearchResultspage.
+ThefollowingtableshowsthefielddefinitionsavailablefromtheExemptionInstructionsSearchResults
+page.
+Field Description
+SecurityID DisplaystheISINofthesecurity.IfyouselecttheSecurityIDlink,the
+ExemptionInstructionDetailpageappears.Formoreinformationaboutthis
+page,seetheExemptionInstructionDetailPage.
+Security DescriptionDisplaysthedescriptionofthesecurity.
+Subaccount Displaysthesubaccountforthesecurity.
+ProjectedPosition Displaysthequantityoftheprojectedposition.
+Action Displaysthe
+ Editand
+ Cancelicons.
+Table4.8ExemptionInstructionsSearchResultsFieldDefinitions
+FormoreinformationabouttheoptionsavailablefromtheExemptionInstructionsSearchResultspage,see
+thefollowingtopics:
+l AddingExemptionInstructions
+l EditingExemptionInstructions
+l DeletingExemptionInstructions
+CNSDashboardUserGuide
+
+---
+
+## Page 46
+
+ParticipantInstructions 46
+AddingExemptionInstructions
+Youcanaddamaximumoftenexemptioninstructions.
+Notes
+YoucanonlyaddexemptioninstructionsbeforetheCNScutofftimeof6:30P.M.
+EasternTime.Ifyouattempttoaddexemptioninstructionsoutsideofthespecified
+businesshours,thefollowingmessageappears:
+Functionisonlyavailableduringthestatedtimeframes.
+Toaddanexemptioninstruction:
+1. AccesstheExemptionInstructionsorExemptionInstructionsSearchResultspage.Formore
+information,seeViewingExemptionInstructions.
+2. FromtheExemptionInstructionsorExemptionInstructionsSearchResultspage,click
++AddExemption.TheAddExemptionInstructionspage,showninFigure4.15,
+appears.
+Figure4.15AddExemptionInstructionPage
+3. CompleteeachfieldasoutlinedinTable4.9. Youmustenteravalueinoneofthefollowingfields: Level
+1 [[shares]],Level1 ALL,Level2Shares,orLevel2ALL.Ifyoudonotenteravalue,thefollowingerror
+messageappears:
+PleaseenteravalueforExemptionLevel1orExemptionLevel2.
+Note
+Anorangeasterisk(*)indicatesarequiredfield.
+CNSDashboardUserGuide
+
+---
+
+## Page 47
+
+ParticipantInstructions 47
+Field Description
+[[settlement]] DateDisplaysthesettlementdateusedontheexemptioninstruction.Thisfield
+defaultstothenextsettlementdate.
+ParticipantID* DisplaystheparticipantID.Thisisaread-onlyfieldandcannotbe
+modified.
+Subaccount* Selectaspecificsubaccountfromthefollowingvalidvalues:
+l A–GeneralAccount
+l S–ACATSShort
+Thisisarequiredfield.
+Level2exemptioninstructionscannotbeenteredforSsubaccount;
+therefore,ifyouselectS-ACATS Short,theLevel2SharesfieldandLevel
+2ALLcheckboxaredisabled.
+SecurityID* Entera9byteCommitteeonUniformSecuritiesIdentificationProcedures
+([[CUSIP]])or12byteinternationalsecurityidentificationnumber(ISIN)
+securityIDusinguppercaseandlowercaseletterstoperformasearch.If
+youdonotenterasecurityID,thesystemsearchesforallsecurities
+Level1Shares Enterthequantityofsharesfortheexemption.Formatthenumberusing
+thefollowingguidelines:
+l Nodecimalsorcommas
+l Numbergreaterthanzero
+l Upto9digits
+Ifyouenteraninvalidnumber,thefollowingmessagedisplays:
+Pleaseenteravalidnumber.
+Level1ALL Enteravalueinoneofthefollowingfields:Level1 [[shares]],Level1 ALL,
+Level2Shares,orLevel2ALL.Ifyoudonotenteravalue,thefollowing
+errormessageappears:
+PleaseenteravalueforExemptionLevel1orExemptionLevel2.
+Level2Shares Enterthequantityofsharesfortheexemption.Formatthenumberusing
+thefollowingguidelines:
+l Nodecimalsorcommas
+l Numbergreaterthanzero
+l Upto9digits
+Ifyouenteraninvalidnumber,thefollowingmessagedisplays:
+Pleaseenteravalidnumber.
+Note: IfyouenteravalueinthisfieldandthenselectS-ACATS Shortin
+theSubaccountfield,thevalueisremovedfromthisfieldandtheLevel2
+ALL checkboxisautomaticallydeselected.
+Level2ALL Enteravalueinoneofthefollowingfields:Level1 [[shares]],Level1 ALL,
+Level2Shares,orLevel2ALL.Ifyoudonotenteravalue,thefollowing
+errormessageappears:
+PleaseenteravalueforExemptionLevel1orExemptionLevel2.
+Action Click
+ Deletetoclearthesecurityinformation.
+Table4.9AddExemptionInstructionsField Description
+CNSDashboardUserGuide
+
+---
+
+## Page 48
+
+ParticipantInstructions 48
+4. Toaddanotherrowofsecurityinstructions,click
+ +AddSecurity.Youcanaddamaximum
+oftenexemptioninstructions.
+5. Click
+ Submit.
+Thenewly-addedinstructionappearsintheSearchResultssectionoftheExemptionInstructionspage.
+Figure4.16ExemptionInstruction-SearchResults
+EditingExemptionInstructions
+EachinstructioncontainsanActioncolumncontaininganEdit
+ anda
+ icon.Formoreinformationabout
+deletinginstructions,seeDeletingExemptionInstructions. Iftheinstructionmeetsthefollowingcriteria,you
+canupdateit:
+l Instructioniswaitingtobeprocessedandifthesettlementdateoftheinstructionisthenextsettlement
+date.
+l Before6:30P.M.EasternTime.
+Youcannotupdateinstructionsoutsideofthespecifiedhours.Ifyouattempttoupdateaninstructionoutside
+ofthespecifiedbusinesshours,thefollowingmessagedisplays:
+Functionis onlyavailableduringthestatedtimeframes.
+Toupdateanexemptioninstruction:
+1. AccesstheExemptionSearchResultspage.Formoreinformation,seeViewingExemptionInstructions.
+2. Fromtherowcontainingtheinstructionthatyouwanttoupdate,clickthe
+  Editicon.
+3. Updatethefields,andthenclick
+ Save.TheExemptionSearchResultspageappearswiththe
+updatestotheinstructions.
+4. Verifytheinstructionsareaccurate.
+CNSDashboardUserGuide
+
+---
+
+## Page 49
+
+ParticipantInstructions 49
+DeletingExemptionInstructions
+Aswithupdatinginstructions,youcandeleteinstructionsduringcertaintimes.Iftheinstructionmeetsthe
+followingcriteria,youcandeleteit:
+l Instructioniswaitingtobeprocessedandifthesettlementdateoftheinstructionisthenextsettlement
+date.
+l Before6:30P.M.EasternTime.
+Todeleteanexemptioninstruction:
+1. AccesstheExemptionSearchResultspage.Formoreinformation,seeViewingExemptionInstructions.
+2. Fromtherowcontainingtheinstructionthatyouwanttodelete,clickthe 
+ Deleteicon.Thefollowing
+confirmationmessageisappears:
+Pleaseconfirmtodeletethisinstructionforsecurity<SecurityID>.
+3. Toconfirmthedeletionoftheinstruction,click
+ Delete.Ifyoudecidenottodeletetheinstruction,
+clickCanceltoreturntotheSearchResultspagewithnoactiontaken.
+AfterCNSdeletestheinstruction,theSearchResultsscreenappearswithDeletedintheActioncolumnfor
+theinstruction.
+CNSDashboardUserGuide
+
+---
+
+## Page 50
+
+ParticipantInstructions 50
+ExemptionInstructionDetailPage
+TheExemptionInstructionDetailpage,showninFigure4.17, isaccessiblefromtheExemptionInstructions
+pagebyselectingthesecurityIDlink.Thispageprovidesvaluableinformation,suchasexemptionleveland
+projectpositiondetails.
+Figure4.17ExemptionInstructionDetailPage
+l ToprinttheExemptionInstructionDetailpage, click
+ Print.
+l Toedittheexemptioninstruction, click
+ Edit,updatethefields,andsavetheinformation.
+l Todeletetheexemptioninstruction, click
+ Delete.
+CNSDashboardUserGuide
+
+---
+
+## Page 51
+
+ParticipantInstructions 51
+ThefollowingtableshowsthefielddefinitionsavailablefromtheExemptionInstructionDetailpage.
+Field Description
+ExemptionInstruction
+[[participant]] DisplaystheparticipantIDandname.
+SecurityID Displaysthe12characterISINofthesecurityanddescription.
+Subaccount Displaysthesubaccountontheinstruction.
+SettlementDate Displaysthesettlementdatefortheposition.
+Source Displaysthesourceoftheexemptioninstruction.
+Status Displaysthestatusoftheexemptioninstruction.
+Last Updated By DisplaystheIDoftheuserorsystemthatupdatedtheinstruction.
+LastUpdatedOn Displaysthedateandtimeofthelastupdatetotheinstruction.
+ExemptionLevel
+Level1Shares(Submitted)Displaysthequantityoflevel1exemptsharessubmitted.
+Level1Shares(Accepted)Displaysthequantityoflevel1exemptsharesaccepted.
+Level2Shares(Submitted)Displaysthequantityoflevel2exemptsharessubmitted.
+Level2ALL Displaysthequantityoflevel2exemptsharesaccepted.
+ProjectedPositions
+Today'sCurrentPosition Displaystoday'scurrentpositionforthesecurity
+Tomorrow'sSettingTradesDisplaysantradesforthesecuritythataresettlingtomorrow.
+Tomorrow's MiscellaneousDisplaysanymiscellaneousentriesforthesecuritythataresettlingtomorrow.
+Tomorrow'sJournals Displaysanjournalsforthesecuritythataresettlingtomorrow.
+Tomorrow'sDividends Displaysandividendsforthesecuritythataresettlingtomorrow.
+CNSDashboardUserGuide
+
+---
+
+## Page 52
+
+FORMOREINFORMATION
+EmailDTCCLearningat:
+CoreLearning@[[DTCC]].com
+orvisitusonthewebat:
+www.dtcclearning.com

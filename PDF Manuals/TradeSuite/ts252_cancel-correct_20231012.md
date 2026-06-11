@@ -1,0 +1,1363 @@
+---
+title: "Advice of Cancellation or Correction Message Specification"
+source_pdf: "file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/ts252_cancel-correct_20231012.pdf"
+pages: 35
+size: "349.2 KB"
+category: "TradeSuite"
+ingested_on: "2026-06-05"
+---
+
+# Advice of Cancellation or Correction Message Specification
+
+**Original File:** [ts252_cancel-correct_20231012.pdf](file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/ts252_cancel-correct_20231012.pdf)  
+**Category:** TradeSuite  
+**Total Pages:** 35  
+**File Size:** 349.2 KB  
+
+---
+
+## Page 1
+
+TradeSuiteID®
+ADVICEOFCANCELLATIONORCORRECTION
+MESSAGESPECIFICATION
+VERSION8.1
+OCTOBER12,2023
+
+---
+
+## Page 2
+
+TABLEOFCONTENTS
+Preface 3
+Audience 3
+ChangesinThisVersion 3
+RelatedDocumentsandTraining 4
+Questions? 4
+1.Introduction 5
+2.InputandOutputSpecifications 6
+AdviceofCorrectionorCancellationWithMachine-ReadableInput 6
+Example1: CorrectingtheSpecificationCode 8
+Example2: CorrectingtheSpecificationValue 8
+Example3: CorrectingBoththeSpecificationCodeandValue 8
+AddingSpecificationstoanExistingConfirmation 9
+EditingConsiderations 9
+Machine-ReadableOutput 9
+Example1 11
+Example2 11
+Example3 11
+Machine-ReadableOutputforReversedAffirmation/Disaffirmation 11
+3.CommonInputandOutput 12
+CommonInputDetails 12
+CommonOutputDetails 18
+4.ICMErrorCodes 25
+AdviceofCancellationorCorrectionMessageSpecification
+TableOfContents 2
+
+---
+
+## Page 3
+
+PREFACE
+ThisdocumentdescribestheTradeSuiteID®serviceadviceofcancellationorconfirmation(AOCC)
+functionthatgivesbroker/dealersthestatusofallaffirmedorunaffirmedconfirmations.Italsodescribes
+cancellationprocessingenhancements,inputandoutputtopics,andICMerrorcodes.
+Forreasoncodes,seeInput/OutputInformation.
+Audience
+Thisdocumentisforbrokers/dealerswhorequirethestatusofallaffirmedorunaffirmedconfirmationsand
+forbroker/dealersandagentswhohandlesignificantmessagevolumes.
+ChangesinThisVersion
+TradeSuiteID8.0.6(newchanges)
+PrimebrokerscanusetheAdviceofCancellationandCorrectionmessagingtosubmitdisaffirmationby
+usingtheRecordTypesofRAFCANandRAFCORinpositions3–8.
+TradeSuiteID8.0.5(previouslycommunicatedchanges)
+TheSecuritiesandExchangeCommission([[SEC]])approvedamendmentstoFINRARule2232(Customer
+Confirmations)thatrequirememberfirmstodiscloseadditionaltransaction-relatedinformationtoretail
+customersfortradesincertainfixedincomesecurities.Specifically,amendedRule2232requiresa
+membertodisclosetheamountandpercentageofmark-upormark-downitappliestotradeswithretail
+customersincorporateoragencydebtsecuritiesifthememberalsoexecutesanoffsettingprincipaltrade
+inthesamesecurityonthesametradingday.Theamendedrulealsorequiresmemberstodisclosetwo
+additionalitemsonallretailcustomerconfirmationsforcorporateandagencydebtsecuritytrades:(1)a
+reference,andahyperlinkiftheconfirmationiselectronic,toawebpagehostedbyFINRAthatcontains
+publiclyavailabletradingdataforthespecificsecuritythatwastraded,and(2)theexecutiontimeofthe
+transaction,expressedtothesecond.TheMSRBRuleG-15andG-30hasalsochangedtoaccommodate
+thesechanges.ThisnewregulationgoesintoeffectonMay14,2018.
+Tocomplywiththeseregulatorychanges,DTCChasaddedanewICM ErrorCode:
+l BADG
+AdviceofCancellationorCorrectionMessageSpecification
+Preface 3
+
+---
+
+## Page 4
+
+Inadditiontothischange,theappearanceandlayoutofthedocumentationhaschangedtoensure
+consistencyacrossDTCC.
+TradeSuiteID8.0.4(previouslycommunicatedchanges)
+Tocomplywiththemarketsinfinancialinstrumentsdirective(MiFIDII)regulationsandallowforgreater
+transparencyacrossthetradingprocess,theLocalTaxfieldisnowcalledResearchAmount.Thenew
+DAA9ICMcodereflectsthischange.SeeDAA9.InadditiontotheMiFID IIinitiativechanges,the
+appearanceandlayoutofthedocumentationhaschangedtoensureconsistencyacrossDTCC.
+RelatedDocumentsandTraining
+Forrelateddocumentsandtraining,seeTradeSuiteID®ontheDTCCLearningCenter.
+Questions?
+TheClientCenterprovidesgeneralassistanceandtechnicalhelp.Visitto:
+l Enteraservicerequestorcheckthestatusofanexistingservicerequest.
+l Searchtheknowledgebase.
+l Obtaincontactinformation.
+AdviceofCancellationorCorrectionMessageSpecification
+Preface 4
+
+---
+
+## Page 5
+
+1.INTRODUCTION
+Theadviceofcorrectionorcancellation(AOCC)functionallowanypartytothetradetoprovidea
+correctionorcancellationrequesttotheircounterparty.Italsoallowsthecounterpartiestothetradeto
+sendaDK(Don’tKnow)messages.TheAOCCmessageisonlyanotificationmessageanddoesnot
+changethestatusoftheconfirmunlesstheaffirmingpartyusestheRAFCANorRAFCORrecordtypeto
+reverseaffirmordisaffirmanaffirmedconfirm.
+ClientsneedtobeturnedonviasubscriptiontoreceiveAOCCmessagesand/orthereverse/disaffirmation
+confirmmessages.RecipientsofAOCCmessagescanreceiveacopyoftheoriginalconfirmationoverthe
+samecommunicationsmedium(Computer-to-ComputerFacility([[CCF]])orMessageQuerying(MQ))andto
+thesamedestination.
+AdviceofCancellationorCorrectionMessageSpecification
+1.Introduction 5
+
+---
+
+## Page 6
+
+2.INPUTANDOUTPUTSPECIFICATIONS
+Thissectioncontainsthefollowingcontent:
+l AdviceofCorrectionorCancellationWithMachine-ReadableInput
+l AddingSpecificationstoanExistingConfirmation
+l EditingConsiderations
+l Machine-ReadableOutput
+l Machine-ReadableOutputforReversedAffirmation/Disaffirmation
+AdviceofCorrectionorCancellationWithMachine-
+ReadableInput
+Ifyouexpectsignificantvolume,entertheadviceofcorrectionorcancellation(AOCC)throughamachine-
+readableformat.Theinput/outputmachine-readablerecordformatinCommonInputDetailsdescribesthe
+inputlayout.
+AOCCsgothroughspecialprocessing,involvingcorrectionstotradesofmortgage-backedsecuritieswith
+specifications.Whenthebroker/dealersubmittedtheoriginaltrade,the16specificationslocatedinslots
+onthetradeinputrecorddescribedthemortgagebackedsecurity.Eachslotcontainedaspecification
+codeandaspecificationvalue.
+TheoriginatoroftheAOCChastheoptionofrequestingacorrectiontoaspecificationcode,specification
+value,orboth.Thechangescountasonlyonecorrectionoutofapossiblethreecorrections.Correction
+reasoncodes532–547correspondtothe16slots.Forexample,tocorrectthespecificationlocatedinslot
+#01,usecorrectionreasoncode532.Tocorrectaspecificationcodeorspecificationvalue,enterboth
+fieldsaspartofthemachine-readablerecord.Formoreinformationaboutcancellationreasoncodes,see
+Input/OutputInformation.
+Usethefollowingguidelineswhenenteringcorrectionstospecifications:
+l Correctthespecificationcode,butleavetheexistingspecificationvalueintact.Formoreinformation,
+seeExample1: CorrectingtheSpecificationCode.
+l Correctthespecificationvalue,butleavetheexistingspecificationcodeintact.Formoreinformation,
+seeExample2: CorrectingtheSpecificationValue
+l Correctboththespecificationcodeandvalue.Formoreinformation,seeExample3: CorrectingBoth
+theSpecificationCodeandValue
+AdviceofCancellationorCorrectionMessageSpecification
+2.InputAndOutputSpecifications 6
+
+---
+
+## Page 7
+
+Note
+Forallcorrections,enterthespecificationcodeandthespecificationvalue.Changingthespecification
+codebutnotthespecificationvalueorchangingthespecificationvaluebutnotthespecificationcode,
+causesacross-referencecheck.Ineithercase,thecheckverifiesthatthenewspecificationcode
+matchestheformatoftheexistingspecificationvalue.
+AdviceofCancellationorCorrectionMessageSpecification
+2.InputAndOutputSpecifications 7
+
+---
+
+## Page 8
+
+Example1: CorrectingtheSpecificationCode
+Torequestacorrectionofaspecificationcode(inslot#03)leavingtheexistingspecificationvalueintact:
+OriginalSpecificationCode/Value 0001NY
+CorrectionReason#1 534
+CorrectionField#1 002NY
+Explanation:TheoriginatoroftheAOCCwantsthebrokertochangethespecificationlocatedinslot#03
+(ReasonCode#534)toSpecification002,butretaintheNYspecificationvalue.
+Example2: CorrectingtheSpecificationValue
+Torequestacorrectionofaspecificationvalue(inslot#08)leavingtheexistingspecificationcodeintact:
+OriginalSpecificationCode/Value 02219.34%
+CorrectionReason#2 539
+CorrectionField#2 02211.34%
+Explanation.TheAOCCoriginatorwouldlikethebrokertochangethespecificationvaluelocatedinslot
+#08(ReasonCode#539)from19.34to11.34percent.However,thespecificationcodemustnotchange
+fromitsexistingvalue.Tocompletethisrequest,theinstitutionrepeatstheexistingspecificationcodeand
+entersthenewspecificationvalue.
+Example3: CorrectingBoththeSpecificationCodeand
+Value
+Torequestacorrectiontobothaspecificationcodeandaspecificationvalue(inslot#15):
+OriginalSpecificationCode/Value 02419970419
+CorrectionReason#3 546
+CorrectionField#3 02319980419
+Explanation.TheAOCCoriginatorwouldlikethebrokertochangethecodeandvalueassociatedwiththe
+specificationinslot#15(reasoncode#546).Youcanchangethedetailsinslot#15tospecificationcode
+023andspecificationvalue19980419.
+AdviceofCancellationorCorrectionMessageSpecification
+2.InputAndOutputSpecifications 8
+
+---
+
+## Page 9
+
+AddingSpecificationstoanExistingConfirmation
+Torequestanadditiontotheexistingconfirmationofaspecificationcodeandvalue,usetheformatsimilar
+toExample3: CorrectingBoththeSpecificationCodeandValueonthepreviouspage.
+CorrectionReason#1 544
+CorrectionField#1 0221.33%
+Therequestshowstheadditionofaspecificationinslot#13.Thespecificationcodeis022andthe
+specificationvalueis1.33%.
+Note
+Donotaddaspecificationcodewithoutaspecificationvalueoraspecificationvaluewithoutaspe-
+cificationcode.
+EditingConsiderations
+Beforesubmittinginputrecordsforprocessing,ensuretheAOCCsystemcontainsaccurateinformation.
+Usethefollowingguidelines:
+l AvoidrequestingacorrectionwithyourownIDnumbers.Forexample,ifinstitution99999submitsan
+AOCCrecord,itisnotpossibletorequestacorrectionoftheinstitutionIDnumber.
+l CannotupdatecustomerIDnumbers.
+l Donotduplicateexistingtradedata.Forexample,ifanaccounttypeisSHORT,youcannotchangeitto
+SHORT.
+l Cannoteditthesecurityidentifier.
+l SubmitthetradedatesandsettlementdatesforcorrectioninMM/DD/YYYYformatformachine-read-
+ableinputs.
+l Ensuretherecorddate,factoreffectivedate,issuedate,andallotherspecificationdatesarein
+YYYYMMDDformat.
+Forallotherfieldssubmittedforcorrection,followtheformatspecifiedinConfirmTradeInputMessage
+Specification.
+Machine-ReadableOutput
+Ifthepartynotifiedofthependingadvicewantstoreceiveoutputinamachine-readableformat,the
+recipientreceivesarecordinaspecificformat.Formoreinformationabouttheformatandreasoncodes,
+seeInput/OutputInformation.AOCCsthatrequestcorrectionsofmortgage-backedsecuritiestradeswith
+AdviceofCancellationorCorrectionMessageSpecification
+2.InputAndOutputSpecifications 9
+
+---
+
+## Page 10
+
+specificationsrequirespecialconsideration.Formortgage-backedsecuritiestrades,thefollowing
+examplesshowthedepictionofspecifications.
+AdviceofCancellationorCorrectionMessageSpecification
+2.InputAndOutputSpecifications 10
+
+---
+
+## Page 11
+
+Example1
+CorrectionReasonCode#1 539
+Correction#1 001FL
+TheAOCCoriginatorhasrequestedthebrokertooverlaytheinformationlocatedinspecificationslot#08
+(reasoncodenumber539)tospecificationcode001andspecificationvalueFL.
+Example2
+CorrectionReasonCode#2 547
+Correction#2 0171234
+TheAOCCoriginatorhasrequestedthebrokertooverlaytheinformationlocatedinspecificationslot#16
+(reasoncodenumber547)tospecificationcode017andspecificationvalue1234.
+Example3
+CorrectionReasonCode#3 535
+Correction#3 0145.55%
+TheAOCCoriginatorhasrequestedthebrokertooverlaytheinformationlocatedinspecificationslot#04
+(reasoncodenumber535)tospecificationcode014andspecificationvalue5.55%.
+Machine-ReadableOutputforReversedAffirmation/
+Disaffirmation
+Toreverseanaffirmationconfirmation,seeConfirmTradeOutputMessageSpecification.
+AdviceofCancellationorCorrectionMessageSpecification
+2.InputAndOutputSpecifications 11
+
+---
+
+## Page 12
+
+3.COMMONINPUTANDOUTPUT
+Thissectiondiscussescommoninputandoutputdetails.Table3.1containsthecommoninputandTable
+3.2containsthecommonoutputparameters.Thecommoninputrecordis558characters.Thecommon
+outputrecordis708characters.DTCCaddedtheitalicizedfieldstoreflectinformationcontainedonthe
+originalconfirmortoindicatewhentherecipientwasabletoreceivetherecord.
+CommonInputDetails
+Table3.1showsthecommoninputrecordthatincludesthefirst558formatcharacters,positions1through
+558.Inaddition,positions1–26inthetablerepresentthestandardtransactionheader.
+Position Length Format FieldName Validate TransactionHeaderField
+Description
+Positions1–26:StandardTransactionHeader
+1 1 Character X(1) FeedbackIndicatorNo Indicatesthereturnofthisrecord
+becauseoferrors.Forafulldescription
+ofthisprocessing,seetheInterface
+ControlManager.
+l .*=Ifnoerrors.
+l ?=Iftherecordcontainserrors.
+2 1 Character X(1) Production/Test
+Indicator
+Yes Indicateswhethertherecordisfor
+productionortest.Required.
+l P=Production
+l T=Test
+Table3.1CommonInputParameters
+AdviceofCancellationorCorrectionMessageSpecification
+3.CommonInputAndOutput 12
+
+---
+
+## Page 13
+
+Position Length Format FieldName Validate TransactionHeaderField
+Description
+3–8 6 Character X(6) RecordType Yes Typeofdatacontainedinthis
+message:
+l AOTCOR=Adviceofconfirmcor-
+rection(inputandoutput)
+l AOTCAN=Adviceofconfirmcan-
+cellation(inputandoutput)
+l RAFCOR=Adviceofconfirmcor-
+rectionaffirmationreversal/Disaf-
+firmation(inputandoutput)
+l RAFCAN=Adviceofconfirmcan-
+cellationaffirmationreversal/
+Disaffirmation(inputandoutput)
+Note:Disaffirmationonlyappliesto
+PrimeBrokeraffirmedconfirms.To
+distinguishdisaffirmationfromreverse
+affirmationusetheDisaffirmation
+Indicator,Position915onthe
+TradeSuiteConfirmTradeOutput
+Messagespecification.
+9–10 2 Numeric9(2) RecordSuffix Yes Identifiesthephysicalrecordnumber,
+sincesomeservicescanhavemore
+thanonephysicalrecordcomprisea
+completelogicalrecord.
+l 01=DetailRecord
+11–12 2 Numeric9(2) VersionNumber Yes Versionnumberthatdefinestherecord
+format.
+l VersionNumberalways=01
+13–18 6 Character X(6) RecordSequence
+Number
+No Uniquetransactionidentifieroftheuser
+(optional).Returnedonlyduringerror
+reporting.
+19–26 8 Character X(8) Addressee Yes Fillerfieldfortheinputrecord.Forthe
+outputrecord,thisfieldindicatesthe
+TradeSuiteIDdestinationoftheuserfor
+whomtherecordwasproduced,
+enablingagroupusertoredistributethe
+record.
+27 1 Numeric9(1) Filler – Reserved.Donotuse.
+AdviceofCancellationorCorrectionMessageSpecification
+3.CommonInputAndOutput 13
+
+---
+
+## Page 14
+
+Position Length Format FieldName Validate TransactionHeaderField
+Description
+28–29 2 CharacterX(2) SubmitterType Yes Typeofentitysubmittingtheadviceof
+correctionorcancellation (AOCC).
+l A=Agent
+l AS=Agentsub-custodian
+l B=[[Broker]]
+l BS=Brokersub-custodian
+l CA=Clearingagent
+l CB=Clearingbroker
+l CU=Customer
+l I=Institution
+l IP=Interestedparty
+Left-justified,space-filled.
+30–37 8 Numeric9(8) SubmitterNumberYes ValidIDnumbernamedontheconfirm.
+38–46 9 Character X(9) DTCControlNum-
+bers
+Yes UniquenumbertheTradeSuiteID
+serviceassignstotheconfirmforthe
+requestedcorrectionorcancellation.
+47–62 16 Character X(16) SubmitterRefer-
+enceID
+No Containsareferenceassignedbythe
+submitter. Optional.
+63 1 Character X(1) NotifyAgentIndic-
+ator
+Yes l Y=Sendacopyofthisadviceto
+theagent.
+l Anyothervalue=Donotsenda
+copyoftheadvicetotheagent.
+64 1 Character X(1) NotifyAgentSub-
+CustodianIndic-
+ator
+Yes l Y=Sendacopyofthisadviceto
+theagentsub-custodian.
+l Anyothervalue=Donotsenda
+copyoftheadvicetotheagent
+sub-custodian.
+65–72 8 Numeric9(8) NotifyBranch Yes ValidbranchID,requiredwhen
+submitterwantsacopyofthe
+correctionorcancellationsenttothe
+branchofthebroker/dealer.Zero-filled
+ifthesubmitterdoesnotwanttonotify
+thebranch.Right-justified,zero-filled
+AdviceofCancellationorCorrectionMessageSpecification
+3.CommonInputAndOutput 14
+
+---
+
+## Page 15
+
+Position Length Format FieldName Validate TransactionHeaderField
+Description
+73 1 Character X(1) NotifyBrokerIndic-
+ator
+Yes l Y=Sendacopyofthisadviceto
+thebrokersub-custodian.
+l Anyothervalue=Donotsenda
+copyoftheadvicetotheagent
+sub-custodian.
+74 1 Character X(1) NotifyBrokerSub-
+CustodianIndic-
+ator
+Yes l Y=Sendacopyofthisadviceto
+thebrokersub-custodian.
+l Anyothervalue=Donotsenda
+copyoftheadvicetotheagent
+sub-custodian.
+75 Character X(1) NotifyClearing
+AgentIndicator
+Yes l Y=Sendacopyofthisadviceto
+theclearingagent.
+l Anyothervalue=Donotsenda
+copyoftheadvicetotheclearing
+agent.
+76 Character X(1) NotifyClearing
+BrokerIndicator
+Yes l Y=Sendacopyofthisadviceto
+theclearingbroker.
+l Anyothervalue=Donotsenda
+copyoftheadvicetotheclearing
+[[Broker]].
+77 Character X(1) NotifyCustomer
+Indicator
+Yes l Y=Sendacopyofthisadviceto
+thecustomer.
+l Anyothervalue=Donotsenda
+copyoftheadvicetothecus-
+tomer.
+78 Character X(1) NotifyInstitution
+Indicator
+Yes l Y=Sendacopyofthisadviceto
+theinstitution.
+l Anyothervalue=Donotsenda
+copyoftheadvicetotheinsti-
+tution.
+79 Character X(1) NotifyInterested
+Party#1Indicator
+Yes l Y=Sendacopyofthisadviceto
+theinterestedparty#1.
+l Anyothervalue=Donotsenda
+copyoftheadvicetotheinter-
+estedparty#1.
+AdviceofCancellationorCorrectionMessageSpecification
+3.CommonInputAndOutput 15
+
+---
+
+## Page 16
+
+Position Length Format FieldName Validate TransactionHeaderField
+Description
+80 Character X(1) NotifyInterested
+Party#2Indicator
+Yes l Y=Sendacopyofthisadviceto
+theinterestedparty#2.
+l Anyothervalue=Donotsenda
+copyoftheadvicetotheinter-
+estedparty#2.
+81 Character X(1) NotifyInterested
+Party#3Indicator
+Yes l Y=Sendacopyofthisadviceto
+theinterestedparty#3.
+l Anyothervalue=Donotsenda
+copyoftheadvicetotheinter-
+estedparty#3.
+82–84 Character X(3) CorrectionorCan-
+cellationReason
+Code#1
+Yes Mustcontainavalidcorrectionreason
+codeforthefirstcorrectedfield.Foran
+adviceofcorrection,thisfieldcontains
+oneofthecorrectionreasons
+(cancellationreasoncodes001–053).
+Foranadviceofcancellation,thisfield
+containsoneofthecancellation
+reasons(cancellationreasoncodes
+100–106).
+CorrectionField#1,positions85–162)
+identifiesthecorrespondingcorrected
+field.Anadviceofcorrectioncan
+containuptothreeitems(reasoncode
+andcorrectedfield)permessage.
+However,anadviceofcancellation
+hasonlyonereasonpermessage.For
+moreinformationaboutcancellation
+reasoncodes,seeInput/Output
+Information.
+85–162 Character X(78) CorrectionField#
+1
+Yes Validcorrectedfieldassociatedwith
+theCorrectionReasonCode#1field
+(positions82–84).Left-justified,
+space-filled.
+163–165 Character X(3) CorrectionReason
+Code#2
+Yes Validcorrectionreasoncodeifasecond
+fieldontheconfirmrequiresacor-
+rection.Formoreinformationabout
+reasoncodes,seeInput/OutputInform-
+ation.Thisfieldallowsspaceswhen
+therearenocorrectionstothesecond
+field.
+AdviceofCancellationorCorrectionMessageSpecification
+3.CommonInputAndOutput 16
+
+---
+
+## Page 17
+
+Position Length Format FieldName Validate TransactionHeaderField
+Description
+166–243 Character X(78) CorrectionField#
+2
+Yes Mustcontainthecorrectedvalue
+associatedwiththeCorrectionReason
+Code#2field(positions163–165)for
+correctionstooccurinfield#2.This
+fieldallowsspaceswhenthereareno
+correctionstothesecondfield.Left-
+justified,space-filled.
+244–246 Character X(3) CorrectionReason
+Code#3
+Yes Validcorrectionreasoncodeifathird
+fieldontheconfirmrequiresa
+correction.Formoreinformationabout
+reasoncodes,seeInput/Output
+Information.
+Thisfieldallowsspaceswhenthere
+arenocorrectionstothethirdfield.
+247–324 Character X(78) CorrectionField#
+3
+Yes Mustcontainthecorrectedvalue
+associatedwiththeCorrectionReason
+Code#3field(positions244–246)for
+correctionstooccurinfield#3.This
+fieldallowsspaceswhenthereareno
+correctionstothethirdfield.Left-
+justified,space-filled.
+325–402 Character X(78) TextLine#1 No Anysubmitter-suppliedtextcom-
+municatedtotherecipientsoftheadvice
+ofcorrectionorcancellation(AOCC).
+403–480 Character X(78) TextLine#2 No Anysubmitter-suppliedtextcom-
+municatedtotherecipientsoftheadvice
+ofcorrectionorcancellation(AOCC).
+481–558 Character X(78) TextLine#3 No Anysubmitter-suppliedtextcom-
+municatedtotherecipientsoftheadvice
+ofcorrectionorcancellation(AOCC).
+Endoftheinputrecord.
+AdviceofCancellationorCorrectionMessageSpecification
+3.CommonInputAndOutput 17
+
+---
+
+## Page 18
+
+CommonOutputDetails
+Thecommonoutputparametersincludesallpositions,1through708characters.Table3.2showsthe
+remainingitalicizedfields,559–708,toreflectinformationcontainedontheoriginalconfirmortoindicate
+whethertherecipientreceivedtherecord.Toseetheparametersforpositions1through558,seeTable
+3.1
+AdviceofCancellationorCorrectionMessageSpecification
+3.CommonInputAndOutput 18
+
+---
+
+## Page 19
+
+Position Length Format FieldName Validate TransactionHeaderField
+Description
+559 1 Character X(1) CurrentTrade
+Status
+– Statusofthetradethatappliestothis
+advicewhentheTradeSuiteIDservice
+processesit.
+0=TradeError
+1=Confirmed
+2=Unmatchedconfirm
+3=Affirmedconfirm
+4=Matchedconfirm
+5=Matchedaffirmedconfirm
+6=Administrativecancel
+7=Outrightcancel
+8=Reversedaffirmation
+560–562 3 Character X(3) SettlementLoca-
+tion
+– Liststhecountryordepositorywhere
+thesecuritysettles.Theprimaryvalues
+are:
+l [[DTC]]=TheDepositoryTrustCom-
+pany.
+l BRC=brokercustody
+l CED=CEDEL(Clearstream)
+l EUR=Euroclear
+l FED=TheFederalReserveBank
+ofNewYork
+l NFS=Notforsettlement
+l US=U.S.physical
+Left-justified,space-filled.
+Table3.2CommonOutputParameters
+AdviceofCancellationorCorrectionMessageSpecification
+3.CommonInputAndOutput 19
+
+---
+
+## Page 20
+
+Position Length Format FieldName Validate TransactionHeaderField
+Description
+563 1 Numeric9(1) [[DTC]]-Eligibility
+Indicator
+– Indicateswhethertheissuetradedis
+eligibleforDTCsettlement.
+0=Notapplicable
+1=Eligible
+2=Ineligible
+3=LateAffirm(eligibletradeaffirmed
+afterS-2;settleex-[[ID]])
+564–575 12 Character X(12) [[Broker]]/Dealer
+ConfirmNumber
+– [[Broker]]/dealerconfirmnumberthat
+uniquelyidentifieseachtrade.
+576–587 12 Character X(12) [[Broker]]/Dealer
+InternalAccount
+Number
+– Internalaccountnumberofthe
+[[Broker]]/dealer.Ifunavailable,setto
+spaces.Freeformtext.
+588–595 8 Numeric9(8) ExecutingBroker-
+/DealerIDNum-
+ber
+– ValidTradeSuiteIDnumberofthe
+[[Broker]]/dealerwhoexecutedthetrade.
+MustbeavalidagentTradeSuiteID
+number.Forexample,enter123as
+00000123.Right-justified,zero-filled.
+596–603 8 Numeric9(8) InstitutionID
+Number
+– ValidTradeSuiteIDnumberofthe
+institutionorthepartythatplacesthe
+tradeorderwiththebroker/dealer.Must
+beavalidagentTradeSuiteIDnumber.
+Forexample,enter123as00000123.
+Right-justified,zero-filled.
+604–611 8 Numeric9(8) AgentIDNumber– ValidTradeSuiteIDnumberofthe
+agent,generallyacustodianbank,
+responsibleforreceivingordelivering
+thesecuritiesonbehalfoftheinstitution
+oritscustomer.Mustbeavalidagent
+TradeSuiteIDnumber.Forexample,
+enter123as00000123.Right-justified,
+zero-filled.
+612–619 8 Numeric9(8) CustomerID
+Number
+– IDnumberforacustomerasdefinedon
+theoriginalconfirm.Right-justified,
+zero-filled.
+AdviceofCancellationorCorrectionMessageSpecification
+3.CommonInputAndOutput 20
+
+---
+
+## Page 21
+
+Position Length Format FieldName Validate TransactionHeaderField
+Description
+620–627 8 Numeric9(8) InterestedParty
+#1IDNumber
+– IDnumberforinterestedpartynumber1
+oragentsub-custodian.Zero-filledwhen
+nointerestedpartynumber1oragent
+sub-custodian.Agentsub-custodianis
+optional.Right-justified,zero-filled.
+628–635 8 Numeric9(8) InterestedParty
+#2IDNumber
+– IDnumberforinterestedparty#2as
+definedontheoriginalconfirm.Right-
+justified,zero-filled.
+636–643 8 Numeric9(8) InterestedParty
+#3IDNumber
+– IDnumberfortheinterestedparty#3as
+definedontheoriginalconfirm.Right-
+justifiedandzero-filled.
+644–651 8 Numeric9(8) AgentSub-Cus-
+todianIDNumber
+– IDnumberfortheagentsub-custodian
+asdefinedontheoriginalconfirm.Right-
+justified,zero-filled.
+652–659 8 Numeric9(8) BrokerSub-Cus-
+todianIDNumber
+– IDnumberforthebrokersub-custodian
+asdefinedontheoriginalconfirm.Right-
+justified,zero-filled.
+660–667 8 Numeric9(8) ClearingBroker
+IDNumber
+– IDnumberfortheclearingbrokeras
+definedontheoriginalconfirm.Right-
+justified,zero-filled.
+668–675 8 Numeric9(8) ClearingAgent
+IDNumber
+– IDnumberfortheclearingagentas
+definedontheoriginalconfirm.Right-
+justified,zero-filled.
+676–694 19 CharacterX(19) ProcessDate
+andTime
+– Theprocessingdateandtime,in
+YYYYMMDDHH:MM:SSformat,ofthe
+advice.
+695 1 Character X(1) AgentNotified
+Indicator
+- Ifthesenderselectsthispartyfor
+output,thisfieldindicateswhetherthe
+TradeSuiteIDservicecandeliverthe
+advice.
+Space=Notchosen
+1=Delivered
+2=Notdeliverable
+AdviceofCancellationorCorrectionMessageSpecification
+3.CommonInputAndOutput 21
+
+---
+
+## Page 22
+
+Position Length Format FieldName Validate TransactionHeaderField
+Description
+696 1 Character X(1) AgentSub-Cus-
+todianNotified
+Indicator
+– Ifthesenderselectsthispartyfor
+output,thisfieldindicateswhether
+TradeSuiteIDcandelivertheadvice.
+Space=Notchosen
+1=Delivered
+2=Notdeliverable
+697 1 Character X(1) BranchNotified
+Indicator
+– Ifthesenderselectsthispartyfor
+output,thisfieldindicateswhetherthe
+TradeSuiteIDservicecandeliverthe
+advice.
+Space=Notchosen
+1=Delivered
+2=Notdeliverable
+698 1 CharacterX(1) BrokerNotified
+Indicator
+– Ifthesenderselectsthispartyfor
+output,thisfieldindicateswhetherthe
+TradeSuiteIDservicecandeliverthe
+advice.
+Space=Notchosen
+1=Delivered
+2=Notdeliverable
+699 1 Character X(1) BrokerSub-Cus-
+todianNotified
+Indicator
+– Ifthesenderselectsthispartyfor
+output,thisfieldindicateswhetherthe
+TradeSuiteIDservicecandeliverthe
+advice.
+Space=Notchosen
+1=Delivered
+2=Notdeliverable
+AdviceofCancellationorCorrectionMessageSpecification
+3.CommonInputAndOutput 22
+
+---
+
+## Page 23
+
+Position Length Format FieldName Validate TransactionHeaderField
+Description
+700 1 Character X(1) ClearingAgent
+NotifiedIndicator
+– Ifthesenderselectsthispartyfor
+output,thisfieldindicateswhetherthe
+TradeSuiteIDservicecandeliverthe
+advice.
+Space=Notchosen
+1=Delivered
+2=Notdeliverable
+701 1 Character X(1) ClearingBroker
+NotifiedIndicator
+– Ifthesenderselectsthispartyfor
+output,thisfieldindicateswhetherthe
+TradeSuiteIDservicecandeliverthe
+advice.
+Space=Notchosen
+1=Delivered
+2=Notdeliverable
+702 1 Character X(1) CustomerNoti-
+fiedIndicator
+– Ifthesenderselectsthispartyfor
+output,thisfieldindicateswhether
+TradeSuiteIDcandelivertheadvice.
+Space=Notchosen
+1=Delivered
+2=Notdeliverable
+703 1 Character X(1) InstitutionNoti-
+fiedIndicator
+– Ifthesenderselectsthispartyfor
+output,thisfieldindicateswhetherthe
+TradeSuiteIDservicecandeliverthe
+advice.
+Space=Notchosen
+1=Delivered
+2=Notdeliverable
+AdviceofCancellationorCorrectionMessageSpecification
+3.CommonInputAndOutput 23
+
+---
+
+## Page 24
+
+Position Length Format FieldName Validate TransactionHeaderField
+Description
+704 1 Character X(1) InterestedParty
+#1NotifiedIndic-
+ator
+– Ifthesenderselectsthispartyfor
+output,thisfieldindicateswhetherthe
+TradeSuiteIDservicecandeliverthe
+advice.
+Space=Notchosen
+1=Delivered
+2=Notdeliverable
+705 1 Character X(1) InterestedParty
+#2NotifiedIndic-
+ator
+– Ifthesenderselectsthispartyfor
+output,thisfieldindicateswhetherthe
+TradeSuiteIDservicecandeliverthe
+advice.
+Space=Notchosen
+1=Delivered
+2=Notdeliverable
+706 1 Character X(1) InterestedParty
+#3NotifiedIndic-
+ator
+– Ifthesenderselectsthispartyfor
+output,thisfieldindicateswhetherthe
+TradeSuiteIDservicecandeliverthe
+advice.
+Space=Notchosen
+1=Delivered
+2=Notdeliverable
+707–708 2 Character X(2) Filler – TradeSuiteIDuseonly.Donotuse.
+Inputrecordis558charactersandthe
+outputrecordis708characters.
+AdviceofCancellationorCorrectionMessageSpecification
+3.CommonInputAndOutput 24
+
+---
+
+## Page 25
+
+4.ICMERRORCODES
+ThisappendixdiscussesICMerrorcodes.Table4.1containstheerrorcodefieldcodes,reasoncodes,
+andtheirdescriptions.
+Field
+Code
+Reason
+Code
+ICMErrorCodesDescriptions
+AAAA 9AAE TransactionPrefix
+l Transactionheaderrecordtypeisinvalid.ValidvaluesareAOTCOR,AOTCAN,
+RAFCOR,orRAFCAN.
+l Transactionheaderrecordsuffixisinvalid.
+AAAI 9ABC Test/ProductionIndicator
+Thetest/productionindicatorinthetransactionheaderismissingorinvalid.
+AZZZ 9AAA
+9AAE
+9AAL
+TransactionRecord
+Submittedcorrectionrecordcontainedaskipincorrectionreasoncodes.
+Cancellationrecordcontainedinformationinafielddesignatedstrictlyforcorrections.
+(Aftermiddaycutoff)Receivedacorrectionorcancellationrecordafterthemiddaysettlementcutoff.
+BAAA 9AAJ SettlementDate
+Ensurethatthesettlementdateiswithintwoyearsofthecurrentdate,numeric,andavaliddayofthe
+year.
+BAAB 9AAJ TradeDate
+Ensurethatthefollowingconditionsapplyforthetradedate:
+l Numericdate.
+l Greaterthanzero.
+ll Validcalendardate
+l Forexample,February30isaninvaliddate.
+l Within+/–2yearsofthecurrentdate.
+BADG 9AAA Tradeexecutiondateisinvalid.
+CAAA 9AAN
+9ABG
+9ABM
+InstitutionIdentifier
+InstitutionisineligibleforIDprocessing.
+Institutionunabletomakeanupdate.
+Institutionisaninvalidsubmitter.
+Table4.1ICMErrorCodes
+AdviceofCancellationorCorrectionMessageSpecification
+4.ICMErrorCodes 25
+
+---
+
+## Page 26
+
+Field
+Code
+Reason
+Code
+ICMErrorCodesDescriptions
+CAAB 9AAN
+9ABM
+ExecutingBroker/DealerIdentifier
+Executingbroker/dealerisineligibleforIDprocessing.
+Executingbroker/dealerisaninvalidsubmitter.
+CAAC IAEJ AffirmingParty
+Submittingpartyisnottheoriginalaffirmingparty.
+CAAH 9AAN
+9ABG
+9ABM
+9ADF
+AgentIdentifier
+AgentisineligibleforIDprocessing.
+Agentnotallowedtomakeanupdate.
+Agentisaninvalidsubmitter.
+Agentsubmittingcorrectionorcancellationisaprimebroker.
+CAAI 9AAN
+9ABG
+9ABM
+InterestedParty#1Identifier
+Interestedparty#1isinvalidorineligibleforIDprocessing;thesubmittinginterestedpartyisineligiblefor
+IDprocessing.
+Interestedparty#1notallowedtomakeanupdate.
+Interestedpartyisaninvalidsubmitter.
+CAAO 9AAN
+9ABG
+9ABM
+InterestedParty#2Identifier
+Interestedparty#2isinvalidorineligibleforIDprocessing.
+Interestedparty#2notallowedtomakeanupdate.
+Interestedpartyisinvalidsubmitter.
+CAAP 9AAN
+9ABG
+9ABM
+InterestedParty#3Identifier
+Interestedparty#3isinvalidorineligibleforIDprocessing.
+Interestedparty#3notallowedtomakeanupdate.
+Interestedpartyisaninvalidsubmitter.
+CAAR 9AAA
+9ABB
+BranchOfficeIdentifier
+Branchnumbersuppliedisinvalid.
+BranchnumberisnotassociatedwiththeexecutingbrokerontheALERT®platform.
+CABB 9ABG
+9ABM
+Customer
+Customernotallowedtomakeanupdate.
+Customerisaninvalidsubmitter.
+CABC 9AAN
+IAAB
+SubmitterIdentifier
+Submitternumberisnotapartytothetradeitisattemptingtocorrectorcancel.
+Submitterenteredcancellationreason“awaitinginstructions”butisnottheagentactingastheaffirming
+party.
+DAAA 9AAF [[shares]]/FaceValue
+[[shares]]/FaceValueisnotnumericorthevalueinputisnotintheacceptableformat.
+AdviceofCancellationorCorrectionMessageSpecification
+4.ICMErrorCodes 26
+
+---
+
+## Page 27
+
+Field
+Code
+Reason
+Code
+ICMErrorCodesDescriptions
+DAAD 9AAH
+9AAF
+Price
+Priceisnotinanacceptableformat.
+Priceisnotnumeric.
+DAAE 9AAF NetAmount
+Netamountisnotnumericorisnotintheacceptableformat.
+DAAF 9AAF PrincipalAmount
+Principalisnotnumericorisnotintheacceptableformat.
+DAAH 9AAF OtherCharges
+Otherchargesamountisnotnumericorisinanunacceptableformat.
+DAAI 9AAF Interest
+Interestisnotnumericorisnotintheacceptableformat.
+DAAJ 9AAF Commission
+Commissionisnotnumericorisnotintheacceptableformat.
+DAAK 9AAF NetPrice
+Netpriceisnotnumericorisnotintheacceptableformat.
+DAAL
+9AAF
+Registration/Shipping
+Registration,shipping,orsecurityfeeisnotnumericorisnotintheacceptableformat.
+DAAM 9AAF AlternateNetAmount
+Alternatenetamountisnotnumericorisinanunacceptableformat.
+DAA9 9AAF ResearchAmount
+Researchamountisnotnumeric.
+DAAO 9AAF Country/FederalTax
+Countryorfederaltaxisnotnumericorisinanunacceptableformat.
+EAAA 9AAE Buy/SellIndicator
+Sidecodeisnota‘1'([[Broker]]/dealerisreceiving)ora‘2'([[Broker]]/dealerisdelivering).
+EAAC 9AAE SplitCurrencyIndicator
+SplitcurrencysettlementindicatorisnotequaltoY=YesorN=No.
+FAAA 9AAF ConversionRate
+Alternatecurrencyconversionrateisnotnumericorisinanunacceptableformat.
+FAAB 9AAF Amortized/AccretedFactor
+Amortizedoraccretedfactorisnotnumericorisinanunacceptableformat.
+AdviceofCancellationorCorrectionMessageSpecification
+4.ICMErrorCodes 27
+
+---
+
+## Page 28
+
+Field
+Code
+Reason
+Code
+ICMErrorCodesDescriptions
+GAAC 9AAE Role
+Roledoesnotequal:
+1Agent
+2Principal
+3Otherthancustomer
+4Bothcustomerandagent
+5Averageprice
+GAAD 9AAE SettlementType
+Settlementtypeisnotequaltooneofthefollowingvalidtypes:
+1=RegularWay
+2=When-Issued
+3=When-Distributed
+4=When-IssuedorWhen-Distributed
+GAAE 9AAE SecurityType
+Expandedsecuritytypeisnotequaltooneoftheacceptablevalues.Forsecuritytypes,seeInput/Output
+Information.
+GAAG 9AAE
+9ABS
+CancellationReasonCode
+Cancellationreasoncodeisnotequaltooneoftheacceptablevalues,oranonmortgage-backed
+securitiestradecontainsamortgage-backedsecuritiescancellationcode.Foracceptablevalues,see
+,Input/OutputInformation.
+Recordsubmittedwithtwocancellationcodes.
+GAAH 9AA6
+9AAE
+CorrectionReasonCode
+Submittedrecordcontainsrepeatingcorrectionreasoncodes.
+Correctionreasoncodeisnotequaltooneoftheacceptablevalues,orthesubmittedrecordcontains
+bothcorrectionandcancellationreasoncodes.Foralistofacceptablereasoncodes,seeInput/Output
+Information.
+GAAI 9AAE CurrencyCode
+CurrencyCodeisnotequaltooneoftheacceptablevalues.Forcurrencycodes,seeInput/Output
+Information.
+GAAJ 9AAA
+9ABB
+IAAZ
+IAEI
+DTCControlNumber
+DTCIDcontrolnumberisinvalid.
+UnabletofindtheDTCIDcontrolnumber.
+Testandproductionmismatch:Thesubmittedproductioncorrectionorcancellationrecordattemptedto
+correctorcancelatestconfirmation.
+Reverseaffirmationsubmittedonanunaffirmedtrade.
+GAAK 9ABD RequestforCorrectionCode
+Correctionrecordsubmittedwithoutindicatinganoutputrecipient.
+AdviceofCancellationorCorrectionMessageSpecification
+4.ICMErrorCodes 28
+
+---
+
+## Page 29
+
+Field
+Code
+Reason
+Code
+ICMErrorCodesDescriptions
+GAAL 9ABD RequestforCancellationCode
+Cancellationrecordsubmittedwithoutindicatinganoutputrecipient.
+GAAM 9AAE MarketCode
+MarketCodeisnotequaltooneoftheacceptablevalues.Formarketcodes,seeInput/Output
+Information.
+GAAN 9AAE AccountType
+Accounttypeisnotequaltooneofthefollowingvalidvalues:
+02=Cash/DVP
+05=Short
+09=[[Margin]]
+99=Other
+GAAP 9AAE SecurityNumberingSystem
+Securitynumberingsystemcodeisnotequaltooneoftheacceptablevalues.Forsecuritynumbering,
+seeInput/OutputInformation.
+GAAR 9AAE AlternateCurrencyCode
+Alternatecurrencycodeisnotequaltooneoftheacceptablevalues.Forcurrencycodes,see
+Input/OutputInformation.
+GABY 9AAA SubmitterType
+Submittertypeisinvalid.Foracceptablevalues,seepositions28–29inCommonInputDetails.
+BABM 9AAA FactorEffectiveDate
+Factoreffectivedateisaninvaliddayoftheyear.
+BABN 9AAA IssueDate
+Issuedateisaninvaliddayoftheyear.
+BABO
+9AAA
+DeliveryDate
+Deliverydateisaninvaliddayoftheyear.
+BABP 9AAA OptionExpirationDate
+Optionexpirationdateisaninvaliddayoftheyear.
+BABQ 9AAA RecordDate
+Recorddateisaninvaliddayoftheyear.
+CABB 9AAN Customer
+Additionalparty#6(customer)isineligibleforIDprocessing.Otherwise,ifthereisnocustomer,enter
+spacesorzeros.
+AdviceofCancellationorCorrectionMessageSpecification
+4.ICMErrorCodes 29
+
+---
+
+## Page 30
+
+Field
+Code
+Reason
+Code
+ICMErrorCodesDescriptions
+CACE 9AAN
+9AAA
+AdditionalParty#4
+Additionalparty#4isineligibleforIDprocessing,orthechosenIDnumberisaduplicateofanother
+numberonthetrade.Otherwise,ifthereisnoadditionalparty#4,enterspacesorzeros.
+Additionalparty#4isinvalidforadomesticsettlementlocation([[DTC]],BRC,MST,PHL,PTC,FED,US).
+CACF 9AAN
+9AAA
+AdditionalParty#5
+Additionalparty#5isineligibleforIDprocessing,orthechosenIDnumberisaduplicateofanother
+numberonthetrade.Otherwise,ifthereisnoadditionalparty#5,enterspacesorzeros.
+Additionalparty#5invalidordomestictrade
+Additionalparty#5isinvalidforadomesticsettlementlocation([[DTC]],BRC,MST,PHL,PTC,FED,US).
+CACG 9AAA
+9ABD
+GenericTBA
+GenericTBA(TradeType=01)containedapoolnumber.
+SpecifiedPoolTrade(TradeType=11)oraGenericPoolTrade(TradeType12)ismissingasecurity
+numberorapoolnumber.
+DABE 9AAF CurrentFaceValue
+Currentfacevalueisnotnumeric.
+DABG 9AAF GoodDeliveryMillions
+Gooddeliverymillionsisnotnumeric.
+DABH 9AAF NumberofDaysAccruedInterest
+Numberofdaysaccruedinterestisnotnumeric.
+DABI 9AAF NumberofPools
+Numberofpoolsisnotnumeric.
+DAGB 9AAF OriginalTradePar
+Originaltradeparisnotnumeric.
+AdviceofCancellationorCorrectionMessageSpecification
+4.ICMErrorCodes 30
+
+---
+
+## Page 31
+
+Field
+Code
+Reason
+Code
+ICMErrorCodesDescriptions
+EAE5 9AAA
+9ABD
+IAEF
+IAEH
+TradeTypeIndicator
+Tradetypeisnotequaltooneofthefollowingvalidindicators:
+l 01=GenericTBA
+l 02=SpecifiedTBA
+l 03=SpecifiedpoolTBA
+l 11=Specifiedpool
+l 12=Genericpool
+l 50=Othermortgage-backedsecurity
+Tradetypeindicatorismissingoninput.
+SpecifiedTBA(TradeType=02)didnotcontainanyspecifications.AspecifiedTBAmustcontainat
+leastonespecification.
+SpecifiedPooltrade(TradeType=11)didnotcontainanyspecifications.Aspecifiedpooltrademust
+containatleastonespecification.
+GAAE 9AAA SecurityType
+Tradecontainedmortgage-backedsecurityinformation,butthesecuritytypeisnotequaltooneofthe
+followingacceptablevalues:
+l [[ABS]]=[[Asset]]-backedsecurities
+l CMO=Collateralizedmortgageobligation
+l FMR=FreddieMacREMICS
+l FNM=FannieMae
+l FNR=FannieMaeREMICS
+l FRM=FreddieMAC
+l MBS=Mortgage-backedsecurity
+l GMR=GinnieMaeREMICS
+l GNM=GinnieMae
+l OMB=Othermortgage-backedsecurities
+HACY 9AAE Yield
+Yieldisnotnumeric.
+HACZ 9AAF TerminatorValue
+Terminatorvalueisnotnumeric.
+HADA 9AAA PossibleDuplicateField
+PossibleDuplicatefieldisinvalid.ItmustcontaineitheraspaceorX.
+AdviceofCancellationorCorrectionMessageSpecification
+4.ICMErrorCodes 31
+
+---
+
+## Page 32
+
+Field
+Code
+Reason
+Code
+ICMErrorCodesDescriptions
+HADI 9AAA EPNTime
+Electronicpoolnotification(EPN)timeisnumeric,inmilitaryformat,andavalidtimeoftheday.
+HADS 9AAA MBSCorrectionInformation
+Mortgage-backedsecurityinformationenteredontheadviceofconfirmcorrectionforatradeisnota
+mortgage-backedsecuritytrade.
+GAC2 9ABB SpecificationCodeNotFound
+Specificationdoesnotequalanacceptablevalue.
+IACD SpecificationCode001Invalid
+Collateralregionspecificationiseithernotalphabeticortoolong.
+IACE SpecificationCode002Invalid
+Collateralregionexcludedspecificationiseithernotalphabeticortoolong.
+IACG SpecificationCode003Invalid
+Indexspecificationistoolong.
+IACG SpecificationCode004Invalid
+Interestratecap-maximumspecificationistoolong.
+GAC2 IACH SpecificationCode005Invalid
+InterestRateCap-Minimumspecificationistoolong.
+IACI SpecificationCode006Invalid
+IssueDate-Earliestspecificationisaninvaliddayoftheyearoristoolong.
+IACJ SpecificationCode007Invalid
+IssueDate-Latestspecificationisaninvaliddayoftheyearoristoolong.
+IACK SpecificationCode008Invalid
+IssuanceRegionCodespecificationisnotalphabeticoristoolong.
+IACL SpecificationCode009Invalid
+IssuanceRegionCodeExcludespecificationisnotalphabeticoristoolong.
+AdviceofCancellationorCorrectionMessageSpecification
+4.ICMErrorCodes 32
+
+---
+
+## Page 33
+
+Field
+Code
+Reason
+Code
+ICMErrorCodesDescriptions
+GAC2 IACM SpecificationCode010Invalid
+MaturityDate-Latestspecificationisaninvaliddayoftheyearoristoolong.
+IACN SpecificationCode011Invalid
+MaturityDate-Latestspecificationisaninvaliddayoftheyearoristoolong.
+IACO SpecificationCode012Invalid
+PaymentPercentageCap-Maximumspecificationistoolong.
+IACP SpecificationCode013Invalid
+InvalidThePaymentPercentageCap-Minimumspecificationistoolong.
+IACQ SpecificationCode014Invalid
+PeriodicCap-Maximumspecificationistoolong.
+GAC2 IACR SpecificationCode015Invalid
+PeriodicCap-Minimumspecificationistoolong.
+IACS SpecificationCode016Invalid
+Pieces-MaximumNumberspecificationiseithernotnumericortoolong.
+GAC2 IACT SpecificationCode017Invalid
+Pieces-MinimumNumberspecificationiseithernotnumericortoolong.
+IACU SpecificationCode018Invalid
+Pools-MaximumNumberspecificationiseithernotnumericortoolong.
+IACV SpecificationCode019Invalid
+Pools-MinimumNumberspecificationiseithernotnumericortoolong.
+IACW SpecificationCode020Invalid
+Pools-MaximumFaceValuespecificationistoolong.
+IACX SpecificationCode021Invalid
+Pools-MinimumFaceValuespecificationistoolong.
+AdviceofCancellationorCorrectionMessageSpecification
+4.ICMErrorCodes 33
+
+---
+
+## Page 34
+
+Field
+Code
+Reason
+Code
+ICMErrorCodesDescriptions
+GAC2 IACY SpecificationCode022Invalid
+PrepaymentPercentagespecificationistoolong.
+IACZ SpecificationCode023Invalid
+ResetDate-Earliestspecificationisaninvaliddayoftheyearoristoolong.
+IADA SpecificationCode024Invalid
+ResetDate-Latestspecificationisaninvaliddayoftheyearoristoolong.
+IADB SpecificationCode025Invalid
+SeriesNumberspecificationistoolong.
+IADC SpecificationCode026Invalid
+SpecifiedPoolspecificationistoolong.
+GAC2 IADD SpecificationCode027Invalid
+StateofPoolIssuancespecificationisnotalphabeticoristoolong.
+IADE SpecificationCode028Invalid
+Upside/downsidevariancespecificationistoolong.
+IADF SpecificationCode029Invalid
+Variancespecificationistoolong.
+IADG SpecificationCode030Invalid
+Weightedaveragecoupon(WAC)code–Maximumpercent(%)specificationistoolong.
+IADH SpecificationCode031Invalid
+WACCode–Minimumpercent(%)specificationistoolong.
+GAC2 IADI SpecificationCode032Invalid
+Weightedaveragematurity(WAM)code–Maximumpercent(%)specificationistoolong.
+IADL SpecificationCode035Invalid
+Specifiedoriginalfacespecificationistoolong.
+IADM SpecificationCode036Invalid
+Monthtorollspecificationisnotnumericoristoolong.
+GAC2 IADJ SpecificationCode033Invalid
+WAMcode–minimumpercentspecificationistoolong.
+IADK SpecificationCode034Invalid
+Poolspermillionspecificationisnotnumericoristoolong.
+IADN SpecificationCode099Invalid
+Free-formspecificationistoolong.
+BADG 9AAA Tradeexecutiondateisinvalid.
+AdviceofCancellationorCorrectionMessageSpecification
+4.ICMErrorCodes 34
+
+---
+
+## Page 35
+
+©2023DTCC.Allrightsreserved.DTCCandDTCC(Stylized)areregisteredandunregisteredtrademarksofThe
+DepositoryTrust&ClearingCorporation.Theservicesdescribedhereinareprovidedunderthe“[[DTCC]]”brandname
+bycertainaffiliatesofTheDepositoryTrust&ClearingCorporation(“[[DTCC]]”).DTCCitselfdoesnotprovidesuch
+services.Eachoftheseaffiliatesisaseparatelegalentity,subjecttothelawsandregulationsoftheparticularcountry
+orcountriesinwhichsuchentityoperates.Pleaseseewww.[[DTCC]].comformoreinformationonDTCC,itsaffiliatesand
+theservicestheyoffer.
+DocDate:October12,2023
+PublicationCode:TS252
+Service:TradeSuiteID
+Title:AdviceofCancellationorCorrectionMessageSpecification
+ForMoreInformation
+EmailDTCCLearningat:
+DTCCLearning@[[DTCC]].com
+orvisitusonthewebat:
+www.dtcclearning.com

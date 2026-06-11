@@ -1,0 +1,3299 @@
+---
+title: "Client Business Requirements: Phase 1 — PCF Enhancements for Processing Multiple Basket Types"
+source_pdf: "file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/etf183_cbrd_phase1_v6_2020Jun19.pdf"
+pages: 93
+size: "1743.8 KB"
+category: "ETF"
+ingested_on: "2026-06-05"
+---
+
+# Client Business Requirements: Phase 1 — PCF Enhancements for Processing Multiple Basket Types
+
+**Original File:** [etf183_cbrd_phase1_v6_2020Jun19.pdf](file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/etf183_cbrd_phase1_v6_2020Jun19.pdf)  
+**Category:** ETF  
+**Total Pages:** 93  
+**File Size:** 1743.8 KB  
+
+---
+
+## Page 1
+
+EXCHANGETRADEDFUND([[ETF]])
+CLIENTBUSINESSREQUIREMENTS:PHASE1—PCFENHANCEMENTSFORPROCESSINGMULTIPLEBASKETTYPES
+VERSION6.0
+JUNE19,2020
+
+
+---
+
+## Page 2
+
+©2020DTCC.Allrightsreserved.[[DTCC]],[[DTCC]](Stylized),ADVANCINGFINANCIALMARKETS.TOGETHER,and
+theInterlockergraphicareregisteredandunregisteredtrademarksofTheDepositoryTrust&ClearingCorporation.
+Theservicesdescribedhereinareprovidedunderthe“[[DTCC]]”brandnamebycertainaffiliatesofTheDepository
+Trust&ClearingCorporation(“[[DTCC]]”).DTCCitselfdoesnotprovidesuchservices.Eachoftheseaffiliatesisa
+separatelegalentity,subjecttothelawsandregulationsoftheparticularcountryorcountriesinwhichsuchentity
+operates.Pleaseseewww.[[DTCC]].comformoreinformationonDTCC,itsaffiliatesandtheservicestheyoffer.
+DocInfo:June19,2020
+PublicationCode:ETF183
+Service:ExchangeTradedFund([[ETF]])
+Title:ClientBusinessRequirements:Phase1—PCFEnhancementsforProcessingMultipleBasketTypes
+
+---
+
+## Page 3
+
+TABLEOFCONTENTS
+Note
+ThisuserguideisadraftthatexplainsthefeaturesplannedfortheETFPhase1-2020Deployment
+enhancements.Additionalupdates,suchasinformationabouttheETFHistoricalPortfolioRequest
+feature,areplannedandwillappearinfutureversionsofthisguide.Allenhancementsandnew
+featuresaresubjecttoRegulatoryApproval.Formoreinformationaboutthe2020Deployment,seethe
+ETFWorkingGroupssectionoftheLearningCenter.
+INTRODUCTIONTOENHANCEDPORTFOLIOCOMPOSITIONFILE(PCF) 5
+InScopeforPhase1 7
+OutofScopeforPhase1 7
+CHANGESTOTHEETF ENHANCEDCONSOLIDATEDPORTFOLIOINPUTDATAFILE:
+DATATRAKPRODUCTION11301/TEST41301 8
+IndustryPractices 8
+If/ThenIndustryPractice 9
+RecordLayout:EnhancedConsolidatedPortfolioCompositionInputDataFile:DATATRAKProduction
+11301/Test41301 12
+Type1–HeaderRecord 12
+Type2–PortfolioHeaderRecord 13
+Type3–DetailComponentRecord 19
+Type4–Custom/RestrictedDistributionRecord 26
+Type5–NegotiatedRecord 27
+Type99–TrailerRecord 28
+CHANGESTOTHEENHANCEDCONSOLIDATEDPORTFOLIOCOMPOSITIONOUTPUTDATA
+FILE:AUTOROUTEPRODUCTION02261256/TEST02981256 29
+RecordLayout:EnhancedConsolidatedPortfolioCompositionOutputDataFile:AutoRouteProduction
+02261256/Test02981256 30
+Type1–HeaderRecord 30
+Type2–PortfolioHeaderRecord 31
+Type3–DetailComponentRecord 38
+Type99–TrailerRecord 45
+CHANGESTOTHENEARREAL-TIMESUPPLEMENTALPCF:AUTOROUTEPRODUCTION
+02262335/TEST02982335 46
+RecordLayout:NearReal-TimeSupplementalPCFAutoRouteProduction02262335/Test0298233547
+Type1–HeaderRecord 47
+Type2–PortfolioHeaderRecord 48
+Type3–DetailComponentRecord 56
+Type99–TrailerRecord 63
+FEATURESFORMULTIPLEBASKETTYPES 64
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 4
+
+StandardBasket 64
+RestrictedBasket 66
+PricingBasket 68
+RebalanceBasket 70
+CreateOnlyBasket 72
+RedeemOnlyBasket 74
+NegotiatedBasket 76
+EXCHANGETRADEDFUNDS([[ETF]])WEBUSERINTERFACE 78
+AccessingtheClearingDashboard 78
+SampleETF PortfolioSubscriptionInquiryScreenShots 79
+SampleAgentInquiryScreenShots 81
+SampleEmailAlertSubscriptionScreenShots 82
+MESSAGECODESANDDESCRIPTIONS 83
+ADDENDUM:EXTENDEDSETTLEMENTFOREQUITIES 92
+ExtendedSettlementforFixedIncome 92
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 5
+
+IntroductiontoEnhancedPortfolioCompositionFile(PCF) 5
+INTRODUCTIONTOENHANCEDPORTFOLIOCOMPOSITIONFILE(PCF)
+Note
+ThisdocumenthasbeenupdatedwithanAddendum:ExtendedSettlementforEquitiestospecifythe
+additionoftheextendedsettlementforEquityETFfunds,whichwillbedeployedtoproductionshortly
+afterthePhase1deploymentofthePCFEnhancementsforProcessingMultipleBasketTypes.
+AfterETFPhase2isdeployed,therewillbeupdatestothedescriptionsfortheaccruedinterestfields
+intheEnhancedConsolidatedPortfolioCompositionInputDataFile:DATATRAKProduction
+11301/Test41301file.ThedescriptionswillalsochangeintheAutoRouteProduction02261256/Test
+02981256(Sequence20and21)andAutoRouteProduction02262335/Test02982335(Sequence20
+and21)outputfiles.
+NSCCintendstointroducefeaturesandautomatedcontrolstoexpanditsexistingETFprimarymarket
+clearingprocesstoincludeprocessingofmultiplebaskettypestoaddflexibilityforordercustomization.
+NSCChasengagedwithbusinessandtechnologyrepresentativesfromETFagentsandauthorized
+participants(APs)inseveralforums,includingtheNSCCTradeCaptureandETFIndustryWorkingGroups
+(IWG).NSCChassolicitedfeedbacktodeveloprequirementstoprovidethisflexibilityandcustomization,
+allowingETFagentstodelivermultiplebaskettypestoNSCCfordistributiontomarketparticipants.[[NSCC]]
+validatescertaincriticaldataelementsincludedwithinthesebasketsandthenpackagesthemwithother
+NSCCdatatocreateanoutputreportknownastheETFPortfolioCompositionFile(PCF).
+ToreduceriskforbothNSCCanditsmembers,NSCCplanstoenhancethePCFtodifferentiatepricing
+basketsfromtradingbaskets.Theriskreductionensuresmemberscanrelyonthedatapublishedthroughthe
+PCFforpricingorotherpurposes.ItalsopreventssubmittingcreationandredemptionorderstoNSCC
+againstpricingbaskets,whicharenotpublishedwithassociatedcreationunits.Pricingbasketsareusedby
+PortfolioCompositionFile(PCF)subscriberstounderstandtheholdingsoftheexchangetradedfund([[ETF]])for
+avarietyofpurposes.Forexample,someclientsusethepricingbaskettocalculateanintradaynetasset
+value(iNAV)toenhancetradingdecisions.ThisisespeciallyusefultoETFauthorizedparticipants
+transactingonETFswithfixedincomeholdingsthatallowcustomizingofindividualcreationorredemption
+ordersthroughabasketnegotiationprocessthatoccursintradayontradedate.
+TheenhancementsclearlydifferentiateallbaskettypeswithinthePCFbasedupontheirintendeduse,such
+asdistinguishingbetweenpricingandmultipletradingbaskets(Standard,Restricted,Rebalanced,Createand
+RedeemonlyandNegotiated).Additionally,theupdatesensurethatbasketspublishedonanon-unitbasisare
+distinguishedfromthosecalculatedonaunitbasis.
+NSCCinresponsetotheproposedSECRule6C-11willexpandsupportforordercustomizationinmultiple
+scenarios,suchasrebalancetrades,basketswithrestrictedcomponents,andnegotiatedbaskets.
+Concurrently,NSCCsupportstransparencyforthesecustomizedordersthroughenhancedbasket
+distributionoptionsacrossmultipleclearing-eligiblebaskettypes,suchastradingbasketsintendedasadaily
+pro-ratasliceandtradingbasketsintendedtobedeliveredtoindividualauthorizedparticipantstosupport
+rebalancetrades.
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 6
+
+IntroductiontoEnhancedPortfolioCompositionFile(PCF) 6
+NSCCwillalsoprovidefullsupportforETFagentstopublishpricingbasketsthatincludeindustry-requested
+featurestopublishadditionaldataelementsacrossallbaskettypes.
+Note
+AllPCFenhancementsandnewfeaturesaresubjecttoRegulatoryApproval.
+Theupdatedformats,previouslydistributedthroughimportantnotice#A8657onDecember21,2018,
+willbepostedtotheNSCC FileFormatsforETFsectionoftheLearningCenteruponreviewofthis
+ClientBusinessRequirementsdocument.
+ETFagentsarerequiredto:
+l PublishtheEnhancedConsolidatedPortfolioCompositionInputDataFile:DATATRAK 11301/Test 41301
+fileusingtheenhancedformat.[[ETF]] agentsarealsorequiredtodevelopfeaturesnecessarytoacceptETF
+PCFoutputs.SeetheAutoRouteProduction02261256/Test02981256andAutoRouteProduction
+02262335/Test02982335recordlayouts.
+l ClientsofETFagents,theETFsponsors,mayberequiredtodevelopenhancementstotheirbasket
+publicationprocessdependingonagreementsbetweentheETFagentsandsponsors.
+l ETFagentsmustcompletemandatorytestingpriortodeployment.Detailedtestingguidelinewillbe
+publishedatalaterdate.
+l RequestNSCCPortfolioIDsfornewbaskettypes,ifrequired,fornewandexistingETFs.UsageofNSCC
+InstructionIDsfornewbaskettypesareoptionalandwillbeprovidedbyUnderwritinguponrequestfor
+Restricted(formerlyCustoms),Rebalance,CreateandRedeemonly(CR/RD),Pricing,andNegotiated
+baskettypes.RequestswillfollowexistingproceduresusingarevisedProductInformationForm(PIF)and
+distributedwiththeExchangeTradedFund([[ETF]])WebUserGuide,bothofwhichwillbeavailableatalater
+date.QuantityandformationoftheNSCCPortfolioIDsforeachbaskettypearedetailedinFeaturesfor
+MultipleBasketTypes.
+ETFauthorizedparticipants([[Broker]]/dealers)arerequiredtodevelopfeaturesnecessarytoacceptETF
+PCFAutoRouteoutputs(AutoRouteProduction02261256/Test02981256andAutoRouteProduction
+02262335/Test02982335)inthenewlyenhancedformat.Non-membersubscribersofthePCF,suchas
+clientsofNSCCandDTCCSolutionsthatreceivethePCFundercommercialagreements,arerequiredto
+developthefeaturesnecessarytoacceptETFPCFAutoRouteoutputs(AutoRouteProduction
+02261256/Test02981256andAutoRouteProduction02262335/Test02982335)inthenewlyenhanced
+format.
+Upondeploymentofthissuiteofenhancements:
+l ETFsponsorsandagentscanpublishmultipleclearing-eligiblebasketstoawidedistributionofPCF
+subscribersandreceiveclearanceonCreate/Redeemordersagainstmultipleclearing-eligiblebasketsona
+dailybasis.
+l NSCCmemberPCFsubscribersreceivePricingbasketsdistinguishedwithuniqueidentifiers.All
+subscribersofstandardETFswillreceivePricingbaskets.
+l Non-NSCCmembershavetheoptiontosubscribetoPricingbasketssubjecttoadditionalagreements
+underDTCCSolutionsTermsandConditions.
+l AllPCFsubscribersreceiveadditionaldatawithinthePCFforboththeETFheaderandcomponent
+records.
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 7
+
+IntroductiontoEnhancedPortfolioCompositionFile(PCF) 7
+TheETFWebuserinterfaceismovingfromtheDTCCportaltotheClearingDashboard,withinthe
+[[DTCC]] portal,tostandardizetheuserexperienceandconformtotheuserexperiencecenterofexcellence
+(UXCOE)standards.Foraviewofsamplescreenshots,seeExchangeTradedFunds([[ETF]])WebUser
+Interface.[[ETF]] agentscanalsocustomizealertnotificationswithintheETFWebapplication.Formore
+information,seeSampleEmailAlertSubscriptionScreenShots.
+InScopeforPhase1
+ThefollowingtableshowstheNSCCETFproductsthatareinscopeforPhase1ofthisinitiative:
+ReportorFileName TestFileProduction
+File
+Input/OutputTime
+EnhancedPortfolioCompositionInput
+DataFile
+41301 11301 8:00P.M.Primary (T-1)
+12:00 P.M. Supplemental (T)
+12:30 A.M.-8 P.M. Negotiated(T)
+EnhancedConsolidatedPortfolio
+CompositionDataFile(Batch)
+0298125602261256ImmediatelyAfterValidationattheend
+ofSupplementalandPrimarycycles
+NearRealTimeSupplementalEnhanced
+PortfolioCompositionFile(PCF)
+0298233502262335ImmediatelyAfterValidation
+Nearrealtime
+InScopeforPhase1
+OutofScopeforPhase1
+ThefollowingtableshowstheNSCCETFproductsthatareoutofscopeforPhase1ofthisinitiative.As
+such,nofunctionalchangeswillbemadetotheseETFproducts.
+ReportorFileName TestFile Production
+File
+EnhancedCreate/RedeemInstructionDataInputFile 41300 11300
+EnhancedETFCreateandRedeemInstructionOutput(Blotter)MRO 0298125402261254
+EnhancedCreate/RedeemInstructionPrintImageReport 0298029102260291
+EnhancedETFEndofDayCreate/RedeemReceipt/RejectReport 0298009802120098
+EnhancedETFIntradayCreate/RedeemReceipt/RejectReport 0298195402261954
+EndofDayPortfolioCompositionFile(PCF)Receipt/Reject([[ETF]] AgentOnly) 0298042102260421
+EnhancedIntradayConsolidatedPortfolioCompositionReceipt/RejectPrint
+Image
+0298195502261955
+EnhancedIntradayConsolidatedPortfolioCompositionReceipt/RejectDataFile0298125502261255
+EnhancedPortfolioCompositionFileWithoutCUSIP(New) 0298245102262451
+OutofScopeforPhase1
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 8
+
+ChangestotheETF EnhancedConsolidatedPortfolioInputDataFile:DATATRAKProduction11301/Test41301 8
+CHANGESTOTHEETF  ENHANCEDCONSOLIDATEDPORTFOLIOINPUTDATAFILE:DATATRAKPRODUCTION11301/TEST41301
+ETFagentsarerequiredtodevelopfeaturesoftheEnhancedConsolidatedPCFInputDataFile:DATATRAKProduction11301/Test41301specifiedintheupdated
+recordlayout.ManychangesandnewdataelementsarespecifictothePricingbaskets,yetwillalsosupportsubmissionofmultiplebaskettypesandclearing
+enhancementsplannedduringthesecondphaseofthisproject.ThesemodificationsenableNSCC’sPCFservicetoincorporatethepricingbasketelementsintothe
+standardinputformatandensuretheyareineligibleforclearing.AllETFagentsarerequiredtoadapttotheenhancedrecordlayoutandfilespecificationsoutlinedin
+thisDATATRAK11301/Test41301file.Thepreviousformattingwillnolongerbesupportedpost-implementationoftheseenhancements.
+SeveralfieldshavebeenexpandedandseveralnewfieldshavebeenaddedtoType2–PortfolioHeaderRecord(seeSequence22–32)andType3–DetailComponent
+Record(seeSequence11–33)oftheDATATRAK11301/Test41301recordlayout.Althoughmanyofthesefieldsareoptional,itishighlyrecommendedthatETF
+agentsandtheirclientsandserviceproviderscodetopopulatethem.hefieldsinthenewType5–NegotiatedRecordarerequiredfornegotiatedportfolios;therefore,
+ETFagentsmusttakeaction,codingtopopulatethesemandatoryfields,whenappropriate.
+Note
+Allrecordtypesarenow450bytesinlengthduetotheadditionofnewfields.Additionally,inresponsetoindustryrequests,severalexitingfieldswere
+expandedtohandleadditionaldecimalplaces.Forexample,NetAssetValuePerCreationUnitandNetAssetValuePerETF.Duetotheexpansionof
+existingfields,subsequentfieldshavedifferentstartandendplaceswithinthespecification,whichdemandsmodificationevenifETFagentsdonotusethe
+newdataelements.
+IndustryPractices
+Atthistime,onlyStandardBasketsarerequiredtobesubmittedforpublishingthroughtheEnhancedConsolidatedPortfolioCompositionOutputDataFile:
+AutoRouteProduction02261256/Test02981256.Allotherbaskettypesareoptional.ETFagentsandauthorizedparticipants(APs)haveagreedtothestandard
+practiceoutlinedinthisdocumentuntilthepassingofSECRule6C-11oruntilsuchtimeastheIndustryStandardPracticesareclearlydefined.
+UpdateMay16,2019:TheIf/ThenIndustryPracticeisstillbeinplay,yethasbeenexpandedtocreateflexibilityforETFagents/Issuers.
+ManyETFagentsserviceETFsthatareconsideredtobepassivelymanaged.Submissionofmultiplebaskettypes(Create,Redeem,Rebalance,Negotiated)for
+manypassivefundsisnotexpectedtobethestandard;hence,theIf/ThenIndustryPractice.Formanyfunds,ETFagentsandissuershaverequestedtheflexibility
+tosubmitaStandardbasketasaCreateOnlybasketsincaseswheretheyarethesame,yetstillhavefunctionalitytosubmitaRedeemonlybasketwithdifferent
+underlyingcomponentsorsubmitvariationsofStandard,Create,Redeem,PricingandRebalance.Toaccommodatethisvariablefunctionality,newindicatorsfor
+Create,Redeem,andPricingUsagehavebeenaddedtothePCFInputDataFile:DATATRAKProduction11301/Test41301andETFConsolidatedPCFOutput
+files02261256/02981256.TheindicatorsdenotewhichbaskettypestheStandardbasketcanorshouldnotbeusedfor.TheseindicatorswererequestedbyAPsto
+helpclarifybaskettypestheyshouldexpectforeachfund.
+ThefunctionalityoftheCreate,Redeem,andPricingIndicatorshasbeenaddedtotheIf/ThenIndustryPracticesection.
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 9
+
+ChangestotheETF EnhancedConsolidatedPortfolioInputDataFile:DATATRAKProduction11301/Test41301 9
+If/ThenIndustryPractice
+ETFagentsandETFissuerssubmitaStandardbaskettype(01)inclusiveofY/NindicatorsforCreateOnly,RedeemOnly,andPricing.
+TheseindicatorsannouncetoauthorizedparticipantsthattheStandardNSCCPortfolioIDcanbeusedforCreateand/orRedeemordersandthePricingbasket.
+TheseIndicatorswillbeaddedtotheType2-PortfolioHeaderRecordonthePCFinputandoutputfiles.TheCreationOrderUsageandRedemptionOrderUsage
+indicatorsaredesignedonlytoinstructAPswhichPCFandNSCCPortfolioIDtouseforcreationandredemptionorders.
+l CreationOrderUsage–Agent/IssuerpopulatesSeq36intheType2–PortfolioHeaderRecordforDATATRAKProduction11301/Test41301.
+o WhenpopulatedwithYforYes,thesubmitterisindicatingthattheStandardbasketandassociatedNSCCPortfolioIDaretobeusedforcreationorders.APs,
+whenplacingorderswiththeissuer,usetheStandardNSCCPortfolioIDpublishedontheAutoRouteProduction02261256/Test02981256enhancedPCF
+outputfile.
+o WhenpopulatedwithNforNo,thesubmitterisindicatingthattheStandardInstructionIDshouldNOTbeusedforcreationordersasaseparateCreatebasket
+willbesubmittedforthefund.
+o IfaCreateorRedeembasketissubmittedandnoStandardbasketissubmittedforthesamefund,theCreateandRedeembasketisrejectedattheendofthe
+day.
+ThefollowingtableshowsSeq36availableintheType2–PortfolioHeaderRecordforDATATRAKProduction11301/Test41301:
+SeqDescription LengthStartTypeComments Required/Optional
+Field
+36 Creation Order Usage1 306 A l Y=StandardNSCCInstructionIDtobeusedforstandardand
+creationorders.
+l N=CreateOnlybasket(baskettype05)willbesubmittedand
+publishedonETFoutput.TheNSCCPortfolioIDassociatedwiththe
+type06basketistobeusedforcreationorders.
+l Space=DefaultstoY
+Y
+PCFOutput
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 10
+
+ChangestotheETF EnhancedConsolidatedPortfolioInputDataFile:DATATRAKProduction11301/Test41301 10
+l RedemptionOrderUsage–Agent/IssuerpopulatesSeq37intheType2–PortfolioHeaderRecordforDATATRAKProduction11301/Test41301.
+o WhenpopulatedwithYforYes,thesubmitterisindicatingthattheStandardbasketandassociatedNSCCPortfolioIDaretobeusedforredemptionorders.
+APs,whenplacingorderswiththeissuer,usetheNSCCPortfolioIDpublishedontheAutoRouteProduction02261256/Test02981256outputfile.
+o WhenpopulatedwithNforNo,thesubmitterisindicatingthattheStandardInstructionIDshouldNOTbeusedforredemptionordersasaseparateRedeem
+basketwillbesubmittedforthefund.TheseparatelypublishedRedeembasketwillbepublishedontheAutoRouteProduction02261256/Test02981256output
+filewithBasketType=06inSeq31.
+SeqDescription LengthStartTypeComments
+55 Redemption Order Usage1 497 A
+(Y, N)
+l Y=StandardNSCCInstructionIDtobeusedforstandardandredemptionorders.
+l N=RedeemOnlybasket(baskettype06)willbesubmittedandpublishedonETF
+output.TheNSCCPortfolioIDassociatedwiththetype06basketisusedfor
+redemptionorders.
+l Space=DefaultstoY
+PCFOutput
+l EditsandControlsfortheCreationOrderUsageandRedemptionOrderUsage
+o IfYissubmitted,theStandardbasketandassociatedNSCCPortfolioIDareusedforcreationorders.APs,whenplacingorderswiththeissuer,usethe
+StandardNSCCPortfolioIDpublishedontheAutoRouteProduction02261256/Test02981256enhancedPCFoutputfile.
+o IfNissubmittedandaseparatedCreateorRedeembasketisnotsubmitted,aWARNmessageisissued.
+Seemessagecodes292and296forCreateUsageand293and200forRedeemUsageintheMessageCodesandDescriptionssection.
+o IfaCreateorRedeembasketissubmittedandnoStandardbasketissubmittedforthesamefund,theCreateandRedeembasketisrejectedattheendofthe
+day.
+Seemessagecodes288and289intheMessageCodesandDescriptionssection.
+Seq Description Length Start Type Comments
+31 BasketType 2 290 A/N l 01=Standard
+l 02=Restricted
+l 03=Pricing
+l 04=Rebalance
+l 05=CreateOnly
+l 06=RedeemOnly
+l 07=Negotiated
+BasketTypes
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 11
+
+ChangestotheETF EnhancedConsolidatedPortfolioInputDataFile:DATATRAKProduction11301/Test41301 11
+l ThePricingUsageIndicatorwillbeaddedtotheType2-PortfolioHeaderRecordonthePCFinputandoutputfilesforthepurposesofdefiningtheusageofthe
+StandardbasketasaPricingbasket.ThePricingUsageIndicatorhasthefollowingoptions:
+o Y=StandardBasketProRataSliceistobeusedasaPricingbasketorAPsshouldcontinuetocontacttheissuerforadditionalpricinginformation.
+o N=ETFAgent/IssuersubmitsaseparateFullHoldingsPricingbasketwithanassignedNSCCPortfolioIDforthePricingbasket.
+ETFagentsrequestedthisflexibilityincaseswheretheIssuermaynotbereadytosubmitfullholdingsPricingbasketsforpassivefunds,inwhichcaseAPs
+shouldcontinuewithcurrentpractices.
+l PricingUsageIndicatoreditsandcontrols:
+o IfYissubmittedandaseparatePricingbasketforthesamefundisalsosubmitted,thePricingbasketisrejected.
+o IfNissubmittedandaseparatedPricingbasketisnotsubmitted,aWARNmessageisissued.
+o IfaPricingbasketissubmittedandnoStandardbasketforthesamefundissubmitted,thePricingbasketisrejectedattheendoftheday.
+o Seemessagecodes268,269,and283intheMessageCodesandDescriptionssection.
+Seq Description LengthStart Type Comments
+53 Pricing Usage Indicator1 495 A
+(Y, N)
+l Y=StandardbaskettobeusedasaPricingbasket.
+l N=FullFundPricingbasketwillbesubmittedforthisfund.
+l Space=DefaultstoY
+PCFOutput
+AgentsandissuershaveagreedtoprovidetheCreationOrderUsage,RedemptionOrderUsage,andPricingUsageIndicators.Theaforementionededitswillbein
+placeforcontrolpurposes.SubmissionofSpaceintheseSeqnumberswilldefaulttoY.
+Basedontheusageindicatorsandthecontrolsinplace,theIf/ThenIndustryPracticeremainsineffect.
+l ETFagentsandissuerswillsubmittheseindicatorsandtheproperorassociatedbasketstypes.
+-or-
+l Allbaskettypes,Standard,Create,Redeem,andPricing,willbesubmitted.
+Note
+TheadditionoftheseindicatorsfinalizesthisClientBusinessRequirements:Phase1document.AsIndustryPracticesaredefined,anychangeswillbe
+addressedinPhase2orsubsequentreleases.
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 12
+
+ChangestotheETF EnhancedConsolidatedPortfolioInputDataFile:DATATRAKProduction11301/Test41301 12
+RecordLayout:EnhancedConsolidatedPortfolioCompositionInputDataFile:DATATRAKProduction11301/Test41301
+ThefollowingsectionsshowtheconsolidatedPCFfieldsfortheEnhancedConsolidatedPortfolioCompositionInputDataFile:DATATRAKProduction11301/Test
+41301recordlayout.
+Note
+Valuesmodifiedfromthepreviousversionappearinred.Allrecordtypesarenow450bytesinlengthduetotheadditionofnewfields.Additionally,in
+responsetoindustryrequests,severalexitingfieldswereexpandedtohandleadditionaldecimalplaces.Forexample,NetAssetValuePerCreationUnit
+andNetAssetValuePerETF.Duetotheexpansionofexistingfields,subsequentfieldshavedifferentstartandendplaceswithinthespecification,which
+demandsmodificationevenifETFagentsdonotusethenewdataelements.
+Type1–HeaderRecord
+Thefollowingtableshowthetype1–HeaderRecorddetailsforDATATRAKProduction11301/Test41301.
+DATATRAKProduction11301/Test41301
+Type1–HeaderRecord
+Requiredrecordtypeforallportfolios.
+Recordlength=450
+Seq Description Length Start Type Comments Required/OptionalField
+1 RecordType 2 1 A/N 01=RecordType1 Required
+2 FileDescription 25 3 A/N PortfolioComposition Optional
+3 ETFAgent 8 28 N NSCCMemberNumber.
+Rightjustifiedwithleadingzeros.
+Required
+4 FileIdentifier 8 36 A/N InputFileNumber. Optional
+5 ProcessingDate 8 44 N CCYYMMDD Required
+6 ProcessingTime 6 52 N HHMMSS Optional
+7 FutureUse 393 58
+ENDOFRECORD
+Type1–HeaderRecord
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 13
+
+ChangestotheETF EnhancedConsolidatedPortfolioInputDataFile:DATATRAKProduction11301/Test41301 13
+Type2–PortfolioHeaderRecord
+Thefollowingtableshowthetype2–PortfolioHeaderrecorddetailsforDATATRAKProduction11301/Test41301.
+DATATRAKProduction11301/Test41301
+Type2–PortfolioHeaderRecord
+Requiredrecordtypeforallportfolios.
+RecordLength=450
+Seq Description Length Start Type Comments Required/Optional
+Field
+1 RecordType 2 1 A/N 02=RecordType2 Required
+2 NSCCPortfolioID 9 3 A/N NSCCassignedPortfolioIDofthe
+basket
+Required
+3 ETFAgent 8 12 N NSCCmembernumber.
+Right-justifiedwithleadingzeros.
+Required
+4 ComponentCount 8 20 N 99,999,999 Required
+5 EstimatedT-1CashAmountPerCreationUnit 14 28 N 999,999,999,999.99 Optional*
+*mustbenumeric
+6 SignfieldforEstimatedT-1CashAmountPer
+CreationUnit
+1 42 A/N l "–"=Negativevalue
+l Space=Positivevalue
+l Allothervaluesaretreatedasa
+space(positivevalue)
+Optional
+Note:Sequence7,11,and21areexistingfieldsthathavebeenexpandedfrom5to6decimalplaces.Duetothisexpansion,allsubsequentfieldshavenew
+placementwithinthefile.ETFagentsmustadjusttothenewplacementofallfields.
+7 NetAssetValuePerCreationUnit 18 43 N 999,999,999,999.999999
+Decimalplaceexpandsto6digits.
+Optional*
+*mustbenumeric
+8 SignfieldforNetAssetValuePerCreationUnit 1 61 A/N l "–"=Negativevalue
+l Space=Positivevalue
+l Allothervaluesaretreatedasa
+space(positivevalue)
+Optional
+9 EstimatedT-1CashAmountPerETF 14 62 N 999,999,999,999.99 Optional*
+*mustbenumeric
+Type2–PortfolioHeaderRecord
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 14
+
+ChangestotheETF EnhancedConsolidatedPortfolioInputDataFile:DATATRAKProduction11301/Test41301 14
+DATATRAKProduction11301/Test41301
+Type2–PortfolioHeaderRecord
+Requiredrecordtypeforallportfolios.
+RecordLength=450
+Seq Description Length Start Type Comments Required/Optional
+Field
+10 SignfieldforEstimatedT-1CashAmountPerETF1 76 A/N l "–"=Negativevalue
+l Space=Positivevalue
+l Allothervaluesaretreatedasa
+space(positivevalue)
+Optional
+11 NetAssetValuePerETF 18 77 N 999,999,999,999.999999
+Decimalplaceexpandsto6digits.
+Optional*
+*mustbenumeric
+12 SignfieldforNetAssetValuePerETF 1 95 A/N l "–"=Negativevalue
+l Space=Positivevalue
+l Allothervaluesaretreatedasa
+space(positivevalue)
+Optional
+13 TotalCashAmountPerCreationUnit 14 96 N 999,999,999,999.99 Optional*
+*mustbenumeric
+14 Sign field for Total Cash Amount Per Creation Unit1 110 A/N l "–"=Negativevalue
+l Space=Positivevalue
+l Allothervaluesaretreatedasa
+space(positivevalue)
+Optional
+15 TotalSharesOutstandingPerETF 12 111 N 999,999,999,999 Optional*
+*mustbenumeric
+16 DividendAmountPerETFonT–1 14 123 N 999,999,999,999.99 Optional*
+*mustbenumeric
+17 SignfieldforDividendAmountPerETFonT–1 1 137 A/N l "–"=Negativevalue
+l Space=Positivevalue
+l Allothervaluesaretreatedasa
+space(positivevalue)
+Optional
+Type2–PortfolioHeaderRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 15
+
+ChangestotheETF EnhancedConsolidatedPortfolioInputDataFile:DATATRAKProduction11301/Test41301 15
+DATATRAKProduction11301/Test41301
+Type2–PortfolioHeaderRecord
+Requiredrecordtypeforallportfolios.
+RecordLength=450
+Seq Description Length Start Type Comments Required/Optional
+Field
+18 EstimatedvalueofCash-in-lieuComponentsper
+CreationUnit
+14 138 N 999,999,999,999.99 Optional*
+*mustbenumeric
+19 CashOnlyIndicator 1 152 A/N l Y=CashOnly(Create/Redeem
+withCashOnly)
+l Space=Norestrictions(any
+combinationofcashor
+[[securities]])
+Optional
+20 ETFExpenseRatioonT–1 3 153 N Expressedinbasispoints. Optional*
+*mustbenumeric
+21 TotalNetAssetValueofETFFundonT–1 18 156 N 999,999,999,999.999999
+Decimalplaceexpandsto6digits.
+Optional*
+*mustbenumeric
+Note:Sequence22isusedforRebalancebasketsonlyallowingfordifferentunitsizesonrebalancing.Ifsuppliedontheportfoliocompositionfile(PCF),theETF
+BasketUnitSizewillbeusedtocalculateETFsharesforsettlement.Ifnotsupplied,NSCCcalculatestheETFsharesusingtheCreationUnitoriginallysubmitted
+whentheNSCCPortfolioIDsarerequestedattheETFlaunch.
+22 ETFBasketUnitSize 9 174 N Definesthesizeofthisbasketthatis
+differentfromtheETF CreationUnit
+size.SpecifiedonlyonRebalance
+baskets.Allzeroesifnotprovided.
+999,999,999
+Optional*
+*mustbenumeric
+Note:Sequence23through32areoptionalfieldsrequestedbytheindustryprimarilyforuseinthePricingandNegotiatedbaskettypes.Allfieldsareoptional,yet
+stillneedtobepopulatedwithzerosorspaces,asspecifiedintheRequired/OptionalFieldcolumnofthistable.ThesefieldsallowforsubmissionoffullfundPCFs
+withassettypesthatarenotnormallyreportedontheclearingeligiblePCFs.Pricingbasketswillneverbeclearingeligible.
+23 VariableFees 8 183 N 999,999.99 Optional*
+*mustbenumeric
+24 BabyBondCashValue 10 191 N 99,999,999.99 Optional*
+*mustbenumeric
+Type2–PortfolioHeaderRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 16
+
+ChangestotheETF EnhancedConsolidatedPortfolioInputDataFile:DATATRAKProduction11301/Test41301 16
+DATATRAKProduction11301/Test41301
+Type2–PortfolioHeaderRecord
+Requiredrecordtypeforallportfolios.
+RecordLength=450
+Seq Description Length Start Type Comments Required/Optional
+Field
+25 FixedIncomeFaceValueAdjustment 10 201 N 99,999,999.99 Optional*
+*mustbenumeric
+26 FundLEI 20 211 A/N Legalentityidentifierofthefund. Optional
+27 FundSize 23 231 N FundAUM,attheshareclassor
+productlevel.
+99,999,999,999.999999999999
+Optional*
+*mustbenumeric
+28 ShareClassApportionmentRatio 1 254 N Identifiesifthefundhasshare
+classesandtheproportional
+ownershipofthefundifithasshare
+classes.
+ForU.S.,ETFsalways=1.Spaceif
+notprovided.
+Optional
+29 ProjectedTransactionFee 7 255 N EMEA-specific:estimated
+transactionfee.
+99,999.99
+Optional*
+*mustbenumeric
+30 DateforProjectedTransactionFee 8 262 N Effectivetradedateofthebasket,in
+CCYYMMDDformat.
+Optional*
+*mustbenumericor
+spaces
+31 ConfirmedTransactionFee 7 270 N Actualcostofthetransaction-also
+knownastheCreate/Redeemfee.
+99,999.99
+Optional*
+*mustbenumeric
+Type2–PortfolioHeaderRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 17
+
+ChangestotheETF EnhancedConsolidatedPortfolioInputDataFile:DATATRAKProduction11301/Test41301 17
+DATATRAKProduction11301/Test41301
+Type2–PortfolioHeaderRecord
+Requiredrecordtypeforallportfolios.
+RecordLength=450
+Seq Description Length Start Type Comments Required/Optional
+Field
+32 DateforConfirmedTransactionFee 8 277 N Effectivetradedateofthebasket,in
+CCYYMMDDformat.Spaceifnot
+provided.
+Optional*
+*mustbenumericor
+spaces
+33 ProjectedCashforPricingBasket 14 285 N Projectedcashfigurefortradedate
+basedonpricingbasket.
+999,999,999,999.99
+Optional*
+*mustbenumericor
+spaces
+34 BasketsOutstanding 6 299 N Numberofbasket/unitsoutstanding
+inthefund,attheshareclassor
+productlevel.
+999999
+Optional*
+*mustbenumericor
+spaces
+Note:Sequence35,PricingUsageIndicator,isusedtospecifyiftheStandardbasketshouldbeusedasaPricingbasketforpassiveIndexFunds.Incaseswhere
+Yissubmitted,theETFAgentorSponsorwillnotprovideafullholdingspricingfile.ConsumersofthePCFoutputshouldusetheStandardbasketforpricingor
+continuecurrentpracticesforpricing.IfNissubmittedtheETFAgentorSponsorwillsubmitaseparatefullfundholdingsPricingbasket.
+ThenewPricingUsageIndicatorhasthefollowingeditsandcontrols:
+l IfYissubmittedandaseparatePricingbasketforthesamefundisalsosubmitted,thePricingbasketwillberejected.
+l IfNissubmittedandaseparatedPricingbasketisnotsubmitted,aWARNmessagewillbeissued.
+l IfaPricingbasketissubmittedandnoStandardbasketforthesamefundissubmitted,thePricingbasketisrejectedattheendoftheday.
+Seemessagecodes268,269,and283intheMessageCodesandDescriptionssection.
+35 PricingUsageIndicator 1 305 A l Y=StandardBaskettobeused
+asPricingbasket.
+l N=FullFundPricingbasketwill
+besubmittedforthisfund.
+l Space=DefaultstoY
+Optional
+Type2–PortfolioHeaderRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 18
+
+ChangestotheETF EnhancedConsolidatedPortfolioInputDataFile:DATATRAKProduction11301/Test41301 18
+DATATRAKProduction11301/Test41301
+Type2–PortfolioHeaderRecord
+Requiredrecordtypeforallportfolios.
+RecordLength=450
+Seq Description Length Start Type Comments Required/Optional
+Field
+36 Creation Order Usage 1 306 A l Y=StandardNSCCInstruction
+IDtobeusedforStandardand
+Createorders.
+l N=CreateOnlybasket(basket
+type05)willbesubmittedand
+publishedonETFoutput.The
+NSCCPortfolioIDassociated
+withthetype05basketistobe
+usedforcreationorders.
+l Space=DefaultstoY
+Optional
+37 RedemptionOrderUsage 1 307 A l Y=StandardNSCCInstruction
+IDtobeusedforStandardand
+Redemptionorders.
+l N=RedeemOnlybasket
+(baskettype06)submittedand
+publishedonETFoutput.The
+NSCCPortfolioIDassociated
+withthetype06basketistobe
+usedforredemptionorders.
+l Space=DefaultstoY
+Optional
+38 FutureUse 143 308 Spaces
+EndofRecord
+Type2–PortfolioHeaderRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 19
+
+ChangestotheETF EnhancedConsolidatedPortfolioInputDataFile:DATATRAKProduction11301/Test41301 19
+Type3–DetailComponentRecord
+Thefollowingtableshowthetype3–DetailComponentrecordforDATATRAKProduction11301/Test41301.Thisrecordtypeisrequiredforportfolios,butoptional
+fortheCashOnlyportfolio.
+DATATRAKProduction11301/Test41301
+Type3–DetailComponentRecord
+Requiredrecordtype,exceptfortheoptionalCashOnlyportfolio.
+Recordlength=450
+Seq Description Length Start Type Comments Required/OptionalField
+1 RecordType 2 1 A/N 03=RecordType3
+Onepercomponent.
+Required
+2 NSCCPortfolioID 9 3 A/N NSCCassignedPortfolioIDofthe
+basket.
+Required
+3 ComponentIDCode 2 12 A/N l 01=[[CUSIP]]
+l 02=SEDOL
+l 03=ISIN
+l 04=ISIN/SEDOL
+l 05=Bloomberg
+l 06=Reuters
+l 07=ICE/NYSELife
+l 99=Other
+Required
+Note:Type99ComponentIDCodeisacatchallforunderlyingassetswithoutstandardizedidentifiers.ComponentswithIDCodetype99=Otherdonotrequire
+ComponentIDSequence4.NSCCpassesonlythedescriptionprovided.Inallothercases,NSCCpassestheIDcodeprovidedinSequence4.
+4 ComponentID 25 14 A/N Definedbythevalueinthe
+ComponentIDCodefield.
+Required
+l [[CUSIP]] 9 14 A/N Identifiesthedomesticcomponent.
+l SEDOL 7 14 A/N OfficialSEDOLnumber.
+l ISIN 12 14 A/N OfficialISINnumber.Identifiesthe
+foreignordomesticcomponent.
+l ISIN/SEDOL 19 14 A/N CombinationISIN/SEDOL
+Recommendedfornon-USdomiciled
+[[securities]].
+Type3–DetailComponentRecord
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 20
+
+ChangestotheETF EnhancedConsolidatedPortfolioInputDataFile:DATATRAKProduction11301/Test41301 20
+DATATRAKProduction11301/Test41301
+Type3–DetailComponentRecord
+Requiredrecordtype,exceptfortheoptionalCashOnlyportfolio.
+Recordlength=450
+Seq Description Length Start Type Comments Required/OptionalField
+o ISIN 12 14 A/N InternationalSecuritiesIdentification
+Number.
+o SEDOL 7 26 A/N StockExchangeDailyOfficialList.
+l Bloomberg A/N Alternativemarketidentifiercode.
+l Reuters A/N Reutersinstrumentcode(RIC).
+Alternativemarketidentifiercode.
+l ICE/NYSELife A/N Alternativemarketidentifiercode.
+l Allothertypes 25 14 A/N Freeformfieldidentifyingothertypes
+ofidentifiercodes.
+Note:Sequence5isanexistingfieldthathasbeenexpandedforFixedIncomeClearing-Phase2updates.Duetothisexpansion,allsubsequentfieldshavenew
+placementwithinthefile.ETFagentsmustadjusttothenewplacementofallfields.
+5 ComponentQuantity 21 39 N Quantityofcomponentpercreation
+unit(parvalueforfixedincome
+[[securities]]).
+9,999,999,999,999.99999999
+Required
+6 SignFieldforComponentQuantity 1 60 A/N l "–"indicatesnegativevalue
+(shortposition)
+l Space=Positivevalue
+l Allothervaluesaretreatedasa
+space(positivevalue)
+Note:Acomponentwithnegative
+quantity(shortcomponent)canonly
+becreated/redeemedforcash.
+Optional
+7 ExternalSettlementDate 8 61 N ETFagentprovidedsettlementdatefor
+non-DTCsettlingcomponents,in
+CCYYMMDDformat.
+Optional
+Type3–DetailComponentRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 21
+
+ChangestotheETF EnhancedConsolidatedPortfolioInputDataFile:DATATRAKProduction11301/Test41301 21
+DATATRAKProduction11301/Test41301
+Type3–DetailComponentRecord
+Requiredrecordtype,exceptfortheoptionalCashOnlyportfolio.
+Recordlength=450
+Seq Description Length Start Type Comments Required/OptionalField
+8 NewSecurityIndicator 1 69 A/N l N=NewcomponentinPortfolio
+l Space=Notnew
+Optional
+9 CashInLieuIndicator 1 70 A/N l Y=ETFagentprovidedindicator
+forcomponenttobesubstituted
+forcashinacreate/redeem.
+l Space=Nosubstitution
+Note:
+CILissettoXbyNSCCifoneofthe
+followingconditionsismetforcreate/
+redeemeligibleportfolios:
+l ComponentisnotinNSCC
+SecurityMasterdatabase
+l Portfolioisacashonlyportfolio
+Optional
+10 ComponentDescription 60 71 A/N ETFagentdefineddescription. Optional
+Type3–DetailComponentRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 22
+
+ChangestotheETF EnhancedConsolidatedPortfolioInputDataFile:DATATRAKProduction11301/Test41301 22
+DATATRAKProduction11301/Test41301
+Type3–DetailComponentRecord
+Requiredrecordtype,exceptfortheoptionalCashOnlyportfolio.
+Recordlength=450
+Seq Description Length Start Type Comments Required/OptionalField
+Notes:
+l Sequence11,12,and13canbeusedonPricingbaskettypes.TheyhavealsobeenaddedinpreparationforPhase2,clearingofETFswithCorporateand
+MunicipalFixedIncomeunderlyingassets.
+l Sequence12and13takeeffectwhenthePhase1PCF Enhancementsaredeployed.
+l ForSequence12and13,thedescriptionsareexpectedtochangeafterthedeploymentofETF Phase2.Formoreinformationaboutthefullrequirements,see
+theETF Phase2:ClearingEnhancementstoSupportFixedIncomeAssetsforCorporate,Municipal,andUIT(CMU)document.
+11 WhenIssuedIndicator 1 131 A/N WhenIssuedindicator:
+l Y=WhenIssued
+l N=NotWhenIssued
+Optional
+12 l AccruedInterestT1(Phase1)
+l AccruedInterestNonstandard
+[[settlement]](Phase2)
+11 132 N 999,999,999.99 Optional*
+*mustbenumericorspaces
+13 l AccruedInterestT2(Phase1)
+l AccruedInterestStandard
+[[settlement]](Phase2)
+11 143 N 999,999,999.99 Optional*
+*mustbenumericorspaces
+Note:Sequence14through33areoptionalfieldsrequestedbytheindustryprimarilyforuseinPricingandNegotiatedbaskettypes.Allfieldsareoptional,yetstill
+needtobepopulatedwithzerosorspaces,asspecifiedintheRequired/OptionalFieldcolumnofthistable.ThesefieldsallowforsubmissionoffullholdingsPCFs
+withassettypesthatarenotnormallyreportedontheclearingeligiblePCFs.Pricingbasketswillneverbeclearingeligible.
+14 AssetClass 27 154 A Freeformfieldtoidentifytheasset
+classofthesecurity.
+Optional
+Type3–DetailComponentRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 23
+
+ChangestotheETF EnhancedConsolidatedPortfolioInputDataFile:DATATRAKProduction11301/Test41301 23
+DATATRAKProduction11301/Test41301
+Type3–DetailComponentRecord
+Requiredrecordtype,exceptfortheoptionalCashOnlyportfolio.
+Recordlength=450
+Seq Description Length Start Type Comments Required/OptionalField
+15 ExcludedFromPricing 21 181 N PricingBasketOnly
+Quantityofsecuritiesownedbythe
+fundperbasket/unit,butdifficultto
+price.
+Securitiesthatshouldbepriced
+intraday,butcannotbepricedonthe
+NAVdate.
+Pre-corporateactionpricesand
+shareswouldbeincludedaspartof
+thisbasket.
+Examples:Complexcorporate
+actionsandfair-valuednames.
+9,999,999,999,999.99999999
+Optional*
+*mustbenumericorspaces
+16 Price(inFundBaseCurrency) 24 202 N PricingBasketOnly
+PriceofthesecurityontheNAV
+date.
+999,999,999,999,999,999.999999
+Optional*
+*mustbenumericorspaces
+17 LocalCurrency 3 226 A Identifiesthecurrencyofthe
+security.Forexample,USD.
+Optional
+18 Factor 24 229 N Decimalvaluereflectingaproportion
+oftheoutstandingprincipalvalueof
+thefactorbondsthatchangesover
+time.Alsoappliestoequityfactors,
+suchasstocksplitonexdate.
+999,999,999,999,999,999.999999
+Optional*
+*mustbenumericorspaces
+Type3–DetailComponentRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 24
+
+ChangestotheETF EnhancedConsolidatedPortfolioInputDataFile:DATATRAKProduction11301/Test41301 24
+DATATRAKProduction11301/Test41301
+Type3–DetailComponentRecord
+Requiredrecordtype,exceptfortheoptionalCashOnlyportfolio.
+Recordlength=450
+Seq Description Length Start Type Comments Required/OptionalField
+19 SyntheticsLocalCurrency 3 253 A Identifiesthecurrencyofthe
+security.Forexample,USD.
+Optional
+20 SyntheticsPriceMultiplier 24 256 N Designatedpricemultiplier.
+999,999,999,999,999,999.999999
+Optional*
+*mustbenumericorspaces
+21 SyntheticsContractSize 24 280 N Agreednotionalsizeofthefutures
+contract.
+999,999,999,999,999,999.999999
+Optional*
+*must be numeric or spaces
+22 Synthetics Average Contract Open Price24 304 N Averageofthefuturetradeprice.
+999,999,999,999,999,999.999999
+Optional*
+*mustbenumericorspaces
+23 FX RatesBaseCurrency 3 328 A Identifiesthebasecurrencyofthe
+fund.Forexample,USD
+Optional
+24 FX RatesCurrencies 3 331 A SpotFXratesofrespective
+currenciesagainstthebasecurrency
+ofthefund.Forexample,EUR,
+GBR,andUSD.
+Optional
+25 FX Forwards Currency Pair 6 334 A Identifiesthecurrencypair
+associatedwiththeFXforward.For
+example,EURUSD
+Optional
+26 FX ForwardsValueDate 8 340 N SettlementdateoftheFXforward,in
+CCYYMMDDformat.
+Optional*
+*mustbenumericorspaces
+27 FX ForwardsQuantity 9 348 N Fundhedgedquantity.
+9,999,999.99
+Optional*
+*mustbenumericorspaces
+Type3–DetailComponentRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 25
+
+ChangestotheETF EnhancedConsolidatedPortfolioInputDataFile:DATATRAKProduction11301/Test41301 25
+DATATRAKProduction11301/Test41301
+Type3–DetailComponentRecord
+Requiredrecordtype,exceptfortheoptionalCashOnlyportfolio.
+Recordlength=450
+Seq Description Length Start Type Comments Required/OptionalField
+28 FX ForwardsRate 7 357 N Interpolatedrate:rateusedforNAV
+calculation,includingforwardpoint
+interpolation.
+9.999999
+Optional*
+*mustbenumericorspaces
+29 FX ForwardsValue 9 364 N CurrencymarketvalueoftheFX
+forward.
+9,999,999.99
+Optional*
+*mustbenumericorspaces
+30 FX ForwardsCurrency 3 373 A Identifiesthebasecurrencyofthe
+FXforwardcontract.Forexample,
+EUR
+Optional
+31 SWAPsNotionalValue 7 376 N Totalamountofasecurity's
+underlyingasset.
+9,999,999
+Optional*
+*mustbenumericorspaces
+32 SWAPsSpread 5 383 N Costoftheunderlyingfeefromthe
+SWAPcounterparty.
+9.9999
+Optional*
+*mustbenumericorspaces
+33 SWAPsMarketValue 9 388 N AgreeduponpriceoftheSWAP.
+9,999,999.99
+Optional*
+*mustbenumericorspaces
+34 FutureUse 54 397 Spaces
+ENDOFRECORD
+Type3–DetailComponentRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 26
+
+ChangestotheETF EnhancedConsolidatedPortfolioInputDataFile:DATATRAKProduction11301/Test41301 26
+Type4–Custom/RestrictedDistributionRecord
+ThefollowingtableshowtheType4–CustomDistributionRecordforDATATRAKProduction11301/Test41301.
+DATATRAKProduction11301/Test41301
+Type4–Custom/RestrictedDistributionRecord
+RequiredrecordtypeforRestricted(Custom)andRebalanceportfolios.
+Recordlength=450
+Seq Description Length Start Type Comments Required/OptionalField
+1 RecordType 2 1 A/N 04=RecordType4 Required
+2 NSCCPortfolioID 9 3 A/N NSCCassignedPortfolioIDofthebasket Required
+3 Specifiedrecipient8 12 A/N Clearingnumberoftheauthorizedparticipanttoreceivethisfile.
+-or-
+LIST=DistributionofauthorizedparticipantsassociatedwiththeETFagent.
+-or-
+ALL=Distributetoallsubscribersthataresubscribedtothestandardbasket.
+Required
+4 FutureUse 431 20 Spaces
+ENDOFRECORD
+Type4–CustomDistributionRecord
+Note
+InadditiontodistributionofCustombaskets,Record4willalsobeusedfordistributionofthenewRebalancebaskets.Formoreinformationaboutthe
+Rebalancebasketdistributionrules,seeRebalanceBasket.
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 27
+
+ChangestotheETF EnhancedConsolidatedPortfolioInputDataFile:DATATRAKProduction11301/Test41301 27
+Type5–NegotiatedRecord
+ThefollowingtableshowtheType5–NegotiatedrecordforDATATRAKProduction11301/Test41301.
+Note
+Foraddedflexibilityandcustomization,NSCChasdevelopedanegotiatedbaskettypetoallowETFagentsandissuerstosubmitordersontradedatefor
+specifiedauthorizedparticipantswithnegotiatedunderlyingcomponents.
+AgentswillrequestaNegotiatedNSCCPortfolioIDwhensubmittingtheProductInformationForm(PIF)toDTCCUnderwriting.TheNegotiatedPCFwillbe
+submittedwiththeType5-NegotiatedRecord,whichincludesthetradedateandtransactionID.ThistransactionIDmustmatchthetransactionID
+submittedwhentheCreate/RedeeminstructionissubmittedthroughtheDATATRAKProduction11300/PSE 41300file.Thisallowsformultipleorderstobe
+submittedformorethanoneauthorizedparticipantwithdifferentunderlyingcomponents.FortheDATATRAKProduction11300/PSE 41300file,seethe
+[[NSCC]] FileFormatsforETFsectionintheDTCCLearningCenter.
+PCFfilesubmissionsthroughtheDATATRAKProduction11301thatDONOTuseaNegotiatedNSCCPortfolioIDdonotrequirethisType5-Negotiated
+Record.PCFfilessubmittedwithaNegotiatedNSCCPortfoliomusthavethisType5-NegotiatedRecordwithavalidTransactionIDandTradeDate.For
+additionaleditdetailsandsubmissionrules,seeNegotiatedBasket.
+DATATRAKProduction11301/Test41301
+Type5–NegotiatedRecord
+RequiredrecordtypeonlyforNegotiatedportfolios.
+Recordlength=450
+Seq Description LengthStartTypeComments Required/Optional
+Field
+1 RecordType 2 1 A/N 05=RecordType5 Required
+2 NSCCPortfolio
+[[ID]]
+9 3 A/N NSCCassignedportfolioIDofthebasket. Required
+3 TransactionID 12 12 N TransactionID
+999999999999
+Note:ThistransactionIDmustmatchthetransactionID ontheDATATRAK11300orderforthis
+negotiatedbasket.
+Required
+4 TradeDate 8 24 N CCYYMMDD Required
+5 FutureUse 419 32 Spaces
+ENDOFRECORD
+Type5–NegotiatedRecord
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 28
+
+ChangestotheETF EnhancedConsolidatedPortfolioInputDataFile:DATATRAKProduction11301/Test41301 28
+Type99–TrailerRecord
+ThefollowingtableshowtheType99–TrailerRecordforDATATRAKProduction11301/Test41301.
+DATATRAKProduction11301/Test41301
+Type99–TrailerRecord(NewRecord)
+Requiredrecordtypeforallportfolios.
+RecordLength=450
+SeqDescription LengthStartTypeComments Required/OptionalField
+1 RecordType 2 1 A/N 99=TrailerRecord
+Oneperfile.
+Required,butifnotsubmitted,theETFagentreceivesawarningonendofdayoutput
+AutoRoute02260421/Test02980421.
+2 Final Transmission1 3 A/N Nolongersupported.Spaces. Optional
+3 RecordCount 13 4 N Numberofrecordsintransmission
+(includingtrailer).
+Required
+4 FutureUse 434 17 Spaces
+ENDOFRECORD
+Type99–TrailerRecord
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 29
+
+ChangestotheEnhancedConsolidatedPortfolioCompositionOutputDataFile:AutoRouteProduction02261256/Test02981256 29
+CHANGESTOTHEENHANCEDCONSOLIDATEDPORTFOLIOCOMPOSITIONOUTPUTDATAFILE:AUTOROUTEPRODUCTION02261256/TEST02981256
+TheEnhancedConsolidatedPortfolioCompositionOutputDataFile:AutoRouteProduction02261256/Test02981256recordlayoutcontainstheoutputdatafile
+formatfortheportfoliocompositionfile(PCF).Upondeployment,allPCFsubscribersarerequiredtoadapttotheenhancedrecordlayoutandfilespecifications.
+Note
+AllRecordtypesarenow500bytesinlengthduetotheadditionofnewfields.Additionally,inresponsetoindustryrequests,severalexitingfieldswere
+expandedtohandleadditionaldecimalplaces.Forexample,NetAssetValuePerCreationUnitandNetAssetValuePerETF.Duetotheexpansionof
+existingfields,subsequentfieldshavebeenplacedinnewbyteorderwithinthespecification,whichdemandsmodificationevenifETFagentsdonotuse
+thenewdataelements.
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 30
+
+ChangestotheEnhancedConsolidatedPortfolioCompositionOutputDataFile:AutoRouteProduction02261256/Test02981256 30
+RecordLayout:EnhancedConsolidatedPortfolioCompositionOutputDataFile:AutoRouteProduction02261256/Test02981256
+ThefollowingsectionscontaintheinformationfortheEnhancedConsolidatedPortfolioCompositionOutputDataFile:AutoRouteProduction02261256/Test
+02981256recordlayout.
+Note
+Valuesmodifiedfromthepreviousversionappearinred..Allrecordtypesarenow500bytesinlengthduetotheadditionofnewfields.Additionally,in
+responsetoindustryrequests,severalexitingfieldswereexpandedtohandleadditionaldecimalplaces.Forexample,NetAssetValuePerCreationUnit
+andNetAssetValuePerETF.Duetotheexpansionofexistingfields,subsequentfieldshavebeenplacedinnewbyteorderwithinthespecification,which
+demandsmodificationevenifETFagentsdonotusethenewdataelements.
+Type1–HeaderRecord
+ThefollowingtableshowtheType1–HeaderRecorddetailsfortheEnhancedConsolidatedPortfolioCompositionOutputDataFile:AutoRouteProduction
+02261256/Test02981256:
+AutoRouteProduction02261256/Test02981256
+Type1–HeaderRecord
+RecordLength=500
+Seq Description Length Start Type Comments
+1 RecordType 2 1 A/N 01=HeaderRecord
+Oneperfile.
+2 FileDescription 25 3 A/N PortfolioComposition
+3 ETFAgent 8 28 N NSCCMemberNumber.
+Rightjustifiedwithleadingzeros.
+4 FileIdentifier 8 36 A/N InputFileNumber.
+5 ProcessingDate 8 44 N CCYYMMDD
+6 ProcessingTime 6 52 N HHMMSS
+7 FutureUse 443 58
+ENDOFRECORD
+Type1–HeaderRecord
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 31
+
+ChangestotheEnhancedConsolidatedPortfolioCompositionOutputDataFile:AutoRouteProduction02261256/Test02981256 31
+Type2–PortfolioHeaderRecord
+ThefollowingtableshowtheType2–PortfolioHeaderRecorddetailsfortheEnhancedConsolidatedPortfolioCompositionOutputDataFile:AutoRouteProduction
+02261256/Test02981256:
+AutoRouteProduction02261256/Test02981256
+Type2–PortfolioHeaderRecord
+RecordLength=500
+Seq Description Length Start Type Comments
+1 RecordType 2 1 A/N 02=HeaderType2
+Oneperportfolio.
+2 ETFTradingCUSIP 9 3 A/N S&PAssigned
+3 ETFTradingISIN 12 12 A/N InternationalSecuritiesIdentification
+Number.
+4 NSCCPortfolioID 9 24 A/N NSCCassignedPortfolioIDofthebasket.
+5 ETFDescription 60 33 A/N FromtheNSCCSecurityMasterdatabase
+iffound;otherwise,theETFagent
+supplieddescriptionisused.
+6 PortfolioTradeDate 8 93 N CCYYMMDD
+7 ETFAgent 8 101 N NSCCmembernumber.
+Right-justifiedwithleadingzeros.
+8 ComponentCount 8 109 N 99,999,999
+9 EstimatedT-1CashAmountPerCreationUnit 14 117 N 999,999,999,999.99
+10 SignfieldforEstimatedT-1CashAmountPer
+CreationUnit
+1 131 A/N l "–"=Negativevalue
+l Space=Positivevalue
+l Allothervaluesaretreatedasa
+space(positivevalue)
+Note:Sequence11,15,and25areexistingfieldsthathavebeenexpandedfrom5to6decimalplaces.Duetothisexpansion,allsubsequentfieldshavenew
+placementwithinthefile.ETFagentsandauthorizedparticipantsmustadjusttothenewplacementofallfields.
+11 NetAssetValuePerCreationUnit 18 132 N 999,999,999,999.999999
+Decimalplaceexpandsto6digits.
+Type2–PortfolioHeaderRecord
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 32
+
+ChangestotheEnhancedConsolidatedPortfolioCompositionOutputDataFile:AutoRouteProduction02261256/Test02981256 32
+AutoRouteProduction02261256/Test02981256
+Type2–PortfolioHeaderRecord
+RecordLength=500
+Seq Description Length Start Type Comments
+12 SignfieldforNetAssetValuePerCreationUnit 1 150 A/N l "–"=Negativevalue
+l Space=Positivevalue
+l Allothervaluesaretreatedasa
+space(positivevalue)
+13 EstimatedT-1CashAmountPerETF 14 151 N 999,999,999,999.99
+14 SignfieldforEstimatedT-1CashAmountPerETF1 165 A/N l "–"=Negativevalue
+l Space=Positivevalue
+l Allothervaluesaretreatedasa
+space(positivevalue)
+15 NetAssetValuePerETF 18 166 N 999,999,999,999.999999
+Decimalplaceexpandsto6digits.
+16 SignfieldforNetAssetValuePerETF 1 184 A/N l "–"=Negativevalue
+l Space=Positivevalue
+l Allothervaluesaretreatedasa
+space(positivevalue)
+17 TotalCashAmountPerCreationUnit 14 185 N 999,999,999,999.99
+18 Sign field for Total Cash Amount Per Creation Unit1 199 A/N l "–"=Negativevalue
+l Space=Positivevalue
+l Allothervaluesaretreatedasa
+space(positivevalue)
+19 TotalSharesOutstandingPerETF 12 200 N 999,999,999,999
+20 DividendAmountPerETFonT-1 14 212 N 999,999,999,999.99
+Type2–PortfolioHeaderRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 33
+
+ChangestotheEnhancedConsolidatedPortfolioCompositionOutputDataFile:AutoRouteProduction02261256/Test02981256 33
+AutoRouteProduction02261256/Test02981256
+Type2–PortfolioHeaderRecord
+RecordLength=500
+Seq Description Length Start Type Comments
+21 SignfieldforDividendAmountPerETFonT-1 1 226 A/N l "–"=Negativevalue
+l Space=Positivevalue
+l Allothervaluesaretreatedasa
+space(positivevalue)
+22 EstimatedvalueofCash-in-lieuComponentsper
+CreationUnit
+14 227 N 999,999,999,999.99
+23 CashOnlyIndicator 1 241 A/N l Y=CashOnly(create/redeemwith
+Cashonly)
+l Space=Norestrictions(any
+combinationofcashorsecurities)
+24 ETFExpenseRatioonT-1 3 242 N Expressedinbasispoints.
+25 TotalNetAssetValueofETFFundonT-1 18 245 N 999,999,999,999.999999
+Decimalplaceexpandsto6digits.
+26 ETFSharesPerCreate/RedeemUnit 9 263 N FromtheNSCCSecurityMasterdatabase.
+999,999,999
+27 ETFSymbol 15 272 A/N FromtheNSCCSecurityMasterdatabase.
+28 CNSEligibilityIndicator 1 287 A/N FromtheNSCCSecurityMasterdatabase.
+29 ETFCreateRedeemIdentifier 1 288 A/N l Y=Basketcanbecreatedor
+redeemed.
+l N=Basketcannotbecreatedor
+redeemed.
+30 PriorDay'sPortfoliobeingused 1 289 A/N l Y=Priorday'sportfolio
+l Space=Today'sportfolio
+Type2–PortfolioHeaderRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 34
+
+ChangestotheEnhancedConsolidatedPortfolioCompositionOutputDataFile:AutoRouteProduction02261256/Test02981256 34
+AutoRouteProduction02261256/Test02981256
+Type2–PortfolioHeaderRecord
+RecordLength=500
+Seq Description Length Start Type Comments
+Note:Sequence31isanewlyspecifiedfieldthatliststhecodethatidentifiesthetypeofETFbasket.
+31 BasketType 2 290 A/N l 01=Standard
+l 02=Restricted
+l 03=Pricing
+l 04=Rebalance
+l 05=CreateOnly
+l 06=RedeemOnly
+l 07=Negotiated
+32 ForeignorDomestic 1 292 A/N l D=Domestic
+l F=Foreign
+33 NSCCNewPortfolio 1 293 A/N l Y=Newportfolio
+l Space=Existingportfolio
+34 ETFClassificationCode 6 294 A/N ForfutureusetoclassifyETFs.
+Note:Sequence35isusedforRebalancebasketsonlyallowingfordifferentunitsizesonrebalancing.Ifsuppliedontheportfoliocompositionfile(PCF),theETF
+BasketUnitSizewillbeusedtocalculateETFsharesforsettlement.Ifnotsupplied,NSCCcalculatestheETFsharesusingtheCreationUnitoriginallysubmitted
+whentheNSCCPortfolioIDsarerequestedattheETFlaunch.
+35 ETFBasketUnitSize 9 300 N Definesthesizeofthisbasketthatis
+differentfromtheETF CreationUnit
+size.SpecifiedonlyonRebalance
+baskets.Optional.Allzeroesifnot
+provided.
+999,999,999
+Note:Sequence36through50areoptionalfieldsrequestedbytheindustryprimarilyforuseinthePricingandNegotiatedbaskettypes.Allfieldsareoptional,yet
+stillneedtobepopulatedwithzerosorspaces,asspecifiedintheCommentscolumnofthistable.ThesefieldsallowforsubmissionoffullfundPCFswithasset
+typesthatarenotnormallyreportedontheclearingeligiblePCFs.Pricingbasketswillneverbeclearingeligible.
+36 VariableFees 8 309 N 999,999.99
+Type2–PortfolioHeaderRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 35
+
+ChangestotheEnhancedConsolidatedPortfolioCompositionOutputDataFile:AutoRouteProduction02261256/Test02981256 35
+AutoRouteProduction02261256/Test02981256
+Type2–PortfolioHeaderRecord
+RecordLength=500
+Seq Description Length Start Type Comments
+37 BabyBondCashValue 10 317 N 99,999,999.99
+38 FixedIncomeFaceValueAdjustment 10 327 N 99,999,999.99
+39 AssetClassificationCodeforUnderlying
+Components
+2 337 A/N Assetclassificationcodes:
+l 01–[[Equity]]
+l 02–FIXED INCOME
+l 03–COMMODITY
+l 04–MIXED [[Asset]]
+l 05–ALTERNATIVE
+l 06-CURRENCY
+40 LeverageIndicatorCode 2 339 A/N l 01–Unleveraged
+l 02–Leveraged
+l 03–InverseLeveraged
+41 LeverageFactor 4 341 A/N 99.99
+42 TransferAgentID 8 345 N TransferagentID.
+43 TransferAgentName 48 353 A/N Nameofthetransferagent.
+44 FundLEI 20 401 A/N Legalentityidentifierofthefund.
+45 FundSize 23 421 N FundAUM,attheshareclassorproduct
+level.
+99,999,999,999.999999999999
+46 ShareClassApportionmentRatio 1 444 N Identifiesifthefundhasshareclasses
+andtheproportionalownershipofthe
+fundifithasshareclasses.
+ForU.S.,ETFsalways=1.Spaceifnot
+provided.
+Type2–PortfolioHeaderRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 36
+
+ChangestotheEnhancedConsolidatedPortfolioCompositionOutputDataFile:AutoRouteProduction02261256/Test02981256 36
+AutoRouteProduction02261256/Test02981256
+Type2–PortfolioHeaderRecord
+RecordLength=500
+Seq Description Length Start Type Comments
+47 ProjectedTransactionFee 7 445 N EMEA-specific:estimatedtransaction
+fee.
+99,999.99
+48 DateforProjectedTransactionFee 8 452 N Effectivetradedateofthebasket,in
+CCYYMMDDformat.
+49 ConfirmedTransactionFee 7 460 N Actualcostofthetransaction-also
+knownastheCreate/Redeemfee.
+99,999.99
+50 DateforConfirmedTransactionFee 8 467 N Effectivetradedateofthebasket,in
+CCYYMMDDformat.
+51 ProjectedCashforPricingBasket 14 475 N Projectedcashfigurefortradedate
+basedonpricingbasket.
+999,999,999,999.99
+52 BasketsOutstanding 6 489 N Numberofbasket/unitsoutstandingin
+thefund,attheshareclassorproduct
+level.
+999999
+Note:Sequence53,PricingUsageIndicator,isusedtospecifyiftheStandardbasketshouldbeusedasaPricingbasketforpassiveIndexFunds.Incaseswhere
+Yissubmitted,theETFAgentorSponsorwillnotprovideafullholdingspricingfile.ConsumersofthePCFoutputshouldusetheStandardbasketforpricingor
+continuecurrentpracticesforpricing.IfNissubmittedtheETFAgentorSponsorwillsubmitaseparatefullfundholdingsPricingbasket.
+ThenewPricingUsageIndicatorhasthefollowingeditsandcontrols:
+l IfYissubmittedandaseparatePricingbasketforthesamefundisalsosubmitted,thePricingbasketwillberejected.
+l IfNissubmittedandaseparatedPricingbasketisnotsubmitted,aWARNmessagewillbeissued.
+l IfaPricingbasketissubmittedandnoStandardbasketforthesamefundissubmitted,thePricingbasketisrejectedattheendoftheday.
+Seemessagecodes268,269,and283intheMessageCodesandDescriptionssection.
+Type2–PortfolioHeaderRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 37
+
+ChangestotheEnhancedConsolidatedPortfolioCompositionOutputDataFile:AutoRouteProduction02261256/Test02981256 37
+AutoRouteProduction02261256/Test02981256
+Type2–PortfolioHeaderRecord
+RecordLength=500
+Seq Description Length Start Type Comments
+53 PricingUsageIndicator 1 495 A
+(Y, N)
+l Y=Standardbaskettobeusedasa
+Pricingbasket.
+l N=FullFundPricingbasketwillbe
+submittedforthisfund.
+l Space=DefaultstoY
+54 Creation Order Usage 1 496 A
+(Y, N)
+l Y=StandardNSCCInstructionID
+tobeusedforstandardandcreation
+orders.
+l N=CreateOnlybasket(baskettype
+05)willbesubmittedandpublished
+onETFoutput.TheNSCCPortfolio
+IDassociatedwiththetype05
+basketisusedforcreationorders.
+l Space=DefaultstoY
+55 Redemption Order Usage 1 497 A
+(Y, N)
+l Y=StandardNSCCInstructionID
+tobeusedforstandardand
+redemptionorders.
+l N=RedeemOnlybasket(basket
+type06)willbesubmittedand
+publishedonETFoutput.TheNSCC
+PortfolioIDassociatedwiththetype
+06basketisusedforredemption
+orders.
+l Space=DefaultstoY
+56 FutureUse 3 498 Spaces
+ENDOFRECORD
+Type2–PortfolioHeaderRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 38
+
+ChangestotheEnhancedConsolidatedPortfolioCompositionOutputDataFile:AutoRouteProduction02261256/Test02981256 38
+Type3–DetailComponentRecord
+ThefollowingtableshowtheType3–DetailComponentRecorddetailsfortheEnhancedConsolidatedPortfolioCompositionOutputDataFile:AutoRouteProduction
+02261256/Test02981256:
+AutoRouteProduction02261256/Test02981256
+Type3–DetailComponentRecord
+Recordlength=500
+Seq Description Length Start Type Comments
+1 RecordType 2 1 A/N 03=RecordType3
+Onepercomponent.
+2 [[ETF]] Trading [[CUSIP]] 9 3 A/N S&PAssigned
+3 ETFTradingISIN 12 12 A/N InternationalSecuritiesIdentificationNumber.
+4 NSCCPortfolioID 9 24 NSCCassignedPortfolioIDofthebasket.
+5 PortfolioTradeDate 8 33 N CCYYMMDD
+6 Component [[ID]] Code 2 41 A/N l 01=[[CUSIP]]
+l 02=SEDOL
+l 03=ISIN
+l 04=ISIN/SEDOL
+l 05=Bloomberg
+l 06=Reuters
+l 07=ICE/NYSELife
+l 99=Other
+Note:Type99ComponentIDCodeisacatchallforunderlyingassetswithoutstandardizedidentifiers.ComponentswithIDCodetype99=Otherdonotrequire
+ComponentIDSequence4.NSCCpassesonlythedescriptionprovided.Inallothercases,NSCCpassestheIDcodeprovidedinSequence4.
+7 ComponentID 25 43 A/N DefinedbythevalueintheComponentID
+Codefield.
+l [[CUSIP]] 9 43 A/N Identifiesthedomesticcomponent.
+l SEDOL 7 43 A/N OfficialSEDOLnumber.
+l ISIN 12 43 A/N OfficialISINnumber.Identifiestheforeignor
+domesticcomponent.
+Type3–DetailComponentRecord
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 39
+
+ChangestotheEnhancedConsolidatedPortfolioCompositionOutputDataFile:AutoRouteProduction02261256/Test02981256 39
+AutoRouteProduction02261256/Test02981256
+Type3–DetailComponentRecord
+Recordlength=500
+Seq Description Length Start Type Comments
+l ISIN/SEDOL 19 43 A/N CombinationISIN/SEDOLnumber
+Recommendedfornon-USdomiciled
+[[securities]].
+o ISIN 12 43 A/N InternationalSecuritiesIdentificationNumber.
+o SEDOL 7 55 A/N StockExchangeDailyOfficialList.
+l Bloomberg A/N Alternativemarketidentifiercode.
+l Reuters A/N Reutersinstrumentcode(RIC).Alternative
+marketidentifiercode.
+l ICE/NYSELife A/N Alternativemarketidentifiercode.
+l Allothertypes 25 43 A/N Freeformfieldidentifyingothertypesof
+identifiercodes.
+Note:Sequence8isanexistingfieldthathasbeenexpandedforFixedIncomeClearingandotherassettypes.Duetothisexpansion,allsubsequentfieldshave
+newplacementwithinthefile.ETFagentsmustadjusttothenewplacementofallfields.
+8 ComponentQuantity 21 68 N Quantityofcomponentpercreationunit(par
+valueforfixedincomesecurities).
+9,999,999,999,999.99999999
+9 SignFieldforComponentQuantity 1 89 A/N l "–"indicatesnegativevalue(short
+position)
+l Space=Positivevalue
+l Allothervaluesaretreatedasaspace
+(positivevalue)
+Note:Acomponentwithnegativequantity
+(shortcomponent)canonlybecreatedor
+redeemedforcash.
+10 NewSecurityIndicator 1 90 A/N l N=Newcomponentinportfolioasper
+theETFagent.
+l Space=Notnew
+Type3–DetailComponentRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 40
+
+ChangestotheEnhancedConsolidatedPortfolioCompositionOutputDataFile:AutoRouteProduction02261256/Test02981256 40
+AutoRouteProduction02261256/Test02981256
+Type3–DetailComponentRecord
+Recordlength=500
+Seq Description Length Start Type Comments
+11 CashInLieuIndicator 1 91 A/N l Y=ETFagentprovidedindicatorfor
+componenttobesubstitutedforcashin
+acreate/redeem.
+l X=NSCCappliedindicatorfor
+componenttobesubstitutedforcashin
+acreateandredeem(perbelow
+mentionedrules)
+l Space=Nosubstitution
+Note:
+CILissettoXifoneofthefollowingconditions
+ismetforcreate/redeemeligibleportfolios:
+l ComponentisnotinNSCCSecurity
+Masterdatabase.
+l Portfolioisacashonlyportfolio.
+12 ComponentSymbol 15 92 A/N Tradingsymbolofthecomponent.
+13 ComponentWIIndicator 1 107 A/N WhenIssuedindicatorofthedomestic
+component.
+14 ComponentUndergoingCorporateAction1 108 A/N l Space=Nocorporateaction
+l M=MandatoryCorporateAction
+l V=VoluntaryCorporateAction
+15 ComponentNSCCEligibilityIndicator 1 109 A/N l Y=NSCCeligible
+l N=NotNSCCeligible
+16 ComponentCNSIndicator 1 110 A/N l Y=CNSeligible
+l N=NotCNSeligible
+Type3–DetailComponentRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 41
+
+ChangestotheEnhancedConsolidatedPortfolioCompositionOutputDataFile:AutoRouteProduction02261256/Test02981256 41
+AutoRouteProduction02261256/Test02981256
+Type3–DetailComponentRecord
+Recordlength=500
+Seq Description Length Start Type Comments
+17 ExternalSettlementDate 8 111 N ETFagentprovidedsettlementdatefornon-
+DTCsettlingcomponents,inCCYYMMDD
+format.
+18 ComponentDescription 60 119 A/N [[ETF]] agentdefineddescription.
+Notes:
+l Sequence19,20,and21canbeusedonPricingbaskettypes.TheyhavealsobeenaddedinpreparationforPhase2,clearingofETFswithCorporateand
+MunicipalFixedIncomeunderlyingassets.
+l Sequence20and21takeeffectwhenthePhase1PCF Enhancementsaredeployed.
+l ForSequence20and21,thedescriptionsareexpectedtochangeafterthedeploymentofETF Phase2.Formoreinformationaboutthefullrequirements,see
+theETF Phase2:ClearingEnhancementstoSupportFixedIncomeAssetsforCorporate,Municipal,andUIT(CMU)document.
+19 WhenIssuedIndicator 1 179 A/N AgentprovideWhenIssued(WI)indicatorfor
+fixedincomecomponents:
+l Y=WhenIssued
+l N=NotWhenIssued
+20 l AccruedInterestT1(Phase1)
+l AccruedInterestNonstandard
+[[settlement]](Phase2)
+11 180 N 999,999,999.99
+21 l AccruedInterestT2(Phase1)
+l AccruedInterestStandard
+[[settlement]](Phase2)
+11 191 N 999,999,999.99
+Note:Sequence22through41areoptionalfieldsrequestedbytheindustryprimarilyforuseinPricingandNegotiatedbaskettypes.Allfieldsareoptional,yetstill
+needtobepopulatedwithzerosorspaces,asspecifiedintheCommentscolumnofthistable.ThesefieldsallowforsubmissionoffullfundPCFswithassetstypes
+thatarenotnormallyreportedontheclearingeligiblePCFs.Pricingbasketswillneverbeclearingeligible.
+22 AssetClass 27 202 A Freeformfieldtoidentifytheassetclassof
+thesecurity.
+Type3–DetailComponentRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 42
+
+ChangestotheEnhancedConsolidatedPortfolioCompositionOutputDataFile:AutoRouteProduction02261256/Test02981256 42
+AutoRouteProduction02261256/Test02981256
+Type3–DetailComponentRecord
+Recordlength=500
+Seq Description Length Start Type Comments
+23 ExcludedFromPricing 21 229 N PricingBasketOnly
+Quantityofsecuritiesownedbythefundper
+basket/unit,butdifficulttoprice.
+Securitiesthatshouldbepricedintraday,but
+namesthatareunabletopriceontheNAV
+date.
+Pre-corporateactionpricesandshares
+wouldbeincludedaspartofthisbasket.
+Examples:Complexcorporateactionsand
+fair-valuednames.
+9,999,999,999,999.99999999
+24 Price(inFundBaseCurrency) 24 250 N PricingBasketOnly
+PriceofthesecurityontheNAVdate.
+999,999,999,999,999,999.999999
+25 LocalCurrency 3 274 A Identifiesthecurrencyofthesecurity.For
+example,USD.
+26 Factor 24 277 N Decimalvaluereflectingaproportionofthe
+outstandingprincipalvalueofthefactor
+bondsthatchangesovertime.Alsoapplies
+toequityfactors,suchasstocksplitonex
+date.
+999,999,999,999,999,999.999999
+27 SyntheticsLocalCurrency 3 301 A Identifiesthecurrencyofthesecurity.For
+example,USD.
+28 SyntheticsPriceMultiplier 24 304 N Designatedpricemultiplier.
+999,999,999,999,999,999.999999
+Type3–DetailComponentRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 43
+
+ChangestotheEnhancedConsolidatedPortfolioCompositionOutputDataFile:AutoRouteProduction02261256/Test02981256 43
+AutoRouteProduction02261256/Test02981256
+Type3–DetailComponentRecord
+Recordlength=500
+Seq Description Length Start Type Comments
+29 SyntheticsContractSize 24 328 N Agreednotionalsizeofthefuturescontract.
+999,999,999,999,999,999.999999
+30 Synthetics Average Contract Open Price24 352 N Averageofthefuturetradeprice.
+999,999,999,999,999,999.999999
+31 FX RatesBaseCurrency 3 376 A Identifiesthebasecurrencyofthefund.For
+example,USD
+32 FX RatesCurrencies 3 379 A SpotFXratesofrespectivecurrencies
+againstthebasecurrencyofthefund.For
+example,EUR,GBR,USD.
+33 FX Forwards Currency Pair 6 382 A Identifiesthecurrencypairassociatedwith
+theFXforward.Forexample,EURUSD
+34 FX ForwardsValueDate 8 388 N SettlementdateoftheFXforward,
+CCYYMMDDformat.
+35 FX ForwardsQuantity 9 396 N Fundhedgedquantity.
+9,999,999.99
+36 FX ForwardsRate 7 405 N Interpolatedrate:rateusedforNAV
+calculation,includingforwardpoint
+interpolation.
+9.999999
+37 FX ForwardsValue 9 412 N CurrencymarketvalueoftheFXforward.
+9,999,999.99
+38 FX ForwardsCurrency 3 421 A IdentifiesthebasecurrencyoftheFX
+forwardcontract.Forexample,EUR
+Type3–DetailComponentRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 44
+
+ChangestotheEnhancedConsolidatedPortfolioCompositionOutputDataFile:AutoRouteProduction02261256/Test02981256 44
+AutoRouteProduction02261256/Test02981256
+Type3–DetailComponentRecord
+Recordlength=500
+Seq Description Length Start Type Comments
+39 SWAPsNotionalValue 7 424 N Totalamountofasecurity'sunderlying
+[[Asset]].
+9,999,999
+40 SWAPsSpread 5 431 N CostoftheunderlyingfeefromtheSWAP
+counterparty.
+9.9999
+41 SWAPsMarketValue 9 436 N AgreeduponpriceoftheSWAP.
+9,999,999.99
+42 FutureUse 56 445 Spaces
+ENDOFRECORD
+Type3–DetailComponentRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 45
+
+ChangestotheEnhancedConsolidatedPortfolioCompositionOutputDataFile:AutoRouteProduction02261256/Test02981256 45
+Type99–TrailerRecord
+ThefollowingtableshowtheType99–TrailerRecorddetailsfortheEnhancedConsolidatedPortfolioCompositionOutputDataFile:AutoRouteProduction
+02261256/Test02981256:
+AutoRouteProduction02261256/Test02981256
+Type99–TrailerRecord(NewRecord)
+Recordlength=500
+Seq Description Length Start Type Comments
+1 RecordType 2 1 A/N 99=TrailerRecord
+Oneperfile.
+2 ProcessingDate 8 3 N CCYYMMDD
+3 PrimaryTransmissionorSupplement 1 11 A/N l P=PrimaryTransmission
+l S=SupplementalTransmission
+4 RecordCount 13 12 N Numberofrecordsintransmission(includingtrailer).
+5 FutureUse 476 25 Spaces
+ENDOFRECORD
+Type99–TrailerRecord
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 46
+
+ChangestotheNearReal-TimeSupplementalPCF:AutoRouteProduction02262335/Test02982335 46
+CHANGESTOTHENEARREAL-TIMESUPPLEMENTALPCF:AUTOROUTEPRODUCTION02262335/TEST02982335
+ThissectionhighlightsthechangestotheNearReal-TimeSupplementalPCFAutoRouteProduction02262335/Test02982335.Upondeployment,allPCF
+subscribersarerequiredtoadapttotheenhancedrecordlayoutandfilespecifications.
+Note
+AllRecordtypesarenow500bytesinlengthduetotheadditionofnewfields.Additionally,inresponsetoindustryrequests,severalexitingfieldswere
+expandedtohandleadditionaldecimalplaces.Forexample,NetAssetValuePerCreationUnitandNetAssetValuePerETF.Duetotheexpansionof
+existingfields,subsequentfieldshavebeenplacedinnewbyteorderwithinthespecification,whichdemandsmodificationevenifETFagentsdonotuse
+thenewdataelements.
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 47
+
+ChangestotheNearReal-TimeSupplementalPCF:AutoRouteProduction02262335/Test02982335 47
+RecordLayout:NearReal-TimeSupplementalPCFAutoRouteProduction02262335/Test02982335
+ThefollowingsectionsshowtheNearReal-TimeSupplementalPCFAutoRouteProduction02262335/Test02982335recordlayout.
+Note
+Valuesmodifiedfromthepreviousversionappearinred.Allrecordtypesarenow500bytesinlength.
+Type1–HeaderRecord
+ThefollowingtableshowtheType1–HeaderRecorddetailsfortheNearReal-TimeSupplementalPCFAutoRouteProduction02262335/Test02982335record
+layout:
+AutoRouteProduction02262335/Test02982335
+Type1–HeaderRecord
+RecordLength=500
+Seq Description Length Start Type Comments
+1 RecordType 2 1 A/N 01=HeaderRecord
+Oneperfile.
+2 FileDescription 25 3 A/N PortfolioComposition
+3 ETFAgent 8 28 N NSCCMemberNumber.
+Rightjustifiedwithleadingzeros.
+4 FileIdentifier 8 36 A/N InputFileNumber.
+5 ProcessingDate 8 44 N CCYYMMDD
+6 ProcessingTime 6 52 N HHMMSS
+7 FutureUse 443 58
+ENDOFRECORD
+Type1–HeaderRecord
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 48
+
+ChangestotheNearReal-TimeSupplementalPCF:AutoRouteProduction02262335/Test02982335 48
+Type2–PortfolioHeaderRecord
+ThefollowingtableshowtheType2–PortfolioHeaderRecorddetailsfortheNearReal-TimeSupplementalPCFAutoRouteProduction02262335/Test02982335
+recordlayout:
+AutoRouteProduction02262335/Test02982335
+Type2–PortfolioHeaderRecord
+RecordLength=500
+Seq Description Length Start Type Comments
+1 RecordType 2 1 A/N 02=HeaderType2
+Oneperportfolio.
+2 ETFTradingCUSIP 9 3 A/N S&PAssigned
+3 ETFTradingISIN 12 12 A/N InternationalSecuritiesIdentification
+Number.
+4 NSCCPortfolioID 9 24 A/N NSCCassignedPortfolioIDofthebasket.
+5 ETFDescription 60 33 A/N FromtheNSCCSecurityMasterdatabase
+iffound;otherwise,theETFagent
+supplieddescriptionisused.
+6 PortfolioTradeDate 8 93 N CCYYMMDD
+7 ETFAgent 8 101 N NSCCmembernumber.
+Right-justifiedwithleadingzeros.
+8 ComponentCount 8 109 N 99,999,999
+9 EstimatedT-1CashAmountPerCreationUnit 14 117 N 999,999,999,999.99
+10 SignfieldforEstimatedT-1CashAmountPer
+CreationUnit
+1 131 A/N l "–"=Negativevalue
+l Space=Positivevalue
+l Allothervaluesaretreatedasa
+space(positivevalue)
+Note:Sequence11,15,and25areexistingfieldsthathavebeenexpandedfrom5to6decimalplaces.Duetothisexpansion,allsubsequentfieldshavenew
+placementwithinthefile.ETFagentsandauthorizedparticipantsmustadjusttothenewplacementofallfields.
+11 NetAssetValuePerCreationUnit 18 132 N 999,999,999,999.999999
+Decimalplaceexpandsto6digits.
+Type2–PortfolioHeaderRecord
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 49
+
+ChangestotheNearReal-TimeSupplementalPCF:AutoRouteProduction02262335/Test02982335 49
+AutoRouteProduction02262335/Test02982335
+Type2–PortfolioHeaderRecord
+RecordLength=500
+Seq Description Length Start Type Comments
+12 SignfieldforNetAssetValuePerCreationUnit 1 150 A/N l "–"=Negativevalue
+l Space=Positivevalue
+l Allothervaluesaretreatedasa
+space(positivevalue)
+13 EstimatedT-1CashAmountPerETF 14 151 N 999,999,999,999.99
+14 SignfieldforEstimatedT-1CashAmountPerETF1 165 A/N l "–"=Negativevalue
+l Space=Positivevalue
+l Allothervaluesaretreatedasa
+space(positivevalue)
+15 NetAssetValuePerETF 18 166 N 999,999,999,999.999999
+Decimalplaceexpandsto6digits.
+16 SignfieldforNetAssetValuePerETF 1 184 A/N l "–"=Negativevalue
+l Space=Positivevalue
+l Allothervaluesaretreatedasa
+space(positivevalue)
+17 TotalCashAmountPerCreationUnit 14 185 N 999,999,999,999.99
+18 Sign field for Total Cash Amount Per Creation Unit1 199 A/N l "–"=Negativevalue
+l Space=Positivevalue
+l Allothervaluesaretreatedasa
+space(positivevalue)
+19 TotalSharesOutstandingPerETF 12 200 N 999,999,999,999
+20 DividendAmountPerETFonT-1 14 212 N 999,999,999,999.99
+Type2–PortfolioHeaderRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 50
+
+ChangestotheNearReal-TimeSupplementalPCF:AutoRouteProduction02262335/Test02982335 50
+AutoRouteProduction02262335/Test02982335
+Type2–PortfolioHeaderRecord
+RecordLength=500
+Seq Description Length Start Type Comments
+21 SignfieldforDividendAmountPerETFonT-1 1 226 A/N l "–"=Negativevalue
+l Space=Positivevalue
+l Allothervaluesaretreatedasa
+space(positivevalue)
+22 EstimatedvalueofCash-in-lieuComponentsper
+CreationUnit
+14 227 N 999,999,999,999.99
+23 CashOnlyIndicator 1 241 A/N l Y=CashOnly(create/redeemwith
+Cashonly)
+l Space=Norestrictions(any
+combinationofcashorsecurities)
+24 ETFExpenseRatioonT-1 3 242 N Expressedinbasispoints.
+25 TotalNetAssetValueofETFFundonT-1 18 245 N 999,999,999,999.999999
+Decimalplaceexpandsto6digits.
+26 ETFSharesPerCreate/RedeemUnit 9 263 N FromtheNSCCSecurityMasterdatabase.
+999,999,999
+27 ETFSymbol 15 272 A/N FromtheNSCCSecurityMasterdatabase.
+28 CNSEligibilityIndicator 1 287 A/N FromtheNSCCSecurityMasterdatabase.
+29 ETFCreateRedeemIdentifier 1 288 A/N l Y=Basketcanbecreatedor
+redeemed.
+l N=Basketcannotbecreatedor
+redeemed.
+30 PriorDay'sPortfoliobeingused 1 289 A/N l Y=Priorday'sportfolio
+l Space=Today'sportfolio
+Type2–PortfolioHeaderRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 51
+
+ChangestotheNearReal-TimeSupplementalPCF:AutoRouteProduction02262335/Test02982335 51
+AutoRouteProduction02262335/Test02982335
+Type2–PortfolioHeaderRecord
+RecordLength=500
+Seq Description Length Start Type Comments
+Note:Sequence31isanewlyspecifiedfieldthatliststhecodethatidentifiesthetypeofETFbasket.
+31 BasketType 2 290 A/N l 01=Standard
+l 02=Restricted
+l 03=Pricing
+l 04=Rebalance
+l 05=CreateOnly
+l 06=RedeemOnly
+l 07=Negotiated
+32 ForeignorDomestic 1 292 A/N l D=Domestic
+l F=Foreign
+33 NSCCNewPortfolio 1 293 A/N l Y=Newportfolio
+l Space=Existingportfolio
+34 ETFClassificationCode 6 294 A/N ForfutureusetoclassifyETFs.
+Note:Sequence35isusedforRebalancebasketsonlyallowingfordifferentunitsizesonrebalancing.Ifsuppliedontheportfoliocompositionfile(PCF),theETF
+BasketUnitSizewillbeusedtocalculateETFsharesforsettlement.Ifnotsupplied,NSCCcalculatestheETFsharesusingtheCreationUnitoriginallysubmitted
+whentheNSCCPortfolioIDsarerequestedattheETFlaunch.
+35 ETFBasketUnitSize 9 300 N Definesthesizeofthisbasketthatis
+differentfromtheETF CreationUnit
+size.SpecifiedonlyonRebalance
+baskets.Optional.Allzeroesifnot
+provided.
+999,999,999
+Type2–PortfolioHeaderRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 52
+
+ChangestotheNearReal-TimeSupplementalPCF:AutoRouteProduction02262335/Test02982335 52
+AutoRouteProduction02262335/Test02982335
+Type2–PortfolioHeaderRecord
+RecordLength=500
+Seq Description Length Start Type Comments
+Note:Sequence36through50areoptionalfieldsrequestedbytheindustryprimarilyforuseinthePricingandNegotiatedbaskettypes.Allfieldsareoptional,yet
+stillneedtobepopulatedwithzerosorspaces,asspecifiedintheCommentscolumnofthistable.ThesefieldsallowforsubmissionoffullfundPCFswithasset
+typesthatarenotnormallyreportedontheclearingeligiblePCFs.Pricingbasketswillneverbeclearingeligible.
+36 VariableFees 8 309 N 999,999.99
+37 BabyBondCashValue 10 317 N 99,999,999.99
+38 FixedIncomeFaceValueAdjustment 10 327 N 99,999,999.99
+39 AssetClassificationCodeforUnderlying
+Components
+2 337 A/N Assetclassificationcodes:
+l 01–[[Equity]]
+l 02–FIXED INCOME
+l 03–COMMODITY
+l 04–MIXED [[Asset]]
+l 05–ALTERNATIVE
+l 06-CURRENCY
+40 LeverageIndicatorCode 2 339 A/N l 01–Unleveraged
+l 02–Leveraged
+l 03–InverseLeveraged
+41 LeverageFactor 4 341 A/N 99.99
+42 TransferAgentID 8 345 N TransferagentID.
+43 TransferAgentName 48 353 A/N Nameofthetransferagent.
+44 FundLEI 20 401 A/N Legalentityidentifierofthefund.
+45 FundSize 23 421 N FundAUM,attheshareclassorproduct
+level.
+99,999,999,999.999999999999
+Type2–PortfolioHeaderRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 53
+
+ChangestotheNearReal-TimeSupplementalPCF:AutoRouteProduction02262335/Test02982335 53
+AutoRouteProduction02262335/Test02982335
+Type2–PortfolioHeaderRecord
+RecordLength=500
+Seq Description Length Start Type Comments
+46 ShareClassApportionmentRatio 1 444 N Identifiesifthefundhasshareclasses
+andtheproportionalownershipofthe
+fundifithasshareclasses.
+ForU.S.,ETFsalways=1.Spaceifnot
+provided.
+47 ProjectedTransactionFee 7 445 N EMEA-specific:estimatedtransaction
+fee.
+99,999.99
+48 DateforProjectedTransactionFee 8 452 N Effectivetradedateofthebasket,in
+CCYYMMDDformat.
+49 ConfirmedTransactionFee 7 460 N Actualcostofthetransaction-also
+knownastheCreate/Redeemfee.
+99,999.99
+50 DateforConfirmedTransactionFee 8 467 N Effectivetradedateofthebasket,in
+CCYYMMDDformat.
+51 ProjectedCashforPricingBasket 14 475 N Projectedcashfigurefortradedate
+basedonpricingbasket.
+999,999,999,999.99
+52 BasketsOutstanding 6 489 N Numberofbasket/unitsoutstandingin
+thefund,attheshareclassorproduct
+level.
+999999
+Type2–PortfolioHeaderRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 54
+
+ChangestotheNearReal-TimeSupplementalPCF:AutoRouteProduction02262335/Test02982335 54
+AutoRouteProduction02262335/Test02982335
+Type2–PortfolioHeaderRecord
+RecordLength=500
+Seq Description Length Start Type Comments
+Note:Sequence53,PricingUsageIndicator,isusedtospecifyiftheStandardbasketshouldbeusedasaPricingbasketforpassiveIndexFunds.Incaseswhere
+Yissubmitted,theETFAgentorSponsorwillnotprovideafullholdingspricingfile.ConsumersofthePCFoutputshouldusetheStandardbasketforpricingor
+continuecurrentpracticesforpricing.IfNissubmittedtheETFAgentorSponsorwillsubmitaseparatefullfundholdingsPricingbasket.
+ThenewPricingUsageIndicatorhasthefollowingeditsandcontrols:
+l IfYissubmittedandaseparatePricingbasketforthesamefundisalsosubmitted,thePricingbasketwillberejected.
+l IfNissubmittedandaseparatedPricingbasketisnotsubmitted,aWARNmessagewillbeissued.
+l IfaPricingbasketissubmittedandnoStandardbasketforthesamefundissubmitted,thePricingbasketisrejectedattheendoftheday.
+Seemessagecodes268,269,and283intheMessageCodesandDescriptionssection.
+53 PricingUsageIndicator 1 495 A
+(Y, N)
+l Y=Standardbaskettobeusedasa
+Pricingbasket.
+l N=FullFundPricingbasketwillbe
+submittedforthisfund.
+l Space=DefaultstoY
+54 Creation Order Usage 1 496 A
+(Y, N)
+l Y=StandardNSCCInstructionID
+tobeusedforstandardandcreation
+orders.
+l N=CreateOnlybasket(baskettype
+05)willbesubmittedandpublished
+onETFoutput.TheNSCCPortfolio
+IDassociatedwiththetype05
+basketisusedforcreationorders.
+l Space=DefaultstoY
+Type2–PortfolioHeaderRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 55
+
+ChangestotheNearReal-TimeSupplementalPCF:AutoRouteProduction02262335/Test02982335 55
+AutoRouteProduction02262335/Test02982335
+Type2–PortfolioHeaderRecord
+RecordLength=500
+Seq Description Length Start Type Comments
+55 Redemption Order Usage 1 497 A
+(Y, N)
+l Y=StandardNSCCInstructionID
+tobeusedforstandardand
+redemptionorders.
+l N=RedeemOnlybasket(basket
+type06)willbesubmittedand
+publishedonETFoutput.TheNSCC
+PortfolioIDassociatedwiththetype
+06basketisusedforredemption
+orders.
+l Space=DefaultstoY
+56 FutureUse 3 498 Spaces
+ENDOFRECORD
+Type2–PortfolioHeaderRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 56
+
+ChangestotheNearReal-TimeSupplementalPCF:AutoRouteProduction02262335/Test02982335 56
+Type3–DetailComponentRecord
+ThefollowingtableshowtheType3–DetailComponentRecorddetailsfortheNearReal-TimeSupplementalPCFAutoRouteProduction02262335/Test02982335
+recordlayout:
+AutoRouteProduction02262335/Test02982335
+Type3–DetailComponentRecord
+Recordlength=500
+Seq Description Length Start Type Comments
+1 RecordType 2 1 A/N 03=RecordType3
+Onepercomponent.
+2 [[ETF]] Trading [[CUSIP]] 9 3 A/N S&PAssigned
+3 ETFTradingISIN 12 12 A/N InternationalSecuritiesIdentificationNumber.
+4 NSCCPortfolioID 9 24 NSCCassignedPortfolioIDofthebasket.
+5 PortfolioTradeDate 8 33 N CCYYMMDD
+6 Component [[ID]] Code 2 41 A/N l 01=[[CUSIP]]
+l 02=SEDOL
+l 03=ISIN
+l 04=ISIN/SEDOL
+l 05=Bloomberg
+l 06=Reuters
+l 07=ICE/NYSELife
+l 99=Other
+Note:Type99ComponentIDCodeisacatchallforunderlyingassetswithoutstandardizedidentifiers.ComponentswithIDCodetype99=Otherdonotrequire
+ComponentIDSequence4.NSCCpassesonlythedescriptionprovided.Inallothercases,NSCCpassestheIDcodeprovidedinSequence4.
+7 ComponentID 25 43 A/N DefinedbythevalueintheComponentID
+Codefield.
+l [[CUSIP]] 9 43 A/N Identifiesthedomesticcomponent.
+l SEDOL 7 43 A/N OfficialSEDOLnumber.
+l ISIN 12 43 A/N OfficialISINnumber.Identifiestheforeignor
+domesticcomponent.
+Type3–DetailComponentRecord
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 57
+
+ChangestotheNearReal-TimeSupplementalPCF:AutoRouteProduction02262335/Test02982335 57
+AutoRouteProduction02262335/Test02982335
+Type3–DetailComponentRecord
+Recordlength=500
+Seq Description Length Start Type Comments
+l ISIN/SEDOL 19 43 A/N CombinationISIN/SEDOLnumber
+Recommendedfornon-USdomiciled
+[[securities]].
+o ISIN 12 43 A/N InternationalSecuritiesIdentificationNumber.
+o SEDOL 7 55 A/N StockExchangeDailyOfficialList.
+l Bloomberg A/N Alternativemarketidentifiercode.
+l Reuters A/N Reutersinstrumentcode(RIC).Alternative
+marketidentifiercode.
+l ICE/NYSELife A/N Alternativemarketidentifiercode.
+l Allothertypes 25 43 A/N Freeformfieldidentifyingothertypesof
+identifiercodes.
+Note:Sequence8isanexistingfieldthathasbeenexpandedforFixedIncomeClearing-Phase2updates.Duetothisexpansion,allsubsequentfieldshavenew
+placementwithinthefile.ETFagentsmustadjusttothenewplacementofallfields.
+8 ComponentQuantity 21 68 N Quantityofcomponentpercreationunit(par
+valueforfixedincomesecurities).
+9,999,999,999,999.99999999
+9 SignFieldforComponentQuantity 1 89 A/N l "–"indicatesnegativevalue(short
+position)
+l Space=Positivevalue
+l Allothervaluesaretreatedasaspace
+(positivevalue)
+Note:Acomponentwithnegativequantity
+(shortcomponent)canonlybe
+created/redeemedforcash.
+10 NewSecurityIndicator 1 90 A/N l N=Newcomponentinportfolioasper
+theETFagent.
+l Space=Notnew
+Type3–DetailComponentRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 58
+
+ChangestotheNearReal-TimeSupplementalPCF:AutoRouteProduction02262335/Test02982335 58
+AutoRouteProduction02262335/Test02982335
+Type3–DetailComponentRecord
+Recordlength=500
+Seq Description Length Start Type Comments
+11 CashInLieuIndicator 1 91 A/N l Y=ETFagentprovidedindicatorfor
+componenttobesubstitutedforcashin
+acreate/redeem.
+l X=NSCCappliedindicatorfor
+componenttobesubstitutedforcashin
+acreateandredeem(perbelow
+mentionedrules)
+l Space=Nosubstitution
+Note:
+CILissettoXifoneofthefollowingconditions
+ismetforcreate/redeemeligibleportfolios:
+l ComponentisnotinNSCCSecurity
+Masterdatabase.
+l Portfolioisacashonlyportfolio.
+12 ComponentSymbol 15 92 A/N Tradingsymbolofthecomponent.
+13 ComponentWIIndicator 1 107 A/N WIindicatorofthedomesticcomponent.
+14 ComponentUndergoingCorporateAction1 108 A/N l Space=Nocorporateaction
+l M=MandatoryCorporateAction
+l V=VoluntaryCorporateAction
+15 ComponentNSCCEligibilityIndicator 1 109 A/N l Y=NSCCeligible
+l N=NotNSCCeligible
+16 ComponentCNSIndicator 1 110 A/N l Y=CNSeligible
+l N=NotCNSeligible
+17 ExternalSettlementDate 8 111 N ETFagentprovidedsettlementdatefornon-
+DTCsettlingcomponents,inCCYYMMDD
+format.
+Type3–DetailComponentRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 59
+
+ChangestotheNearReal-TimeSupplementalPCF:AutoRouteProduction02262335/Test02982335 59
+AutoRouteProduction02262335/Test02982335
+Type3–DetailComponentRecord
+Recordlength=500
+Seq Description Length Start Type Comments
+18 ComponentDescription 60 119 A/N [[ETF]] agentdefineddescription.
+Notes:
+l Sequence19,20,and21canbeusedonPricingbaskettypes.TheyhavealsobeenaddedinpreparationforPhase2,clearingofETFswithCorporateand
+MunicipalFixedIncomeunderlyingassets.
+l Sequence20and21takeeffectwhenthePhase1PCF Enhancementsaredeployed.
+l ForSequence20and21,thedescriptionsareexpectedtochangeafterthedeploymentofETF Phase2.Formoreinformationaboutthefullrequirements,see
+theETF Phase2:ClearingEnhancementstoSupportFixedIncomeAssetsforCorporate,Municipal,andUIT(CMU)document.
+19 WhenIssuedIndicator 1 179 A/N WhenIssuedindicator:
+l Y=WhenIssued
+l N=NotWhenIssued
+20 l AccruedInterestT1(Phase1)
+l AccruedInterestNonstandard
+[[settlement]](Phase2)
+11 180 N 999,999,999.99
+21 l AccruedInterestT2(Phase1)
+l AccruedInterestStandard
+[[settlement]](Phase2)
+11 191 N 999,999,999.99
+Note:Sequence22through41areoptionalfieldsrequestedbytheindustryprimarilyforuseinPricingandNegotiatedbaskettypes.Allfieldsareoptional,yetstill
+needtobepopulatedwithzerosorspaces,asspecifiedintheCommentscolumnofthistable.ThesefieldsallowforsubmissionoffullfundPCFswithassetstypes
+thatarenotnormallyreportedontheclearingeligiblePCFs.Pricingbasketswillneverbeclearingeligible.
+22 AssetClass 27 202 A Freeformfieldtoidentifytheassetclassof
+thesecurity.
+Type3–DetailComponentRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 60
+
+ChangestotheNearReal-TimeSupplementalPCF:AutoRouteProduction02262335/Test02982335 60
+AutoRouteProduction02262335/Test02982335
+Type3–DetailComponentRecord
+Recordlength=500
+Seq Description Length Start Type Comments
+23 ExcludedFromPricing 21 229 N PricingBasketOnly
+Quantityofsecuritiesownedbythefundper
+basket/unit,butdifficulttoprice.
+Securitiesthatshouldbepricedintraday,but
+namesthatareunabletopriceontheNAV
+date.
+Pre-corporateactionpricesandshares
+wouldbeincludedaspartofthisbasket.
+Examples:Complexcorporateactionsand
+fair-valuednames.
+9,999,999,999,999.99999999
+24 Price(inFundBaseCurrency) 24 250 N PricingBasketOnly
+PriceofthesecurityontheNAVdate.
+999,999,999,999,999,999.999999
+25 LocalCurrency 3 274 A Identifiesthecurrencyofthesecurity.For
+example,USD.
+26 Factor 24 277 N Decimalvaluereflectingaproportionofthe
+outstandingprincipalvalueofthefactor
+bondsthatchangesovertime.Alsoapplies
+toequityfactors,suchasstocksplitonex
+date.
+999,999,999,999,999,999.999999
+27 SyntheticsLocalCurrency 3 301 A Identifiesthecurrencyofthesecurity.For
+example,USD.
+28 SyntheticsPriceMultiplier 24 304 N Designatedpricemultiplier.
+999,999,999,999,999,999.999999
+Type3–DetailComponentRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 61
+
+ChangestotheNearReal-TimeSupplementalPCF:AutoRouteProduction02262335/Test02982335 61
+AutoRouteProduction02262335/Test02982335
+Type3–DetailComponentRecord
+Recordlength=500
+Seq Description Length Start Type Comments
+29 SyntheticsContractSize 24 328 N Agreednotionalsizeofthefuturescontract.
+999,999,999,999,999,999.999999
+30 Synthetics Average Contract Open Price24 352 N Averageofthefuturetradeprice.
+999,999,999,999,999,999.999999
+31 FX RatesBaseCurrency 3 376 A Identifiesthebasecurrencyofthefund.For
+example,USD
+32 FX RatesCurrencies 3 379 A SpotFXratesofrespectivecurrencies
+againstthebasecurrencyofthefund.For
+example,EUR,GBR,USD.
+33 FX Forwards Currency Pair 6 382 A Identifiesthecurrencypairassociatedwith
+theFXforward.Forexample,EURUSD
+34 FX ForwardsValueDate 8 388 N SettlementdateoftheFXforward,
+CCYYMMDDformat.
+35 FX ForwardsQuantity 9 396 N Fundhedgedquantity.
+9,999,999.99
+36 FX ForwardsRate 7 405 N Interpolatedrate:rateusedforNAV
+calculation,includingforwardpoint
+interpolation.
+9.999999
+37 FX ForwardsValue 9 412 N CurrencymarketvalueoftheFXforward.
+9,999,999.99
+38 FX ForwardsCurrency 3 421 A IdentifiesthebasecurrencyoftheFX
+forwardcontract.Forexample,EUR
+Type3–DetailComponentRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 62
+
+ChangestotheNearReal-TimeSupplementalPCF:AutoRouteProduction02262335/Test02982335 62
+AutoRouteProduction02262335/Test02982335
+Type3–DetailComponentRecord
+Recordlength=500
+Seq Description Length Start Type Comments
+39 SWAPsNotionalvalue 7 424 N Totalamountofasecurity'sunderlying
+[[Asset]].
+9,999,999
+40 SWAPsSpread 5 431 N CostoftheunderlyingfeefromtheSWAP
+counterparty.
+9.9999
+41 SWAPsMarketValue 9 436 N AgreeduponpriceoftheSWAP.
+9,999,999.99
+42 FutureUse 56 445 Spaces
+ENDOFRECORD
+Type3–DetailComponentRecord(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 63
+
+ChangestotheNearReal-TimeSupplementalPCF:AutoRouteProduction02262335/Test02982335 63
+Type99–TrailerRecord
+ThefollowingtableshowtheType99–TrailerRecorddetailsfortheNearReal-TimeSupplementalPCFAutoRouteProduction02262335/Test02982335record
+layout:
+AutoRouteProduction02262335/Test02982335
+Type99–TrailerRecord(NewRecord)
+Recordlength=500
+Seq Description Length Start Type Comments
+1 RecordType 2 1 A/N 99=TrailerRecord
+Oneperfile.
+2 ProcessingDate 8 3 N CCYYMMDD
+3 PrimaryTransmissionorSupplement 1 11 A/N l P=PrimaryTransmission
+l S=SupplementalTransmission
+4 RecordCount 13 12 N Numberofrecordsintransmission(includingtrailer).
+5 FutureUse 476 25 Spaces
+ENDOFRECORD
+Type99–TrailerRecord
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 64
+
+FeaturesforMultipleBasketTypes 64
+FEATURESFORMULTIPLEBASKETTYPES
+ThenewuserinterfaceenablesETFagentstomanagemultiplebaskettypesandreviewthebasketsetup.
+Thissectionprovidesdifferentscenariosandconsiderations.
+StandardBasket
+TakethefollowingitemsintoconsiderationregardingtheStandardbasketshowninTable8.1:
+l ContinuedtobepublishedonT-1.
+l IssueoneStandardNSCCPortfolioIDthatisassociatedwitheachETFtradingCUSIP.
+l AllowforcustomizationthroughtheAdd/RemovalcomponentontheETFCreateandRedeemInstruction
+InputMRO: DATATRAKProduction11300/Test41300fileavailableintheNSCC FileFormatsforETF
+sectionintheDTCCLearningCenter.
+l Retaincash-onlyoptionforETFscomposedofeligibleandineligiblecomponents(forexample,Fixed
+Incomebaskets).
+l Foundationforfuturematchingdevelopment.
+l StandardbasketsareidentifiedwiththeletterSinpositionthreeinSequence31oftheAutoRoute
+Production02261256/Test02981256andAutoRouteProduction02262335/Test02982335recordlayouts,
+asshowninthefollowingtable:
+Seq Description Length Start Type Comments
+31 BasketType 2 290 A/N l 01=Standard
+l 02=Restricted
+l 03=Pricing
+l 04=Rebalance
+l 05=CreateOnly
+l 06=RedeemOnly
+l 07=Negotiated
+StandardBasket Example
+ETFTicker ABC
+BasketMnemonic(Optional) N/A
+BasketCode/Label 01/Standard
+ETFCUSIP 123456789
+NSCCPortfolioID 01S123456
+PrimaryCycleSubmissionDeadline 8:00P.M.EasternTimeonT-1
+SupplementalCycleSubmissionDeadline 12:00P.M.EasternTimeonT
+CarryForwardswithoutPrimaryReceipt Yes
+Recipients Allsubscribers
+ClearingEligible(Optional) Yes
+BasketSizing PerCreationUnit
+Table8.1StandardBasket
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 65
+
+FeaturesforMultipleBasketTypes 65
+StandardBasket Example
+CashOnly(Optional) Yes
+EligibleAssetClasses Any
+UniqueTransactionID No
+Table8.1StandardBasket(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 66
+
+FeaturesforMultipleBasketTypes 66
+RestrictedBasket
+TakethefollowingitemsintoconsiderationregardingtheRestrictedbasketshowninTable8.2:
+l FormerlyknownasCustombasket.
+l ExistingCustomNSCCPortfolioIDsremainineffect.
+l ETFagentswillbeissuedamaximumoffiverestrictedIDs,uponrequest.
+l Improvesthevaluefortheservicebyidentifyingthepurposeofthebasket.
+l Retainscash-onlyoptionforETFscomposedofeligibleandineligiblecomponents(forexample,Fixed
+Incomebaskets.).
+l Eliminatesthecurrentpracticeofsponsorsandagentstoforcefitmultipleuse-casesofagenericcustom
+order.
+l EliminatesNSCCSMDcapacityconcernsinbasketassociations.
+l Newstructuregreatlyreducesmanualmaintenancebyunderwritingoperationsatthepointofeligibilityand
+throughoutthelifecycleofthesecurity.
+l Retainstheconfidentialpublicationfeaturethatsupportstheoriginaluse-caseforarestrictedbasket,for
+example,beneficialownershiprestrictions.
+l FormationofNSCCPortfolioIDsissuedfornewlylaunchedRestrictedbasketsremainsunchangedwith
+letterCinpositionthreeinSequence31oftheAutoRouteProduction02261256/Test02981256and
+AutoRouteProduction02262335/Test02982335recordlayouts,asshowninthefollowingtable:
+Seq Description Length Start Type Comments
+31 BasketType 2 290 A/N l 01=Standard
+l 02=Restricted
+l 03=Pricing
+l 04=Rebalance
+l 05=CreateOnly
+l 06=RedeemOnly
+l 07=Negotiated
+RestrictedBasket Example
+ETFTicker ABC
+BasketMnemonic(Optional) N/A
+BasketCode/Label 02/Restricted
+ETFCUSIP 123456789
+NSCCPortfolioID 01C123456
+PrimaryCyclePublicationDeadline 8:00P.M.EasternTimeonT-1
+SupplementalCyclePublication
+Deadline
+12:00P.M.EasternTimeonT
+CarryForwardswithoutPrimary
+Receipt
+No
+Table8.2RestrictedBasket
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 67
+
+FeaturesforMultipleBasketTypes 67
+RestrictedBasket Example
+Recipients Determinedbytheagent-specifiedauthorized
+participants.
+l LIST=allauthorizedparticipantsassociatedwith
+ETFagent.
+l ALL=AllsubscribedtotheStandardbasket.
+ClearingEligible(Optional) Yes
+BasketSizing PerCreationUnit
+CashOnly(Optional) Yes
+EligibleAssetClasses Any
+UniqueTransactionID N/A
+Table8.2RestrictedBasket(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 68
+
+FeaturesforMultipleBasketTypes 68
+PricingBasket
+InresponsetopendingregulatorychangestoETFlandscape,NSCCwillenhanceitsPCFservicetoallow
+ETFagentstosubmitPricingbasketsonbehalfofETFsponsors.Basedonindustryrequirements,Pricing
+basketswillnowbereceivedanddistributedthroughtheenhancedPCFformat.Takethefollowingitemsinto
+considerationregardingthePricingbasketshowninTable8.3:
+l ETFagents,uponrequest,willbeissuedonePricingNSCCPortfolioIDforeachstandardbasketfornew
+andexistingETFs.
+l EnhancedPCFformatwillincludedataelementsallowingforsubmissionoffullfundcomposition,inclusive
+ofallassettypes,toassistincalculationofIntradayNAV(INAV).
+l DistributedinstandardPCFformatfordistributiontoallauthorizedparticipantssubscribedtotheStandard
+basket.
+l Availabletonon-membersthroughsubscriptionsubjecttoDTCC SolutionsTermsandConditions.
+l RepresentfullfundholdingsandareneverClearingeligibleastheyarenotsizedinCreationUnits.
+l NSCCPortfolioIDsareissued,uponrequest,withtheletterPinpositionthreeandareclearly
+distinguishedasineligiblepricingbasketsonPCFoutput.SeeSequence31oftheAutoRouteProduction
+02261256/Test02981256andAutoRouteProduction02262335/Test02982335recordlayouts,asshownin
+thefollowingtable:
+Seq Description Length Start Type Comments
+31 BasketType 2 290 A/N l 01=Standard
+l 02=Restricted
+l 03=Pricing
+l 04=Rebalance
+l 05=CreateOnly
+l 06=RedeemOnly
+l 07=Negotiated
+l PricingbasketwillnotbeeligibleforclearingastheywillnotbepublishedorsizedinCreationUnits.There
+willbeacontroltopreventtradecapture/clearingeligibility.ThiscontrolresidesinSecuritiesMaster
+Database(SMD)andlogicwithintheETFapplication.
+PricingBasket Example
+ETFTicker ABC
+BasketMnemonic
+(Optional)
+N/A
+BasketCode/Label 03/Pricing
+ETFCUSIP 123456789
+NSCCPortfolioID 01P123456
+PrimaryCyclePublication
+Deadline
+8:00P.M.EasternTimeonT-1
+SupplementalCycle
+PublicationDeadline
+12:00P.M.EasternTimeonT
+Table8.3PricingBasket
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 69
+
+FeaturesforMultipleBasketTypes 69
+PricingBasket Example
+CarryForwardswithout
+PrimaryReceipt
+No
+Recipients AllNSCC membersthatsubscribetoStandardETF.
+Availabletonon-membersthroughsubscription.SubjecttoDTCC
+SolutionsTermsandConditions.
+ClearingEligible(Optional)No
+BasketSizing FullFundHoldings
+CashOnly(Optional) N/A
+EligibleAssetClasses All
+UniqueTransactionID N/A
+Table8.3PricingBasket(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 70
+
+FeaturesforMultipleBasketTypes 70
+RebalanceBasket
+TakethefollowingitemsintoconsiderationregardingtheRebalancebasketshowninTable8.4:
+l ProperlystandardizesanexistingbusinesspracticeforETFSponsorsrelevantwhenanETFissubjectto
+anIndexRebalanceevent,suchasMSCI/Russell.
+l ETFagentswillbeissuedamaximumoffiveRebalanceNSCCPortfolioIDs,uponrequest,by
+UnderwritingthroughaProductInformationForm(PIF)request.
+l RebalanceNSCCPortfolioIDsareidentifiedonPCFoutputwiththeletterRinpositionthreeinSequence
+31oftheAutoRouteProduction02261256/Test02981256andAutoRouteProduction02262335/Test
+02982335recordlayouts,asshowninthefollowingtable:
+Seq Description Length Start Type Comments
+31 BasketType 2 290 A/N l 01=Standard
+l 02=Restricted
+l 03=Pricing
+l 04=Rebalance
+l 05=CreateOnly
+l 06=RedeemOnly
+l 07=Negotiated
+l AgentsorsponsorswillhavetheoptiontoprovideSequence22ETFBasketUnitSizeinType2Record
+DATATRAKProduction11301/Test41301.Whensubmitted,theBasketUnitSizewillbeusedtocalculate
+ETFsharestobesettled.Ifnotprovided,thecalculationwilldefaulttoCreationUnitRebalancebaskets
+areintendedtobetransacted-uponandsubmittedforclearancetoNSCConlyonspecificcalendardates,
+typicallyquarterly.
+l PublicationisdeterminedbytheETFagentorissuerthroughsubmissionoftheType4–Custom/Restricted
+DistributionRecord,designatingthespecificauthorizedparticipants.
+RebalanceBasket Example
+ETFTicker ABC
+BasketMnemonic(Optional) N/A
+BasketCode/Label 04/Rebalance
+ETFCUSIP 123456789
+NSCCPortfolioID 01R123456
+MaximumoffiveIDsissueduponrequest.
+PrimaryCyclePublicationDeadline 8:00P.M.EasternTimeonT-1
+SupplementalCyclePublication
+Deadline
+12:00P.M.EasternTimeonT
+CarryForwardswithoutPrimary
+Receipt
+No
+Table8.4RebalanceBasket
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 71
+
+FeaturesforMultipleBasketTypes 71
+RebalanceBasket Example
+Recipients Determinedbytheagent-specifiedauthorized
+participants.
+l LIST=Allauthorizedparticipantsassociatedwith
+ETFagent.
+l ALL=AllsubscribedtotheStandardbasket.
+ClearingEligible(Optional) Yes
+BasketSizing Agent/IssuerDeterminedthroughSequence22
+DefaultaspertheCreationUnit
+CashOnly(Optional) No
+EligibleAssetClasses Any
+UniqueTransactionID N/A
+Table8.4RebalanceBasket(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 72
+
+FeaturesforMultipleBasketTypes 72
+CreateOnlyBasket
+TakethefollowingitemsintoconsiderationregardingtheCreateOnlybasketshowninTable8.5:
+l ETFagentscurrentlyusingCreate(CR)andRedeem(RD)basketswillberequiredtosubmitaProduct
+InformationFormtoSMDrequest@[[DTCC]].comtorequestnewNSCCPortfolioIDs.ThelegacyNSCCIDs
+willbedeactivatedwhentheseenhancementsaredeployedtoProduction.ThenewNSCCPortfolioIDs
+forCreateandRedeembasketswillbemappedtotheETFFundtradingCUSIPandsymbolandwillbe
+publishedwithBasketTypes05and06undertheETFtradingsymbol.CreateRedeemeligibilitywillbe
+designatedattheNSCCPortfolioIDlevel.TheparentStandardbasketcanbedesignatedaseligibleand
+theCRandRDbasketscanbedesignatedasineligible.
+l ETFagentswillbeissuedasingleNSCCPortfolioIDforCreateandRedeemOnlybaskets,uponrequest,
+byUnderwritingthroughaPIFrequest.
+l CRandRDNSCCIDsaremappedtoStandardTradingCUSIPwitheligibilitydesignatedattheNSCC
+InstructionIDlevel,whicheliminatestheneedforexistingmultiplebasketsapproachusingS&Pacquired
+CUSIPsnotassociatedwiththeETFtradingCUSIP.
+l Clientsarerequiredtoadoptusageofthisbaskettypefornon-negotiatedfixedincomeETFson
+create/redeemeligiblebaskets.
+l Retainstheuser-desiredfeaturetopublishsponsor-determinedmnemonicscontainingalphacharactersto
+allowtradingdeskstodistinguishbasketsfromoneanother.
+l AllowsETFsponsorstodistinguishcomponentsecuritiesthefundmustacquire/divestinvarious
+circumstances,especiallyforfixedincomeETFsthathavethenecessaryrelieftoalloworder
+customization.
+l LimitsUWoperationsmaintenanceofS&PdummyCUSIPsthatareneverclearingeligibleandcause
+confusiontootherinternalDTCCclients/controlfunctions.DummyCUSIPIDswillbeacceptedby
+requestonalimitedbasisbyUWOperationsupondeployment.
+l NSCCPortfolioIDsforCreateandRedeembasketsareidentifiedonoutputwiththeletters CRorRDin
+positionthreeandfourinSequence31oftheAutoRouteProduction02261256/Test02981256and
+AutoRouteProduction02262335/Test02982335recordlayouts,asshowninthefollowingtable:
+Seq Description Length Start Type Comments
+31 BasketType 2 290 A/N l 01=Standard
+l 02=Restricted
+l 03=Pricing
+l 04=Rebalance
+l 05=CreateOnly
+l 06=RedeemOnly
+l 07=Negotiated
+CreateOnlyBasket Example
+ETFTicker ABC
+BasketMnemonic(Optional) ABCCR
+BasketCode/Label 05/CreateOnly
+ETFCUSIP 123456789
+Table8.5CreateOnlyBasket
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 73
+
+FeaturesforMultipleBasketTypes 73
+CreateOnlyBasket Example
+NSCCPortfolioID 00A234567
+PrimaryCyclePublicationDeadline 8:00P.M.EasternTimeonT-1
+SupplementalCyclePublicationDeadline12:00P.M.EasternTimeonT
+CarryForwardswithoutPrimaryReceipt No
+Recipients Allsubscribers
+ClearingEligible(Optional) Optional/MaintainedonNSCCIDlevelinSMD.
+BasketSizing PerCreationUnit
+CashOnly(Optional) Yes
+EligibleAssetClasses Any
+UniqueTransactionID No
+Table8.5CreateOnlyBasket(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 74
+
+FeaturesforMultipleBasketTypes 74
+RedeemOnlyBasket
+TakethefollowingitemsintoconsiderationregardingtheRedeemOnlybasketshowninTable8.6:
+l ETFagentscurrentlyusingCreate(CR)andRedeem(RD)basketswillberequiredtosubmitaProduct
+InformationFormtoSMDrequest@[[DTCC]].comtorequestnewNSCCPortfolioIDs.ThelegacyNSCCIDs
+willbedeactivatedwhentheseenhancementsaredeployedtoProduction.ThenewNSCCPortfolioIDs
+forCreateandRedeembasketswillbemappedtotheETFFundtradingCUSIPandsymbolandwillbe
+publishedwithBasketTypes05and06undertheETFtradingsymbol.CreateRedeemeligibilitywillbe
+designatedattheNSCCPortfolioIDlevel.TheparentStandardbasketcanbedesignatedaseligibleand
+theCRandRDbasketscanbedesignatedasineligible.
+l ETFagentswillbeissuedasingleNSCCPortfolioIDforCreateandRedeemOnlybaskets,uponrequest,
+byUnderwritingthroughaPIFrequest.
+l CRandRDNSCCIDsaremappedtoStandardTradingCUSIPwitheligibilitydesignatedattheNSCC
+InstructionID,whicheliminatestheneedforexistingmultiplebasketsapproachusingS&Pacquired
+CUSIPsnotassociatedwiththeETFtradingCUSIP.
+l Retainstheuser-desiredfeaturetopublishsponsor-determinedmnemonicscontainingalphacharactersto
+allowtradingdeskstodistinguishbasketsfromoneanother.
+l AllowsETFsponsorstodistinguishcomponentsecuritiesthefundmustacquire/divestinvarious
+circumstances,especiallyforfixedincomeETFsthathavethenecessaryrelieftoalloworder
+customization.
+l LimitsUWoperationsmaintenanceofS&PdummyCUSIPsthatareneverclearingeligibleandcause
+confusiontootherinternalDTCCclients/controlfunctions.DummyCUSIPIDswillbeacceptedby
+requestonalimitedbasisbyUWOperationsupondeployment.
+l NSCCPortfolioIDsforCreateandRedeembasketsareidentifiedonoutputwiththeletters CRorRDin
+positionthreeandfourinSequence31oftheAutoRouteProduction02261256/Test02981256and
+AutoRouteProduction02262335/Test02982335recordlayouts,asshowninthefollowingtable:
+Seq Description Length Start Type Comments
+31 BasketType 2 290 A/N l 01=Standard
+l 02=Restricted
+l 03=Pricing
+l 04=Rebalance
+l 05=CreateOnly
+l 06=RedeemOnly
+l 07=Negotiated
+RedeemOnlyBasket Example
+ETFTicker ABC
+BasketMnemonic(Optional) ABCRD
+BasketCode/Label 06/Redeem
+ETFCUSIP 123456789
+NSCCPortfolioID 00B234567
+PrimaryCyclePublicationDeadline 8:00P.M.EasternTimeonT-1
+Table8.6RedeemOnlyBasket
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 75
+
+FeaturesforMultipleBasketTypes 75
+RedeemOnlyBasket Example
+SupplementalCyclePublicationDeadline 12:00P.M.EasternTimeonT
+CarryForwardswithoutPrimaryReceipt No
+Recipients Allsubscribers
+ClearingEligible(Optional) OptionalMaintainedonNSCCIDlevelinSMD.
+BasketSizing PerCreationUnit
+CashOnly(Optional) Yes
+EligibleAssetClasses Any
+UniqueTransactionID No
+Table8.6RedeemOnlyBasket(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 76
+
+FeaturesforMultipleBasketTypes 76
+NegotiatedBasket
+TakethefollowingitemsintoconsiderationregardingtheNegotiatedbasketshowninTable8.7:
+l Sponsor/Agent-requestedfeaturethatprovidesflexibilityforordercustomization.
+l ETFagentswillbeissuedasingleNSCCPortfolioIDforNegotiatedbasketsonnewandexistingETFs,
+uponrequest.
+l NegotiatedIDsaremappedtothetradingCUSIPandareclearingeligible.
+l Usedonlyforburstingpurposesandarenotpublished.
+l Type5–NegotiatedRecordisrequiredonPCFforallnegotiatedordersinclusiveoftradedateand
+transactionID.
+l EnsurethattheTransactionIDsubmittedinType5–NegotiatedRecordoftheDATATRAKProduction
+11301/Test41301mustmatchtheTransactionIDontheDATATRAKProduction11300/Test41300.
+l [[ETF]] agentsmaysubmitmorethanoneNegotiatedNSCCPortfolioIDeachwithasingleType5–
+NegotiatedRecord,eveniftheagent/sponsorhasmultipleorderswiththesameunderlyingcomposition.
+l NegotiatedorderswillbebasedontheCreationUnitestablishedinSMD,whichwillbeusedto
+calculatesettlementofETFshares.QuantityofUnitstimesCreationUnit.
+l Underlyingcomponentswillnotbemultipliedbythenumberofunits.Thecomponentswillbe
+senttosettlementinthequantitiessubmitted.
+l Submittedontradedatefrom12:30A.M.through8P.M.EasternTime
+l AsOfsubmissionsareallowable.AsOfforsamedaysettlementmustbesubmittedpriorto11:30A.M.
+EasternTime.
+l Reversalsfollowexistingreversalprocedures.
+l EliminatestheexistingmultiplebasketsapproachusingS&PacquiredCUSIPsnotassociatedwiththe
+ETFtradingCUSIP.
+l ClientswillberequiredtoadoptusageofthisbaskettypefornegotiatedFixedIncomeETFsonthe
+create/redeemeligiblebaskets.
+l Retainstheuser-desiredfunctionalitytopublishSponsor-determinedmnemonicscontainingalpha
+characterstoallowtradingdeskstodistinguishbasketsfromoneanother.
+l AllowsETFsponsorstodistinguishcomponentsecuritiesthefundmustacquire/divestinvarious
+circumstances;especiallyforfixedincomeETFsthathavethenecessaryrelieftoalloworder
+customization,yetalsoinclusiveofequityETFs.
+l LimitsUWoperationsmaintenanceofS&PdummyCUSIPsthatareneverclearingeligibleandcause
+confusiontootherinternalDTCCclients/controlfunctions.DummyCUSIPIDsarenotacceptedbyUW
+operationsupondeployment
+l NSCCPortfolioIDsfor NegotiatedbasketsareidentifiedonoutputwiththeletterNinpositionthreeonly
+ontheEnhancedETF CreateandRedeemInstructionDataOutput(MRO):AutoRouteProduction
+02261254/PSE02981254.Thisisnotaformatchangeforthisfileitisanexistingfieldwhichwillnow
+reflecttheNegotiatedNSCCPortfolioID.TheNegotiatedPCFwillnotbepublishedtoAPsinPhase1.
+ThefollowingtableprovidesinformationabouttheNegotiatedbasket:
+NegotiatedBasket Example
+ETFTicker ABC
+BasketMnemonic(Optional)N/A
+Table8.7NegotiatedBasket
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 77
+
+FeaturesforMultipleBasketTypes 77
+NegotiatedBasket Example
+BasketCode/Label 07/Negotiated
+ETFCUSIP 123456789
+NSCCPortfolioID 01N123456
+PrimaryCyclePublication
+Deadline
+N/A
+CyclePublicationDeadline 12:30A.M.through8:00P.M.EasternTimeonT
+CarryForwardswithout
+PrimaryReceipt
+No
+Recipients NotDistributed(OrderClearingRecordsOnly)
+ClearingEligible(Optional) Yes
+BasketSizing PerCreationUnit
+CashOnly(Optional) No
+EligibleAssetClasses ALL
+UniqueTransactionID Yes
+MustmatchTransactionIDontheDATATRAKProduction
+11300/Test41300order.
+Table8.7NegotiatedBasket(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 78
+
+ExchangeTradedFunds([[ETF]])WebUserInterface 78
+EXCHANGETRADEDFUNDS([[ETF]])WEBUSERINTERFACE
+TheETFWebuserinterfaceismovingfromtheDTCCportaltotheClearingDashboardtostandardizethe
+userexperienceandconformtotheuserexperiencecenterofexcellence(UXCOE)standards.Allexisting
+featuresremainthesamewithsomeimprovementstoclearlydifferentiatebetweenbaskets.Youcandisplay
+onlytheclearingaccountstowhichyouhaveaccess.Youraccessisdeterminedbythepermissions
+establishedforyoubyyourfirm'ssuperaccesscoordinator(SAC),accordingtoyourfirm'spoliciesand
+procedures.ContacttheSACatyourfirmtoobtainpermissionandsetupyouraccount.ToaccessETF,see
+AccessingtheClearingDashboard.RolesforSACassignmentwillbedistributedintheExchangeTraded
+Fund([[ETF]])WebUserGuide,whichwillbeavailableatalaterdate.
+AccessingtheClearingDashboard
+Note
+TheETF WebuserinterfaceismovingfromtheDTCC portaltotheClearingDashboardtostandardize
+theuserexperience.
+ToaccesstheClearingDashboard:
+1. SignintotheDTCC portalavailableathttps://portal.[[DTCC]].com/.
+2. SelectClearingDashboard,asshowninthefollowingfigure:
+3. FromtheClearingDashboard(CLD),selectExchangeTradedFunds([[ETF]]),asshowninthefollowing
+figure:
+4. TheExchangeTradedFunds([[ETF]])homepageappears.
+Descriptionofroleswillbeprovidedatalaterdate.
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 79
+
+ExchangeTradedFunds([[ETF]])WebUserInterface 79
+SampleETF  PortfolioSubscriptionInquiryScreenShots
+Note
+Thesescreenshotsareexamplemock-ups.Thefinalversionoftheuserinterfacechangesmightbe
+differentfromwhatappearsinthisdocument.
+EnterthefiltercriteriatolocateexistingETFportfoliosubscriptionresults,asshowninthefollowingfigure:
+AfterclickingSearch,theresultsaredisplayed,asshowninthefollowingfigure:
+Youcannavigatebetweenbasketsthatareprovidedondifferentdatesusingthetabsinthefollowingfigure
+thatshowstheresultsofyoursubscriptioninquiry:
+Note
+Thekeyfieldsappearinthefollowingfigure;however,morefieldsmaybeaddedtothefinaluser
+interface.UpdatedscreenshotswillbedistributedintheExchangeTradedFund([[ETF]])WebUser
+Guideavailableatalaterdate,
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 80
+
+ExchangeTradedFunds([[ETF]])WebUserInterface 80
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 81
+
+ExchangeTradedFunds([[ETF]])WebUserInterface 81
+SampleAgentInquiryScreenShots
+ThenewAgentInquirypage,showninthefollowingfigure,isavailableonlytoagentstomanagebaskettypes
+andreviewthebasketsetup.Itprovidesdetailedinformation,forallbaskettypes,toanagentfordistributing
+basketsthroughtheenhancedETFservice.NSCCPortfolioIDsetupwillbecompletedthroughexisting
+ProductInformationForm(PIF).ArevisedPIFwillbepublishedatalaterdate.
+FromtheAgentInquiry,selectthehyperlinktoobtainadditionaldetailedinformationassociatedwithaspecific
+basket.
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 82
+
+ExchangeTradedFunds([[ETF]])WebUserInterface 82
+SampleEmailAlertSubscriptionScreenShots
+TheenhancedETF userinterfacewillofferETFagentstheabilitytosubscribetorealtimeemailalerts
+detailingrejectscurrentlyreportedontheIntradayandEndofDayReject/Receiptreports.Toaccesstheuser
+details,clickthe
+ bluearrowfromtheUserDetailscolumn.
+Selectthealert,andthenclickSubscribe,asshowninthefollowingfigure:
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 83
+
+MessageCodesandDescriptions 83
+MESSAGECODESANDDESCRIPTIONS
+Thefollowingtableshowsthemessagecodedetailsanddescriptionsoftheabbreviationsusedinthe
+columnswithnewmessagesandfiletypesappearinginred:
+MessageTypes
+l Reject=REJ
+l Warning=WARN
+l Informational = INFO
+FileType
+l C/R=Create/Redeem
+l PCF=PortfolioCompositionFile
+l WhenC/RandPCFarelisted,theinformation
+appliestobothfiletypes.
+Message
+Description
+l FX=Foreign
+exchange
+Message TypeMessage CodeRecord
+Type
+FieldFile TypeMessageDescription
+REJ 101 1 N/A l C/R
+l PCF
+ETFagentspecifiedontheheader
+recordwasnotfoundontheentity
+masterfile.
+WARN 135 1 N/A l C/R
+l PCF
+DuplicateFileHeadersubmitted.
+Secondsubmissionheaderwillbe
+discarded.
+WARN 136 1 N/A l C/R
+l PCF
+InvalidProcessingdateorif
+processingdateisnotcurrentdate.
+WARN 137 1 N/A l C/R
+l PCF
+Processingdateontheheader
+recorddoesnotmatchtheexpected
+processingdate. Duringprimary
+cyclethisisthecurrentdateand
+duringthesupplementalcycleitis
+thepreviousbusinessdate.
+WARN 138 1 N/A l C/R
+l PCF
+Recordsthatwerefoundbeforethe
+headerrecordwerenotprocessed.
+INFO 170 1 N/A PCF NoCarryForwardPortfolio.The
+agentdoesnothaveanyportfolios
+thatwerecarriedforwardtoday.
+WARN 200 2 N/A PCF Redeemportfoliohasnotbeen
+submitted.
+REJ 201 2 N/A l C/R
+l PCF
+InvalidNSCCPortfolioID;Portfolio
+IDisnotontheNSCCMasterfile.
+REJ 202 2 N/A l C/R
+l PCF
+AssociatedTradingCUSIPnotvalid
+(notontheNSCCMasterfile).
+REJ 203 2 N/A l C/R
+l PCF
+ETFAgentnumberdoesnotmatch
+theheaderrecord(onrecordtype1).
+REJ 204 2 N/A l C/R
+l PCF
+ETFAgentisnottheagentforthe
+portfolio.
+MessageCodesandDescriptions
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 84
+
+MessageCodesandDescriptions 84
+Message TypeMessage CodeRecord
+Type
+FieldFile TypeMessageDescription
+REJ 225 2 N/A PCF InvalidCashOnlyIndicator(any
+otherinputbesidesYorspace).
+REJ 226 2 N/A PCF Nocomponentssubmittedfornon-
+cashportfolio.
+REJ 227 2 N/A PCF Nocomponentsacceptedfornon-
+cashportfolio.
+REJ 228 2 N/A PCF Weightedshares=0forall
+componentsinanon-cashportfolio.
+REJ 229 2 N/A C/R PortfolionotCreate/Redeem
+eligible.
+REJ 230 2 N/A PCF Duplicateportfolioheaderrecord(on
+recordtype1)wassubmitted.The
+secondheaderrecordwasrejected.
+REJ 231 2 N/A C/R Acceptedtransactionfoundwiththe
+sameTransactionID.
+REJ 232 2 N/A C/R Create/RedeemCycleCD=[[EOD]].
+Recordrejected.
+REJ 233 2 N/A PCF DonotpublishIndicatorissetonthe
+masterfilefortheportfolio.
+REJ 234 2 N/A C/R Settlementamountisnegative.
+Instructionsnotprocessed.
+REJ 235 2 N/A C/R Settlementdatesetinthepastfor
+As-Oftrade.
+WARN 236 2 4 PCF InvalidComponentCount.
+WARN 237 2 4 PCF ComponentCountdoesnotequal
+componentcountreceivedby
+[[NSCC]].
+WARN 238 2 N/A PCF ComponentCountsettonumberof
+componentsacceptedbyNSCC.
+ThisoccurswhenNSCCrejected
+somecomponents. NSCCwill
+changethecomponentcounttothe
+numberofcomponentsthatwere
+accepted.
+WARN 241 2 N/A PCF Priorday’sportfoliobeingused.
+WARN 243 2 17 C/R Transactiontimestampnotvalid.
+REJ 244 2 N/A l C/R
+l PCF
+PortfolioIDisnotactive.
+WARN 245 2 18 C/R Recodedto0(newtrade).
+INFO 246 2 18 C/R Correctsapriortransaction.
+INFO 247 2 18 C/R Reversesapriortransaction.
+MessageCodesandDescriptions(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 85
+
+MessageCodesandDescriptions 85
+Message TypeMessage CodeRecord
+Type
+FieldFile TypeMessageDescription
+INFO 248 2 N/A C/R Provisionallyaccepted.
+INFO 249 2 N/A C/R Originalinstructionpended.
+REJ 250 2 N/A C/R Non-cashportfoliohasno
+[[NSCC]] eligiblecomponents.
+INFO 251 2 N/A C/R Originalinstructionwasprovisionally
+accepted.
+REJ 252 2 N/A C/R Pendedtransactionwasrejected.
+REJ 253 2 N/A C/R Instructionreceivedpriorto
+supplementalportfolio.
+REJ 254 2 N/A C/R Abovemaximumsettlement
+amount.
+REJ 255 2 N/A C/R Belowthreshold.
+INFO 256 2 23 PCF VariableFeeAmountisnotnumeric.
+INFO 257 2 24 PCF BabyBondCashAmountisnot
+numeric.
+INFO 258 2 25 PCF FI FaceValueAdjustmentisnot
+numeric.
+WARN 259 2 22 PCF [[ETF]] basketunitsizeisnotnumeric.
+INFO 260 2 26 PCF Fundlegalentityidentifier(LEI)is
+invalid.
+INFO 261 2 27 PCF FundSizeisnotnumeric.
+INFO 262 2 28 PCF ShareClassApportionmentRatiois
+notnumeric.
+INFO 263 2 29 PCF ProjectedTransactionFeeisnot
+numeric.
+INFO 264 2 30 PCF DateforProjectedTransactionFee
+isinvalid.
+INFO 265 2 31 PCF ConfirmedTransactionFeeisnot
+numeric.
+WARN 266 2 32 PCF Dateforconfirmedtransactionfeeis
+invalid.
+REJ 267 2 19 PCF Cashonlynegotiatedbasket.
+REJ 268 2 35 PCF NSCCPortfolioIDhasPricing
+UsageIND=Y.
+WARN 269 2 N/A PCF Pricingportfoliohasnotbeen
+submitted.
+INFO 270 2 5 PCF EstimatedT-1CashAmountper
+CreationUnitisnotnumeric.
+MessageCodesandDescriptions(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 86
+
+MessageCodesandDescriptions 86
+Message TypeMessage CodeRecord
+Type
+FieldFile TypeMessageDescription
+INFO 271 2 18 PCF EstimatedCashValueofcash-in-
+lieucomponentsarenotnumeric.
+INFO 272 2 7 PCF NetAssetValueperCreationUnitis
+notnumeric.
+INFO 273 2 9 PCF EstimatedT-1CashAmountper
+ETFnotnumeric.
+INFO 274 2 11 PCF NetAssetValueperETFisnot
+numeric.
+INFO 275 2 13 PCF TotalCashAmountperCreationunit
+isnotnumeric.
+INFO 276 2 15 PCF TotalSharesoutstandingperETFon
+T-1arenotnumeric.
+INFO 277 2 16 PCF DividendamountperETFonT-1is
+notnumeric.
+INFO 278 2 20 PCF ETFExpenseRatioonT-1isnot
+numeric.
+INFO 279 2 21 PCF TotalNetAssetValueofETFFund
+onT-1isnotnumeric.
+INFO 280 2 12 C/R Invalidcurrencycode,
+USD, substituted.
+INFO 281 2 2 C/R RejectedTransactionID
+reprocessed.
+REJ 282 2 2 C/R TransactionIDisnotprovided.
+REJ 283 2 N/A PCF StandardPortfolioforthisbasket
+wasnotfound.
+WARN 284 2 34 PCF Basketunitsoutstandingarenot
+numeric.
+WARN 285 2 33 PCF Projectedcashforpricingbasketis
+notnumeric.
+WARN 286 2 35 PCF Pricingusageindicatorisinvalid.
+WARN 287 2 N/A PCF Negotiatedrecordisassociatedwith
+anon-negotiatedbasket.
+WARN 288 2 36 PCF CreateUsageindicatorisinvalid.
+WARN 289 2 37 PCF RedeemUsageindicatorisinvalid.
+REJ 290 2 N/A C/R Negotiatedportfoliowasnotfound
+forthetradedateandtransactionID.
+WARN 291 2 19 PCF Cashonlypricingbasket.
+REJ 292 2 36 PCF NSCCPortfolioIDhasCreate
+UsageIND=Y.
+MessageCodesandDescriptions(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 87
+
+MessageCodesandDescriptions 87
+Message TypeMessage CodeRecord
+Type
+FieldFile TypeMessageDescription
+REJ 293 2 37 PCF NSCCPortfolioIDhasRedeem
+UsageIND=Y.
+WARN 296 2 N/A PCF Createportfoliohasnotbeen
+submitted.
+REJ 297 2 N/A l C/R
+l PCF
+Fileheaderrecord(onrecordtype1)
+isinvalid.
+REJ 298 2 N/A l C/R
+l PCF
+Filewasreceivedtoolate.
+INFO 299 2 N/A C/R Provisionallyaccepted.
+REJ 300 3 N/A PCF PortfolioHeaderRecord(onrecord
+2)wasnotfoundfortheportfolio
+associatedwiththeComponent
+Record.
+REJ 301 3 N/A C/R Nocomponentsafterremovals.
+REJ 302 3 3 l C/R
+l PCF
+InvalidComponentIDCode.
+REJ 303 3 N/A C/R SIONLY=YES.Reject03record.
+REJ 304 3 3 l C/R
+l PCF
+NocomponentIDcodesubmitted
+(blank).
+REJ 305 3 5 PCF Componentquantityisnotnumeric.
+REJ 306 3 2 C/R Noinstructionrecordsforthe
+transactionID.
+REJ 307 3 N/A C/R Instructionrecordiscashonly.
+REJ 308 3 N/A C/R Customremovecomponentis
+rejected.
+REJ 310 3 4 C/R Componentnotintheportfolio.
+REJ 311 3 4 l C/R
+l PCF
+ComponentIDhasaninvalidlength
+oralignment.
+REJ 312 3 4 PCF ComponentIDisnotalphanumeric.
+REJ 314 3 2 PCF [[NSCC]] PortfolioIDisinvalid.
+REJ 315 3 N/A l C/R
+l PCF
+Fileheaderisinvalid
+REJ 316 3 N/A l C/R
+l PCF
+Filereceiveristoolate.
+REJ 317 3 N/A C/R Componentiscashinlieu(CIL).03
+Recordisinvalid.
+WARN 336 3 7 PCF ExternalSettlementDateispriorto
+TradeDate.
+MessageCodesandDescriptions(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 88
+
+MessageCodesandDescriptions 88
+Message TypeMessage CodeRecord
+Type
+FieldFile TypeMessageDescription
+WARN 337 3 9 PCF Invalidvalueforthecashinlieu(CIL)
+indicator,indicatorissettospace.
+WARN 338 3 N/A PCF Cashinlieuindicatorappliedby
+[[NSCC]](settoX)ononeormore
+components.
+WARN 339 3 N/A PCF CILIndicatorappliedbyNSCC/set
+toXforCUSIPcomponentnoton
+theNSCCMasterfile.
+WARN 340 3 N/A PCF CILIndicatorsettoXforISIN
+componentnotontheNSCCMaster
+file.
+WARN 341 3 7 PCF InvalidExternalSettlementDate.
+WARN 344 3 N/A PCF CILIndicatorisappliedbyNSCC/
+settoXforshortposition
+component.
+WARN 345 3 N/A PCF ComponentIDisnolongervalid. It
+hasbeendeletedfromthemaster
+table.
+INFO 373 3 8 PCF Invalidnewsecurityindicator-setto
+space.
+INFO 377 3 11 PCF WI mismatch.Usingthevaluefrom
+themastertables.
+WARN 378 3 12 PCF l T1accruedinterestisinvalid.
+(Phase1)
+l Nonstandardaccruedinterestis
+invalid.(Phase2)
+WARN 379 3 13 PCF l T2accruedinterestisinvalid.
+(Phase1)
+l Standardaccruedinterestis
+invalid.(Phase2)
+WARN 380 3 15 PCF ExcludedFromPricingQuantityis
+notnumeric.
+WARN 381 3 16 PCF PriceamountonNAVdateisnot
+numeric.
+WARN 382 3 17 PCF LocalCurrencyCodeisinvalid.
+WARN 383 3 18 PCF Factorvalueisnotnumeric.
+WARN 384 3 19 PCF SyntheticsCurrencyCodeisinvalid.
+WARN 385 3 20 PCF SyntheticsPriceMultiplierisnot
+numeric.
+MessageCodesandDescriptions(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 89
+
+MessageCodesandDescriptions 89
+Message TypeMessage CodeRecord
+Type
+FieldFile TypeMessageDescription
+WARN 386 3 21 PCF SyntheticsContractSizeisnot
+numeric.
+WARN 387 3 22 PCF SyntheticsAverageContractPrice
+isnotnumeric.
+WARN 388 3 23 PCF FXRatesbasecurrencyisinvalid.
+(FX=foreignexchange)
+WARN 389 3 24 PCF FX ratescurrenciesisinvalid.
+WARN 390 3 25 PCF FX ForwardCurrencyPairisinvalid.
+WARN 391 3 26 PCF FX ForwardValueDateisinvalid.
+WARN 392 3 27 PCF FX ForwardQuantityisnotnumeric.
+WARN 393 3 28 PCF FX ForwardRateisnotnumeric.
+WARN 394 3 29 PCF FX ForwardValueisnotnumeric.
+WARN 395 3 30 PCF FX ForwardCurrencyisinvalid.
+WARN 396 3 31 PCF SWAPSNotionalValueisnot
+numeric.
+WARN 397 3 32 PCF SWAPSSpreadisnotnumeric.
+WARN 398 3 33 PCF SWAPSMarketValueisnot
+numeric.
+WARN 399 3 25 PCF IncompleteFX ForwardCurrency
+PairCode.
+REJ 400 4 N/A PCF Customrecordreceivedforthe
+Standardportfolio.
+REJ 401 4 N/A PCF Customrecordmissingforthe
+Customportfolio.
+REJ 403 5 3 C/R ComponentID codeisinvalid.
+REJ 404 5 4 C/R ComponentID cannotbeblank.
+REJ 405 5 2 C/R Noinstructionrecordsforthe
+TransactionID.
+REJ 406 5 N/A C/R Instructionrecordiscashonly.
+REJ 407 5 4 C/R Invalidsecurity.
+REJ 408 5 N/A C/R Customaddcomponentrejected.
+REJ 409 5 5 C/R Componentquantityisinvalid.
+REJ 410 5 N/A C/R SIOnly=Yes.Reject05record.
+REJ 411 4 N/A PCF ETFagentdoesnothaveany
+relationshipssetupandsubmitted
+LISTinthedistributionrecord.
+MessageCodesandDescriptions(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 90
+
+MessageCodesandDescriptions 90
+Message TypeMessage CodeRecord
+Type
+FieldFile TypeMessageDescription
+REJ 412 4 N/A PCF Therewerenovaliddistribution
+records(recordtype4)found.The
+distributionrecordssubmittedwere
+rejected.
+REJ 413 4 3 PCF PortfolioIDspecifiedonthe
+distributionrecorddoesnotmatch
+theportfolioIDspecifiedonthe
+portfoliorecord(onrecordtype2).
+REJ 414 4 N/A PCF NSCCPortfolioIDisinvalid.
+REJ 415 1 N/A l C/R
+l PCF
+Fileheaderisinvalid.
+REJ 416 N/A N/A l C/R
+l PCF
+Filereceivedtoolate.
+REJ 434 4 3 PCF Unknownassignees(recipientof
+customportfolio)oncustomrecord.
+WARN 437 4 N/A PCF Therewereoneormoreinvalid
+distributionrecordssubmitted.
+REJ 500 5 N/A PCF Portfolioheaderismissingfromthe
+Negotiatedbasketrecord.
+REJ 501 5 N/A PCF Negotiatedrecordmissingfor
+negotiatedportfolio.
+REJ 505 5 3 PCF TransactionIDisnotnumeric.
+REJ 506 5 3 PCF TransactionIDcannotbezero.
+REJ 507 5 4 PCF TradeDateisinvalid.
+REJ 508 5 4 PCF TradeDatecannotbebeforeT-2.
+REJ 509 5 4 PCF TradeDatecannotbeinthefuture.
+REJ 510 5 N/A PCF Negotiatedbasketreceivedtoolate.
+REJ 512 5 N/A PCF Novalidnegotiatedrecords.
+REJ 514 5 2 PCF NSCCPortfolioIDisinvalid.
+REJ 515 5 N/A PCF Fileheaderisinvalid.
+REJ 516 5 N/A PCF Filewasreceivedtoolate.
+REJ 517 5 3 PCF TransactionIDwasnotprovided.
+REJ 518 5 1 PCF Invalidrecordtypeforthebasket.
+REJ 524 5 3 PCF DuplicatedtransactionID.Record
+Rejected.
+REJ 531 5 3 PCF Acceptedtransactionfoundwiththe
+sametransactionID.
+REJ 537 5 N/A PCF Morethanonenegotiatedrecord.
+MessageCodesandDescriptions(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 91
+
+MessageCodesandDescriptions 91
+Message TypeMessage CodeRecord
+Type
+FieldFile TypeMessageDescription
+REJ 567 5 N/A PCF Cashonlynegotiatedbasket.
+INFO 581 5 3 PCF RejectedtransactionID
+reprocessed.
+REJ 582 5 N/A PCF Negotiatedbasketnot
+Create/Redeemeligible.
+REJ 915 1 N/A C/R Fileheaderisinvalid.
+REJ 916 N/A N/A C/R Filereceivedtoolate.
+WARN 935 99 N/A l C/R
+l PCF
+NoTrailerRecordfound.
+WARN 937 99 3 l C/R
+l PCF
+Recordcountisnotnumeric.
+WARN 938 99 N/A C/R Numberofrecordssenddidnot
+matchthenumberofrecords
+received.
+WARN 939 99 N/A PCF Additionalrecordsfoundafterthe
+trailerrecordwerenotprocessed.
+REJ 998 99 N/A PCF PCFfilewasreceivedtoolateand
+wasrejected.
+REJ 999 99 N/A l C/R
+l PCF
+Receivedoneormoreinvalid
+records.
+MessageCodesandDescriptions(Continued)
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 92
+
+Addendum:ExtendedSettlementforEquities 92
+ADDENDUM:EXTENDEDSETTLEMENTFOREQUITIES
+Byindustryrequest,NSCChasfiledwiththeSecuritiesExchangeCommission([[SEC]])toallowforextended
+settlementforETFCreateandRedeemclearance.ExtendedsettlementforonlyEquitieswillbedeployedina
+separatereleaseshortlyafterthedeploymentofPhase1PCFEnhancements.
+UponRegulatoryapproval,thefollowingchangeswillbemadetofacilitateextendedsettlement.The
+EnhancedETFCreateandRedeemInstructionInputMRO:DataTrakProduction11300/PSE41300willbe
+updatedaccordingly.
+ThedescriptionforSequence10ontheType02-InstructionRecordwillbechangedfromShortened
+SettlementCodetoSettlementCode.SpacestilldefaultstoRegularWay(twodaysettlement),andthe
+valueof2willalsobeacceptedforRegularWay.ThefollowingtableshowstheSettlementCodevalues:
+SeqDescription LengthStartTypeComments RequiredorOptional
+Field
+10 [[settlement]] Code1 58 A/N l Space=DefaultforRegularWay(Two
+dayregularway)
+l 1=NextDay
+l 2=RegularWay
+l 3=ThreeDaySettlement
+l 4=FourDaySettlement
+l 5=FiveDaySettlement
+Required
+Asofsubmissionswillbealloweduptofivetradingdaysinthepast.AnycombinationoftheSettlementCode
+resultinginSameDaySettlement(SDS)mustbesubmittedintheIntradayCreateRedeemCyclepriorto11
+A.M.,asperexistingrules.
+ExtendedSettlementforFixedIncome
+ExtendedsettlementforFixedIncomewillalsoutilizetheSettlementCodeforSequence10ontheType02-
+InstructionRecordintheDataTrakProduction11300/PSE41300file.ExtendedSettlementforFixedIncome
+willalsorequirechangestothedescriptionsfortheaccruedinterestfieldsavailableintheDataTrak
+Production11301/PSE41301file.Thedescriptionswillalsochangeintheaccruedinterestfieldsinthe
+AutoRouteProduction02261256/Test02981256(seeSequence20and21)andAutoRouteProduction
+02262335/Test02982335(seeSequence20and21)outputfiles;however,thesechangeswillnottakeeffect
+untilafterPhase2isdeployed.
+ClientBusinessRequirements:Phase1
+
+---
+
+## Page 93
+
+FORMOREINFORMATION
+EmailDTCCLearningat:
+CoreLearning@[[DTCC]].com
+orvisitusonthewebat:
+www.dtcclearning.com

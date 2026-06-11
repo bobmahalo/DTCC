@@ -1,0 +1,501 @@
+---
+title: "DTCC CDS Kinetics - GUI Guide"
+source_pdf: "file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/dat312_cds_kinetics_ui_guide_20231017.pdf"
+pages: 22
+size: "1076.2 KB"
+category: "Other"
+ingested_on: "2026-06-05"
+---
+
+# DTCC CDS Kinetics - GUI Guide
+
+**Original File:** [dat312_cds_kinetics_ui_guide_20231017.pdf](file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/dat312_cds_kinetics_ui_guide_20231017.pdf)  
+**Category:** Other  
+**Total Pages:** 22  
+**File Size:** 1076.2 KB  
+
+---
+
+## Page 1
+
+CDSKinetics
+GUIGUIDE
+OCTOBER17,2023
+
+---
+
+## Page 2
+
+TABLEOFCONTENTS
+Introduction 3
+Overview 3
+BrowserRequirements 3
+ProductSupport 4
+DataServicesSupport 4
+ViewingandDownloadingWeeklyStockandVolumeReports 5
+CDSKineticsReportCenter 5
+CDSKineticsHomePage/Dashboard- ReportSetup 8
+CDSKineticsDataAnalysis 17
+DTCCCDSKineticsGUIGuide
+TableOfContents 2
+
+---
+
+## Page 3
+
+INTRODUCTION
+Overview
+TheDTCC CDSKineticsserviceprovidesthelargestconsolidatedsetofglobalcreditdefaultswap(CDS)
+data,utilizingpositiondatasourcedfromDTCC’sTradeInformationWarehouse("TIW")service.TheTIW
+serviceisacentralizedinfrastructureforreportingandassetservicingonapproximately98%ofallcredit
+derivativetransactionsoutstandingworldwide.
+ThisCDS KineticsserviceisdeliveredonaninteractiveWebplatformandintroducesnewfunctionalityand
+datainsights.Keyfunctionalityincludes:
+l Abilitytodownloadallexisting10WeeklyStock&Volumereportsfromthewebinterface.
+l Integrationofhistoricaldataintothereports.
+l Abilitytoviewandfilterdateforspecificdates,referenceentities,products,andreferencedata.
+l SFTP
+ThisdocumentprovidesanoverviewofthefunctionalityavailableintheCDSKineticsservice.
+BrowserRequirements
+UsetheCDSKineticsserviceonGoogleChromeversion97orhigher.Theservicedoesnotsupportuse
+ofanyotherbrowsers.
+DTCCCDSKineticsGUIGuide
+Introduction 3
+
+---
+
+## Page 4
+
+PRODUCTSUPPORT
+DataServicesSupport
+l Phone:CalltheClientContactCenterat1-888-382-2721andselectoption8.
+l Email:DataServicesSupport(dataservicessupport@[[DTCC]].com).
+l Web:https://www.dtccdata.com/contact-us-support
+l ConnectivityandSFTPSupport:DirectallconnectivityandSFTPsupportinquiriesthoughthe
+MyDTCC.comsupportportal>ConnectivityManagement.Theseinquiriesinclude:
+o WhitelistingIPaddressees
+o MissingFiles
+o SFTPPasswordchanges
+o Filenameupdates
+l Toobtainadditionaldocumentationandlearningresources,logontotheDTCCLearningCenter.
+Notes
+l Forrequestsrequiringnetworkupdates,suchaswhitelistingIPaddresses,youmustnotifyDTCC at
+leasttenbusinessdayspriortotheeffectivedate.
+l ContactDataServicesSupport@[[DTCC]].comforaccesstoMyDTCC.
+DTCCCDSKineticsGUIGuide
+ProductSupport 4
+
+---
+
+## Page 5
+
+ViewingandDownloadingWeeklyStockandVolume
+Reports
+CDSKineticsReportCenter
+TheWeeklyStockandVolumereports,areavailablefordownloadfromtheReportsCenterontheCDS
+Kineticsuserinterface.Todownloadreports:
+1. FromtheDirectorymenu,selectCDSKineticsReportCenter.
+2. EntertheFridayfortheweekwhosedatayouwanttoincludeinthereport,orselectaFridayfromthe
+calendardropdown.
+3. ClickSubmit.
+DTCCCDSKineticsGUIGuide
+5
+
+---
+
+## Page 6
+
+4. FromtheReportsCenter,clickonthenameofreportyouwanttodownload.
+5. Afterqueryingthedatabase,thesystemreturnsthereport.
+6. Selectthefiletypetowhichyouwanttodownloadthereportfromthedownloadarrowabovethe
+report.
+Thereportdownloadstoyourbrowser'sdefaultlocation.
+ReportNavigation/ HeaderOptions
+Allreportheaderscontainnavigationicons.
+DTCCCDSKineticsGUIGuide
+6
+
+---
+
+## Page 7
+
+Icon Description
+FavoriteReport ClickthisicontocreateashortcutontheHomeusingthedefaultreport
+nameandanydefaultparameters.Whenyouclicktheshortcutfromthe
+homepage,theunfilteredreportqueryopens.
+Whenareportisactive,clicktheFavoriteReporticontoaddittoyour
+Favorites.Abluestar
+ indicatesthatthereportisaFavoriteonour
+homepage.
+PressthebluestartoremoveareportfromyourFavorites.Agraystar
+indicatesthatthereportisnotoneofyourFavorites
+ .
+PinnedReport Clickthisicontocreateauser-namedshortcutontheHomepagetoopen
+aquerywiththesamefiltersandcolumnsettingsappliedaswhenyou
+pinnedthereport.
+Whenareportisactive,clickthePinnedreporticonandnameitonthe
+dialogthatappearstoaddittoyourPinnedReports.Abluepin
+indicatesthatthecurrentreportispinnedonyourHomepage.
+PressthebluepintoremoveareportfromthelistofyourPinnedreports.A
+graypinindicatesthatthereportisnotonthelistofyourpinnedreports
+.
+NewWeaverTab ClickthisicontoopenanewtabontotheWeaverDashboard.
+RefreshDataSet Clickthisicontoquerythedatabaseandrefreshthedataset.
+ExportReportData Clickthisiconandselectanoptiontoexportdataintheactivereporttoan
+Excel,CSV,orPDFfile.Thereportissavedtothedefaultlocationspecified
+inyourbrowsersettings.
+DataSetPara-
+meters
+ClickthisicontoexpandandcollapsethelistofDatasetParametersusedto
+generatethereport.
+DTCCCDSKineticsGUIGuide
+7
+
+---
+
+## Page 8
+
+CDSKINETICSHOMEPAGE/DASHBOARD-
+REPORTSETUP
+TheCDSKineticswebinterfaceenablesfilteringanddynamicanalysisofdataintheunderlyingWeekly
+[[Stock]]&Volumereports.
+Afterselectingdesireddatafilters,clickSubmit.Thesystemrendersdatabasedonyoursearchinboth
+flatanddynamicformatsforyourreviewandanalysis.
+UsethefilterstoselectDataSetParametersforthedatayouwanttoview,thenpresssubmittoapplythe
+filterstothedataanalysisgrid.
+DTCCCDSKineticsGUIGuide
+CDSKineticsHomePage/Dashboard- ReportSetup 8
+
+---
+
+## Page 9
+
+InstrumentTypeFilters
+Youcanfilterunderlyingdatatoreturnspecificinstrumenttypes.
+l CDS(SingleName):Filtersdatabycompanynameorgovernmententity.
+l CDX(Index):Filtersapooledsetofunderlyingentities.
+l CDT(Tranched):Filtersasubsetofindicesaccordingtospecifictranches.
+DateFilters
+Youcanrunanunfilteredsearchtorendertheentireuniverseofinstrumentsinthedatabaseforthe
+latestdate.Alternatively,youcanviewdataforaspecificweekorweeks,specifyingthebeginningand
+enddatesintherespectivefield.
+l Toviewdataforasingleweek,choosethesameWeekBeginningDateandWeekEndDatefora
+givenFriday.Thesystemrendersthelatestdataavailableontheselecteddate.
+l Toviewdateforarangeofweeks,useacombinationoftheWeekBeginningDateandWeekEnd
+Datefields(alwaysFridays).
+CDS(SingleName)Filters
+Dependingontheselectedinstrumenttype,theuserinterfaceexposesadditionalfilters.After
+selectingtheinstrumenttype,youcanselectadditionalfiltersspecifictothatinstrument.Ifyoudo
+selectafilteroptionfromaspecificfield,theresultswillincludeallunderlyingdatarelatedtothatdata
+characteristic.
+DTCCCDSKineticsGUIGuide
+CDSKineticsHomePage/Dashboard- ReportSetup 9
+
+---
+
+## Page 10
+
+FilterName Description
+SingleReference
+EntityName Selecttheunderlyingcompaniesorgovernmententitiestoincludeinthefiltereddata.
+MarketType Selectthetypesofmarketdatatoincludeinthefiltereddata.
+l BASICMATERIALS
+l CONSUMERGOODS
+l CONSUMERSERVICES
+l ENERGY
+l FINANCIALS
+l GOVERNMENT
+l HEALTHCARE
+l INDUSTRIALS
+l OIL&GAS
+l TECHNOLOGY
+l TELECOMMUMNICATIONSERVICES
+l UTILITIES
+CDS(SingleName)Filters
+DTCCCDSKineticsGUIGuide
+CDSKineticsHomePage/Dashboard- ReportSetup 10
+
+---
+
+## Page 11
+
+FilterName Description
+MarketSector Selectthemarketsectordata(forexample,ConsumerServices)toincludeinthefiltereddata.
+Optionsinclude:
+l CMBS(CommercialMortgage-BackedSecurities)
+l CORP(Corporates)
+l ECMBS(EuropeanCommercialMortgage-BackedSecurities)
+l ELCDS(EuropeanLoanCreditDefaultSwaps)
+l ERMBS(EuropeanResidentialMortgage-BackSecurities)
+l LCDS(LoanonCreditDefaultSwap)
+l MUNI(MunionCreditDefaultSwap)
+l RMBS(ResidentialMortgage-BackSecurities)
+l SOV(SovereignCreditDefaultSwap)
+l STATBODY(GovernmentSecurities)
+l STATE(Quasi-GovernmentControlledSecurities)
+l SWAPTION(OptionCreditDefaultSwap)
+D.C.Region Selecttheentity'sdomicileregiontoincludeinthefiltereddata.Optionsinclude:
+l AMERICAS
+l AUSTRALIANZ
+l EUROPE
+l JAPAN
+CDX(Index)Filters
+Dependingontheselectedinstrumenttype,theuserinterfaceexposesadditionalfilters.After
+selectingtheinstrumenttype,youcanselectadditionalfiltersspecifictothatinstrument.Ifyoudo
+selectafilteroptionfromaspecificfield,theresultswillincludeallunderlyingdatarelatedtothatdata
+characteristic.
+DTCCCDSKineticsGUIGuide
+CDSKineticsHomePage/Dashboard- ReportSetup 11
+
+---
+
+## Page 12
+
+FilterName Notes
+IndexReferenceName Selectoneormoreindicestoincludeinthefilteredresults.
+Tranched/Untranched SelectwhethertoincludeeitherTranchedorUntrancheddatainthefiltered
+results.
+IfyouselectonlyTranched,theIndexReferenceNamefieldonlycontains
+tranchedindices.IfyouselectUntranched,theIndexReferenceNamefield
+onlycontainsuntranchedindices.
+OntheRun/OfftheRun SelecttoincludeOntheRun,OfftheRun,orbothtypesinthefiltered
+results.
+IndexFamilyName Selectthefamilynametypes(forexample,FixedIncome)toincludeinthe
+filteredresults.
+l AgencyPool
+l CMBS
+l EmergingMarket
+l FixedIncome
+l HighYield
+l ITRAXX
+l Muni
+l InvestmentGrade
+l MBS
+l SWAPTION
+CDX(Index)Filters
+DTCCCDSKineticsGUIGuide
+CDSKineticsHomePage/Dashboard- ReportSetup 12
+
+---
+
+## Page 13
+
+FilterName Notes
+GeographicRegion Selectthegeographicregionstoincludeinthefilteredresults.
+l EmergingMarkets
+l ASIAEX-JAPAN
+l AUSTRALIA
+l JAPAN
+l NorthAmerica
+l US
+l EUROPE
+Subproducttype Selectthesub-producttypestoincludeinthefilteredresults:
+l All
+l Index
+l [[Option]]
+CDX(Index)Filters(continued)
+CDS(Tranched)Filters
+Dependingontheselectedinstrumenttype,theuserinterfaceexposesadditionalfilters.After
+selectingtheinstrumenttype,youcanselectadditionalfiltersspecifictothatinstrument.Ifyoudo
+selectafilteroptionfromaspecificfield,theresultswillincludeallunderlyingdatarelatedtothatdata
+characteristic.
+SelectionsunderCDS(Tranched)areasubsetoftheCDS(Index)instrumentsincludingonlythose
+thataretranched.
+DTCCCDSKineticsGUIGuide
+CDSKineticsHomePage/Dashboard- ReportSetup 13
+
+---
+
+## Page 14
+
+FilterName Notes
+IndexReferenceName Selectoneormoretranchedindicestoincludeinthefiltered
+results.
+Tranched/Untranched Thisfieldispre-populatedtofilterforTranchedindices.Press
+SubmittoseethepopulatedofTranchedproductsforagiven
+date.
+OntheRun/OfftheRun SelecttoincludeOntheRun,OfftheRun,orbothtypesinthe
+filteredresults.
+IndexFamilyName Selectthefamilynametypes(forexample,FixedIncome)to
+includeinthefilteredresults.
+CDS(Tranched)Filters
+DTCCCDSKineticsGUIGuide
+CDSKineticsHomePage/Dashboard- ReportSetup 14
+
+---
+
+## Page 15
+
+FilterName Notes
+GeographicRegion Selectthegeographicregionstoincludeinthefilteredresults.
+l EmergingMarkets
+l ASIAEX-JAPAN
+l AUSTRALIA
+l JAPAN
+l NorthAmerica
+l US
+l EUROPEA
+Subproducttype Selectthesub-producttypestoincludeinthefilteredresults:
+l All
+l Index
+l [[Option]]
+CDS(Tranched)Filters(continued)
+ReportNavigation/ HeaderOptions
+Allreportheaderscontainnavigationicons.
+DTCCCDSKineticsGUIGuide
+CDSKineticsHomePage/Dashboard- ReportSetup 15
+
+---
+
+## Page 16
+
+Icon Description
+FavoriteReport ClickthisicontocreateashortcutontheDashboardusingthedefault
+reportnameandanydefaultparameters.Whenyouclicktheshortcutfrom
+thehomepage,theunfilteredreportqueryopens.
+Whenareportisactive,clicktheFavoriteReporticontoaddittoyour
+Favorites.Abluestar
+ indicatesthatthereportisaFavoriteonour
+homepage.
+PressthebluestartoremoveareportfromyourFavorites.Agraystar
+indicatesthatthereportisnotoneofyourFavorites
+ .
+PinnedReport Clickthisicontocreateauser-namedshortcutontheDashboardtoopen
+aquerywiththesamefiltersandcolumnsettingsappliedaswhenyou
+pinnedthereport.
+Whenareportisactive,clickthePinnedreporticonandnameitonthe
+dialogthatappearstoaddittoyourPinnedReports.Abluepin
+indicatesthatthecurrentreportispinnedonyourHomepage.
+Note: Theuser-definedpinnameonlyrelatestotheshortcutyoucreate.It
+doesnotchangethedefaultreportname.
+PressthebluepintoremoveareportfromthelistofyourPinnedreports.A
+graypinindicatesthatthereportisnotonthelistofyourpinnedreports
+.
+NewWeaverTab ClickthisicontoopenanewtabontotheWeaverDashboard.
+RefreshDataSet Clickthisicontoquerythedatabaseandrefreshthedataset.
+ExportReportData Clickthisiconandselectanoptiontoexportdataintheactivereporttoan
+Excel,CSV,orPDFfile.Thereportissavedtothedefaultlocationspecified
+inyourbrowsersettings.
+DataSetPara-
+meters
+ClickthisicontoexpandandcollapsethelistofDatasetParametersusedto
+generatethereport.
+DTCCCDSKineticsGUIGuide
+CDSKineticsHomePage/Dashboard- ReportSetup 16
+
+---
+
+## Page 17
+
+CDSKINETICSDATAANALYSIS
+Afterthesystemreturnsunderlyingdataaccordingtothefiltersyouset,youcanviewandexaminethe
+dataontheresultspage.
+Usethenavigationcontrolsatthebottomofthegridtoviewadditionalrecords.
+Usethesearchfieldtofilterthevisibleresultsbasedonyourinput.
+SummaryView
+TheSummaryViewpresentsallunderlyingfiltereddata,includingthedatasetparametersyou
+specified,inaflatformatthatdisplaysallapplicabledatafields.
+DetailedView
+Thedetailedviewdisplaysthedata,alsoinagridformat,butwithadditionalanalysis.
+DTCCCDSKineticsGUIGuide
+CDSKineticsDataAnalysis 17
+
+---
+
+## Page 18
+
+DTCCCDSKineticsGUIGuide
+CDSKineticsDataAnalysis 18
+
+---
+
+## Page 19
+
+Youcancustomizethecolumnstoshowonlythedatafieldsyouwanttoview.Youcanchangewhat
+dataisdisplayedby:
+l specifyingonlyspecificdatafields.
+l usingthepredictivesearchfunctionalitytofurtherlimittheresults;forexample,ifyoutypebasicin
+thesearchfield,thevisibledataautomaticallyfilterstoincludeonlydataintheBASICMATERIALS
+sector.
+Youcansavecustomcolumnsettingsasafavoritetoviewthesamedatacolumnsforthespecificin
+futuresessions.
+DTCCCDSKineticsGUIGuide
+CDSKineticsDataAnalysis 19
+
+---
+
+## Page 20
+
+Inadditiontoaviewofthedatagrid,hyperlinksonforeachReferenceEntityorIndexopenachartfor
+thatparticularentityorindex.Alongwithahigh-levelsummaryofperformance,adynamicvisualchart
+enablesexaminationofthespecificdatacharacteristicsonspecificweeksoverauser-selectperiod(6
+months,1year,5years).
+SamplePercentageView
+Amount View
+l WeeklyGrossNational(%)orGrossNotionalOutstanding($)
+l WeeklyChangeNetNotional(%)orNetNotionalOutstanding
+l WeeklyChangeinContracts(%)orNumberofContract
+Foreachcategory,youcanviewavisualtimelineovertheselectedhorizonorhoveroveraspecific
+datapointtoseetheexactvaluesonthatdate.
+ReportNavigation/ HeaderOptions
+Allreportheaderscontainnavigationicons.
+DTCCCDSKineticsGUIGuide
+CDSKineticsDataAnalysis 20
+
+---
+
+## Page 21
+
+Icon Description
+FavoriteReport ClickthisicontocreateashortcutontheDashboardusingthedefault
+reportnameandanydefaultparameters.Whenyouclicktheshortcutfrom
+thehomepage,theunfilteredreportqueryopens.
+Whenareportisactive,clicktheFavoriteReporticontoaddittoyour
+Favorites.Abluestar
+ indicatesthatthereportisaFavoriteonour
+homepage.
+PressthebluestartoremoveareportfromyourFavorites.Agraystar
+indicatesthatthereportisnotoneofyourFavorites
+ .
+PinnedReport Clickthisicontocreateauser-namedshortcutontheDashboardtoopen
+aquerywiththesamefiltersandcolumnsettingsappliedaswhenyou
+pinnedthereport.
+Whenareportisactive,clickthePinnedreporticonandnameitonthe
+dialogthatappearstoaddittoyourPinnedReports.Abluepin
+indicatesthatthecurrentreportispinnedonyourHomepage.
+Note: Theuser-definedpinnameonlyrelatestotheshortcutyoucreate.It
+doesnotchangethedefaultreportname.
+PressthebluepintoremoveareportfromthelistofyourPinnedreports.A
+graypinindicatesthatthereportisnotonthelistofyourpinnedreports
+.
+NewWeaverTab ClickthisicontoopenanewtabontotheWeaverDashboard.
+RefreshDataSet Clickthisicontoquerythedatabaseandrefreshthedataset.
+ExportReportData Clickthisiconandselectanoptiontoexportdataintheactivereporttoan
+Excel,CSV,orPDFfile.Thereportissavedtothedefaultlocationspecified
+inyourbrowsersettings.
+DataSetPara-
+meters
+ClickthisicontoexpandandcollapsethelistofDatasetParametersusedto
+generatethereport.
+DTCCCDSKineticsGUIGuide
+CDSKineticsDataAnalysis 21
+
+---
+
+## Page 22
+
+©2023.Allrightsreserved.[[DTCC]],[[DTCC]](Stylized)andFinancialMarkets.Forward.areregisteredandunregistered
+trademarksofTheDepositoryTrust&ClearingCorporationDTCC.Theservicesdescribedhereinareprovidedunder
+the“[[DTCC]]”brandnamebycertainaffiliatesofTheDepositoryTrust&ClearingCorporation(“[[DTCC]]”).DTCCitself
+doesnotprovidesuchservices.Eachoftheseaffiliatesisaseparatelegalentity,subjecttothelawsandregulationsof
+theparticularcountryorcountriesinwhichsuchentityoperates.Pleaseseewww.[[DTCC]].comformoreinformationon
+[[DTCC]],itsaffiliatesandtheservicestheyoffer.
+DocDate:October17,2023
+PublicationCode:DAT312
+Service:CDSKinetics
+Title:GUIGuide
+ForMoreInformation
+EmailDTCCLearningat:
+DTCCLearning@[[DTCC]].com
+orvisitusonthewebat:
+www.dtcclearning.com

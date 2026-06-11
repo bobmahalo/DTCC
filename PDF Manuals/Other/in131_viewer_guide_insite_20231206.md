@@ -1,0 +1,202 @@
+---
+title: "inSITE: Viewer Guide for TradeSuite ID and CTM Trades"
+source_pdf: "file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/in131_viewer_guide_insite_20231206.pdf"
+pages: 9
+size: "446.4 KB"
+category: "Other"
+ingested_on: "2026-06-05"
+---
+
+# inSITE: Viewer Guide for TradeSuite ID and CTM Trades
+
+**Original File:** [in131_viewer_guide_insite_20231206.pdf](file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/in131_viewer_guide_insite_20231206.pdf)  
+**Category:** Other  
+**Total Pages:** 9  
+**File Size:** 446.4 KB  
+
+---
+
+## Page 1
+
+inSITE™
+INSITE:VIEWERGUIDEFORTRADESUITEID
+ANDCTMTRADES
+DECEMBER06,2023
+
+---
+
+## Page 2
+
+TABLEOFCONTENTS
+Preface 3
+Audience 3
+ChangesinThisVersionoftheDocument 3
+RelatedDocumentsandTraining 4
+Questions? 4
+UsinginSITEtoViewConfirmDisclosures 5
+Introduction 5
+AccessingDisclosures 5
+ViewingDisclosures 5
+OpeningDisclosureDetails 7
+DownloadingDisclosures 8
+DisconnectingfrominSITE 8
+inSITE:ViewerGuideforTradeSuiteIDandCTMTrades
+TableOfContents 2
+
+---
+
+## Page 3
+
+PREFACE
+ThisuserguidedescribeshowtousetheinSITE™serviceintheroleofViewer.TheinSITEserviceisaweb-
+basedrepositoryforstoringconfirmationdisclosures.
+TheinSITEserviceallowsbroker/dealerstoposttheirdisclosurestotheinSITEservicewebsitebasedon
+establishedenrichmentprofilecriteriathatgeneratesareferencenumberuniquetothatspecificdisclosure
+document.TheCTMorTradeSuiteIDconfirmsubmittedbybroker/dealersisthenenrichedwiththeinSITE
+serviceURLandreferencenumberassignedtotherelevantdisclosure.AspartoftheexistingCTMand
+TradeSuiteIDprocesses,theenrichedconfirmwillbedistributedtoallpartiesofthetrade.Investmentmanagers
+andpartiestothetradecanthenusetheURLandreferencenumbertoviewtheassociatedconfirmdisclosureon
+theinSITEuserinterface.
+Note
+DTCCreceiveda“no-action”letterfromtheUSSecuritiesandExchangeCommission([[SEC]]),sothissolution
+complieswithrule10b-10andthelegalrequirementtodeliverconfirmdisclosureselectronically.
+Providingtheconfirmdisclosurewiththetradeconfirmreducescostsforbroker/dealers,sincetheycaneliminate
+themailingofpaperconfirms.Theonlinerepositoryhastwoparts:
+l [[Broker]]/dealerscanuploaddisclosurestoaweb-basedrepository.
+l InvestmentmanagersandtradingpartiesviewdisclosuresbyusinganURLanddisclosurereferencenumber.
+Thisguideprovidesinformationonhowtologonandviewdisclosuredocuments.
+Audience
+Thisguideisforinvestmentmanagers,counterparties,andotherinterestedpartiesthatneedtoviewaconfirm
+disclosureassociatedwithatrade.
+ChangesinThisVersionoftheDocument
+ThisversioncontainsinformationrelatedtobothCTMandTradeSuiteIDdisclosures.Thisinformationwas
+previouslydeliveredinseparateguides.
+ThisversionlinkstoanewinSITEURL.
+ThisversionalsocontainsupdatedscreenshotsthatreflectupdatesintheViewersite.
+inSITE:ViewerGuideforTradeSuiteIDandCTMTrades
+Preface 3
+
+---
+
+## Page 4
+
+RelatedDocumentsandTraining
+Forrelateddocumentsandtraining,seeinSITE®ontheDTCCLearningCenter.
+Questions?
+TheClientCenterprovidesgeneralassistanceandtechnicalhelp.Visitto:
+l Enteraservicerequestorcheckthestatusofanexistingservicerequest.
+l Searchtheknowledgebase.
+l Obtaincontactinformation.
+inSITE:ViewerGuideforTradeSuiteIDandCTMTrades
+Preface 4
+
+---
+
+## Page 5
+
+USINGINSITETOVIEWCONFIRM
+DISCLOSURES
+Introduction
+UsingtheViewerrole,theinSITEserviceallowsinvestmentmanagers,counterparties,andotherinterested
+partiestheabilitytoviewaconfirmdisclosureassociatedwithatrade.Viewerswithaccesstotheelectronicor
+paperconfirmcanusetheDisclosureReferenceNumbertoviewthedetailsofadisclosuredocument.
+AccessingDisclosures
+Thissectionoutlineshowtoview,open,anddownloaddisclosures.
+ViewingDisclosures
+Toviewadisclosuredocument:
+1. AccesstheinSITEserviceinyourbrowser.
+TheViewaConfirmDisclosureDocumentwindowdisplays(Figure1.1).
+Figure1.1ViewaConfirmDisclosureDocument
+inSITE:ViewerGuideforTradeSuiteIDandCTMTrades
+UsingInSITEToViewConfirmDisclosures 5
+
+---
+
+## Page 6
+
+2. EnterthedisclosurenumberintheDisclosureReferenceNumberfield(availableonyourelectronicorprin-
+tedconfirm).
+3. EnterthesecuritycodetextthatappearsintheEnterSecurityCodefield,andthenclickFindDocument.
+l Ifyouenteredcorrectinformation,theConfirmDisclosureDocumentwindowdisplays(Figure1.3).
+l IftheSecurityCodeisinvalid,thefollowingmessageappearsinred:SecurityCodedoesnotmatchwith
+securitycodeshown.Pleasetryagain..Windowdisplaysanewsecuritycode.Re-enterthenewsecurity
+codeintheEnterSecurityCodefieldandthenclickFindDocument.
+l IfthedocumentisnotfoundfortheDisclosureReferenceNumberyouentered,anerrorbannerdisplays
+themessage(seeFigure1.2).Re-entertheinformationandclickFindDocument.
+Figure1.2NoDocumentFoundWithReferenceNumber
+inSITE:ViewerGuideforTradeSuiteIDandCTMTrades
+UsingInSITEToViewConfirmDisclosures 6
+
+---
+
+## Page 7
+
+OpeningDisclosureDetails
+TheinSITEservicerequiresinstallationofAdobe®readertoopenadisclosure.Ifstep#3intheprevious
+procedurewassuccessful,theinSITEuserinterfacedisplaysasummaryofthedisclosure(Figure1.3).
+Figure1.3ConfirmDisclosureDocument
+Table1.1describesthefieldsandlinksontheConfirmDisclosureDocumentwindow.
+FieldorLink Description
+DisclosureReference
+Number
+ThisisthedisclosurereferencenumberenteredontheViewingpage(Figure1.1).Clickthenumbertoviewa
+PDFofthedocument.
+Description/Reason Optionaltextusedbytheexecutingbroker/dealerthatdescribesthedisclosuredocument.
+DocumentStatus Definesthecurrentstatusofthedisclosuredocument.Possiblevaluesare:
+l In-Use—Disclosuredocumentisactiveandcanbeassociatedwithcurrenttrades.
+l Retired—Disclosuredocumentisscheduledfordeactivationorisalreadydeactivatedandnolongerasso-
+ciatedwithcurrenttrades.
+UploadDate ThedatethatthedisclosuredocumentwasfirstuploadedtotheinSITEservice.
+RetiredDate Ifapplicable,thedatethatthedisclosuredocumentwasdeactivatedorisscheduledfordeactivation.
+LookupAnotherDocu-
+ment?
+ClickthislinktoreturntotheViewingpage(Figure1.1)andviewanotherdisclosuredocument.
+Table1.1ConfirmDisclosureDocumentFields
+inSITE:ViewerGuideforTradeSuiteIDandCTMTrades
+UsingInSITEToViewConfirmDisclosures 7
+
+---
+
+## Page 8
+
+FieldorLink Description
+WhatisaPDF? ClickthislinktoreadabriefdescriptionofPDFfiles,whichDTCCusesforpurposesofsecurityandglobal
+accessibility.
+ClickthislinktodownloadReaderfromtheAdobewebsite.
+Table1.1ConfirmDisclosureDocumentFields
+DownloadingDisclosures
+OntheConfirmDisclosureDocumentwindow,youcanclicktheuniquedisclosurereferencenumbertoopenor
+savethePDFdocument.
+TodownloadaPDFoftheconfirmdisclosuredocument:
+1. OntheConfirmDisclosureDocumentwindow(Figure3),clickthenumberintheDisclosureReference
+Numberfield.DependingonyourMicrosoft®Edgebrowserversion,amessageappearswiththeoptionsto
+Open,Save,orCancelasfollows:
+l ClickOpentoopenaPDFoftheconfirmdisclosuredocumentintheReaderviewer(Figure1.4).
+Figure1.4PDFImageofaConfirmDisclosureDocument
+l ClickSavetosavethePDFfiletoeitheranetworkdriveortheharddriveonyourcomputer.IntheSaveAs
+dialogbox,specifythefilepathandfilenameforthedocument,andthenclickSave.
+l ClickCanceltoclosethemessagewithoutopeningorsavingthePDFfile.
+DisconnectingfrominSITE
+CloseyourbrowserwindowtodisconnecttheinSITEservice.
+inSITE:ViewerGuideforTradeSuiteIDandCTMTrades
+UsingInSITEToViewConfirmDisclosures 8
+
+---
+
+## Page 9
+
+©2023Allrightsreserved.[[DTCC]],[[DTCC]](Stylized)andFinancialMarkets.Forward.areregisteredandunregistered
+trademarksofTheDepositoryTrust&ClearingCorporationDTCC.Theservicesdescribedhereinareprovidedunder
+the“[[DTCC]]”brandnamebycertainaffiliatesofTheDepositoryTrust&ClearingCorporation(“[[DTCC]]”).DTCCitself
+doesnotprovidesuchservices.Eachoftheseaffiliatesisaseparatelegalentity,subjecttothelawsandregulationsof
+theparticularcountryorcountriesinwhichsuchentityoperates.Pleaseseewww.[[DTCC]].comformoreinformationon
+[[DTCC]],itsaffiliatesandtheservicestheyoffer.
+DocDate:December06,2023
+PublicationCode:IN131
+Service:inSITE
+Title:inSITE:ViewerGuideforTradeSuiteIDandCTMTrades
+ForMoreInformation
+EmailDTCCLearningat:
+DTCCLearning@[[DTCC]].com
+orvisitusonthewebat:
+www.dtcclearning.com

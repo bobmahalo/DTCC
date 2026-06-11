@@ -1,0 +1,1821 @@
+---
+title: "Limit Monitoring Help"
+source_pdf: "file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/limit-monitoring.pdf"
+pages: 104
+size: "3776.5 KB"
+category: "Other"
+ingested_on: "2026-06-05"
+---
+
+# Limit Monitoring Help
+
+**Original File:** [limit-monitoring.pdf](file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/limit-monitoring.pdf)  
+**Category:** Other  
+**Total Pages:** 104  
+**File Size:** 3776.5 KB  
+
+---
+
+## Page 1
+
+LIMIT MONITORING
+[[DTCC]] LIMIT MONITORING
+MARCH 9, 2022
+
+
+---
+
+## Page 2
+
+©2023. Allrightsreserved.[[DTCC]],[[DTCC]](Stylized),ADVANCINGFINANCIALMARKETS.
+TOGETHER,andtheInterlockergraphicareregisteredandunregisteredtrademarksofTheDepository
+Trust&ClearingCorporation.
+Theservicesdescribedhereinareprovidedunderthe“[[DTCC]]”brandnamebycertainaffiliatesofThe
+DepositoryTrust&ClearingCorporation(“[[DTCC]]”).DTCCitselfdoesnotprovidesuchservices.Eachof
+theseaffiliatesisaseparatelegalentity,subjecttothelawsandregulationsoftheparticularcountryor
+countriesinwhichsuchentityoperates.Pleaseseewww.[[DTCC]].comformoreinformationonDTCC,its
+affiliatesandtheservicestheyoffer.
+
+---
+
+## Page 3
+
+TABLEOFCONTENTS
+Welcome 5
+AboutLimitMonitoring 5
+ContactUs 7
+AccessingYourClearingAccounts 7
+UsingLimitMonitoring 9
+ExtensionGuidelines 11
+AboutRiskEntities 12
+SpecifyingWhichTradesBelongtoaSpecificRiskEntity 13
+AboutTradeArrays 15
+ModifyingTradeArrays 22
+ViewingRiskEntities 26
+AddingRiskEntities 28
+ViewingRiskEntityDefinitions 32
+SearchRiskEntitybyDefinition 34
+ManagingRiskEntities 39
+ModifyingRiskEntities 39
+UpdatingRiskEntityLimits 42
+ModifyingRiskEntityDefinitions 45
+DeletingRiskEntities 48
+UndoingPendingDeleteRiskEntities 51
+AboutLimitsandAlert Types 52
+RiskLimitDefinitions 53
+
+---
+
+## Page 4
+
+SetOnlyRelevantLimits 53
+ViewingAlerts 54
+AbouttheStartofDayPosition 60
+ViewingPositions 61
+ViewingPositionDetails 63
+AddingStartofDayPositions 67
+ManagingPositions 69
+UpdatingPositions 70
+ExportingtoExcel 72
+DeletingPositions 72
+DrillingDownThroughPositionData 75
+DrillingDownFromRiskEntities 76
+DrillingDownFromAlerts 84
+UsingtheBreadcrumbTrail 86
+ManagingContacts 88
+EndofDayReports 98
+Glossary 100
+
+---
+
+## Page 5
+
+AboutLimitMonitoring 5
+Welcome
+WelcometotheDTCCLimitMonitoringhelp.Enteraterminthesearchtoaccessinformation,orclickanitemonthe
+leftmenutoviewthetopic.TodownloadthePDFversionofthishelp,clickthe
+ PDFicon,ashighlightedinthe
+followingfigure:
+ABOUTLIMITMONITORING
+LimitMonitoringisaweb-based,nearreal-time,post-tradeequityriskmonitoringtoolthatprovidesmemberfirmswith
+anupdatedsnapshotoftheirownbusinessunits'andoftheircorrespondents'andclients’tradingactivities.
+LeveragingNSCC'sroleasthecentralcounterpartyfortheU.S.equitiesmarket,LimitMonitoringprovidesmember
+firmswithnearreal-timetradeinformationinacentralizedandstandardmethod.
+TheadvantagesofLimitMonitoringallbeginwithitsqualitypoolofdata.Thetooloffersaccesstothelargest
+aggregatetradinginformationintheU.S.equitymarketplace.[[DTCC]]'sclearingdatacombinesvirtuallyallbroker-to-
+brokerequity,listedcorporateandmunicipalbond,andUITtradingintheU.S.,originatingfromallexchanges,
+electronictradingsystemsandliquiditydestinations.Additionally,LimitMonitoringeliminatesthenoisefrommillions
+ofcanceledordersintoday'smarketsbyonlyreportingexecutedtrades.
+LimitMonitoringenablesNSCCmemberfirmsto:
+l Organizetheirfirm'sunsettledtradesintounitsfortrackingexposure,knownasriskentities.
+l Definethenet-notionalrisklimitforeachriskentity.
+LimitMonitoring
+
+---
+
+## Page 6
+
+AboutLimitMonitoring 6
+l Modifyrisklimits.
+l Submitstartofdayexposureinformation.
+Thetoolalso:
+l AllowsuserstodrilldownfromtheriskentityexposureleveltotheCUSIPandtotheindividualtradelevel.
+l Provideson-screenandelectronicalerts(systemic&email)earlywarningsasexposuresapproachlimits.
+GiventheimportanceofprovidingNSCCmemberswiththeabilitytoconductpost-tradesurveillanceandthecritical
+roleexposuremonitoringplaysinpreventingrisksassociatedwithtradingtechnologyerrors,theLimitMonitoringtool
+isavailabletoallNSCCmembers.NSCCrequiresthatthefollowingNSCCmembersregisterandutilizetheLimit
+Monitoringtool:
+l AnyNSCCfullservicememberthatclearsforothers.
+l AnyNSCCfullservicememberthatsubmitstransactionstoNSCC’stradecapturesystemonbehalfofacor-
+respondenteitherasaQualifiedSpecialRepresentative(QSR)orspecialrepresentative.
+l AnyNSCCfullservicememberthathasestablishedasubmittingfirm(9a)andcounterpartyfirm(9b)relationship
+toallowanotherNSCCmember,eitheraQSRorspecialrepresentative,tosubmitlockedintradedataonits
+behalf.
+LimitMonitoring
+
+---
+
+## Page 7
+
+AboutLimitMonitoring 7
+ContactUs
+UsethefollowingNSCCcontactsforinformationaboutLimitMonitoring.YoucanalsocontactyourDTCC
+RelationshipManagerorobtaingeneralassistancebyvisitingtheDTCCClientCenter.
+For... Contact...
+Generalquestionsandproduct
+support
+NSCCSupportbyemailatNSCCSupport@[[DTCC]].com.
+Setupandtesting NSCCIntegrationbyemailatNSCCIntegration@[[DTCC]].com.
+Issueswithloggingontothe
+system DTCCClientSupport.Callthefollowingnumber,andthenfollowtheprompt
+forproductsupport.
+o ForUSandCanada,call1888–382–2721.
+o FortheUK,Europe,andAsia,call+1212–855–8099.
+AccessingYourClearingAccounts
+Youcandisplayonlytheclearingaccountstowhichyouhaveaccess.Youraccessisdeterminedbythepermissions
+establishedforyoubyyourfirm'ssuperaccesscoordinator(SAC),accordingtoyourfirm'spoliciesandprocedures.
+ContacttheSACatyourfirmtoobtainpermissionandsetupyouraccount.
+ToaccessDTCC LimitMonitoring:
+1. SignintotheDTCC portalavailableathttps://portal.[[DTCC]].com/.
+2. SelectClearingDashboard,asshowninthefollowingfigure:
+LimitMonitoring
+
+---
+
+## Page 8
+
+AboutLimitMonitoring 8
+3. SelectDTCC LimitMonitoringTool(PTM),asshowninthefollowingfigure:
+LimitMonitoring
+
+---
+
+## Page 9
+
+AboutLimitMonitoring 9
+4. TheLimitMonitoringhomepageappears,asshowninthefollowingfigure:
+Thefollowingfeaturesareavailable:
+l RiskEntities&Alerts
+l StartOfDay
+l ManagingContacts
+ToaccesstheonlinehelpfromwithintheLimitMonitoringapplication,clickhelpinthetopright.Toobtain
+permissionandsetupyouraccount,contactyourfirm'ssuperaccesscoordinator(SAC).
+UsingLimitMonitoring
+IfyouarejuststartingoutwithLimitMonitoring,thefollowingmaybenewtoyou:
+l Riskentitiesandtradearrays
+l Startofdayposition
+l Positionmonitoringandalerts
+l End-of-dayreporting
+Thispagecontainsabriefsummaryofeachoftheseimportantconcepts.
+RiskEntitiesandTradeArrays
+Withyourinput,LimitMonitoringorganizesyourtradesintounitsthatmakesenseforyouandthenassignrisk
+limitstothoseunits.InLimitMonitoring,theseunitsoftradesthatyoudefineareknownasriskentities.Within
+eachriskentity,usetradearraystoprovidethecriteriathatidentifiesthetradesbelongingtothatriskentity.For
+moreinformation,see:
+LimitMonitoring
+
+---
+
+## Page 10
+
+AboutLimitMonitoring 10
+l AboutRiskEntities
+l AboutTradeArrays
+l AddingRiskEntities
+l ViewingRiskEntities
+l ModifyingRiskEntities
+l DeletingRiskEntities
+StartofDayPosition
+YouhavetheoptionofsubmittingyourstartofdaypositionstoLimitMonitoringeitherbyfilesubmissionorbythe
+webinterface.ThestartofdaypositiontypicallycontainsyourunsettledtradesfromT1throughT2andfails.The
+currentexposureisalwaysyourstartofdaypositionplusyourdailyactivity.Formoreinformation,see:
+l AbouttheStartofDayPosition
+l AddingStartofDayPositions
+MonitoringPositionsandAlerts
+LimitMonitoringprovidesavarietyofwaysforyoutoinquireaboutandmonitoryourpositions.Iftradingnearsor
+exceedsthewarningthresholdsandlimitsyouestablishedwhenyousetupyourriskentities,LimitMonitoring
+notifiesyouthroughscreenalertsandelectronicmessages.Electronicmessagesaredeliveredtoyourfirm
+throughthesystem,byemail,orboth.Formoreinformation,see:
+l DrillingDownThroughPositionData
+l ViewingAlerts
+End-of-DayReport
+AttheendofeachbusinessdayLimitMonitoringsendsasetofmachine-readableoutput(MRO)filesthatprovide
+clearingmemberswithyourend-of-daypositionsandrelateddetails.Formoreinformation,seeEndofDay
+Reports.
+LimitMonitoring
+
+---
+
+## Page 11
+
+AboutLimitMonitoring 11
+ExtensionGuidelines
+Ifanextensionisneededforanyinputsubmission,firmsshoulduseoneofthefollowingmethodstoobtainsupport:
+l EmailNSCCSupportatNSCCSupport@[[DTCC]].com.
+l TelephoneDTCCClientSupportat1-888-382-2721andfollowthepromptforproductionsupport.
+LimitMonitoring
+
+---
+
+## Page 12
+
+AboutRiskEntities 12
+ABOUTRISKENTITIES
+InLimitMonitoring,defineyourdatastructureandrelationshipsfortheentitiesforwhichyouwanttoassignrisklimits.
+Youdothisbycreatingriskentities.Ariskentityhastwocomponents:
+l Risklimit
+l Setsofinstructionsthatspecifythetradestowhichyouwanttoapplythoserisklimits(theseareknownastrade
+arrays)
+Note
+LimitMonitoringrisklimitsarenottobeconfusedwithDTCCrisklimits.
+RiskentitiesarebasedonthetradeflowwithineachindividualMPIDormarketmnemonic.Basedontrading
+informationgatheredfromacrossallU.S.markets(andotherliquiditydestinations),LimitMonitoringthencalculates
+theriskentities’positionsandissuesalertswhenthesizeofapositionapproachesorbreachesthelimitthatyouset.
+Giveeachriskentityanamethatmakessensetoyou.Youcanalsoadddescriptivedetailthroughthememofieldfor
+eachriskentity.
+LimitMonitoring
+
+---
+
+## Page 13
+
+AboutRiskEntities 13
+SpecifyingWhichTradesBelongtoaSpecificRiskEntity
+InLimitMonitoring,yousetuponeormoretradearraysforeachriskentitytodefinethetradesthatyouwantincluded
+inthatriskentity.Eachtradearrayismadeupofthefields,asshowninthefigure.Thesefieldsareusedascriteriato
+identifythetradesincludedinaspecificriskentity.
+RiskEntityFields
+LimitMonitoring
+
+---
+
+## Page 14
+
+AboutRiskEntities 14
+LimitMonitoring
+
+---
+
+## Page 15
+
+AboutRiskEntities 15
+AboutTradeArrays
+InLimitMonitoring,yousetuponeormoretradearraysforeachriskentity.Thetradearraysdefinethetradesthat
+youwanttoincludeinthatriskentity.Eachtradearrayismadeupofthefollowingdataelements:
+LimitMonitoring
+
+---
+
+## Page 16
+
+AboutRiskEntities 16
+TradeArrayDataElements
+LimitMonitoring
+
+---
+
+## Page 17
+
+AboutRiskEntities 17
+If,forexample,yourcorrespondenthasoneMPIDandonemnemonic,youcansetuptwoseparatetradearrays
+(onefortheMPIDandtheotherforthemnemonic)andtheoverarchingriskentityencompassesandmonitorsthe
+tradeactivityofthetwo.
+Note
+Whenaddingtrayarrays,ifyouselecteither060- OvertheCounteror100- Correspondent
+Clearingasthesubmittingmarket,youmustperformoneofthefollowingactions:
+l Typetheeight-digitcounterpartyIDintheCounterpartyFirm(9b)field.TheSubmittingFirm(9a)field
+automaticallypopulateswiththeparticipant'sclearingmemberID.
+l Ifthesubmittingfirmisnottheparticipant'sclearingmemberID,typeaneightcharacternumeric
+valueintheSubmittingFirm(9a)field.Inthisscenario,youcannotedittheCounterpartyFirm (9b)
+field.
+ExampleOne
+Youcancreateabroad-reachingriskentitybyusingjustonetradearraythatonlyspecifiestheonerequireddata
+element:theexecutingbroker.Forexample,ariskentitydesignedtorepresentclearingbroker001would
+includeonetradearrayforanMPID providingthefollowinginformation:
+ThefollowingfigureshowshowthistradearrayappearsfromtheAddRiskEntitypageinLimitMonitoring:
+LimitMonitoring
+
+---
+
+## Page 18
+
+AboutRiskEntities 18
+ExampleTwo
+AriskentitydesignedtorepresentoneMPIDandonemnemonicbelongingtothesamecorrespondentclearing
+firmwouldincludetwotradearrays-onefortheMPIDandanotherforthemnemonic.Thisexampleincludesthe
+followinginformation:
+LimitMonitoring
+
+---
+
+## Page 19
+
+AboutRiskEntities 19
+ThefollowingfigureshowshowthistradearrayappearsfromtheAddRiskEntitypageinLimitMonitoring:
+LimitMonitoring
+
+---
+
+## Page 20
+
+AboutRiskEntities 20
+ExampleThree
+Forover-the-counter([[OTC]])orCORR clearingtradeswherethesubmittingfirmisaQSRorSR,firmsthatget
+locked-inonthesetradescancreateariskentitythatiscomposedofonlytradesexecutedbythatQSRorSR.
+Forexample,theremightbe1000tradesforclearingbroker001withamarketofOTC.Ofthose1000trades,
+250tradesmightbesubmittedbyclearingnumber122,theQSR.
+ThisexampleincludesthefollowinginformationofatrayarrayforQSRtrades:
+LimitMonitoring
+
+---
+
+## Page 21
+
+AboutRiskEntities 21
+ThefollowingfigureshowshowthistradearrayappearsfromtheAddRiskEntitypageinLimitMonitoring:
+LimitMonitoring
+
+---
+
+## Page 22
+
+AboutRiskEntities 22
+ModifyingTradeArrays
+Whenyouareeditingariskentity,youcanaddnewtradearrays,modifyexistingtradearrays,anddeletetrade
+arrays.Youcanalsocancelpendingupdatesordeletes.Modificationstotradearraysgointoeffectthenextbusiness
+day.Tolearnmoreaboutmodifyingtrayarrays,expandeachsection.
+AddingTrayArrays
+Toaddanewtradearray:
+1. FollowtheinstructionsforAddingRiskEntitiesorModifyingRiskEntities.
+2. FromtheAddRiskEntityorUpdateRiskEntityDefinitionpage,click
+ AddTradeArray,as
+highlightedinthefollowingfigure:
+3. InthemandatoryExecutingBrokerfield,typetheexecutingbrokerinformation.
+4. Selectthesubmittingmarketfromthelist.
+Note
+Whenaddingtrayarrays,ifyouselecteither060- OvertheCounteror100- Correspondent
+Clearingasthesubmittingmarket,youmustperformoneofthefollowingactions:
+l Typetheeight-digitcounterpartyIDintheCounterpartyFirm(9b)field.TheSubmittingFirm(9a)
+fieldautomaticallypopulateswiththeparticipant'sclearingmemberID.
+l Ifthesubmittingfirmisnottheparticipant'sclearingmemberID,typeaneightcharacternumeric
+valueintheSubmittingFirm(9a)field.Inthisscenario,youcannotedittheCounterpartyFirm 
+(9b)field.
+5. IntheoptionalAccountfield,typetheaccountinformation.
+6. Ifnecessary,addanothertradearraybyclicking
+ AddTradeArrayandcompletingthe
+fields.
+LimitMonitoring
+
+---
+
+## Page 23
+
+AboutRiskEntities 23
+7. FollowtheinstructionsforAddingRiskEntitiesorModifyingRiskEntities.
+8. ClickSave.
+UpdatingTradeArrays
+Toupdateatradearray:
+1. FollowtheinstructionsforModifyingRiskEntities.
+2. FromtheUpdateRiskEntityDefinition,modifyanexistingtradearrayorclick
+ AddTrade
+Array.
+ThefollowingfigureshowstheUpdateRiskEntityDefinitionpagewiththetradearraysectionhighlighted:
+SinceLimitMonitoringprocessesyourtradearrayupdatesovernight,thetradearraygoesintoPending
+Updatestatus.WhenatradearrayisinPendingUpdatestatus,LimitMonitoringdisplaystheiconinthefirst
+columnoftheTradeArrayssection.
+3. ClickSave.
+Thefollowingmessageshowsthatyouhavesuccessfullyupdatedtheriskentity,includingthetradearray
+updates:
+LimitMonitoring
+
+---
+
+## Page 24
+
+AboutRiskEntities 24
+DeletingTradeArrays
+Todeleteanexistingtradearray:
+1. FollowtheinstructionsforModifyingRiskEntities.
+2. FromtheUpdateRiskEntityDefinitionpage,click
+ DeletefromtheActioncolumn,ashighlightedinthe
+followingfigure:
+3. ClickSave.
+UndoingPendingUpdates
+Toundoapendingtradearrayupdate:
+1. FollowtheinstructionsforModifyingRiskEntities.
+2. FromtheUpdateRiskEntityDefinitionpage,click
+ ActivePendingDeleteTradeArrayfromtheAction
+column,ashighlightedinthefollowingfigure:
+Aconfirmationmessageappearsaskingifyouwanttoundothependingtradearrayupdate.
+LimitMonitoring
+
+---
+
+## Page 25
+
+AboutRiskEntities 25
+3. ClickYestoundothependingdelete.
+4. ClickSavetoupdatetheriskentity.
+LimitMonitoring
+
+---
+
+## Page 26
+
+AboutRiskEntities 26
+ViewingRiskEntities
+Youcanviewtheriskentitiesthatyouhavecreated.
+Note
+LimitMonitoringsavesyournewriskentitiesandthenprocessesthemovernight,makingthemactive
+onthefollowingbusinessday.Newriskentitiesthatyouhavecreatedtoday,andthusarenotyet
+active,appearsontheViewRiskEntitiespage.Asabestpractice,youshouldkeeparecordofthedate
+thataparticularriskentitybecomesactive.
+Toviewriskentities:
+1. IfmorethanoneparticipantID isassociatedwithyourfirm,selectaparticipantID,ashighlightedinthefollowing
+figure:
+2. Fromthemainmenu,selectRiskEntities&Alerts>ViewRiskEntities,asshowninthefollowingfigure:
+LimitMonitoring
+
+---
+
+## Page 27
+
+AboutRiskEntities 27
+LimitMonitoringdisplaysalloftheriskentitiesassociatedwiththeparticipant'sclearingmemberID.
+Clickanareatoaccessapop-uptopiccontainingmoreinformationaboutthenavigationfeatures.Toclosethe
+pop-uptopic,clicktheoriginaltopic.
+3. Usethenavigationtoolsavailable:
+o Togobacktoapreviouspage,clickalinkinthebreadcrumbtrail.SeeUsingtheBreadcrumbTrail.
+o
+ToexportthedetailstoMicrosoftExcel,click
+ ExporttoExcel.
+Ifmorethanonepageofdataisreturnedforyourinquiry,youcanfilterthedetails,selectmoreitemsper
+page,ornavigatetoaspecificpage.
+o Tofilterthepositiondetails,typeasearchcriteriainthefilterfield,andthenclick
+ Filter.Youcanfilter
+byanyofthecharacterornumericvaluesthatappearinthecolumns.
+o Toselectmoreitemsperpagethenthedefaultoftenitems,asshowninthefollowingfigure:
+LimitMonitoring
+
+---
+
+## Page 28
+
+AboutRiskEntities 28
+o
+Tonavigatethroughthepages,select
+ First,
+ Previous,
+ Next,or
+ Lastarrow,orby
+selectingaspecificpagenumber,asshowninthefollowingfigure:
+AddingRiskEntities
+RiskEntityisabusinessunitthatyouwanttotrack.Ariskentityconsistsofasinglerisklimitforoneormoretrade
+arrays.Thetradearraysidentifythetradesthatbelongtothatriskentity.
+Note
+LimitMonitoringsavesyournewriskentitiesandthenprocessesthemovernight,makingthemactive
+onthefollowingbusinessday.Asabestpractice,keeparecordofthedatethataparticularriskentity
+becomesactive.Thememofieldisagoodplacetostorethisinformation.Keepinmindthatalthough
+riskentitiesbecomeavailableforuse,changestothembecomeapplicablealmostimmediately.
+Toaddariskentity:
+1. IfmorethanoneclearingmemberID isassociatedwithyourfirm,selectaparticipantID,ashighlightedinthe
+followingfigure:
+SelectingaParticipantID
+2. Fromthemainmenu,selectRiskEntities&Alerts >ViewRiskEntities,asshowninthefollowingfigure:
+LimitMonitoring
+
+---
+
+## Page 29
+
+AboutRiskEntities 29
+LimitMonitoringdisplaysalloftheriskentitiesassociatedwiththeparticipant'sclearingmemberID.
+3. Click
+ AddRiskEntity.
+LimitMonitoring
+
+---
+
+## Page 30
+
+AboutRiskEntities 30
+4. IntherequiredRiskEntityNamefield,typetheriskentityname.
+5. IntheRiskEntityMemofield,typeadescriptionoftheriskentity,phonenumber,noteaboutthelimits,orany
+otherinformationthatpertainstotheriskentity.
+6. Ifyoudonotwanttheriskentitytogeneratealerts,selecttheDoNotMonitoroption,readthemessage,and
+confirmtheactionbyclickingOK.
+Note
+FormembersthatarerequiredtosubscribetoDTCC LimitMonitoringpursuanttotheNSCC rules,
+ensurethatyouhaveatleastoneriskentitywithanassignedtradinglimitthathastheDoNot
+Monitordeselected.RiskentitiesthataredesignatedwithDoNotMonitordonotmeetthe
+[[NSCC]] tradelimitrequirements.Forguidanceregardingbeingcompliantwiththisrule,contactyour
+relationshipmanager.
+7. EnterthenetnotionallimitamountintheNetNotionalAmountfield,ifavailable.Youcannotadddecimalpoints
+orcentsinthelimitamount;however,thethousandscommaispermitted.
+Basedonthelimitamountthatyouenter,LimitMonitoringautomaticallyapplieswarninglevelsasfollows:
+Icon LevelandDescription
+Level1Alert:Indicatesthatyouhavecrossedthe75%threshold.
+Level2Alert:Indicatesthatyouhavecrossedthe90%threshold.
+Level3Alert:Indicatesthatyouhavecrossedthe100%threshold.
+LimitMonitoring
+
+---
+
+## Page 31
+
+AboutRiskEntities 31
+Note
+l IfyouhaveselectedtheDoNotMonitoroption,thenetnotionallimitamountautomatically
+defaultsto0,andyoucannoteditthefield.
+l IfyouhavetheDoNotMonitoroptiondeselected,youmustenteranetnotionallimitamountin
+therequiredfield.
+8. Addeachtrayarrayassociatedwiththeriskentity.Tradearraysserveasselectioncriteriaforthetradesthat
+youwanttoincludeinthisriskentity.Thesetradearraysgointoeffectthenextbusinessday.Thefollowing
+figureshowstheTrayArraysectionoftheAddRiskEntitypage.
+Toaddatrayarray:
+a. InthemandatoryExecutingBrokerfield,typetheexecutingbrokerinformation.
+b. IntheSubmittingMarketfield,selectthesubmittingmarketfromthelist.
+Note
+Whenaddingtrayarrays,ifyouselecteither060- OvertheCounteror100-
+CorrespondentClearingasthesubmittingmarket,youmustperformoneofthefollowing
+actions:
+l Typetheeight-digitcounterpartyIDintheCounterpartyFirm(9b)field.TheSubmittingFirm
+(9a)fieldautomaticallypopulateswiththeparticipant'sclearingmemberID.
+l Ifthesubmittingfirmisnottheparticipant'sclearingmemberID,typeaneightcharacter
+numericvalueintheSubmittingFirm(9a)field.Inthisscenario,youcannotedittheCoun-
+terpartyFirm (9b)field.
+c. IntheoptionalAccountfield,typetheaccountinformation.
+d. Ifnecessary,addanothertradearraybyclicking
+ AddTradeArrayandcompleting
+thefields.
+Toremoveatradearraythatyouhavenotyetsaved:
+LimitMonitoring
+
+---
+
+## Page 32
+
+AboutRiskEntities 32
+Click
+ RemovefromtheActioncolumn.
+Tofiltertradearrays:
+Typethefiltercriteriaandclick
+ Filter.YoucanfilterbyanyofthecolumnsintheTradeArrayssection.
+Formoreinformationabouttradearrays,seeAboutTradeArrays.
+9. ClickSave.
+Thefollowingmessageshowsthatyouhavesuccessfullyaddedtheriskentity:
+ViewingRiskEntityDefinitions
+Ifyouhaveinquiryaccess,youcanview,filter,andexporttheriskentitydefinitions.Youdonothaveupdate
+capabilities.
+Toviewthedefinitionofariskentity:
+1. IfmorethanoneclearingmemberID isassociatedwithyourfirm,selectaparticipantID,ashighlightedinthe
+followingfigure:
+SelectingaParticipantID
+2. Fromthemainmenu,selectRiskEntities&Alerts >ViewRiskEntities,asshowninthefollowingfigure:
+LimitMonitoring
+
+---
+
+## Page 33
+
+AboutRiskEntities 33
+ViewRiskEntities
+3. NoticetheActionitemshows
+ ViewintheViewRiskEntitiespage.
+4. Select
+ ViewRiskEntityDefinitionfromtheActionmenu.
+LimitMonitoring
+
+---
+
+## Page 34
+
+AboutRiskEntities 34
+TheRiskEntityDefinitionscreen,showninthefollowingfigure,appears:
+5. ClickClosetoreturntotheViewRiskEntitiespage.
+SearchRiskEntitybyDefinition
+Tosearchforariskentitiesbydefinition:
+1. Fromthemainmenu,selectRiskEntities&Alerts >SearchRiskEntitybyDefinition,asshowninthe
+followingfigure:
+TheSearchRiskEntitybyDefinition,asshowninthefollowingfigure,appears:
+LimitMonitoring
+
+---
+
+## Page 35
+
+AboutRiskEntities 35
+SearchRiskEntitybyDefinition
+2. Enterasearchcriteriainoneormorefields,andthenclickSearch.
+TheSearchRiskEntitybyDefinitionexpandstoincludethesearchresults,asshowninthefollowingfigure:
+3. ClickalinkfromtheRiskEntityID columntoaccessthePositionsbyRiskEntity.Youcancontinuetoclickthe
+linkstoaccessthePositionsbyTradeArray,PositionsbySecurity,PositionsbyTradeasexplainedinDrilling
+DownFromRiskEntities.
+4. Toviewthedefinitionforaspecificriskentity:
+LimitMonitoring
+
+---
+
+## Page 36
+
+AboutRiskEntities 36
+a. Click
+ ViewRiskEntityDefinition.
+TheRiskEntitybyDefinitionpage,asshowninthefollowingfigure,appears:
+b. Hoveroverthe
+ iconintheStatuscolumntoseewhenthetradearrayiseffective.
+c. Afterreviewingtheinformation,clickClose.
+5. IntheSearchRiskEntitybyDefinitionandRiskEntityDefinitionpages,youcanexportthedetailstoMicrosoft
+Excelbyclicking
+ ExporttoExcel.
+6. Ifmorethanonepageofdataisreturnedforyourinquiry,usethefollowingmethodstoretrievetheinformation:
+o Togobacktoapreviouspage,clickalinkinthebreadcrumbtrail.SeeUsingtheBreadcrumbTrail.
+o
+ToexportthedetailstoMicrosoftExcel,click
+ ExporttoExcel.
+Ifmorethanonepageofdataisreturnedforyourinquiry,youcanfilterthedetails,selectmoreitemsper
+page,ornavigatetoaspecificpage.
+LimitMonitoring
+
+---
+
+## Page 37
+
+AboutRiskEntities 37
+o Tofilterthepositiondetails,typeasearchcriteriainthefilterfield,andthenclick
+ Filter.Youcanfilter
+byanyofthecharacterornumericvaluesthatappearinthecolumns.
+LimitMonitoring
+
+---
+
+## Page 38
+
+AboutRiskEntities 38
+o Toselectmoreitemsperpagethenthedefaultoftenitems,asshowninthefollowingfigure:
+o
+Tonavigatethroughthepages,select
+ First,
+ Previous,
+ Next,or
+ Lastarrow,orby
+selectingaspecificpagenumber,asshowninthefollowingfigure:
+LimitMonitoring
+
+---
+
+## Page 39
+
+39
+ManagingRiskEntities
+l ModifyingRiskEntities
+l UpdatingRiskEntityLimits
+l ModifyingRiskEntityDefinitions
+l DeletingRiskEntities
+l UndoingPendingDeleteRiskEntities
+ModifyingRiskEntities
+Ifyouhaveupdateprivileges,youcanmodifyriskentities.Ifyouhaveinquiryonlyaccess,seeViewingRiskEntity
+Definitions.Youcanmodifytheriskentitiesthatyouhavecreated,whethertheriskentityisalreadyactiveoris
+pendingovernightactivation.
+Tomodifyariskentity:
+1. IfmorethanoneclearingmemberID isassociatedwithyourfirm,selectaparticipantID,ashighlightedinthe
+followingfigure:
+SelectingaParticipantID
+LimitMonitoring
+
+---
+
+## Page 40
+
+40
+2. Fromthemainmenu,selectRiskEntities&Alerts>ViewRiskEntities,asshowninthefollowingfigure:
+LimitMonitoringdisplaysalloftheriskentitiesassociatedwiththeparticipant'sclearingmemberID.
+3. Usethenavigationtoolsavailable.
+o Togobacktoapreviouspage,clickalinkinthebreadcrumbtrail.SeeUsingtheBreadcrumbTrail.
+o
+ToexportthedetailstoMicrosoftExcel,click
+ ExporttoExcel.
+LimitMonitoring
+
+---
+
+## Page 41
+
+41
+Ifmorethanonepageofdataisreturnedforyourinquiry,youcanfilterthedetails,selectmoreitemsper
+page,ornavigatetoaspecificpage.
+o Tofilterthepositiondetails,typeasearchcriteriainthefilterfield,andthenclick
+ Filter.Youcanfilter
+byanyofthecharacterornumericvaluesthatappearinthecolumns.
+o Toselectmoreitemsperpagethenthedefaultoftenitems,asshowninthefollowingfigure:
+o
+Tonavigatethroughthepages,select
+ First,
+ Previous,
+ Next,or
+ Lastarrow,orby
+selectingaspecificpagenumber,asshowninthefollowingfigure:
+LimitMonitoring
+
+---
+
+## Page 42
+
+42
+UpdatingRiskEntityLimits
+Toupdatethelimitforariskentities:
+1. IfmorethanoneclearingmemberID isassociatedwithyourfirm,selectaparticipantID,ashighlightedinthe
+followingfigure:
+SelectingaParticipantID
+LimitMonitoring
+
+---
+
+## Page 43
+
+43
+2. Fromthemainmenu,selectRiskEntities&Alerts >ViewRiskEntities,asshowninthefollowingfigure:
+3. Select
+ UpdateLimitsfromtheActionmenu.
+LimitMonitoring
+
+---
+
+## Page 44
+
+44
+TheRiskEntityLimitspageappears,asshowninthefollowingfigure:
+4. IntheNetNotionalAmtfield,modifythelimit,asneeded.
+l IfyouhaveselectedtheDoNotMonitoroption,thenetnotionalamountautomaticallydefaultsto0,andyou
+cannoteditthefield.
+l IfyouhavetheDoNotMonitoroptiondeselected,youmustenteranetnotionalamountintherequiredfield.
+5. ClickUpdateLimit.
+Thefollowingmessageshowsthatyouhavesuccessfullyupdatedthelimit:
+LimitMonitoring
+
+---
+
+## Page 45
+
+45
+ModifyingRiskEntityDefinitions
+Note
+Ifariskentityispendingdeletion,youcannotmodifyit.Youmustfirstundothependingdeletion.See
+UndoingPendingDeleteRiskEntities.
+Tomodifythedefinitionofariskentity:
+1. IfmorethanoneclearingmemberID isassociatedwithyourfirm,selectaparticipantID,ashighlightedinthe
+followingfigure:
+SelectingaParticipantID
+2. Fromthemainmenu,selectRiskEntities&Alerts >ViewRiskEntities,asshowninthefollowingfigure:
+LimitMonitoring
+
+---
+
+## Page 46
+
+46
+ThefollowingViewRiskEntitiespageappears:
+3. Select
+ UpdateRiskEntityDefinitionfromtheActionmenu.
+TheUpdateRiskEntityscreenappears,asshowninthefollowingfigure:
+LimitMonitoring
+
+---
+
+## Page 47
+
+47
+4. Modifytheriskentitynameorriskentitymemo,asneeded.
+5. Addorupdateatrade.SeeModifyingTradeArrays.
+6. ClickSave.
+Thefollowingmessageshowsthatyouhavesuccessfullyupdatedtheriskentitydefinition:
+LimitMonitoring
+
+---
+
+## Page 48
+
+48
+DeletingRiskEntities
+Youcandeletetheriskentitiesthatyouhavecreated.
+Note
+LimitMonitoringprocessesyourdeletesovernightandmakesthemeffectiveonthefollowingbusiness
+day.
+TodeleteriskentitiesthroughtheViewRiskEntitiespage:
+1. IfmorethanoneclearingmemberID isassociatedwithyourfirm,selectaparticipantID,ashighlightedinthe
+followingfigure:
+SelectingaParticipantID
+2. Fromthemainmenu,selectRiskEntities&Alerts >ViewRiskEntities,asshowninthefollowingfigure:
+ViewRiskEntities
+LimitMonitoringdisplaysalloftheriskentitiesassociatedwiththeparticipant'sclearingmemberID.The
+followingViewRiskEntitiespageappears:
+LimitMonitoring
+
+---
+
+## Page 49
+
+49
+3. Navigatetotheriskentitythatyouwouldliketodelete.Ifmorethanonepageofdataisreturnedforyourinquiry,
+usethefollowingmethodstoretrievetheinformation:
+o Togobacktoapreviouspage,clickalinkinthebreadcrumbtrail.SeeUsingtheBreadcrumbTrail.
+o
+ToexportthedetailstoMicrosoftExcel,click
+ ExporttoExcel.
+Ifmorethanonepageofdataisreturnedforyourinquiry,youcanfilterthedetails,selectmoreitemsper
+page,ornavigatetoaspecificpage.
+o Tofilterthepositiondetails,typeasearchcriteriainthefilterfield,andthenclick
+ Filter.Youcanfilter
+byanyofthecharacterornumericvaluesthatappearinthecolumns.
+o Toselectmoreitemsperpagethenthedefaultoftenitems,asshowninthefollowingfigure:
+LimitMonitoring
+
+---
+
+## Page 50
+
+50
+o
+Tonavigatethroughthepages,select
+ First,
+ Previous,
+ Next,or
+ Lastarrow,orby
+selectingaspecificpagenumber,asshowninthefollowingfigure:
+4. Completeoneofthefollowingactions:
+l Todeleteaspecificriskentity,click
+ DeletefromtheActioncolumn.
+l Todeleteseveralriskentities,selecteachentityfromtheOptioncolumn,andthenclick
+ Delete.
+TheDeleteRiskEntities,asshowninthefollowingfigure,appears.
+DeleteRiskEntities
+LimitMonitoringpromptsyoutoconfirmyourintentions.
+5. ClickOK.
+Thefollowingmessageshowsthatyouhavesuccessfullyupdatedtheriskentitydefinition:
+LimitMonitoring
+
+---
+
+## Page 51
+
+51
+SuccessMessage
+UndoingPendingDeleteRiskEntities
+Riskentriesaredeletedattheendofthebusinessday.Ifyouhaveapendingriskentityfordeletion,youcanundoit
+andactivatetheriskentity.
+Toundoapendingdelete:
+1. Locatetheriskentity.
+2. Click
+ ActivatePendingDeleteRiskEntity.
+Aconfirmationmessageappearsaskingifyouaresureyouwanttoactivatetheriskentity.
+3. ClickYestoactivatetheriskentityandcancelthependingdeletion.Otherwise,clicknotocontinuewiththedele-
+tion.
+Theiconchangesto
+ Deletefortheriskentity.
+LimitMonitoring
+
+---
+
+## Page 52
+
+AboutLimitsandAlert Types 52
+ABOUTLIMITSANDALERT  TYPES
+Disclaimer
+UponimplementationofDTCCLimitMonitoring,whichissubjecttoregulatoryapprovalofaproposed
+rulechange,membersareultimatelyresponsibleforensuringthatthetradinglimitssetontradingactivity
+areappropriate.Membersarerequiredtoidentifyprimaryandsecondarycontactswithintheirfirmto
+receivethesealertsandthereportsgeneratedbyDTCCLimitMonitoring.
+Additionally,sinceNSCCisnottheoriginatorofinformationmadeavailablethroughDTCCLimit
+Monitoring,theproposedrulewouldprovidethatNSCCisnotresponsibleforthecompletenessor
+accuracyofinformationordatawhichitreceivesfrommembersorthirdpartiesandwhichisutilizedin
+DTCCLimitMonitoringorreceivedandcomparedorrecordedbyNSCC,norforanyerrors,omissionsor
+delayswhichmayoccurinthetransmissionofsuchdataorinformation.Inaddition,notalltransactions
+aresubmittedtoNSCConareal-timebasis,thusNSCCcanonlyprovidemembersusingDTCCLimit
+MonitoringwithLimitMonitoringTradeDateDataasitiscomparedorrecorded.Accordingly,members
+shouldbeawarethatsuchLimitMonitoringTradeDateDatamaynotbecomplete.
+LimitMonitoringprovidesseveralwaysforyoutoinquireandtomonitoryourpositions.Iftradingnearsorexceedsthe
+tolerancelevelsyouestablished,LimitMonitoringnotifiesyouoftheseevents.
+LimitMonitoringprovidesthefollowingalerttypes:
+l Limitthresholdbreachorresolutionalerts
+l Informationalalerts
+LimitMonitoringallowsyoutoviewandmonitoryourpositions.Iftradingnearsorexceedsthetolerancelevelsthat
+youestablished,youareautomaticallynotifiedoftheseevents.Youalsoreceiveanotificationwheneverabreachis
+resolved.Ifyourfirmmodifiesexistingriskentities,addsnewriskentities,ordeletesexistingones,LimitMonitoring
+sendsyouanalertmessage.
+LimitMonitoring
+
+---
+
+## Page 53
+
+AboutLimitsandAlert Types 53
+RiskLimitDefinitions
+InLimitMonitoring,firmssetandmaintainonlythenetnotionallimitforeachriskentity.Theseparticipant-definedrisk
+limitsarenottobeconfusedwithDTCCrisklimits.
+Thelimitsaresetandupdatedglobally.Thismeansthatallusersviewthesameupdatesandmonitorthesamelimits
+foranygivenriskentity.
+SetOnlyRelevantLimits
+Yourriskentitiesshouldhavereasonablelimits.Theyshouldsetatalevelthatdoesnotproducemanyfalse
+positives,butatthesametimeshouldnotbeunreasonablyhigh,sothattheyprovidenomeaningfulriskmonitoring
+capabilities.
+Name Definition
+Adjusted Contract Amount
+(DISPLAYEDVALUEONLY)
+Theadjusteddebitcontractamountisdefinedasthesumofalldebitsnetof
+creditswithinthesameCUSIP,calculatedusingthesesteps:
+l Usingtheentiresetofcreditsanddebitswithintheriskentity,
+identifyinstanceswherethereisadebitforthesameCUSIP.
+l Netthedebitversuscredit.Keepanyremainingdebit.
+l SumupallthedebitsincludingtheremainderscalculatedinStep
+2.Displaytheamount.
+Theadjustedcreditcontractamountisdefinedasthesumofallcreditsnetof
+debitswithinthesameCUSIP,calculatedusingthesesteps:
+l Usingtheentiresetofcreditsanddebitswithintheriskentity,
+identifyinstanceswherethereisacreditforthesameCUSIP.
+l Netthecreditversusdebit.Keepanyremainingcredit.
+l SumupallthecreditsincludingtheremainderscalculatedinStep
+2.Displaytheamount
+NetNotionalAmount
+(LIMITCRITERIA)
+Sumoftheabsolutevalueoftheadjustedcreditcontractamountsplustheabso-
+lutevalueoftheadjusteddebitcontractamountsindollarsforeachindividual
+[[CUSIP]].Thenetnotionalamountlimitisdefinedasthemaximumpermittednet-
+notionaldollaramountthattheriskentityistocarryatanyonetime.
+WarningThreshold(%) Thewarningthresholdsaretriggered,asyourpositionapproachesthenet-
+notionallimityouhaveset.Thethresholdlevelsarealreadypre-setforyourat
+75%,90%and100%.Forexample,ifyousetthenet-notionallimitat
+$10,000,000,thelevel-1alertoccurswhenthenet-notionalamountreaches
+$7,500,000.Level-2alertoccurs,afterthenet-notionalvaluereaches
+$9,000,000.
+LimitMonitoring
+
+---
+
+## Page 54
+
+AboutLimitsandAlert Types 54
+ViewingAlerts
+YoucanusetheViewAlertspagetodisplayanyriskentitiesforwhichLimitMonitoringhasactivatedalerts.By
+[[default]],LimitMonitoringdisplaysallalerts,activeandresolved,forallcategoriesandforalertlevels1,2,and3.
+Youcandisplaythelimitdetailsforaspecificriskentityandyoucanaddamemotoanalert.
+Toviewalerts:
+1. IfmorethanoneclearingmemberID isassociatedwithyourfirm,selectaparticipantID,ashighlightedinthe
+followingfigure:
+SelectingaParticipantID
+2. Fromthemainmenu,selectRiskEntities&Alerts >ViewAlerts,asshowninthefollowingfigure:
+ViewAlerts
+LimitMonitoring
+
+---
+
+## Page 55
+
+AboutLimitsandAlert Types 55
+TheViewAlertspage,showninthefollowingfigureappears:
+ViewAlerts
+3. TheViewAlertspageappears,displayingallofyourriskentitiesforwhichalertshavebeenissued.The
+followingtabledescribesthealerticonsthatareused:
+Icon LevelandDescription
+Level1Alert:Indicatesthatyouhavecrossedthe75%threshold.
+Level2Alert:Indicatesthatyouhavecrossedthe90%threshold.
+Level3Alert:Indicatesthatyouhavecrossedthe100%threshold.
+Formoreinformation,seeAddingRiskEntities.
+4. Tofilterthealertsthataredisplayed,typethefiltercriteriaandclick
+ Filter.Youcanfilterbyanyofthe
+columns,excepttheLevelcolumn.Thefollowingfigurehighlightsthefilteroption:
+LimitMonitoring
+
+---
+
+## Page 56
+
+AboutLimitsandAlert Types 56
+5. TodisplaythePositionsbyRiskEntitypageforaspecificriskentity,clickthelinkintheRiskEntitycolumn,as
+showninthefollowingfigure:
+ThePositionsbyRiskEntitypageappears,asshowninthefollowingfigure:
+LimitMonitoring
+
+---
+
+## Page 57
+
+AboutLimitsandAlert Types 57
+Expandtolearnaboutthenavigationtoolsavailablefromeachpage.
+Eachpagehasnavigationtoolstohelpyou.Expandthissectiontolearnmore.
+Togobacktoapreviouspage,clickalinkinthebreadcrumbtrail.SeeUsingtheBreadcrumbTrail.
+Ineachpage,youcanexportthedetailstoMicrosoftExcelbyclicking
+ ExporttoExcel.
+Ifmorethanonepageofdataisreturnedforyourinquiry,usethefollowingmethodstonavigateand
+retrievetheinformation:
+o Togobacktoapreviouspage,clickalinkinthebreadcrumbtrail.SeeUsingtheBreadcrumbTrail.
+o
+ToexportthedetailstoMicrosoftExcel,click
+ ExporttoExcel.
+Ifmorethanonepageofdataisreturnedforyourinquiry,youcanfilterthedetails,selectmoreitems
+perpage,ornavigatetoaspecificpage.
+o Tofilterthepositiondetails,typeasearchcriteriainthefilterfield,andthenclick
+ Filter.Youcanfil-
+terbyanyofthecharacterornumericvaluesthatappearinthecolumns.
+o Toselectmoreitemsperpagethenthedefaultoftenitems,asshowninthefollowingfigure:
+o
+Tonavigatethroughthepages,select
+ First,
+ Previous,
+ Next,or
+ Lastarrow,orby
+selectingaspecificpagenumber,asshowninthefollowingfigure:
+LimitMonitoring
+
+---
+
+## Page 58
+
+AboutLimitsandAlert Types 58
+FromthePositionsbyRiskEntitypage,youcanaccessthefollowinglevels,asexplainedinDrillingDownFromRisk
+Entities:
+l PositionbyRiskEntity
+l PositionbyTradeArray
+l PositionbySecurity
+l PositionbyTrade
+LimitMonitoring
+
+---
+
+## Page 59
+
+
+
+---
+
+## Page 60
+
+AbouttheStartofDayPosition 60
+ABOUTTHESTARTOFDAYPOSITION
+UsingLimitMonitoring,DTCCgivesyoutheoptiontoincorporatepriordays’unsettledpositionsbysubmittingyour
+firm’sstartofdaypositions.Asaresult,positionsaredefinedasyourstartofdaypositionandyournewactivity.
+YoucanchoosetouseLimitMonitoringsimplyfortrade-dateactivitymonitoring.However,ifyouwanttoincorporate
+priordays’trades,youcansubmitastartofdayfiletoDTCCoryoucansubmityourstartofdayfileusingtheAdd
+PositionpageinLimitMonitoring.
+NewactivityisthetradeinformationDTCCsendsfromUTCtoLimitMonitoring.
+LimitMonitoringstartseverydayfrom’0’dollarsanddoesnotuseanyDTCC-internalstartofdayinformation.The
+onlyinformationotherthanthestartingpositionof‘0’isthatwhichisprovidedbytheparticipant.
+DTCCdefinesstartofdayasthesumofallopenpositionsforeachtradearray.Thetotalcontractvalueforagiven
+tradearraycanbederivedbysummingthevaluesofallCUSIPswithinagiventradearray.Thistotalincludes
+positionsthathavenotyetbeensettled.
+SinceDTCCallowsparticipantstosubmitstartofdaydetailswithminimalvalidation,participantsarefreetousetheir
+owndefinitionforstartofday.Forexample,youcanelecttoincludeyourinternalizedtradesforacompletepicture.
+LimitMonitoring
+
+---
+
+## Page 61
+
+AbouttheStartofDayPosition 61
+ViewingPositions
+ViewthePositionSummarypagetodisplaypositionsforthecurrentbusinessdayforaspecificclearingmember.The
+pagedisplayspositionsbasedonyourstartofdayinputforthecurrentday.Itdoesnotincludetoday’strades.For
+moreinformation,seeAbouttheStartofDayPosition.
+Toviewpositions:
+1. IfmorethanoneclearingmemberID isassociatedwithyourfirm,selectaparticipantID,ashighlightedinthe
+followingfigure:
+SelectingaParticipantID
+2. Fromthemainmenu,selectStartofDay,asshowninthefollowingfigure:
+ThefollowingPositionSummarypageappears:
+LimitMonitoring
+
+---
+
+## Page 62
+
+AbouttheStartofDayPosition 62
+3. ToexportthepositiondetailstoMicrosoftExcel,click
+ ExporttoExcel.
+4. Ifmorethanonepageofdataisreturnedforyourinquiry,usethefollowingmethodstoretrievetheinformation:
+l Tofilterthepositiondetails,typeasearchcriteriainthefilterfield,andthenclick
+ Filter.Youcanfilterby
+anyofthecharacterornumericvaluesthatappearinthecolumns.
+l Toselectmoreitemsperpagethenthedefaultoftenitems,clickanotheroptiontoshowmoreitems
+perpage,asshowninthefollowingfigure:
+l
+Tonavigatethroughthepages,select
+ First,
+ Previous,
+ Next,or
+ Lastarrow,orbyselect
+aspecificpagenumber,asshowninthefollowingfigure:
+LimitMonitoring
+
+---
+
+## Page 63
+
+AbouttheStartofDayPosition 63
+ViewingPositionDetails
+NavigationTools: Clickheretoexpandandlearnaboutthenavigationtools
+availablefromeachpage.
+o Togobacktoapreviouspage,clickalinkinthebreadcrumbtrail.SeeUsingtheBreadcrumbTrail.
+o
+ToexportthedetailstoMicrosoftExcel,click
+ ExporttoExcel.
+Ifmorethanonepageofdataisreturnedforyourinquiry,youcanfilterthedetails,selectmoreitemsper
+page,ornavigatetoaspecificpage.
+o Tofilterthepositiondetails,typeasearchcriteriainthefilterfield,andthenclick
+ Filter.Youcanfilter
+byanyofthecharacterornumericvaluesthatappearinthecolumns.
+o Toselectmoreitemsperpagethenthedefaultoftenitems,asshowninthefollowingfigure:
+o
+Tonavigatethroughthepages,select
+ First,
+ Previous,
+ Next,or
+ Lastarrow,orby
+selectingaspecificpagenumber,asshowninthefollowingfigure:
+Toviewpositiondetails:
+1. IfmorethanoneclearingmemberID isassociatedwithyourfirm,selectaparticipantID,ashighlightedinthe
+followingfigure:
+SelectingaParticipantID
+2. Fromthemainmenu,selectStartofDay,asshowninthefollowingfigure:
+LimitMonitoring
+
+---
+
+## Page 64
+
+AbouttheStartofDayPosition 64
+LimitMonitoring
+
+---
+
+## Page 65
+
+AbouttheStartofDayPosition 65
+ThefollowingPositionSummarypageappears:
+3. Locatethepositionthatyouwanttoviewmoredetails.Tofiltertheriskentity,typeasearchcriteriainthefilter
+field,andthenclick
+ Filter.
+4. FromtheExecutingBrokercolumn,clickalinkassociatedwiththeposition,ashighlightedinthefollowing
+figure.
+LimitMonitoring
+
+---
+
+## Page 66
+
+AbouttheStartofDayPosition 66
+5. FromthePositionDetailpage,showninthefollowingfigure,clickUpdate.
+TheUpdatePositionpage,showninthefollowingfigure,appears.
+LimitMonitoring
+
+---
+
+## Page 67
+
+AbouttheStartofDayPosition 67
+6. IntheNewPositionsection,typetheupdatedinformation.
+7. ClickSave.
+Thefollowingmessageshowsthatyouhavesuccessfullyupdatedtheposition:
+AddingStartofDayPositions
+Whensubmittingstartofdaypositions,usetradearraystoidentifythetradesthatmakeupthatposition.Inthestartof
+daytradearray,youmustspecifytheclearingmember,executingbroker,andsubmittingmarket.Whenthe
+submittingmarketisaqualifiedspecialrepresentative(QSR),youcanalsoprovideasubmittingfirm.
+Toaddastartofdayposition:
+LimitMonitoring
+
+---
+
+## Page 68
+
+AbouttheStartofDayPosition 68
+1. IfmorethanoneclearingmemberID isassociatedwithyourfirm,selectaparticipantID,ashighlightedinthe
+followingfigure:
+SelectingaParticipantID
+2. FromthePositionSummarypage,select
+ AddPosition.TheAddPositionpageappears,asshownin
+thefollowingfigure:
+3. IntheTradeArraysection,providethetradearraydataelementsthatidentifythetradesforthisposition.
+Toaddatrayarray:
+a. InthemandatoryExecutingBrokerfield,typetheexecutingbrokerinformation.
+b. InSubmittingMarket,selectthesubmittingmarketfromthelist.
+LimitMonitoring
+
+---
+
+## Page 69
+
+AbouttheStartofDayPosition 69
+Note
+Whenaddingtrayarrays,ifyouselecteither060- OvertheCounteror100- Correspondent
+Clearingasthesubmittingmarket,youmustperformoneofthefollowingactions:
+l Typetheeight-digitcounterpartyIDintheCounterpartyFirm(9b)field.TheSubmittingFirm
+(9a)fieldautomaticallypopulateswiththeparticipant'sclearingmemberID.
+l Ifthesubmittingfirmisnottheparticipant'sclearingmemberID,typeaneightcharacter
+numericvalueintheSubmittingFirm(9a)field.Inthisscenario,youcannotedittheCoun-
+terpartyFirm (9b)field.
+c. IntheoptionalAccountfield,typetheaccountinformation.
+4. IntheDetailssection,providethedetailsthatmakeupyourstartofdayposition.
+l SelectBuyorSell.
+l Typethesecurity.
+l Providethesharequantity,whichacceptsamaximumof10digits.
+l Enterthecontractamount,whichacceptsamaximumof11digits.
+5. ClickSave.
+Thefollowingmessageshowsthatyouhavesuccessfullyaddedtheposition:
+Formoreinformationabouttradearrays,seeAboutTradeArrays.
+ManagingPositions
+Youcanadd,update,ordeletepositions.YoucanalsoexportthepositionstoaMicrosoftExcelfile.Tolearnmore
+aboutmanagingpositions,see:
+l UpdatingPositions
+l ExportingtoExcel
+l DeletingPositions
+Forinformationaboutaddingpositions,seeAddingStartofDayPositions.
+LimitMonitoring
+
+---
+
+## Page 70
+
+AbouttheStartofDayPosition 70
+UpdatingPositions
+Toupdateaposition:
+1. IfmorethanoneclearingmemberID isassociatedwithyourfirm,selectaparticipantID,ashighlightedinthe
+followingfigure:
+SelectingaParticipantID
+2. Fromthemainmenu,selectStartofDay,asshowninthefollowingfigure:
+ThefollowingPositionSummarypageappears:
+LimitMonitoring
+
+---
+
+## Page 71
+
+AbouttheStartofDayPosition 71
+3. Filterthepositiondetailsbytypingasearchcriteriainthefilterfieldandclicking
+ Filter.Youcanfilterbyanyof
+thecharacterornumericvaluesthatappearinthecolumns.
+4. Click
+ Edit.
+TheUpdatePositionpage,showninthefollowingfigure,appears.
+5. IntheNewPositionsection,typetheupdatedinformation.
+6. ClickSave.
+Thefollowingmessageshowsthatyouhavesuccessfullyupdatedtheposition:
+LimitMonitoring
+
+---
+
+## Page 72
+
+AbouttheStartofDayPosition 72
+ExportingtoExcel
+ToexporttoMicrosoftExcel:
+1. Fromthemainmenu,selectStartofDay.
+2. FromthePositionSummarypage,click
+ ExporttoExcel,ashighlightedinthefollowingfigure:
+LimitMonitoringdownloadsthePositionSummarySearch.xlsxfile.
+3. OpenthePositionSummarySearch.xlsxfile.
+DeletingPositions
+Todeleteaposition:
+1. IfmorethanoneclearingmemberID isassociatedwithyourfirm,selectaparticipantID,ashighlightedinthe
+followingfigure:
+SelectingaParticipantID
+2. Fromthemainmenu,selectStartofDay,asshowninthefollowingfigure:
+ThefollowingPositionSummarypageappears.
+LimitMonitoring
+
+---
+
+## Page 73
+
+AbouttheStartofDayPosition 73
+3. FromthePositionSummarypage,locatethepositionthatyouwanttodelete.Filterthepositiondetailsbytyping
+asearchcriteriainthefilterfield,andthenclick
+ Filter.Youcanfilterbyanyofthecharacterornumericvalues
+thatappearinthecolumns.
+NavigationTools: Clickheretoexpandandlearnaboutthenavigationtoolsavailablefromeachpage.
+o Togobacktoapreviouspage,clickalinkinthebreadcrumbtrail.SeeUsingtheBreadcrumbTrail.
+o
+ToexportthedetailstoMicrosoftExcel,click
+ ExporttoExcel.
+Ifmorethanonepageofdataisreturnedforyourinquiry,youcanfilterthedetails,selectmoreitems
+perpage,ornavigatetoaspecificpage.
+o Tofilterthepositiondetails,typeasearchcriteriainthefilterfield,andthenclick
+ Filter.Youcanfil-
+terbyanyofthecharacterornumericvaluesthatappearinthecolumns.
+o Toselectmoreitemsperpagethenthedefaultoftenitems,asshowninthefollowingfigure:
+LimitMonitoring
+
+---
+
+## Page 74
+
+AbouttheStartofDayPosition 74
+o
+Tonavigatethroughthepages,select
+ First,
+ Previous,
+ Next,or
+ Lastarrow,orby
+selectingaspecificpagenumber,asshowninthefollowingfigure:
+LimitMonitoring
+
+---
+
+## Page 75
+
+AbouttheStartofDayPosition 75
+4. Click
+ Delete.
+TheDeletePositionpage,asshowninthefollowingfigure,appears:
+5. Toconfirmthedeletion,clickYes.Otherwise,clickNotoreturntothePositionSummarypagewithoutdeleting.
+Thefollowingmessageshowsthatyouhavesuccessfullydeletedtheposition:
+DrillingDownThroughPositionData
+LimitMonitoringallowsyoutomonitoryourpositionsbydrillingdownfromasummarylevelviewtoincreasinglylower
+levelsofdetail.FromtheViewRiskEntitiesorViewAlertstoplevel,youcansuccessivelyaccessthefollowinglevels:
+l PositionbyRiskEntity
+l PositionbyTradeArray
+LimitMonitoring
+
+---
+
+## Page 76
+
+AbouttheStartofDayPosition 76
+l PositionbySecurity
+l PositionbyTrade
+Clickaniteminthefollowingfiguretogodirectlytotheinstructionsforthatlevel.
+DrillingDownFromRiskEntities
+ThissectionexplainshowtodrilldowntothefollowinglevelsfromtheViewRiskEntitiespage:
+l PositionsbyRiskEntity
+l PositionsbyTradeArray
+l PositionsbySecurity
+l PositionsbyTrade
+NavigationTools: Clickheretoexpandandlearnaboutthenavigationtools
+availablefromeachpage.
+o Togobacktoapreviouspage,clickalinkinthebreadcrumbtrail.SeeUsingtheBreadcrumbTrail.
+o
+ToexportthedetailstoMicrosoftExcel,click
+ ExporttoExcel.
+Ifmorethanonepageofdataisreturnedforyourinquiry,youcanfilterthedetails,selectmoreitemsper
+page,ornavigatetoaspecificpage.
+LimitMonitoring
+
+---
+
+## Page 77
+
+AbouttheStartofDayPosition 77
+o Tofilterthepositiondetails,typeasearchcriteriainthefilterfield,andthenclick
+ Filter.Youcanfilter
+byanyofthecharacterornumericvaluesthatappearinthecolumns.
+o Toselectmoreitemsperpagethenthedefaultoftenitems,asshowninthefollowingfigure:
+o
+Tonavigatethroughthepages,select
+ First,
+ Previous,
+ Next,or
+ Lastarrow,orby
+selectingaspecificpagenumber,asshowninthefollowingfigure:
+LimitMonitoring
+
+---
+
+## Page 78
+
+AbouttheStartofDayPosition 78
+TodrilldownfromtheViewRiskEntitiespage:
+1. Fromthemainmenu,selectRiskEntities&Alerts >ViewRiskEntities,asshowninthefollowingfigure:
+2. Topositionsbyriskentity:
+a. FromtheViewRiskEntitiespage,selectariskentityIDlink,ashighlightedinthefollowingfigure:
+ThePositionsbyRiskEntitypage,asshowninthefollowingfigure,appears:
+LimitMonitoring
+
+---
+
+## Page 79
+
+AbouttheStartofDayPosition 79
+YoucanalsoaccessthePositionsbyRiskEntitiespagefromtheriskentitylinkavailablefromtheView
+Alertspage.Formoreinformation,seeDrillingDownFromAlerts.
+b. Reviewthepositiondetailsfortheriskentitythatyouselected.Fordetailsoneachofthelimitsthatyoucan
+set,seeRiskLimitDefinitions.
+LimitMonitoring
+
+---
+
+## Page 80
+
+AbouttheStartofDayPosition 80
+3. Toviewpositionsbytradearray:
+a. FromthePositionsbyRiskEntitiespage,clicktheriskentityIDlink,ashighlightedinthefollowingfigure:
+ThePositionsbyTradeArray,showninthefollowingfigure,appears:
+b. Reviewthesummaryofpositioninformationforthetradearraysthatbelongtotheriskentitythatyouselec-
+ted.
+4. Toviewpositionsbysecurity:
+LimitMonitoring
+
+---
+
+## Page 81
+
+AbouttheStartofDayPosition 81
+a. FromthePositionsbyTradeArraypage,selectariskentityIDlink,ashighlightedinthefollowingfigure:
+ThePositionsbySecuritypage,asshowninthefollowingfigure,appears:
+YoucanalsoaccessthePositionsbySecuritypagefromtheViewAlertspage.Clicktheriskentitylinkto
+accessthePositionbyRiskEntityandcontinuedrillingdowntoeachsubsequentpage.
+b. Reviewthesecuritydetailsforthetradearraythatyouselected.
+LimitMonitoring
+
+---
+
+## Page 82
+
+AbouttheStartofDayPosition 82
+5. Toviewpositionsbytrade:
+a. FromthePositionsbySecuritypage,selectasecuritylink,ashighlightedinthefollowingfigure:
+ThePositionsbyTradepage,asshowninthefollowingfigure,appears:
+LimitMonitoring
+
+---
+
+## Page 83
+
+AbouttheStartofDayPosition 83
+YoucanalsoaccessthePositionsbyTradepagefromtheViewAlertspage.Clicktheriskentitylinkto
+accessthePositionbyRiskEntityandcontinuedrillingdowntoeachsubsequentpage.
+b. Reviewthesecuritydetailsforthetradearraythatyouselected.
+LimitMonitoring
+
+---
+
+## Page 84
+
+AbouttheStartofDayPosition 84
+DrillingDownFromAlerts
+YoucanaccessthefollowinglevelsfromeithertheViewRiskEntitiesorViewAlertspage:
+l PositionbyRiskEntity
+l PositionbyTradeArray
+l PositionbySecurity
+l PositionbyTrade
+NavigationTools:Clickheretoexpandandlearnaboutthenavigationtools
+availablefromeachpage.
+Eachpagehasnavigationtoolstohelpyou.Expandthissectiontolearnmore.
+Togobacktoapreviouspage,clickalinkinthebreadcrumbtrail.SeeUsingtheBreadcrumbTrail.
+Ineachpage,youcanexportthedetailstoMicrosoftExcelbyclicking
+ ExporttoExcel.
+Ifmorethanonepageofdataisreturnedforyourinquiry,usethefollowingmethodstoretrievetheinformation:
+l Tofilterthepositiondetails,typeasearchcriteriainthefilterfield,andthenclick
+ Filter.Youcanfilterby
+anyofthecharacterornumericvaluesthatappearinthecolumns.
+l Toselectmoreitemsperpagethenthedefaultoftenitems,clickanotheroptiontoshowmoreitems
+perpage,asshowninthefollowingfigure:
+l
+Tonavigatethroughthepages,select
+ First,
+ Previous,
+ Next,or
+ Lastarrow,orbyselect
+aspecificpagenumber,asshowninthefollowingfigure:
+LimitMonitoring
+
+---
+
+## Page 85
+
+AbouttheStartofDayPosition 85
+TodrilldownfromtheViewAlertspage:
+1. Fromthemainmenu,selectRiskEntities&Alerts >ViewAlerts,asshowninthefollowingfigure:
+TheViewAlertspage,showninthefollowingfigureappears:
+2. TodisplaythePositionsbyRiskEntitypageforaspecificriskentity,clickthelinkintheRiskEntitycolumn,as
+LimitMonitoring
+
+---
+
+## Page 86
+
+AbouttheStartofDayPosition 86
+showninthefollowingfigure:
+ThePositionsbyRiskEntitypageappears,asshowninthefollowingfigure:
+UsingtheBreadcrumbTrail
+Whilebrowsingdownthroughyourpositiondata,youcanretraceyourstepsusingthebreadcrumbtrail.The
+breadcrumbtrailprovideslinksbacktoeachofthepagesthatyouvisitedtogettothecurrentpage.Forexample,to
+returntothePositionsbyTrayArray,clickthatlinkinthebreadcrumbtrail,asshowninthefollowingfigure:
+LimitMonitoring
+
+---
+
+## Page 87
+
+AbouttheStartofDayPosition 87
+LimitMonitoring
+
+---
+
+## Page 88
+
+ManagingContacts 88
+MANAGINGCONTACTS
+Usetheemailfeaturetoobtainnearreal-timenotificationofalerts.Ifthisfeatureisnotactivatedforyouraccount,
+contactyoursuperaccesscoordinator(SAC).Selecteduserscansetupamaximumoffiveemailaddressesper
+clearingmemberwhereyouwouldliketoreceivealertsfromLimitMonitoring.Eachclearingmemberparticipantcan
+setupindividual,group,oracombinationofindividualandgroupemailaddresses.Changestocontactstakeseffect
+thenextbusinessday.Thisfeatureissubjecttotheterms,conditions,limitationsofliability,andindemnificationsset
+forthintherulesandproceduresofNSCC.
+Tolearnmoreaboutcontacts,expandthefollowingtopics:
+ViewingContacts
+Toviewcontacts:
+1. IfmorethanoneclearingmemberID isassociatedwithyourfirm,selectaparticipantID,ashighlightedin
+thefollowingfigure:
+SelectingaParticipantID
+2. SelectContactManagement,ashighlightedinthefollowingfigure:
+ContactManagement
+TheViewContactspage,showninthefollowingfigure,appears.
+LimitMonitoring
+
+---
+
+## Page 89
+
+ManagingContacts 89
+ViewContacts
+AddingEmailContacts
+Youcanadduptofiveemailcontactsperclearingmember.
+Toaddanemailcontact:
+1. IfmorethanoneclearingmemberID isassociatedwithyourfirm,selectaparticipantID,ashighlightedin
+thefollowingfigure:
+SelectingaParticipantID
+2. SelectContactManagement,ashighlightedinthefollowingfigure:
+ContactManagement
+TheViewContactspageappears.
+LimitMonitoring
+
+---
+
+## Page 90
+
+ManagingContacts 90
+LimitMonitoring
+
+---
+
+## Page 91
+
+ManagingContacts 91
+3. ClickAddEmailContact.
+TheAddContactpage,asshowninthefollowingfigure,appears:
+AddContact
+4. Selectthetypeofemail,grouporindividual,andthenclickAddContact.
+l IfyouselectedGroup,typethegroupemailaddressandgroupname.
+TheAddContactpageforgroupsappears.
+LimitMonitoring
+
+---
+
+## Page 92
+
+ManagingContacts 92
+LimitMonitoring
+
+---
+
+## Page 93
+
+ManagingContacts 93
+l IfyouselectedIndividual,typetheemailaddress,firstname,andlastnameoftheindividual.
+TheAddContactpageforanindividualappears.
+5. ClickAddContact.
+ThenewcontactappearsintheViewContactspage.
+EditingContacts
+Toeditcontacts:
+1. IfmorethanoneclearingmemberID isassociatedwithyourfirm,selectaparticipantID,ashighlightedin
+thefollowingfigure:
+LimitMonitoring
+
+---
+
+## Page 94
+
+ManagingContacts 94
+SelectingaParticipantID
+2. SelectContactManagement,ashighlightedinthefollowingfigure:
+ContactManagement
+TheViewContactspageappears.
+ViewContacts
+3. Click
+ Edit.
+TheUpdateContactpageappears.
+l Ifthecontactisanindividual,youcanupdatetheemail,firstname,andlastname
+l Ifthecontactisagroup,youcanupdatethegroupemailaddressandgroupname.
+4. AfterupdatingtheinformationclickUpdateContact.
+Thefollowingmessageshowsthatyouhavesuccessfullyupdatedthecontact:
+LimitMonitoring
+
+---
+
+## Page 95
+
+ManagingContacts 95
+DeletingContacts
+Todeleteacontact:
+1. IfmorethanoneclearingmemberID isassociatedwithyourfirm,selectaparticipantID,ashighlightedin
+thefollowingfigure:
+SelectingaParticipantID
+2. SelectContactManagement,ashighlightedinthefollowingfigure:
+ContactManagement
+TheViewContactspageappears.
+ViewContacts
+LimitMonitoring
+
+---
+
+## Page 96
+
+ManagingContacts 96
+3. Click
+ Delete.
+Aconfirmationmessageappears.
+4. ClickOKtodeletethecontact.Otherwise,clickCanceltokeepthecontact.
+Thefollowingmessageshowsthatyouhavesuccessfullydeletedthecontact:
+LimitMonitoring
+
+---
+
+## Page 97
+
+97
+LimitMonitoring
+
+---
+
+## Page 98
+
+EndofDayReports 98
+ENDOFDAYREPORTS
+Attheendofeachbusinessday,LimitMonitoringsendsyouabroadrangeofend-of-dayreportingoptionsand
+breakdowns,includinganalysisofbreachandnear-breachtrends.
+LimitMonitoringsendsyouasetofmachine-readableoutput(MRO)filesthatprovideyouwith:
+l Riskentitydefinitions
+l Alerts
+l End-of-daypositions
+l Audittrailofanychangestoriskentities
+Thereportsaresenttotheleadclearingmemberspecifiedfortheriskentity.Forinformationaboutassigningalead
+clearingmember,seeAddingRiskEntities.
+ThefollowingtableprovidesabriefdescriptionofeachMROfile:
+MRO Report Description
+AlertMRO ProvidesClearingmemberswithanyalertsgeneratedfortheirriskentity
+definitions.
+[[participant]] Position Rejects MROParticipantPositionRejectsMROlayout.
+RiskEntityDefinitionAuditTrail
+MRO
+ProvidesClearingmemberswiththehistoryofchangestoriskentitydefin-
+itionvalues.
+RiskEntityLimitAuditTrailMRO ProvidesClearingmemberswiththehistoryofchangestoriskentitylimit
+values.
+RiskEntityMRO ProvidesClearingmemberswiththedescription,limits,andendofdaypos-
+itionforeachoftheirriskentitydefinitions.
+RiskEntityNetNotionalReports
+MRO
+ProvidesinformationaboutchangesmadetotheNetNotionalAmountfield
+andDoNotMonitorindicator.
+TradeArrayAuditTrailMRO ProvidesClearingmemberswiththedescription,limits,andendofdaypos-
+itionforeachoftheirriskentitydefinitions.
+TradeArrayMRO ProvidesClearingmemberswiththetradearraysassociatedwiththeirrisk
+entitydefinitions.
+UnassignedRiskEntityMRO Providestradeinformationthatdonotmatchanydefinedriskentity.
+MROReports
+LimitMonitoring
+
+---
+
+## Page 99
+
+99
+LimitMonitoring
+
+---
+
+## Page 100
+
+Glossary 100
+GLOSSARY
+A
+account
+Accountassignedtoatrade.
+adjustedcreditcontractamount
+Sumoftheindividualdifferencesbetweenthecreditanddebitcontractamounts
+ontherelatedtradesecuritysummaries,wheretheresultisacredit.
+adjusteddebitcontractamount
+Sumoftheindividualdifferencesbetweenthecreditanddebitcontractamounts
+ontherelatedtradesecuritysummaries,wheretheresultisadebit.
+C
+clearingmember
+Brokerthatclearsthetradeside.
+contractamount
+Valueofthetrade.
+counterpartyfirm(9b)
+Clientassociatedwiththetrade.Firmscanthenmonitorthetradingactivityand
+querytradeswhereaspecificbrokerisassociatedwiththetradearray.This
+LimitMonitoring
+
+---
+
+## Page 101
+
+Glossary 101
+fieldisonlyavailableifthesubmittingmarketis060-OVERTHECOUNTERor
+100-CORRESPONDENTCLEARING.
+D
+donotmonitor
+Indicatesnottogenerateanyalertsfortheriskentity.
+E
+endtime
+Timethealertwasresolved.
+executingbroker
+Brokerthatexecutedthistrade.
+executionID
+UniquetradeID.
+L
+level1alert
+Occurswhen75%ofthethresholdlimitisbreached.
+level2alert
+Occurswhen90%ofthethresholdlimitisbreached.
+LimitMonitoring
+
+---
+
+## Page 102
+
+Glossary 102
+level3alert
+Occurswhenapositionbreachesthedefinedlimit.
+N
+netnotionalamount
+Sumoftheabsolutevalueoftheadjustedcreditcontractamountandadjusted
+debitcontractamount.
+S
+security
+IDofthesecuritytraded.
+source
+Originofatradeorposition.
+starttime
+Timeofthealert.
+submittingfirm(9a)
+Qualifiedspecialrepresentative(QSR)firmthatismakingthistrade.Thisfieldis
+onlyavailableifthesubmittingmarketis060-OVERTHECOUNTERor100-
+CORRESPONDENTCLEARING.
+submittingmarket
+Marketorfirmthatmadethetrade.
+LimitMonitoring
+
+---
+
+## Page 103
+
+Glossary 103
+T
+time
+Timeofthetradeorposition.
+tradedate
+Dateofthetradeorposition.
+U
+UTCaccount
+AccountassignedbyUniversalTradeCapture(UTC)foratrade.
+LimitMonitoring
+
+---
+
+## Page 104
+
+FORMOREINFORMATION
+EmailDTCCLearningat:
+CoreLearning@[[DTCC]].com
+orvisitusonthewebat:
+www.dtcclearning.com
+©2023DTCC.Allrightsreserved.[[DTCC]],[[DTCC]](Stylized),ADVANCINGFINANCIALMARKETS.TOGETHER,
+andtheInterlockergraphicareregisteredandunregisteredtrademarksofTheDepositoryTrustandClearing
+Corporation.
+Theservicesdescribedhereinareprovidedunderthe“[[DTCC]]”brandnamebycertainaffiliatesofTheDepository
+TrustandClearingCorporation(“[[DTCC]]”).DTCCitselfdoesnotprovidesuchservices.Eachoftheseaffiliatesisa
+separatelegalentity,subjecttothelawsandregulationsoftheparticularcountryorcountriesinwhichsuchentity
+operates.Pleaseseewww.[[DTCC]].comformoreinformationonDTCC,itsaffiliatesandtheservicestheyoffer.
+DocInfo:May16,2023
+PublicationCode:LM118
+Service:LimitMonitoring
+Title:DTCCLimitMonitoring

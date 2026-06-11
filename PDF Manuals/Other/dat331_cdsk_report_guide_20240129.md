@@ -1,0 +1,402 @@
+---
+title: "DTCC CDS Kinetics Report Guide"
+source_pdf: "file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/dat331_cdsk_report_guide_20240129.pdf"
+pages: 14
+size: "235.3 KB"
+category: "Other"
+ingested_on: "2026-06-05"
+---
+
+# DTCC CDS Kinetics Report Guide
+
+**Original File:** [dat331_cdsk_report_guide_20240129.pdf](file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/dat331_cdsk_report_guide_20240129.pdf)  
+**Category:** Other  
+**Total Pages:** 14  
+**File Size:** 235.3 KB  
+
+---
+
+## Page 1
+
+CDSKinetics
+REPORTGUIDE
+JANUARY29,2024
+
+---
+
+## Page 2
+
+TABLEOFCONTENTS
+CDSKineticsDataSpecifics 3
+ReportLayout/DataFields 5
+SectionI:OpenPositionsData 6
+SectionIV:MarketRiskTransactionActivityonly 12
+
+---
+
+## Page 3
+
+CDSKINETICSDATASPECIFICS
+ThistopicdiscussesspecificconsiderationsrelatedtoDTCCCDSKineticsdataprovidedintheten
+WeeklyStock&Volumereports.
+DataAggregation
+CDSKineticsaggregatesthepreviousweek'stradesubmissionstoTIW.
+DataHistory
+HistoricalReportsprovidealookbacktotheinceptionoftheTIWreports.
+NotionalValues
+"Notional,”whenreferredtoherein,representstheparamountofcreditprotectionboughtorsold,
+equivalenttodebtorbondamounts,andisusedtoderivethecouponpaymentcalculationsforeach
+paymentperiodandtherecoveryamountsintheeventofadefault.Theseamountsare
+predominantlydenominatedinUSdollarsoreuros,withBritishpounds,JapaneseyenandSwiss
+francsasthenextmostcommoncurrencydenominations.AsTIWrecordsrepresentbilaterally
+agreedOTCcontracts,othercurrenciescanandmaybechosen.
+Note
+Thenotionalvaluesprovidedinthetablesdonotreflectthemarketpriceofthecontractsandmay
+notcorrelatewithmark-to-marketvalues.
+GrossNotionalValuesandContracts
+“GrossNotionalValues”arethesumofCDScontractsbought(orequivalentlysold)forallTIW
+contractsinaggregate,bysectororforsinglereferenceentitiesdisplayed.Aggregategrossnotional
+valueandcontractdataprovidedarecalculatedonaper-tradebasis.Forexample,atransactionof
+$10millionnotionalbetweenabuyerandsellerofprotectionisreportedasonecontractand$10
+milliongrossnotional,asopposedtotwocontractsworth$20million:
+BuyerType
+SellerType Notional Contracts
+10,000,000 1
+DTCCCDSKineticsReportGuide
+CDSKineticsDataSpecifics 3
+
+---
+
+## Page 4
+
+NetNotionalValues
+NetNotionalValues”withrespecttoanysinglereferenceentityisthesumofthenetprotection
+boughtbynetbuyers(orequivalentlynetprotectionsoldbynetsellers).Theaggregatenetnotional
+dataprovidediscalculatedbasedonthecounterpartyfamily.Acounterpartyfamilywilltypically
+includealloftheaccountsofaparticularassetmanagerorcorporateaffiliates,rolleduptotheholding
+companylevel.Aggregatenetnotionaldatareportedisthesumofnetprotectionbought(or
+equivalentlysold)acrossallcounterpartyfamilies.Netnotionalvaluesaredisplayedonlyforsingle
+referenceentities(singlenamesandindices),andthereforeisonlyprovidedfortables6,7,14,and
+15.Netnotionalpositionsgenerallyrepresentthemaximumpossiblenetfundstransfersbetweennet
+sellersofprotectionandnetbuyersofprotectionthatcouldberequiredupontheoccurrenceofa
+crediteventrelatingtoparticularreferenceentities.Actualnetfundstransfersaredependentonthe
+recoveryratefortheunderlyingbondsorotherdebtinstruments.
+ThenexttableshowsasampleAggregateNetNotionalCalculation.
+TotalGrossNotionalof
+CDSBoughtonRefer-
+enceEntityX
+TotalGrossNotionalof
+CDSSoldonRefer-
+enceEntityX
+NetNotionalPositions
+onReferenceEntityX
+CounterpartyFamilyA 135,000,000 -150,000,000 -15.000.000
+CounterpartyFamilyB 200,000,000 -175,000,000 25,000,000
+CounterpartyFamilyC 100,000,000 -90,000,000 10,000,000
+CounterpartyFamilyD 30,000,000 -50,000,000 -20,000,000
+GrossNotional 465,000,000 -465,000,000 0
+AggregateNetNotional
+Sold
+-35,000,000
+AggregateNetNotional
+Bought
+*35,000,000
+*ThisnumberistheonlynumberdisplayedfortheNetNotionalValue.
+ExternalDataSources
+l ForeignExchangeRateinformationcomesfromInteractiveDataCorporation(www.in-
+teractivedata.com).
+l ReferenceEntityType,MarketSector:MarkitREDCDSdatausing“markitsector”value(www.-
+markit.com)
+DTCCCDSKineticsReportGuide
+CDSKineticsDataSpecifics 4
+
+---
+
+## Page 5
+
+REPORTLAYOUT/DATAFIELDS
+TheDTCCTradeInformationWarehouse(TIW)createstenWeeklyStockandVolumeReports,using
+bothpositionandtransactioninformation.Thedataisdividedintotwosections.
+Note
+Alltablesincludethoserecordswith“Certain”statusinTIW.Certainstatusindicatespositionswhere
+bothcounterpartieshaveenteredandconfirmedanoriginaltransaction.Theserecordsmayhavebeen
+updatedwithapost-tradeevent,suchasaterminationorassignment.Theamountsshownarethe
+currentlyagreeduponpositions.Thereareno“open”or“unconfirmed‟eventsoutstandingonthese
+trades.ExceptforSectionIII,thetablesdonotinclude“Unconfirmed”or“Uncertain”records.
+“Unconfirmed”recordsaretransactionsthatareintheprocessofbeingconfirmedinDTCC
+Deriv/SERV'smatchingandconfirmationsystemforthefirsttime."Uncertain"statusrepresents
+recordsmaintainedinTIWthatwereconfirmedand"Certain"atonepointintimebutthatcurrentlyhave
+anoutstandingunconfirmedpost-tradeevent,suchasanassignmentortermination.SectionIIItables
+identifyany“Uncertain”transactionsthatwere“Certain”inthepriorweekandbecame“Uncertain”inthe
+currentweekduetoaposttradeevent(“PTE”)action.Thispopulationoftradesisclassifiedunderthe
+heading“PTEIn-Flight”.SectionIIIalsoincludestransactionsthatwere“Uncertain”inthepriorweek
+andbecame“Certain”inthecurrentweekduetothePTEactionbeingcompleted.Thedataforallthe
+tableswasextractedontheeveningoftheindicated“AsofDate”referencedinthetableheadings.This
+dataindicatesreal-timecontractpositions,whichissubjecttosubsequentsubmissionsand/orevents.
+Asaresult,thedataprovidedinthetablesrepresentsapoint-in-timeview.
+Note
+TheseavailablereportsmaynotcontainalllivepositionsinTIWasofaspecifieddateifdisclosingsuch
+positionscouldreveal—directlyorindirectly—proprietaryorconfidential,financial,operational,ortrading
+dataofaparticularTIWparticipant("User"),orinappropriatelyarrangedgroupsofUsersinsuchaway
+thatmayindicatetheidentityoftheUserorUsergroup.
+DTCCCDSKineticsReportGuide
+ReportLayout/DataFields 5
+
+---
+
+## Page 6
+
+SectionI:OpenPositionsData
+Thissection(Tables1-8)includesdataonalllivepositionsintheTIWasofaspecifieddate.Dataincludes
+transactionactivitysubjecttodelayedreportedduetoconfidentialityprovisionsinDTCC'soperating
+procedures.TheseproceduresrestrictDTCC frompublishingdatathatmayallowtheidentificationofa
+partytothetradingactivity.
+HistoricDatabyYear:2023,2022,2021,2020,2019,2018,207,2016,2015,2014,2013,2012,2011,
+2010.
+Table1- AllCreditProductsbyCustomerTypeandBreakoutby
+Producttype
+SectionI-Table1reportsthetotalofAllCreditProductsbyCustomerTypeaswellasaBreakoutby
+ProductType.ItprovidesthesumoftheUSD-equivalentNotionalAmountsofalltheCDSContractsfor
+differentBuyertypesagainstdifferentSellertypesforthefollowingproducttypes:SingleNameand
+CDS.Thetableincludesthefollowingfields:
+l ProductType
+l BuyerType
+l SellerType
+l DealerGrossNotional(USDEQ)
+l Contracts
+l NonDealer/Customer
+l GrossNotional(USDEQ)
+l TotalsGrossNotional(USDEQ)
+l Contracts
+Table1A- DailyAggregateOpenInterestbyCurrencyofDenom-
+ination
+SectionI-Table1areportsallCreditProductsbyCurrency.ItgivesthesumofNativeNotional
+AmountsofalltheCDSContractsforthefollowingproducttypes:
+l Single-Name
+l CDX
+l CDT
+Thetableincludesthefollowingfields:
+DTCCCDSKineticsReportGuide
+ReportLayout/DataFields 6
+
+---
+
+## Page 7
+
+l Currency
+l GrossNotionalAmount
+l NumberofContracts
+DTCCCDSKineticsReportGuide
+ReportLayout/DataFields 7
+
+---
+
+## Page 8
+
+Table1B- AllCreditProductsbyCustomerTypeRelationship
+SectionI-Table1BreportsallCreditProductsbyCustomerTyperelationshipaswellasaBreakoutby
+ProductType.ThereportgivesthesumofUSD-equivalentNotionalAmountsofalltheCDSContracts
+forthefollowingproducttypes:
+l Single-Name
+l CDX
+l CDT
+Thereportincludesthefollowingfields:
+l TradeType
+l CreditDefaultSingleNames
+l Contracts
+l CreditDefaultIndex
+l Contracts
+l CreditDefaultTranche
+l Contracts
+l TotalforAllCreditProducts
+l Contracts
+Table2- SingleNameReferenceEntityTypebyBuyerofProtection
+(10contractsorgreater)
+SectionI-Table2reportsaSingle-NameReferenceEntityTypebyBuyerofProtectiontype.The
+reportgivesthesumofUSD-equivalentNotionalAmountsofalltheSingle-NameContractsforthe
+followingBuyerTypes"
+l Dealer
+l Non-Dealer/Customer
+Thetableincludesthefollowingfields:
+l Single-NameReferenceEntityType
+l BuyerTypeDealerGrossNotional(USDEQ)
+l Contracts
+l NonDealer/CustomerGrossNotional(USDEQ)
+l Contracts
+l TotalsGrossNotional(USDEQ)
+l Contracts
+DTCCCDSKineticsReportGuide
+ReportLayout/DataFields 8
+
+---
+
+## Page 9
+
+Table3- SingleNameReferenceEntityTypebySellerofProtection
+(10contractsorgreater)
+SectionI-Table3reportsthesumofUSD-equivalentNotionalAmountsandthetotalnumberof
+contractsforalltheSingle-NameContracts,forthefollowingSellerTypes:
+l Dealer
+l Non-Dealer/Customer.
+Thetableincludesthefollowingfields:
+l Single-NameReferenceEntityType
+l BuyerTypeDealerGrossNotional(USDEQ)
+l Contracts
+l NonDealer/CustomerGrossNotional(USDEQ)
+l Contracts
+l TotalsGrossNotional(USDEQ)
+l Contracts
+Table4- On-the-run/Off-the-runforIndicesandIndexTranchesby
+BuyerofProtection(10ContractsorGreater)
+SectionI-Table4reportsthesumoftheUSD-equivalentNotionalAmountsforalltheContractswhere
+theunderlyingreferenceentityisanIndex(CDX)orIndexTranche(CDT),againstthefollowingBuyer
+Types:
+l Dealers
+l Non-Dealers/Customers.
+DTCCCDSKineticsReportGuide
+ReportLayout/DataFields 9
+
+---
+
+## Page 10
+
+Eachofthereferenceentitiesisclassifiedasoneofthefollowing:
+l “On,”indicatingthattheIndex/IndexTrancheison-the-run(currentseries)
+l “Off,”indicatingtheIndex/IndexTrancheisoff-the-run(oldseries)
+Thetableincludesthefollowingfields:
+l Index/IndexTranche
+l ProductType
+l BuyerTypeDealerGrossNotional(USDEQ)
+l Contracts
+l NonDealer/CustomerGrossNotional(USD
+EQ)
+l Contracts
+l TotalsGrossNotional(USDEQ)
+l Contracts
+Table5- On-the-run/Off-the-runforIndicesandIndexTranchesby
+SellerofProtection(10ContractsorGreater)
+SectionI-Table5reportsthesumoftheUSD-equivalentNotionalAmountsforalltheContractswhere
+theunderlyingreferenceentityisanIndex(CDX)orIndexTranche(CDT),againstthefollowingSeller
+Types:
+l Dealers
+l Non-Dealers/Customers
+Eachofthereferenceentitieswillbeclassifiedas:
+l “On,"indicatingthattheIndex/IndexTrancheison-the-run(currentseries)
+l "Off,”indicatingtheIndex/IndexTrancheisoff-the-run(oldseries).
+Thetableincludesthefollowingfields:
+l Index/IndexTranche
+l ProductType
+l BuyerTypeDealerGrossNotional(USDEQ)
+l Contracts
+l NonDealer/CustomerGrossNotional
+(USDEQ)
+l Contracts
+l TotalsGrossNotional(USDEQ)
+l Contracts
+DTCCCDSKineticsReportGuide
+ReportLayout/DataFields 10
+
+---
+
+## Page 11
+
+Table6- GrossandNetNotionalTop1000ReferenceEntities
+SectionI-Table6reportsthesumofUSD-equivalentNotionalAmountsandthetotalnumberof
+contractsforalltheSingle-NameContracts.Thetableincludesthefollowingfields:
+l ReferenceEntity
+l MarketSector
+l MarketType
+l GrossNotional(USDEQ)
+l NetNotional(USDEQ)
+l Contracts
+l DCRegion
+Thisreportisaweeklyreport.ItisbasedonopenpositionsshowingtheGross&NetNotional,plus
+thenumberofliveopencontracts,fortheTop1000ReferenceEntities.Allnotionalamountsare
+convertedtoUSD.TheTop1000representthosewiththelargestGrossopennotional.
+Table7- GrossandNetNotionalforIndicesandIndexTranches(10
+contractsorgreater)
+SectionI-Table7reportstheUSD-equivalenttotalGrossandNetNotionalamountsforeachofthe
+CDX(Index)andCDT(IndexTranche)withtencontractsorgreater.Thetableincludesthefollowing
+fields:
+l Index/Sub-index/IndexTranche
+l ProductType
+l GrossNotional(USDEQ)
+l NetNotional(USDEQ)
+l Contracts
+Table7S- GrossandNetNotionalforIndexSwaptions(10contracts
+orgreater)
+SectionI-Table7SreportstheUSD-equivalenttotalGrossandNetNotionaloptionamountsforeach
+oftheCDX(Index)andCDT(IndexTranche).Thetableincludesthefollowingfields:
+l Index/Sub-index/IndexTranche
+l ProductType
+l GrossNotional(USDEQ)
+l NetNotional(USDEQ)
+l Contracts
+DTCCCDSKineticsReportGuide
+ReportLayout/DataFields 11
+
+---
+
+## Page 12
+
+Table8- AggregateSingle-NameContractsbyYearofScheduledTer-
+minationDate(10contractsorgreater)
+SectionI-Table8reportstheUSD-equivalentNotionalAmountandnumberofContractsforallCredit
+ProductsbyYearofScheduledTerminationDate.Thetableincludesthefollowingfields:
+l YearofScheduledTermDate
+l GrossNotional
+l Contracts
+SectionIV:MarketRiskTransactionActivityonly
+Thissection(IVaandIVb)providesweeklyactivitywheremarketparticipantswereengaginginmarketrisk
+transferactivity.Thetransactiontypesincludenewtradesbetweentwoparties,aterminationofanexisting
+transaction,ortheassignmentofanexistingtransactiontoathirdparty.
+Thissectionexcludestransactionsthatdidnotresultinachangeinthemarketriskpositionofthemarket
+participants,andthatarenotmarketactivity.Forexample,centralcounterpartyclearing,andportfolio
+compressionbothterminateexistingtransactionsandre-booknewtransactionsoramendexisting
+transactions.Thesetransactionsstillmaintainthesameriskprofileandconsequentlyarenotincludedas
+“marketrisktransferactivity”.
+SectionIV-SectionIVaIndices- SingleNameMarketRiskActivity
+SectionIVaIndicesreportstransactionactivityforSingleNameproductsthatremovealltransactions
+thatdonotconstituteariskformingevent(Clearing,Compression,Intra-Family,andsoon).Itincludes
+thefollowingfields:
+l ReferenceEntity
+l GrossNotional(USD)
+l Contract
+DTCCCDSKineticsReportGuide
+ReportLayout/DataFields 12
+
+---
+
+## Page 13
+
+SectionIV-SectionIVbWeeklyMarketActivityforIndiceswith10con-
+tractsorgreaterintheWarehouse
+SectionIVbIndicesreportstransactionactivityforIndexTranchedandUntranchedproductsthat
+removesalltransactionsthatdonotconstituteariskformingevent(Clearing,Compression,Intra-
+Family,andsoon).Thetableincludesthefollowingfields:
+l Index
+l ProductType
+l GrossNotional(USDEQ)
+l Contracts
+DTCCCDSKineticsReportGuide
+ReportLayout/DataFields 13
+
+---
+
+## Page 14
+
+©2024.Allrightsreserved.[[DTCC]],[[DTCC]](Stylized)andFinancialMarkets.Forward.areregisteredandunregistered
+trademarksofTheDepositoryTrust&ClearingCorporationDTCC.Theservicesdescribedhereinareprovidedunder
+the“[[DTCC]]”brandnamebycertainaffiliatesofTheDepositoryTrust&ClearingCorporation(“[[DTCC]]”).DTCCitself
+doesnotprovidesuchservices.Eachoftheseaffiliatesisaseparatelegalentity,subjecttothelawsandregulationsof
+theparticularcountryorcountriesinwhichsuchentityoperates.Pleaseseewww.[[DTCC]].comformoreinformationon
+[[DTCC]],itsaffiliatesandtheservicestheyoffer.
+DocDate:January29,2024
+PublicationCode:DAT331
+Service:CDSKinetics
+Title:ReportGuide
+ForMoreInformation
+EmailDTCCLearningat:
+DataLearning@[[DTCC]].com
+orvisitusonthewebat:
+www.dtcclearning.com

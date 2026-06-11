@@ -1,0 +1,592 @@
+---
+title: "Legal Notice System Data Service (LENS) User Guide"
+source_pdf: "file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/ClaimConnect%E2%84%A2%20Working%20Group%20February%202020%20Meeting.pdf"
+pages: 27
+size: "2323.2 KB"
+category: "Other"
+ingested_on: "2026-06-05"
+---
+
+# Legal Notice System Data Service (LENS) User Guide
+
+**Original File:** [ClaimConnect™ Working Group February 2020 Meeting.pdf](file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/ClaimConnect%E2%84%A2%20Working%20Group%20February%202020%20Meeting.pdf)  
+**Category:** Other  
+**Total Pages:** 27  
+**File Size:** 2323.2 KB  
+
+---
+
+## Page 1
+
+LEGALNOTICESYSTEMDATASERVICE
+(LENS)
+USER'SGUIDE
+MAY15,2023
+
+
+---
+
+## Page 2
+
+©2023.Allrightsreserved.[[DTCC]],[[DTCC]](Stylized),ADVANCINGFINANCIALMARKETS.TOGETHER,
+andtheInterlockergraphicareregisteredandunregisteredtrademarksofTheDepositoryTrust&
+ClearingCorporation.
+Theservicesdescribedhereinareprovidedunderthe“[[DTCC]]”brandnamebycertainaffiliatesofThe
+DepositoryTrust&ClearingCorporation(“[[DTCC]]”).DTCCitselfdoesnotprovidesuchservices.Eachof
+theseaffiliatesisaseparatelegalentity,subjecttothelawsandregulationsoftheparticularcountryor
+countriesinwhichsuchentityoperates.Pleaseseewww.[[DTCC]].comformoreinformationonDTCC,its
+affiliatesandtheservicestheyoffer.
+Copyright@2023,AmericanBankersAssociationCUSIPDatabaseprovidedbyS&PGlobalMarket
+IntelligenceLLC.Allrightsreserved.”
+
+---
+
+## Page 3
+
+TABLEOFCONTENTS
+1.FrequentlyAskedQuestions 5
+CUSIPInputandManagement 5
+UserManagement 9
+Notices 10
+General 10
+2.UserInterface 13
+Overview 13
+NoticeTypes 13
+Legal(LG) 13
+TransferAgent(TA) 14
+TaxInformation(TX) 14
+What’sNewinLENS? 14
+ViewingLENSNotices 14
+SearchingLENSNotices 16
+Preferences 17
+SettingUpPreferences 17
+SettingUpAlertsandSettings 19
+CreatingaCUSIPInterestList 20
+DownloadingNotices 22
+BulkDownloads 22
+DownloadPricing 22
+DownloadingNoticesinBulk 23
+
+---
+
+## Page 4
+
+DownloadingNoticesinBulkBasedonPreferences 24
+DownloadingNoticesIndividually 25
+
+---
+
+## Page 5
+
+1.FrequentlyAskedQuestions 5
+1.FREQUENTLYASKEDQUESTIONS
+CUSIPInputandManagement
+1. I amhavingproblemscopyingandpastingmyCUSIPsintotheLENSportal.Arethereanybestprac-
+tices?
+l PastetheCUSIPs(fullnine-digitalphanumericCUSIPorthefirstsixpositionsoftheCUSIP)intoNotePador
+WordPad.
+l ConfirmthattherearenospacesbeforeoraftereachCUSIP.
+l HighlightthepastedCUSIPsinNotepadorWordPadfromthebottomup.
+l Right-clicktheselection,thenselectCut.
+l PastetheCUSIPs(Ctrl+ V)intoPreferencesontheLENSdashboard.
+Note
+InsteadofenteringtheentirelistofCUSIPsatthesametime,tryenteringtheminsmallerlists,for
+example,inquantifiesof100,500,25,or20.
+2. WhyamI receivinganinvalidCUSIPmessagewhenenteringalistofCUSIPsinPreferences?
+YouwillreceivetheerrorinthenextfigureiftheCUSIPinthePreferenceslistisnotDTC-eligible,eventhoughit
+couldstillbeavalidCUSIPasissuedbyS&P.Youalsoreceivethismessagewhenthereisatypointhe
+[[CUSIP]].Mostoftheseerrorsareduetoextracharactersinthefilethatwaspastedintotheapplication.Youcan
+fixthisproblembycuttingandpastingtheCUSIPsfromthePreferenceslist,andthenpastingtheminto
+NotePadorWordPad.
+InvalidCUSIPNumberMessage
+LegalNoticeSystemDataService(LENS)User'sGuide
+
+---
+
+## Page 6
+
+1.FrequentlyAskedQuestions 6
+a. WhensearchingforaCUSIPthathasatypoinit,asmessageappears,asillustratedinthenextfigure.
+TypoinCUSIPMessage
+b. WhensearchingforaCUSIPandisnotDTC-eligible,aserrorisreturned,asillustratedinthenextfigure.
+NonDTC-EligibleCUSIPMessage
+3. IstherealimittothenumberofCUSIPsthatcanbecopiedandpastedintotheLENSapplicationfor
+thecustomCUSIPlist?
+ThereisnolimittothenumberofCUSIPsthatyoucanpasteintotheLENSapplication,butyoucanonlypaste
+in3,000CUSIPsatatime;however,thebestpracticeistopasteinonly500CUSIPsatatime.
+Note
+EnsurethatyoudonotaddspacesbeforeandaftereachCUSIPpriortocuttingandpastingthemfrom
+NotePadorWordPad.
+AddingCUSIPs
+Alertsareavailableintwoformatsbasedonyourpreferences:thenoticescaneitherbepartofaseparate
+attachmentintheemailalert(asanattachedPDFfile)orpartofthebodyoftheemail.
+LegalNoticeSystemDataService(LENS)User'sGuide
+
+---
+
+## Page 7
+
+1.FrequentlyAskedQuestions 7
+Thesamplethatfollowsshowsasummaryofanoticethatisincludedinthebodyoftheemail.Samplesofthefull
+PDFnoticeareavailableintheResourcessectionoftheLENSsectionofdtcc.com.
+Subject:EmailAlertfor01/04/2017
+Thefollowingnoticesthatmatchyoursetpreferences(user123@yourcompany.com)havebeenaddedtoDTCC's
+LENSrepository.YoucanalsoviewthefilebyvisitingDTCC'swebsiteathttps://portal.[[DTCC]].com/andenterthe
+documentnumberinthesearchcriteriafield.
+DocumentNo:
+Title:
+SubCategory:
+IssuerName :
+[[CUSIP]]:
+Numberofpages:
+LG20170104-036
+NOTICETOHOLDERS12/23/2016.NOTICETOTRUSTEEANDCONVERSI
+CONVERSIONS
+PROOFPOINT,INC
+743424AB9
+2
+DocumentNo:
+Title:
+SubCategory:
+IssuerName :
+[[CUSIP]]:
+Numberofpages:
+LG20170104-039
+NOTICETOHOLDERS01/03/2017.CONVERTIBLENOTESDUE2017
+CONVERSIONS
+XPOLOGISTICS,INC
+983793AA8
+2
+DocumentNo:
+Title:
+SubCategory:
+IssuerName :
+[[CUSIP]]:
+Numberofpages:
+LG20170104-046
+ANOTICETOHOLDERS-12/30/16-TENDERNOTICE
+CONVERSIONS
+WESTVIRGINIAECONOMICDEVELOPMENTAUTH
+95648VAQ2
+3
+DocumentNo:
+Title:
+SubCategory:
+IssuerName :
+[[CUSIP]]:
+Numberofpages:
+LG20170104-047
+ANOTICETOHOLDERS-12/30/16-TENDERNOTICE
+CONVERSIONS
+WESTVIRGINIAECONOMICDEVELOPMENTAUTH
+95648VAP4
+3
+SampleEmailofCUSIPonaWatchlist
+LegalNoticeSystemDataService(LENS)User'sGuide
+
+---
+
+## Page 8
+
+1.FrequentlyAskedQuestions 8
+Tochangethefrequencyorconditionsofthealert,visitthewebsiteandmakechangestoyourpreferences.
+LegalNoticeSystemDataService(LENS)User'sGuide
+
+---
+
+## Page 9
+
+1.FrequentlyAskedQuestions 9
+4. WhatisthebestwaytodeleteanexistingCUSIPlistfromthePreferencetab?
+a. SelectPreferencesfromthetopoftheLENSdashboard,thenclickontheCUSIP InterestList.
+b. DeleteafewCUSIPsfromthePreferences:SelectthecheckboxtotheleftofeachCUSIPandclick
+DeleteSelectedontheupperrightofthescreen.
+DeletingCUSIPs
+c. DeletetheremainderoftheCUSIPsfromthePreferenceslist.WhenyouclickDeleteALL intheupper
+rightofthescreen,aconfirmorcancelboxappears.
+Confirm/CancelCUSIPDeletion
+d. SelectthePreferencesradiobuttonfromtheLENSdashboardtobulkdownloadCUSIPs.
+UserManagement
+1. DoesLENShaveanyuserlimitations?
+No.AllLENS usershavethesameview(accesstoallnotices).
+2. IstherealimitationtohowmanyusersareallowedperLENSagreement?
+No,thereisnolimittothenumberofusers.Historicallythenon-memberLENSagreementswerebasedon
+usage.Forexample,thedefault$5Kannualcontractwaspre-paidforaccessto200notices.Foranyadditional
+noticesaccessedacrossallusers,therewasachargeof$25pernotice.
+LegalNoticeSystemDataService(LENS)User'sGuide
+
+---
+
+## Page 10
+
+1.FrequentlyAskedQuestions 10
+Notices
+1. DoesDTCC knowwhoissubmittingthenoticesonbehalfoftheissuer?
+Thesenoticescomefromvarioussources:issuers,thirdparties,andcourts.whenanoticecomestoDTCC via
+email,[[DTCC]] identifiesthesenderfromtheemailaddressthatsenttheemail.
+2. HowareLENSnoticespopulated?DTCCisthe(ortheonly)holderoftherecordofthesecurity(Cede
+&Co.).Theentityprovidingthenoticesdoesnotknowwhothebeneficialholderis,sotheycometo
+DTCCtohelpdistributethesenotices.DTCCmakesthesenoticesavailabletoparticipants,whomake
+themavailabletobeneficialholders.Alternatively,beneficialholderscancomedirectlytous
+[[DTCC]] doesnotsourcethesenotices.[[DTCC]] onlypoststhenoticesthataresupplied
+3. Whereistheteamthathandlesincomingnoticeslocated?
+[[DTCC]]’steamislocatedinWrexham(UK)andTampa,FL.
+4. IftheissuerofthenoticesisnotsendingthemdirectlytoDTCC,doesthetrusteeoragentsendthem
+directlytoDTCConbehalfoftheissue?
+Yes, mostlikely,butnotinallcases.
+5. CanI specifythetypesofLENSnoticesaboutwhichI wantupdates?
+Yes.YoucanclickCategoryandSubcategoryintheLENSapplication,asinthenextfigure.
+SpecifyingLENSNotices
+General
+1. Ifanon-participantexceedsthemaximumof200noticesayear,whendoesDTCCchargethe$25per
+noticeoverage?
+[[DTCC]] chargesthe$25pernoticeoveragefeemonthly.
+2. AretrialsoftheLENSapplicationavailable? 
+LegalNoticeSystemDataService(LENS)User'sGuide
+
+---
+
+## Page 11
+
+1.FrequentlyAskedQuestions 11
+Ifyouwanttoreviewasmallnumberofnotices(CUSIPs),yoursalesrepresentativecanrunaqueryforthelast
+yearortwoandletyouviewthemviaWebex.Ifthatapproachdoesnotfityourneeds,[[DTCC]] canofferaLENS
+trialforanominalfee,whichwillallowyoutoviewalimitednumberofnotices.
+LegalNoticeSystemDataService(LENS)User'sGuide
+
+---
+
+## Page 12
+
+1.FrequentlyAskedQuestions 12
+3. CanaredistributorsignaLENSAgreement?
+DTCChasmainlyhadservicefacilitatoragreementsinthepast.Toworkwitharegularredistributor,[[DTCC]] will
+needtoensurethatthedatadoesnotcannibalizetheexistingLENSbusinesswhenitisredistributed.
+4. Whatistheformatofthedownloadfromtheportalandtheemailthattheportalsends?
+Thedownloadfileistheusername.zip.TheemailPDFisthenoticenumber.pdf,forexample,
+LF20160502-001.pdf
+LegalNoticeSystemDataService(LENS)User'sGuide
+
+---
+
+## Page 13
+
+2.UserInterface 13
+2.USERINTERFACE
+Overview
+Issuers,agentsandcourtsproduceanabundanceofsecurities-relatednoticesdaily—everythingfrombankruptcies
+anddefaults,toclassactionsandSection19(a)notices.
+DTCChousesoneofthemostcomprehensiverepositoriesoflegalnoticesintheU.S.;andLENSletsyouaccessthe
+noticesyouneedsoonafterthey’reavailabletous.Thisstreamlined,centralizedonlineportalmakeseverynoticein
+theDTCClibraryavailabletoyouinPDFform.
+NoticeTypes
+TheLENSlibrarycontainsdocumentscategorizedasoneofthethreenoticetypes:Legal,TransferAgent,orTax.
+WhensearchingfornoticesinLENS,youmaylimityoursearchtoanyofthecategoriesshownbelow.
+Legal(LG)
+LegalNoticeSystemDataService(LENS)User'sGuide
+
+---
+
+## Page 14
+
+2.UserInterface 14
+l NoticestoSecurityHolders
+l Bankruptcies
+l Litigation/ClassActions
+l Defaults
+l LetterofCreditSubstitution
+l CostBasis
+l Dissent
+l Conversions
+l Other
+TransferAgent(TA)
+l NotificationunderRule17Ad–16oftheSECActof1934
+TaxInformation(TX)
+l Domestic(U.S.[[securities]]);IncludingSection19Notices
+l Foreign(Non-U.S.[[securities]])
+What’sNewinLENS?
+ThelatestreleaseofLENShasafreshlookandsomenewfeatures,including:
+l NoticessourcedtoLENSareavailabletoviewthesameday,andappearinthe“Today”columnonthedashboard.
+l Theabilitytosort,filter,andexportsearchresults.
+l CSVemailalertsarecustomizedtoyourpreferences.
+l Enhancedpreferencecapabilitiesallowuserstofilterthedashboardandbulkdownloadresultsbasedonyourpref-
+erences.
+ViewingLENSNotices
+ThischaptercontainsatranscriptofananimatedhelptopicavailableintheLENSonlinehelp.
+WelcometoViewingLensNotices.Thisvideoisthefirstvideoinatwo-partseriesonLENS.RefertoalltheLENS
+topicsformoreinformation.
+LegalNoticeSystemDataService(LENS)User'sGuide
+
+---
+
+## Page 15
+
+2.UserInterface 15
+TheLegalNoticeSystemallowsuserstoview,download,andsearchfornoticesconcerningDTC-eligiblesecurities.
+TheLENShomepageordashboardiscomposedofthreeareas:
+1. First,thenoticegridallowsimmediateaccesstonoticespostedtoday,yesterday,andnoticespostedsincethe
+lasttimeyouloggedintotheapplication.Thesecategoriesareavailablefortimelyretrievalofnoticestofacilitate
+theworkflowsforactiveusers.Additionally,thegridcanbecustomizedtodisplaynoticesbasedoffofyourPrefer-
+encessettings.
+2. Second,thebulkdownloadfeatureallowsyoutodownloadupto1,000noticesatonce.Thebulkdownloadfea-
+turecanalsobecustomizedtodownloadonlyCUSIPsornoticetypesofinterest.
+3. Finally,thenoticesearchallowsyoutosearchbyCUSIP,keyword,noticetypeorLENSdocumentnumber.The
+searchcanretrievenoticesuptofiveyearsinthepast.
+Forthepurposesofthiswebcast,wewillfocusonthenoticegrid.Tolearnaboutthebulkdownloadandnotice
+search,seetheDownloadandNoticeSearchtopics.ThreetypesofLENSnoticesareofferedandappearalongthe
+leftsideofthedashboardgrid:
+l Legalnotices,
+l TransferAgentnotices,and
+l Taxinformationnotices
+Totherightofthenoticetypes,thenumberofnoticespostedToday,Yesterday,orsinceyourLastLoginare
+presented.Simplyclickanumberandthenoticesforthatcategoryaredisplayed.
+Toopenanotice,clickanydocumentnumberinyourresults.Apdfopenscontainingthenoticeinformation.
+TheresultslistalsoshowsadditionalinformationsuchastheCUSIPorCUSIPfamily,noticesub-type,anda
+descriptionofthenotice.
+WhenanoticereferencesmultipleCUSIPs,aplussignappearsnexttotheCUSIP.Clicktheplussigntoseeall
+theCUSIPsthatapplytotheparticularnotice.
+ToreturntotheDashboard,clickHome.
+Nowlet’slookmorecloselyatthegridcolumnsonthedashboard.
+TheTodaycolumnupdatestoshownoticesastheyarepostedtoLENSthroughouttheday.Thecutofffor
+noticestostopappearingundertheTodaycolumnismidnightEST.Aftermidnight,Today’snoticesrollunder
+Yesterday’snoticesandappearthere.
+l Yesterday’snoticesshowthetotalnumberofnoticesthatwereannouncedthepreviousday.Thatnumberwillstay
+thesamethroughouttheday,ifyouprefertoworkoffafixedlist,thenclickingontheYesterdaylinkwouldbebest.
+Usingthegridthisway,canhelpyoutotracknoticesonanongoingbasis.
+l Finally,theSinceLastLogincolumnsavesupallthenoticesthatwerepostedsinceyoulastloggedintoLENS.
+Thisinsuresyouwillnotmissanoticewhileonvacationorfollowingaholiday. 
+l Asaglobalorganization,DTCwillpostnoticestoLENSMondaythroughFriday,andevenonsomeU.S.
+holidays,withnointerruptionofservice.
+LegalNoticeSystemDataService(LENS)User'sGuide
+
+---
+
+## Page 16
+
+2.UserInterface 16
+Keepinmindthatyoucandownloadallthenoticesyouseeinthegridbyusingthebulkdownloadfeature.Per
+noticepricingrulesapplyifyourfirmdoesnothaveaLENSsubscription,toverifyifyourfirmhasanexisting
+subscriptionpleaseconsultyourRelationshipManageroremailusatlensweb@[[DTCC]].com.Seethedownload
+topicformoreinformation.
+Finally,thereisawaytofilterthegridsoonlythosenoticesorCUSIPSfromyourPreferencesareshown.
+ClickthePreferencesbutton.Seehowthecountsreduce?Incertaincategoriesthereisazero.Thisisbecause
+youhaveturnedonyourPreference.
+WorkingwiththePreferencesfilterwillstreamlineyourviewsothatyoucanfocusononlythenoticesthatare
+relevanttoyou.
+YouareabletoseeyourpreferrednoticesthatwerepostedToday,Yesterday,andSinceyourLastLogin.
+Note
+ThePreferencesfilterdoesnotapplytotheSearchNoticessectionoftheDashboard.
+ToreturntotheregularLENSview,clickAllNotices.
+ThePreferencefilterwillonlyworkifyourpreferencesaresetup.Tosetupyourpreferences,clickthePreferences
+Linkonthemenubar.
+Formoreinformationonsettinguppreferences,seethePreferencestopic.
+SearchingLENSNotices
+Note
+ThePreferencesfilterdoesnotapplytotheSearchNoticessectionoftheDashboard..
+ThischapterisatranscriptofananimatedtopicavailableintheLENSonlinehelp.
+WelcometoSearchingLENSNotices.Thisvideoisthesecondinatwo-partseriesonLENS.RefertoalltheLENS
+topicsformoreinformation.
+TheLegalNoticeSystemofferstwoavenuestolocatenotices:
+l TheNoticegridprovidesusersashortcuttoaccessnotices.
+l TheNoticeSearchlocatesnoticesbyCUSIP,keyword,noticetypeorLENSdocumentnumber.
+Forthepurposesofthisvideo,wewillfocusontheNoticeSearch.Tolearnaboutthegrid,seetheViewingNotices
+topic.
+Usingthenoticesearch,youcanqueryuptofiveyears’worthofnotices.
+LegalNoticeSystemDataService(LENS)User'sGuide
+
+---
+
+## Page 17
+
+2.UserInterface 17
+Wewillfirstshowyouthedifferenttypesofnoticesearchesandthengothroughsomewaystoworkwiththe
+searchresults.
+Let’sfirstsearchfornoticesbyCUSIP.Entera9-digitfullor6-digitbaseCUSIP.AbaseCUSIPwillusuallyreturn
+moreresultsthanafullCUSIP.
+MultipleCUSIPsmustbeseparatedbycommasorsemicolons.
+Preferences
+SettingupyourLENSpreferencesallowsyoutodothefollowing:
+l EstablishalistofCUSIPsand/ornoticetypesofinterestthataresavedasyourpreferences.
+l Receiveemailnotificationsonadailyorweeklybasis,whennoticesthatmatchyourpreferencesarepostedin
+LENS.YoumayalsoreceivethisinformationinaCSVspreadsheet.
+l FilteryourpreferencesontheLENSdashboard.
+l Bulkdownloadnoticesbasedonpreferences.
+SettingUpPreferences
+Settinguppreferencesisatwo-partprocess.Tosetupgeneralpreferencesettings,fromthemenubarselect
+Preferences>AlertsandSettings.TocreateacustomlistofCUSIPsthatcanbeoptionallyusedtorefineyour
+preferencesfurther,selectPreferences>CUSIPInterestList.
+LegalNoticeSystemDataService(LENS)User'sGuide
+
+---
+
+## Page 18
+
+2.UserInterface 18
+Important:Beforeyoucanoptto“IncludeonlyCUSIPSfromMyList”asshownabove,youmustcreateaCUSIP
+InterestList.
+LegalNoticeSystemDataService(LENS)User'sGuide
+
+---
+
+## Page 19
+
+2.UserInterface 19
+SettingUpAlertsandSettings
+Usethisproceduretosetuportochangeyourpreferences.Choicesselectedhereapplyto:
+l Emailalerts
+l Dashboardnotices
+l Bulkdownloads
+1. FromthePreferencesmenu,selectAlertsandSettings.
+2. IntheE-mailNoticeAlertssection,answerthefollowing.
+l Doyouwanttoreceivee-mailalerts?Indicatewhetheryouwishtoreceiveemailalertnotificationsbasedon
+yourpreferences.
+l Howdoyouwishtoreceiveemailalerts?ChooseTextorCSVspreadsheet.Ifyouindicate,text,youwill
+receivearegularemailwiththeinformationwrittenintheemailbody.IfyouselectCSV,youwillreceivean
+emailwiththeinformationattachedinaspreadsheetCSVfile.
+l Ifyes,howoften?Indicatewhetheryouwouldliketoreceiveemailsdailyweekly.Weeklyemailswillbeavail-
+abletoviewonMondaymorning.
+l Dailyemailalertsaredeliveredby7:00AMET.Arelevantnoticeannouncedbetween7:00AMand4:00PM
+willresultinanadditionalemailnotification.Noticessentafter4:00PMareannouncedthenextday.
+l Delivere-mailalertsto:Typetheemailaddresswhereyouwouldliketodirectnotifications.
+3. IntheAlertsandDashboardPreferencessection,indicateyourpreferencesettings.
+a. Indicatewhetheryouwishtoreceivenoticesfromallnoticetypes(Legal,TransferAgent,andTaxInform-
+ation)orfromonlythenoticetypesyouselect.
+b. TosetuppreferencesbasedonallLENSnoticetypes,clicktheAllnoticecategoriesbutton.Fromhere,
+youmayindicatewhetheryouwishtoreceiveallCUSIPsorlimittoonlyCUSIPsfromyourCUSIPList.
+LegalNoticeSystemDataService(LENS)User'sGuide
+
+---
+
+## Page 20
+
+2.UserInterface 20
+4. Tosetuppreferencesforonlycertainnoticecategories,clicktheCategoriesindicatedbelowbutton.Fromhere
+clickthecheckboxestocustomize.
+5. ClickSubmit.ThenclickOKtoconfirm.
+Amessagedisplaysthatyourpreferencesweresuccessfullysetupandorchanged.
+CreatingaCUSIPInterestList
+UsethisproceduretoindicatespecificCUSIPsforyourpreferences.Addupto500CUSIPsatatimehere;additional
+CUSIPscanbeaddedwithanothersubmission.
+Whenineffect,yourCUSIPListpreferencesapplyto:
+l Emailalerts
+l Dashboardnotices
+l Bulkdownloads
+LegalNoticeSystemDataService(LENS)User'sGuide
+
+---
+
+## Page 21
+
+2.UserInterface 21
+Important:AftersettingupyourCUSIPlisthere,youmustalsoselecttheoptionto“includeCUSIPsfrommylist”in
+yourAlertsandSettingPreferences.
+1. FromthePreferencesmenu,clickCUSIPInterestList.
+2. ClicktheAddCUSIPsbuttonontheupperrightofthepage.
+3. IntheLENSAddCUSIPswindow,typenine-digitfullorsix-digitpartialCUSIPsseparatedbycommasorsemi-
+colons.Youmayaddupto500CUSIPsduringasingleupdateandcanmakeasmanyupdatesasnecessary.
+QuickTip:CopyandpastefunctionalityisavailableforuserslookingtopastemultipleCUSIPsintotheCUSIP
+InterestListwindow.InordertoavoidpastinghiddencharactersintotheCUSIPwindow,neverpasteCUSIPs
+directlyfromExcel.Instead,useaprogramsuchasNotepadtoremovehiddencharacters.
+4. ClicktheAddCUSIPsbuttonintheLENSAddCUSIPwindow.
+Amessage,“CUSIPsaddedsuccessfully”isdisplayed.Youralertsanddashboardpreferencescannowbe
+modifiedtoincludeonlyCUSIPsIndicatedinyourList.Tocompletethisstep,refertoSettingUpAlertsAnd
+Settings.
+5. TodeleteCUSIPsfromthelist,clickthecheckboxesnexttotheCUSIP(s).ThenclicktheDeleteSelectedbut-
+ton.Todeletetheentirelistatonce,clickDeleteAll.ClickOK.
+QuickTip:DeleteAllwillbedisabledifyouralertsaresettoMyCUSIPList.Youwouldneedtochangeyour
+AlertsandSettingstoAllNoticesandthenDeleteAll.
+LegalNoticeSystemDataService(LENS)User'sGuide
+
+---
+
+## Page 22
+
+2.UserInterface 22
+DownloadingNotices
+LENSNoticesareavailableinPDFFormatandmaybedownloadedindividuallyorinbulkuptoathousandnoticesat
+atime.
+BulkDownloads
+Youmaydownloadallorsomeofthenoticesyouseeinthedashboardgridbyusingthebulkdownloadfeature.The
+bulkdownloadcanalsobecustomizedtodownloadnoticesbasedonyourpreferences.
+DownloadPricing
+PernoticepricingrulesapplyifyourfirmdoesnothaveaLENSsubscription.Asubscriptionallowsyourfirmtopaya
+flatrateforunlimitedviewinganddownloadingofnotices.Toseerates,gotowww.[[DTCC]].com/lens.Toverifyifyourfirm
+hasanexistingsubscriptionortosubscribe,pleaseconsultyourrelationshipmanageroremailusat
+lensweb@[[DTCC]].com
+Important!Priortousingthebulkdownloadfeature,itisgoodtoknowwhetheryourfirmhasanunlimiteddownload
+subscription.Usingthebulkdownloadwithoutasubscription,couldcauseyourfirmtoincurasignificantcharge.
+LegalNoticeSystemDataService(LENS)User'sGuide
+
+---
+
+## Page 23
+
+2.UserInterface 23
+DownloadingNoticesinBulk
+1. FromtheLENSDashboard,clickthe“+”signtotherightofNoticeDownload(bulk).Thebulkdownloadareais
+nowviewable.
+2. Selectadownloadnoticetype.
+ChoicesareLG-Legal,TA-TransferAgent,orTX-TaxInformation.
+3. Selectdownloadcriteria.
+ChoicesareToday,YesterdayorSinceLastLogin*.
+*displaysonlyifnoticesareavailablesincelastlogin.
+LegalNoticeSystemDataService(LENS)User'sGuide
+
+---
+
+## Page 24
+
+2.UserInterface 24
+4. ClicktheDownloadbutton.Note: Thebuttonisnotactiveifyouareattemptingtodownloadatypeofnoticethat
+isnotcurrentlyavailable.
+Amessagedisplaysconfirmingyouwishtoproceed.
+5. TocancelthebulkDownload,clickCancel.
+6. ToproceedwiththebulkDownload,clickOK.
+a. Alensbulkdownload.zipfiledownloads.YouarepromptedtoOpenand/orsavethezipfile.
+b. Toviewyournotices,unziporextractthenoticesfromtheWinZipfile.
+c. Only1000noticescanbedownloadedatonce.Ifyourdownloadcriteriaexceeds1000notices,thentheold-
+est1000noticesthatmatchyourcriteriawillbedownloaded
+DownloadingNoticesinBulkBasedonPreferences
+Thebulkdownloadfeaturecanalsobecustomizedtoperformbulkdownloadsbasedonyourpreferences.
+1. ToturnonPreferences,fromtheLENSdashboard,clickthePreferencesbutton.Abannerappearslettingyou
+knowyouhavethePreferencefilteron.
+2. Proceedtousethebulkdownload.
+Allnoticesdownloadedwillbeinaccordancewithyourpreferences.
+3. Allnoticesdownloadedwillbeinaccordancewithyourpreferences.
+4. Toremovethefilter,clicktheAllNoticesbutton.
+LegalNoticeSystemDataService(LENS)User'sGuide
+
+---
+
+## Page 25
+
+2.UserInterface 25
+Note
+ForthePreferencesfiltertowork,youmustfirstsetuppreferences.
+DownloadingNoticesIndividually
+Youcanselectindividualnoticestodownloadfromthesearchresultspage.
+1. FromtheLENSdashboard,eitherselectahyperlinkintheDashboardgrid,orsearchfornoticesviatheNotice
+Searchsection.Eitheroneoftheseactionswilladvanceyoutotheresultspage.
+2. Fromyourresults,clickthecheckboxesonthelefttoselectnoticesfordownload.
+3. Toselectallthenoticesintheresults,clicktheboxatthetopofthecolumn.
+4. ClicktheDownloadSelectedbutton.
+Multiplenoticesaredownloadedinazipfile.AsinglenoticedownloadsasanAcrobat.pdffile.Youareprompted
+toopenorsavethefile(s)toyourcomputer.
+LegalNoticeSystemDataService(LENS)User'sGuide
+
+---
+
+## Page 26
+
+2.UserInterface 26
+LegalNoticeSystemDataService(LENS)User'sGuide
+
+---
+
+## Page 27
+
+FORMOREINFORMATION
+EmailDTCCLearningat:
+DTCCLearning@[[DTCC]].com
+orvisitusonthewebat:
+www.dtcclearning.com

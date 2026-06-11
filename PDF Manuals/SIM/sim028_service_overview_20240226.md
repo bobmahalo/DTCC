@@ -1,0 +1,2251 @@
+---
+title: "Service Overview"
+source_pdf: "file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/sim028_service_overview_20240226.pdf"
+pages: 71
+size: "5279.7 KB"
+category: "SIM"
+ingested_on: "2026-06-05"
+---
+
+# Service Overview
+
+**Original File:** [sim028_service_overview_20240226.pdf](file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/sim028_service_overview_20240226.pdf)  
+**Category:** SIM  
+**Total Pages:** 71  
+**File Size:** 5279.7 KB  
+
+---
+
+## Page 1
+
+SettlementInstructionManager
+SERVICEOVERVIEW
+FEBRUARY26,2024
+
+---
+
+## Page 2
+
+TABLEOFCONTENTS
+Preface 6
+Audience 6
+ChangesinthisVersionoftheDocument 6
+InvestmentManagerandBrokerTerms 6
+Questions? 7
+RelatedDocumentsandTraining 7
+1.Overview 8
+ProcesstoGenerateandReleaseInstructions 8
+FinancialInstruments 10
+SettlementandDeliveryStatuses 11
+OrganizationandUserConfiguration 16
+OrganizationSubscriptions 16
+OrganizationSubscriptionOptions 16
+UserRoles 17
+ProfilesandReleaseMethods 18
+Profiles 18
+EventProfiles 18
+NotificationProfiles 19
+DestinationProfiles 20
+ReleaseMethods 20
+2.SettlementInstructionManagerUserInterface(UI) 1
+FieldMapofSettlementInstructionManagerUI 2
+ActionButtons 7
+ServiceOverview
+TableOfContents 2
+
+---
+
+## Page 3
+
+Release 7
+Cancel 8
+Stop 9
+Amend 10
+AcceptDifferences 12
+Suppress 13
+ExcludeFilter 14
+AccountID 16
+AdditionalSettlementInstructionManagerUIFunctionality 16
+SettlementInstructionManagerGridSupports10,000Rows 16
+FilterDateRangeSupportsupto30Days 16
+StatusFiltersShortcuts 17
+ShareableViews 18
+3.SettlementInstructionManagerFunctionality 21
+Pre-MatchedAgreed(Pre-MAGR)Workflow 21
+Description 21
+SubscriptionsandRoles 21
+FieldsPre-MAGRUsestoDetermineDifferences 26
+AcceptDifferences 27
+AdditionalInformationforPre-MAGRWorkflow 29
+CrossCurrencyInstructions 29
+SettlementAmount 30
+ResultingAmount 30
+ServiceOverview
+TableOfContents 3
+
+---
+
+## Page 4
+
+ExchangeRate: 30
+OmnibusBlockSettlementWorkflow 31
+Description 31
+SubscriptionsRequired 31
+SINO–FXStandingInstructionsNotApply 32
+SWIFTMT54xInstruction/CSVExporttoPDF 34
+SettlementInstructionManagerStatusMessageDelivery 35
+Description 35
+SubscriptionsRequired 36
+DestinationProfileRequired 36
+SFTPSetup 36
+SecondaryRecipientsSuppression 36
+Description 36
+SubscriptionsandRoles 37
+ActionButton 37
+SuppressedRecipientsSection 39
+Multi-AmendFunctionality 39
+Description 39
+KeyFeatures 39
+Functionality 40
+SettlementStatusFieldsandFiltering 43
+NewFieldsAvailablethatcanbeaddedtoGridResults 43
+AdditionalFilters 44
+ServiceOverview
+TableOfContents 4
+
+---
+
+## Page 5
+
+4.Appendix 46
+InstructionErrors 46
+TranslationErrors 49
+ServiceOverview
+TableOfContents 5
+
+---
+
+## Page 6
+
+PREFACE
+Audience
+ThisdocumentisforinvestmentmanagersandbrokerswhowanttoutilizetheSettlementInstructionManager
+service.
+Thedocumentprovidesanoverviewofthefeaturesandfunctionalityoftheservice.
+ChangesinthisVersionoftheDocument
+ThisversionofthedocumentincludeschangesbasedontheSettlementInstructionManagerreleaseintroduced
+onMarch9,2024.SettlementInstructionManagerwillnowsupportsettlementstatusfieldsprovidingclientswith
+theabilitytohaveafullviewintothesettlementlifecycleoftradesinstructedtoprimaryrecipientsfromSettlement
+InstructionManager.DTCCSettlementStatusManagerclientswillseestatusinformationautomatically;other
+clientswillneedtorequesttheirCustodianstosendSWIFTstatusandconfirmationmessagestoseesettlement
+statusinformationpopulated.
+InvestmentManagerandBrokerTerms
+Thebelowtabledefinessomeofthetermsusedinthisdocument,specificallyinthecontextofhowtheyareused
+inrelationtoSettlementInstructionManager.
+Term Definition
+[[settlement]]
+Instruction
+Managerservice
+ComponentoftheITP‘No-TouchWorkflow’,designedtointegratewithCTM,takinginauthoritativetradedatafromCTM
+andsendinginstructionstoidentifiedrecipients.
+[[settlement]]
+Instruction
+ManagerUI
+Browser-baseduserinterfacethatallowsuserstoview,monitorandtakeactionontheinstructionsgeneratedbythe
+SettlementInstructionManagerservice.
+Allocation TradeDetailRecordsentfromCTMcontainingthedetailsofthematchedconfirmationagreedbetweentheinvestment
+managerandtheexecutingbroker.
+Settlementdetail RecordcreatedbySettlementInstructionManagerusingthedetailsprovidedintheallocationsentfromCTM.
+Instruction SettlementinstructionmessagegeneratedbySettlementInstructionManagerusingthedataprovidedinthesettlement
+detail.
+Table0.1SettlementInstructionManagerTerms
+ServiceOverview
+Preface 6
+
+---
+
+## Page 7
+
+Term Definition
+MatchAgreed InCTM,theallocationisinatradesidethatisMatchAgreed(MAGR)–blocksarematched,allocationsarematched
+andthetradesideisCOMPLETE.
+CancelMatch
+Agreed
+InCTM,theallocationisinatradesidethatisCancelMatchAgreed(CMAG)whenbothpartiestothetradehave
+agreedtobilaterallycancelatradesidethatwaspreviouslyMatchAgreed(MAGR).
+Pre-Match
+Agreed
+ClientsmaywishtosendsettlementinstructionspriortoMatchAgreed(MAGR)statusonCTM.PreMatchAgreed
+(Pre-MAGR)indicatesthat
+o blocksmaynotbematched(NMAT),andcouldonlybepairedwithmismatcheddata(MISM),
+o allocationmaynotbematched(NMAT),orcouldonlybepairedwithamismatched(MISM) confirmation,
+o allocationmaybematched(MACH),butotherconditionsarepreventingthetradesidefromreachingMatch
+Agreed(MAGR)(ex.blockismismatched(MISM),otherallocationsinthetradesidearenotmatched(NMAT),
+thetradesideisnotcomplete(INCP)).
+Questions?
+TheClientCenterprovidesgeneralassistanceandtechnicalhelp.Visitto:
+l Enteraservicerequestorcheckthestatusofanexistingservicerequest.
+l Searchtheknowledgebase.
+l Obtaincontactinformation.
+RelatedDocumentsandTraining
+Forrelateddocumentsandtraining,seeSettlementInstructionManagerontheDTCCLearningCenter.
+ServiceOverview
+Preface 7
+
+---
+
+## Page 8
+
+1.OVERVIEW
+TheSettlementInstructionManagerserviceprovidesCTMuserswiththeabilitytogeneratesettlement
+instructionstobesenttocustodianbanksandinterestedpartiestoinformthemofatradeintendedforsettlement.
+ThesettlementinstructionmessageuseseitheraSWIFTMT541/543messageformatoraCommaSeparated
+Value(CSV)filecontainingthesettlementinstruction.Amaximumof15instructions(1Primary,14Interestedthird
+parties)canbesentforeachallocation/settlementdetail.Userscanmonitorandmanagethesesettlement
+instructionmessagesthroughtheSettlementInstructionManagerUI.
+ProcesstoGenerateandReleaseInstructions
+ForInvestmentManagersMatchAgreed(MAGR) Yes
+CancelMatchAgreed(CMAG) Yes
+NotMatchAgreed(NMAG)*akaPre-MatchAgreed Yes
+OmnibusBlockSettlement Yes
+ForExecutingBrokers MatchAgreed(MAGR) Yes
+CancelMatchAgreed(CMAG) Yes
+NotMatchAgreed(NMAG)*akaPre-MatchAgreed No
+OmnibusBlockSettlement No
+SettlementInstructionManagerusesthebelowprocesstodeterminewhentogeneratesettlementinstructions
+andwhotosendthemto:
+1. TheSettlementInstructionManagerservicereceivesallocationswithastatusofMATCHAGREED(MAGR)
+andCANCELMATCHAGREED(CMAG)forinvestmentmanagerandbrokerusersofCTMthataresub-
+scribedtotheSettlementInstructionManagerservice(seeOrganizationandUserConfigurationforfurther
+details).ForinvestmentmanageruserssubscribedtothePreMatchAgreedworkflow(seeOrganizationand
+UserConfiguration),theSettlementInstructionManagerservicereceivesallocationswithastatusofNOT
+MATCHAGREED(NMAG)(alsoreferredtoasPreMatchAgreed)aswellasanyfurtheramendments,status
+updatesorcancellationsassociatedwiththatallocation.ForinvestmentmanageruserssubscribedtoCTM
+BlockSettlement(seeOrganizationandUserConfiguration),theSettlementInstructionManagerservice
+receivesOMNIallocation(aggregatedomnibusallocation),DEPD(dependentindividualallocationsasso-
+ciatedwiththeOMNIallocation),andINDP(independentallocationsnotassociatedwithanyOMNIallocation)
+andwillseetheadditionalstatusofIneligibleforCTMMatching(ILFM)aswellasfurtheramendments,status
+updatesorcancellationsassociatedwithrelatedOMNI/DEPDallocations.
+2. Basedonthecriteriadefinedintheinvestmentmanagerorbroker’sEventProfilesassociatedwiththeSet-
+tlementInstructionManagerservice,SettlementInstructionManagerdeterminesifthedatawithintheset-
+tlementdetail‘qualifies’tobesentasaninstruction(seeOrganizationandUserConfigurationforfurther
+details).
+ServiceOverview
+1.Overview 8
+
+---
+
+## Page 9
+
+3. Theinvestmentmanagerorbrokercanchoosetosendinstructionsto:
+a. theSettlingAgentasdefinedintheirALERTStandingSettlementInstructions(SSIs)ortheirmanually
+providedSSIs.TheSettlingAgentisderivedfromoneof3fields:
+l TheReceiverAgentBIC,ifprovidedandiftheBICisvalid;
+l Else,theCustodianBIC,ifprovidedandiftheBICisvalid;
+l Else,theSubAgentBIC,ifprovidedandiftheBICisvalid;
+l ElsenoSettlingAgentisderived
+b. otherparties,includingcustodians,thirdparties,brokerorinvestmentmanagerorganizationsthatareset
+upinthedestinationprofiles.
+Notes
+l Theinvestmentmanagerandbrokercanelecttosendinstructionstomultipleinterested
+partiesforthesameallocation.
+l TheSettlingAgentisthePrimaryrecipientofinstructions,andtheSWIFTtag23Gwillbe
+populatedaseither:23G::NEWMforaMatchAgreedtradeor:23G::CANCforaCancel
+MatchAgreedtradeoraCancelledinstructionfromtheuser.
+l OnlySWIFTmessagescanbesenttothederivedSettlingAgent.Allotherpartiescan
+receiveeitherSWIFTorCSV.
+IftherecipientisnottheSettlingAgent,a/COPYisaddedtothe23Gtagtoindicatethatthisa/COPYofthe
+instructione.g.:23G::NEWM/COPY)
+4. Oncequalifiedasanallocationtheinvestmentmanagerorbrokerwantstosendinstructions,[[settlement]]
+InstructionManagervalidatesdatainthesettlementdetail,includingchecksformandatorydata,conditional
+mandatorydata,adherencetoSWIFTlengthandSWIFTsyntax.Ifvalidationfails,anerrorwillbeappliedto
+theinstruction.ForafulllistoferrorswithanexplanationpleaseseeAppendixforallerrors.
+5. Oncethesettlementdetailpassesvalidation,theinstructionsassociatedwiththeallocationare:
+a. EitherautomaticallyreleasediftheclientisconfiguredforAuto-Release
+b. OrgivenastatusofAwaitingReleaseawaitingtheusertotakeactiontoReleasetheinstructionsthrough
+theSettlementInstructionManagerUI.
+6. Thestatusofthesettlementdetailandits’underlyinginstructionscanbetrackedintheSettlementInstruction
+ManagerUI.Thereare3setsofstatusesthataretrackedfortheSettlementDetailanditsunderlyinginstruc-
+tions.PleaserefertoSettlementandDeliveryStatusesfordetailedinformation.
+7. FromtheSettlementInstructionManagerUI,thereareseveralactionsthatcanbeperformeddependingon
+thestatusofthesettlementdetail/instructionandtherolesassignedtotheuser(seeUserRoles).
+ServiceOverview
+1.Overview 9
+
+---
+
+## Page 10
+
+8. Furtherconsiderationsinrelationtothegenerationofinstructionsare:
+a. WhenaCancelMatchAgreed(CMAG)tradeisreceived,iftheoriginaltradeincludedFXDealCurrency
+(e.g.:11A::FXISor:11A::FXIB),theFXinformationwillbecanceled(e.g.:22F::FXCX/FXYE)
+b. IftheusercancelsaninstructionviatheUI,andtheoriginaltradeincludedFXDealCurrency(e.g.
+:11A::FXISor:11A::FXIB),apromptwillasktheuseriftheFXinformationshouldalsobecancelled(e.g.
+producingeithera:22F::FXCX/FXYEora:22F::FXCX/FXNO)
+c. SettlementInstructionManagervalidatesBICsthatarepopulatedontheSWIFTMT541/MT543mes-
+sagetoensurethattheBICisvalidandisnotasanctionedBIC.
+9. SettlementInstructionManagerfollowsSWIFTrequirementsforcharacterfieldlengthforeachfinancialfield
+mappedtothesettlementinstruction,regardlessiftheinstructionisdeliveredviaSWIFTorCSV.Byfollowing
+SWIFTfieldlengthrequirementsforfinancialfields,SettlementInstructionManagereliminatesthepossibility
+ofaNAKfortheformattingofthosespecificfields.SettlementInstructionManagerdoesnotsupportamending
+financialfieldsontheSettlementInstructionManagerUI.Amendingfinancialfieldsneedstobecompletedin
+theCTMUIorintheoriginatingOrderManagementSystem.
+FinancialInstruments
+SettlementInstructionManagersupportssendingMT541/MT543andCSVinstructionmessagesforthefollowing
+CTM®TypeofFinancialInstrument(TOFI)codes.
+TYPEOFFINANCIALINSTRUMENTCODEDESCRIPTION
+ABSS AssetBackedSecurity
+AGDT AgencyDebt
+BANK BankersAcceptance
+BKLN BankLoan
+CDEP CertificateofDeposit
+COMM CommonStock
+COND ConvertibleBond(Debt)
+CONV ConvertibleBond([[Equity]])
+CORP CorporateDebt
+COUP Coupons
+CPAP CommercialPaper
+DEPR DepositoryReceipt
+ILDB InflationLinkedBonds
+LIMP LimitedPartnership
+MBSS Mortgage-BackedSecurity
+Table1.1TypesofFinancialInstrumentsSettlement
+InstructionManagerSupports
+ServiceOverview
+1.Overview 10
+
+---
+
+## Page 11
+
+TYPEOFFINANCIALINSTRUMENTCODEDESCRIPTION
+MISC Misc-MultipleTypes
+MMKT MoneyMarket
+MTNT MedTermNote
+MUNI MunicipalDebt
+PREF PreferredStock
+PRPL PrivatePlacement
+RGHT Right
+SVDT SovereignDebt
+TBAN ToBeAnnounced
+TBIL TreasuryBill
+TBON TreasuryBond
+TECP TaxExemptCommercialPaper
+TNOT TreasuryNote
+TRES Treasuries
+TRYS TreasuryStrips
+UMBS UniformMortgageBacked
+UNIT Units
+WARR [[Warrants]]
+Note
+l CTM®doessupportadditionalfinancialinstrumentcodesnotlistedabove.Thosecodesarevalid
+fortheCTMmatchingandagreementworkflowbutarenotsupportedbasedoncurrent
+MT541/MT543formattingrules.
+SettlementandDeliveryStatuses
+Thereare3keystatusfieldsforSettlementInstructionManager:
+l SettlementDetailStatus:indicatestheextenttowhichSettlementInstructionManagerhasbeenabletosuc-
+cessfullygenerateaninstructionandtheassociateduser-drivenaction.IntheSettlementInstructionManager
+UIthisstatusiscomingledbetweenPrimaryandSecondarydeliveries.Itisrecommendedanystatusdis-
+playedotherthanReleasedshouldbeinvestigated.
+l DeliveryStatusSummary:indicatestheaggregatedstatusofallunderlyinginstructionswhenasettlement
+detailisreleasedorpreparedforrelease.IntheSettlementInstructionManagerUIthisstatusiscomingled
+betweenPrimaryandSecondarydeliveries.Forexample,ifonerecipientforaninstructionisNAK’d,the
+statuswillbedisplayedasaFailure.Itisrecommendedthattheuserinvestigatetheseitems.
+l PrimaryDeliveryStatus:indicatesthedeliverystatusforaninstructionsenttoaReceiverAgentBIC,Cus-
+todianBICorSubAgentBIC.
+ServiceOverview
+1.Overview 11
+
+---
+
+## Page 12
+
+Thebelowtablesprovideafulllistofavailablestatusesforeachfieldandtheirdefinitions:
+Status Definition UserActionSupportedforStatus
+Amend Release Stop Cancel Suppress
+Ineligible BasedonthedataintheSettlement
+Detail,noEventProfileswere
+qualified,andtheSettlementDetailis
+noteligibletohaveinstructionssent.
+X X
+FailedValidation TheSettlementDetailcontainsdata
+element(s)thatdonotpassvalidation.
+Thiscouldbedueto:
+o Missingrequireddata
+o Missingconditionallyrequired
+data
+o Dataelement(s)notvalid
+(e.g.,invalidBIC,sanctioned
+BIC)
+o Dataelement(s)thatdonot
+adheretoSWIFTformator
+syntax
+X X X
+AwaitingRelease TheSettlementDetailisEligible,has
+passedvalidationandisawaiting
+actionbytheusertoreleasethe
+instructions(whentheclientissetto
+ManualRelease)
+X X X X
+Released TheSettlementDetailhasbeen
+released,andinstructionshavebeen
+generated.
+X X
+CancelReleased FromtheUI,theuserhascancelleda
+SettlementDetailthatwaspreviously
+released,cancellingallassociated
+instructionsthatwerereleased.
+X X
+Table1.2SettlementDetailsStatuses,ActionsAvailableforUsers
+ServiceOverview
+1.Overview 12
+
+---
+
+## Page 13
+
+Status Definition UserActionSupportedforStatus
+Amend Release Stop Cancel Suppress
+SystemCancelReleased ACancelwasreceivedfromCTMfor
+aNMAGorMAGRSettlementDetail
+thatwaspreviouslyreleased.The
+SettlementDetailisautomatically
+cancelledandisnowina'System
+CancelReleased'stateand
+associatedinstructionthatwere
+previouslyAcknowledgedbySWIFT
+arecanceled.
+SystemCancelNotReleased ACancelwasreceivedfromCTMfor
+aNMAGorMAGRSettlementDetail
+thatwasnotreleased.TheSettlement
+Detailisnowina'SystemCancelNot
+Released'stateandnoinstructions
+aresent.
+Stopped FromtheUI,theuserhasstoppeda
+SettlementDetailfrombeing
+released.TheusercanlaterAmend,if
+desired.
+X X
+Status Definition
+AWAITINGACK TheinstructionisawaitingacknowledgmentbySWIFT.Applicableforbothnewandcancelledinstructions.
+ACK TheinstructionhasbeenacknowledgedbySWIFT.Applicableforbothnewandcancelledinstructions.
+NAK TheinstructionhasbeennegativelyacknowledgedbySWIFT.Applicableforbothnewandcancelled
+instructions.
+NOTSENT Theinstructionhasnotbeensent.Thisstatecanoccurwhen:
+o TheinstructionhasnotbeenreleasedandaCMAGisreceivedfromCTM.
+o TheinstructionhasbeenStopped.
+STAGED TheinstructioniseligibletobesentandisassociatedwithaSettlementDetailthatisawaitingrelease.
+STAGEDERROR TheassociatedSettlementDetailisinaFailedValidationstateandtheinstructionisstagedbutwitherror(s)
+relatedtovalidation.
+Table1.3DeliveryStatuses
+ServiceOverview
+1.Overview 13
+
+---
+
+## Page 14
+
+Status Definition
+NotReleased TheSettlementDetailhasnotbeenreleased.
+InProgress TheSettlementDetailhasbeenreleasedandatleastoneinstructionisstillAWAITINGACKfromSWIFTandno
+instructionisinaNAKstate.
+Success TheSettlementDetailhasbeenreleasedandallinstructionshavebeenacknowledgedbySWIFT.
+Failure TheSettlementDetailhasbeenreleasedandatleastoneinstructionhasbeennegativelyacknowledgedby
+SWIFT.
+Table1.4DeliveryStatusSummary
+TheSettlementInstructionManagerapplicationallowsInstructionownerstoreceiveinstructiondeliverystatus
+updatesviaSFTPinJSONfileformat.
+TheSettlementInstructionManagerStatusMessageDeliverywillalwaysbegeneratedattheallocationleveland
+includestheDeliveryStatusofthePrimaryaswellasallSecondary/Copyrecipients.Thisstatusfilewillbe
+generatedeverytimeanewactionisbeingtakenonanallocationcausingachangeinthestatusoftheinstruction.
+PleaseseetheSettlementInstructionManagerStatusMessageDeliverysectionforadditionaldetails.
+NotethatstatusmessagesgetgeneratedonlyafterboththePrimaryandalltheCopyrecipientshavemovedtothe
+samenewstateorincaseswheninstructionsarereleased,theDeliverystatusmaynotbeinthesamenewstate,
+buttheSWIFT/CSVresponsesforboththePrimaryandallCopyrecipientshavebeenreceived(eitherACKor
+NAK).
+ThefullJSONformataswellassamplemessagescanbefoundintheStatusMessage(JSON)Specification
+document.
+Feature SuggestedApproach
+SettlementInstructionManagerderivestheSettlingAgentfrom:
+l ReceiverAgentBIC
+l WhereReceiverAgentBICisnotpresentorisnotavalidBIC,thenCustodianBICisused.
+l WhereCustodianBICisnotpresentorisnotavalidBIC,thenSubAgentBICisused.
+l WhereSubAgentBICisnotpresentorisnotavalidBIC,thenanerrorisgeneratedifaSet-
+tlingAgentispartofanyqualifiedEventProfile
+PopulatetheReceiverAgentBICfieldinsteadofIP3BIC.
+TheSettlementInstructionManagerUIdisplaysthederivedSettlingAgentBICandallowsfor
+amendment.
+AmendtheSettlingAgentBICfieldifneeded.
+SettlementInstructionManagerallowsyoutoamendasettlementdetail/allocationafterithas
+beenStopped.
+Table1.5AdditionalSettlementInstructionManagerWorkflowInformation
+ServiceOverview
+1.Overview 14
+
+---
+
+## Page 15
+
+Feature SuggestedApproach
+SettlementInstructionManagersupportstheoutputofyourAllocationUTIontheSWIFTmes-
+sageinthe:20U::TRRFtag.
+SettlementInstructionManagerUIdisplaystheSWIFTmessagethatissenttoSWIFT,aswell
+astheACKorNACKresponsemessagefromSWIFTforthelatestinstructionthatwassent.
+TheSettlementInstructionManagerGridViewandDetailView
+displayedtheDeliveryStatusforeachinstruction.Tounder-
+standthereasonforaNAKresponse,pleaserefertotheSet-
+tlementInstructionManagerIn-ProductHelpforalistofNAK
+codesandtheirdescriptions.
+SettlementInstructionManagersupportsthevaluesofCLENandDIRTasSettlementTrans-
+actionConditionIndicatorandthesearemappedintheSWIFTmessagetothe
+:22F::STCO//CLENand:22F::CTCO//DIRTtags.
+ProvideCLENandDIRTintheSet-
+tlementTransactionConditionIndicatorsfieldinCTManddonot
+provideitintheTradeTransactionConditionIndicatorsfield.
+SettlementInstructionManagersupportsthedisplayof2fieldsrelatedtotheBroker’sPSET:
+l CptyPSET–ViewOnly
+l SettlementLocation–Sourcedfromthecounterparty’sPSETanditisamendable.Thisfield
+isusedintheSWIFTmappinglogic.
+SettlementInstructionManagersupportsthedisplayofthePSETthatyouprovidedintheSub-
+mitterPSETfield.
+TheuseofPSETMatchinginCTMisencouraged.
+IntheSettlementInstructionManagerUI,theactionofSTOPcanoccuronasettlement
+detail/allocationwithastatusofAwaitingReleaseorFailedValidation,whereinstructionshave
+beencreated.
+TheSettlementInstructionManagerUIsupportsactionsonupto500allocationsatatimefor
+theRelease,StopandCancelactions.
+SettlementInstructionManageroutputsall10linesoftheSettlementNarrative(calledAddi-
+tionalInformationinCTM)intheSWIFT:70E::SPROtag.
+BeawarethatalldatainthisCTMfieldisnowmappedtothe
+SWIFTmessagebySettlementInstructionManager.Providing
+thisdatamaystopstraightthroughprocessing(STP)atthe
+recipient.
+TheSettlementInstructionManagerUIsupportsthedisplayandamendmentoftheID3field,
+whichisusedindeterminingdataontheSWIFTmessageinspecificconditions.ID4andID5
+arenotviewableoramendableandarenotusedtocreatetheSWIFTmessage.
+TheSettlementInstructionManagerUIsupportsadrop-downlistofvalidMICcodesforthe
+PlaceofTradewhenthePlaceofTradeCodeisEXCH–Exchange.
+TheSettlementInstructionManagerUIdisplaystheCounterparty’sCBTbutdoesnotsupport
+amendingthatfield.Ifthecounterparty’s([[Broker]]’s)CBTvalueispresentandifyouhavenot
+provideddataintheSettlementNarrativefield(calledAdditionalInformationinCTM),thenthe
+Counterparty’sCBTvalueispopulatedintheSettlementNarrativeandisamendabletherein
+theSettlementInstructionManagerUI.
+ServiceOverview
+1.Overview 15
+
+---
+
+## Page 16
+
+OrganizationandUserConfiguration
+TheSettlementInstructionManagerserviceworksbasedonyourorganization’ssubscriptionsandassigneduser
+roles.
+ThefollowingisrequiredpriortousingtheSettlementInstructionManagerservice.
+OrganizationSubscriptions
+Table2.1outlinesSettlementInstructionManager-specificsubscriptionsthatareusedtoenablethesendingand
+receivingofinstructions.
+SubscriptionDescription
+PostTrade
+[[settlement]]
+Notification
+EnablesyourorganizationtousetheSettlementInstructionManagerservicetogenerateinstructions.Thissubscription
+isonlyavailabletoinvestmentmanagerandbroker-typeorganizationswhoalsohavetheCTMBlockAllocation
+ConfirmationWorkflow(BACW)subscription.
+Inadditiontothissubscription,youwillneedfurtherSubscriptionOptionsandUserRoles.
+PostTrade
+[[settlement]]
+Notification-Pre
+MAGR
+EnablesyourorganizationtousetheSettlementInstructionManagerservicetogenerateinstructionspriortothetrade
+sidereachingMatchAgreedstatusinCTM.Thissubscriptionisonlyavailabletoinvestmentmanager-typeorganizations
+whoalsohavethePostTradeSettlementNotificationsubscription.
+Inadditiontothissubscription,youwillneedfurtherSubscriptionOptionsandUserRoles.
+PostTrade
+[[settlement]]
+Notification
+Destination
+Assignedtoeachofyourinstructionrecipients.
+Table2.1SettlementInstructionManagerSubscriptions
+OrganizationSubscriptionOptions
+Table2.2outlinesSettlementInstructionManager-specificsubscriptionoptionsthatareavailabletocustomize
+yourusageoftheservice.
+ServiceOverview
+16
+
+---
+
+## Page 17
+
+SubscriptionOption Description
+ReleaseforPostTrade
+SettlementNotification
+Controlswhetherinstructionsrequireuseraction(value:Manual)viatheSettlementInstructionManagerUIto
+bereleasedoriftheyareautomaticallyreleasedbythesystemwithoutuseraction(value:Automatic).
+ReleaseforPostTrade
+SettlementNotification-
+PreMAGR
+ControlswherepreMAGRinstructionsrequireuseraction(value:Manual)viatheSettlementInstruction
+ManagerUItobereleasedoriftheyareautomaticallyreleasedbythesystemwithoutuseraction(value:
+Automatic).
+ThirdPartyNotification–
+LEI(TLEI)
+Controlsthepresenceoftheexecutingbroker’sLEIinthe95LALTEtagoftheSWIFTmessage.Seethe
+SettlementInstructionManager:SWIFTMT541/543MessageSpecificationforfulldetails.
+TradeTimeonSWIFT
+(TTOS)
+ControlstheoutputofthetradedateontheSWIFTmessage(tag98C)andwhetherthisincludesthetime
+(value:Yes)oronlythedate(value:No).SeetheSettlementInstructionManager:SWIFTMT541/543Message
+Specificationforfulldetails.
+TargettoSecurities
+Identification(T2SI)
+ControlswhethertheCSD(CentralSecuritiesDepository)organizationisaTarget-2Securitiesorganization.It
+worksinconjunctionwiththeT2SDsubscriptionoption(seebelow)toaffecttheoutputoftheSWIFTmessage.
+TargettoSecurities
+Depository(T2SD)
+Controlstheoutputofthe25DtagintheSWIFTmessage,basedonexaminingtheT2SDandT2SIoptions.See
+theSettlementInstructionManager:SWIFTMT541/543MessageSpecificationforfulldetails.
+Table2.2SettlementInstructionManagerSubscriptionOptions
+UserRoles
+Table2.2showstheSettlementInstructionManageruserrolesrequiredtousetheUIandtheirdefinitions.
+UserRole Definition
+Amend
+[[settlement]]
+Detail
+EnablestheusertoamendsomedataintheSettlement.SeeFieldMapofSettlementInstructionManagerUIfordetailsof
+theamendablefields
+Cancel
+[[settlement]]
+Detail
+Enablestheusertocancelpreviouslyreleasedinstructions(throughuseractionintheUIasopposedtoastheresultofa
+CANCELMATCHAGREEDtradestatus).Userscanactionupto500recordsatonetime.
+Release
+[[settlement]]
+Detail
+Enablestheusertoreleasetheinstructionsassociatedwiththesettlementdetail.Userscanactionupto500recordsat
+onetime.
+StopSettlement
+Detail
+Enablestheusertostopasettlementdetailfrombeingreleased,howeverfurtheramendmentsarepossibleiftheuser
+detailsthatthesettlementdetailshouldnolongerbestopped.Userscanactionupto500recordsatonetime.
+ViewSettlement
+Detail
+Enablestheusertoviewthesettlementdetail,SWIFTinstructionandresponse,andinstructionstatus
+Table2.3SettlementInstructionManagerUserRoles
+ServiceOverview
+17
+
+---
+
+## Page 18
+
+UserRole Definition
+Create
+[[settlement]]
+Detail
+EnablestheusertocreateaPre-MatchAgreedsettlementdetailinCTM4.0UI
+SuppressSet-
+tlementInstruc-
+tion
+Enablessuppressingselectedsecondaryrecipient(Copy)forgivenInstruction.ActionAllowedonlyontheDetailView.
+ProfilesandReleaseMethods
+Profiles
+SettlementInstructionManagerevaluateshowtoreleaseyourinstructionbyvalidatingtheinformationprovidedin
+threedifferentprofiletypes:Notification,DestinationandEventprofiles.Theseprofilesareusedtoefficiently
+managethecustomizationofthenotificationsbeingsentandtheyshouldbedeterminedandconfiguredduring
+onboardingorwhenadditionalprofilesareneeded.
+EventProfiles
+DescribethespecificcriteriathatcausesSettlementInstructionManagertoreleaseinstructionsandare
+associatedwiththePostTradeSettlementNotificationservice.EventProfilesuseabroadsetofcriteriaas
+listedbelow:
+EventFilter AvailableforINSTOrgsAvailableforBRKOrgs
+1 AvailableEvents Y Y
+2 AvailableBrokers Y N
+3 AvailableAccounts Y N
+4 EnterAccountManually Y N
+5 AvailableInvestmentManagers N Y
+6 AvailableALERTSettlementModels N Y
+7 AvailableCTMSecurityTypes Y Y
+8 AvailableTradeCurrency Y Y
+9 AvailableSettlementCurrency Y Y
+10 AvailableALERTCountryCode Y Y
+11 AvailablePSETs Y Y
+Table2.4ProfileTypes
+ServiceOverview
+18
+
+---
+
+## Page 19
+
+EventFilter AvailableforINSTOrgsAvailableforBRKOrgs
+12 AvailableFinancialInstrumentType
+AvailableonlywhenOverrideAutomaticReleaseEnabled
+13 AvailableCustodians
+14 EnterCustodianManually
+15 AvailableTransactionTypes
+16 EnterSecurityIdentifierManually
+17 EnterCptyA/C#atDepository(ID1)Manually Y Y
+18 EnterCptyLocalCode(ID2)Manually Y Y
+19 EnterCpty(ID3)Manually Y Y
+20 AvailablePlaceofTradeEXCHMICCodes Y Y
+21 AvailableOTCOISOCountryCodes Y Y
+22 AvailableVARIISOCountryCodes Y Y
+Table2.4ProfileTypes
+OverrideAutomaticReleasecheckbox:willenableonlythosefieldsrequiredforanOverrideProfile.Ifthisis
+selectedforanexistingEventProfileandchangesaresaved,alldetailsfortheEventprofilewillbeoverwritten.
+Recipients:SettlingAgentcheckboxwillroutemessagesinthisprofiletowhatevercustodianissetupinclient’s
+modelforanALERTaccount.DisabledwhenOverrideAutomaticReleasecheckboxisselected.
+NotificationProfiles
+NotificationProfilesdescribetheattributesofaninstruction'srecipientthatDTCCrequiresfordeliveryi.e.,whothe
+instructionissenttoCustodian,ThirdParties,etc.TheyserveasalinkbetweentheEventProfilesandDestination
+Profiles.
+ServiceOverview
+19
+
+---
+
+## Page 20
+
+DestinationProfiles
+Profilesdefinethespecificdestinationoftheinstructione.g.,inwhatformatwilltheinstructionbesent.Wehave
+twotypes:
+l DestinationProfilesassociatedwiththePostTradeSettlementNotificationDestinationservice:
+o SWIFTmessageovertheSWIFTNetwork
+o CSVoverSFTP
+ReleaseMethods
+SettlementInstructionManageroffersthreereleasemethodsthatcanbeusedforMatchAgreed(MAGR)andPre-
+MatchAgreed(Pre-MAGR)trades.
+Method Definition
+Automatic Uponthesuccessfulcreationofaninstruction,SettlementInstructionManagerreleasestheinstructions
+automaticallywithoutrequiringanyuseraction.SubscriptionOptiondriven.
+OverrideAutomatic
+Release
+InthescenariothattheInvestmentManagerorBrokerissubscribedtoAutomaticRelease,theycanstill
+choosetoapplyamanualreleasemethodbasedonspecificfield-valuecriteriae.g.,iftheInvestmentManager
+wantstoreleaseinstructionsmanuallyfortradeswheretheBrokerisXYZorBrokerwantstorelease
+instructionsmanuallyfortradeswheretheInvestmentManagerisZYXbutallotherinstructionsshouldbe
+releasedautomatically.EventProfiledriven.
+Manual Uponthesuccessfulcreationofaninstruction,SettlementInstructionManagerholdstheinstructionsuntila
+usertakestheactiontoReleasethroughtheSettlementInstructionManagerUI.Subscriptionoptionand
+specificuserrolesdriven.
+Table2.5ReleaseMethods
+ServiceOverview
+20
+
+---
+
+## Page 21
+
+2.SETTLEMENTINSTRUCTIONMANAGER
+USERINTERFACE(UI)
+l TheSettlementInstructionManagerUIisavailablewithSingleSign-OnthroughtheMyDTCCWebPortal(PSE
+andProduction).
+l TheUIoffersuserstheabilitytomanagetheirinstructionstoreachadesiredstatus,viewhistoricalinstructions
+forthelast128days,andorganizetheirviewsusingtheManageViewsandManageFiltersfunctionality.Full
+detailsontheUIfunctionalitycanbefoundintheSettlementInstructionManagerProductHelp.
+ServiceOverview
+2.SettlementInstructionManagerUserInterface(UI) 1
+
+---
+
+## Page 22
+
+FieldMapofSettlementInstructionManagerUI
+BelowmapsallfieldsintheSettlementInstructionManagerUIandindicatesifthefieldisavailableonthe
+SettlementInstructionManagerGridViewortheDetailView.ThebelowtablealsoidentifiesifthefieldontheUIis
+AmendableorFilterable.
+SettlementInstruction
+ManagerUIFieldLabel
+AvailableonSettlement
+InstructionManagerGrid
+View
+AvailableonSettlement
+InstructionManagerDetail
+View
+Amendable
+Field
+Filterable
+Field
+AccountAtSettlingAgent X X X X
+AccountDescription X
+AccountID X X X
+AccountLEI X X
+AccruedInterest X X
+ALERTCountryCode X
+ALERTMethodType X
+ALERTSecurityType X
+AllocationID X X X
+AllocationStatus X X X
+Table2.1SettlementInstructionManagerFields
+ServiceOverview
+2.SettlementInstructionManagerUserInterface(UI) 2
+
+---
+
+## Page 23
+
+SettlementInstruction
+ManagerUIFieldLabel
+AvailableonSettlement
+InstructionManagerGrid
+View
+AvailableonSettlement
+InstructionManagerDetail
+View
+Amendable
+Field
+Filterable
+Field
+AllocationUTI X X X
+BeneficialOwnership X X
+BIC X X
+BlockID X X X
+BlockQuantity X X X
+BlockQuantityType X X
+BlockTradeIndicator X X
+Buy/Sell X X X
+[[Buyer]]/[[Seller]] X X
+CashAccount X X
+CashSettlementSystem X X
+CentralCounterpartyEligibility X X
+Charge/Tax/FeeAmount1 X
+Charge/Tax/FeeAmount2 X
+Charge/Tax/FeeAmount3 X
+Charge/Tax/FeeAmount4 X
+Charge/Tax/FeeAmount5 X
+Charge/Tax/FeeType1 X
+Charge/Tax/FeeType2 X
+Charge/Tax/FeeType3 X
+Charge/Tax/FeeType4 X
+Charge/Tax/FeeType5 X
+CollateralPoolIndicator X X
+CommissionAmount1(FLAT) X
+CommissionAmount2(FLAT) X
+CommissionAmount3(FLAT) X
+CommissionType1 X
+CommissionType2 X
+CommissionType3 X
+CouponRate X
+CptyA/C#atDepository(ID1) X X
+CptyA/C#atGlobalCustodian X X
+CptyA/C#atLocalAgent X X
+CptyALERTCountryCode X
+CptyALERTMethodCode X
+ServiceOverview
+2.SettlementInstructionManagerUserInterface(UI) 3
+
+---
+
+## Page 24
+
+SettlementInstruction
+ManagerUIFieldLabel
+AvailableonSettlement
+InstructionManagerGrid
+View
+AvailableonSettlement
+InstructionManagerDetail
+View
+Amendable
+Field
+Filterable
+Field
+CptyALERTSecurityCode X
+CptyAllocationID X X X
+CptyBIC X X X
+CptyBlockID X X
+CptyCashBondTradingRef X
+CptyCorr.CashAccount X
+CptyCorr.CashParty X
+CptyCorr.Relationship X X
+CptyCorr.SecurityAccount X
+CptyCorr.SecurityParty X
+CptyCTMAllocationID X X
+CptyCTMBlockID X X
+CptyCustodianBIC X X
+CptyCustodianName1 X X
+CptyCustodianName2 X X
+CptyID3 X X
+CptyLEI X X
+CptyLocalCode(ID2) X X
+CptyName X X X
+CptyPSET X X X
+CptySSISource X
+CptySubagentBIC X X
+CTMAllocationID X X X
+CTMBlockID X X X
+CurrentFaceValue X
+CurrentFactor X
+DaysAccrued X
+DealPrice X X X
+DeliveryStatusSummary X
+DifferenceFlag X X
+ExchangeRate X
+FinancialInstrumentClass X X X
+FinancialInstrumentDescription X X X
+FinancialInstrumentID X X X
+FinancialInstrumentIDType X X
+ServiceOverview
+2.SettlementInstructionManagerUserInterface(UI) 4
+
+---
+
+## Page 25
+
+SettlementInstruction
+ManagerUIFieldLabel
+AvailableonSettlement
+InstructionManagerGrid
+View
+AvailableonSettlement
+InstructionManagerDetail
+View
+Amendable
+Field
+Filterable
+Field
+FinancialInstrumentType X X X
+FromCurrency X
+FXDealCurrency X X
+InstitutionSettlementAmount X
+InstructingParty X X
+LargeTraderID X X
+LEI X X
+LetterofGuarantee X X
+MatchAgreed X X X
+MaturityDate X X
+Name X X
+NetCashAmount X X X
+NettingEligibility X X
+OriginalFaceValue X
+PlaceofClearing X X
+PlaceofTradeCode X X
+PlaceofTradeMIC X X
+PlaceofTradeNarrative X X
+PoolNumber X X
+PoolRef X X X
+Pre-MAGRFlag X X
+PreviousTransactionRef X
+PrimaryDeliveryStatus X X
+PrimaryFormat X
+PrimaryRecipientID X X X
+PrimaryRecipientName X X X
+PSAFEBIC X X X
+PSAFECountry X X
+PSAFEPlace X X
+PSAFEType X X
+Quantity X X X
+QuantityType X X X
+Real-TimeGrossSettlementSys-
+tem
+X X
+Registration X X
+RelatedTransactionRef X X
+ServiceOverview
+2.SettlementInstructionManagerUserInterface(UI) 5
+
+---
+
+## Page 26
+
+SettlementInstruction
+ManagerUIFieldLabel
+AvailableonSettlement
+InstructionManagerGrid
+View
+AvailableonSettlement
+InstructionManagerDetail
+View
+Amendable
+Field
+Filterable
+Field
+Restrictions X X
+SettlementAmount X X X
+SettlementConditions X X
+SettlementCurrency X X X
+SettlementDate X X X
+SettlementDetailLastUpdated X X
+SettlementDetailStatus X X X
+SettlementLocation X X X X
+SettlementLocationBIC X X X
+SettlementLocationCountry X X
+SettlementLocationType X X
+SettlementNarrative1 X X
+SettlementNarrative2 X X
+SettlementNarrative3 X X
+SettlementNarrative4 X X
+SettlementNarrative5 X X
+SettlementNarrative6 X X
+SettlementNarrative7 X X
+SettlementNarrative8 X X
+SettlementNarrative9 X X
+SettlementNarrative10 X X
+SettlementSystem/Method X X
+SettlingAgentBIC X X X X
+SettlingAgentName X X X X
+SourceSystem X X X
+SourceSystemRefID X X X
+SSISource X
+StampDutyExemption X X
+SubmitterPSET X X
+ToCurrency X
+TradeAmount X X X
+TradeConditions X X
+TradeCurrency X X X
+TradeDate X X X
+TransactionIndicator X
+ServiceOverview
+2.SettlementInstructionManagerUserInterface(UI) 6
+
+---
+
+## Page 27
+
+SettlementInstruction
+ManagerUIFieldLabel
+AvailableonSettlement
+InstructionManagerGrid
+View
+AvailableonSettlement
+InstructionManagerDetail
+View
+Amendable
+Field
+Filterable
+Field
+TypeofSettlementTransaction X
+Unpaired X
+Yield X
+ActionButtons
+TheactionbuttonsavailabletoauserintheSettlementInstructionManagerUIaredependentontheorganization
+subscriptionsandtherolessetupfortheindividualuser.BelowarealltheactionsausercantakeintheSettlement
+InstructionManagerUIsupportingsettlementinstructions.
+Release
+OnlyinstructionsinanAwaitingReleasestatusareeligibletobereleasedmanuallyintheSettlementInstruction
+ManagerUI.ForPre-MAGRworkflowinstructionthereleasefunctionalityisnotallowedforanyallocationsthat
+hasadifferenceflagpresent.Ifmultipleallocationsareselectedtobereleased,amodalwillbedisplayedwitha
+messageifanyallocationshavebeenexcludedfrombeingreleased.
+ServiceOverview
+2.SettlementInstructionManagerUserInterface(UI) 7
+
+---
+
+## Page 28
+
+Cancel
+OnlyinstructionsinaReleasedstatusandonlywhenDeliveryStatusISNOTAwaitingACKareeligibletobe
+cancelled.InstructionscanbecancelledforallocationswhereDifferenceFlagispresent.
+ServiceOverview
+2.SettlementInstructionManagerUserInterface(UI) 8
+
+---
+
+## Page 29
+
+Stop
+OnlyinstructionsinaFailedValidationstatus(onlywheninstructionsarecreated)andAwaitingReleasestatus
+areeligibletobestopped.Ifmultipleallocationsareselectedtobestopped,amodalwillbedisplayedwitha
+messageifanyallocationshavebeenexcludedfrombeingstopped.
+ServiceOverview
+2.SettlementInstructionManagerUserInterface(UI) 9
+
+---
+
+## Page 30
+
+Amend
+AllofthefieldsamendableintheMAGRflowarealsoamendableinthePre-MAGRworkflow.Aninstructionhaving
+differences,willnotbeamendable.Userswillreceivetheerror:Thisactionisnotallowedfortheselected
+record(s).RefertoFieldMapofSettlementInstructionManagerUIforadditionaldetailsoffieldsavailabletobe
+amended.UserselectingtoamendfromtheGridviewwillbebroughttotheamendscreen.Afterusersmakeany
+necessarychanges,theywillneedtoSaveandthenClosetheDetailscreenbeforereleasingtheinstruction.
+Useralsocanamendmultipleinstructionssimultaneously.PleaseseetheMulti-AmendFunctionalitysection.
+ServiceOverview
+2.SettlementInstructionManagerUserInterface(UI) 10
+
+---
+
+## Page 31
+
+ServiceOverview
+2.SettlementInstructionManagerUserInterface(UI) 11
+
+---
+
+## Page 32
+
+AcceptDifferences
+RequiresanorganizationsubscriptiontothePre-MAGRworkflow.
+AvailableintheSettlementInstructionManagerDetailView,forcaseswheretherearedifferencespost-
+amendmentsmadeinCTM,fromtherecordoriginallysenttoSettlementInstructionManager.Inorderforauser,
+whoseorganizationhasanactivesubscriptiontothePostTradeSettlementNotification–Pre-MAGRservice,
+tobeabletoseetheAcceptDifferencesactionbuttonintheactionsbar,usermusthavetheAmendSettlement
+DetailRoleandtheallocationselectedshouldhavetheDifferencesFlagpresent.
+ServiceOverview
+2.SettlementInstructionManagerUserInterface(UI) 12
+
+---
+
+## Page 33
+
+Suppress
+SecondaryRecipientSuppressionfunctionalityallowsclientstoselectandsuppressrecipient(s)whowillno
+longerreceiveanyfurtherinstructionsforaspecificallocation.Onceauserselectstosuppressarecipient,no
+furtherupdateswillbesenttothatrecipient.Suppressedrecipientsandlastreleasedoutboundscanbepreviewed
+foreachinstruction.TheactionbuttonandsuppressstatusandhistoryareavailableontheSettlementDetail
+view.
+InstructionseligibleforSecondaryorCOPYrecipientscanbesuppressediftheinstructionhasaSettlement
+DetailStatusofIneligible,FailedValidation,Stopped,AwaitingRelease,Released(whennotAwaiting
+ACK),SystemCancelReleased,SystemCancelNotReleasedandCancelReleased(whennotAwaiting
+ACK).
+WhenclickingontheSuppressactionbutton,theuserispresentedwithapop-upwindow.Itlistsallactive
+recipientsfortheselectedinstructionandallowsuserstoselectCopyrecipientsforsuppression.Theprimary
+recipientcannotbeselectedforsuppression.Suppressioncannotbereverted.Recipientsuppressionactionis
+final.
+ServiceOverview
+2.SettlementInstructionManagerUserInterface(UI) 13
+
+---
+
+## Page 34
+
+Todisplaydetailsandhistoryforeachsuppressedrecipients,theSuppressedRecipientssection/accordionis
+displayedintheDetailviewInstructionssectionandwillshowonlywhenatleastonerecipienthasbeen
+suppressed.Thesectionallowsuserstopreviewalloutboundmessages(SWIFT/CSV)releasedpriorto
+suppression.
+ExcludeFilter
+SettlementInstructionManagersupportsafeaturewhichallowsuserstofilterbyexcludingselectedvalues.An
+Excludecheckboxfeatureisavailablefor11filterslistedbelowwithasamplescreenshot:
+l AccountID
+l CtpyBIC
+l FinancialInstrumentDescription
+l FinancialInstrumentType
+l PrimaryDeliveryStatus
+l PrimaryRecipientID
+l SettlementCurrency
+l SettlementLocation
+l SettlingAgentBIC
+l SettlingAgentName
+l TradeCurrency
+ServiceOverview
+2.SettlementInstructionManagerUserInterface(UI) 14
+
+---
+
+## Page 35
+
+ServiceOverview
+2.SettlementInstructionManagerUserInterface(UI) 15
+
+---
+
+## Page 36
+
+AccountID
+TheAccountIDfilterallowsasearchonmultipletextstrings.Whenmultiplevaluesareentered,theresultsetwill
+displayallrecordsthatcontainanyoneofthosemultiplestringsintheAccountIDcolumn.Toentermultiple
+values,usethetabkeyorenterkeyaftereachstring.Upto10valuesaresupportedandappliedtofiltering.
+AdditionalSettlementInstructionManagerUI
+Functionality
+SettlementInstructionManagerGridSupports10,000Rows
+TheSettlementGridviewoftheSettlementInstructionManagerdisplays10,000rowsofdataperpage,while
+maintainingtheabilitytoexportthesamenumberofrows.
+Note
+FiltersresultingintheMainGriddisplayingcloseto10,000rowsofdatacouldtakeslowertoloadthanusual.
+Therefore,werecommendthatifyoudonotrequiresomuchdatatobedisplayed,toadjustyourfiltersinorderto
+increasetheoverallperformance.ThiscanbeachievedbyaddingadditionalfiltercriteriasuchasSettlement
+DetailStatusfilterorbyreducingthedaterange.
+FilterDateRangeSupportsupto30Days
+Userscanselectadaterangeofupto30daysforSettlementDateandTradeDatefromManageFilters.This
+willgiveuserstheabilitytoviewallocationsforaperiodof30daysintheSettlementGridview.
+ServiceOverview
+2.SettlementInstructionManagerUserInterface(UI) 16
+
+---
+
+## Page 37
+
+StatusFiltersShortcuts
+UserscanselectanyoftheshortcutStatusFilterseasierandquickerqueriesontheSettlementInstruction
+ManagerUItodisplayallocationsandtheircorrespondingDeliveryStatusSummary.TheSettlementGridview
+willbeupdatedwiththestatusfilterselected.
+ServiceOverview
+2.SettlementInstructionManagerUserInterface(UI) 17
+
+---
+
+## Page 38
+
+ShareableViews
+Inresponsetoclientandindustryfeedback,SettlementInstructionManagerintroducestheabilityforplatform
+userstoshareviewdefinitionswithotheruserswithintheirorganization.
+Thiscapabilityprovidesuserstheflexibilitytoeasilyshareviewswithotheruserstoleverageasreplicatedview
+definitions(selectionoffilters,columns,andcolumnorder)whileviewinginformationinthegridortouseasa
+startingpointtofurthercustomizeviewstoindividualpreferences.
+Thisfeatureenablesquicksharingofviewswithotherusersandtakesawaytheneedforeachusertosetup
+similarviewsfromscratch.
+Toshareaview,usetheshareviewaction
+ .Ifanychangesweremadetotheview,youwillneedtosavethe
+viewfirsttoenabletheshareviewaction.Tosaveaview,usethesaveviewaction
+ .
+SelectoneormoreuserswithintheorganizationtoshareandclickSave.
+ServiceOverview
+2.SettlementInstructionManagerUserInterface(UI) 18
+
+---
+
+## Page 39
+
+Theselecteduser(s)willthenbeabletoseethesharedviewunderManageViewswhentheynextrefreshtheir
+browser,clicktheDataRefresh(
+ )actionorlogintotheapplication.
+Theviewwillbedisplayedwiththenameoftheviewthatwasshared,appendedwithasuffixofSharedthat
+helpsidentifyitasasharedview.
+Dependingonworkflowpreferences,theusercan:
+ServiceOverview
+2.SettlementInstructionManagerUserInterface(UI) 19
+
+---
+
+## Page 40
+
+a. Usethesharedviewasis.
+b. CreateacopyofthesharedviewdefinitionusingSaveViewasandusethatviewinstead
+o Recommendedforauserwhowantstopreventanaccidentaloverwritetoasharedviewdefinition
+c. ModifythesharedviewandSave(
+ )
+o Recommendedforauserthatwantstousethesharedviewasastartingpointandindividualizethe
+viewasneededandsavethatmodifieddefinition.
+d. Modifythesharedview,Save(
+ )andShare(
+ )
+o Recommendedforwhenachangeneedstobemadetoapreviouslysharedviewdefinitionandthenthe
+changeisre-sharedwithotheruser(s).Thisactionwillthenreplaceanypre-existingviewdefinitionsfor
+viewswiththesamenameforalluserswithwhomtheviewisre-shared.
+ServiceOverview
+2.SettlementInstructionManagerUserInterface(UI) 20
+
+---
+
+## Page 41
+
+3.SETTLEMENTINSTRUCTIONMANAGER
+FUNCTIONALITY
+Pre-MatchedAgreed(Pre-MAGR)Workflow
+Description
+Investmentmanagerscancreateinstructionsontradeallocations,aheadofthetrademovingtoaMatchAgreed
+(MAGR)statusonCTM,whentradesareinthePre-MatchAgreed(NMAG)status.ThePre-MAGRflowis
+manuallyinitiatedbytheuserfromtheCTM4.0UI,usingtheCreateNotificationbutton.SettlementInstruction
+ManagerreceivesthePre-MAGRallocationsfromCTMandwillbepresentedintheSettlementGridviewalong
+withtheMAGRallocations.
+SubscriptionsandRoles
+CTMinvestmentmanagersinitiatethesendingofPre-MatchAgreed(NMAG)SWIFTandCSVtosettlement
+agents,[[Custodians]],banks,thirdparties,brokers.Investmentmanagershaveoneormoreofthe3subscription
+optionstochoosefrom:
+l TPNP:EnablesmanualcreationofPre-MAGRThirdPartyDetailfromtheCTMUIwhentheTradeLevel(TL)is
+pairedormatchedorpending.
+l TPLO:“LateOmgeoBroker”–EnablesmanualcreationofPre-MAGRThirdPartyDetailfromtheCTMUIwhen
+theinvestmentmanager'sTLisnotpaired;thereisnotyetabrokersideofthetrade
+l TPNO:“NonOmgeoBroker”–EnablesmanualcreationofPre-MAGRThirdPartyDetailfromtheCTMUIwhen
+theinvestmentmanageristradingwithaNonDTCCBroker(notonCTM)andtradesidewillnevergetto
+MAGR.Thereisnobrokerprovideddataforthebrokersideofthetradeandtheblockisnotpaired(blockis
+NMAT).
+ToutilizethePre-MAGRworkflow,organizationsneedtohavethefollowingsubscriptionsanduserroles:
+l SubscribetothePostTradeSettlementNotification–Pre-MAGRservice.
+l SettheReleaseforPostTradeSettlementNotification–Pre-MAGR(RLPP)[[Option]].
+l EnableusersforPostTradeSettlementNotification–CreateSettlementDetailroletoinitiatesendingalloc-
+ationsfromCTMasPre-MAGRtoSettlementInstructionManager.
+ServiceOverview
+3.SettlementInstructionManagerFunctionality 21
+
+---
+
+## Page 42
+
+l AddNotMatchAgreedtotheSelectedEventsintheprofiles.
+l ThesameactionrolesthatareusedforMAGRareneededtoperformPre-MAGRactionsaswell.
+BelowoutlinestheSettlementInstructionManagerPre-MAGRinstructionsservice,aswellastherecommended
+approachtomanagethesetypesofinstructions.
+Feature Pre-MAGRWorkflowDetails Recommended
+ApproachinSet-
+tlementInstruc-
+tionManager/
+Comments
+Subscription/subscriptionoptionsforPre-
+MAGR
+SettlementInstructionManageronlyrequiresthe‘PostTrade
+SettlementInstruction–PreMAGR’subscriptionforany/allvariationsof
+thePre-MAGRworkflow.
+UseractionRoles ThesameroleenablesuseractionsforbothMAGRandPre-MAGR
+workflow.
+ViewingallocationsforMAGRandPre-
+MAGRworkflowinUI
+BothMAGRandPre-MAGRallocationsaredisplayedinthesame
+existingmaingridinSettlementInstructionManagerUI.
+ToviewonlyPre-
+MAGRallocations,
+filterthegridonPre-
+MAGRFlag=Y.
+ColumnsforPre-MAGRfunctionality Userhastheabilitytoaddany/allcolumnsthataresupportedby
+SettlementInstructionManagerusingtheAddColumnsfeature.
+NotethatPre-MAGRFlagisanewcolumnaddedonlytoSettlement
+InstructionManager.
+Forclientsusing
+Pre-MAGR
+functionality,adding
+someorallofthe
+followingcolumnsto
+theViewmaybe
+helpful.
+l Difference
+Flag
+l Pre-MAGR
+Flag
+l Unpaired
+l Allocation
+Status
+Table3.1Pre-MAGRInstructionsDetails
+ServiceOverview
+3.SettlementInstructionManagerFunctionality 22
+
+---
+
+## Page 43
+
+Feature Pre-MAGRWorkflowDetails Recommended
+ApproachinSet-
+tlementInstruc-
+tionManager/
+Comments
+Handlingofamendments/updatesmade
+inCTM
+l SettlementInstructionManagerpresentstheupdatestothefields
+thataresentoutininstructionsasdifferenceslikeCTM.
+l SettlementInstructionManagerdoesnotdirectlyupdatethefields
+thatarenotbeingsentoutininstructions.Whentheuseraccepts
+thedifferences,allupdatesreceivedfromCTM(includingbothsent
+outandnotsentout)willgetupdated/reflectedinSettlementInstruc-
+tionManager,allatthesametime.
+AcceptDifferences
+inordertoseeall
+theupdatedvalues
+inSettlement
+Instruction
+Manager.
+ServiceOverview
+3.SettlementInstructionManagerFunctionality 23
+
+---
+
+## Page 44
+
+Feature Pre-MAGRWorkflowDetails Recommended
+ApproachinSet-
+tlementInstruc-
+tionManager/
+Comments
+Priorvs.NewInstructionDifferences–
+Fieldlist
+l SettlementInstructionManagercomputesdifferencesforallfields
+thataresentoutininstructionsandthefollowingadditionalfields:
+l Yield
+l SecurityDescription
+l MatchAgreed
+l CptyCTMAllocationID
+ForthecompletelistofFieldforPre-MAGRComputeDifferences,refer
+toTable1.
+l WiththeexceptionofCptyCTMAllocationIDandMatchAgreed
+fields,whichwillbeamongstthefirsttwofieldsdisplayedinPriorvs.
+NewInstructionDifferencessection,theSettlementInstructionMan-
+agerdisplaysthelistoffieldsinthissectioninthesameorderasthey
+appearontheDetailswindow.
+Thisisafeature
+addedby
+[[settlement]]
+InstructionManager
+UIforbetter
+organizingthefield
+listsothatrelated
+fieldscanbeseen
+groupedtogether
+andalsotobeable
+toeasilylocatea
+fieldonDetails
+windowifneeded.
+l TheSettlementInstructionManagerdisplaysthecountofthe
+numberoffieldsthathavedifferencesnexttothesectionheader
+‘Priorvs.NewInstructionDifferences.
+Thisisafeature
+addedby
+[[settlement]]
+InstructionManager
+UIthatwouldcome
+inhandywhenthere
+aremanyfieldswith
+differences.
+ServiceOverview
+3.SettlementInstructionManagerFunctionality 24
+
+---
+
+## Page 45
+
+Feature Pre-MAGRWorkflowDetails Recommended
+ApproachinSet-
+tlementInstruc-
+tionManager/
+Comments
+AcceptDifferencesforPre-MAGR
+allocations
+Supportsacceptingdifferencesfor
+l Onlyonethirdpartydetailatatime(differencesareshown)
+SettlementInstructionManagerdoesnotsupportacceptingdifferences
+formultipleallocationsatatime
+ForPre-MAGR
+allocationswhen
+thereisaDifference
+Flag,navigatetothe
+Detailswindowto
+individuallyaccept
+differencesforeach
+allocationafter
+viewingthe
+differencesinfield
+valuesthataresent
+outininstructions.
+Break-pairhandling Whenabreak-pairupdateisreceivedbySettlementInstruction
+ManagerfromCTM,SettlementInstructionManager
+l simplypresentsthedifferencestotheuser
+l noautocancellationsaredoneforthepreviousinstructions
+l displaysanINFOerrorindicatingbreak-pair
+l onlywhendifferencesareaccepted,previousinstructionsare
+canceledandnewonesarecreatedandsentout.
+Youcaneither
+l Cancel–Ifyou
+wanttoonly
+cancelthe
+previously
+released
+instructions
+l Accept
+Differences–If
+youwantto
+cancelthe
+previous
+instructionsas
+wellascreate
+andsendoutnew
+instructions
+l Takenoaction
+Stopinstructionswhendifferencesexist SettlementInstructionManagerdoesnotsupportstoppinginstructions
+thathaveexistingdifferences(DifferenceFlagexists).
+Donotaccept
+differencesasthat
+wouldindirectlystop
+theinstructionsfrom
+beingsentout.This
+isbecausereleasing
+instructionsisnot
+allowedwhenthere
+areexisting
+differences.
+ServiceOverview
+3.SettlementInstructionManagerFunctionality 25
+
+---
+
+## Page 46
+
+Feature Pre-MAGRWorkflowDetails Recommended
+ApproachinSet-
+tlementInstruc-
+tionManager/
+Comments
+Cancelinstructionswhendifferencesexist Afterausercancelstheinstructionsthathadpriorunaccepted
+differences,SettlementInstructionManagerdoesnotretainthoseprior
+differences.
+Anyfurtherupdates
+madeinCTMwill
+againresultin
+differencesin
+[[settlement]]
+InstructionManager
+(providedthe
+updatedfieldsare
+sentoutin
+instructions).
+SettlementAmend AnyamendmentsmadeinSettlementInstructionManagerdonotget
+reflected/updatedinCTMAgreementssourcesystem.
+UsetheCTMsource
+systemfor
+amendingdatain
+ordertohavethe
+updatesforwarded
+toSettlement
+Instruction
+Manager,thereby
+keepingboththe
+systemsinsync.
+AmendableFieldsforPre-MAGRallocationInadditiontofieldsamendableforaMAGRallocation,[[settlement]]
+InstructionManagersupportsamendmentofonlythefollowing
+additionalfieldsforapre-MAGRallocation.
+l PoolNumber
+l MaturityDate
+l PlaceofClearing
+UsetheCTMsource
+systemfor
+amendingdatain
+ordertohavethe
+updatesforwarded
+toSettlement
+Instruction
+Manager,thereby
+keepingboththe
+systemsinsync.
+FieldsPre-MAGRUsestoDetermineDifferences
+ListoffieldsSettlementInstructionManagerusetodeterminedifferencesbetweentwoinstancesofinstructionsfor
+thePre-MAGRworkflow.DifferenceswoulddisplaywhenvaluesaredifferentbetweentheOriginalNEWMsent
+Pre-MAGRversusthenextinstructionwhenstatuschangestoMAGR.
+ServiceOverview
+3.SettlementInstructionManagerFunctionality 26
+
+---
+
+## Page 47
+
+FieldLabelinSettlementInstructionManager
+CptyCTMAllocationID LocalBrokerCommission Yield CptyCorr.SecurityParty(DEI1/REI1)
+MatchAgreed ResearchFee AccruedInterest CptyCorr.SecurityAccount
+AllocationStatus SpecialConcession CurrentFaceValue PlaceofTradeCode
+TradeDate CountryNationalFederalTax MaturityDate PlaceofTrade
+SettlementDate PaymentLevyTax AllocationUTI PlaceofClearing
+Buy/Sell LocalTax RelatedTransactionRef SettlementNarrative
+Quantity LocalTaxCountrySpecific PoolRef CptyLEI
+QuantityType StockExchangeTax FXDealCurrency [[Buyer]]/[[Seller]](BUYR/SELL)
+FinancialInstrumentIDType TransferTax SettlingAgentBIC TradeConditions
+FinancialInstrumentID TransactionTax AccountatSettlingAgent SettlementConditions
+FinancialInstrumentCountryCode ValueAddedTax CashAccount TypeofSettlementTransaction
+FinancialInstrumentDescription ChargesorFees PSAFE StampDutyExemption
+DealPrice ShippingFees PSAFEPlace Registration
+TradeAmount RegulatoryAmount SettlementLocation BeneficialOwnership
+InstitutionSettlementAmount StampDuty CptyA/C#atGlobalCustodian CashSettlementSystem
+SettlementAmount OtherAmount CptyCustodian(DECU/RECU) NettingEligibility
+SettlementCurrency NetCashAmount CptyA/C#atLocalAgent CentralCounterpartyEligibility
+ExchangeRate CurrentFactor CptySubagent(DEAG/REAG) LetterofGuarantee
+FromCurrency PoolNumber CptyA/C#atDepository(ID1) SettlementSystem/Method
+ToCurrency DaysAccrued CptyCorr.CashParty(ACCW) Real-TimeGrossSettlementSystem
+ExecutingBrokerCommission CouponRate CptyCorr.CashAccount Restrictions
+BlockTradeIndicator CollateralPoolTradeIndicator
+Table3.2ListofFieldsPre-MAGRUsestoDetermineDifferences
+AcceptDifferences
+ThisactionbuttonisavailableonlyfromSettlementDetailView,forcaseswheretherearedifferencespost-
+amendmentsmadeinCTM,fromtherecordoriginallysenttoSettlementInstructionManager.Inorderforauser,
+whoseorganizationhasanactivesubscriptiontothePostTradeSettlementNotification–Pre-MAGRservice,to
+beabletoseetheAcceptDifferencesactionbuttonintheactionsbar,userhastohavetheAmendSettlement
+DetailRoleandtheallocationselectedshouldhavetheDifferencesFlagpresent.
+TodisplaydifferencesinvaluescausedbyamendmentsmadeinCTMtotherecordoriginallysenttoSettlement
+InstructionManager,usersreviewthesectionentitled:Priorvs.NewInstructionDifferencesthatwillshowat
+thetopoftheSettlementDetailViewonlywhentherearefieldswithdifferences.Acountofallfieldsidentifiedas
+havingdifferences,willshownexttothesectiontitle.
+ServiceOverview
+3.SettlementInstructionManagerFunctionality 27
+
+---
+
+## Page 48
+
+Firstfivefieldswithdifferenceswillshowbydefaultandifmoreareavailable,ascrollbarwillbepresent.
+Note
+ThepresenceoftheDifferenceFlagcolumnontheSettlementGridviewisusefulwhenunderstandingwhycer-
+tainallocationswerenoteligibletobereleased.
+WhenclickingontheAcceptDifferencesactionbutton,userispresentedwithapop-upmodal:
+ServiceOverview
+3.SettlementInstructionManagerFunctionality 28
+
+---
+
+## Page 49
+
+Onceacceptingdifferencesonanallocation,thepreviouslysentinstructionwillbecancelledandnewinstruction
+willbecreatedwiththenewacceptedvalues.TheDifferenceFlagwillnolongerbedisplayedontheallocation.
+Newinstructionscannotbereleaseduntildifferencesareaccepted.
+AdditionalInformationforPre-MAGRWorkflow
+BelowaresomeadditionalpointsorganizationsshouldbeawareofprnnotiortoturningonthePre-MAGR
+workflow.
+l OrganizationsusingPre-MAGRcansubmittheircounterpartiesSSIALERTkeysortheircounterpartiesfull
+SSIswiththeirCTMtradesubmissions.Alternatively,ausercanmanuallyupdatetheircounterpartySSIson
+theSettlementInstructionManagerUI.ThiswillensuretheSettlementInstructionManagerinstructionincludes
+thecounterpartySSIifthetradewillnotbematchinginCTM.
+CrossCurrencyInstructions
+SettlementInstructionManagermapsinformationtoSWIFTandCSVmessagessupportingcrosscurrency
+settlements.TheinvestmentmanagerwillneedtosupplytheSettlementAmount,NetCashAmountand
+ServiceOverview
+3.SettlementInstructionManagerFunctionality 29
+
+---
+
+## Page 50
+
+ExchangeRatecompositestomeettheSettlementInstructionManagercriteriaofacrosscurrencysettlement
+trade.FortheSWIFTmessagingtagstobepopulated,‘FromCurrency’ and‘ToCurrency’ cannotcontainthe
+samecurrencycodeandtheExchangeRatemustbegreaterthan0.0fortheEXCHtagtobepopulated.Ifoneof
+thesecompositesismissingthe19A::RESUand92B::EXCHtagswillnotbepopulated.
+Field SampleValue RelatedSourceSWIFTTag
+SettlementAmount "EUR8000," Sub-SequenceE3:19A::SETT//EUR8000,
+ResultingAmount "EUR8000," Sub-SequenceE3:19A::RESU//EUR8000,
+ExchangeRate "USD/EUR/8000," Sub-SequenceE3:92B::EXCH//USD/EUR/800,
+SettlementAmount
+IfSettlementInstructionManageritisdeterminedthattheallocationmeetsthecriteriaofacrosscurrencytrade,
+thenmappingisperformedfromtheSettlementAmountprovidedbytheinvestmentmanager.Otherwise,fornon-
+crosscurrencytrades,iftheSettlementAmountfromtheexecutingbrokerwasprovided,itismappedto
+19A::SETT;ifnotprovided,19A::SETTismappedwiththeNetCashAmountvalue.Aspartofcrosscurrency
+settlementsupport,twofieldshavebeenaddedtoSWIFT/CSVmessages:
+ResultingAmount
+IfSettlementInstructionManageritisdeterminedthattheallocationmeetsthecriteriaofacrosscurrencytrade,
+thenmapthevaluesofsourcefieldsto19A::RESU.
+ExchangeRate:
+IfSettlementInstructionManageritisdeterminedthattheallocationmeetsthecriteriaofacrosscurrencytrade,
+thenmapthevaluesofsourcefieldsto92B::EXCH.
+Note
+PerSWIFTrequirements,theExchangeRatefieldcannotbegreaterthan15dcharactersortheinstructionwill
+beNAK’d.TheSettlementInstructionManagerapplicationwillnotprocessanyExchangeRatefieldthatis
+greaterthan15dcharacters.Ifthefieldisgreaterthan15dcharacters,92B::EXCHand19A::RESUtagswillnot
+bemappedtotheoutboundsettlementinstruction.
+ServiceOverview
+3.SettlementInstructionManagerFunctionality 30
+
+---
+
+## Page 51
+
+OmnibusBlockSettlementWorkflow
+Description
+TheOmnibusBlockSettlementfunctionalityenhancesthecurrentSettlementInstructionManagerapplicationto
+allowclientstheabilitytosendoutOmnibusBlockSettlementInstructionstotheircustodiansandother
+interestedparties.SupportingtheOmnibusBlockSettlementworkflowandtherelatedSWIFTtagsin
+SettlementInstructionManagerforCTMclientswhousetheCTMBlockSettlementservicetosendout
+settlementinstructionsviaSWIFT(MT54X)orCSVonanOmnibusor“BulkedUp”basis.
+SubscriptionsRequired
+ForthefullOmnibusfunctionalitytowork,asaninvestmentmanagerorganization,thebelowthreesubscriptions
+arerequired:
+l CentralTradeManager
+l CTMBlockSettlement
+l PostTradeSettlementNotification
+UserscanutilizeacombinationofreferencelookupandsortcapabilitiestoidentifyOmnibusanddependent
+allocations.Tosupportthat,SettlementInstructionManagerisusingthePoolRefdisplaytopopulateaunique
+referenceIDthatlinksOMNIandDEPDallocationstogether.TheAllocationTypecolumnwillhaveeitherOMNI,
+DEPD,INDPforOmnibusallocationsorblankforstandardnon-Omnibusallocations.
+ServiceOverview
+3.SettlementInstructionManagerFunctionality 31
+
+---
+
+## Page 52
+
+SINO–FXStandingInstructionsNotApply
+InordertoavoidaduplicateFXissueandallowstraightthroughprocessingoftheinstructionduringtheAmend
+process,userscannowselecttheSINOqualifier(indicatingFXStandingInstructiondoesnotapply),fromthe
+SettlementConditionsdropdownintheSettlementInstructionManagerDetailview.
+ServiceOverview
+3.SettlementInstructionManagerFunctionality 32
+
+---
+
+## Page 53
+
+OnceyouclickSave,the:22F::FXCX//SINOtagwillbeincludedontheoutboundforaNEWMmessage.
+Notes
+l AsperSWIFTrequirements,SINOwillbemappedto:22F::FXCXtag,andnotto:22F::STCO
+tagwhereSettlementConditionsareusuallymappedto.
+l IndicatorSINOwillbemappedtotheForexOrderCancellationIndicatorfieldinCSV.
+ServiceOverview
+3.SettlementInstructionManagerFunctionality 33
+
+---
+
+## Page 54
+
+SWIFTMT54xInstruction/CSVExporttoPDF
+SettlementInstructionManageruserscanexportinstructionstoaPDFfromtheUIwhetherthedeliverywassent
+throughSWIFTorCSV.ThereareafewdifferentwaysausercanexporttheinstructionintoaPDF.Fromthe
+SettlementGridview,thePrimaryFormatcolumnwillcontainaSWIFT/CSVlink:
+FromtheSettlementDetailViewforCSV:
+FromtheSettlementDetailViewforSWIFT:
+ServiceOverview
+3.SettlementInstructionManagerFunctionality 34
+
+---
+
+## Page 55
+
+FromSettlementDetailView’sHistory:
+ClickExporttoPDF,toautomaticallydownloadtherequesteddocument.Itwillhavethetimestampofthetime
+whenthePDFwasexported.
+SettlementInstructionManagerStatusMessageDelivery
+Description
+SettlementInstructionManagerallowsinstructionownerstoreceiveinstructiondeliverystatusupdatesviaSFTP
+inJSONfileformat.TheStatusMessageDeliverywillalwaysbegeneratedattheallocationlevelandincludes
+theDeliveryStatusofthePrimaryaswellasallSecondaryCopyrecipients.Thisstatusfilewillbegenerated
+everytimeanewactionisbeingtakenonanallocationcausingachangeinthestatusoftheinstruction.Please
+notethattheStatusMessageDeliveryupdatesgetgeneratedonlyafterboth,thePrimaryandalltheCopy
+recipientshavemovedtothesamenewstate.Incaseswheninstructionsarereleased,theDeliveryStatusmay
+notbeinthesamenewstate,buttheSWIFT/CSVresponsesforboththePrimaryandallCopyrecipientshave
+beenreceivedwitheitheranACKoraNAK.ThefullJSONformataswellassamplemessagescanbefoundin
+theStatusMessage(JSON)Specificationdocument.
+ServiceOverview
+3.SettlementInstructionManagerFunctionality 35
+
+---
+
+## Page 56
+
+SubscriptionsRequired
+InordertobeabletoreceivetheSettlementInstructionManagerStatusMessageDeliveryfiles,clientswill
+needtoaddthefollowingsubscriptions:
+l SettlementInstructionMessageDestination
+l Pre-requisitesubscription:PostTradeSettlementNotification
+DestinationProfileRequired
+OrganizationswillneedtocoordinatewithyourITPrepresentativeortheHelpDesktocreateaDestination
+ProfileundertheSettlementInstructionMessageDestinationSubscription
+l SFTPdeliverychannelwithJSONformat
+Thisisstandalonedestinationprofile.Itdoesnotrequirelinkingwithnotificationlikethestandarddestination
+profilesanditisnottiedtoanytriggeredeventsfromEventProfiles.Thisservicedoesnotrequireuserrolesor
+event/notificationprofiles.ThedestinationprofiledoesrequireSFTPandassociatedchannelparameterswitha
+formatofStatusJSON.
+SFTPSetup
+OrganizationswillneedtocoordinatewithyourITPrepresentativetocompletetheSFTPrequiredsetup(Domain
+Name/IPAddress,PortNumber,DestinationDirectoryUsername,Passwordetc.).
+SecondaryRecipientsSuppression
+Description
+SecondaryRecipientSuppressionfunctionalityallowsclientstoselectandsuppressCopyrecipient(s)whowill
+nolongerreceiveanyfurtherinstructionsforaspecificallocation.SettlementInstructionManagerapplicationhas
+theabilityforausertoselectrecipients(destinations)towhomtheynolongerwishtosendanyupdatedinstruction
+foraspecificallocation.Suppressedrecipientsandlastreleasedoutboundscanbepreviewedforeachinstruction.
+ServiceOverview
+3.SettlementInstructionManagerFunctionality 36
+
+---
+
+## Page 57
+
+SubscriptionsandRoles
+FortheSecondaryRecipientsSuppressionfunctionalitytobeinitiated,thesubscriptiontoSuppress
+SettlementInstructionroleisrequired.
+ActionButton
+TheSuppressactionbuttonisdisplayedontheSettlementDetailviewandisavailabletousersentitledwiththe
+SuppressSettlementInstructionrole.
+Foranallocationtobeeligibleforsecondaryreceiptsuppression,theSettlementDetailStatusmustmeetthe
+followingcriteriafortheactionbuttontobeactivated:
+l Ineligible
+l FailedValidation
+l Stopped
+l AwaitingRelease
+l Released(onlywhenDeliveryStatusISNOTAwaitingACK)
+l SystemCancelReleased
+l SystemCancelNotReleased
+l CancelReleased(onlywhenDeliveryStatusISNOTAwaitingACK)
+ServiceOverview
+3.SettlementInstructionManagerFunctionality 37
+
+---
+
+## Page 58
+
+AftertheSuppressbuttonisselected,auserispresentedwithapop-upwindow.Allactiverecipientsforthe
+selectedinstructionaredisplayedandallowsuserstoselecttheCopyrecipient(s)forsuppression.Theprimary
+recipientcannotbeselectedforsuppression.
+Onceinitiated,theuserispresentedwithaconfirmationpop-up.
+Suppressioncannotbereverted.Recipientsuppressionactionisfinal.
+ServiceOverview
+3.SettlementInstructionManagerFunctionality 38
+
+---
+
+## Page 59
+
+SuppressedRecipientsSection
+Detailsandhistoryforeachsuppressedrecipients,aredisplayedintheSuppressedRecipientssection
+displayedontheSettlementDetailviewintheInstructionssectionandwillshowonlywhenatleastonerecipient
+hasbeensuppressed.Thesectionallowsuserstopreviewallinstructions(SWIFT/CSV)releasedpriorto
+suppression.
+Multi-AmendFunctionality
+Description
+SettlementInstructionManagerclientscanAmendacrossmultipleallocationsfromSettlementGridview.Please
+seehighleveldetailsbelow:
+l Multi-selectandmulti-amendapplytobothinvestmentmanagerandbrokerorganizations
+l AbilitytoselectoneormoreallocationsindividuallyfromtheSettlementGridview
+l Abilityto“selectall”and“unselectall”allocationdisplayedintheSettlementGridviewatonetime
+l BothMAGRandPre-MAGRallocationscanbeselectedforMulti-Amend
+KeyFeatures
+l Userswillnolongerreceivea“warningmessage”whenselectingmultipleallocationsforAmend
+l AmendfunctionalityisonlyallowedforrecordswithaSettlementDetailStatusof:
+ServiceOverview
+3.SettlementInstructionManagerFunctionality 39
+
+---
+
+## Page 60
+
+o FailedValidation
+o Ineligible
+o AwaitingRelease
+o CancelReleased
+o Stopped
+l TheMulti-Amendselectiondisplaysaconsolidatedwindowwithallamendablefieldsavailable
+l UserswillhavetheabilitytoselectNoChange,ReplaceandAdd
+l Iftheuserisamendingamandatoryfield,itwillidentifyasmandatoryandwillnotallowtheusertosavewithout
+populatingdata
+l Amendedvalueswillbeappliedacrossselectedinstructions
+l UpontheuserselectingSave,amodalwillappeardisplayingchangesandpromptingtheusertoconfirmand
+choose“AmendInstructions”
+l Aninformationbannerwillappearoncecompletedwith“Info:Multi-Amendrequestsubmitted”
+l ItisrecommendedtousethecolumnSettlementDetailLastUpdatedtoviewchangesimpactingmultiple
+selectedrecords
+l Amendisallowedforamaximum500allocations
+Functionality
+TheMulti-Amendfunctionalitybehavessimilarlytotheothermulti-actions(Release,Stop,Cancel)byproviding
+theabilitytoactonmorethanonerecordfromtheSettlementGridview.
+SelectmultipleallocationsandclickAmend.
+ServiceOverview
+3.SettlementInstructionManagerFunctionality 40
+
+---
+
+## Page 61
+
+UserispresentedwiththeAmendInstructionswindow,whichshowsallamendablefieldsinadisabledstate.All
+allowableactions(NoChange,Replace,Add)aredetailedandprovidedontheconsolidatedwindow.
+EnableeachfieldbyselectingReplaceorinthecaseoftheConditionIndicators,selectingReplaceorAdd.
+ServiceOverview
+3.SettlementInstructionManagerFunctionality 41
+
+---
+
+## Page 62
+
+Notes
+l NofieldismandatoryuponlandingontheMulti-Amendpage.
+l TherearesomemandatoryfieldsthatrequiredataonceyouselectReplace.
+l SelectingReplaceforamandatoryfieldwillgenerateanerrormessage/validation.
+l SelectingReplaceforanon-mandatoryfieldandleavingthefieldblankwillcleartheexistingval-
+uesforthatfieldacrossselectedallocations.
+l UserswillnotbeabletoSavethechangesuntilanyerrorsareaddressed.
+l UserswillnotbeabletoSavetheformifthereareanyinvalidvaluesforanyofthefields.Typedval-
+uesmustbe8or11characters.Othervaluesmustbechosenfromadrop-downmenu.Datesmust
+beinMM/DD/YYYformatandselectedbyclickingthecalendaricon(
+ ).
+SelectSave.UserswillbepresentedwiththeAmendInstructionssummarywindow,whichwilldisplaythe
+changesabouttobemade.ReviewyourmodificationsandselectAmendInstructionstoapplythechanges
+acrossalloftherecordsselected.
+ServiceOverview
+3.SettlementInstructionManagerFunctionality 42
+
+---
+
+## Page 63
+
+Abluebannerwillbedisplayedconfirmingtheaction“MultiAmendrequestsubmitted”.
+OntheSettlementGridview,sortbytheSettlementDetailLastUpdatedcolumntoviewchangestothelatest
+records.Thisistherecommendedactionwhenamendingmultiplerecords.
+SettlementStatusFieldsandFiltering
+ThereareseveralnewfieldsandfilterstotheSettlementInstructionManagerUserInterfacetoallowforadditional
+statusmanagementfeatures.
+NewFieldsAvailablethatcanbeaddedtoGridResults
+AdditionalcolumnshavebeenintroducedthatclientscanaddtotheirGridView.
+ServiceOverview
+3.SettlementInstructionManagerFunctionality 43
+
+---
+
+## Page 64
+
+ColumnName Description
+ActualSettlement ActualSettlementDateisthedateonwhichthesettlementoccurred.
+CSDMatchStatus CSDMatchStatusidentifiesthematchstatusofthetransaction.ThepossiblevaluesareMatchedorUnmatched.Populatedifsupplied
+bydatasubmittersthroughdistincttags/fields.
+CSDMatchStatus
+Reason
+CSDMatchStatusreasonprovidesthereasonassociatedwiththematchstatus.ThisalignswithSWIFTMatchStatusReasonCodes
+andshortdescriptionswhensuppliedbydatasubmittersthroughdistincttags/fields.
+CSDMatchStatus
+ReasonDescription
+CSDMatchStatusReasonDescriptionprovidesthedetaileddescriptionassociatedwithSWIFTreasoncodeprovidedforMatch
+StatusReason.Populatedifsuppliedbydatasubmitters.
+FailDays FailDaysprovidesvisibilityintothenumberofdaysthatatradefailedpostsettlementdate.
+SettlementStatus SettlementStatusprovidesvisibilityintothecurrentstatusofthetransaction.ThepossiblevaluesofthisfieldarePending,Partially
+Settled,Failed,CancelledorSettled.
+SettlementStatus
+Reason
+SettlementStatusReasonprovidesvisibilityintothedetailedsettlementstatus.ItispopulatedwithSWIFTstatuscodeandassociated
+shortdescriptionwhensuppliedbydatasubmittersasdistinctdatapoints(tags/fields).
+SettlementStatus
+ReasonDescription
+SettlementStatusReasonDescriptionprovidesvisibilityintothereasondescriptionprovidedforthesettlementstatus.Itisthelong
+descriptionassociatedwithSWIFTreasoncode.Populatedifsuppliedbydatasubmitters.
+SettlementStatusLast
+Updated
+Representswhenthestatuswaslastupdated.
+StatusNarrative Free-formtextfieldthatcapturesanystatus-relatednarrativeinformation,ifprovidedinSWIFTtag70D/equivalentnarrativefield.
+RecipientUTI RecipientUniqueTransactionIdentifierifprovidedonSWIFTstatusandConfirmationmessage.
+SettlementStatusColumnsAvailableforGridView
+ThesenewcolumnsarenotaddedtotheGridbydefault.UserswillneedtomanuallyaddthemtotheirGridView
+andthencreateasavedviewtoincorporatethem.
+AdditionalFilters
+Inadditiontoaddingnewfields,enhancementshavebeenmadetosupportnewfilteringcapabilities.Userswill
+havetheabilitytofilterbythefollowing:
+l SettlementStatus
+l SettlementStatusReason
+l CSDMatchStatus
+l CSDMatchStatusReason
+l FailDays
+ServiceOverview
+3.SettlementInstructionManagerFunctionality 44
+
+---
+
+## Page 65
+
+TheFailDaysfiltertypehasbeenintroducedwithnewfiltercalculationof“greaterthanorequalto.”
+ServiceOverview
+3.SettlementInstructionManagerFunctionality 45
+
+---
+
+## Page 66
+
+4.APPENDIX
+InstructionErrors
+Table4.1liststhepossibleinstructionerrorsthatcanbedisplayedintheSettlementInstructionManagerUI.
+Error
+Key
+Severity ErrorText FailureReason
+I001V FATL Validationwasnotsuccessful.Avaluefor
+mandatoryfield%1mustbeprovided
+Thebelowfieldsaremandatoryandmustbepopulated:
+o TypeofTransactionIndicator
+o SettlementLocation(PSET)
+o AccountatSettlingAgent
+I0002V FATL Validationwasnotsuccessful.Avalueforfield%1
+couldnotbederived.Resolvingthismayrequirethe
+allocationtobeupdatedandresubmitted.
+CptyIDisderivedbyapplyingbusinessrulesfordifferent
+markets.Thiserrorisgeneratedwhenneitherthemarket
+mandatedvaluenorthevalidCptyBIC/Nameare
+available.
+I0003V FATL Validationwasnotsuccessful.Wherefield%1is%2
+pleaseprovideavalueforfield%3.
+FortheidentifiedSettlementLocation(PSET),theCpty
+A/C#atDepository(ID1)ismandatory.
+I0004V FATL Validationwasnotsuccessful.Wherefield%1is%2
+pleaseprovideavalueforfield%3.
+FortheidentifiedSettlementLocation(PSET),theCpty
+SubAgentBICismandatory.
+I0005V FATL Validationwasnotsuccessful.Wherefield%1is%2
+pleaseprovideavalueforfield%3.
+FortheidentifiedSettlementLocation(PSET),theCpty
+LocalCode(ID2)ismandatory.
+I0006V FATL Validationwasnotsuccessful.Wherefield%1is%2
+pleaseprovideavalueforfield%3.
+FortheidentifiedSettlementLocation(PSET),avaluein
+CptyA/C#atDepository(ID1)orCptySubAgentBICis
+mandatory(dependingonPSET’sconfiguration).
+I0007V FATL Validationwasnotsuccessful.Wherefield%1is%2
+pleaseprovideavalueforfield%3.
+FortheidentifiedSettlementLocation(PSET),eitherthe
+CptySubAgentBICortheCptyA/C#atDepository(ID1)
+arerequired.
+I0008V FATL Validationwasnotsuccessful.TheBIC%2provided
+infield%1isinvalid.PleaseprovideavalidBIC.
+TheBICprovidedineithertheSettlementLocation(PSET)
+orCptySubAgentBICfieldsisinvalid.
+I0009V FATL Validationwasnotsuccessful.Thevalueof%2in
+field%1isnotvalid.
+ThevalueprovidedineithertheInstrumentIDTypeCode
+orTypeofTransactionIndicatorfieldsisnotvalid.
+Table4.1InstructionErrors
+ServiceOverview
+4.Appendix 46
+
+---
+
+## Page 67
+
+Error
+Key
+Severity ErrorText FailureReason
+I0011V FATL Validationwasnotsuccessful.TheBIC‘AB@#$123’
+thatidentifies‘OriginatorofMessage’isinvalid.
+Resolvingthismayrequiretheallocationtobe
+updatedandresubmitted.
+TheMessageOriginator’s(InvestmentManageror
+[[Broker]]’s)BICisinvalid.
+I0012V FATL Validationwasnotsuccessful.The%1SSI
+informationismissing.Pleaseprovidetherequired
+values.
+Eithertheinvestmentmanager’sorexecutingbroker’s
+SSIsaremissingfromthesettlementdetail.
+I0016V FATL Validationwasnotsuccessful.Wherefield%3is
+%2,%1mustbeacountrycode.Pleaseprovide
+validvalue(s).
+WhenaSettlementConditionofPHYS(physical)has
+beensupplied,theSettlementLocation(PSET)mustbe
+identifiedusingaCountryCodeasopposedtoaBIC.
+I0018V FATL Validationwasnotsuccessful.Valueof%2infield
+%1mustnotcontainasanctionedcountrycode.
+TheCashAccountandCptyCorrespondentCashAccount
+fieldsmustnotcontainasanctionedcountrycode.
+I0023E FATL Thisallocationhasfailedduetoamissingevent
+profile.PleasecontacttheITPhelpdeskfor
+assistance.
+Forassistance,contacttheClientCenter.
+I0024E FATL Thisallocationhasfailedduetoineligibleevent
+profile(s)PleasecontacttheITPhelpdeskfor
+assistance.
+Forassistance,contacttheClientCenter.
+I0028V FATL Validationwasnotsuccessful.Wherefield%1is
+%2,pleaseprovideavalueforfield%3.
+FortheidentifiedSettlementLocation(PSET),eitherthe
+CptySubAgentBICortheCptyA/C#atDepository(ID1)
+orCptySubAgentBICarerequired.
+I0029V FATL Validationwasnotsuccessful.Wherefield%1is
+%2,avalueforDataSourceSchemewasnot
+provided.PleasecontactyourDTCCadministrator
+orthehelpdeskforassistance.
+ForthegivenSettlementLocation(PSET)ithasn’tbeen
+possibletoidentifyaDataSourceScheme.For
+assistance,contacttheClientCenter.
+I0030V FATL Validationwasnotsuccessful.TheBIC%2provided
+infield%1issanctioned.
+TheBICprovidedintheSettlingAgentBICfieldis
+sanctioned.
+I0040V FATL Validationwasnotsuccessful.ABICfor%1is
+missing.Resolvingthismayrequiretheallocationbe
+updatedandresubmitted.
+TheMessageOriginator’s(InvestmentManageror
+[[Broker]]’s)BICmustbeprovided,eitherlinkedtothe
+MessageOriginator’s(investmentmanager’sorbroker’s)
+organizationoraspartofthedetailssubmittedtoCTM.
+ServiceOverview
+4.Appendix 47
+
+---
+
+## Page 68
+
+Error
+Key
+Severity ErrorText FailureReason
+I0041V FATL Validationwasnotsuccessful.TheBIC%2provided
+infield%1issanctioned.
+TheBICprovidedinoneofthebelowfieldsissanctioned:
+o CptyCustodianBIC
+o CptyCorrespondentCashParty
+o CptyCorrespondentSecurityParty
+o InstitutionOrExecutingBrokerBIC
+o CounterpartyBIC
+I0042I INFO Thistradeisnolongerpairedwithyourlast
+counterpartytrade.Youcanacceptdifferencesor
+cancelthepriorsettlementinstruction(s).
+DuetoactionstakeninCTM,theallocationhasbrokenits
+previouspairingwithacounterparty’stradecomponent.
+I0042V FATL Validationwasnotsuccessful.TheBIC%2provided
+infield%1doesnotexist.
+TheBICprovidedintheBuyer/Sellerfielddoesnotexist.
+I0043I INFO Thistradeisnolongerpairedwithyourcounterparty
+andthusnolongerhasabrokeronthetrade.You
+maybeabletoamendthetradetoaddabrokeror
+cancelthepriorsettlementinstruction(s).
+DuetoactionstakeninCTM,theallocationisnolonger
+pairedwithacounterparty’stradecomponent.
+I0044V FATL Validationwasnotsuccessful.Thecounterpartyis
+missing.Resolvingthismayrequiretheallocationto
+beupdated.
+Thereisnolongeracounterpartyidentifiedforthe
+allocation.
+N0017V FATL Validationwasnotsuccessful.AvalidBICforfield
+%1couldnotbederivedfromtheStanding
+SettlementInstructions.PleaseprovideavalidBIC
+valueforfield%1.
+IthasnotbeenpossibletoidentifyaSettlingAgentfrom
+theSSIinformationthathasbeenprovidedonthe
+settlementdetail.
+N0019E FATL Therearepossibleconfigurationissues.Please
+contacttheITPhelpdeskforassistance.
+Forassistance,contacttheClientCenter.
+N0020E FATL Morethan15recipientswereidentified,exceeding
+thelimit.PleasecontacttheITPhelpdeskfor
+assistance.
+Amaximumof15instructionscanbesentforasingle
+settlementdetail.Forassistance,contacttheClient
+Center.
+N0021E FATL Validationwasnotsuccessful.Avalueforfield%1
+mustbepresent.Pleaseprovideavalueforfield%1.
+TheSettlingAgentBICfieldmustcontainavalue.
+N1006V FATL Validationwasnotsuccessful.Avalueforfield%1
+mustbepresent.Pleaseprovideavalueforfield%1.
+TheDestinationBICisinvalid.Forassistance,contactthe
+ClientCenter.
+T0001V FATL Translationerror. SeeTable4.2forafulllistofpossibleTranslationErrors.
+T0002V FATL Requestedmessageformatisnotsupportedby
+TranslationService.
+ServiceOverview
+4.Appendix 48
+
+---
+
+## Page 69
+
+TranslationErrors
+Table4.2listsallthepossibletranslationerrorswhichareidentifiedwiththeErrorKeyT0001V(fromabove
+InstructionErrors).
+ErrorMessage
+Type
+ErrorMessageText FailureReason
+CharacterIssue–1A Validationwasnotsuccessful.The
+value'%1'providedinfield'%2''con-
+tainsacharacterthatisinvalidfor
+SWIFT.Pleaseprovideavalidvalue.
+Thebelowfieldcontainsacharacterthatisinvalidforinclusionina
+SWIFTmessage:CurrentFactor,YieldtoMaturityRate,QuantityAlloc-
+ated,CurrentFaceValue,DaysAccrued,FinancialInstrumentID
+CharacterIssue–1B Validationwasnotsuccessful.The
+value'%1'providedinfield'%2''
+containsacharacterthatisinvalidfor
+SWIFT.Resolvingthismayrequirethe
+allocationbeupdatedandresubmitted
+fromyoursourcesystem(e.g.,Order
+ManagementorPostTradeSystem,
+etc).
+Oneofthefollowingfieldscontainsacharacterthatisinvalidforinclusion
+inaSWIFTmessage:
+Price,TradeAmount,SettlementAmount,AccruedInterestAmount,
+ChargesorFees,Country,National,FederalTax,ExecutingBroker
+Amount,LocalTax(countryspecific1),PaymentLevyTax,LocalTax,
+LocalBroker'sCommission,OtherAmount,RegulatoryAmount,
+ShippingAmount,StampDuty,StockExchangeTax,TransferTax,
+TransactionTax,ValueAddedTax,SpecialConcessionsAmount,
+ResearchFeeAmount,NetCashAmount,ExchangeRate,Institution
+SettlementAmount
+CharacterIssue2 Validationwasnotsuccessful.The
+value'%1'providedinfield'%2'
+containsacharacterthatisinvalidfor
+SWIFT.
+Oneofthefollowingfieldscontainsacharacterthatisinvalidforinclusion
+inaSWIFTmessage:CouponRate,CptyLEI.
+FieldLengthIssue–1 Validationwasnotsuccessful.
+Maximumlengthoffield'%1''
+supportedbySWIFTis'%2'.Please
+provideavalidvalue.
+Thevalueprovidedinoneofthebelowfieldsexceedsthemaximumfield
+lengthsupportedbySWIFT:
+FinancialInstrumentID,PlaceOfTrade,SettlementNarrative,CptyLEI,
+CashAccount,CptyCorrespondentCashAccount,AccountatSettling
+Agent,CptyAccountatGlobalCustodian,CptyAccountatLocalAgent,
+CptyCorrespondentSecurityAccount,CptyID1,CptyCustodianName
+FieldLengthIssue–2 Validationwasnotsuccessful.
+Maximumlengthoffield'BrokerID1or
+BrokerID2'supportedbySWIFTis35.
+Pleaseprovideavalidvalue.
+ThevalueprovidedinCptyID1orCptyID2exceedsthemaximumfield
+length(35characters)supportedbySWIFT.
+FieldLengthIssue–
+3A
+Validationwasnotsuccessful.
+Maximumlengthoffield'%1'supported
+bySWIFTis15.Resolvingthismay
+requiretheallocationbeupdatedand
+resubmittedfromyoursourcesystem
+(e.g.,OrderManagementorPost
+TradeSystem,etc.).
+Thevalueprovidedinoneofthebelowfieldsexceedsthemaximumfield
+length(15characters)supportedbySWIFT:
+CurrentFactor,CouponRate,YieldtoMaturityRate,QuantityAllocated,
+CurrentFaceValue
+Table4.2TranslationErrors
+ServiceOverview
+4.Appendix 49
+
+---
+
+## Page 70
+
+ErrorMessage
+Type
+ErrorMessageText FailureReason
+FieldLengthIssue–
+3B
+Validationwasnotsuccessful.
+Maximumlengthoffield'%1'supported
+bySWIFTis16.Resolvingthismay
+requiretheallocationbeupdatedand
+resubmittedfromyoursourcesystem
+(e.g.,OrderManagementorPost
+TradeSystem,etc.).
+Thevalueprovidedinoneofthebelowfieldsexceedsthemaximumfield
+length(16characters)supportedbySWIFT:
+RelatedReferenceandPoolReference
+FieldLengthIssue–
+3C
+Validationwasnotsuccessful.
+Maximumlengthoffield'%1'supported
+bySWIFTis15.Resolvingthismay
+requiretheallocationbeupdatedand
+resubmittedfromyoursourcesystem
+(e.g.,OrderManagementorPost
+TradeSystem,etc.).
+Thevalueprovidedinoneofthebelowfieldsexceedsthemaximumfield
+length(15characters)supportedbySWIFT:
+Price,TradeAmount,SettlementAmount,AccruedInterestAmount,
+ChargesorFees,Country,National,FederalTax,ExecutingBroker
+Amount,LocalTax(countryspecific1),PaymentLevyTax,LocalTax,
+LocalBroker'sCommission,OtherAmount,RegulatoryAmount,
+ShippingAmount,StampDuty,StockExchangeTax,TransferTax,
+TransactionTax,ValueAddedTax,SpecialConcessionsAmount,
+ResearchFeeAmount,NetCashAmount,ExchangeRate,Institution
+SettlementAmount
+SlashIssue Validationwasnotsuccessful.Field
+%1mustnotstartorendwithaslash.
+Alsoitmustnotcontaintwo
+consecutiveslashes.Resolvingthis
+mayrequiretheallocationbeupdated
+andresubmittedfromyoursource
+system(e.g.,OrderManagementor
+PostTradeSystem,etc.).
+Oneofthefollowingfieldscontainsaninvaliduseofaslashcharacter:
+RelatedReference,[[Buyer]]/SellerID,CptySubAgentName,Cpty
+CorrespondentSecurityParty,CptyCorrespondentCashParty,Pool
+Reference,PoolNumber
+SlashIssue Validationwasnotsuccessful.Field
+%1mustnotstartorendwithaslash.
+Pleaseprovideavalidvalue.
+TheCptyCustodianNamefieldcontainsaninvaliduseofaslash
+character.
+AdditionalIssue Validationwasnotsuccessful.Where
+'FinancialInstrumentIdTypeCodeis
+'ISIN','FinancialInstrumentId'mustbe
+12characters.
+TheISINcodeprovidedinthesettlementdetaildoesnotmeetthe12-
+characterfieldrequirements.
+ServiceOverview
+4.Appendix 50
+
+---
+
+## Page 71
+
+©2024Allrightsreserved.[[DTCC]],[[DTCC]](Stylized)andFinancialMarkets.Forward.areregisteredandunregistered
+trademarksofTheDepositoryTrust&ClearingCorporationDTCC.Theservicesdescribedhereinareprovidedunder
+the“[[DTCC]]”brandnamebycertainaffiliatesofTheDepositoryTrust&ClearingCorporation(“[[DTCC]]”).DTCCitself
+doesnotprovidesuchservices.Eachoftheseaffiliatesisaseparatelegalentity,subjecttothelawsandregulationsof
+theparticularcountryorcountriesinwhichsuchentityoperates.Pleaseseewww.[[DTCC]].comformoreinformationon
+[[DTCC]],itsaffiliatesandtheservicestheyoffer.
+DocDate:February26,2024
+PublicationCode:SIM028
+Service:SettlementInstructionManager
+Title:ServiceOverview
+ForMoreInformation
+EmailDTCCLearningat:
+DTCCLearning@[[DTCC]].com
+orvisitusonthewebat:
+www.dtcclearning.com

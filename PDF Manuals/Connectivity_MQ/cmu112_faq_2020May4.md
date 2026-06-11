@@ -1,0 +1,508 @@
+---
+title: "FAQs for Real-Time Trade Matching (RTTM) Processing for CMU Trades"
+source_pdf: "file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/cmu112_faq_2020May4.pdf"
+pages: 14
+size: "241.2 KB"
+category: "Connectivity_MQ"
+ingested_on: "2026-06-05"
+---
+
+# FAQs for Real-Time Trade Matching (RTTM) Processing for CMU Trades
+
+**Original File:** [cmu112_faq_2020May4.pdf](file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/cmu112_faq_2020May4.pdf)  
+**Category:** Connectivity_MQ  
+**Total Pages:** 14  
+**File Size:** 241.2 KB  
+
+---
+
+## Page 1
+
+CORPORATE,MUNICIPAL,ANDUIT
+(CMU)
+FREQUENTLYASKEDQUESTIONSFORREAL-TIMETRADEMATCHING(RTTM®)PROCESSINGFORCMUTRADES
+MAY4,2020
+TheprimarypurposeofthisdocumentistofamiliarizeNSCCmemberswithNSCC’sRTTMCMUprocessing  
+bypublishingfrequentlyaskedquestionsabouttheservice.MembersshouldrefertotheNSCCRules&
+Proceduresforthelegalobligationsofallpartiesconcerned.Thisdocumentisnotintendedtoserveasalegal
+document.Nostatementinthisdocumentshouldbeconstruedasalegallybindingruleorregulation,orshould
+beunderstoodascreatinganobligationonthepartofNSCC.
+
+
+---
+
+## Page 2
+
+©2020DTCC.Allrightsreserved.[[DTCC]],[[DTCC]](Stylized),ADVANCINGFINANCIALMARKETS.TOGETHER,and
+theInterlockergraphicareregisteredandunregisteredtrademarksofTheDepositoryTrust&ClearingCorporation.
+Theservicesdescribedhereinareprovidedunderthe“[[DTCC]]”brandnamebycertainaffiliatesofTheDepository
+Trust&ClearingCorporation(“[[DTCC]]”).DTCCitselfdoesnotprovidesuchservices.Eachoftheseaffiliatesisa
+separatelegalentity,subjecttothelawsandregulationsoftheparticularcountryorcountriesinwhichsuchentity
+operates.Pleaseseewww.[[DTCC]].comformoreinformationonDTCC,itsaffiliatesandtheservicestheyoffer.
+DocInfo:May4,2020
+PublicationCode:CMU112
+Service:Corporate,Municipal,andUIT(CMU)
+Title:FrequentlyAskedQuestionsforReal-TimeTradeMatching(RTTM®)ProcessingforCMUTrades
+
+---
+
+## Page 3
+
+TABLEOFCONTENTS
+CustomerSupport 4
+SettingUpNewRTTMWebUsers 4
+MessageQueue(MQ)TradeProcessing 4
+RTTMDocumentationandTrainingInformation 4
+RolesofDTCCandSubsidiarieswithRTTMProcessing 5
+TradeSubmission 5
+When-IssuedTradeMatchingProcessing 8
+SyndicateProcessingforMunicipalSecurities 10
+OverallTradeMatching 11
+OtherMatching 12
+CustomerTrades 13
+RTTMCMUMessageTesting 13
+AdditionalUsefulWebsites 13
+
+---
+
+## Page 4
+
+CustomerSupport 4
+Customer Support
+Q. Who [[DO]] I contact for CMU questions?
+A. For CMU matching questions,dooneofthefollowing:
+l CallDTCCClientSupportat1-888-382-2721(selectoption5,andthen4).
+l NSCCIntegrationbyemailat NSCCIntegration@[[DTCC]].com.
+l EnteraninquiryusingtheMyDTCCportal.
+A. For RTTM® Web Password issues:
+l Ifyouarenotasuperaccesscoordinator(SAC)oraccesscoordinatoratyourfirm,contactyourfirm’s
+accesscoordinatortoresetyourpassword.
+l IfyouareaSACoraccesscoordinatorforyourfirm,callDTCCClientSupportat1888382-2721(select
+option5,andthen1).
+Seealso: CMURTTMSuperAccessCoordinatorUserGuide .
+A. For problems with data communication or RTTM Web access issues or further CMU matching
+questions,callDTCCClientSupportat1888382-2721(selectoption5,andthen4).
+Setting Up New RTTM Web Users
+Q. As an RTTM Web Access Coordinator, how can I set up a new user?
+A. Tolearnaboutsettingupnewusers,seethe CMURTTMSuperAccessCoordinatorUserGuide .
+Message Queue (MQ) Trade Processing
+Q. Why can’t RTTM process my trade messages sent through Message Queue (MQ)?
+A. CallDTCCClientSupportat1888382-2721(selectoption5,andthen4).Youcanalsocheckforalarger
+issue:Intheeventofasystem-wideproblem,RTTMWebdisplaysabanneronitsfrontpage.
+RTTM Documentation and Training Information
+Q. Where can I find information about CMU RTTM services?
+A. Formoreinformation,seethe Corporate,Municipal,andUIT(CMU) pageoftheDTCCLearningCenter:
+Youcanalsoaccessthefollowingcontent:
+l CMURTTMFrequentlyAskedQuestions(FAQs)
+l CMUDocuments
+l CMURTTMWebUserGuide
+l CMURTTMWebQuickReferenceGuide
+l CMURTTMSuperAccessCoordinatorGuide
+l What'sNewinCMURTTMWeb?-August7,2018WebinarRecording
+l SpecialConditionIndicators
+l CMUReports
+FAQs for CMU RTTM®
+
+---
+
+## Page 5
+
+RolesofDTCCandSubsidiarieswithRTTMProcessing 5
+Q. Where can I access CMU important notices?
+A. Visithttp://www.[[DTCC]].com/legal/important-notices?q=cmu&pgs=1
+Q. How can I obtain training for CMU RTTM?
+A. Toinquireabouttraining,contactyourDTCCRelationshipManager.
+Roles of [[DTCC]] and Subsidiaries with RTTM Processing
+Q. What are the roles of [[NSCC]], [[FICC]], and [[DTCC]] relative to RTTM?
+A. NationalSecuritiesClearingCorporation([[NSCC]])andFixedIncomeClearingCorporation([[FICC]])are
+whollyownedsubsidiariesoftheDepositoryTrust&ClearingCorporation([[DTCC]]).CMUprocessingis
+providedforundertheRulesandProceduresofNSCC.Visit http://www.[[DTCC]].com/legal/rules-and-
+procedures.aspx?subsidiary=[[NSCC]]&pgs=1
+MatchedCMUtradessettleinNSCC’sCNS ®,forcontinuousnetsettlements,ortrade-for-tradesystemsas
+applicable.
+Note
+Cash (T/D =S/D)tradesare matched asComparison OnlybyRTTMand are notsentto [[NSCC]]’s
+settlementsystems).
+Trade Submission
+Q. What types of [[securities]] are ineligible for CMU RTTM?
+A. Tradesinnon-CMUsecuritiesareineligibleforCMURTTM.CMURTTMwillrejectinthefollowingDTC
+SubIssueType(SITs):
+SIT Number
+CommonStock 010
+ConvertibleCMNSTK 011
+CommonStockREIT 012
+PreferredStock 020
+PreferredStockREIT 022
+ConvertiblePFSStock 023
+TenderRatePreferred 024
+LimitedPartnership 030
+CMOUnits 040
+ARPS 102
+ADRs 110
+DepositoryShares 111
+ExchangeTradeFunds 117
+Equity144aDesignated 121
+SealedEnvelope 125
+FAQs for CMU RTTM®
+
+---
+
+## Page 6
+
+TradeSubmission 6
+SIT Number
+CustodyUserCUSIP 126
+REIT 130
+GNMA 450
+GNMAPassThrough 451
+GNMASerialNote 452
+CMO-GCMO 540
+[[ABS]]-GABS 541
+GovernmentSecurity 601
+USTreasury 610
+USTBill 611
+USTNote 612
+GovernmentAgency 620
+PTC(REMIC) 651
+EquityDerivative 705
+Warrant 720
+Right 730
+MutualFund 760
+ClosedEndFuns 761
+IMMI/Fund 762
+EquityUnit 780
+DebitUnit 781
+(Continued)
+Q. In what format can CMU trades be submitted to RTTM?
+A. SubmittradesthroughCMU RTTMWebortheMessageQueue(MQ)InteractiveMessaging(MT515)
+tradeinputmessagesusingISO(InternationalOrganizationforStandardization)15022formats.
+MessagespecificationsforMT515(InputtoRTTM),MT509(TradeStatusMessages),andMT518(Trade
+Advisories)areavailableinthe CMURTTMInteractiveMessagingSpecificationsforInputandOutput
+document.
+Q. In what format is the trade value submitted to RTTM?
+A. Regularwaytradescanonlybesubmittedversusfinalmoney.Accruedinterestisincludedinthefinal
+money.Theaccruedinterestalsoneedstobereportedseparatelyontradeinput.Forexample,atradewith
+principalmoneyof$10,000andaccruedinterestof$100wouldbereportedwithfinalmoneyof$10,100.
+Accruedinterestwouldbereportedseparatelyas$100.
+When-issuedandsyndicatetakedowntradescanbesubmittedwithfinalmoney,pricetoyield/concession,or
+dollarprice.RTTMwillcalculatetrademoniesforyieldanddollarpricesubmissions.
+FAQs for CMU RTTM®
+
+---
+
+## Page 7
+
+TradeSubmission 7
+Q.WhatisthepurposeoftheTradeReportingIndicator(onRTTMWeb)orTradeDestination(on
+MT515messages)?
+A.FirmspopulatetheTradeReportingIndicatororTradeDestinationfieldtoinstructRTTMtoreportthetrade
+totheMSRBornottoreporttoMSRB.
+OnRTTMWeb,selectingRTTM&MSRBintheTradeReportingIndicatorfieldinstructsRTTMtoattemptto
+matchthetradeandreportittoMSRB.Thisistheusualsettingformunicipals.However,ifthemunicipal
+transactionisastepout,populatethisfieldwithRTTM,notRTTM&MSRB.Stepoutsshouldnotbereported
+toMSRBastrades.
+TheTradeReportingIndicatorisaMatchingfieldinCMURTTM.SeetheA#8179importantnotice
+regardingMunicipalBondStepoutprocessingavailableat:
+http://www.[[DTCC]].com/~/media/Files/pdf/2016/3/16/a8179.pdf
+FormoreinformationaboutMT515messages,seetheCMURTTMInteractiveMessagingSpecificationsfor
+TradeInputandOutputdocument.
+MunicipalStepoutsonMT515messagesshouldbecodedasDestinationcode01(RTTM).NonStepout
+MunicipalInterdealertradesshouldbecodedasDestination01(RTTM)/02(MSRB).
+Q.IstheXREF#requiredontradeinput?
+A.TheXREF#isyourfirm’suniqueinternallygeneratedtradereferencenumber.Itisalsoprovidedbackto
+participantsupontradeoutputfromRTTMtohelpfirmsaccountforeachtrade.TheXREF#,orcross-
+referencenumber,isoneofseveralfieldsrequiredontradeinstructs.
+RequiredfieldsincludeXREF#,[[participant]]#,ContraParticipant#,[[Buyer]]’sandSeller’sCorrespondent
+symbols(akaMarketParticipantIDs-MPID),Buy/SellCode,MarketplaceofExecution,[[CUSIP]],Quantity,
+Money,T/D,andSettlementDate.TradessubmittedwithoutanXREF#arerejected.
+Q.Whatarethebasicmatchingelementsonatrade?
+A.Thebasicmatchingelementsare:
+l Buy/SellCode
+l Quantity
+l Money
+l ContraClearingParticipant
+l MarketplaceofExecution
+l SettlementDate
+l [[Buyer]]’sandSeller’sCorrespondentsymbols(forexample,MarketParticipantIDs-MPID)
+l [[CUSIP]]
+l TradeReportingIndicator(forMunicipalBondtransactions)
+Q.DoI needtoreportmyormyintroducingbroker’sMPID(FINRAmarketparticipantIDsymbol)
+andmycontraparty’sMPIDontradeinput?
+A.Yes,MPIDsmustbesubmitted.Inaddition,thesefieldsarepartoftheRTTMmatchforallCMURTTM
+trades.
+IfyoureportanInterdealertradetotheMSRB,MPIDisrequiredintheirsystems.TheMPIDalsohelpsfirms
+clearingonbehalfofotherstoidentifywhichoftheircorrespondentsmayhaveexecutedthetradewithyou.
+Firmsmustprovidethisinformationabouttheirtradeinputorthetradeisrejected.
+CMURTTM®
+
+---
+
+## Page 8
+
+When-IssuedTradeMatchingProcessing 8
+Q.WhatareTradeInstructs,Modifies,Cancels,Reversals,andDKs?
+A.Reviewthefollowingdescriptions:
+l TradeInstruct:Submitsinitialoras-oftradedatatoRTTM.
+l Modify:Changesadataelement(suchasQuantity,Contra,$,T/D,andS/D.)onapreviouslysubmitted
+trade.
+Matchingelements(exceptforCUSIP,Marketplace,andtheTradeReportingIndicatoronaMunicipal
+transaction)canbemodifiedifatradeisunmatched.Regulatorydataelements,suchastimeoftrade,
+canbemodifiedinRTTMifthetradeisactiveinRTTM(generallythroughsettlementdate).Notethatyou
+canonlymodifyamatchingelementonanunmatchedsyndicatetradeoninitialtradesubmissiondate.
+l Cancel:RemovesanunmatchedtradefromRTTM.
+l Reversal:Offsetsapreviouslymatchedtrade;forinstance,afirmthatmatchedabuytradeinerror
+submitsasellandincludesthereversalindicatorontheselltrade’ssubmission.NotethatRTTMdoes
+notperformalookuptoensurethattheoriginaltradehadpreviouslymatched.)
+l DK:Informsthecontrasidethatyoudonotknowatrade.DKingisoptionalforbilateralregularwayand
+whenissued(WI)trades.Notethatthesetradeswilldropfromthesystemifyoudonotmatchthem
+withintwodaysafterthecontrasidesubmitsagainstyou.However,onsyndicatetradesthatyoudonot
+know,youneedtosubmitaDKtopreventRTTMfromautomaticallymatchingthesyndicatetrade.The
+syndicatetradewillautomaticallymatchtwodaysafterthesyndicatemanagersubmitsasyndicatesell
+(see"Syndicateprocessingformunicipalsecurities")ifyoudonotDKthetrade.
+Q.WhatisthetimeframefortheCMUTradeInputExtension?
+A.CMUclosesitsdailyprocessingat8:00P.M.EasternTime.Ifyourequireanextensionfortradeinputto
+beprocessedonthecurrentbusinessday,useoneofthefollowingmethodstoobtainsupport:
+l EmailNSCCSupportatNSCCSupport@[[DTCC]].com.
+l TelephoneDTCCClientSupportat1-888-382-2721by7:30P.M.ETandfollowthepromptforproduction
+support.
+Ifyoucallforanextensionbetween7:30P.M.and7:45P.M.,DTCCwillmakeabestefforttoprovideone.
+IfanextensionfortradeinputisarrangedwithDTCC,itwillterminateat8:30P.M.ET.
+IfDTCC,atitssolediscretion,extendsadeadlinethatwouldsignificantlyimpactreportingtimes,a
+communicationissentout.
+When-IssuedTradeMatchingProcessing
+Q.HowdoesRTTMdetermineifatradeisprocessedasWhenIssued(WI)orRegularWay?
+A.RTTMdetermineswhetherthetradeisprocessedasWhenIssued(WI)orRegularWay.
+TradesareprocessedasWIiftheyareexecutedtwoormoredaysbeforetheinitialsettlementdateofanew
+issue.
+TradesareprocessedasRegularWayiftheyare:
+l SubmittedtoRTTMonoraftertheinitialsettlementdateofanewissue.
+l Executedonedaybeforetheinitialsettlementdateandsettleaftertheinitialsettlementdate
+Anexceptiontothisruleincludestradessubmittedoneortwodayspriortotheissue’sinitialsettlementdate,
+whicharecodedasextendedsettlementtradesandarecodedtosettleaftertheissue’sinitialsettlement
+date.ThesesubmissionsaretreatedasWhenIssued(WI)eventhoughtheysettleaftertheinitialsettlement
+date.
+CMURTTM®
+
+---
+
+## Page 9
+
+When-IssuedTradeMatchingProcessing 9
+Q.HowcanfirmssubmittradestoRTTMinMunicipalWIsecurities?
+A.RTTMallowsfirmstosubmittradesinWIsecuritieswith:
+l Finalmoney(settlementdatemustbeprovidedontradeinput).
+l Yield/concession(settlementdateshouldnotbesubmitted,RTTMderivesit).
+l Dollarprice(settlementdateshouldnotbesubmitted,RTTMderivesit).
+Q.WhywouldaWhenIssued(WI)tradebeassignedaMemostatus?
+A.WhenIssued(WI)tradesareplacedinMemostatusif:
+l CMURTTMknowsasecurityasWI.
+l Tradesinthatsecurityaresubmittedwithfinalmoney(asopposedtodollarpriceoryield).
+l UnderwriterhasnotprovidedtheinitialsettlementdateforthesecuritytoDTC.
+ThetradewillremaininaMemostatusforthreedays,whichincludesthesubmissiondateandthefollowing
+twodays.IfRTTMreceivesthesettlementdatewithinthethreedays,thetrade’sMemostatusisremoved
+andthetradeismadeeligibleformatching.
+Ifthesettlementdateisnotprovidedbytradesubmissiondate+2,thetradeispurgedattheend-of-dayon
+submissiondate+2andappearsontheRTTMPurgeReport.
+Iftheinitialsettlementdateforthesecurityisprovidedbysubmissiondate+2(whichnormallyremovesthe
+trade’sMemostatusandmakesiteligibleformatching),buttheinitialsettlementdateprovidedtoRTTMfor
+theissuedoesnotmatchthesettlementdateaparticipantsubmittedonthetrade,thetradeispurgedfor
+SecurityDetailDifferencesandappearontheRTTMPurgeReport.
+Q.WhywouldaWhenIssued(WI)tradebeassignedaPendingstatus?
+A.AtradeisplacedinaPendingstatusifafirmsubmitsdollarpriceoryield(asopposedtoFinalMoney)and
+RTTMdoesnothavesecuritymasterfileinformationabouttheCUSIP.Dollarpriceoryieldsubmissionsare
+onlyacceptedforWhenIssued(WI)trades.Ineffect,theparticipantisindicatingthisisaWItradewhenit
+submitsdollarpriceoryield.RTTMpendsthetradeintradayonthesubmissiondate.
+IfRTTMisprovidedasecuritymasterfileupdatebytheend-of-daytodesignatethesecurityasWI,thetrade
+isremovedfromPendingstatusandmadeeligibleformatching.IfRTTMdoesnotreceiveasecuritymaster
+fileupdatebyendofday,thetradeispurgedandappearsontheRTTMPurgeReport.
+CMURTTM®
+
+---
+
+## Page 10
+
+SyndicateProcessingforMunicipalSecurities 10
+SyndicateProcessingforMunicipalSecurities
+Q.WhatisthedifferencebetweenRTTMSyndicateprocessingandRTTMsecondaryWhenIssued
+(WI)Nonsyndicateprocessing?
+A.SyndicatetradesareconsideredDemandtradesinRTTM.Demandtradesrequirethatonlyoneparty
+submitforthetradetobecomematched.SecondaryWItrades,ontheotherhand,areconsideredbilateral
+tradeswithinRTTMandrequireboththebuyerandthesellertosubmit.
+Thesyndicatemanager([[Seller]])isrequiredtosubmitsyndicatetradestoRTTM,designatingthemas
+syndicates,versusthesyndicatemember([[Buyer]]).Thesyndicatememberhastheoptionofsubmittinga
+syndicatebuytargettrade.(SeeWhatisthedifferencebetweenasyndicatetradeandasyndicatetarget
+trade?)However,onlythetradesubmissionbythesyndicatemanagerisrequiredtocausethetradetobe
+matchedinRTTM.
+OnRTTMWebtradeinput,thesyndicatemanagershouldspecifySyndicateintheTradeTypefield.The
+syndicatememberwhoelectstosubmitasyndicatebuytradeshouldspecifySyndicatetarget.
+FirmssubmittingMT515messagesinsteadofRTTMWebinputshouldseetheCMURTTMInteractive
+MessagingSpecificationsforInputandOutputdocumenttodeterminehowtocodesyndicatetrades.Include
+aTRDCsubqualifierintheTransactionTypeentryontheMT515messageforsyndicatetrades.
+Atradedesignatedasasyndicatemustbesubmittedpriortoanewissue’sinitialsettlementdate.
+Q.Whatisthedifferencebetweenasyndicatetradeandasyndicatetargettrade?
+A.Syndicatetradesaresubmittedbythesyndicatemanager(sellside).Asyndicatetargettradecanbe
+submittedbysyndicatemembers(buyside)butisoptional.Notethatsyndicatemembersmaywantto
+considersubmittingsyndicatetargettradestoentertheirversionofMSRBregulatorydata(suchasTimeof
+TradeandMPID)ratherthanrelyingonthesyndicatemanagertoproperlyenterthisdata.
+AsyndicateselltradesubmittedbythesyndicatemanagerisnotmarkedasMatchedinRTTMuntil
+submissiondate+2ifthesyndicatememberdoesnotsubmitasyndicatebuytargettrade.However,ifa
+syndicatetargetbuytradeissubmittedbythesyndicatemember,thesyndicatetradeismarkedasMatched
+assoonasthesyndicateselltradesubmittedbythesyndicatemanagermatchesthesyndicatebuytarget
+trade.
+AsyndicatetradedoesnotmatchifitisDK’dbythesyndicatememberorcanceledbythesyndicate
+manager.NotethatonNSCC’sEnd-of-DayMachineReadableContractFile,syndicatetradesarealways
+markedComparedunlesstheyarecanceledinRTTMbythesyndicatemanagerorDK’dinRTTMbythe
+syndicatemember.
+Q.Howshouldtradecorrectionsonsyndicatetradesbeprocessed?
+A.Ifasyndicatemember([[Buyer]])doesnotknowasyndicatetradesubmissionfromthesyndicatemanager
+([[Seller]]),thesyndicatemembercansubmitaDKinRTTMtoremovethetrade.ADKcanbesubmittedifthe
+syndicatetradeisstillunmatched.
+Ifthesyndicatemanager([[Seller]])submittedasyndicatetradeinerror,itcanmodifythesyndicatesell,
+provideditisstillunmatched(forexample,asyndicatebuytargettradehasnotbeensubmittedtomatchit)
+andmodificationismadebeforeend-of-dayontradesubmissiondate.
+Thesyndicatemanagercanalsoremovethetradebysubmittingacancel.Themanagercanthenresubmit
+anothertrade.Thesyndicatetrademustbeunmatchedtobeeligibleforcancellation.
+Ifthesyndicatetradehasmatched,areversalisneededtocorrectthetrade.Thesyndicatemanagerneedsto
+submitasyndicatebuyand,fromRTTMWeb,typeYesintheReversalIndicatorfield.OnMT515message
+input,theRVSLcodemustbeused.
+CMURTTM®
+
+---
+
+## Page 11
+
+OverallTradeMatching 11
+Overall Trade Matching
+Q. Why did my RTTM trade reject?
+RTTMtraderejectscanbeviewedontheRTTMWebmainpagebyclicking Trade Rejects.Arejectreasonis
+displayedforeachrejectedtrade.TypicalrejectsincludeInvalidContra,[[CUSIP]],orSettlementDate.RTTM
+alsosendsareal-timeMT509rejecttrademessagetothesubmitter.
+Q. How can I view my unmatched trades?
+Unmatchedtradesrepresentyourtradesubmissionsforwhichthecontrapartyhasnotsubmittedmatching
+tradedetails.YoucanviewyourunmatchedtradesontheRTTMWebmainpagebyclicking Unmatchedor
+All.
+Youcanalsoclick CMU Trade Search Engine ontherightsideofthemainpageandentertheunmatched
+tradeparametersyouwishtouseforyoursearch.
+Q. How can I view my advisories?
+Advisoriesrepresenttradessubmittedbyyourcontrapartythatyoudidnotsubmitinreturn.Youcanview
+youradvisoriesontheRTTMWebmainpagebyclicking Trade Advisories.
+Youcanalsoclick CMU Trade Search Engine ontherightsideofthemainpageandentertheadvisory
+parametersyouwishtouseforyoursearch.
+Q. How [[DO]] I access my end-of-day RTTM reports?
+FromtheCMURTTMWebmainmenu,clickthe Report Centertab.
+Seealso: CMURTTM ®WebUserGuide
+Q. When can I modify a trade?
+Youcanmodifyamatchingfield(exceptforCUSIP,Marketplace,andtheTradeReportingIndicatorfora
+Municipaltransaction)inRTTMonabilateraltrade(non-[[syndicate]])atanytime,providedthetradeisstill
+unmatched.SyndicateUnmatchedtradescanbemodifiedonsubmissiondateonly.
+Regulatoryfields,suchasTimeofTradeandParticipantCapacity,canbemodifiedinRTTMaftersubmission
+dateifthetradeisstillintheRTTMsystem(typically,untilthetrade’ssettlementdate).Thetradedoesnot
+havetobeunmatchedtomodifyaregulatoryfield.
+Q. How [[DO]] I use the Extended [[settlement]] Days field for a Regular Way trade?
+DonotusetheExtendedSettlementDaysfieldforregularwaytrades.Instead,submitthetradedateand
+settlementdate withoutaseparateentryforthenumberofdaysbeyondthenormalsettlementcycle.
+Q. How [[DO]] I use the [[settlement]] Date Adjustment subqualifier on an MT515 trade message or the
+Extended [[settlement]] field on RTTM Web?
+ItisnotnecessarytousetheSettlementDateAdjustmentsubqualifieronRTTMMT515trademessagesor
+theExtendedSettlementfieldonRTTMWebforregularwaytrades.Forexample,iftradedateisMonday,
+June5,2017andthesettlementdateisThursday,June8,2017(three-daysettlementcycle),enteratrade
+dateof6/5/17andasettlementdateof6/8/17onthetradeinput.Thereisnoneedtoenter1toextendthe
+settlementdatebyoneday.
+TheSettlementDateAdjustmentsubqualifieronRTTMMT515trademessagesorExtendedSettlementfield
+onRTTMWebshouldbeusedforWhenIssued(WI)tradesexecutedbeforeanissue’sinitialsettlementdate,
+submitted with dollar price or yield,andsettlingafterthedeal’sinitialsettlementdate.Itisrarelyused.
+FAQs for CMU RTTM®
+
+---
+
+## Page 12
+
+OtherMatching 12
+Also,theSettlementDateAdjustmentsubqualifieronRTTMMT515trademessagesorExtendedSettlement
+fieldonRTTMWebshouldbeusedforWItradesthatareexecuted beforenewissueinitialsettlementdate
+-1, are submitted with final money,andhaveasettlementdatelaterthanthenewissue’sinitialsettlement
+date.Itisrarelyused.
+Example:Theinitialsettlementdate(akaIssueDate)onanewWIMUNI securityis6/8/17.Yourtrader
+executedatradeon5/16/17forsettlementdate6/9/17.Inthiscase,youneedtoenter1intheSettlement
+DateAdjustmentsubqualifieronRTTMMT515trademessagesorintheExtendedSettlementfieldonRTTM
+Web. If you submit final money for this trade, you must submit the 6/9/17 trade [[settlement]] date along
+with a one-day extended [[settlement]] indicator.
+Q. How should Municipal bond Stepout transactions be processed?
+FirmshavetheoptionofsubmittingtransactionstoRTTMthatarenottheresultofapurchase-sale
+transaction,suchasdeliveriesofsecuritiestosatisfyaninvestmentadvisor’sallocationinstructions.Ifthe
+Municipaltransactionisnotadealer-to-dealertrade,thetradeshouldnotbereportedtoMSRB.Firmsshould
+use RTTM Destination 01ontheMT515trademessageorselect RTTM,notRTTMandMSRB,fromthe
+RTTMWeb’sinputscreen.
+TheRTTMDestination(01forStepoutMunicipal)or01/02fornonStepoutMunicipalbondtrade)isamatching
+element.ForCorporateBondandUITtrades,theRTTMDestinationshouldalwaysbe01.
+Formoreinformation,seetheNSCCimportantnotice#A8179availableat:
+http://www.[[DTCC]].com/~/media/Files/pdf/2016/3/16/a8179.pdf
+Other Matching
+Q. What is the RTTM Money Tolerance?
+A. Ifthebuyerandsellersubmittradedatathatmatchesinallrequiredaspectsotherthantradevalue,the
+tradewillmatchundercertaincircumstances(thatis,witha money tolerance).
+Ifatradeisuncomparedaftertheintradaycomparisonprocess,forBilateraltradesitwillbecomparedusing
+theseller’scontractamountiftheamountsarewithin:
+l Net$10.00differencefortradesof$250,000orless
+l $0.04per$1,000fortradesgreaterthan$250,000
+(ForSyndicateTakedownandQSRtrades,theSyndicateManager’sorQSR’ssubmittedmoneyisalways
+usedtoresolveminormoneydifferences.)
+Thesetradesappearontheend-of-dayRTTMEnhancedMatchReportaswellastheRTTMactivityreports
+(ContractSheets).
+Intraday,RTTMwillimmediatelymatchtradesusingtheseller’scontractamountifthecontractamountsare
+within:
+l Net$2.00differencefortradesof$1millionorless
+l $2.00permillionfortradesgreaterthan$1,000,000
+Thesetradesappearontheend-of-dayRTTMEnhancedMatchReportaswellastheRTTMactivityreports
+(ContractSheets).
+FAQs for CMU RTTM®
+
+---
+
+## Page 13
+
+CustomerTrades 13
+Q. What other trade tolerances does RTTM apply?
+A. IfallRTTMtradematchingdetailsarethesameexceptfortradedate,RTTMwillmatchthetradeanduse
+theearliertradedateasthematchingtradedateaslongasthedifferingtradedatesarewithin20business
+daysofeachother.Thesetradeswillappearontheend-of-dayRTTMEnhancedMatchReportaswellasthe
+RTTMactivityreports(contractsheets).(ForSyndicateTakedownandQSRtrades,theSyndicateManager’s
+orQSR’sT/DisalwaysusedtoresolveT/Ddifferences).
+Q. How [[DO]] I enter a cash [[settlement]] trade?
+A. EntertheTradeDateandSettlementDate.RTTMautomaticallydesignatescashtrades(tradedate=
+settlementdate)as Comparison Only.ComparisonOnlytradesarenotsenttotheNSCCsettlement
+system,andthesetradesdonotappearontheNSCCConsolidatedTradeSummary.
+FirmsshouldnotcodecashtradesasComparison-Onlyspecialtrades;thatis,[[DO]] notenterComparisonOnly
+intheSpecial/ConditionalTradefieldonRTTMWeb’stradeinputscreenorCPROonthesettlementIndicator
+SETRintheMT515message.AllowRTTMtodesignatethesetradesascomparisononly.
+Customer Trades
+Q. How can I submit municipal customer trades to MSRB’s Real Time Reporting System (RTRS)?
+A. MunicipalcustomertradescanbesenttoRTTMthroughMT515messages.ToinstructRTTMtoreportthe
+tradestoMSRB,theDestinationCodeonthemessageis 02.Youcanalsoentercustomertradesinthe
+MSRBRTRSwebsite.ContactMSRBtoobtainaccess.
+RTTM CMU Message Testing
+Q. How can I test my MT515 trade messages and MT509 and MT518 output messages with [[FICC]]
+before going live?
+A. ContacttheCMURTTMTestGroupbysendinganemailto FICCIntegration@[[DTCC]].com.
+Additional Useful Websites
+Q. Where can I find information about the MSRB RTRS system?
+A. FormoreinformationabouttheRTRSsystem,dooneofthefollowing:
+l VisittheMunicipalSecuritiesRulemakingBoard(MSRB)websiteavailableat www.msrb.org.
+l Call1202838-1330andasktospeakwithatransactionreportingspecialist.
+l Emailmsrbsupport@msrb.org.
+Q. Where can I find information about Municipal Bond trades with a late notification of [[settlement]]
+date or issue cancellation?
+A. VisittheNewIssue:Cancellations,LateNotificationofSettlement,orOtherlateSecurityMasterfile
+Updatessectionavailableat:
+http://www.[[DTCC]].com/clearing-services/[[FICC]]-cmu/[[FICC]]-cmu-user-documentation.aspx
+FAQs for CMU RTTM®
+
+---
+
+## Page 14
+
+FOR MORE INFORMATION
+EmailDTCCLearningat:
+corelearning@[[DTCC]].com
+orvisitusonthewebat:
+www.dtcclearning.com

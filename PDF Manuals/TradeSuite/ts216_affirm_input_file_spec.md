@@ -1,0 +1,240 @@
+---
+title: "Affirmation Input File Specification"
+source_pdf: "file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/ts216_affirm_input_file_spec.pdf"
+pages: 9
+size: "988.7 KB"
+category: "TradeSuite"
+ingested_on: "2026-06-05"
+---
+
+# Affirmation Input File Specification
+
+**Original File:** [ts216_affirm_input_file_spec.pdf](file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/ts216_affirm_input_file_spec.pdf)  
+**Category:** TradeSuite  
+**Total Pages:** 9  
+**File Size:** 988.7 KB  
+
+---
+
+## Page 1
+
+TRADESUITEID™
+AFFIRMATIONINPUTFILESPECIFICATION
+VERSION8.5
+MAY08,2018
+
+
+---
+
+## Page 2
+
+Copyright©2018DTCC.Allrightsreserved.
+Thiswork(including,withoutlimitation,alltext,images,logos,compilationanddesign)isproprietaryandprotected
+bycopyright,andisfortheexclusiveuseofusersauthorizedbyDTCC.IfthisworkisreceivedfromDTCCinany
+electronicmedium,authorizedusersofthisworkaregrantedalimited,non-exclusive,non-transferable,non-
+sublicensableandfreelyrevocablelicensetomakereproductionsandtransmissionsnecessaryfordownloading
+andstorageofthisworkontheusers'computersandtoprintoneormorepapercopiesfromtheelectronicversion
+fortheirownuse.Otherthantothislimitedextent,nopartofthiswork(includinganypapercopiesthereoforprint
+versionsthereof)maybeprinted,copied,altered,modified,posted,reproduced,displayed,published,sold,
+licensed,usedordistributed(includingbytransmission)inanyformorbyanymeans,orstoredinanyinformation
+storageandretrievalsystem,withoutDTCC'spriorwrittenpermission.
+Allproductorservicenamesarethepropertyoftheirrespectiveowners.
+“[[DTCC]]”isthebrandnameunderwhichcertainaffiliatesofTheDepositoryTrust&ClearingCorporationprovide
+servicesinparticulargeographicareas.TheDepositoryTrust&ClearingCorporationdoesnotprovideservicesto
+clients.EachofTheDepositoryTrust&ClearingCorporation’saffiliatesisalegallyseparateandindependent
+entity,andeachissubjecttothelawsandregulationsoftheparticularcountryinwhichitoperates.Pleasesee
+www.[[DTCC]].comformoreinformationonthelegalstructureofTheDepositoryTrust&ClearingCorporationandits
+relatedentities.
+PublicationDate:May08,2018
+PublicationCode:TS216
+Service:TradeSuiteID
+Title:AffirmationInputFileSpecification
+
+---
+
+## Page 3
+
+TABLEOFCONTENTS
+1.Preface 4
+Audience 4
+ChangesinthisVersion 4
+RelatedDocumentsandTraining 4
+Questions? 4
+2.IntroductiontoAffirmationInputFileSpecification 5
+TransmissionModes 5
+Availability 5
+3.AffirmationInputFileFormat 6
+4.AffirmErrorCodes 8
+
+---
+
+## Page 4
+
+Preface 4
+1.PREFACE
+ThisdocumentdescribestheformatsoftheTradeSuiteID™affirmationinputfile.
+Audience
+Thisdocumentisforinvestmentmanagers,agents,andotherswhoaffirmthedetailsofatradesubmittedto
+theTradeSuiteIDserviceservicebyanexecutingbroker/dealer.
+ChangesinthisVersion
+ThisappearanceandlayoutofthisdocumenthasbeenrevampedtoensureconsistencyacrossallDTCC
+applications.
+RelatedDocumentsandTraining
+UsethisdocumentinconjunctionwiththeTradeSuiteID ConfirmArchiveReferencedocumentavailablein
+theConfirmArchivesectionoftheInstitutionalTradeProcessingLearningCenter.
+Forotherrelatedcontentandallreferencesinthisdocument,seetheTradeSuiteID8.0sectionofthe
+InstitutionalTradeProcessing-TradeSuiteIDLearningCenter.
+Questions?
+TheDTCC ClientCenterprovidesgeneralassistanceandtechnicalhelp.Visitwww.[[DTCC]].com/client-center
+to:
+l Enteraservicerequestorcheckthestatusofanexistingrequest
+l Searchtheknowledgebase
+l Obtaincontactinformation
+TradeSuiteIDAffirmationInputFileSpecification
+
+---
+
+## Page 5
+
+IntroductiontoAffirmationInputFileSpecification 5
+2.INTRODUCTIONTOAFFIRMATIONINPUTFILESPECIFICATION
+Theaffirmationprocessenablesinvestmentmanagers,agents,andotherinterestedpartiestoaffirmdetailsof
+atradesubmittedbyanexecutingbroker/dealer.Affirmationofeligibletradesallowsthemtobeselectedfor
+automatedsettlement.Tofacilitatethetimelydeliveryofsettlementinstructions,theTradeSuiteIDservice
+encouragesaffirmations,includingaffirmationsoftradesthatdonotsettleatTheDepositoryTrust&Clearing
+Corporation([[DTCC]]).
+TransmissionModes
+TheaffirmationinputfileisaccessiblethroughtheComputer-to-ComputerFacility([[CCF]]),Computer-to-
+ComputerFacilityII([[CCF]]-II),andMainframeDualHost(MDH).Theseapplicationsallowinteractivereceipt
+anddistributionofTradeSuiteIDdata.
+Availability
+Theaffirmationinputfunctionisavailablefrom3:00AMuntil12midnight,EasternTime.
+TradeSuiteIDAffirmationInputFileSpecification
+
+---
+
+## Page 6
+
+AffirmationInputFileFormat 6
+3.AFFIRMATIONINPUTFILEFORMAT
+Eachapplicationdatarecordconsistsofthefollowinglayout:
+l Transactionheaderthatcontainssixcommunications-orientedfields,foratotalof26characters
+l Affirmationinput(detail)file
+Ifaninputfiledoesnotmeettheeditcriteria,theTradeSuiteIDserviceservicereturnsthefiletothesubmitter
+inanoutputrecord,precededbyamailboxprefixandfollowedbyanerrorblocktoidentifythefieldsinthe
+error.Foralistofpotentialerrors,seeAffirmErrorCodes.
+Table3.1showsthefieldsintheaffirmationinputfile.IftheValidatecolumndisplaysY,theTradeSuiteID
+servicevalidatesthefield.Inaddition,theDTCControlNumber(Positions35-43)mustcorrespondtoan
+affirmabletrade.
+PositionLengthFormat FieldName ValidateDescription
+Positions1through26:TransactionHeader
+1-1 1 Character
+X(1)
+Feedback
+Indicator
+N *=Noerrors
+?=Therecordcontainserrors.
+2-2 1 Character
+X(1)
+Production/TestY Requiredindicator:
+l P=Production
+l T=Test
+3-8 6 Character
+X(6)
+RecordType Y Typeofdatacontainedinthemessage:
+AFFIRM=AffirmationInput
+9-10 2 Numeric9
+(2)
+RecordSuffix Y Recordnumberidentifier:
+01=FirstRecord
+11-12 2 Numeric9
+(2)
+Version
+Number
+Y Versionnumberoftheinputthatdefinestherecordformat.Thisversion
+numberincrementsasfieldsareaddedordeletedfromtheformat.
+13-18 6 Character
+X(6)
+Record
+Sequence
+Number
+N Submitteroftheassignedtransactionidentifier(optional).Returnedonly
+duringinteractivereporting.
+19-26 8 Character
+X(8)
+Addressee — Reserved
+27-34 8 Numeric9
+(8)
+AffirmingParty Y Eight-digitidentifieroftheinvestmentmanager,agent,interestedparty,
+orcustomerwhoaffirmsthetrade.Rightjustified,zerofilled.
+35-43 9 Numeric9
+(9)
+DTCControl
+Number
+Y DTCcontrolnumberfortheaffirmation.
+Table3.1AffirmationInputFileFormat
+TradeSuiteIDAffirmationInputFileSpecification
+
+---
+
+## Page 7
+
+AffirmationInputFileFormat 7
+PositionLengthFormat FieldName ValidateDescription
+44-44 1 CharacterAffirmingParty
+Type
+Y l A=AgentServices
+l I=Institution(InvestmentManager)
+l P=InterestedParty
+l C=Customer
+WhenthedesignatedAffirmingPartyType(position934)fortheconfirm
+outputequalsB,eithertheinvestmentmanager(institution)ortheagent
+canaffirmthistrade,thisfieldcancontaineitherspaces,I,orA.Ifthe
+confirmoutputvalueisA,I,P,orC,thisfieldmustmatchthedesignated
+AffirmingPartyType(position934)fortheconfirmoutput.
+45-80 36 CharacterFiller — Reserved.Donotuse.
+Table3.1AffirmationInputFileFormat(continued)
+TradeSuiteIDAffirmationInputFileSpecification
+
+---
+
+## Page 8
+
+AffirmErrorCodes 8
+4.AFFIRMERRORCODES
+Table4.1showsthemachine-readableinputerrorcodes.Theseerrorcodesareacombinationofthefieldin
+error(afour-bytecode)andtheerrortype(afour-bytereasoncode).Theresultanteight-byteerrorcodes
+identifythespecificfieldsandthetypesoferrorsthatpreventedtheinputmessagefrombeingprocessed.The
+TradeSuiteIDservicereturnsinputcontainingerrorstothesubmitterforcorrection.
+Field
+Code
+Error
+Code
+Description
+CAAC Affirmingparty
+9AAN Investmentmanager,agent,interestedparty,orcustomerineligibleforIDprocessing.
+IAAB Theaffirmingpartyisnotthedesignatedaffirmingpartyofthetradeidentifiedonthestanding
+instructionsdatabase.
+IAAC Theaffirmingpartyisnotapartytothetrade.
+IAAD TheAffirmingPartyTypemustbeoneofthefollowing:
+l I(Institution/investmentmanager)
+l A(Agent)
+GAAJ DTCControlNumber
+IAAT Thetradewascanceledandcannotbeaffirmed.
+IAAU Thetradewaspreviouslyaffirmedbyanaffirmationorautoaffirmedbymatchingtoan
+institutioninstruction.
+IAAV Thetradecannotbeaffirmedbecauseofapreviousaffirmationreversaloradministrative
+cancellation.
+IAAZ TheDTCControlNumberdidnotmatchanexistingtrade.
+Table4.1AffirmErrorCodes
+TradeSuiteIDAffirmationInputFileSpecification
+
+---
+
+## Page 9
+
+FORMOREINFORMATION
+EmailDTCCLearningat:
+DTCCLearning@[[DTCC]].com
+orvisitusonthewebat:
+www.dtcclearning.com

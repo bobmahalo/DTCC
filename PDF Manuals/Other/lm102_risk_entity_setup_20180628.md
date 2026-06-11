@@ -1,0 +1,179 @@
+---
+title: "Risk Entity Setup Guide"
+source_pdf: "file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/lm102_risk_entity_setup_20180628.pdf"
+pages: 9
+size: "1961.2 KB"
+category: "Other"
+ingested_on: "2026-06-05"
+---
+
+# Risk Entity Setup Guide
+
+**Original File:** [lm102_risk_entity_setup_20180628.pdf](file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/lm102_risk_entity_setup_20180628.pdf)  
+**Category:** Other  
+**Total Pages:** 9  
+**File Size:** 1961.2 KB  
+
+---
+
+## Page 1
+
+DTCCLIMITMONITORING
+RISKENTITYSETUPGUIDE
+JUNE28,2018
+
+
+---
+
+## Page 2
+
+Copyright©2018byTheDepositoryTrust&ClearingCorporation("[[DTCC]]").Allrightsreserved.This
+work(including,withoutlimitation,alltext,images,logos,compilationanddesign)isproprietaryandprotected
+bycopyright,andisfortheexclusiveuseofusersauthorizedbyDTCC.IfthisworkisreceivedfromDTCCin
+anyelectronicmedium,authorizedusersofthisworkaregrantedalimited,non-exclusive,non-transferable,
+non-sublicensableandfreelyrevocablelicensetomakereproductionsandtransmissionsnecessaryfor
+downloadingandstorageofthisworkontheusers'computersandtoprintoneormorepapercopiesfromthe
+electronicversionfortheirownuse.Otherthantothislimitedextent,nopartofthiswork(includinganypaper
+copiesthereoforprintversionsthereof)maybeprinted,copied,altered,modified,posted,reproduced,
+displayed,published,sold,licensed,usedordistributed(includingbytransmission)inanyformorbyany
+means,orstoredinanyinformationstorageandretrievalsystem,withoutDTCC'spriorwrittenpermission.
+Allproductorservicenamesarethepropertyoftheirrespectiveowners.
+Disclaimer: Theservicesdescribedhereinareprovidedunderthe“[[DTCC]]”brandnamebycertainaffiliatesof
+TheDepositoryTrust&ClearingCorporation(“[[DTCC]]”).DTCCitselfdoesnotprovidesuchservices.Eachof
+theseaffiliatesisaseparatelegalentity,subjecttothelawsandregulationsoftheparticularcountryor
+countriesinwhichsuchentityoperates.Seewww.[[DTCC]].comformoreinformationaboutDTCC,itsaffiliates
+andtheservicestheyoffer.
+PublicationDate:June28,2018
+PublicationCode:LM102
+Service:DTCCLimitMonitoring
+Title:RiskEntitySetupGuide
+
+---
+
+## Page 3
+
+Introduction 3
+INTRODUCTION
+TheDTCCLimitMonitoringtoolcanfacilitatethefollowingriskentitysetups,eachcorrespondingtoadistinct
+businessneed.
+l Executing-BrokerRiskEntity-Thisriskentitydefinitionallowsyoutomonitoractivitybasedonthe
+marketparticipantID(MPID),mnemonic,orboth.AlltradesthataresubmittedtotheNationalSecurities
+ClearingCorporation([[NSCC]])andhavethesamefirmidentifier,MPID,ormnemonic,aregroupedtogether.
+Thisriskentitystructurelendsitselftomonitoringtheoverallexposureofyourfirm’scorrespondent,
+exchange-flooroperations,oranyentityidentifiedbyeitheroneormultipleMPIDs,mnemonics,ora
+combinationofboth.
+l RiskEntitywithaMarketDesignation-Marketdesignationnarrowsdownthegroupofselectedtrades
+basedonthesubmittingmarket.Bycreatingariskentityforspecificmarkets,youcanexcludeorinclude
+certainsetofsubmissions.Forexample,RTTMcorporateandRTTMmunicipalbondsonlyinclude
+correspondent-clearingtransactions.IftheSubmittingMarket(9a)fieldisblank,alltransactionsare
+includedinariskentityirrespectiveofthesubmittingmarket.
+l BrokerSubmittedLocked-inExposure(9bRiskEntity)-Thisriskentitydefinitionallowsyouto
+monitoractivityinwhichanotherDTCCmembersubmitslocked-intradedataaseitheraqualifiedspecial
+representative(QSR)oraspecialrepresentative(SR)againstyourNSCCclearingnumber.
+l BrokerSubmittedLocked-inTransactions(9ARiskEntity)-Thisriskentitydefinitionallowsyouto
+monitoractivitythatyouhavesubmittedaseitheraQSRorSR.
+DTCCcontinuestoworkwithourclientstodefineotherriskentitydefinitionstosupportyourneeds.
+RiskEntitySetupGuide
+
+---
+
+## Page 4
+
+RiskEntitySetupExamples 4
+RISKENTITYSETUPEXAMPLES
+Eachriskentityconsistsofthefollowinginformation:
+l Header–Thissectionincludesyourfirm’sNSCCmembernumber,riskentityname,andriskentity
+description.
+l DoNotMonitor–Ifselected,thisoptionindicatestotheLimitMonitoringtoolnottogenerateanyalertsfor
+theriskentity.IfyouhaveselectedtheDoNotMonitoroption,thenetnotionallimitamountautomatically
+defaultsto0,andyoucannoteditthefield.
+l NetNotionalAmount–Thisistheamountorvaluethatthetradingactivityismeasuredagainst.
+Note
+Changestothelimitamountbecomeeffectiveimmediately.
+l TradeArrays–Thissectionspecifiestradeandtransactiongroupings,whichinturnarecalculated
+togetherandcomparedtothenet-notionallimit.Incontrasttothelimit-amountchangetimeframe,adding,
+deleting,ormodifyingtradearraysbecomeeffectivethenextbusinessday.
+CASE1:Executing-BrokerRiskEntity
+Thisriskentitymonitorstheactivitybasedontheexecuting-brokerinformation.Itisgenerallyusedtotrackan
+entitywhoseactivitycanbeidentifiedbyeitheranMPIDoramnemonicoracombinationofthetwo.
+Let’sassumethatyouareaNSCCmemberthatclearstradesforothersandhaveaclientcalledABCD
+[[securities]],Inc.ThiscorrespondenthasitsownMPID(ABCD)andamnemonic(ABC),andyouwanttoset
+upariskentitytomonitoritstradingactivity.Tosetupthisriskentity,definetheexecutingbrokerinformation.
+Thefollowingfigureshowstheriskentityandtradearraysetup:
+Note
+Thisriskentitysetupisnotonlyapplicabletocorrespondentfirms.Youcanuseittosuccessfully
+monitoryourownoperations,iftheycanbeidentifiedbyanMPIDoramnemonic.
+RiskEntitySetupGuide
+
+---
+
+## Page 5
+
+RiskEntitySetupExamples 5
+CASE2:RiskEntitywithaMarketDesignation
+Thepurposeofthisriskentityistomonitortheactivitythatwassubmittedbyaspecificmarket.Let’sassume
+thatyouareanNSCCmemberthatclearstradesforothersandhaveaclientcalledABCDSecurities,Inc.In
+additiontoanoverarchingriskentitythatyousetupinCase1,youalsowanttosetupanotherriskentityto
+monitoractivityontheRTTMMUNIBondsandRTTMCorporateBondsmarkets.Tosetupthisriskentity,
+usetheexecutingbrokerinformationandsubmittingmarketcodes.Thefollowingfigureshowsthesetup:
+CASE3:9bRiskEntity
+Thepurposeofthisriskentityistomonitorthesubmittingmarket(9a)andcounterpartyfirm(9b)activityfrom
+thestandpointofthecouterpartyfirm(9b),thatisthefirmthatgetslockedinontrades.Thisviewallowsyou
+tomonitortheflowoftrades,inwhichaqualifiedspecialrepresentatives(QSR)orasaspecial
+representatives(SR)submitslocked-intransactionsagainstyourfirm.
+Let’sassumethatyourfirmhas9a/9bQSRagreementswithwholesalersandalternativetradingsystems.As
+aresult,youwanttomonitortheactivitygoingthrougheachoftheexistingarrangements.Tosetupthisrisk
+entities,usetheSubmittingMarketandSubmittingFirm(9a)fields.Forthepurposeofthisexamplethe
+submittingfirm,00000123,isawholesalersubmittingtradestoNSCCasaQSR.
+RiskEntitySetupGuide
+
+---
+
+## Page 6
+
+RiskEntitySetupExamples 6
+Thefollowingfigureshowsthesetup:
+Thefollowingfigureshowsariskentitymonitoringthecorrespondentclearingactivitysubmittedbyaspecial
+representative:
+RiskEntitySetupGuide
+
+---
+
+## Page 7
+
+RiskEntitySetupExamples 7
+Tofurthernarrowdownthescopeandmonitorthesubmittingfirm(9a)andcounterpartyfirm(9b)relationship
+asitrelatestothecorrespondentofyourfirm,addavalueintheExecutingBrokerfield.Inallcases,the
+ExecutingBrokerfieldpertainsonlytoyourfirmandnottothefirmthatlocksyouinontrades.Thefollowing
+figureshowsthesetup:
+CASE4:9bSubmissions-Monitoring(9A)RiskEntity
+Thepurposeofthisriskentityistomonitorthesubmittingfirm(9a)andcounterpartyfirm(9b)activityfromthe
+standpointofthesubmittingfirm(9a),thatisthefirmthatlocksinotherNSCCmembersontrades.Thisview
+allowsyoutomonitortheflowoftrades,inwhichyourfirmactseitherasaQSRorSRsubmitslockedin
+transactionsagainstitsclients,suchasthecounterpartyfirms(9b).
+Let’sassumethatyourfirm,awholesaler,hasmultiple9a/9bagreements.Youwanttomonitortheactivity
+thatyourfirmsubmitsasaQSRtoNSCCforallofyourcounterpartyfirm(9b)clients.Tosetupsuchrisk
+entities,usetheSubmittingMarketandSubmittingFirm(9a)fields.PopulatetheSubmittingFirm(9a)field
+withyourfirm’sNSCCmembernumber.Thefollowingfigureshowsthesetup:
+RiskEntitySetupGuide
+
+---
+
+## Page 8
+
+RiskEntitySetupExamples 8
+Tofurthernarrowdownthescopeandmonitorthetradeflowthatyoursubmittingfirm(9a)locksinyour
+couterpartyfirm(9b)clients,addavalueintheCounterpartyFirm(9b)column.
+AfteryoustarttypingtheNSCCmembernumberintheCounterpartyFirm(9b)field,theSubmittingFirm(9a)
+fieldisgrayed-outandautomaticallypopulatedwithyourfirm’sNSCCmembernumber.
+RiskEntitySetupGuide
+
+---
+
+## Page 9
+
+FORMOREINFORMATION
+EmailDTCCLearningat:
+corelearning@[[DTCC]].com
+orvisitusonthewebat:
+www.dtcclearning.com

@@ -1,0 +1,198 @@
+---
+title: "TIW Restructure Summary"
+source_pdf: "file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/DS103_tiw_restruc_stdale_20230907.pdf"
+pages: 10
+size: "455.4 KB"
+category: "Other"
+ingested_on: "2026-06-05"
+---
+
+# TIW Restructure Summary
+
+**Original File:** [DS103_tiw_restruc_stdale_20230907.pdf](file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/DS103_tiw_restruc_stdale_20230907.pdf)  
+**Category:** Other  
+**Total Pages:** 10  
+**File Size:** 455.4 KB  
+
+---
+
+## Page 1
+
+TradeInformationWarehouse
+TIWRESTRUCTURESUMMARY
+VERSION1.0
+SEPTEMBER07,2023
+
+---
+
+## Page 2
+
+TABLEOFCONTENTS
+AccessingRestructuringeventsontheTIWDDLWebPortal 3
+RestructuringO-Codes 4
+DownloadingRestructuringEventReportsfromtheTIWDDLUserInterface 5
+RestructuringReports 6
+TriggeringDefined 6
+CSVUpload 7
+UsingtheRestructuringUserInterface 8
+FrequentlyAskedQuestions(FAQs) 9
+TIWRestructureSummary
+TableOfContents 2
+
+---
+
+## Page 3
+
+ACCESSINGRESTRUCTURINGEVENTSONTHETIW
+DDLWEBPORTAL
+1. Logintoportal.[[DTCC]].com
+2. SelecttheTIW DDLPortaltile.
+3. SelecttheappropriateO-CodeornavigatetoDDL- Restructuringwidgetormenu.
+Participantsorusersmusthave“Inquiry&Update”accessinDTCC’sentitlementmanagementsystemto
+executeorperformtransactionsthatarerequiredduringtherestructuringevent.
+ContactyournominatedcompanySuperAccessCoordinators(SACs)toobtainaccesstotheTIWDDL
+portal.
+TIWRestructureSummary
+AccessingRestructuringEventsOnTheTIWDDLWebPortal 3
+
+---
+
+## Page 4
+
+RESTRUCTURINGO-CODES
+Eachorganization’sRestructuringO-CodeenablesuserstoviewtheRestructuringDashboardand
+Triggerpositionsontheuserinterface.TheFamilyO-Codeenablesuserstotriggerpositionsbyuploading
+aspreadsheetuploadanddownloadingreports.
+FirmsmayhavemultipleO-Codesdependingontherequestduringtheonboardingprocess,apartfrom
+FamilyO-Codes,firmsmaynominateanalternatecodewhichisauniquecodeassignedtospecific
+productorservices,i.e.,Restructuring.
+FirmsmayhavemultipleO-Codes,dependingontherequestduringtheonboardingprocess.Apartfrom
+FamilyO-Codes,firmscannominateanalternatecode.Thealternatecodeisauniquecodeassignedto
+specificproductorservices,forexample,Restructuring.
+AlternateO-CodeforRestructuringusuallyhaveRorJaslastcharacterofthecode,forexampleABCR.
+TIWRestructureSummary
+RestructuringO-Codes 4
+
+---
+
+## Page 5
+
+DOWNLOADINGRESTRUCTURINGEVENTREPORTS
+FROMTHETIWDDLUSERINTERFACE
+Todownloadthereport,navigatetoReportstab,thenselectReportDownload.
+Note
+Reportsareonlyavailableforfiveweekdaysfromthegenerationdatebeforethesystempurgesthem.
+DownloadthereportsontheFamilyO-Code.
+TIWRestructureSummary
+DownloadingRestructuringEventReportsFromTheTIWDDLUserInterface 5
+
+---
+
+## Page 6
+
+RESTRUCTURINGREPORTS
+l TriggeringStatusReport:Thisreportrunseverytwohoursandprovides:
+1. selectedtradeinformationonalltransactionseligiblefortriggeringunderarestructuringevent
+2. Thestatusoftheexistingtriggeringactivity
+3. detailsofalltriggeringmessagessubmittedonthosetransactions.
+l TriggeringSummaryReport:Thisreportrunseverytwohoursandprovidessummaryinformationon
+triggeringactivitytotheusers.
+l RestructuringTradeSplitReport:Thisreportprovidesthedetailsoftradereferencenumberbefore
+andafterthespinoffprocess.Thereportprovidestheoldandnewreferencedetailsduringthesplitpro-
+cess,fromaftertheendofthetriggerperioduntilmovementperiodendsortheEventisclosed.
+l ExceptionReportRestructuring:ThisreportshowsthetradesthatfailedintheRestructuringEvent
+processing,alongwithanexceptionreason.
+TriggeringDefined
+Atriggerisaninstructiontopartiallyorfullyapplyatransactiontotheauctionprocessingofaspecified
+restructuringevent.YoucansubmitatriggerinstructionusingMQ,CSVupload,orthroughthe
+Restructuringuserinterface.DownloadasampleCSVspreadsheetfromtheDTCCLearningCenter.
+TIWRestructureSummary
+RestructuringReports 6
+
+---
+
+## Page 7
+
+CSVUPLOAD
+UsethisproceduretosubmittriggerstoDTCCusingtheTIWswebuploadfacility:
+1. EnterthetradedetailsonanExcelspreadsheetusingDTCC'sprescribedformat.
+l Rulesfordataentryarespecifiedin"FieldParameters"worksheet.
+l Apre-formattedspreadsheetisavailable,UploadTemplate,containssampledatatoillustrate
+correctfieldpopulation.Note: Deletethesamplesbeforeusingthespreadsheetandpleasekeep
+thefilenamewithoutanyspecialsymbols.
+2. Afterenteringalltradedata,savethespreadsheetasaCSVfile.
+3. LogontotheTIWDDLPortalandselecttheUploadoptiononthemenubar.
+4. Youwillreceiveimmediatenotificationofthestatusofeachtransmission.DTCCrecommendsuseof
+CSVuploadifsubmittingmorethan500records.
+l Onlyeligibleusers(thosewithdataentrycapability)haveaccesstotheTIWDDLuserinterface.
+l TIWonlyreportsandcountsassuccessfullyacceptedrowswithvalidtradedata.TIWclassifies
+rowswithnon-validtradedataasrejects.
+l TheDTCCTRIisrequiredforallpositionstobetriggered.
+TIWRestructureSummary
+CSVUpload 7
+
+---
+
+## Page 8
+
+USINGTHERESTRUCTURINGUSERINTERFACE
+1. AccesstheRestructuringDashboardandsearchtheevent.
+TheEventDetailsprovidestheRestructuringMasterRecordshowingthetriggeringwindowsand
+relevantdates.
+2. TriggereventsfromtheTriggertab:
+a. TriggerableTransactions:Under"TriggerableTransaction"youcansearchviaDTCCTRI,tosee
+thetradesthatcanbetriggered.
+b. OncetheTRIissearched,select“Trigger”forthetrade/sselectedtobetriggered.
+c. EntertheTriggerAmountthatyouchoosetotrigger.Oncethishasbeenentered,the‘Trigger’
+keyisselectedthustriggeringthetrade.Note:Triggeringmustbein1Mincrementsunless
+remainingtriggeringislessthan1M(lessthan1MTriggerAmountonlyoccurswhenTriggering
+RENAamount.
+3. FromtheRestructuringDashboard,youarenowabletoseeboth‘MessageActivity–Delivered’and
+‘MessageActivity–Received’.Thisisanenhancementfromthelegacyplatform.
+TIWRestructureSummary
+UsingTheRestructuringUserInterface 8
+
+---
+
+## Page 9
+
+FREQUENTLYASKEDQUESTIONS(FAQS)
+Q. MyAccountIsLockedOrHowDoI UnlockedOrResetMyPassword?
+A. Forloginissues,pleasereachouttoCSC@[[DTCC]].comorcall+1-212-855-1200opt.1forimmediate
+assistance.
+Q. I’mUnableToTriggerOrPerformActionsForRestructuring
+A. ContactyourSACstocheckyouraccesspermission,whichmayrequiremodificationstoInquiry&
+Updatetoallowtoperformtheseactions.
+Q. HowCanI IdentifyTheUsersThatHaveRelevantAccessToTIWDDL?
+A. SACscanlogintoCustomerRegistrationsystem(CRS)anddownloadareporttoseethelistof
+userswithrespectiveaccesspermissions.
+Q. HowCanI AddUsersToAccessTheTIWDDL?
+A. AnSACcanmakeanychanges(add/modify/delete)touseraccesses/permissions.OneSACmust
+submittherequestandasecondSACcanapprovetherequestwithinCRS.
+Q. WhereDoI GetMoreInformation?
+A. FormoreinformationabouttheRestructuringOverviewguideandreportspecifications,pleasevisit
+theDTCCLearningCenterathttps://dtcclearning.com/.PleaseemailTIWSupport@[[DTCC]].comforany
+questions.
+TIWRestructureSummary
+FrequentlyAskedQuestions(FAQs) 9
+
+---
+
+## Page 10
+
+©2023DTCC.Allrightsreserved.[[DTCC]],[[DTCC]](Stylized),ADVANCINGFINANCIALMARKETS.TOGETHER,
+andtheInterlockergraphicareregisteredandunregisteredtrademarksofTheDepositoryTrust&Clearing
+Corporation.
+Theservicesdescribedhereinareprovidedunderthe“[[DTCC]]”brandnamebycertainaffiliatesofTheDepositoryTrust
+&ClearingCorporation(“[[DTCC]]”).DTCCitselfdoesnotprovidesuchservices.Eachoftheseaffiliatesisaseparate
+legalentity,subjecttothelawsandregulationsoftheparticularcountryorcountriesinwhichsuchentityoperates.
+Pleaseseewww.[[DTCC]].comformoreinformationonDTCC,itsaffiliatesandtheservicestheyoffer.
+DocDate:September07,2023
+PublicationCode:DS103
+Service:TradeInformationWarehouse
+Title:TIWRestructureSummary
+ForMoreInformation
+EmailDTCCLearningat:
+Derivativeslearning@[[DTCC]].com
+orvisitusonthewebat:
+www.dtcclearning.com

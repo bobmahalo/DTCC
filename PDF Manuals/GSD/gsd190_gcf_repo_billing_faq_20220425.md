@@ -1,0 +1,104 @@
+---
+title: "GCF Repo® Billing FAQ "
+source_pdf: "file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/gsd190_gcf_repo_billing_faq_20220425.pdf"
+pages: 3
+size: "119.3 KB"
+category: "GSD"
+ingested_on: "2026-06-05"
+---
+
+# GCF Repo® Billing FAQ 
+
+**Original File:** [gsd190_gcf_repo_billing_faq_20220425.pdf](file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/gsd190_gcf_repo_billing_faq_20220425.pdf)  
+**Category:** GSD  
+**Total Pages:** 3  
+**File Size:** 119.3 KB  
+
+---
+
+## Page 1
+
+GOVERNMENTSECURITIESDIVISION
+GCFREPO®BILLINGFAQ
+APRIL25,2022
+GCF  RepoBillingFAQs
+ThistopicaddressesfrequentbillingquestionsrelatedtotheGCFRepo®ServiceprovidedbyGSD.
+WhatistheFICC [[GSD]] Invoice?
+TheinvoiceistheMember’sbillingstatementinPDFformatthatcontainschargesonaccountofactual
+businessofthepriormonth,finesimposedduringanymonth,andadjustmentstopriorbills.
+WhenistheInvoicepublishedtoFICC ReportCenter?
+TheInvoiceisgeneratedonorbeforethe5thbusinessdayofeachmonth.Forexample,theInvoiceforthemonth
+ofApril2021willbegeneratedtoFICCReportCenteronorbeforeMay7th.
+WheredoI findtheInvoice?
+TheInvoicecanbefoundintheBillingsectionofFICCReportCenteronthelastcalendardayofthebillable
+month.Forexample,tofindtheInvoiceforthemonthofApril2021,youmustgototheBillingsectionofFICC
+ReportCenter,enteradateof04/30/2021andclickthe“Retrieve”button.
+WhenandhowwilltheInvoiceamountbecollected?
+TheInvoiceamountiscollectedfromMembersonthe10thbusinessdayofthemonthaspartofsatisfyingthe
+[[Member]]’sFunds-OnlySettlementobligationandisduenolaterthan10A.M.thatday.Youmayrefertothe
+FICCGSDRulebookandInvoiceformoredetails.CertainotherMembersthatdonothaveaFunds-Only
+SettlingBankareobligatedtopaytheirinvoiceuponreceiptofsuchinvoice.
+
+---
+
+## Page 2
+
+GCF RepoBillingFAQs 2
+IstheInvoiceamountdisplayedontheGCF FundsSettlementreport?
+No,itisnot.
+OtherthantheInvoice,isthereanotherreportthatdisplaystheInvoice
+amount?
+Yes,thereisaseparatereportthatdisplaysalloftheFunds-OnlySettlementcomponentsincludingtheInvoice
+amount.ThereportiscalledtheStartofDayFundsSettlementStatement(displaynameisDpstAcct_
+FundsOblgtn_EOD_YYYYMMDD_MMDDYYYYinFICCReportCenter).Thisreportshowsonseparatelinesthe
+netfigurescalculatedforTAP,ForwardMargin,GCFFundsSettlement,Invoiceamount,etc.Thereportis
+locatedintheFundOnlySettlementsectionofFICCReportCenter.
+CantheTotalAmountDueontheInvoicebeacredit?
+TheTotalAmountdueonaMember’sInvoicecanbeacredit,iftheaggregateamountofcharges,feesand
+miscellaneousadjustmentsnetstoacreditamount.
+Forbillingquestions,whoshouldI contact?
+ForgeneralbillingquestionsyoumaycontacttheBillingdepartmentviae-mailatbillingsupport@[[DTCC]].com.
+DoesFICC provideareportthatmayaidinthereconciliationoftheInvoice?
+FICCgeneratesareportcalledtheParticipantDailyActivitySummaryReport.Thisreportservesasadaily
+itemizationoftradingactivityandwillassistintrackingtheamountoftradessubmittedbyaMemberorona
+[[Member]]’sbehalf.ThisreportdoesnotshowacumulativeviewofaMember’sactivity,onlyactivityforthereport
+date.ThereportislocatedintheBillingsectionofFICCReportCenterandispublishedby2A.M.ETonthenext
+businessday.
+WhatshouldaMemberdoiftheyarenotabletoreconciletotheirInvoice?
+AnydiscrepanciesrelatingtotheInvoiceshouldbereportedtoBillingSupportimmediatelyforinvestigation.Ifit
+isdeterminedthatanadjustmentiswarranted,itmaybeappliedtothefollowingmonth’sinvoiceasa
+miscellaneousadjustment.
+
+---
+
+## Page 3
+
+FORMOREINFORMATION
+EmailDTCCLearningat:
+corelearning@[[DTCC]].com
+orvisitusonthewebat:
+www.dtcclearning.com
+©2022DTCC.Allrightsreserved.[[DTCC]],[[DTCC]](Stylized),ADVANCINGFINANCIALMARKETS.TOGETHER,
+andtheInterlockergraphicareregisteredandunregisteredtrademarksofTheDepositoryTrust&Clearing
+Corporation.
+Theservicesdescribedhereinareprovidedunderthe“[[DTCC]]”brandnamebycertainaffiliatesofTheDepository
+Trust&ClearingCorporation(“[[DTCC]]”).DTCCitselfdoesnotprovidesuchservices.Eachoftheseaffiliatesisa
+separatelegalentity,subjecttothelawsandregulationsoftheparticularcountryorcountriesinwhichsuchentity
+operates.Pleaseseewww.[[DTCC]].comformoreinformationonDTCC,itsaffiliatesandtheservicestheyoffer.
+DocInfo:April25,2022
+PublicationCode:GSD190
+Service:GovernmentSecuritiesDivision
+Title:GCFRepo®BillingFAQ
+ThisdocumentisprovidedasaconveniencetoMembersandisforinformationpurposesonly.AlthoughFICCmay
+makethisdocumentavailabletoMembers,itshallbeundernoobligationtodoso,norhavingonceormoredoneso,
+shallFICChaveacontinuingobligationtomakeavailablethisdocumentorotherrelatedinformationofacertaintype.
+FICCdoesnotrepresenttheaccuracy,adequacy,timeliness,completeness,orfitnessforanyparticularpurposeof
+anyinformationprovidedtoMembersinthisdocument,whichisprovidedas-is.FICCshallnotbeliableforanyloss
+relatedtosuchinformation(ortheactorprocessofprovidingsuchinformation)resultingdirectlyorindirectlyfrom
+mistakes,errors,oromissions,otherthanthosecauseddirectlybygrossnegligenceorwillfulmisconductonthepart
+ofFICC.FICCshallnotbeliablefor:(1)anylossresultingdirectlyorindirectlyfrominterruptions,delays,ordefects
+arisingfromorrelatedtoprovidingthisguide;and(2)anyspecial,consequential,exemplary,incidental,orpunitive
+damages.
+Further,theinformationcontainedinthisdocumentissubjecttochange.Membersandotherauthorizedusersofthe
+documentwillfindthemostcurrentversionofthedocumentonDTCC’sLearningCentersite,www.dtcclearning.com.
+FICCshallbearnoresponsibilityforanylossesassociatedwiththefailureofMembersorotherauthorizedusersto

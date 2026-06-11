@@ -1,0 +1,12516 @@
+---
+title: "TradeSuite ID-SWIFT Integration Guide"
+source_pdf: "file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/ts260_swift-integration_20231121.pdf"
+pages: 332
+size: "2551.0 KB"
+category: "TradeSuite"
+ingested_on: "2026-06-05"
+---
+
+# TradeSuite ID-SWIFT Integration Guide
+
+**Original File:** [ts260_swift-integration_20231121.pdf](file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/ts260_swift-integration_20231121.pdf)  
+**Category:** TradeSuite  
+**Total Pages:** 332  
+**File Size:** 2551.0 KB  
+
+---
+
+## Page 1
+
+TradeSuiteID®
+TRADESUITEID-SWIFTINTEGRATIONGUIDE
+VERSION8.1
+NOVEMBER21,2023
+
+---
+
+## Page 2
+
+TABLEOFCONTENTS
+Preface 22
+Audience 22
+ChangesinThisVersion 22
+RegulatoryChanges 22
+SWIFTUpdates 23
+AdditionalChanges 24
+RelatedDocumentsandTraining 26
+Questions? 26
+1.TradeSuiteIDandSWIFT 27
+TradeSuiteIDMessaging 27
+ConventionsUsedinThisGuide 29
+2.MT509- TradeStatusMessages 33
+InputandOutputMessages 33
+SentFromDTCCtotheUser(Output) 33
+InputMessageStatus 33
+OutputTradeStatus 34
+FormatSpecifications 34
+FieldSpecificationsforMT509–InputMessages 35
+NoteforStartandEndofBlockDelimiters 35
+Note1:Start-of-BlockandEnd-of-Block 35
+NotesforSequenceA–GeneralInformation 35
+Note2:Field20C:SenderReferenceorDTCControlNumber 36
+TradeSuiteID-SWIFTIntegrationGuide
+TableOfContents 2
+
+---
+
+## Page 3
+
+Note3:Field23G:MessageType 36
+NotesforSubsequenceA1–Linkage 37
+Note4:Field13A:LinkedTransaction 37
+Note5:Field20C:LinkReference 37
+NotesforsubsequenceA2–StatusAcknowledgments,Warnings,andDTCEditRejectionMes-
+sages 38
+Note6:Field25D:StatusCode 39
+NotesforsubsequenceA2a–ReasonforEditRejectionsandWarnings 39
+Note7:Field24B:RejectReasonCode 40
+Note8:Field70D:EntityIdentifiersandDTCCReasonErrorCode/DescriptionInvestmentMan-
+agerandExecutingBrokerIdentifiers 40
+MT509-OutputMessages 41
+SequenceA–GeneralInformation 41
+SubsequenceA1–LinktoOriginalMessage 41
+SubsequenceA2–StatusAcknowledgments,Warnings,andDTCEditRejectionMessages 42
+SubsequenceA2a–ReasonforEditRejectionsandWarnings 43
+FieldSpecificationsforMT509–OutputMessage 45
+NoteforStartandEndofBlockDelimiters 45
+Note1:Start-of-BlockandEnd-of-Block 45
+NotesforSequenceA–GeneralInformation 45
+Note2:Field20C:DTCControlNumber 45
+Note3:Field23G:MessageType 46
+NotesforSubsequenceA1–Linkage 46
+Note4:Field13A:UnderliningMessageType 46
+Note5:Field20C:LinkorUserreferencenumberassignedtooriginalmessage 47
+NotesforsubsequenceA2–StatusAcknowledgments,Warnings,andDTCEditRejectionMes-
+sages 48
+TradeSuiteID-SWIFTIntegrationGuide
+TableOfContents 3
+
+---
+
+## Page 4
+
+Note6:Field25D:StatusCode 48
+NotesforsubsequenceA2a–ReasonforEditRejectionsandWarnings 49
+Note7:Field24B:RejectionReasonCode 49
+Note8:Field70D:EntityIdentifiersandDTCCReasonErrorCode/DescriptionInvestmentMan-
+agerandExecutingBrokerIdentifiers(subsequenceA2a) 50
+3.MT515- TradeConfirmationMessages 52
+TransactionTypes 52
+InputMessageFlow 53
+OutputMessageFlow 53
+FormatSpecifications 55
+Start-of-BlockandEnd-of-BlockFields 55
+SequenceA–GeneralInformation 57
+SubsequenceA1–LinkedTransactions 59
+SequenceB–PartialFillDetails 60
+SequenceC–ConfirmationDetails 61
+SubsequenceC1–ConfirmationParties 65
+SequenceC–ConfirmationDetails(continued) 69
+SubsequenceC2–FinancialInstrumentAttributes 69
+SequenceC–ConfirmationDetails(continued) 71
+SequenceD–SettlementDetails 77
+SubsequenceD1–SettlementParties 79
+SubsequenceD2–CashParties 86
+SubsequenceD3–Amounts 87
+SequenceD–SettlementDetails(continued) 90
+SequenceE–OtherParties 91
+TradeSuiteID-SWIFTIntegrationGuide
+TableOfContents 4
+
+---
+
+## Page 5
+
+SequenceF–TwoLegTransactionDetails(REPO) 95
+FieldSpecificationsforMT515TradeConfirmationMessages 97
+NoteforStartandEndofBlockDelimiters 97
+Note1:Start-of-BlockorEnd-of-BlockField 97
+NotesforSequenceA–GeneralInformation 97
+Note2:Field20C:BrokerConfirmNumberorDTCControlNumber 98
+Note3:Field23G:MessageType–NewConfirm 98
+Note4:Field98C:DTCCProcessingDateandTime 99
+Note5:Field22F:TransactionTypeIndicator 99
+NotesforSubsequenceA1–LinkageBlocks 100
+Note6:Field13A:LinkedTransaction 100
+Note7:Field20C:LinkedReferencetoOriginalBrokerConfirmationNumberandParentCross
+ReferenceNumber 100
+SequenceB–PartialFillDetails 101
+Note8:Field36B:Quantity–[[shares]]/FaceValue 101
+Note9:Field90B:NetPrice 102
+Note10:Field22F:PriceIndicator 102
+SequenceC–ConfirmationDetails 103
+Note11:Field98ATradeDateorfield98CTradeDateandTime 103
+Note12:Field98ASettlementDateorfield98BSettlementType 103
+Note13:Field90B:Price 104
+Note14:Field90B:Mark-UpPriceorMark-DownPrice 105
+Note15:Field99A:InterestDays 105
+Note16:Field94B:PlaceofTradeorExchange 106
+Note17:Field19A:[[settlement]](Net)Amount 106
+TradeSuiteID-SWIFTIntegrationGuide
+TableOfContents 5
+
+---
+
+## Page 6
+
+Note18:Field22H:BuyorSellIndicator 107
+Note19:Field22H:PaymentMethodIndicator 108
+Note20:Field22F:Long/ShortIndicator 108
+Note21:Field22F:GreenwichMeanTime 109
+Note22:Field22F:CommissionSharingIndicator 109
+Note23:Field22F:CancelAfterAffirmation/MatchIndicator 109
+Note24:Field22F:MatchedIndicator 110
+Note25:Field22F:ALERTAccountFoundIndicator 110
+Note26:Field22F:TradeTransactionConditionIndicator 111
+Note27:Field22F:DTCEligibilityIndicators 112
+Note28:Field22F:PrimeBrokerDisaffirmationIndicator 112
+Note29:Field22F:EligibilityReasonCode 113
+Note30:Field22F:PriceTypeIndicator 116
+Note31:Field22F:BlockTradeIndicator 118
+Note32:Field22F:SIPCMemberIndicator 118
+Note33:Field22F:FINRAMemberIndicator 118
+Note34:Field22F:NYSEMemberIndicator 119
+Note35:Field22F:MarketMakerIndicator 119
+Note36:Field22F:ConfirmLegIndicator 120
+Note37:Field22F:CollateralType 120
+Note38:Field22F:CollateralSubstitutionType 121
+Note39:Field22F:Third-PartyRenumerationReceivedIndicator 122
+Note40:Field22F:ConfirmBacker/DisclosureFoundIndicator 122
+Note41:Field22F:ConfirmBacker/DisclosureBypassIndicator 123
+Note42:Field22F:AllocationSourceIndicator 123
+Note43:Field22F:ConfirmPurpose 124
+TradeSuiteID-SWIFTIntegrationGuide
+TableOfContents 6
+
+---
+
+## Page 7
+
+SubsequenceC1–ConfirmationParties 124
+Note44:Field95a:InstitutionPrimaryIdentifier:Field95R:PrimaryInstitutionDTCIDorField
+95P:InstitutionBIC 125
+Note45:Field95S:AlternateInstitutionDTCIDorInstitutionBIC 125
+Note46:Field97A:InstitutionSafekeepingAccount 126
+Note47:Field70C:InstitutionContactTelephoneNumberandWireInstructions 126
+Note48:Field95a:ClearingBrokerPrimaryIdentifier:Field95R:PrimaryClearingBrokerDTC
+IDorField95P:ClearingBrokerBIC 127
+Note49:Field95S:AlternateClearingBrokerDTCIDorClearingBrokerBIC 127
+Note50:Field97A:ClearingBrokerSafekeepingAccount 128
+Note51:Field70E:OperatingProceduresGuideLink 128
+Note52:Field95a:ExecutingBrokerPrimaryIdentifier:Field95R:PrimaryExecutingBroker
+DTCIDorField95P:ExecutingBrokerBIC 128
+Note53:Field95S:AlternateExecutingBrokerDTC IDorExecutingBrokerBIC 129
+Note54:Field97B:ExecutingBrokerSafekeepingAccount 129
+Note55:Field98C:ConfirmProcessingDateandTime 130
+Note56:Field70E:SpecialInstructions 130
+Note57:Field70C:BrokerSalespersonNumberandBroker/DealerTelephoneNumber 131
+Note58:Field22F:RoleIndicator 132
+Note59:Field95a:DesignatedAffirmerIdentifier:Field95R:DesignatedAffirmingPartyDTCID
+orField95P:DesignatedAffirmingPartyBICIdentifier 134
+Note60:Field95R:Give-UpBroker 134
+SequenceC–ConfirmationDetails(continued) 136
+Note61:Field36B:Quantity-[[shares]]/FaceValue 136
+Note62:Field35B:SecurityID Number 136
+SubsequenceC2–FinancialInstrumentAttributes 139
+Note63:Field22F:SecurityFormCode 140
+TradeSuiteID-SWIFTIntegrationGuide
+TableOfContents 7
+
+---
+
+## Page 8
+
+Note64:Field22F:SubstitutionFrequency 141
+Note65:Field22F:InterestPaymentCalendarFrequency 141
+Note66:Field98A:MaturityDate 143
+Note67:Field98A:Pre-refundedorCallDate 143
+Note68:Field98A:PutBondDate 143
+Note69:Field98A:IssueDate 143
+Note70:Field98A:OptionExpirationDate 144
+Note71:Field98A:InterestAccrualDate 145
+Note72:Field98A:FirstRateResetDate 145
+Note73:Field98A:DatedDate 145
+Note74:Field13B:YieldtoMaturity 145
+Note75:Field92A:InterestRate 147
+Note76:Field13B:PoolNumber 147
+Note77:Field13B:LotID 147
+Note78:Field70E:AdditionalConfirmSecurityDescription 148
+SequenceC–ConfirmationDetails(continued) 148
+Note79:Field13B:ExpandedSecurityType 149
+Note80:Field13B:Amortized/AccreditedFactor 152
+Note81:Field13B:MatchingVariance 152
+Note82:Field13B:MatchingVarianceDiscrepancy 152
+Note83:Field13B:SecurityDescriptionType 153
+Note84:Field13B:AdviceofCancellationorCorrectionIndicator 154
+Note85:Field13B:AOCCProcessDate 154
+Note86:Field13B:StartDate 155
+Note87:Field13B:SubstitutionNumber 156
+TradeSuiteID-SWIFTIntegrationGuide
+TableOfContents 8
+
+---
+
+## Page 9
+
+Note88:SubstitutionVariance 156
+Note89:Field13B:Face(Par)orCashFillREPO 156
+Note90:Field13B:FirstInterestCleanupDate 157
+Note91:Field13B:LookbackDays 158
+Note92:Field13B:ResetIntervalFrequency 158
+Note93:Field13B:FlexREPOPaybackFrequency 158
+Note94:Field13B:User-DefinedDisclosureCode 160
+Note95:Field13B:CurrentYield 160
+Note96:Field13B:YieldtoCall/Redemption 160
+Note97:Field13B:TradeExecutionDate 160
+Note98:Field13B:TradeExecutionTimeandTradeExecutionTimeZone 161
+Note99:Field13B:DisclosureReferenceNumber 161
+Note100:Field13B:CommissionEquivalent 162
+Note101:Field13B:TradeSuiteIDOperatingProceduresGuideReferenceNumber 162
+Note102:Field13B:DiscountRate 162
+Note103:Field13B:LegalStatus 163
+Note104:Field13B:PaymentStatus 163
+Note105:Field13B:BondTypeCode 164
+Note106:Field13B:BasisIndicator 165
+Note107:Field13B:ResultIndicator 165
+Note108:Field13B:InterestPaymentDate 166
+Note109:Field13B:OptionCallIndicator 166
+Note110:Field13B:Call/PutFeatureIndicator 167
+Note111:Field13B:PutBondType 167
+Note112:Field13B:PrerefundedorCallPrice 168
+Note113:Field13B:PutBondPrice 168
+TradeSuiteID-SWIFTIntegrationGuide
+TableOfContents 9
+
+---
+
+## Page 10
+
+Note114:Field13B:BondFormCode 169
+Note115:Field13B:InterestPaymentFrequency 169
+Note116:Field13B:SpecialCouponIndicator 171
+Note117:Field13B:Flat/DefaultStatus 171
+Note118:Field13B:TaxStatus 172
+Note119:Field13B:Moody’sCreditRating 172
+Note120:Field13B:Standard&Poor’sCreditRating 172
+Note121:Field13B:SubjecttoFederalTax 173
+Note122:Field13B:AlternateMinimumTax 174
+Note123:Field13B:TradeTypeIndicator 174
+Note124:Field13B:CurrentFace 176
+Note125:Field13B:Factor/EffectiveDate 176
+Note126:Field13B:Yield 176
+Note127:Field13B:RelatedReferenceNumber 176
+Note128:Field13B:NumberofDaysAccruedInterest 177
+Note129:Field13B:SecurityClassCode 178
+Note130:Field13B:OriginalTradePar 178
+Note131:Field13B:GoodDeliveryMillions 178
+Note132:Field13B:DeliveryDate 178
+Note133:Field13B:EPNTime 179
+Note134:Field13B:Terminator 180
+Note135:Field13B:MessageID 180
+Note136:Field13B:PossibleDuplicate 180
+Note137:Field13B:TradeNumber 181
+Note138:Field13B:NumberofPools 181
+Note139:Field13B:InternalID 182
+TradeSuiteID-SWIFTIntegrationGuide
+TableOfContents 10
+
+---
+
+## Page 11
+
+Note140:Field13B:SubmitterAccountID 182
+Note141:Field13B:ServiceType 182
+Note142:Field13B:OptionType 183
+Note143:Field13B:RecordDate 184
+Note144:Field13B:SpecificationCodeandSpecificationValue 184
+Note145:Field13B:MBSInterestRate 186
+Note146:Field13B:MBSMaturityDate 187
+Note147Field13B:VendorControlID 188
+Note148:Field13B: InstitutionLegalEntity 188
+Note149:Field13B: BrokerLegalEntity 188
+Note150:Field13B: MarkUpPercentorMarkDownPercent 188
+Note151:Field70E:SpecialInstructionsline1-8andConfirmDisclosureLink(outputonly) 189
+SequenceD–SettlementDetails 189
+Note152:Field22F:DeliveryMethodIndicator 190
+Note153:Field22F:TradeTypeIndicator 191
+Note154:Field22F:SettlementConditionCodes#1,#2,#3 192
+Note155:Field22F:BrokerCustodyIndicator 193
+Note156:Field22F:SplitCurrencyIndicator 194
+Note157: Field22F:ALERTOverwriteIndicator 195
+Note158:Field22F:SettlementConditionIndicator 195
+SubsequenceD1–settlementparties 195
+Note159:Field95R:BrokerSettlementLocation,field95P:BrokerSettlementLocationBIC,or
+field95Q:NOTFORSETTLEMENT 197
+Note160:Field20C:BrokerSettlementMethod 198
+Note161:Field70C:Delivery/Receiver(input) 201
+Note162:Field70D:Sub-CustodianCSDInformation(input) 202
+TradeSuiteID-SWIFTIntegrationGuide
+TableOfContents 11
+
+---
+
+## Page 12
+
+Note163:Field70C:DTCSettlementMode,AffirmingPartyIndicator,AgentSub-Custodian
+BIC,andBrokerSub-CustodianBIC(output) 203
+Note164:Field70D:AgentSub-CustodianCSDInformation,BrokerSub-CustodianCSDInform-
+ation,DeliveryInstructions(Lines1),andDeliveryInstructions(Line2) 204
+Note165:Field95a:InstitutionPrimaryIdentifier:Field95R:InstitutionDTCIDorField95P:Insti-
+tutionBIC 205
+Note166Field95S:InstitutionAlternateIdentifierorInstitutionAlternateDTCID 206
+Note167:Field97A:InstitutionSafekeepingAccount 206
+Note168:Field70C:InstitutionTelephoneNumberandWireInstructions 207
+Note169:Field70D:Deliver/ReceiverSub-CustodianCSDSafekeepingAccount 207
+Note170:Field95a:AgentPrimaryID Number:Field95R:AgentDTCIDorField95P:Agent
+BIC 208
+Note171:Field95S:AgentAlternateID Number,AgentDTCID,orAgentBIC 210
+Note172:Field97A:AgentSafekeepingAccount 210
+Note173:Field70C:SettlementLocation,SettlementMethod,SpecialInstructionsLine19,Spe-
+cialInstructionsLine20,andSpecialInstructionsLine21 210
+Note174:Field70DFINRAMSRBEMMAURL 212
+Note175:Field95a:ClearingAgentPrimaryID Number:Field95R:ClearingAgentDTCIDor
+Field95P:ClearingAgentBICIdentifier 213
+Note176:Field95S:ClearingAgentAlternateID NumberAlternateDTCIDorAlternateBIC 214
+Note177:Field97A:ClearingAgentSafekeepingAccount 214
+Note178:Field95a:DelivererSub-CustodianPrimaryID Number:Field95R:DelivererSub-Cus-
+todianDTCIDorField95P:DelivererSub-CustodianBIC 214
+Note179:Field95S:DelivererSub-custodianAlternateIdentifier 215
+Note180:Field97A:DelivererSub-CustodianSafekeepingAccount 216
+Note181:Field70D:SupplementalInformation 216
+Note182:Field70D:CashAccount 216
+Note183:Field95a:ReceiverSub-custodianPrimaryIdentifier:Field95R:ReceiverSub-Cus-
+todianDTCIDorField95P:ReceiverSub-CustodianBIC 216
+TradeSuiteID-SWIFTIntegrationGuide
+TableOfContents 12
+
+---
+
+## Page 13
+
+Note184:Field95S:ReceiverSub-CustodianAlternateIdentifier,AlternateDTCID,orAlternate
+BIC 218
+Note185:Field97A:ReceiverSub-custodianSafekeepingAccount 218
+Note186:Field70D:SupplementalInformation 218
+Note187:Field70D:CashAccount 219
+SubsequenceD2–cashparties 220
+Note188:Field95R:CorrespondentBankIDorField95P:CorrespondentBankBIC 220
+Note189:Field97A:CorrespondentBankCashAccount 220
+SubsequenceD3–Amounts 220
+Note190:Field19A:Commission 221
+Note191:Field19A:AccruedInterest 222
+Note192:Field19A:RegulatoryFees 222
+Note193Field19A:ResearchAmount 222
+Note194:Field19A:Country/NationalTax 223
+Note195:Field19A:OtherCharges 223
+Note196:Field19A:PrincipalAmount 224
+Note197:Field19A:[[settlement]](Net)Amount 224
+Note198:Field19A:AlternateCurrencyResultantAmount 225
+Note199:Field92B:ExchangeRate 226
+Note200:Field19A:LegacySettlement(Net)Amount 226
+Note201:Field19A:LegacyCurrencyAmount 226
+Note202:Field19A:OtherAmounts#1through#5 227
+SequenceE–OtherParties 227
+Note203:Field95R:ReportReceiverTypeorField95P:ReportReceiverBIC 228
+Note204:Field95R:ExecutingBroker/DealerIDorField95P:ExecutingBroker/DealerBIC 228
+TradeSuiteID-SWIFTIntegrationGuide
+TableOfContents 13
+
+---
+
+## Page 14
+
+Note205:Field95a:InterestedParty1PrimaryID Number:Field95R:InterestedParty1DTCID
+orField95P:InterestedParty1BIC 229
+Note206:Field95S:InterestedParty1AlternateID Number,InterestedParty1 [[DTC]] [[ID]],orInter-
+estedParty1BIC 229
+Note207:Field97A:InterestedParty1SafekeepingAccount 230
+Note208:Field70C:SupplementalInformation 230
+Note209:Field95a:InterestedParty2PrimaryID Number:Field95R:InterestedParty2DTCID
+orField95P:InterestedParty2BIC 230
+Note210:Field95S:InterestedParty2AlternateID Number,InterestedParty2 [[DTC]] [[ID]],orInter-
+estedParty2BIC 231
+Note211:Field97A:InterestedParty2SafekeepingAccount 231
+Note212:Field95a:InterestedParty3PrimaryID Number:Field95R:InterestedParty3DTCID
+orField95P:InterestedParty3BIC 231
+Note213:Field95S:InterestedParty3AlternateID Number,InterestedParty3 [[DTC]] [[ID]],orInter-
+estedParty3BIC 232
+Note214:Field97A:InterestedParty3SafekeepingAccount 232
+Note215:Field95R:IDNetNumber 232
+Note216:Field95Qor95R:Tri-PartyAgentNumber 234
+SequenceF–REPO 234
+Note217:Field98A:EndDate/MaturityDate 234
+Note218:Field98A:FirstFlexRepaymentDate 235
+Note219:Field22F:FINRateType 236
+Note220:Field22F:AccrualMethod 236
+Note221:Field20C:AdditionalReferenceNumber1 238
+Note222:Field20C:AdditionalReferenceNumber2 238
+Note223:Field92A:FINRate 238
+Note224:Field92C:Index(Benchmark) 240
+Note225:Field92A:[[Haircut]]% 241
+TradeSuiteID-SWIFTIntegrationGuide
+TableOfContents 14
+
+---
+
+## Page 15
+
+Note226:Field92A:SpreadtoIndexorBenchmark 242
+Note227:Field99B:CallDelay 243
+Note228:Field99B:NumberofCollateralPieces 243
+Note229:Field19A:SecurityLendingFee 243
+Note230:Field19A:REPOValue 244
+Note231:Field19A:AccruedInterestatMaturity 244
+Note232:Field19A:PremiumAmount 244
+4.MT517- TradeAffirmationMessages 245
+InputMessageFlow 245
+OutputMessageFlow 246
+FormatSpecifications 246
+Start-of-BlockandEnd-of-BlockFields 246
+SequenceA–GeneralInformation(Mandatory) 248
+SubsequenceA1–linktooriginalmessage 249
+FieldSpecificationsforMT517AffirmationMessages 249
+NoteforStartandEndofBlockDelimiters 249
+Note1: fields16Rand16S:Start-of-BlockandEnd-of-Block 250
+SequenceA–GeneralInformation 250
+Note2:Field20C:SenderReferenceNumberorDTCControlNumber 250
+Note3:Field23G:MessageTypeIndicator 251
+Note4:Field95P:AffirmingPartyBICorfield95R:AffirmingPartyTradeSuiteID 251
+Note5:Field95R:AffirmingPartyandTradeSuiteIDorAffirmingPartyandBIC 251
+SubsequenceA1–LinktoOriginalMessage 253
+Note6:Field13A:LinkedTransaction 253
+TradeSuiteID-SWIFTIntegrationGuide
+TableOfContents 15
+
+---
+
+## Page 16
+
+Note7:Field20C:DTCControlNumber 253
+Note8:Field20C:[[Broker]]/DealerConfirmNumber 253
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 255
+FormatSpecifications 255
+Start-of-BlockandEnd-of-BlockFields 255
+SequenceA–GeneralInformation 256
+SubsequenceA1–LinkedTransactions 258
+SequenceB–TradeDetails 259
+SubsequenceB1–FinancialInstrumentAttributes 260
+SequenceB–TradeDetails(Continued) 261
+SequenceC–FinancialInstrumentAccount 261
+SequenceE–SettlementDetails 263
+SubsequenceE1–settlementparties 263
+SequenceE3–Amounts 266
+SequenceF–otherparty 267
+FieldSpecificationsforMT541Messages 268
+NoteforStartandEndofBlockDelimiters 269
+Note1: Fields16Rand16S:Start-of-BlockorEnd-of-Block 269
+NotesforSequenceA–GeneralInformation 269
+Note2:Field20C:DTCControlNumberorSender’sReferenceNumber 269
+Note3:Field23G:TransactionType 270
+Note4:Field22F:CancellationReasonCode 270
+SubsequenceA1–LinkedTransactions 271
+Note5:Field20C:InstitutionBlockReferenceID 271
+TradeSuiteID-SWIFTIntegrationGuide
+TableOfContents 16
+
+---
+
+## Page 17
+
+Note6:Field22F:InstitutionOrderRoutingNumber 272
+Note7:Field20C:InstitutionDetailReferenceID 272
+NotesforSequenceB–TradeDetails 272
+Note8:Field98A:SettlementDateorfield98B:SettlementType 272
+Note9:Field98A:TradeDate 273
+Note10:Field90Aor90B:AveragePrice 273
+Note11:Field35B:SecurityIdentifier 274
+NotesforSubsequenceB1–FinancialInstrumentAttributes 276
+Note12:Field12A:SecurityTypeorClassificationTypes 276
+NotesforSequenceB–TradeDetails(continued) 278
+Note13:Field22F:AllocationCommissionTypeindicator 279
+Note14:Field22F:CancellationAfterMatchingindicator 279
+NotesforSequenceC–FinancialInstrumentAccount 279
+Note15:Field36B:Execution–[[shares]]/FaceValue 279
+Note16:Field97A:SafekeepingAccountAgentInternalAccountNumber 280
+NotesforSequenceE–SettlementDetails 280
+Note17:Field22F:PSETISOCountryCodeIndicator 281
+Note18:Field22F:SplitCurrencySettlementIndicator 281
+Note19:Field22F:TradeIndicator 281
+Note20:Field22F:CancellationAfterAffirmation/MatchingIndicator 282
+NotesforSequenceE1–SettlementParties 282
+Note21:Field95Por95C:SettlementLocation 282
+Note22:Field95R:AgentTradeSuiteIDorField95P:AgentBIC 282
+Note23:Field95S:AlternateIDNumberorAgentDTCIDNumber 283
+Note24:Field97A:AgentInternalAccountNumber 283
+TradeSuiteID-SWIFTIntegrationGuide
+TableOfContents 17
+
+---
+
+## Page 18
+
+Note25:Field95R:ClearingBrokerID#orField95P:ClearingBrokerBIC 283
+Note26:Field95S:AlternateClearingBrokerDTCID 284
+Note27:Field97A:ClearingBrokerInternalAccountNumber 284
+Note28:Field95R:PrimaryExecutingBrokerNumberorField95P:PrimaryExecutingBroker
+BIC 285
+Note29:Field95S:AlternateExecutingBrokerNumberorDTCID 285
+Note30:Field97A:BrokerInternalAccountNumber 285
+NotesforsubsequenceE3–Amounts 286
+Note31:Field19A:PrincipalAmount 286
+Note32:Field19A:Interest 286
+Note33:Field19A:Commission 287
+Note34:Field19A:ResearchAmount 287
+Note35:Field19A:CountryTax 287
+Note36:Field19A:SECFees/RegistrationandShippingFees 288
+Note37:Field19A:OtherCharges 288
+Note38:Field19A:NetAmount 288
+NotesforSequenceF–otherparty 288
+Note39:Field95Ror95P:MessageRecipient 289
+Note40:Field95R:PrimaryInstitutionIDorField95P:InstitutionBIC 289
+Note41:Field95S:AlternateIDNumber:InstitutionDTCID 289
+Note42:Field97A:InstitutionInternalAccountNumber 290
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 291
+FormatSpecifications 291
+Start-of-BlockandEnd-of-BlockFields 291
+SequenceA–GeneralInformation 292
+TradeSuiteID-SWIFTIntegrationGuide
+TableOfContents 18
+
+---
+
+## Page 19
+
+SubsequenceA1–LinkedTransactions 294
+SequenceB–TradeDetails 295
+SubsequenceB1–FinancialInstrumentAttributes 295
+SequenceB–TradeDetails(Continued) 297
+SequenceC–FinancialInstrumentAccount 297
+SequenceE–SettlementDetails 299
+SubsequenceE1–SettlementParties 300
+SubsequenceE3–Amounts 302
+SequenceF–otherparty 304
+FieldSpecificationsforMT543Messages 305
+NoteforStartandEndofBlockDelimiters 305
+Note1:fields16Rand16S:Start-of-BlockorEnd-of-Block 305
+NotesforSequenceA–GeneralInformation 306
+Note2:Field20C:DTCControlNumberorSender’sReferenceNumber 306
+Note3:Field23G:TransactionType 306
+Note4:Field22F:CancellationReasonCodeorTradeTransactionType 307
+SubsequenceA1–LinkedTransactions 308
+Note5:Field20C:InstitutionBlockReferenceID 308
+Note6:Field22F:InstitutionOrderRoutingNumber 308
+Note7:Field20C:InstitutionDetailReferenceID 308
+NotesforSequenceB–TradeDetails 309
+Note8:Field98A:SettlementDateorfield98B:SettlementType 309
+Note9:Field98A:TradeDate 310
+Note10:Field90Aor90B:AveragePrice 310
+TradeSuiteID-SWIFTIntegrationGuide
+TableOfContents 19
+
+---
+
+## Page 20
+
+Note11:Field35B:SecurityIdentifier 311
+NotesforsubsequenceB1–FinancialInstrumentAttributes 313
+Note12:Field12A:SecurityTypeorClassificationTypes 313
+NotesforSequenceB–TradeDetails(continued) 315
+Note13:Field22F:AllocationCommissionTypeIndicator 316
+Note14:Field22F:CancellationAfterMatchingIndicator 316
+NotesforSequenceC–FinancialInstrumentAccount 316
+Note15:Field36B:Execution–[[shares]]/FaceValue 317
+Note16:Field97A:SafekeepingAccountAgentInternalAccountNumber 317
+NotesforSequenceE–SettlementDetails 318
+Note17:Field22F:PSETISOCountryCodeIndicator 318
+Note18:Field22F:SplitCurrencySettlementIndicator 318
+Note19:Field22F:TradeIndicator 318
+Note20:Field22F:CancellationAfterAffirmation/MatchingIndicator 319
+NotesforSequenceE1–settlementparties 319
+Note21:Field95Por95C:SettlementLocation 319
+Note22:Field95R:AgentTradeSuiteIDorField95P:AgentBIC 320
+Note23:Field95S:AlternateIDNumberorAgentDTCIDNumber 320
+Note24:Field97A:AgentInternalAccountNumber 320
+Note25:Field95R:ClearingBrokerIDor95P:ClearingBrokerBIC 321
+Note26:Field95S:AlternateClearingBrokerDTCID 321
+Note27:Field97A:ClearingBrokerInternalAccountNumber 321
+Note28:Field95R:PrimaryExecutingBrokerNumberorField95P:ExecutingBrokerBIC 322
+Note29:Field95S:AlternateExecutingBrokerIDNumberorDTCIDNumber 322
+Note30:Field97A:BrokerInternalAccountNumber 322
+TradeSuiteID-SWIFTIntegrationGuide
+TableOfContents 20
+
+---
+
+## Page 21
+
+NotesforsubsequenceE3–Amounts 323
+Note31:Field19A:PrincipalAmount 323
+Note32:Field19A:Interest 323
+Note33:Field19A:Commission 323
+Note34:Field19A:ResearchAmount 324
+Note35:Field19A:CountryTax 325
+Note36:Field19A:SECFees/RegistrationandShippingFees 325
+Note37:Field19A:OtherCharges 325
+Note38:Field19A:NetAmount 325
+NotesforSequenceF–OtherParties 326
+Note39:Field95Ror95P:MessageRecipient 326
+Note40:Field95R:PrimaryInstitutionIDNumberorField95P:InstitutionBIC 326
+Note41:Field95S:AlternateIDNumber:InstitutionDTCID 327
+Note42:Field97A:InstitutionInternalAccountNumber 327
+A.ErrorCodes 328
+CommonCancellationCodes 328
+DetailCancellationCodes 330
+RejectionCodes 331
+TradeSuiteID-SWIFTIntegrationGuide
+TableOfContents 21
+
+---
+
+## Page 22
+
+PREFACE
+ThisdocumentdescribeshowtointegratethetheTradeSuiteID®service,SocietyforWorldwideInterbank
+FinancialTelecommunications(SWIFT),andyourportfoliomanagementsystem.TradeSuiteIDisa
+comprehensivetradeprocessingsolutionthatautomatesmessagingandsettlementforequityandfixed
+incomesecurities.Investmentmanagers,[[Broker]]/dealers,[[Custodians]],andinterestedpartiesuse
+TradeSuiteIDforpost-tradeprocessingondomesticandcross-bordertradesofU.S.[[securities]].
+Audience
+Thisdocumentisfortechnologyprofessionals,businessanalysts,andotherswhoareresponsiblefor
+integratingTradeSuiteIDwiththeirportfoliomanagementsystem.Youmusthaveabasicunderstanding
+ofelectronictradeandtransactionprocessingconceptsandaworkingknowledgeoftheWindows
+operatingsystem.
+ChangesinThisVersion
+ThissectiondescribesthechangesfortheTradeSuiteID-SWIFTIntegrationGuide.
+TradeSuiteID8.0.6(newchanges)
+Thisversionisupdatedtoreflectretirementoftheomgeo.netproductURLs.
+TradeSuiteID8.0.5(previouschanges)
+RegulatoryChanges
+TheSecuritiesandExchangeCommission([[SEC]])approvedamendmentstoFINRARule2232(Customer
+Confirmations)thatrequirememberfirmstodiscloseadditionaltransaction-relatedinformationtoretail
+customersfortradesincertainfixedincomesecurities.Specifically,amendedRule2232requiresa
+membertodisclosetheamountandpercentageofmark-upormark-downitappliestotradeswithretail
+customersincorporateoragencydebtsecuritiesifthememberalsoexecutesanoffsettingprincipaltrade
+inthesamesecurityonthesametradingday.Theamendedrulealsorequiresmemberstodisclosetwo
+additionalitemsonallretailcustomerconfirmationsforcorporateandagencydebtsecuritytrades:(1)a
+reference,andahyperlinkiftheconfirmationiselectronic,toawebpagehostedbyFINRAthatcontains
+publiclyavailabletradingdataforthespecificsecuritythatwastraded,and(2)theexecutiontimeofthe
+transaction,expressedtothesecond.TheMSRBRuleG-15andG-30hasalsochangedtoaccommodate
+thesechanges.ThisnewregulationgoesintoeffectonMay14,2018.
+TradeSuiteID-SWIFTIntegrationGuide
+Preface 22
+
+---
+
+## Page 23
+
+Tocomplywiththeseregulatorychanges,DTCChasmadethefollowingchangestothe
+SWIFT/TradeSuiteIDintegrationintheMT515TradeConfirmationMessage.
+l InSubsequenceC1-ConfirmationParties,>>(C1)ClearingBlock(outputonly):
+o Field70EnowonlycontainstheOperatingProceduresGuideLink.Preciouslyitalsocontainthe
+[[ID]] NetDisclosureLines1and2.AdditionalinformationisavailableinNote51.
+l InSequenceC-ConfirmationDetails(continued),SequenceC:
+o Field13BTradeExecutionDatehasbeenrenamedfromTradeExecutionDateandTime.Itis
+usedtoindicatethedatethatthedealerbookedthetrade.Additionalinformationisavailablein
+Note11.
+o Field13BTradeExecutionDate/TradeExecutionTimeZonehasbeenadded.Itisusedtoindic-
+atetheTradeExecutionTimeandTradeExecutionTimeZonewhentheTradewasexecuted.
+AdditionalinformationisavailableinNote98.
+l InSequenceC-ConfirmationDetails(continued),SequenceC,MBSfields(mortgage-backedsecur-
+ities):
+o Field13BInstitutionLegalEntityhasbeenadded.ItisusedtospecifytheLegalEntityIdentifier
+(LEI)oftheinstitutiononthetrade.AdditionalinformationisavailableinNote148.Thisupdateis
+aMIFID II-relatedchange.
+o Field13BBrokerLegalEntityhasbeenadded.ItisusedtospecifytheLegalEntityIdentifier
+(LEI)ofthebrokeronthetrade.AdditionalinformationisavailableinNote149.Thisupdateisa
+MIFID II-relatedchange.
+o Field13BMarkUpPercent/MarkDownPercenthasbeenadded.Itis10b-10fieldinformation
+forabroker/dealertodisclosethemarkupormarkdownasapercentageoftheamountinvolved
+inthetransaction.AdditionalinformationisavailableinNote150.
+l InSequenceD1-AgentBlock:
+o Field70CSettlementLocation,SettlementMethodhasbeenmodifiedtoaddSpecialInstructions
+Line19,SpecialInstructionsLine20andSpecialInstructionsLine21.SeeNote173.
+o Field70DFINRAMSRBEMMAURLhasbeenadded.ItisusedtospecifytheURLlinktothe
+appropriatewebsites:FINRAorMSRB.SeeNote174.
+SWIFTUpdates
+ThedatatypefortheResearchAmountfieldshaschangedfromCHARorRSCHinthefollowingmessages:
+TradeSuiteID-SWIFTIntegrationGuide
+Preface 23
+
+---
+
+## Page 24
+
+l MT515
+l MT541
+l MT543
+AdditionalChanges
+Thefollowingaditionalchangeshavebeenmade:
+l InSubsequenceC1-ConfirmationParties,>>(C1)ClearingBlock(outputonly):
+o Field16R,haschangedfrombothInputandOutput(Both)toOutputonly.Additionalinformation
+isavailableinNote1.
+o Field95ShaschangedfrombothInputandOutputtoOutputonly.Additionalinformationisavail-
+ableinNote45.
+o Field97AhaschangedfromInputandOutput(Both)toOutputonly.Additionalinformationis
+availableinNote46.
+o Field16ShaschangedfromInputandOutput(Both)toOutputonly.Additionalinformationis
+availableinNote47.
+l InSubsequenceD1-SettlementPartiesBlock,>>(D1)ClearingAgentblock(outputonly),thefol-
+lowingfieldshavechangedfromInputandOutput(Both)toOutputonly.
+o Field16R.AdditionalinformationisavailableinNote1.
+o Field95Ror95P.AdditionalinformationisavailableinNote175.
+o Field97A.AdditionalinformationisavailableinNote177.
+o Field16S.AdditionalinformationisavailableinNote1.
+Theappearanceandlayoutofthisdocumenthavealsobeenupdatedtoensureconsistencyacross
+[[DTCC]].
+TradeSuiteID8.0.4(previouslycommunicatedchanges)
+Tocomplywiththemarketsinfinancialinstrumentsdirective(MiFIDII)regulationsandallowforgreater
+transparencyacrossthetradingprocess,thefollowingchangeshaveoccurredthisrelease:
+l LocalTaxfieldhasbeenreplacedwiththeResearchAmountfield,andtheLOCLqualifierusedinthe
+originalLocalTaxfieldhasbeenreplacedwiththeCHARqualifierinthisResearchAmountfieldinthe
+TradeSuiteID-SWIFTIntegrationGuide
+Preface 24
+
+---
+
+## Page 25
+
+followingSWIFT messages:
+o ForSWIFT MT515tradeconfirmationmessages,seeSubsequenceD3–AmountsandNote187
+onpage 222.
+o ForSWIFT MT541receivesecuritiesagainstpaymentmessages,seeSequenceE3–Amounts
+andNote34onpage 287.
+o ForSWIFT MT543deliversecuritiesagainstpaymentmessages,seeSubsequenceE3–
+AmountsandNote34onpage 324
+l UpdatedtheC020andS020errorcodesrelatedtotheresearchamount.SeeErrorCodes.
+InadditiontotheMiFID II initiativechanges,theappearanceandlayoutofthedocumentationhaschanged
+toensureconsistencyacrossDTCC.
+TradeSuiteID8.0.3(previouslycommunicatedchanges)
+UpdatestothenotesforthefollowingfieldspecificationsforMT515TradeConfirmationmessages:
+l Note65:Field22F:InterestPaymentCalendarFrequency
+l Note121:Field13B:SubjecttoFederalTax
+l Note122:Field13B:AlternateMinimumTax
+TradeSuiteID8.0.2(previouslycommunicatedchanges)
+l ModifiedlinkstothedocumentationtoenableaccesstothenewlydesignedDTCCLearningCenter.
+l RevampedtheappearanceandlayoutofthedocumentationtoensureconsistencyacrossallDTCC
+applications.
+TradeSuiteID8.0.1(previouslycommunicatedchanges)
+l InMT515messages,addedtheVendorControlIDfieldinSequenceC–ConfirmationDetails.
+TradeSuiteID8.0(previouslycommunicatedchanges)
+l InMT515messages,supportisavailableinTradeSuiteID8.0forthefollowingfields:
+l Long/ShortIndicator(C/TECO/22F)
+l [[ID]] NetDisclosureLines1 andLine2
+l TradeSuiteOperatingProceduresGuideLink(C1/DECL/70E)
+TradeSuiteID-SWIFTIntegrationGuide
+Preface 25
+
+---
+
+## Page 26
+
+l CommissionEquivalent(C/CERT/13B)
+l TradeSuiteOperatingProceduresGuideReferenceNumber(C/CERT/13B)
+l InMT515messages,TradeSuiteIDcorrectedthefieldorderandtypingmistakesintheCERTfields
+(C/CERT/13B).
+l InMT541andMT543messages,TradeSuiteIDallowstheAgentInternalAccountNumberfieldtocon-
+tainupto35characters(C/FICA/97A).
+RelatedDocumentsandTraining
+Forrelateddocumentsandtraining,seeTradeSuiteID®ontheDTCCLearningCenter.
+Questions?
+TheClientCenterprovidesgeneralassistanceandtechnicalhelp.Visitto:
+l Enteraservicerequestorcheckthestatusofanexistingservicerequest.
+l Searchtheknowledgebase.
+l Obtaincontactinformation.
+TradeSuiteID-SWIFTIntegrationGuide
+Preface 26
+
+---
+
+## Page 27
+
+1.TRADESUITEIDANDSWIFT
+ThissectiondescribestherelationshipbetweentheTradeSuiteIDserviceandSWIFT.Italsocontainsa
+descriptionoftheformattingconventionsusedinthisguide.
+TradeSuiteIDMessaging
+TheDepositoryTrustCompany([[DTC]])joinedSWIFTin1995asanelectronictradeconfirmation(ETC)
+vendor.Inthesameyear,DTCdevelopedthecapabilityofprocessingtradeinitiationandconfirmation
+series2messages(theMT51xseriesofmessages).InNovember1997,series3messagesreplacedthe
+series2messages.
+TheTradeSuiteIDserviceandSWIFTclientscancommunicatewitheachotherthroughtheTradeSuite
+[[ID]]/SWIFTInterface.DTCCclientscancontinuetousetheTradeSuiteIDsuiteofproductsthroughthe
+DTCCnetwork.WithSWIFT,youcanaccesstheTradeSuiteIDservicethroughFINandusetheMT5xx
+messages.
+DTCChasmappedeachcorrespondingmessagetypelistedinTable1.1withtheassistanceoftheSWIFT
+standardsdepartment.DTCCconvertseachmessagefromthesendertothereceiver(fromSWIFTtothe
+TradeSuiteIDformatandfromtheTradeSuiteIDservicetoSWIFTformat).Asaresult,youcansendand
+receivemessagesinyourchosenformats.
+Table1.1showstheTradeSuiteIDconfirm,affirmation,andsettlementinstructionsavailablethroughthe
+SWIFTinterface.
+SWIFTMessage TradeSuiteIDProduct
+MT509-TradeStatusMessages Forequivalentdetails,seeFigure1.1.
+MT515-TradeConfirmationMessages TradeConfirmation
+MT517-TradeAffirmationMessages Affirmation
+MT541-ReceiveSecuritiesAgainstPaymentMessages Paymentinstructions
+MT543-DeliverSecuritiesAgainstPaymentMessages Deliveryinstructions
+Table1.1SWIFTmessagesandCorrespondingTradeSuiteIDProducts
+ThisguidedescribesindetaileachSWIFTmessageandthevaluesforitscorrespondingcounterpartat
+[[DTCC]].ThesectionspresentspecificationsforeachSWIFTmessage.Specificationsincludeformat,
+definition,andspecificrequirementsfortheinputfieldsforeachSWIFTmessage.Theyalsoincludesthe
+fieldsyoureceiveandthefieldsthatDTCCcanprocess.Theappendicesprovideerrorcodes,suchas
+cancellation,rejection,andsettlementcodes.Formoreinformation,seeErrorCodes
+TradeSuiteID-SWIFTIntegrationGuide
+1.TradeSuiteIDAndSWIFT 27
+
+---
+
+## Page 28
+
+Toassuresuccessfulprocessingofeachmessage,adheretothecodewordsandformattingrequirements
+usedinthisguide.ForSWIFTmessagestandard,seetheSWIFTUserHandbookforcodewordsand
+formattingrequirementsonlywhendirected.
+Figure1.1showstheTradeSuiteIDmessagingintheDTCproprietaryformat.
+Figure1.1TradeSuiteIDMessagingintheDTCProprietaryFormat
+Figure1.2showstheTradeSuiteIDmessagingintheSWIFT format.
+TradeSuiteID-SWIFTIntegrationGuide
+1.TradeSuiteIDAndSWIFT 28
+
+---
+
+## Page 29
+
+Figure1.2TradeSuiteIDMessagingintheSWIFTFormat
+ConventionsUsedinThisGuide
+Table1.2showstheconventionsusedinthisguide.
+ConventionDescription
+Mandatoryfield IfDTCCandSWIFTbothdesignateafieldasmandatory,thefieldismandatory.Ifonlyoneofthe
+formatsdesignatesafieldasmandatory,thefollowingapplies:
+l Fieldismandatory.
+l Formatrequiringthemandatoryfieldappearsinparentheses,suchasMan-
+datory([[DTCC]]).
+Foranexample,seeNote16:Field94B:PlaceofTradeorExchangeonpage 106
+Ifasubsequencecontainsafieldthatismandatory,includetheentiresubsequenceforDTCC.For
+moreinformation,seeFormatSpecifications
+Conditionalfield Forrequiredfieldsthatcontainasecondfield,thefielddisplaysasconditional.Whenonlyoneof
+theformatsdesignatesafieldasconditional,thefollowingapplies:
+l Fieldisconditional.
+l Formatrequiringtheconditionalfieldappearsinparentheses,suchasCondi-
+tional([[DTCC]]).
+Table1.2ConventionsUsedinThisGuide
+TradeSuiteID-SWIFTIntegrationGuide
+1.TradeSuiteIDAndSWIFT 29
+
+---
+
+## Page 30
+
+ConventionDescription
+Fieldformat Mostgenericfieldscompriseofsomeorallofthefollowingsegments:
+<qualifier><usercode><fieldcontent>
+ThefielddescriptionsfoundinthefieldSpecificationssectionofthisguideusethefollowing
+conventionstoillustrateexamples:
+l <qualifier>
+Thequalifierisamandatory,four-character,fixed-lengthsegmentthatidentifiesthe
+businesssignificanceofthedata.
+Forexample,<TRTR>isthetradetransactiontypeand<PRIC>isthetypeofprice
+identifiedinthedealprice.
+<TRTR>/<DTCY>/<SUBS>
+<PRIC>//<NET1>
+l <usercode>
+Theusercodeisoptionalandcancontainuptoeightcharacters.Whenthefieldcontent
+segmentcontainsDTCCvalues,thisfieldappearsas:
+/<DTCY>/or /<DTCYxxxx>/:
+<TRTR>/<DTCY>/<SUBS>
+<CERT>/<DTCYEST>/<securitytype>
+WhenthefieldcontentsegmentcontainsSWIFTvalues,thesegmentcontainseithera
+singleslash(/)ordoubleslashes(//):
+<LINK>//<515>
+l <fieldcontent>
+Thefieldcontentsegmentcontainstheactualdatavalues.Thecontentofthissegment
+dependsonthequalifier.
+<SETT>//<yyyymmdd>
+<DEAL>//<ACTU>/<isocurrency><price>
+Whenasegmenthasonlyonepossiblevalue,theactualvalueappearsinupper-case
+characters.Whenasegmenthasseveralpossiblevalues,adescriptionofthesegment
+displaysinlowercasecharacters.
+<PSET>/<DTCY>/<settlementlocation>
+Table1.2ConventionsUsedinThisGuide
+TradeSuiteID-SWIFTIntegrationGuide
+1.TradeSuiteIDAndSWIFT 30
+
+---
+
+## Page 31
+
+ConventionDescription
+Sequenceor
+subsequence
+blocks
+Messagescompriseoforderedblocksofinformationcalledsequencesandsubsequencesthat
+aremandatoryoroptional,dependingonthecontent.
+l Mandatory
+Sequenceorsubsequenceexistsandoccursonceineachmessage.
+l RepetitiveMandatory
+Sequenceorsubsequenceexistsinthemessageatleastonceandmultiplerepetitionsare
+possible.
+l Optional
+Sequenceorsubsequenceisoptionalinthemessage,butcanoccuronlyonce.
+l RepetitiveOptional
+Sequenceorsubsequenceisoptionalinthemessageandmultiplerepetitionsare
+available.
+l Conditional
+Sequenceorsubsequencecanbemandatoryoroptionaldependingoncertainconditions.
+l RepetitiveConditional
+Sequenceorsubsequenceisconditionalinthemessageandmultiplerepetitionsare
+available.
+Mandatory
+sequenceorsub-
+sequences
+Ifasubsequencecontainsafieldthatismandatory,includetheentiresubsequenceforDTCC.In
+addition,includetheoverallsequencecontainingthatsubsequence.Forexample,sequenceDin
+MT515messagescontainsnomandatoryfieldsforDTCC.However,subsequenceD1containsa
+mandatoryfieldforDTCC,thePrimaryIDNumberfield.Thismandatoryfieldmeanssubsequence
+D1isalsomandatoryforDTCC.Furthermore,theentiresequencecontainingSubsequenceD1,
+includingsequenceD,isalsomandatoryforDTCC.
+Table1.2ConventionsUsedinThisGuide
+TradeSuiteID-SWIFTIntegrationGuide
+1.TradeSuiteIDAndSWIFT 31
+
+---
+
+## Page 32
+
+ConventionDescription
+Optional
+sequenceorsub-
+sequences
+Thesequenceorsubsequenceisoptional.Whenyouusethesequenceorsubsequence,include
+anyfieldsthatSWIFTdesignatesasmandatoryforthatparticularsequenceorsubsequence.On
+output,youcanacceptallsequenceorsubsequencescodedforinput.
+Formattingnota-
+tions TradeSuiteIDusesthefollowingSWIFTconventionsforfieldnotations:
+n    Digits(0–9)
+d    Digits(0–9)withadecimalcomma.Themaximumlengthincludesthe
+decimalcomma.
+a    (A–Z),uppercaseonly
+c    Alphanumeric,uppercaseonly
+x    Anycharacter(uppercaseorlowercase)ofthepermittedcharacterset
+(EBCDIC).
+!    Fixed-lengthfield
+e    Blankorspace
+:    Genericfieldmarker.Indicatesthestartofagenericfield.Includethecolon
+(:)inthefirstfieldposition.
+:Fieldtagdelimiter.Thefirstcolonidentifiesthebeginningofthefield.The
+secondcolonseparatesthefieldtagfromthefollowingfieldelements.
+/    Issuercodedelimiter.Beginandendtheissuercodewithaslash(/).
+[…]    Optionaldatafield.Informationwithinbracketsisoptionaloromitted.
+[N]    Sign(+or-).EnteronlypositivenumbersinmostfieldsforTradeSuiteID
+processing.
+8    Repetitivesequence.Indicatesthatitispossibletorepeatasequencea
+numberoftimes.However,proceedeachrepetitionwithaStart-of-Block
+(16R)fieldtagandconcludeeachrepetitionwithanEnd-of-Block(16S)tag.
+4    Repetitivefieldwithinsequence.Repeatthefieldtagasindicatedinthe
+fieldSpecificationssection.
+Table1.2ConventionsUsedinThisGuide
+TradeSuiteID-SWIFTIntegrationGuide
+1.TradeSuiteIDAndSWIFT 32
+
+---
+
+## Page 33
+
+2.MT509- TRADESTATUSMESSAGES
+ThissectiondescribestheSWIFTMT509inputandoutputstatusmessages.
+InputandOutputMessages
+TheSWIFTSeries3TradeInitiationandConfirmation(TIC3)standardsrequireDTCCtorespondthrough
+MT509toacknowledgesuccessfulreceiptofcancellation,rejection,andaffirmationmessages.MT509
+tradestatusmessagesalsoinformthesenderthatpreviouslysentMT515orMT517messagesareinerror
+statusand,therefore,notprocessed.
+SentFromDTCCtotheUser(Output)
+DTCCsendsMT509statusmessagestotheuser.Thesestatusmessagesincludeacknowledgments,
+statusmessages,andwarningmessages.
+l Acknowledgment:DTCCreturnstothesenderanMT509Acknowledgmentmessageadvisingofsuc-
+cessfulcancellationofMT515messageandreceiptofMT517affirmationmessages.
+l Status:AnMT509AffirmedConfirmationstatusmessageisavailableforuserselectingtoreceive
+them.
+l Editreject:AsenderreceivesanunsolicitedMT509statusmessagewhenaTIC3messagefails
+SWIFTsnetworkvalidationoroneoftheDTCCvalidationroutines.Thesendercanalsoreceiveacopy
+ofthecanceledmessage.
+l Warning:AsenderreceivesawarningmessageregardingincompletetransmissionsandDTCEdit
+Rejectionforallmessagetypes.
+[[Broker]]/dealersorinvestmentmanagers,whosubmitcancellationsandrejectionsthroughDTCCand
+receiveoutputthroughSWIFT,receiveonlythecancellationmessage.
+InputMessageStatus
+ToconfirmsuccessfulprocessingoftheMT509rejectionmessage,electtohaveanMT509rejection
+statusmessagereturned.Inaddition,sendermessagesthatfailvalidationbyDTCCreceiveanMT509
+editerrormessage.
+TradeSuiteID-SWIFTIntegrationGuide
+2.MT509- TradeStatusMessages 33
+
+---
+
+## Page 34
+
+OutputTradeStatus
+DTCCsendsanMT509acknowledgmentmessageto
+l InvestmentmanagerforsuccessfulreceiptofanMT517tradeaffirmationmessage.
+l OtheraffirmingpartiesforsuccessfulreceiptofanMT517tradeaffirmationmessage.
+IfMT517affirmationmessagesfailvalidationbyDTCC,theinvestmentmanagerandotheraffirming
+partiesreceiveMT509editerrormessages.
+FormatSpecifications
+TheSWIFTTIC3messagesconsistofaseriesoflinkingblockscontainingrelatedinformation.These
+blocks,calledsequencesandsimilartomathematicalequations,haveanopeningbracket(16R:Start-of-
+Block)andaclosingbracket(16S:End-of-Block).Usetheblockstogrouprelatedinformationby
+sequencesandspecificrepetitivefieldstohelpmaintaintheirbusinessrelationship.Theassignedvalues
+identifythetypeofinformationcontainedwithintheblock.
+Table2.1showsthesequencesandvaluesusedtoconstructanMT509statusmessage.
+Sequence Description Value
+A Generalinformation GENL
+>>A1 Linkage LINK
+>>A2 Status STAT
+>>A2a Reason REAS
+B Partialfilldetails
+DTCCdoesnotusethissequence.
+PAFILL
+B1 Financialinstrumentattributes
+DTCCdoesnotusethissequence.
+FIA
+Table2.1Sequences
+Thetablesinthissectionincludesomesymbolsandkeylettersthatindicatesequenceandfieldconditions
+orrules.Herearethedescriptionsofthesymbolsandkeyletters.
+TradeSuiteID-SWIFTIntegrationGuide
+2.MT509- TradeStatusMessages 34
+
+---
+
+## Page 35
+
+l M=Mandatory
+l O=Optional
+l C=Conditional
+l –=Nocorrespondingfield
+l >> =Repetitivesequencethatrequiresastart-of-blockandend-of-blockfieldtags
+l >=Repetitivefieldwithinasequence
+Note
+Whenthemandatory(M),optional(O),orconditional(C)specificationappearsintheSWIFTorDTCC
+columnsforbothinputandoutputmessages,thespecificationappliesonlytoinputmessages.
+FieldSpecificationsforMT509–InputMessages
+ThissectiondescribesthefieldspecificationsfortheMT509inputmessages.
+NoteforStartandEndofBlockDelimiters
+EachsequenceandsubsequenceopenswithaStart-of-BlockfieldandcloseswithanEnd-of-Blockfieldto
+delimittheinformation.Acarriagereturn/linefeed(CRLF)delimitseachSWIFTfield/line.Formore
+informationabouttheblocksandtheiraccompanyingvalues,seeMT509–InputMessages.
+Note1:Start-of-BlockandEnd-of-Block
+Hereisthestart-of-blockandend-of-blockformattoopenandcloseeachsequenceandsubsequence.
+Format 4c
+Examples :16R:GENL
+:16S:GENL
+NotesforSequenceA–GeneralInformation
+ThissectioncontainsthenotesaboutthemandatorygeneraluserinformationforsequenceA.
+TradeSuiteID-SWIFTIntegrationGuide
+2.MT509- TradeStatusMessages 35
+
+---
+
+## Page 36
+
+Note2:Field20C:SenderReferenceorDTCControlNumber
+Forinputmessages,field20Cindicatesthe16-byteuserreferencenumberthatthesenderassignsto
+identifythemessage.
+Format :4!c//16x
+<SEME>//<senderreferencenumber>
+SEME Senderreferencenumber
+Example :20C::SEME//REFNUM7890123456
+Table2.2showsthereferencenumberlengthsusedinfield20C.
+Length Description
+16x Brokernoticeoforderexecutionreferencenumber.
+16x InvestmentmanagerIIreferencenumber.
+12x Brokerconfirmnumber.
+16x Affirmerreferencenumber.
+Table2.2ReferenceNumberLengthsforField20C
+Note3:Field23G:MessageType
+Field23Gindicatestheprocessingstatusofthemessage.
+Format :4!c[/4!c]
+<messagetype>
+Example :23G:INST
+Table2.3showsthequalifiersusedinfield23G.
+Qualifier Description
+CAST Statusofthecancellationrequestforoutputmessagesonly.
+INST Statusoftransaction.
+Table2.3QualifierforField23G
+TradeSuiteID-SWIFTIntegrationGuide
+2.MT509- TradeStatusMessages 36
+
+---
+
+## Page 37
+
+NotesforSubsequenceA1–Linkage
+SubsequenceA1isamandatorysequencethatlinksthecurrentmessagetotheunderlyingrejected
+message.OnesubsequenceA1isnecessaryforDTCCeditrejections,acknowledgments,affirmations,
+andwarningmessages.AllaffirmationMT517messagesuseanextraA1subsequencelinkingthe
+underlyingconfirmationMT515.FielddefinitionsforthesecondA1subsequenceimmediatelyfollowthis
+sequence.
+Note4:Field13A:LinkedTransaction
+Field13AlinkstheMT509messagetoanunderlyingMT515orMT517messagetype.
+Format :4!c//3!c
+<LINK>//<messagetypenumber>
+Example :13A::LINK//515
+Table2.4showsthetransactiontypesusedinfield13A.
+TransType MessageDescription
+515 Confirmationandaffirmed/confirmationstatusmessage
+517 Affirmation
+Table2.4TransactionTypesforField13A
+Note5:Field20C:LinkReference
+Field20C,theLinkreferencefield,containstheuserreferencenumberassignedtotheoriginalmessage.
+Format :4!c//16x
+<qualifier>//<referencenumber>
+Example :20C::COMM//BLOCKREF7890
+Table2.5showsthereferencenumbertypesusedinfield20C.
+TradeSuiteID-SWIFTIntegrationGuide
+2.MT509- TradeStatusMessages 37
+
+---
+
+## Page 38
+
+MessageType ReferenceNumber
+MT509-Confirmstatus Brokerconfirmnumber(12x).
+MT515-Confirm Brokerconfirmnumber(12x).
+MT517-Affirm Affirmreferencenumber(16x).
+Table2.5ReferenceNumberTypesforField20C
+Table2.6showsthequalifiersusedinfield20C.
+Qualifier Length Usefor
+COMM// 16x l MT515acknowledgmentofthe
+brokernoticeoforderexecution
+reference.
+l MT515cancellationofthe
+matchedaffirmed(Allocation
+DetailReferenceandBrokerCon-
+firmNumberReference).
+l MT515acknowledgmentofthe
+matchedaffirmed(BrokerCon-
+firmReference,output).
+TRRF// 16x l MT515cancellationofthe
+matchedaffirmed(Allocation
+OrderRoutingReference,out-
+put).
+l MT515acknowledgmentofthe
+matchedaffirmed(Allocation
+OrderRoutingNumber,output).
+CPRC// 16x l MT515systemrejectionofthe
+cancellation(output).
+Table2.6QualifiersforField20C
+NotesforsubsequenceA2–StatusAcknowledgments,Warnings,andDTCEdit
+RejectionMessages
+SubsequenceA2isarequiredsequenceforallmessageandprocessingtypes(exceptacknowledgments,
+affirmations,andMT509affirmed/confirmationstatusonoutputmessages).Thissubsequenceindicates
+thestatusoftheoriginalmessage.
+TradeSuiteID-SWIFTIntegrationGuide
+2.MT509- TradeStatusMessages 38
+
+---
+
+## Page 39
+
+Note6:Field25D:StatusCode
+Field25DreportsthestatusoftheoriginalmessageidentifiedinsubsequenceA1.
+Format :4!c/[8c]/4!c
+<qualifier>//<status>
+IPRC Messagecontainsthestatusoftheuserinstructions.
+Examples :25D::IPRC//REJT
+:25D::AFFM//NAFI
+:25D::CPRC//CANP:25D::///REJT
+Table2.7showsthequalifiersandstatesusedinfield25D.
+Qualifier Status Description
+IPRC REJT DTCCeditreject(new/receipt).
+CPRC REJT DTCCeditreject(cancel).
+AFFM NAFI DTCCeditreject(affirm).
+CPRC REJT 515notcanceled.
+CPRC CANP Match/affirmed(notcanceled).
+CPRC CAND Acknowledgment—515cancellation.
+IPRC REJT Acknowledgment—517affirmation.
+AFFM AFFI 509affirmed/confirm.
+REJT Userrequestfortherejectionstatus.
+Table2.7QualifiersandStatesforField25D
+NotesforsubsequenceA2a–ReasonforEditRejectionsandWarnings
+SubsequenceA2aisaconditionalsubsequenceforallmessageandprocessingtypes.Thefieldscontain
+messagestatusesandDTCCerrorcodesforrejectedtransactions.DTCCrequiresthisblockwhen
+rejectingatransaction.Formoreinformationaboutcancellationandrejectioncodes,seeErrorCodeson
+page 328.
+TradeSuiteID-SWIFTIntegrationGuide
+2.MT509- TradeStatusMessages 39
+
+---
+
+## Page 40
+
+Note7:Field24B:RejectReasonCode
+Field24Bmustcontainarejectreasoncodefortherejectedmessage.Inmostcasesthatrequirefield24B,
+thevalueisREJTwiththefollowingexceptions:
+l MT509acknowledgmentofuserrejectionoftheMT513andMT514messagescontainsafour-byte
+rejectionreasoncodeinsteadofREJT.
+l MT509institutionwarningofanincompletesetofinstructionshasareasoncodevalueofN020.
+Format(input) :4!c/8c/4!c
+<REJT>/<DTCY>/<Rnnn>
+REJT Rejectreason
+Example :24B::REJT/DTCY/R001
+Note8:Field70D:EntityIdentifiersandDTCCReasonErrorCode/DescriptionInvestmentManager
+andExecutingBrokerIdentifiers
+Field70Dcontainsthetradingentities,investmentmanager,andeitherexecutingbroker/dealerorbranch
+office.Foreachline,enteranDTCCnumber,DTCCnumberandbusinessidentifiercode(BIC)number,or
+BICnumber.Field70Dcanalsodisplaythewarningmessageforincompleteallocationsets.
+Format :4!c//6*35x
+<REAS>//<INVE/[[[DTC]]/identifierBIC/identifier]>
+<counterparty/[[[DTC]]/identifierBIC/identifier]>
+Line1 InstitutionDTCID8nand/orBIC11x
+Line2 [[Broker]](orBranch)DTCID8nand/orBIC11x
+Example :70D::REAS//INVE/[[DTC]]/12345678
+BIC/INSTUK54xxx
+SELL/BIC/BRKRUS02xxx
+TradeSuiteID-SWIFTIntegrationGuide
+2.MT509- TradeStatusMessages 40
+
+---
+
+## Page 41
+
+MT509- OutputMessages
+ThissectionprovidesinformationabouttheMT509outputstatusmessages.
+SequenceA–GeneralInformation
+Table2.8showsthemandatorygeneraluserinformationforMT509outputmessages.
+Field
+Tag
+[[DTCC]]
+Value
+SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+16R GENL 4c StartofGeneralInform-
+ationBlock
+M – Output SeeNote1:Start-of-Block
+andEnd-of-Block.
+20C SEME//9x :4!c//16x DTCControlNumber M M Output SeeNote2:Field20C:[[DTC]]
+ControlNumber.
+23G CAST
+INST
+:4!c[/4!c] MessageType M M Output SeeNote3:Field23G:Mes-
+sageType.
+Table2.8SequenceA–GeneralInformation
+SubsequenceA1–LinktoOriginalMessage
+Table2.9showstheA1subsequencelinkstotheoriginalmessageforallmessagestypes.
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+16R LINK 4c StartofLinkageBlock M – Output SeeNote1:Start-of-
+BlockandEnd-of-Block.
+13A LINK//515
+LINK//517
+:4!c//3!c UnderliningMessage
+Type
+– – Output SeeNote4:Field13A:
+UnderliningMessage
+Type.
+Table2.9SequenceA1–LinktoOriginalMessage
+TradeSuiteID-SWIFTIntegrationGuide
+2.MT509- TradeStatusMessages 41
+
+---
+
+## Page 42
+
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+20C COMM//16x
+ALMR//16x
+MAST//16x
+BMRB//16x
+TRRF//16x
+CPRC//16x
+:4!c//16x LinkorUser
+referencenumber
+assignedtooriginal
+message
+M M Output SeeNote5:Field20C:
+LinkorUserreference
+numberassignedtoori-
+ginalmessage.
+16S LINK 4!c EndofLinkageBlock M M Output SeeNote1:Start-of-Block
+andEnd-of-Block.
+Table2.9SequenceA1–LinktoOriginalMessage
+Note
+Theoutputmessagesforaffirmation(MT517)editrejectionandacknowledgmentmessagetypes
+requiresasecondA1subsequence.ThesecondA1subsequencelinkstheMT517messagetoan
+MT515message.ThesecondA1subsequenceisthesameasthefirstA1subsequence.Thesub-
+sequencecontainsanDTCCvalueofLINK//515forfield13AandCOMM//9xforfield20C.
+SubsequenceA2–StatusAcknowledgments,Warnings,andDTCEditRejection
+Messages
+Table2.10showsthestatusacknowledgments,warnings,andDTCeditrejectionmessagesfor
+subsequenceA2.
+TradeSuiteID-SWIFTIntegrationGuide
+2.MT509- TradeStatusMessages 42
+
+---
+
+## Page 43
+
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldNameSWIFT [[DTCC]] Input
+Output
+Notes
+16R STAT 4c Startof
+StatusBlock
+M M Output SeeNote1:Start-of-Block
+andEnd-of-Block.
+25D Reject:
+CPRC//REJT
+AFFM//NAFI
+CPRC//REJT
+CPRC//CANP
+Acknowledgment:
+CPRC//CAND
+AFFM//AFFI
+Status:
+AFFM/AFFI
+Warningmessage:
+IPRC//UNDE
+:4!c/[8c]/4!cStatusCode – – Output SeeNote6:Field25D:
+StatusCode.
+Table2.10SequenceA2–StatusAcknowledgments,Warnings,andDTCEditRejectionMessages
+SubsequenceA2a–ReasonforEditRejectionsandWarnings
+Table2.11showsthemandatoryreasonsforeditrejectionsandwarningsforsubsequenceA2a.Formore
+informationaboutcancellationandrejectioncodes,see,ErrorCodesonpage 328.
+Field
+Tag
+DTCCValue SWIFT
+Format
+Field
+Name
+SWIFT [[DTCC]] Input
+Output
+Notes
+16R REAS 4c Startof
+Reason
+Block
+M – Output SeeNote1:Start-
+of-BlockandEnd-
+of-Block.
+24B REJT/DTCY/REJT
+NAFI/DTCY/REJT
+REJT/DTCY/Rnnn
+NMAT//Nnnn
+:4!c/[8c]/4!c Rejected
+Reason
+Code
+M – Output SeeNote7:Field
+24B:Rejection
+ReasonCode.
+Table2.11MandatorySubsequenceA2a–ReasonforEditRejectionsandWarnings
+TradeSuiteID-SWIFTIntegrationGuide
+2.MT509- TradeStatusMessages 43
+
+---
+
+## Page 44
+
+Field
+Tag
+DTCCValue SWIFT
+Format
+Field
+Name
+SWIFT [[DTCC]] Input
+Output
+Notes
+70D REAS//5*8x/21x :4!c//6*35xDTCC
+ErrorCode
+O M Output SeeNote8:Field
+70D:EntityIden-
+tifiersandDTCC
+ReasonError
+Code/Description
+InvestmentMan-
+agerandExecuting
+BrokerIdentifiers
+(subsequence
+A2a).
+INVE/[[[DTC]]/
+8n1!eBIC/11x]
+O M Output
+Oneofthefollowing
+values:
+l SELL/
+[[[DTC]]/8n1!eBIC/11x]
+l BUYR/
+[[[DTC]]/8n1!eBIC/11x]
+l SERV/
+[[[DTC]]/8n1!eBIC/11x]
+M M Output
+16S REAS 4c Endof
+Reason
+Block
+M M Output SeeNote1:Start-
+of-BlockandEnd-
+of-Block.
+Table2.11MandatorySubsequenceA2a–ReasonforEditRejectionsandWarnings
+Table2.12showsthestatusacknowledgments,warnings,andDTCeditrejectionmessagesforsequence
+A2.
+Field
+Tag
+[[DTCC]]
+Value
+SWIFT
+Format
+FieldName SWIFT [[DTCC]] InputOut-
+put
+Notes
+16S STAT 4c EndofStatus
+Block
+M – Output SeeNote1:Start-of-Blockand
+End-of-Block.
+Table2.12MandatorySequenceA2-StatusAcknowledgments,Warnings,andDTCEditRejections
+Table2.13showsthemandatorygeneralinformationforsequenceA.
+Field
+Tag
+[[DTCC]]
+Value
+SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+16S GENL 4c EndofGeneralInform-
+ationBlock
+M – Output SeeNote1:Start-of-Block
+andEnd-of-Block.
+Table2.13MandatorySequenceA–GeneralInformation
+TradeSuiteID-SWIFTIntegrationGuide
+2.MT509- TradeStatusMessages 44
+
+---
+
+## Page 45
+
+FieldSpecificationsforMT509–OutputMessage
+ThissectiondescribesthefieldspecificationsfortheMT509outputmessages.
+NoteforStartandEndofBlockDelimiters
+EachsequenceandsubsequenceopenswithaStart-of-BlockfieldandcloseswithanEnd-of-Blockfieldto
+delimittheinformation.Acarriagereturn/linefeeddelimitseachSWIFTfield/line.Formoreinformation
+abouttheblocksandtheiraccompanyingvalues,seeMT509-OutputMessagesonpage 41.
+Note1:Start-of-BlockandEnd-of-Block
+Hereisthestart-of-blockandend-of-blockformattoopenandcloseeachsequenceandsubsequence.
+Format 4c
+Example :16R:GENL
+:16S:GENL
+NotesforSequenceA–GeneralInformation
+ThissectioncontainsthenotesaboutthemandatorygeneraluserinformationforsequenceA.
+Note2:Field20C:DTCControlNumber
+Foroutputmessages,anine-digitDTCcontrolnumber,appropriateforthemessagetype.WhenDTCCis
+unabletogenerateamessagecontrolnumber,theTradeSuiteIDserviceusesthereferencenumberof
+theunderlyingmessage.
+Format :4!c//16x
+<SEME>//<senderreferencenumber>
+SEME DTCcontrolnumber
+Example :20C::SEME//123456789
+Table2.14showsthereferencenumberlengthusedinfield20C.
+TradeSuiteID-SWIFTIntegrationGuide
+2.MT509- TradeStatusMessages 45
+
+---
+
+## Page 46
+
+Length Description
+9x DTCcontrolnumber.
+Table2.14Referencenumberlengthforfield20C
+Note3:Field23G:MessageType
+Field23Gcontainstheprocessingstatusofthemessage.
+Format :4!c[/4!c]
+<messagetype>
+Example :23G:INST
+Table2.15showsthequalifiersusedinfield23G.
+Qualifier Description
+CAST Statusofthecancellationrequest(outputonly).
+INST Statusofthetransaction.
+Table2.15Qualifiersforfield23G
+NotesforSubsequenceA1–Linkage
+SubsequenceA1isamandatorysequencethatlinksthecurrentmessagetotheunderlyingrejected
+message.OnesubsequenceA1isnecessaryforDTCCeditrejections,acknowledgments,affirmations,
+andwarningmessages.AllAffirmationMT517messagesuseanextraA1subsequencelinkingthe
+underlyingconfirmationMT515message.FielddefinitionsforthesecondA1subsequenceimmediately
+followthissequence.
+Note4:Field13A:UnderliningMessageType
+Field13AlinkstheMT509toaMT515orMT517underliningmessagetype.
+Format :4!c//3!c
+<LINK>//<messagetypenumber>
+Example :13A::LINK//515
+Table2.16showsthetransactiontypesusedinfield13A.
+TradeSuiteID-SWIFTIntegrationGuide
+2.MT509- TradeStatusMessages 46
+
+---
+
+## Page 47
+
+TransType MessageDescription
+509 Affirmedconfirmedmessage.
+515 Confirmationandaffirmed/confirmationstatusmessage.
+517 Affirmationmessage.
+Table2.16TransactionTypesforField13A
+Note5:Field20C:LinkorUserreferencenumberassignedtooriginalmessage
+Field20Ccontainstheuserreferencenumberassignedtotheoriginalmessage.
+Format :4!c//16x
+<qualifier>//<referencenumber>
+Example :20C::BMRB//BLOCKREF7890
+Table2.17showstheappropriatereferencetypeandvalues.
+MessageType ReferenceNumber Length
+MT509-ConfirmStatus Brokerconfirmnumber 12x
+MT515-Confirm Brokerconfirmnumber 12x
+MT517-Affirm Affirmerreferencenumber 16x
+Table2.17ReferenceNumberTypesforField20C
+TradeSuiteID-SWIFTIntegrationGuide
+2.MT509- TradeStatusMessages 47
+
+---
+
+## Page 48
+
+Table2.18showsthequalifiersusedinfield20C.
+Qualifier Length Usefor
+COMM// 16x l MT515systemrejectionofthebrokernotice
+oforderexecutionreferenceinput.
+l MT515cancellationofthebrokernoticeof
+orderexecutionreference.
+l MT515acknowledgmentofthebroker
+noticeoforderexecutionreference.
+l MT515cancellationofthematchedaffirmed
+(AllocationDetailReferenceandBroker
+ConfirmNumberReference).
+l MT515acknowledgmentofthematched
+affirmed(BrokerConfirmReference).
+TRRF// 16x l MT515Cancellationofthematched
+affirmed(AllocationOrderRoutingRefer-
+ence).
+l MT515Acknowledgmentofthematched
+affirmed(AllocationOrderRoutingNum-
+ber).
+CPRC// 16x MT515Systemrejectionofthecancellation.
+Table2.18QualifiersforField20C
+NotesforsubsequenceA2–StatusAcknowledgments,Warnings,andDTCEdit
+RejectionMessages
+SubsequenceA2isarequiredsequenceforallmessageandprocessingtypes(exceptacknowledgments,
+affirmations,andMT509affirmed/confirmationstatusonoutputmessages).Thissubsequenceindicates
+thestatusoftheoriginalmessage.Formoreinformationaboutcancellationandrejectioncodes,seeError
+Codesonpage 328.
+Note6:Field25D:StatusCode
+Field25DreportsthestatusoftheoriginalmessageidentifiedinsubsequenceA1.
+TradeSuiteID-SWIFTIntegrationGuide
+2.MT509- TradeStatusMessages 48
+
+---
+
+## Page 49
+
+Format :4!c/[8c]/4!c
+<qualifier>//<status>
+IPRC Messagecontainsastatusforauserinstruction
+Examples :25D::AFFM//AFFI
+:25D::CPRC//CAND
+:25D::IPRC//REJT
+Table2.19showsthequalifiersandstatesusedinfield25D.
+Notes
+WhenusingREJTinsubsequenceA2a,field24B,useCPRC//REJT,IPRC//REJT,orRPRC//REJTin
+thisfield.
+WhenusingNMATinsubsequenceA2a,field24B,useMTCH//NMATinthisfield.
+WhenusingNAFIinsubsequenceA2a,field24B,useAFFM//NAFIinthisfield.
+Qualifier Status Description
+CPRC REJT Cancelrequestrejected.
+AFFM NAFI Rejected.Notaffirmed.
+CPRC CANP Notcanceled.Tradealreadymatched/affirmed.
+CPRC CAND Acknowledgment—515cancellation.
+AFFM AFFI Acknowledgment—517affirmation.
+AFFM AFFI 509affirmed/confirm.
+Table2.19QualifiersandStatesforField25D
+NotesforsubsequenceA2a–ReasonforEditRejectionsandWarnings
+SubsequenceA2aisaconditionalsubsequenceforallmessageandprocessingtypes.Thefieldscontain
+messagestatusesandDTCCerrorcodesforrejectedtransactions.DTCCrequiresthisblockwhen
+rejectingatransaction.Formoreinformationaboutrejectioncodes,seeErrorCodesonpage 328.
+Note7:Field24B:RejectionReasonCode
+Field24Bmustcontainarejectionreasoncodefortherejectedmessage.Inmostcasesthatrequirefield
+24B,thevalueisREJTwiththefollowingexceptions:
+TradeSuiteID-SWIFTIntegrationGuide
+2.MT509- TradeStatusMessages 49
+
+---
+
+## Page 50
+
+l MT509acknowledgmentofuserrejectionoftheMT513andMT514messagescontainsafour-byte
+rejectionreasoncodeinsteadofREJT.
+l MT509institutionwarningofanincompletesetofinstructionshasareasoncodevalueofN020.
+Format :4!c/[8c]/4!c
+<qualifier>/<DTCY>/<REJT>
+<qualifier>/<DTCY>/<Rnnn>
+<NMAT>//<N020>
+Examples :24B::REJT/DTCY/REJT
+:24B::NAFI/DTCY/REJT
+:24B::NMAT//N020
+Table2.20showsthequalifiersusedinfield24B.
+Qualifier Description
+REJT Reasontheunderlyingmessageisinrejectionstatus.
+NAFI Reasontheunderlyingmessageisinunaffirmedstatus.
+NMAT Reasontheunderlyingmessageisunmatchedorineligibleformatched
+status.
+Table2.20QualifiersforField24B(Output)
+Note8:Field70D:EntityIdentifiersandDTCCReasonErrorCode/DescriptionInvestmentManager
+andExecutingBrokerIdentifiers(subsequenceA2a)
+Field70DcontainstheDTCCeight-bytereasonerrorcode,whichincludestwofour-bytesegments.Bytes
+1–4indicatethefieldwhereanerroroccurred,andbytes5–8describethetypeoferror.Forexample,
+BAAAinthefirstfourpositionsindicatesthatthesettlementdatefieldcontainsaninvalidentry.9AAJinthe
+lastfourpositionsindicatesthattheentrywasnon-numeric,invalid,equaltozero,andsoon.
+Field70Ddisplaysashort(21-byte)descriptionoftheerror.Thefieldcanalsodisplaythewarning
+messageforincompleteallocationsets.
+Format :4!c//6*35x
+<REAS>//<errorcode/description>
+REAS ReasonCodes
+TradeSuiteID-SWIFTIntegrationGuide
+2.MT509- TradeStatusMessages 50
+
+---
+
+## Page 51
+
+Examples :70D::REAS//BAAA9AAJ/SETTLDT LT TRADEDT
+:70D::REAS//INVE/DTC5678BUYR/BICBRKRUK02or
+SERV/BICBRANCH78
+:70D::REAS//LASTRECORDNOTSUBMITTEDFORTHE"SET"
+OF ALLOCATIONS.OUTPUTWILLNOTBE DISTRIBUTEDTO THE
+STEP-IN ANDCLEARINGENTITIESUNTILTHELASTRECORD
+IS RECEIVED
+TradeSuiteID-SWIFTIntegrationGuide
+2.MT509- TradeStatusMessages 51
+
+---
+
+## Page 52
+
+3.MT515- TRADECONFIRMATION
+MESSAGES
+ThissectiondescribestheSWIFTMT515tradeconfirmationmessages.Anexecutingbroker/dealeruses
+theSWIFTorDTCCproprietarynetworktosendanMT515tradeconfirmationmessagetoaninvestment
+manager.Thismessageconfirmsthedetailsofatradeandincludespartiestothetrade,[[settlement]],and
+paymentdetails.Themessagealsoservesasacontractthat,onceaffirmed,islegallybindingforboth
+partiesinlocalitiesthatacceptthispractice.
+Theinvestmentmanagerreviewsthetradedetailsontheconfirmationandaffirmsthetradebysubmitting
+anMT517tradeaffirmationmessage.Itisimportanttoaffirmthetradepromptlytoensureatimelytrade
+[[settlement]].
+TransactionTypes
+Herearethethreetypesofmachine-readableconfirmations.
+l Originalconfirmationsthatthebroker/dealersubmitted.
+l Cancellationsofconfirmationsthatthebroker/dealersubmitted.
+l ResubmissionofconfirmationsthatDTCCrejectedorthebroker/dealercanceled.
+Thereceiver’soutputisnotdependentonthesourcenetwork.Therefore,theinvestmentmanagercan
+receiveconfirmationoutputfromDTCCovertheSWIFTnetworkfortransactionsoriginallyinputthrough
+theproprietarynetworkofDTCCorthroughSWIFT.
+TheoutputforMT515tradeconfirmationmessagesandunsolicitedMT509statusmessagesdependson
+themediaoftheinputtransactionandnotthemediaofchoice.MT509statusmessagesinformthe
+[[Broker]]/dealerthattherequestforcancellationoftheMT515tradeconfirmationmessageeitherprocessed
+successfullyorresultedinanerror.
+[[Broker]]/dealerssubmitMT515tradeconfirmationmessagesforcancellationthroughoneofthefollowing
+methods:
+l WhenusingtheSWIFTnetwork,[[Broker]]/dealersreceiveanunsolicitedMT509cancellationacknow-
+ledgment.Thebroker/dealercanalsoreceiveacopyofthecanceledMT515tradeconfirmationmes-
+sage.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 52
+
+---
+
+## Page 53
+
+l WhenusingtheDTCCproprietarynetworkandreceivingtheoutputthroughSWIFT,[[Broker]]/dealers
+receiveonlythecanceledMT515tradeconfirmationmessage.
+InputMessageFlow
+HereishowtheinputmessagesworkfortheMT515TradeConfirmationmessage.
+l Tocommunicatethedetailsofatrade,theexecutingbroker/dealersubmitsanMT515tradecon-
+firmationmessagetoDTCC.Thebroker/dealercanelecttohaveanenrichedMT515message
+returned.DTCCenrichestheMT515tradeconfirmationdetails.Onoutput,themessagecontainsthe
+DTCcontrolnumberusedtoreferencethetradeintheDTCCsystem.Allentitiescanelecttoreceive
+confirmationmessagesinanyoftheavailablemessagetypes,suchasnew,cancellation,orresub-
+mission.Theagent,clearingagent,andagentandbroker/dealersub-custodiancanelecttoreceivethe
+MT515messageforanunaffirmedorunmatchedstatus.
+l Toaffirmatradeinagreementwiththetradedetails,theinvestmentmanager,agent,orinterested
+partydesignatedontheALERT®platformsendsanMT517tradeaffirmationmessagetoDTCC.As
+appropriate,DTCCsendsanMT515affirmedconfirm,MT509affirmed/confirmstatus,andMT517
+affirmedmessages.
+l Tocancelaconfirmation,theexecutingbroker/dealercansubmitanMT515tradeconfirmationcan-
+cellationmessagetoDTCC.AnMT515trademessageindicatesthatDTCCsentthecancellation
+statustopartieselectingtoreceivethem.
+l Toresubmitapreviouslycanceledconfirmation,theexecutingbroker/dealersubmitsanMT515resub-
+missionmessagetoDTCC.DTCCsendstheappropriateMT515messagetopartieselectingtoreceive
+them.
+Ineachscenario,ifthebroker’sinputdoesnotpasstheDTCCeditcriteria,DTCCreturnsanMT509status
+messagetothebroker/dealeradvisingoftheediterrors.
+OutputMessageFlow
+HereishowtheoutputmessagesworkortheMT515TradeConfirmationmessage.
+l Tocommunicatethedetailsofatrade,theexecutingbroker/dealersubmitsanMT515messageto
+[[DTCC]].Thebroker/dealercanelecttohaveanenrichedMT515messagereturned.DTCCenrichesthe
+MT515tradedetailinputbythebroker/dealer.Onoutput,themessagecontainstheDTCcontrolnum-
+berusedtoreferencethetradeintheDTCCsystem.Allentitiescanelecttoreceiveconfirmationmes-
+sagesinanyoftheavailablemessagetypes,suchasnew,cancellation,orresubmission.Theagent,
+clearingagent,andagentandbroker/dealersub-custodiancanelecttoreceiveanMT515messagefor
+theunaffirmedorunmatchedstatus.
+l Toaffirmatradeinagreementwiththetradedetails,eithertheinvestmentmanager,agent,orinter-
+estedpartydesignatedonALERTsendsanMT517messagetoDTCC.Asappropriate,DTCCsends
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 53
+
+---
+
+## Page 54
+
+anMT515affirmed/confirm,MT509affirmed/confirmstatusorMT517affirmationmessagetoparties
+electingtoreceivethem.
+l Tocancelaconfirmation,theexecutingbroker/dealercansubmitanMT515tradeconfirmationcan-
+cellationmessagetoDTCC.AnMT515messageindicatesthatDTCCsentthecancellationstatusto
+partieselectingtoreceivethem.
+l Toresubmitapreviouslycanceledconfirmation,theexecutingbroker/dealersubmitsanMT515resub-
+missionmessagetoDTCC.DTCCsendstheappropriateMT515messagetopartieselectingtoreceive
+them.
+Ineachscenario,ifthebroker’sinputdoesnotpassDTCCeditcriteria,DTCCreturnsanMT509tothe
+[[Broker]]/dealeradvisingoftheediterrors.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 54
+
+---
+
+## Page 55
+
+FormatSpecifications
+ThissectionexplainstheformatspecificationsforMT515statusmessages.
+Start-of-BlockandEnd-of-BlockFields
+TheSWIFTTIC3messagescontainaseriesoflinkingblocksthatcontainrelatedinformation.These
+blocks,calledsequencesandsimilartostartmathematicalequations,haveanopeningbracket(16R:
+Start-of-Block)andaclosingbracket(16S:End-of-Block).Tomaintaintheirbusinessrelationship,group
+relatedinformationbysequencesandgrouprepetitivefields.Thevaluesassignedtotheblockfieldidentify
+thetypesofinformationgroupedwithintheblock,asshowninTable3.1.
+Sequence Description Value
+A Generalinformation GENL
+>>A1 Linkedtransactions LINK
+>>B Partialfilldetails PAFILL
+C Confirmationdetails CONFDET
+>>C1 Confirmationparties CONFPRTY
+>>C2 Financialinstrumentattributes FIA
+D Settlementdetails SETDET
+>>D1 Settlementparties SETPRTY
+>>D2 Cashparties CSHPRTY
+>>D3 Amounts AMT
+>>E Otherparties OTHRPRTY
+F Twolegtransactiondetails(Repurchaseagreement-REPO) REPO
+Table3.1Sequences
+TheTradeSuiteIDserviceforwardsorreturnsfieldsreceivedoninput,whichcanresultinsome
+conversionsandenrichment.
+Thetablesinthissectionincludesomesymbolsandkeylettersthatindicatesequenceandfieldconditions
+orrules.Herearethedescriptionsofthesymbolsandkeyletters.
+l M=Mandatory
+l O=Optional
+l C=Conditional
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 55
+
+---
+
+## Page 56
+
+l –=Nocorrespondingfield
+l >> =Repetitivesequencethatrequiresastart-of-blockandend-of-blockfieldtags
+l >=Repetitivefieldwithinasequence
+Note
+Whenthemandatory(M),optional(O),orconditional(C)specificationappearsintheSWIFTorDTCC
+columnsforbothinputandoutputmessages,thespecificationappliesonlytoinputmessages.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 56
+
+---
+
+## Page 57
+
+SequenceA–GeneralInformation
+Inputandoutput.Mandatory.
+Note
+DTCCdoesnotacceptinvestmentmanagerrejectionofatradeconfirmation.
+Table3.2showsthemandatorygeneralinformationofsequenceAforMT515inputandoutputmessages.
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+16R GENL 4c StartofGeneralInform-
+ationBlock
+M – Both SeeNote
+1on
+page 97.
+20C SEME//12x :4!c//16x BrokerConfirmNumber
+(input)
+DTCControlNumber
+(output)
+M M Both SeeNote
+2on
+page 98.
+(A)Newconfirmation
+23G NEWM 4!c[/4!c] MessageType–New
+Confirm
+M M Both SeeNote
+3on
+page 98.
+98C PREP//YYYYMMDDHHMMS-
+S
+:4!c//8!n6!nDTCCProcessingDate
+andTime
+M – Output SeeNote
+4on
+page 99.
+22F TRTR//TRAD :4!c/[8c]/4!cTransactionTypeIndic-
+ator
+M – Both SeeNote
+5on
+page 99.
+(A)Cancellation
+23G CANC :4!c[/4!c] MessageType–Can-
+cellation
+M M Both SeeNote
+3on
+page 98.
+98C PREP//YYYYMMDDHHMMS-
+S
+:4!c//8!n6!nDTCCProcessingDate
+andTime
+M – Output SeeNote
+4on
+page 99.
+22F TRTR/DTCY/Cnnn :4!c/[8c]/4!cTransactionTypeIndic-
+ator/CancelReason
+Code
+M – Both SeeNote
+5on
+page 99.
+(A)Resubmission
+Table3.2SequenceA–GeneralInformation(Mandatory)
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 57
+
+---
+
+## Page 58
+
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+23G NEWM :4!c[/4!c] MessageType–Resub-
+mission
+M M Both SeeNote
+3on
+page 98.
+98C PREP//YYYYMMDDHHMMS-
+S
+:4!c//8!n6!nDTCCProcessingDate
+andTime
+M – Output SeeNote
+4on
+page 99.
+22F TRTR/DTCY/RSUB :4!c/[8c]/4!cTransactionTypeIndic-
+ator/Resubmissionof
+Confirm
+M – Both SeeNote
+5on
+page 99.
+Table3.2SequenceA–GeneralInformation(Mandatory)
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 58
+
+---
+
+## Page 59
+
+SubsequenceA1–LinkedTransactions
+Inputandoutput.Repetitivesubsequence.Mandatoryoninput.OptionalonoutputforDTCC.
+Notes
+AtleastoneA1subsequencelinkismandatoryforSWIFTinput.Youcansubmittwosubsequencesfor
+resubmissions.However,ifbothreferencenumbers(field20CinsequencesA1)areequaltospaces,
+DTCCprovidestheLINKreferencetotheprevioustradereferencingtheoriginalbrokerconfirmnumber.
+Forresubmissions,ifbothreferencenumbers(field20CinsubsequenceA1)areequaltospaces,[[DTCC]]
+providestheLINKreferencetotheprevioustradereferencingtheoriginalbrokerconfirmnumber.
+Table3.3showsthelinkedtransactionsofsubsequenceA1forMT515inputandoutputmessages.
+Field
+Tag
+[[DTCC]]
+Value
+SWIFT FormatFieldName SWIFT [[DTCC]] Input
+Output
+Notes
+16R LINK 4c StartofLinkageBlock M – Both SeeNote1
+on
+page 97.
+13A LINK//515 :4!c//3!c LinkedTransaction M – Both SeeNote6
+on
+page 100.
+>>(A1)Newconfirmation(515)
+20C COMM//NEW:4!c//16x LinkedReference M O Input SeeNote7
+on
+page 100.20C COMM//12x :4!c//16x BrokerConfirmNum-
+ber(515)
+O – Output
+20C TRRF//16x :4!c//16x InstitutionOrderRout-
+ingNumber
+O O Both
+>>(A1)NewconfirmIIdetailrecord(outputonly)
+20C ALMR//16x :4!c//16x InstitutionDetailRefer-
+enceNumber
+– – Output SeeNote7
+on
+page 100.
+>>(A1)Referencelinkforcancellationsandresubmissions
+20C PREV//16x :4!c//16x LinkedReferenceto
+OriginalBrokerCon-
+firmationNumber
+M M Both SeeNote7
+on
+page 100.
+>>(A1)Parentreferencenumberblock
+20C COLR//16x :4!c//16x ParentCrossRefer-
+enceNumber
+O O Both SeeNote7
+on
+page 100.
+Table3.3SubsequenceA1–LinkedTransactions
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 59
+
+---
+
+## Page 60
+
+Field
+Tag
+[[DTCC]]
+Value
+SWIFT FormatFieldName SWIFT [[DTCC]] Input
+Output
+Notes
+EndofsequenceA1linkageblock
+16S LINK 4c EndofLinkageBlock M M Both SeeNote1
+on
+page 97.
+Table3.4showstheend-of-blockfieldthatclosessequenceA.
+EndofsequenceA
+16S GENL 4c EndofGeneralInfoBlock M M Both SeeNote1onpage 97.
+Table3.4SequenceA-GeneralInformation(Mandatory)
+SequenceB–PartialFillDetails
+Inputandoutput.
+SequenceBisarepetitiveconditionalsequence.Itisanoptionalsequenceifthenetpriceisnotequalto
+zero.Table3.5showsthepartialfilldetailsofsequenceBforMT515inputandoutputmessages.
+Field
+Tag
+DTCCValue SWIFT FormatFieldNameSWIFT [[DTCC]] Input
+Output
+Notes
+16R PAFILL 6c StartofPartial
+FillBlock
+M – Both SeeNote
+1on
+page 97.
+36B PAFI//FAMT/15d :4!c//4!c/15d Quantity-
+[[shares]]/Face
+Value
+M – Both SeeNote8
+on
+page 101.
+90B DEAL//ACTU/3!a15d:4!c//4!c/3!a15d NetPrice M O Both SeeNote9
+on
+page 102.
+22F PRIC//NET1 :4!c/[8c]/4!c PriceIndicatorO – Both SeeNote
+10on
+page 102.
+16S PAFILL 6c EndofPartial
+FillBlock
+M – Both SeeNote1
+onpage 97.
+Table3.5SequenceB–PartialFillDetails
+EndofSequenceBPartialFillDetails
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 60
+
+---
+
+## Page 61
+
+SequenceC–ConfirmationDetails
+Inputandoutput.Mandatory.
+Table3.6showstheconfirmationdetailsofsequenceCformandatoryMT515inputandoutputmessages.
+Field
+Tag
+DTCCValue SWIFT Forma-
+t
+FieldName SWIFTDTCCInput
+Output
+Notes
+16R CONFDET 7c StartofConfirm
+DetailsBlock
+M M Both SeeNote1
+on
+page 97.
+98A
+98C
+TRAD//YYYYMMDD
+TRAD//YYYYMMDDHHMM
+[SS]
+:4!c//8!n
+:4!c//8!n6!n
+TradeDate
+TradeDateand
+Time
+M M Both SeeNote
+11on
+page 103.
+98A
+98B
+l SETT//YYYYMM-
+DD
+l SETT//WISS
+l SETT//WDIS
+l SETT//WIDI
+:4!c//8!n
+:4!c/[8c]/4!c
+[[settlement]]
+Date
+[[settlement]]
+Type
+M M Both SeeNote
+12on
+page 103.
+90B DEAL//ACTU/[N]3!a15d :4!c//4!c/3!a15dPrice M M Both SeeNote
+13on
+page 104
+.
+90B MAUP/PREM/3!a15d
+MAUP/DISC/3!a15d
+MADW/PREM/3!a15d
+MADW/DISC/3!a15d
+:4!c//4!c/3!a15d MarkUpPrice
+Mark
+Down Price
+O O Both SeeNote
+14on
+page 105.
+99A DAAC//[N]3!n 4!c//[N]3!n InterestDays O O Both SeeNote
+15on
+page 105.
+Table3.6SequenceC–ConfirmationDetails
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 61
+
+---
+
+## Page 62
+
+Field
+Tag
+DTCCValue SWIFT Forma-
+t
+FieldName SWIFTDTCCInput
+Output
+Notes
+94B TRAD/DTCY/4x :4!c/[8c]/4!c[/30x] PlaceofTrade
+orExchange
+O O Both SeeNote
+16on
+page 106.
+19A SETT//[N]3!a15d :4!c//[N]3!a15d [[settlement]](Net)
+Amount
+O M Both SeeNote
+17on
+page 106.
+22H BUSE//BUYI
+BUSE//SELL
+:4!c//4!c BuyorSellIndic-
+ator
+M M Both SeeNote
+18on
+page 107.
+22H PAYM//APMT :4!c//4!c PaymentMethod
+Indicator
+M – Both SeeNote
+19on
+page 108.
+22F TTCO//SPSI
+TTCO//SSTI
+TTCO//SETI
+:4!c/[8c]/4!c Long/ShortIndic-
+ator
+O M Both SeeNote
+20on
+page 108.
+22F PROC/DTCY/NExx
+PROC/DTCY/PSxx
+:4!c/[8c]/4!c GreenwichMean
+Time
+O O Both SeeNote
+21on
+page 109.
+22F COST/DTCY/COMY :4!c/[8c]/4!c Commission
+SharingIndicator
+O O Both SeeNote
+22on
+page 109.
+22F TTCO/DTCY/CAMI :4!c/[8c]/4!c CancelAfter
+Affirmation/Match
+Indicator
+– – Output SeeNote
+23on
+page 109.
+22F TTCO/DTCY/MAT0
+TTCO/DTCY/MAT1
+TTCO/DTCY/MAT2
+:4!c/[8c]/4!c MatchedIndic-
+ator
+– – Output SeeNote
+24on
+page 110.
+22F TTCO/DTCY/SIDY
+TTCO/DTCY/SIDN
+:4!c/[8c]/4!c ALERTAccount
+FoundIndicator
+– – Output SeeNote
+25on
+page 110.
+22F TTCO//SOPn :4!c[8c]/4!c TradeTrans-
+actionCondition
+Indicator
+O – Output SeeNote
+26on
+page 111.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 62
+
+---
+
+## Page 63
+
+Field
+Tag
+DTCCValue SWIFT Forma-
+t
+FieldName SWIFTDTCCInput
+Output
+Notes
+22F TTCO/DTCY/DEI0
+TTCO/DTCY/DEI1
+TTCO/DTCY/DEI2
+TTCO/DTCY/DEI3
+:4!c/[8c]/4!c DTCEligibility
+Indicator
+– – Output SeeNote
+27on
+page 112.
+22F TTCO/DTCY/DIIA :4!c/[8c]/4!c PrimeBroker
+Disaffirmation
+Indicator
+– – Output SeeNote
+28on
+page 112.
+22F TTCO/DTCY/ECnn :4!c/[8c]/4!c EligibilityReason
+Codes
+– – Output SeeNote
+29on
+page 113.
+22F PRIC/DTCY/PRnn :4!c/[8c]/4!c PriceTypeIndic-
+ator
+O O Both SeeNote
+30on
+page 116.
+22F TTCO///BLKO :4!c/[8c]/4!c BlockTradeIndic-
+ator
+O O Both SeeNote
+31on
+page 118.
+22F TRCN/DTCY/SIPY
+TRCN/DTCY/SIPN
+:4!c/[8c]/4!c SIPCMember
+Indicator
+O O Both SeeNote
+32on
+page 118.
+22F TRCN/DTCY/FINY
+TRCN/DTCY/FINN
+:4!c/[8c]/4!c FINRAMember
+Indicator
+O O Both SeeNote
+33on
+page 118.
+22F TRCN/DTCY/NYCY
+TRCN/DTCY/NYCN
+:4!c/[8c]/4!c NYSEMember
+Indicator
+O O Both SeeNote
+34on
+page 119.
+22F TRCN/DTCY/MKTY
+TRCN/DTCY/MKTN
+:4!c/[8c]/4!c MarketMaker
+Indicator
+O O Both SeeNote
+35on
+page 119.
+22F TTCO/DTCY/LGON
+TTCO/DTCY/LGOF
+TTCO/DTCY/LGBT
+:4!c/[8c]/4!c ConfirmLegIden-
+tifier
+O M Both SeeNote
+36on
+page 120.
+22F TTCO/DTCYCOLT/CLnn:4!c/[8c]/4!c CollateralType O M Both SeeNote
+37on
+page 120.
+22F TTCO/DTCYSUBT/SUBP
+TTCO/DTCYSUBT/SUBM
+:4!c/[8c]/4!c CollateralSub-
+stitutionType
+O O Both SeeNote
+38on
+page 121.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 63
+
+---
+
+## Page 64
+
+Field
+Tag
+DTCCValue SWIFT Forma-
+t
+FieldName SWIFTDTCCInput
+Output
+Notes
+22F TRCN/DTCY/REMY
+TRCN/DTCY/REMN
+:4!c/[8c]/4!c Third-PartyRenu-
+meration
+ReceivedIndic-
+ator
+O O Both SeeNote
+39on
+page 122.
+22F RPOR/DTCY/DFDY
+RPOR/DTCY/DFDN
+:4!c/[8c]/4!c ConfirmBack-
+er/Disclosure
+FoundIndicator
+O O Output SeeNote
+40on
+page 122.
+22F TTCO/DTCY/BYPS :4!c/[8c]/4!c ConfirmBack-
+er/Disclosure
+BypassIndicator
+O O Both SeeNote
+41on
+page 123.
+22F RPOR/DTCY/ALnn :4!c/[8c]/4!c AllocationSource
+Indicator
+O O Both SeeNote
+42on
+page 123.
+22F TTCO/DTCYCOPU/4x :4!c[8c]/4!c ConfirmPurposeO M Both SeeNote
+43on
+page 124.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 64
+
+---
+
+## Page 65
+
+SubsequenceC1–ConfirmationParties
+Inputandoutput.Repetitivemandatorysubsequence.
+Table3.7showstheconfirmationpartiesofsubsequenceC1formandatoryMT515inputandoutput
+messages.
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+>>(C1)InstitutionBlock
+16R CONFPRTY 8c StartofConfirm
+Parties-Insti-
+tutionBlock
+M M Output SeeNote
+1on
+page 97.
+95R
+95P
+BUYR/DTCYID/8n
+SELL/DTCY/8n
+BUYR/11x
+SELL//11x
+:4!c/8c/34x
+:4!c//4!a2!a2!c
+[3!c]
+Primary
+Institution
+DTCID
+InstitutionBIC
+M M Both SeeNote
+44on
+page 125.
+95S ALTE/CORP/US/[[DTC]]/8n
+ALTE/CORP/cc/BIC/11x
+:4!c/
+[8c]/4!c/2!a/30x
+Alternate
+Institution
+DTCID
+InstitutionBIC
+O O Both SeeNote
+45on
+page 125.
+97A SAFE//35x :4!c//35x InstitutionSafe-
+keepingAccount
+O O Both SeeNote
+46on
+page 126.
+70C PACO//3*35x :4!c//4*35x Institution
+ContactTele-
+phoneNumber
+andWireInstruc-
+tions
+O O Output SeeNote
+47on
+page 126.
+16S CONFPRTY 8c EndofConfirm
+Parties-Insti-
+tutionBlock
+M M Both SeeNote
+1on
+page 97.
+>>(C1)ClearingBrokerBlock(outputonly)
+16R CONFPRTY 8c StartofConfirm
+Parties-Clear-
+ingBrokerBlock
+M M Output SeeNote
+1on
+page 97.
+Table3.7SubsequenceC1–ConfirmationParties
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 65
+
+---
+
+## Page 66
+
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+95R
+95P
+CLBR/DTCYID/8n
+CLBR//11x
+:4!c/8c/34x
+:4!c//4!a2!a2!c
+[3!c]
+Primary
+Clearing
+BrokerDTCID
+Clearing
+BrokerBIC
+– – Output SeeNote
+48on
+page 127.
+95S ALTE/CORP/US/[[DTC]]/8n
+ALTE/CORP/cc/BIC/11x
+:4!c/
+[8c]/4!c/2!a/30xAlternate
+Clearing
+BrokerDTCID
+Clearing
+BrokerBIC
+– – Output SeeNote
+49on
+page 127.
+97A SAFE//35x :4!c//35x ClearingBroker
+Safekeeping
+Account
+– – Output SeeNote
+50on
+page 128.
+70E DECL//7*35x :4!c//10*35x Operating
+Procedures
+GuideLink
+O O Output SeeNote
+51on
+page 128.
+16S CONFPRTY 8c EndofConfirm
+Parties-Clear-
+ingBrokerBlock
+M M Output SeeNote
+1on
+page 97.
+>>(C1)ExecutingBrokerBlock
+16R CONFPRTY 8c StartofConfirm
+Parties-Execut-
+ingBrokerBlock
+M M Both SeeNote
+1on
+page 97.
+95R
+95P
+BUYR/DTCYID/8n
+SELL/DTCYID/8n
+BUYR/11x
+SELL//11x
+:4!c/8c/34x
+:4!c//4!a2!a2!c
+[3!c]
+Primary
+Executing
+BrokerDTCID
+Executing
+BrokerBIC
+M M Both SeeNote
+52on
+page 128.
+Table3.7SubsequenceC1–ConfirmationParties
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 66
+
+---
+
+## Page 67
+
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+95S ALTE/CORP/US/[[DTC]]/8n
+ALTE/CORP/cc/BIC/11x
+:4!c/
+[8c]/4!c/2!a/30xAlternate
+Executing
+BrokerDTC
+[[ID]] or
+Executing
+BrokerBIC
+O O Both SeeNote
+53on
+page 129.
+97B SAFE/DTCY/DVPA/35x
+SAFE/DTCY/MARG/35x
+SAFE/DTCY/OTHR/35x
+SAFE/DTCY/SHOR/35x
+SAFE/DTCY/PBKR/35x
+SAFE/DTCY/UNKN/35x
+:4!c/[8c]/4!c/35xExecuting
+BrokerSafe-
+keepingAccount
+O M Both SeeNote
+54on
+page 129.
+98C PREP//YYYYMMDDHHMMS-
+S
+:4!c//8!n6!n ConfirmPro-
+cessingDate
+andTime
+– – Output SeeNote
+55on
+page 130.
+70E DECL//10*35x :4!c//10*35 Special
+Instructions
+Line9though
+18
+O O Both SeeNote
+56on
+page 130.
+70C PACO//2*35x :4!c//2*20x [[Broker]]
+Salesperson
+Numberand
+[[Broker]]/Dealer
+Telephone
+Number
+O O Both SeeNote
+57on
+page 131.
+Table3.7SubsequenceC1–ConfirmationParties
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 67
+
+---
+
+## Page 68
+
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+22F TRCA//AGEN
+TRCA//PRIN
+TRCA//OAGN
+TRCA//BAGN
+TRCA//PRAG
+TRCA//CAGN
+TRCA//CPRN
+TRCA/RISP
+:4!c/[8c]/4!c RoleIndicator O M Both SeeNote
+58on
+page 132.
+16S CONFPRTY 8c EndofConfirm
+Parties-Execut-
+ingBrokerBlock
+M M Both SeeNote
+1on
+page 97.
+>>(C1)DesignatedAffirmingPartyBlock(outputonly)
+16R CONFPRTY 8c StartofConfirm
+Parties-Desig-
+natedAffirming
+PartyBlock
+M M Both SeeNote
+1on
+page 97.
+95R
+95P
+AFFM/BOTH
+AFFM/INST
+AFFM/
+AFFMAGNT/IPAR/11x
+AFFM/DTCY/BOTH
+AFFM/DTCY/INST/
+AFFM/DTCYAGNT/IPAR/8n
+:4!c//4*35x
+:4!c/8c/34x
+Designated
+AffirmerParty
+DTCID
+Designated
+AffirmerBIC
+– – Output SeeNote
+59on
+page 134.
+16S CONFPRTY 8c EndofConfirm
+Parties-Desig-
+natedAffirming
+PartyBlock
+M M Both SeeNote
+1on
+page 97
+>>(C1)Give-UpBrokerBlock(outputonly)
+16R CONFPRTY 8c StartofConfirm
+Parties-Give-
+UpBrokerBlock
+M M Both SeeNote
+1on
+page 97.
+Table3.7SubsequenceC1–ConfirmationParties
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 68
+
+---
+
+## Page 69
+
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+95R INBR/DTCYID/34x :4!c/8c/34x Give-UpBroker O O Both SeeNote
+60on
+page 134.
+16S CONFPRTY 8c EndofConfirm
+Parties-Give-Up
+BrokerBlock
+M M Both SeeNote
+1on
+page 97.
+Table3.7SubsequenceC1–ConfirmationParties
+SequenceC–ConfirmationDetails(continued)
+Table3.8showstheadditionalconfirmationdetailsofsequenceCformandatoryMT515inputandoutput
+messages.
+Field
+Tag
+DTCCValue SWIFT FormatFieldName SWIFT [[DTCC]] Input
+Output
+Notes
+36B CONF//FAMT/15d
+CONF//UNIT/15d
+:4!c//4!c/15d Quantity-
+[[shares]]/Face
+Value
+M M Both SeeNote61
+on
+page 136.
+35B ISIN1!e12!c
+/2!a/9!x[/XX/31x]
+[ISIN1!e12!c]
+[/2!a/9!x][4*35x]
+SecurityID
+Number
+M M Both SeeNote62
+on
+page 136.
+Table3.8SequenceC–ConfirmationDetails(continued)
+SubsequenceC2–FinancialInstrumentAttributes
+Inputandoutput.Optional.
+Table3.9showsthefinancialinstrumentattributesofsequenceDforoptionalMT515inputandoutput
+messages.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 69
+
+---
+
+## Page 70
+
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+16R FIA 3c StartofFIABlock M M Both SeeNote1
+onpage 97.
+22F FORM//REGD
+FORM//BEAR
+FORM//Defaultto
+none
+:4!c/[8c]/4!c SecurityForm
+Code
+O O Both SeeNote63
+onpage 140.
+22F CFRE/DTCY/XX4x:4!c/[8c]/4!c SubstitutionFre-
+quency
+O O Both SeeNote64
+onpage 141.
+22F PFRE/DTCY/XX4x:4!c/[8c]/4!c InterestPayment
+CalendarFre-
+quency
+O O Both SeeNote65
+onpage 141.
+98A MATU//YYYYMMDD:4!c//8!n MaturityDate O O Both SeeNote
+66on
+page 143.
+98A CALD//YYYYMMDD:4!c//8!n Prerefundedor
+CallDate
+O O Both SeeNote67
+onpage 143.
+98A PUTT//YYYYMMDD:4!c//8!n PutBondDate O O Both SeeNote68
+onpage 143.
+98A ISSU//YYYYMMDD:4!c//8!n IssueDate O O Both SeeNote
+69on
+page 143.
+98A EXPI//YYYYMMDD:4!c//8!n OptionExpiration
+Date
+O O Both SeeNote70
+onpage 144.
+98A FCOU//YYYYMMDD:4!c//8!n InterestAccrual
+Date
+O O Both SeeNote
+71on
+page 145.
+98A FRNR//YYYYMMDD:4!c//8!n FirstRateReset
+Date
+O O Both SeeNote72
+onpage 145.
+98A DDTE//YYYYMMDD:4!c//8!n DatedDate O O Both SeeNote73
+onpage 145.
+92A YTMR//[N]15d :4!c//[N]15d YieldtoMaturity O O Both SeeNote
+74on
+page 145.
+92A INTR//[N]15d :4!c//[N]15d InterestRate O O Both SeeNote
+75on
+page 147.
+Table3.9SubsequenceC2–FinancialInstrumentAttributes
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 70
+
+---
+
+## Page 71
+
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+13B POOL/30x :4!c/[8c]/30xPoolNumber O O Both SeeNote
+76on
+page 147.
+13B LOTS/30x :4!c/[8c]/30xLotID O O Both SeeNote
+77on
+page 147.
+70E FIAN/10*35x :4!c/10*35xAdditionalConfirm
+SecurityDescrip-
+tion
+O O Both SeeNote
+78on
+page 148.
+16S FIA 3c EndofFIABlock M M Both SeeNote1
+onpage 97.
+Table3.9SubsequenceC2–FinancialInstrumentAttributes
+SequenceC–ConfirmationDetails(continued)
+Table3.10continueswiththeconfirmationdetailsofsequenceC.
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+13B CERT/DTCYEST/3x :4!c/[8c]/30xExpandedSecurity
+Type
+O M Both SeeNote
+79on
+page 149.
+13B CERT/DTCYAAF/6d,12d :4!c/[8c]/30xAmortized/Accredited
+Factor
+O O Both SeeNote
+80on
+page 152
+13B CERT/DTCYMAV/7d :4!c/
+[8c]/30x
+MatchingVariance – – Output SeeNote81
+on
+page 152.
+13B CERT/DTCYVAD/I
+CERT/DTCYVAD/B :4!c/
+[8c]/30x
+MatchingVariance
+Discrepancy
+– – Output SeeNote
+82on
+page 152.
+13B CERT/DTCYSDT/1x :4!c/
+[8c]/30x
+SecurityDescription
+Type
+– – Output SeeNote83
+on
+page 153.
+13B CERT/DTCYAOC/1x :4!c/
+[8c]/30x
+AdviceofCancellation
+orCorrectionIndicator
+– – Output SeeNote84
+on
+page 154.
+Table3.10SequenceC–ConfirmationDetails(continued)
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 71
+
+---
+
+## Page 72
+
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+13B CERT/DTCYRPD/8x :4!c/
+[8c]/30x
+AOCCProcessDate – – Output SeeNote
+85on
+page 154.
+13B CERT/DTCYSTRT/8x :4!c/[8c]/30xStartDate O O Both SeeNote86
+on
+page 155.
+13B CERT/DTCYSUBN/2x :4!c/[8c]/30xSubstitutionNumber O O Both SeeNote87
+on
+page 156.
+13B CERT/DTCYSUBV/8x :4!c/
+[8c]/30x
+SubstitutionVarianceO O Both SeeNote
+88on
+page 156.
+13B CERT/DTCYSUBT/1x :4!c/
+[8c]/30x
+Face(Par)orCash
+FillREPO
+O O Both SeeNote89
+on
+page 156.
+13B CERT/ICDT/8x :4!c/
+[8c]/30x
+FirstInterestCleanup
+Date
+O O Both SeeNote90
+on
+page 157.
+13B CERT/DTCYLOOK/4x :4!c/
+[8c]/30x
+LookbackDays O O Both SeeNote91
+on
+page 158.
+13B CERT/DTCYRSET/2x :4!c/
+[8c]/30x
+ResetIntervalFre-
+quency
+O O Both SeeNote92
+on
+page 158.
+13B CERT/DTCYFLEX/2x :4!c/
+[8c]/30x
+FlexREPOPayback
+Frequency
+O O Both SeeNote
+93on
+page 158.
+13B CERT/DTCYDSCD/16x :4!c/[8c]/30xUser-definedDis-
+closureCode
+O O Both SeeNoteon
+page 160.
+13B 13BCERT/DTCYCYLD/11x:4!c/[8c]/30xCurrentYield O O Both SeeNote95
+on
+page 160.
+13B CERT/DTCYYLDR/11x :4!c/[8c]/30xYieldtoCall/Re-
+demption
+O O Both SeeNote96
+on
+page 160.
+13B CERT/DTCYBRDT/CCYYMMD:4!c[8c]/30x Trade ExecutionDate O O Both SeeNote97
+onpage 160
+13B CERT/DTCYTMZ/[HHMM
+[SS]]TMZ
+:4!c[8c]/30x TradeExecution
+Time
+TradeExecution
+TimeZone
+O O Both SeeNote98
+onpage 161
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 72
+
+---
+
+## Page 73
+
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+13B CERT/DTCYDSCD/16x :4!c[8c]/30x DisclosureReference
+Number
+O M Output SeeNote99
+onpage 161
+13B CERT/DTCYCOME/7D[2D] :4!c[8c]/30x CommissionEqui-
+valent
+O O Both SeeNote1
+00on
+page 162.
+13B CERT/DTCYOPGL/16x :4!c[8c]/30x TradeSuiteIDOper-
+atingProcedures
+ReferenceNumber
+O O Output SeeNote1
+01on
+page 162.
+MSRBfields(municipalsecurities)
+13B CERT/DTCYDIR/5x :4!c/
+[8c]/30x
+DiscountRate O O Both SeeNote1
+02on
+page 162.
+13B CERT/DTCYLES/1x :4!c/
+[8c]/30x
+LegalStatus O O Both SeeNote1
+03on
+page 163.
+13B CERT/DTCYPAS/1x :4!c/
+[8c]/30x
+PaymentStatus O O Both SeeNote
+104on
+page 163.
+13B CERT/DTCYBTC/1x :4!c/[8c]/30xBondTypeCode O O Both SeeNote
+105on
+page 164.
+13B CERT/DTCYBAI/1x :4!c/[8c]/30xBasisIndicator O O Both SeeNote
+106on
+page 165.
+13B CERT/DTCYREI/2x :4!c/[8c]/30xResultIndicator O O Both SeeNote
+107on
+page 165.
+13B CERT/DTCYIAP/8x :4!c/[8c]/30xInterestPayment
+Date
+O O Both SeeNote
+108on
+page 166.
+13B CERT/DTCYOCI/2x :4!c/[8c]/30xOptionCallIndicator O O Both SeeNote1
+09on
+page 166.
+13B CERT/DTCYCPF/1x :4!c/[8c]/30xCall/PutFeatureIndic-
+ator
+O O Both SeeNote
+110on
+page 167.
+13B CERT/DTCYPBT/2x :4!c/[8c]/30xPutBondType O O Both SeeNote
+111on
+page 167.
+13B CERT/DTCYPCP/3d,3d :4!c/[8c]/30xPrerefundedorCall
+Price
+O O Both SeeNote
+112on
+page 168.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 73
+
+---
+
+## Page 74
+
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+13B CERT/DTCYPBP/3d,3d :4!c/[8c]/30xPutBondPrice O O Both SeeNote
+113on
+page 168.
+13B CERT/DTCYPFC/1x :4!c/[8c]/30xBondFormCode O O Both SeeNote
+114on
+page 169.
+13B CERT/DTCYIPF/1x :4!c/[8c]/30xInterest PaymentFre-
+quency
+O O Both SeeNote
+115on
+page 169.
+13B CERT/DTCYSCI/1x :4!c/[8c]/30xSpecialCouponIndic-
+ator
+O O Both SeeNote
+116on
+page 171.
+13B CERT/DTCYFDS/1x :4!c/[8c]/30xFlat/DefaultStatus O O Both SeeNote
+117on
+page 171.
+13B CERT/DTCYTAS/1x :4!c/[8c]/30xTaxStatus O O Both SeeNote
+118on
+page 172.
+13B CERT/DTCYMCR/2x :4!c/[8c]/30xMoody’sCreditRatingO O Both SeeNote
+119on
+page 172.
+13B CERT/DTCYSPC/2x :4!c/[8c]/30xStandard&Poor’s
+CreditRating
+O O Both SeeNote
+120on
+page 172.
+13B CERT/DTCYSFT/1x :4!c/[8c]/30xSubjecttoFederal
+Tax
+O O Both SeeNote
+121on
+page 173.
+13B CERT/DTCYAMT/2x :4!c/[8c]/30xAlternateMinimum
+Tax
+O O Both SeeNote
+122on
+page 174.
+MBSfields(mortgage-backedsecurities)
+13B CERT/DTCYTTI/2x :4!c/[8c]/30xTradeTypeIndicatorO O Both SeeNote
+123on
+page 174.
+13B CERT/DTCYCVF/15d :4!c/[8c]/30xCurrentFace O O Both SeeNote
+124on
+page 176.
+13B CERT/DTCYFED/8x :4!c/[8c]/30xFactor/EffectiveDate O O Both SeeNote
+125on
+page 176.
+13B CERT/DTCYYLD/15d :4!c/[8c]/30xYield O O Both SeeNote
+126on
+page 176.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 74
+
+---
+
+## Page 75
+
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+13B CERT/DTCYRRN/16x :4!c/[8c]/30xRelatedReference
+Number
+O O Both SeeNote
+127on
+page 176.
+13B CERT/DTCYDAI/3n :4!c/[8c]/30xNumberofDays
+AccruedInterest
+O O Both SeeNote
+128on
+page 177.
+13B CERT/DTCYSCC/10x :4!c/[8c]/30xSecurityClassCode O O Both SeeNote
+129on
+page 178.
+13B CERT/DTCYOTP/15d :4!c/[8c]/30xOriginalTradePar O O Both SeeNote
+130on
+page 178.
+13B CERT/DTCYGDM/4d :4!c/[8c]/30xGoodDeliveryMil-
+lions
+O O Both SeeNote
+131on
+page 178.
+13B CERT/DTCYDED/8d :4!c/[8c]/30xDeliveryDate O O Both SeeNote
+132on
+page 178.
+13B CERT/DTCYEPT/6x :4!c/[8c]/30xEPNTime O O Both SeeNote
+133on
+page 179.
+13B CERT/DTCYTER/4x :4!c/[8c]/30xTerminator O O Both SeeNote1
+34on
+page 180.
+13B CERT/DTCYMID/11x :4!c/[8c]/30xMessageID O O Both SeeNote1
+35on
+page 180.
+13B CERT/DTCYPDM/1x :4!c/[8c]/30xPossibleDuplicate O O Both SeeNote1
+36on
+page 180.
+13B CERT/DTCYTRN/10x :4!c/[8c]/30xTradeNumber O O Both SeeNote1
+37on
+page 181.
+13B CERT/DTCYNOP/4x :4!c/[8c]/30xNumberofPools O O Both SeeNote
+138on
+page 181.
+13B CERT/DTCYIID/16x :4!c/[8c]/30xInternalID O O Both SeeNote
+139on
+page 182.
+13B CERT/DTCYSAI/4x :4!c/[8c]/30xSubmitterAccountID O O Both SeeNote
+140on
+page 182.
+13B CERT/DTCYSRT/4x :4!c/[8c]/30xServiceType O O Both SeeNote
+141on
+page 182.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 75
+
+---
+
+## Page 76
+
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+13B CERT/DTCYOPT/4x :4!c/[8c]/30xOptionType O O Both SeeNote
+142on
+page 183.
+13B CERT/DTCYRDT/8n :4!c/[8c]/30xRecordDate O O Both SeeNote
+143on
+page 184.
+13B CERT/DTCYS01/18x
+throughCERT/DTCYS16/18x
+:4!c/[8c]/30x SpecificationCode
+andSpecification
+Value
+(upto16codesand
+values)
+O O Both SeeNote
+144on
+page 184.
+13B CERT/DTCYMIR/15x :4!c/[8c]/30xMBSInterestRate O O Both SeeNote
+145on
+page 186.
+13B CERT/DTCYMMD/8x :4!c/[8c]/30xMBSMaturityDate O O Both SeeNote
+146on
+page 187.
+13B CERT/DTCYVCI/9x :4!c/[8c]/30xVendorControlID O O Output SeeNote
+147on
+page 188.
+13B CERT/DTCYINLE/20x :4!c/[8c]/30xInstitutionLegalEntityO O Both SeeNote
+148on
+page 188
+13B CERT/DTCYBRLE/20x :4!c/[8c]/30xBrokerLegalEntity O O Both SeeNote
+149on
+page 188
+13B CERT/DTCYMARK/[N]9x :4!c[8c]/30x MarkUpPercent
+-or-
+MarkDownPercent
+O O Both SeeNote
+150on
+page 188
+SequenceCfields(continued)
+70E TPRO//10*35x :4!c//10*35xSpecialInstructions
+(line1–8)
+ConfirmDisclosure
+Link(outputonly)
+O O Both SeeNote
+151on
+page 189.
+16S CONFDET 7c EndofConfirm
+DetailsBlock
+M M Both SeeNote1
+onpage 97
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 76
+
+---
+
+## Page 77
+
+SequenceD–SettlementDetails
+Inputandoutput.Mandatory.Repetitivesubsequenceoninput.
+Table3.11showsthesettlementdetailsofsequenceDformandatoryMT515inputandoutputmessages.
+Field
+Tag
+DTCCValue SWIFT FormatField
+Name
+SWIFT [[DTCC]] Input
+Output
+Notes
+16R SETDET 6c StartofSettle
+DetailsBlock
+M M Both SeeNote1
+on
+page 97.
+22F STCO/DTCYDVMT/DMnn:4!c/[8c]/4!c Delivery
+MethodIndic-
+ator
+O M Both SeeNote
+152on
+page 190.
+22F ForFINandCOL
+expandedsecuritytypes:
+SETR/DTCY/4x
+Forallotherexpanded
+securitytypes:
+SETR//TRAD
+:4!c/[8!c]/4!c TradeType
+Indicator
+M M Both SeeNote
+153on
+page 191.
+22F STCO/DTCY/4x :4!c/[8!c]/4!c >[[settlement]]
+Condition
+Code#1
+O O Both SeeNote
+154on
+page 192.
+>[[settlement]]
+Condition
+Code#2
+>[[settlement]]
+Condition
+Code#3
+22F STCO/DTCY/BRCY
+STCO/DTCY/BRCN
+:4!c/[8c]/4!c BrokerCus-
+todyIndicator
+O O Both SeeNote
+155on
+page 193.
+22F STCO//SPST :4!c/[8c]/4!c SplitCur-
+rencyIndic-
+ator
+O O Both SeeNote
+156on
+page 194.
+Table3.11SequenceD–SettlementDetails
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 77
+
+---
+
+## Page 78
+
+Field
+Tag
+DTCCValue SWIFT FormatField
+Name
+SWIFT [[DTCC]] Input
+Output
+Notes
+22F STCO/DTCY/SOIY
+STCO/DTCY/SOIN
+:4!c/[8c]/4!c ALERTOver-
+writeIndicator
+O O Output SeeNote
+157on
+page 195.
+22F DBNM/DTCY/BRKR :4!c/[8c]/4!c [[settlement]]
+Condition
+Indicator
+O O Both SeeNote
+158on
+page 195.
+16S SETDET 6c EndofSet-
+tlement
+DetailsBlock
+M M Both SeeNote1
+on
+page 97.
+Table3.11SequenceD–SettlementDetails
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 78
+
+---
+
+## Page 79
+
+SubsequenceD1–SettlementParties
+Inputandoutput.Mandatory.Repetitivesequenceisoptionaloninput.
+Table3.12Table3.12showstheblocksforthesettlementpartiesofsequenceDformandatoryMT515
+inputandoutputmessages.
+Field
+Tag
+DTCCValue SWIFT FormatFieldName SWIFTDTCC Input
+Output
+Notes
+>>(D1)Settlementlocationblock
+16R SETPRTY 7c StartofSettlement
+LocationBlock
+M M Both SeeNote
+1on
+page 97.
+95P
+95C
+95Q
+PSET/DTCY4x3x
+PSET//2x
+PSET//NOTFOR
+[[settlement]]
+:4!c//4!a2!a2!c
+[3!c
+4!c//2!a
+:4!c//4*35x
+BrokerSettlement
+Location
+BrokerSettlement
+LocationBIC
+M M Both SeeNote
+159on
+page 197.
+20C PROC//3x :4!c//16x BrokerSettlement
+Method
+O O Both SeeNote
+160on
+page 198.
+70C PACO//4*35x :4!C//4*35x Deliverer/ReceiverO O Input SeeNote
+161on
+page 201.
+70D REGI//6*35x :4!c//6*35x Sub-custodianCSD
+CashAccount
+Information
+O O Input SeeNote
+162on
+page 202.
+Table3.12SubsequenceD1–SettlementPartiesBlocks
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 79
+
+---
+
+## Page 80
+
+Field
+Tag
+DTCCValue SWIFT FormatFieldName SWIFTDTCC Input
+Output
+Notes
+70C PACO//[[DTC]]
+PACO//[[CNS]]
+PACO//NET
+PACO//NAFT
+PACO//INST
+PACO//AGNT
+PACO//DTCA
+PACO//DTCI
+PACO//INTP
+:4!c//4*35x DTCSettlement
+Mode
+AffirmedParty
+Indicator
+AgentSub-
+Custodian
+CustodianBIC
+BrokerSub-
+CustodianBIC
+– – Output SeeNote
+163on
+page 203.
+70D REGI//6*35x :4!c//6*35x AgentSub-
+CustodianCSD
+Information
+BrokerSub-
+CustodianCSD
+Information
+Delivery
+Instructions(Line
+1)
+Delivery
+Instructions(Line
+2)
+– – Output SeeNote
+164on
+page 204.
+16S SETPRTY 7c EndofSettlement
+LocationBlock
+M M Both SeeNote
+1on
+page 97.
+>>(D1)Institutionblock
+16R SETPRTY 7c StartofSettlement
+Parties-Institution
+Block
+M M Both SeeNote
+1on
+page 97.
+Table3.12SubsequenceD1–SettlementPartiesBlocks
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 80
+
+---
+
+## Page 81
+
+Field
+Tag
+DTCCValue SWIFT FormatFieldName SWIFTDTCC Input
+Output
+Notes
+95R
+95P
+BUYR/DTCYID/8n
+SELL/DTCY/8n
+BUYR/11x
+SELL//11x
+:4!c/8c/34x
+:4!c//4!a2!a2!c
+[3!c]
+InstitutionPrimary
+[[ID]] Number
+InstitutionDTCID
+InstitutionBIC
+M M Both SeeNote
+165on
+page 205.
+95S ALTE/CORP/US/[[DTC]]/8
+n
+ALTE/CORP/cc/BIC/11x
+:4!c/
+[8c]/4!c/2!a/30x Institution
+Alternate
+[[ID]] Number
+InstitutionDTCID
+InstitutionBIC
+O O Both SeeNote
+166on
+page 206.
+97A SAFE//35x :4!c//35x InstitutionSafe-
+keepingAccount
+O O Both SeeNote
+167on
+page 206
+70D PACO//4*35x :4!c//4*35x InstitutionTele-
+phoneNumberand
+WireInstructions
+O O Output SeeNote
+168on
+page 207.
+70D REGI//4*35 :4!c//4*35 Deliverer/Receiver
+Sub-Custodian
+CSDSafekeeping
+Account
+O O Output SeeNote
+169on
+page 207.
+16S SETPRTY 7c EndofSettlement
+Parties-Institution
+Block
+M M Both SeeNote
+1on
+page 97.
+>>(D1)Agentblock
+16R SETPRTY 7c StartofSettlement
+Parties-Agent
+Block
+M M Both SeeNote
+1on
+page 97.
+Table3.12SubsequenceD1–SettlementPartiesBlocks
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 81
+
+---
+
+## Page 82
+
+Field
+Tag
+DTCCValue SWIFT FormatFieldName SWIFTDTCC Input
+Output
+Notes
+95R
+95P
+DECU/DTCYID/8n 1 or
+DEAG/DTCYID/8n 2
+RECU/DTCYID/8n 1 or
+REAG/DTCYID/8n 2
+DECU//11x 1 or
+DEAG//11x 2
+RECU//11x 1 or
+REAG//11x2
+:4!c/8c/34x
+:4!c//4!a2!a2!c
+[3!c]
+AgentPrimary
+[[ID]] Number
+AgentDTCID
+AgentBIC
+M M Both SeeNote
+170on
+page 208.
+95S ALTE/CORP/US/[[DTC]]/8
+n
+ALTE/CORP/cc/BIC/11x
+:4!c/
+[8c]/4!c/2!a/30x
+AgentAlternate
+[[ID]] Number
+AgentDTCID
+AgentBIC
+O O Both SeeNote
+171on
+page 210.
+97A SAFE//35x :4!c//35x AgentSafekeeping
+Account
+O O Both SeeNote
+172on
+page 210.
+Table3.12SubsequenceD1–SettlementPartiesBlocks
+1Institutionblocksaremandatoryiftheagentanddeliverer/receiversub-custodianblocksarepresentoninput.Usewhen
+agentandinstitutionblocksarepresent.
+2Institutionblocksaremandatoryiftheagentanddeliverer/receiversub-custodianblocksarepresentoninput.
+Usewhenagent,deliverer/receiversub-custodian,andinstitutionblocksarepresent.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 82
+
+---
+
+## Page 83
+
+Field
+Tag
+DTCCValue SWIFT FormatFieldName SWIFTDTCC Input
+Output
+Notes
+70C PACO//4x35x :4!c//4*35x [[settlement]]
+Location,
+[[settlement]]
+Method,Special
+InstructionsLine
+19,Special
+InstructionsLine
+20,and
+confirmation_
+msgs.htmSpecial
+InstructionsLine
+21
+O O Both SeeNote
+173on
+page 210.
+70D REGI//6x35x :4!c//6*35x FINRAMSRB
+EMMAURL
+O O Both SeeNote
+174on
+page 212
+16S SETPRTY 7c EndofSettlement
+Parties-Agent
+Block
+M M Both SeeNote
+1on
+page 97.
+>>(D1)Clearingagentblock(output only)
+16R SETPRTY 7c StartofSettlement
+Parties-Clearing
+AgentBlock
+M M Output SeeNote
+1on
+page 97.
+95R
+95P
+DEAG/DTCYID/8n
+DEAG//11x
+:4!c/8c/34x
+:4!c//4!a2!a2!c
+[3!c]
+ClearingAgent
+Primary
+[[ID]] Number
+ClearingAgent
+DTCID
+ClearingAgent
+BIC
+O O Output SeeNote
+175on
+page 213.
+95S ALTE/CORP/
+US/[[DTC]]/8n
+ALTE/CORP/
+cc/BIC/11x
+:4!c/[8c]/4!c/
+2!a/30x ClearingAgent
+Alternate
+[[ID]] Number
+AlternateDTCID
+AlternateBIC
+O O Output SeeNote
+176on
+page 214.
+Table3.12SubsequenceD1–SettlementPartiesBlocks
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 83
+
+---
+
+## Page 84
+
+Field
+Tag
+DTCCValue SWIFT FormatFieldName SWIFTDTCC Input
+Output
+Notes
+97A SAFE//35x :4!c//35x ClearingAgentSafe-
+keepingAccount
+O O Output SeeNote
+177on
+page 214.
+16S SETPRTY 7c EndofSettlement
+Parties-Clearing
+AgentBlock
+M M Output SeeNote
+1on
+page 97.
+>>(D1)Deliverersub-custodianblock
+16R SETPRTY 7c StartofSettlement
+Parties-Deliverer
+Sub-Custodian
+Block
+M M Both SeeNote
+1on
+page 97.
+95R
+95P
+DEAG/DTCYID/8n
+DEI1/DTCYID/8n
+DEAG//11x
+:4!c/8c/34x
+:4!c//4!a2!a2!c
+[3!c]
+DelivererSub-Cus-
+todianPrimary
+[[ID]] Number
+DelivererSub-
+CustodianDTCID
+or
+DelivererSub-
+CustodianBIC
+O O Both SeeNote
+178on
+page 214.
+95S ALTE/CORP/US/[[DTC]]/8
+n
+ALTE/CORP/cc/BIC/11x
+:4!c/
+[8c]/4!c/2!a/30x DelivererSub-
+Custodian
+Alternate
+[[ID]] Number
+AlternateDTC [[ID]]
+AlternateBIC
+O O Both SeeNote
+179on
+page 215.
+97A SAFE//35x :4!c//35x DelivererSub-Cus-
+todianSafekeeping
+Account
+O O Both SeeNote
+180on
+page 216.
+70D PACO//2*25x :4!c//4*35x Supplemental
+Information
+O O Both SeeNote
+181on
+page 216.
+70D REGI//35x :4!c//6*35x CashAccount O O Both SeeNote
+182on
+page 216.
+16S SETPRTY 7c EndofSettlement
+Parties-Deliverer
+Sub-Custodian
+Block
+M M Both SeeNote
+1on
+page 97.
+Table3.12SubsequenceD1–SettlementPartiesBlocks
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 84
+
+---
+
+## Page 85
+
+Field
+Tag
+DTCCValue SWIFT FormatFieldName SWIFTDTCC Input
+Output
+Notes
+>>(D1)Receiversub-custodianblock
+16R SETPRTY 7c StartofSettlement
+Parties-Receiver
+Sub-Custodian
+Block
+M M Both SeeNote
+1on
+page 97.
+95R
+95P
+REAG/DTCYID/8n
+REI1/DTCYID/8n
+REAG//11x
+:4!c/8c/34x
+:4!c//4!a2!a2!c
+[3!c]
+ReceiverSub-
+CustodianPrimary
+Identifier
+ReceiverSub-
+CustodianDTCID
+ReceiverSub-
+CustodianBIC
+O O Both SeeNote
+183on
+page 216.
+95S ALTE/CORP/US/[[DTC]]/8
+n
+ALTE/CORP/cc/BIC/11x
+:4!c/
+[8c]/4!c/2!a/30x ReceiverSub-
+Custodian
+AlternateIdentifier
+ReceiverSub-
+Custodian
+AlternateDTCID
+ReceiverSub-
+Custodian
+AlternateBIC
+O O Both SeeNote
+184on
+page 218.
+97A SAFE//35x :4!c//35x ReceiverSub-Cus-
+todianSafekeeping
+Account
+O O Both SeeNote
+185on
+page 218.
+70D PACO//2*25x :4!c//4*35x Supplemental
+Information
+O O Both SeeNote
+186on
+page 218.
+70D REGI//35x :4!c//6*35x CashAccount O O Both SeeNote
+187on
+page 219.
+16S SETPRTY 7c EndofSettlement
+Parties-Receiver
+Sub-Custodian
+Block
+M M Both SeeNote
+1on
+page 216.
+Table3.12SubsequenceD1–SettlementPartiesBlocks
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 85
+
+---
+
+## Page 86
+
+SubsequenceD2–CashParties
+Inputandoutput.Optional.
+Table3.13showsthecashpartiesofsubsequenceD2foroptionalMT515inputandoutputmessages.
+Field
+Tag
+DTCCValue SWIFT FormatFieldName SWIFT [[DTCC]] Input
+Output
+Notes
+>>(D2)Correspondentbankblock
+16R CSHPRTY 7c StartofCash
+PartiesBlock
+M M Both SeeNote1
+on
+page 97.
+95R
+95P
+ACCW/DTCYID/11x
+ACCW//11x
+:4!c/8c/34x Correspondent
+BankID
+Correspondent
+BankBIC
+O O Both SeeNote
+188on
+page 220.
+97A CASH//35x :4!c//35x Correspondent
+BankCash
+Account
+O O Both SeeNote
+189on
+page 220.
+16S CSHPRTY 7c EndofCash
+PartiesBlock
+M M Both SeeNote1
+on
+page 97.
+Table3.13SubsequenceD2–cashpartiesblock
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 86
+
+---
+
+## Page 87
+
+SubsequenceD3–Amounts
+Inputandoutput.Repetitiveconditionalsubsequence.
+Note
+UsetheAlternateSettlementblockwhenthereisanalternatenetsettlementamounttoreport.
+Table3.14showstheblocksforamountsofsubsequenceD3forMT515inputandoutputmessages.
+Field
+Tag
+DTCCValue SWIFT FormatFieldName SWIFT [[DTCC]] Input
+Output
+Notes
+>>(D3)Commissionblock
+16R AMT 3c StartofAmounts-
+CommissionBlock
+M M Both SeeNote1
+onpage 97.
+19A EXEC//3!a15d :4!c//[N]3!a15d Commission M O Both SeeNote
+190on
+page 221.
+16S AMT 3c EndofAmounts-
+CommissionBlock
+M M Both SeeNote1
+onpage 97.
+>>(D3)Interestblock
+16R AMT 3c StartofAmounts-
+InterestBlock
+M O Both SeeNote1
+onpage 97.
+19A ACRU//3!a15d :4!c//[N]3!a15d AccruedInterest M O Both SeeNote
+191on
+page 222.
+16S AMT 3c EndofAmounts-
+InterestBlock
+M O Both SeeNote1
+onpage 97.
+>>D3)Regulatoryfeesblock
+16R AMT 3c StartofAmounts-
+RegulatoryFees
+Block
+M O Both SeeNote1
+onpage 97.
+19A REGF//3!a15d :4!c//[N]3!a15d RegulatoryFees M O Both SeeNote
+192on
+page 222.
+16S AMT 3c EndofAmounts-
+RegulatoryFees
+Block
+M O Both SeeNote1
+onpage 97.
+>>(D3)ResearchAmountBlock
+Table3.14SubsequenceD3–AmountsBlock
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 87
+
+---
+
+## Page 88
+
+Field
+Tag
+DTCCValue SWIFT FormatFieldName SWIFT [[DTCC]] Input
+Output
+Notes
+16R AMT 3c StartofAmounts-
+ResearchAmount
+Block
+M O Both SeeNote1
+onpage 97.
+19A CHAR//3!a15d :4!c//[N]3!a15d ResearchAmountM O Both SeeNote
+193on
+page 222.
+16S AMT 3c EndofAmounts-
+ResearchAmount
+Block
+M O Both SeeNote1
+onpage 97.
+>>(D3)CountryTaxBlock
+16R AMT 3c StartofAmounts-
+CountryTaxBlock
+M O Both SeeNote1
+onpage 97.
+19A COUN//3!a15d :4!c//[N]3!a15d Country/National
+Tax
+M O Both SeeNote
+194on
+page 223
+16S AMT 3c EndofAmounts-
+CountryTaxBlock
+M O Both SeeNote1
+onpage 97.
+>>(D3)Otherchargesblock
+16R AMT 3c StartofAmounts-
+OtherCharges
+Block
+M O Both SeeNote1
+onpage 97.
+19A OTHR//3!a15d :4!c//[N]3!a15d OtherCharges M O Both SeeNote
+195
+on
+page 223.
+16S AMT 3c EndofAmounts-
+OtherCharges
+Block
+M O Both SeeNote1
+onpage 97.
+>>(D3)Principalamountblock
+16R AMT 3c StartofAmounts-
+PrincipalAmount
+Block
+M O Both SeeNote1
+onpage 97.
+19A DEAL//3!a15d :4!c//[N]3!a15d PrincipalAmount M O Both SeeNote
+196on
+page 224.
+16S AMT 3c EndofAmounts-
+PrincipalAmount
+Block
+M O Both SeeNote1
+onpage 97.
+>>D3)Alternatesettlementblock
+Table3.14SubsequenceD3–AmountsBlock
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 88
+
+---
+
+## Page 89
+
+Field
+Tag
+DTCCValue SWIFT FormatFieldName SWIFT [[DTCC]] Input
+Output
+Notes
+16R AMT 3c StartofAmounts-
+AlternateSet-
+tlementBlock
+M O Both SeeNote1
+onpage 97.
+19A SETT//3!a15d :4!c//[N]3!a15d [[settlement]](Net)
+Amount
+M M Both SeeNote
+197on
+page 224.
+19A RESU//3!a15d :4!c//[N]3!a15d AlternateCur-
+rencyResultant
+Amount
+O O Both SeeNote
+198on
+page 225.
+92B EXCH//3!a/3!a/15d:4!c//3!a/3!a/15d ExchangeRate O O Both SeeNote
+199on
+page 226
+16S AMT 3c EndofAmounts-
+AlternateSet-
+tlementBlock
+M M Both SeeNote1
+onpage 97.
+>>(D3)Legacycurrencyblock
+16R AMT 3c StartofAmounts-
+LegacyCurrency
+Block
+M O Both SeeNote1
+onpage 97.
+19A SETT//3!a15d :4!c//[N]3!a15d LegacySettlement
+(Net)Amount
+M M Both SeeNote
+200on
+page 226.
+19A OCMT//3!a15d :4!c//[N]3!a15d LegacyCurrency
+Amount
+O O Both SeeNote
+201on
+page 226.
+16S AMT 3c EndofAmounts-
+LegacyCurrency
+Block
+M O Both SeeNote1
+onpage 97.
+>>(D3)Otheramounts#1block
+16R AMT 3c StartofAmounts-
+OtherAmounts#1
+Block
+M O Both SeeNote1
+onpage 97.
+19A VARI//[N]3!a15d :4!c//[N]3!a15d OtherAmount#1 O O Both SeeNote
+202on
+page 227.
+16S AMT 3c EndofAmounts-
+OtherAmounts#1
+Block
+M O Both SeeNote1
+onpage 97.
+>>(D3)Otheramounts#2block
+16R AMT 3c StartofAmounts-
+OtherAmounts#2
+Block
+M O Both SeeNote1
+onpage 97.
+Table3.14SubsequenceD3–AmountsBlock
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 89
+
+---
+
+## Page 90
+
+Field
+Tag
+DTCCValue SWIFT FormatFieldName SWIFT [[DTCC]] Input
+Output
+Notes
+19A VARI//[N]3!a15d :4!c//[N]3!a15d OtherAmount#2 O O Both SeeNote
+202on
+page 227.
+16S AMT 3c EndofAmounts-
+OtherAmounts#2
+Block
+M O Both SeeNote1
+onpage 97.
+>>(D3)Otheramounts#3block
+16R AMT 3c StartofAmounts-
+OtherAmounts#3
+Block
+M O Both SeeNote1
+onpage 97.
+19A VARI//[N]3!a15d :4!c//[N]3!a15d OtherAmount#3 O O Both SeeNote
+202on
+page 227.
+16S AMT 3c EndofAmounts-
+OtherAmounts#3
+Block
+M O Both SeeNote1
+onpage 97.
+>>(D3)Otheramounts#4block
+16R AMT 3c StartofAmounts-
+OtherAmounts#4
+Block
+M O Both SeeNote1
+onpage 97.
+19A VARI//[N]3!a15d :4!c//[N]3!a15d OtherAmount#4 O O Both SeeNote
+202on
+page 227.
+16S AMT 3c EndofAmounts-
+OtherAmounts#4
+Block
+M O Both SeeNote1
+onpage 97.
+>>(D3)Otheramounts#5block
+16R AMT 3c StartofAmounts-
+OtherAmounts#5
+Block
+M O Both SeeNote1
+onpage 97.
+19A VARI//[N]3!a15d :4!c//[N]3!a15d OtherAmount#5 O O Both SeeNote
+202on
+page 227.
+16S AMT 3c EndofAmounts-
+OtherAmounts#5
+Block
+M O Both SeeNote1
+onpage 97.
+Table3.14SubsequenceD3–AmountsBlock
+SequenceD–SettlementDetails(continued)
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 90
+
+---
+
+## Page 91
+
+Table3.15showstheendofsettlementdetailblockofsequenceDformandatoryMT515inputandoutput
+messages.
+EndofSubsequenceD3AmountsBlock.
+Field
+Tag
+[[DTCC]]
+Value
+SWIFT FormatFieldName SWIFT [[DTCC]] Input
+Output
+Notes
+16S SETDET 6c EndofSettle
+DetailsBlock
+M M Both SeeNote1on
+page 97.
+Table3.15SequenceD–SettlementDetails
+EndofSequenceDSettlementDetailsBlock
+SequenceE–OtherParties
+Inputandoutput.Optional.
+Table3.16showstheotherpartiesblocksforsequenceE.
+Field
+Tag
+DTCCValue SWIFT FormatFieldName SWIFT [[DTCC]] Input
+Output
+Notes
+>>(E)ReportReceiverOtherPartyblock
+16R OTHRPRTY 8c StartofReceiver
+OtherParty
+Block
+M M Both SeeNote
+1on
+page 97.
+95R
+95P
+MERE/DTCYID/8n
+MEOR//11x
+:4!c/8c/34x
+:4!c//4!a2!a2!c
+[3!c]
+Report
+ReceiverType
+Report
+ReceiverBIC 
+– – Output SeeNote
+203on
+page 228.
+16S OTHRPRTY 8c EndofReceiver
+OtherParty
+Block
+M M Both SeeNote
+1on
+page 97.
+>>(E)BrokerDealerOtherPartyblock
+Table3.16SequenceE–OtherParties
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 91
+
+---
+
+## Page 92
+
+Field
+Tag
+DTCCValue SWIFT FormatFieldName SWIFT [[DTCC]] Input
+Output
+Notes
+16R OTHRPRTY 8c StartofBroker-
+/DealerOther
+PartyBlock
+M M Both SeeNote
+1on
+page 97.
+95R
+95P
+MEOR/DTCYID/8n
+MEOR//11x
+:4!c/8c/34x
+:4!c//4!a2!a2!c
+[3!c]
+Executing
+[[Broker]]/Dealer
+Executing
+[[Broker]]/Dealer
+BIC
+– – Output SeeNote
+204on
+page 228.
+16S OTHRPRTY 8c EndofBroker-
+/DealerOther
+PartyBlock
+M M Both SeeNote
+1on
+page 97.
+>>(E)InterestedParty1block
+16R OTHRPRTY 8c StartofInter-
+estedParty1
+Block
+M M Both SeeNote
+1on
+page 97.
+95R
+95P
+INPA/DTCYID/8n
+INPA/DTCYID/8n
+INPA//11x
+INPA//11x
+:4!c//8c/34x
+:4!c//4!a2!a2!c
+[3!c]
+Interested
+Party1
+PrimaryID
+Number
+Interested
+Party1DTCID
+Interested
+Party1BIC
+M M Both SeeNote
+205on
+page 229.
+95S ALTE/CORP/US/[[DTC]]/8n
+ALTE/CORP/cc/BIC/11x
+:4!c/[8c]/4!c/2!a/30xInterested
+Party1
+Alternate
+[[ID]] Number
+Interested
+Party1DTCID
+Interested
+Party1BIC
+O O Both SeeNote
+206on
+page 229.
+Table3.16SequenceE–OtherParties
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 92
+
+---
+
+## Page 93
+
+Field
+Tag
+DTCCValue SWIFT FormatFieldName SWIFT [[DTCC]] Input
+Output
+Notes
+97A SAFE//35x :4!c//35x InterestedParty
+1Safekeeping
+Account
+O O Both SeeNote
+207on
+page 230.
+70C PACO//2*25x :4!c//4*35x Supplemental
+Information
+O O Both SeeNote
+208on
+page 230.
+16S OTHRPRTY 8c EndofInter-
+estedParty1
+Block
+M M Both SeeNote
+1on
+page 97.
+>>(E)InterestedParty2block
+16R OTHRPRTY 8c StartofInter-
+estedParty2
+Block
+M M Both SeeNote
+1on
+page 97.
+95R
+95P
+INPA/DTCYID/8n
+INPA/DTCYID/8n
+INPA//11x
+INPA//11x
+:4!c/8c/34x
+:4!c//4!a2!a2!c
+[3!c]
+Interested
+Party2
+PrimaryID
+Number
+Interested
+Party2DTCID
+Interested
+Party2BIC
+M M Both SeeNote
+209on
+page 230.
+95S ALTE/CORP/US/[[DTC]]/8n
+ALTE/CORP/cc/BIC/11x
+:4!c/[8c]/4!c/2!a/30xInterested
+Party2
+Alternate
+[[ID]] Number
+Interested
+Party2DTCID
+Interested
+Party2BIC
+O O Both SeeNote
+210on
+page 231.
+97A SAFE//35x :4!c//35x InterestedParty
+2Safekeeping
+Account
+O O Both SeeNote
+211on
+page 231.
+70C PACO//2*25x :4!c//4*35x Supplemental
+Information
+O O Both SeeNote
+208on
+page 230.
+Table3.16SequenceE–OtherParties
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 93
+
+---
+
+## Page 94
+
+Field
+Tag
+DTCCValue SWIFT FormatFieldName SWIFT [[DTCC]] Input
+Output
+Notes
+16S OTHRPRTY 8c EndofInter-
+estedParty2
+Block
+M M Both SeeNote
+1on
+page 97.
+>>(E)InterestedParty3block
+16R OTHRPRTY 8c StartofInter-
+estedParty3
+Block
+M M Both SeeNote
+1on
+page 97.
+95R
+95P
+INPA/DTCYID/8n
+INPA/DTCYID/8n
+INPA//11x
+INPA//11x
+:4!c/8c/34x
+:4!c//4!a2!a2!c
+[3!c]
+Interested
+Party3
+PrimaryID
+Number
+Interested
+Party3DTCID
+Interested
+Party3BIC
+M M Both SeeNote
+212on
+page 231.
+95S ALTE/CORP/US/[[DTC]]/8n
+ALTE/CORP/cc/BIC/11x
+:4!c/[8c]/4!c/2!a/30xInterested
+Party3
+Alternate
+[[ID]] Number
+Interested
+Party3DTCID
+Interested
+Party3BIC
+O O Both SeeNote
+213on
+page 232.
+97A SAFE//35x :4!c//35x InterestedParty
+3Safekeeping
+Account
+O O Both SeeNote
+214on
+page 232.
+70C PACO//2*25x :4!c//4*35x Supplemental
+Information
+O O Both SeeNote
+208on
+page 230.
+16S OTHRPRTY 8c EndofInter-
+estedParty3
+Block
+M M Both SeeNote
+1on
+page 97.
+>>(E)IDnetpartyblock
+Table3.16SequenceE–OtherParties
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 94
+
+---
+
+## Page 95
+
+Field
+Tag
+DTCCValue SWIFT FormatFieldName SWIFT [[DTCC]] Input
+Output
+Notes
+16R OTHRPRTY 8c StartofIDNet
+Block
+M M Both SeeNote
+1on
+page 97.
+95R VEND/DTCY/00000919:4!c/8c/34x IDNetNumber O O Output SeeNote
+215on
+page 232.
+16S OTHRPRTY 8c EndofIDNet
+Block
+M M Both SeeNote
+1on
+page 97.
+>>(E)Tri-partyagentblock
+16R OTHRPRTY 8c StartofTri-Party
+AgentBlock
+M M Both SeeNote
+1on
+page 97.
+95Q
+or
+95R
+TRAG/DTCYID/34x :4!c4!c//4*34x
+:4!c/8c/34x
+Tri-PartyAgent
+Number
+O O Both SeeNote
+216on
+page 234.
+16S OTHRPRTY 8c EndofTri-Party
+AgentBlock
+M M Both SeeNote
+1on
+page 97.
+Table3.16SequenceE–OtherParties
+SequenceF–TwoLegTransactionDetails(REPO)
+Inputandoutput.Optional.
+Table3.17showsthetwolegtransactiondetails(REPO)blocksforsequenceF.
+Field
+Tag
+DTCCValue SWIFT FormatField
+Name
+SWIFT [[DTCC]] Input
+Output
+Notes
+16R REPO 4c StartofREPO
+Block
+M M Both SeeNote1
+onpage 97.
+98A TERM//YYYYMMDD:4!c//8!n EndDate/Ma-
+turityDate
+O O Both SeeNote
+217on
+page 234.
+98A RERA//YYYYMMDD:4!c//8!n FirstFlex
+Repayment
+Date
+O O Both SeeNote
+218on
+page 235.
+Table3.17SequenceF–TwoLegTransactionDetails(REPO)Block
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 95
+
+---
+
+## Page 96
+
+Field
+Tag
+DTCCValue SWIFT FormatField
+Name
+SWIFT [[DTCC]] Input
+Output
+Notes
+22F RERT//FIXE
+RERT//VARI
+:4!c/[8c]/4!c FINRateType O O Both SeeNote
+219on
+page 236.
+22F MICO//4x :4!c/[8c]/4!c Accrual
+Method
+O O Both SeeNote
+220on
+page 236.
+20C REPO//16x :4!c//16x Additional
+Reference
+Number1
+O O Both SeeNote
+221on
+page 238.
+20C SECO//16x :4!c//16x Additional
+Reference
+Number2
+O M Both SeeNote
+222on
+page 238.
+92A REPO//[N]15d :4!c//[N]15d FINRate O O Both SeeNote
+223on
+page 238.
+92C VASU/DTCYINDX/24x:4!c/[8c]/24x Index(Bench-
+mark)
+O O Both SeeNote
+224on
+page 240.
+92A SHAI//[N]15d :4!c//[N]15d [[Haircut]]% O O Both SeeNote
+225on
+page 241.
+92A RSPR/[N]15d :4!c//[N]15d Spreadto
+Benchmarkor
+Index
+O O Both SeeNote
+226on
+page 242.
+99B CADE//3n :4!c//3!n CallDelay O O Both SeeNote
+227on
+page 243.
+99B TOCO//3n :4!c//3!n NumberofCol-
+lateralPieces
+O O Both SeeNote
+228on
+page 243.
+19A FORF//3!a15d :4!c//[N]3!a15d SecurityLend-
+ingFee
+O O Both SeeNote
+229on
+page 243.
+19A DEAL//3!a15d :4!c//[N]3!a15d REPOValue O O Both SeeNote
+230on
+page 244.
+Table3.17SequenceF–TwoLegTransactionDetails(REPO)Block
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 96
+
+---
+
+## Page 97
+
+Field
+Tag
+DTCCValue SWIFT FormatField
+Name
+SWIFT [[DTCC]] Input
+Output
+Notes
+19A ACRU//[N]3!a15d :4!c//[N]3!a15d Accrued
+Interestat
+Maturity
+O O Both SeeNote
+231on
+page 244.
+19A REPP//3!a15d :4!c//[N]3!a15d [[Premium]]
+Amount
+O O Both SeeNote
+232on
+page 244.
+16S REPO 4c EndofREPO
+Block
+M M Both SeeNote1
+below.
+Table3.17SequenceF–TwoLegTransactionDetails(REPO)Block
+FieldSpecificationsforMT515TradeConfirmation
+Messages
+ThissectiondescribesthefieldspecificationsforMT515confirmationmessages.
+NoteforStartandEndofBlockDelimiters
+Eachsequenceandsubsequencecontainsrelatedtradeinformation.Todelimittheinformation,openand
+closethesequencewiththeStart-of-BlockandEnd-of-Blockfieldtags.Acarriagereturn/linefeed(CRLF)
+delimitseachSWIFTfield/line.Formoreinformation,seeStart-of-BlockandEnd-of-BlockFields.
+Note1:Start-of-BlockorEnd-of-BlockField
+Toopenandcloseeachsequenceandsubsequence,hereisthestart-of-blockandend-of-blockformat.
+Format 4c
+Examples :16R:GENL
+:16S:GENL
+NotesforSequenceA–GeneralInformation
+ThissectionshowsthenotesforthemandatorygeneralinformationforsequenceA.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 97
+
+---
+
+## Page 98
+
+Note2:Field20C:BrokerConfirmNumberorDTCControlNumber
+ForinputoftradeconfirmationstoDTCC,field20Ccontainsa12-bytebrokerconfirmnumberthat
+uniquelyidentifieseachtradeconfirmation.Theinputcannotstartorendwithoneslash(/)ortwo
+consecutiveslashes(//).
+ForoutputmessagesfromDTCC,field20CcontainsaDTCcontrolnumber.DTCCgeneratesDTCcontrol
+numberstouniquelyidentifyeachtradeconfirmation.
+Format :4!c//16x
+<SEME>//<brokerconfirmnumber>
+SEME SenderMessageReference
+Example :20C::SEME//BKRCFN789012
+:20C::SEME//123456789
+Note3:Field23G:MessageType–NewConfirm
+Field23Gindicateswhetherthismessageisanewconfirmationorabrokercancellationforapreviously
+sentMT515message.
+Format 4!c[/4!c]
+Examples :23G:NEWM
+:23G:CANC
+Table3.18showsthetabletypesusedinfield23G.
+Type Description
+NEWM Newmessageoraresubmission.
+CANC Requesttocancelapreviouslysentconfirmation.TheLinkedReferencefield20Cmustcon-
+taintheoriginalbrokerconfirmnumberforcancellationsandrejections.Cancellationmes-
+sagesmustcontainallmandatoryfields.
+Table3.18TableTypes
+Note4:Field98C:DTCCProcessingDateandTime
+Field98CindicatesthedateandtimethatDTCCprocessedtheconfirmation.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 98
+
+---
+
+## Page 99
+
+Format :4!c//8!n6!n
+<PREP>//<YYYYMMDDHHMMSS>
+PREP PreparationDateandTime
+Example :98C::PREP//20010128095526
+Note5:Field22F:TransactionTypeIndicator
+Field22Fincludestheissuercodeandvaluesforthisfielddependsonthemessagetypeenteredinfield
+23G.Formoreinformation,seeErrorCodes
+Format :4!c/[8c]/4!c
+<TRTR>/[<DTCY>]/<valuedependenton messagetype>
+TRTR TradeTransactionType
+Examples :22F::TRTR//TRAD
+:22F::TRTR/DTCY/C001
+:22F::TRTR/DTCY/RSUB
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 99
+
+---
+
+## Page 100
+
+Table3.19showseachvalueofthetradetransactiontypesusedinfield22F.
+Field
+23G
+Qualifier User
+Code
+Value Description
+NEWM TRTR TRAD Newconfirmation.
+CANC TRTR DTCY Cnnn Brokercancellationofconfirmation.Formoreinformation,see
+ErrorCodes
+NEWM TRTR DTCY RSUB Brokerresubmissionofconfirmation.
+Table3.19TradeTransactionTypes
+NotesforSubsequenceA1–LinkageBlocks
+SWIFTrequiresatleastoneA1subsequencepresentineachmessage.Thissequencelinksthemessage
+toapreviouslysentmessage.Newconfirmations,cancellations,orresubmissionsneedoneA1
+subsequence.DTCCcansupplyanextrasubsequenceonoutputfortheinstitutioninstructions.
+Note6:Field13A:LinkedTransaction
+Field13Alinksthecurrenttransmissiontoapreviouslysentmessage.Themessagetypethatyoucanlink
+tothismessageisapreviouslysentMT515confirmationmessage.
+Format :4!c//3!c
+<LINK>//<messagenumber>
+LINK Linkedmessage
+Example :13A::LINK//515
+Field13Ausesthemessagenumber515toconfirminputandoutputmessages.
+Note7:Field20C:LinkedReferencetoOriginalBrokerConfirmationNumberandParentCross
+ReferenceNumber
+Field20Cspecifiesthereferencenumberassignedtotheoriginalmessage.Inputforfield20Cdependson
+thevalueenteredinsequenceA,field22F.Onoutput,theoriginalbrokerconfirmnumberidentifiesthe
+originaltradeforcancellationsandresubmissions.Theinvestmentmanagerassignstheinstitutionblock
+referenceandinstitutiondetailreferencenumberstouniquelyidentifytheinstruction.Thechartliststhe
+acceptablequalifiersandassociatedvalues.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 100
+
+---
+
+## Page 101
+
+ClientsusingDTCCmatchinghaveaccesstotheinstitutionblockreferencenumberandinstitution
+referencenumbers.
+Format :4!c//16x
+<COMM>//<reference>
+Example(input) :20C::COMM//NEW
+:20C::COMM//ORIGBKRCNFM2
+Example(output)Newtrade
+:16R:LINK
+:13A::LINK//515
+:20C::COMM//BRKCFM789012(Confirmation)
+:16S:LINK
+:20C::COMM//BRKRCNFM9012(Link1 mandatory)
+:20C::COMM//ORIGBKRCNFM2(Link2 mandatory)
+Resubmission
+:20C::COMM//ORIGBKRCNFM2
+:20C::COMM//IIBLOCKREF123456
+:20C::COMM//IIREFIDCNF123456
+Parentreferencenumber
+20CCOLR//1234567890123456
+SequenceB–PartialFillDetails
+SequenceBisarepetitiveconditionalsequencecontainingpartialfilldetailsfortheexecution.[[DTCC]]
+limitssequenceBtoinstanceswhenitisnecessarytoenteranetpriceforthetrade.Donotprovidethis
+blockwhennotusingthenetpriceorwhenusingzeros.
+Note8:Field36B:Quantity–[[shares]]/FaceValue
+DTCCdoesnothaveacorrespondingfieldintheconfirmationmessagetoaccommodateapartial
+purchaseorsale.Setthisfieldto0,0whennotusingthenetprice.
+Format :4!c//4!c/15d
+<PAFI>//<FAMT>/<quantity>
+PAFI QuantityofthePartialPurchaseorSaleofFinancialInstrument
+Example :36B::PAFI//FAMT/0
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 101
+
+---
+
+## Page 102
+
+Table3.20showsthequantityofthepartialpurchaseorsaleofthefinancialinstrumentusedinfield36B.
+Value Description
+FAMT FaceAmount
+Table3.20QuantityofthePartialPurchaseorSaleoftheFinancialInstru-
+ments
+Note9:Field90B:NetPrice
+Field90BisamandatorySWIFT fieldthatspecifiesthenetpriceofthetotaltrade.Thenetpriceisthe
+differencebetweenthequotedpriceandthemark-upormark-down.Thenumberofdecimaldigitsinnet
+priceisnotvalidatedagainstthespecifiedcurrency.
+Format :4!c//4!c/3!a15d
+<DEAL>//<ACTU>/<isocurrencycode>
+<netprice>
+DEAL PriceofthePartialTrade
+Example :90B::DEAL//ACTU/USD12345678,50
+Table3.21showsthecodeusedforthepriceofthepartialtraderepresentedastheactualamount.The
+formatalsoincludestheISOcurrencycode.FormoreinformationabouttheISOcountryandcurrency
+codes,seeInput/OutputInformation.
+Value Description
+ACTU Actualamount
+Table3.21PriceofthePartialTrade
+Note10:Field22F:PriceIndicator
+Field22Fidentifiesthetypeofpriceinfield90Basthenetprice.
+Format :4!c/[8c]/4!c
+<PRIC>//<priceindicator>
+PRIC PriceTypeIndicator
+Example :22F::PRIC//NET1
+Table3.22showsthepriceindicatorusedinfield22F.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 102
+
+---
+
+## Page 103
+
+Value Description
+NET1 Priceisthenetofallcharges,fees,andtaxes.
+Table3.22PriceIndicator
+SequenceC–ConfirmationDetails
+ThissectionprovidesthenotesforsequenceC,whichcontainsthemandatorytradeconfirmationdetails.
+Note11:Field98ATradeDateorfield98CTradeDateandTime
+Field98Aspecifiesthedateandfield98Cspecifiesthetradeexecutiondateandtime.Itismandatoryto
+specifyeitherthetradedateinfield98Aortradedateandtimeinfield98C.
+Format :4!c//8!n
+<TRAD>//YYYYMMDD
+:4!c//8!n6!n
+<TRAD>//YYYYMMDDHHMM[SS]
+TRAD TradeDate
+Examples :98A::TRAD//20010329
+:98C::TRAD//20010329124500
+Note12:Field98ASettlementDateorfield98BSettlementType
+Field98A:SettlementDate
+Field98Aspecifiesthesettlementdate,whichisthedatethatthetradesettles.AllRegularWaytrades
+mustincludeasettlementdateinfield98A,inYYYYMMDDformat.ForRegularWaytrades,donotenter
+datainsettlementtype98Bfield.ForWhen-IssuedandWhen-Distributedtrades,omitfield98A,andenter
+thesettlementtypeinfield98B.
+Format :4!c//8!n
+<SETT>//<YYYYMMDD>
+SETT SettlementDate
+Example 98A::SETT//20010331
+Field98B:SettlementType
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 103
+
+---
+
+## Page 104
+
+Whenyoudonotprovidethesettlementdatefield98,thesettlementtypefield98Bismandatory.
+Settlementtypeindicatesthatthetradesettlesafterissuing,distributing,orissuinganddistributinga
+security.Usefield98Binsteadoffield98Aforthesetypesoftrades.AllRegularWaytradesmustusethe
+settlementdatefield98A.
+Format :4!c/[8c]/4!c
+Example <SETT>//<settlementtype>
+SETT SettlementType
+Example :98B::SETT//WISS
+Table3.23showsthesettlementcodesusedinfield98B.
+SettlementCode Description
+WISS When-Issued
+WDIS When-Distributed
+WIDI When-IssuedorWhen-Distributed
+Table3.23SettlementCodes
+Note13:Field90B:Price
+Field98Bindicatesthepricepershareatwhichthesecuritytrades.Itcancontainafloatingdecimalinany
+positionandisgreaterthanzero.SWIFTrequiresadecimalcommainthisfield.DTCCdoesnotvalidate
+thenumberofdecimaldigitsinpriceagainstthecurrencyspecified.TheISOcurrencycodefieldmust
+containavalidISOcurrencycode.FormoreinformationabouttheISOcountryandcurrencycodes,see
+Input/OutputInformation.
+Format :4!c//4!c/3!a15d
+<DEAL>//<ACTU>/<isocurrencycode><price>
+DEAL Price
+Example :90B::DEAL//ACTU/USD12345678,01234
+Table3.24showsthepricecodeusedinfield90B.
+Value Description
+ACTU Actualamount.
+Table3.24PriceCode
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 104
+
+---
+
+## Page 105
+
+Note14:Field90B:Mark-UpPriceorMark-DownPrice
+Field90Bspecifiesthe10b–10fieldinformationforbroker/dealertodisclosethemark-upormark-down
+involvedinthetransaction.Ifsupplied,DTCCallowsfornumeric-onlyvaluesandfloatingdecimalinany
+position.
+l Usemarkedup(MAUP)forbuys.Itisthepricethebrokerpaidpluscommissions.
+l Usemarkeddown(MADW)forsells.Itisthepricethebrokerreceivesminuscommissions.
+Format :4!c//4!c/3!a15d
+<pricequalifier>/<pricetypecode>/<price
+Examples :90B::MAUP/PREM/USD0,000034
+:90B::MAUP/DISC/USD0,000034
+:90B::MAUW/PREM/USD0,000034
+:90B::MAUW/DISC/USD0,000034
+Table3.25showsthepricequalifiersusedinfield90B.
+Value Description
+MAUP Markedupprice.
+MADW Markeddownprice.
+Table3.25PriceQualifiers
+Table3.26showsthepricetypecodesusedinfield90B.
+Value Description
+DISC Discount
+PREM [[Premium]]
+Table3.26PriceTypeCodes
+Note15:Field99A:InterestDays
+Field99AspecifiestheinterestaccrualdaysfortermcloseorterminationofanopenREPO(leg2).This
+fieldcancontainanegativevalue.Ifnegative,thesigniswithintheAccruedDaysfieldoptionAformat,
+withinthe[N]field.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 105
+
+---
+
+## Page 106
+
+Format :4!c//[N]3!n
+<DAAC>//[N]<interestdays>
+DAAC InterestAccrualDays
+Example 99ADAAC//120
+99ADAAC//N120
+Note
+InterestdaysintheTradeSuiteIDserviceareuptofournumericcharacters.IfthedataintheTradeSuite
+IDserviceisfourcharacters(greaterthan999),DTCCdropsthefirstcharacteronoutput.
+Note16:Field94B:PlaceofTradeorExchange
+Field94Bindicatesthemarketwherethetradewasexecuted.ForinputtoDTCC,entertwozerosfollowed
+bytheappropriatetwo-characterDTCmarketcode.Formoreinformationaboutmarketcodes,see
+Input/OutputInformation.
+Format :4!c/[8c]/4!c[/30x]
+<TRAD>/<DTCY>/<placeof trade>
+TRAD Placeatwhichtradewasexecuted
+Example :94B::TRAD/DTCY/0047
+Note17:Field19A:[[settlement]](Net)Amount
+Field19Aindicatesthesettlementamount.Thisamountisthesumoftheprincipalamount,registration
+fees,regulatoryfees,interest,taxes,andallotheramountsassociatedwiththetrade.Thisfieldis
+mandatoryforRegularWaytradesandensuresthattheamountisgreaterthanzero.Thenetamountis
+optionalforWhen-IssuedorWhen-Distributedtrades.Thenumberofdigitsfollowingthecommamustnot
+exceedthemaximumallowedforthespecifiedcurrency.
+Whenanalternatecurrencyisassociatedwiththetrade,omitthesequenceCfield19Ahere.Next,enter
+thenetamountintheAlternateCurrencyBlockfieldinsequenceD3.
+Format :4!c//[N]3!a15d
+<SETT>//[N]<isocurrencycode><netamount>
+SETT [[settlement]](net)amount
+Example :19A::SETT//USD0,0
+:19A::SETT//NUSD100,0
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 106
+
+---
+
+## Page 107
+
+Note18:Field22H:BuyorSellIndicator
+Field22Hshowsthebuyorsellindicatorthatspecifieswhethertheinvestmentmanagerhasinstructedthe
+executingbroker/dealertobuyorsellsecuritiesonitsbehalf.
+Format :4!c//4!c
+<BUSE>//<buy/sellindicator>
+BUSE BuyorSellIndicator
+Example :22H::BUSE//BUYI
+:22H::BUSE//SELL
+Table3.27showsthebuyorsellindicatorsusedinfield22H.
+Value Description
+BUYI Buy-Theexecutingbroker/dealerisdeliveringsecuritiestotheinvestment
+manager’sagent.
+SELL Sell-Theexecutingbroker/dealerisreceivingsecuritiesfromtheinvestment
+manager’sagent.
+Table3.27BuyorSellIndicators
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 107
+
+---
+
+## Page 108
+
+Note19:Field22H:PaymentMethodIndicator
+Field22Hindicateswhetherthetransactionisfreeoragainstpayment.DTCCacceptsagainstonly
+paymentsettlements.
+Format :4!c//4!c
+<PAYM>//<APMT>
+PAYM PaymentMethodIndicator
+Example :22H::PAYM//APMT
+Table3.28showsthepaymentmethodindicator.
+PaymentType Description
+APMT Againstpayment.
+Table3.28PaymentMethodIndicators
+Note20:Field22F:Long/ShortIndicator
+Field22Fismandatoryforallprimebroker-selltrades.TheTradeSuiteIDservicemasterfiledefinesthe
+primebrokerasCNSELIGIBLE.
+Format :4!c[8c]/4!c
+<TTCO>//<long/shortindicator>
+TTCO Long/ShortIndicator
+Example :22F::TTCO//SPSI
+Table3.29showstheprimebrokerlong/shortindicatorusedinfield22F.
+Long/ShortIndic-
+ator
+Description
+SPSI SoldPlus(Long)
+SSTI SoldShort
+SETI SoldExempt
+Tradeisexemptfromshort-salerules.
+Blank Unavailableornotapplicable.
+Table3.29Long/ShortIndicators
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 108
+
+---
+
+## Page 109
+
+Note21:Field22F:GreenwichMeanTime
+Field22FprovidestheGreenwichMeanTime(GMT)indicatoristheplus/minusdifferencebetweenGMT
+andtradetime.
+Format :4!c/[8c]/4!c
+<PROC>/<DTCY>/<plus/minusdifference>
+PROC TradeTimeDifferencewithGMT
+Example :22F::PROC/DTCY/NE02
+Table3.30showsthecodesusedtodescribethedifferencebetweenthetradetimeandGMT.
+Long/ShortIndic-
+ator
+Description
+NExx DifferencebetweentradetimeandGMTexpressedasaneg-
+ativevalue.
+PSxx DifferencebetweentradetimeandGMTexpressedasapositive
+value.
+Table3.30DifferencebetweentheTradeTimeandGMT
+Note22:Field22F:CommissionSharingIndicator
+Field22Findicateswhethertheexecutingbroker’scommissionisbeingsplit.ThisfielddefaultstoNo.If
+thisfieldisblank,itdoesnotappearonoutput.
+Format :4!c/[8c]/4!c
+<COST>/<DTCY>/<commissionsharingindicator>
+COST CommissionSharing
+Example :22F::COST/DTCY/COMY
+Note23:Field22F:CancelAfterAffirmation/MatchIndicator
+Field22Findicatesthatthebroker/dealerattemptedtocancelatradeaftermatchingoraffirmation.
+Format :4!c/[8c]/4!c
+<TTCO>/<DTCY>/<cancelafteraffirmation/matchindicator>
+TTCO AfterAffirmation
+Example :22F::TTCO/DTCY/CAMI
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 109
+
+---
+
+## Page 110
+
+Note24:Field22F:MatchedIndicator
+Field22Findicatesthematchingstatusforatrade.Whenyoudonotintendtomatchatradeandthisfield
+isblankoninput,theoutputomitsthefield.
+Format :4!c/[8c]/4!c
+<TTCO>/<DTCY>/<matchedindicator>
+TTCO MatchedIndicator
+Example :22F::TTCO/DTCY/MAT2
+Table3.31showsthematchedindicatorsusedinfield22F.
+Long/ShortIndic-
+ator
+Description
+MAT0 Notintendedformatching.
+MAT1 Intendedformatching,butnotmatched.
+MAT2 Tradehasmatchedinstitutioninstructions.
+Table3.31MatchedIndicators
+Note25:Field22F:ALERTAccountFoundIndicator
+Ifblank,theALERTaccountfoundindicatordefaultstoNo,andfield22Fdoesnotappearonoutput.
+Format :4!c/[8c]/4!c
+<TTCO>/<DTCY>/<alertindicator>
+TTCO ALERTAccountFound
+Example :22F::TTCO/DTCY/SIDY
+:22F::TTCO/DTCY/SIDN
+Table3.32showstheALERTaccountfoundindicatorusedinfield22F.
+ALERTAccount
+FoundIndicator
+Description
+SIDY ALERTaccountfound.
+SIDN ALERTaccountnotfound.
+Table3.32ALERTAccountFoundIndicators
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 110
+
+---
+
+## Page 111
+
+Note26:Field22F:TradeTransactionConditionIndicator
+Field22Findicatesthetradetransactioncondition.
+Format :4!c/[8c]/4!c
+<TTCO>//<tradetransactionconditionindicator>
+TTCO TransactionCondition
+Example :22F::TTCO//SOP2
+Table3.33showsthetradetransactionconditionindicatorsusedinfield22F.
+ALERT
+AccountFoundIndicator
+Description
+SOP0 Undetermined
+SOP2 [[DTC]]
+SOP4 Primebroker
+SOP6 DTCnetting
+Table3.33TradeTransactionConditionIndicators
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 111
+
+---
+
+## Page 112
+
+Note27:Field22F:DTCEligibilityIndicators
+Field22FindicatestheeligibilitystatusofthetradeforsettlementatDTCC.
+Format :4!c/[8c]/4!c
+<TTCO>/<DTCY>/<eligibilityindicator>
+TTCO DTCEligibleIndicator
+Example :22F::TTCO/DTCY/DEI1
+Table3.34showstheDTCEligibilityIndicatorsusedinfield22F.
+ALERTAccount
+FoundIndicator
+Description
+DEI0 SettlementisoutsideDTC.
+DEI1 TradeisDTC-eligible.
+DEI2 TradeisDTCineligible.
+DEI3 [[DTC]]-eligibletradebecameineligibleforDTCsettlement
+becauseoflateaffirmation.
+Table3.34DTC-EligibilityIndicators
+Note28:Field22F:PrimeBrokerDisaffirmationIndicator
+Field22FindicatesthatonlyprimebrokerCNStradescanbedisaffirmed.
+Format :4!c/[8c]/4!c
+<TTCO>/<DTCY>/<primebrokerdisaffirmationindicator>
+TTCO DisaffirmationIndicator
+Example :22F::TTCO/DTCY/DIIA
+Table3.35showstheprimebrokerdisaffirmationindicatorusedinfield22F.
+Indicator Description
+DIIA Primebrokerdisaffirmationindicator
+Table3.35PrimeBrokerDisaffirmationIndicator
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 112
+
+---
+
+## Page 113
+
+Note29:Field22F:EligibilityReasonCode
+Field22FindicatestheeligibilitystatusofthetradeforsettlementatDTCC.Youcanhaveamaximumof
+fiverepetitions.
+Format :4!c/[8c]/4!c
+<TTCO>/<DTCY>/<eligibilityindicator>
+TTCO Eligibility
+Format :22F::TTCO/DTCY/EC78
+Table3.36showstheeligibilityreasoncodesusedinfield22F.
+Value Description
+EC20 WasIDNet,nowsettlingpredeterminedquantity(PDQ)
+IDnettradeconfirmredeterminedtosettletrade-for-trade(PDQ).
+EC21 WasIDNet,nowineligible
+IDnettradeconfirmredeterminedasineligible.
+EC22 IMS cancelclearingagentcancel
+IDnettradeconfirmcanceledinInventorymanagementservices(IMS)by
+theclearingagent.
+EC23 IMScancelsclearingbrokercancelIDnettradeconfirmcanceledinIMSby
+clearingbroker.
+EC24 IMScancelsclearingbrokercancel
+IDnettradeconfirmcanceledinIMSbyclearingbroker.
+EC24 IMScancelsclearingbrokerexemption
+IDnettradeconfirmExemptedinIMSbyclearingbroker.
+EC25 IMSreject
+IDnettradeconfirmrejectedinIMS.
+EC26 ATPreject
+IDnettradeconfirmrejectedinATP.
+EC27 ATPdrop
+IDnettradeconfirmdroppedinATP.
+Table3.36EligibilityReasonCodes
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 113
+
+---
+
+## Page 114
+
+Value Description
+EC28 IMSunprocessedexemption
+IDnettradeconfirmunprocessedexemptioninIMS.
+EC29 IMSclearingagentexemption
+IDnettradeconfirmexemptedinIMSbyclearingagent.
+EC31 ClearingagentCNSineligible
+IDnettradeconfirmredeterminedclearingagentCNSineligible.
+EC32 ClearingbrokerCNSineligible
+IDnettradeconfirmRedeterminedclearingbrokerCNSineligible.
+EC60 Committeeonuniformsecurityidentificationprocedures([[CUSIP]])isCNS
+ineligible
+CUSIPnumberisineligibleforCNSsettlement.
+EC61 CUSIPineligible
+CUSIPnumberisineligibleforDTCsettlement.
+EC62 CUSIPfrozen
+FrozenCUSIPnumber.
+EC64 When-IssuedorWhen-Distributedtrade
+Settlementcodeisoneofthefollowing:
+2=When-Issued
+3=When-Distributed
+4=When-IssuedorWhen-Distributed
+EC65 ClearingagentnotSDFS
+Settheclearingagent/brokernumberontheDTC-eligibilityfiletoSDFS
+whenthesecurityisanSDFSissue.
+EC66 ClearingbrokernotSDFS
+Settheclearingbroker/dealernumberontheDTC-eligibilityfiletoSDFS
+whenthesecurityisanSDFSissue.
+EC74 Samedaytrade
+Settlementdateequalsthetradedate.
+EC75 Pastdatedtrade
+Confirmdateisgreaterthanthesettlementdateminus2.Enteredtrade
+inputonorafterS-2;therefore,thetradeisineligibleforautomated.
+EC78 Depositorychill
+CannotmakedeliveriesforthissecuritytoorfromaDTCparticipant.
+Table3.36EligibilityReasonCodes
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 114
+
+---
+
+## Page 115
+
+Value Description
+EC79 Agentparticipantchill
+CannotmakedeliveriesforthissecuritytoorfromaDTCparticipant.
+EC80 Brokerparticipantchill
+Participantisineligiblefordeliveryprocessingoreurocurrencydelivery
+processing.
+EC81 Lateaffirm
+AffirmedthetradeafterS-2andineligibleforautomatedsettlement.
+EC82 Agentparticipantinvalid1
+ClearingagentisnotaDTCparticipant.
+EC83 Brokerparticipantinvalid1
+ClearingbrokerisnotaDTCparticipant.
+EC84 Securitytypeineligible1
+Securitytypechangedfromequitytoabondorfromabondtoequityforold
+formattradeinputs.
+EC85 Agentbankineligible
+AgentbankisineligibleforDTCprocessing.Thismessageisonlyforold-
+formatinputsandresultsinanineligibleconfirmforDTC-eligibletrades.
+Submittingthisinputinthenewformatresultsinatradeerror.
+EC86 Brokerconfirm#notunique
+InformativemessagethatdoesnotaffectDTC-eligibility.Submittedtheold-
+formattradeinputwithaduplicatebroker/dealerconfirmnumberresulting
+inatradeerror.CodeGAABIAAOininteractiveformat.
+EC87 Attempttocancelaffirmedtrade
+[[Broker]]/dealersubmittedacancellationonatradeinputforanaffirmed,
+matched,ormatchedaffirmedconfirm.
+EC88 Fractionalshares
+Confirmationcontainsfractionalshares.
+EC89 Trade-for-trade(PDQ)redeterminedtosettleIDnet
+Initiallydeterminedtheconfirmtosettletrade-for-trade(PDQ),butnow
+settlingIDnet.
+Table3.36EligibilityReasonCodes
+1ThisconditiondoesnotoccurwhentheDTCinitiallyproducestheconfirm.Itcanonlyoccurduringaffirmation,
+matching,orchangeofeligibilityprocessing.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 115
+
+---
+
+## Page 116
+
+Value Description
+EC90 DTCtrade-for-tradeconfirmdeterminedtosettleCNS
+Initiallydeterminedtheconfirmtosettleasatrade-for-tradedeliveryat
+[[DTC]].However,afteraffirmation,DTCchangedtheCNSeligibilityofthe
+primebroker,orNSCCchangedtheCNSeligibilityofthesecurity.The
+deliverysettleswithinCNS.
+EC91 IPOinvalidagentaccount
+Useforflipping,tonotifythepartiestothetradethatthesecurityisa
+trackinginitialpublicoffering([[IPO]]),andtheAgentInternalAccountnumber
+incorrectlyidentifiesordoesnotidentifythecustomerofthetrade.Asa
+result,thistradepotentiallycannotsettleatDTC.
+EC92 TBAtrade
+IneligibleforsettlementatDTC.
+EC99 Miscellaneous
+InputconfirmonorbeforeJune2,1994andwasineligiblebasedon
+eligibilityrequirementsineffectbeforeJune2,1994.Thenewsystemdoes
+notsupportacodetoidentifytheseolderrequirements.Previouslyreported
+thesetradesasCodes47,48,49,50,52,53,56,or57.Thiscategory
+reportsthetrades.
+Table3.36EligibilityReasonCodes
+Note30:Field22F:PriceTypeIndicator
+Field22FshowsthepricetypeassociatedwiththePricefield.
+Format :4!c/[8c]/4!c
+<PRIC>/<DTCY>/<pricetype>
+PRIC PriceTypeIndicator
+Example :22F::PRIC/DTCY/PR99
+Table3.37showsthepricetypeindicatorusedinfield22F.
+Value Description
+PR00 Notspecified
+PR01 Spot
+PR02 Clean
+Table3.37PriceTypeIndicator
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 116
+
+---
+
+## Page 117
+
+Value Description
+PR03 Dirty
+PR04 Forward
+PR05 All-in
+PR06 Bid
+PR07 Ask
+PR08 High
+PR09 Low
+PR10 Open
+PR11 Close
+PR12 Mid
+PR13 Mean
+PR14 LastTrade
+PR15 CompositeTrade
+PR16 Issue
+PR17 Kassa
+PR18 Evaluating
+PR19 PrimaryExchange
+PR99 Other
+Table3.37PriceTypeIndicator
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 117
+
+---
+
+## Page 118
+
+Note31:Field22F:BlockTradeIndicator
+Field22Findicatesthattheconfirmrepresentsablock-leveltrade.
+Note
+WhentheblocktradeindicatorequalsB,DTCCcreatesthisfieldtag.
+Format :4!c/[8c]/4!c
+<TTCO>//<blocktradeindicator>
+TTCO TradeTransactionConditionIndicator
+Example :22F::TTCO//BLKO
+Note32:Field22F:SIPCMemberIndicator
+Field22Findicateswhetherthebroker/dealerisaSIPCmember(10b–10field).
+Format :4!c/[8c]/4!c
+<TRCN>/<DTCY>/<SIPCmemberindicator>
+TRCN TradeRegulatoryIndicator
+Examples :22F::TRCN/DTCY/SIPY
+:22F::TRCN/DTCY/SIPN
+Table3.38showstheSIPCmemberindicatorusedinfield22F.
+Value Description
+SIPY Yes,thebroker/dealerisanSIPCmember.
+SIPN No,thebroker/dealerisnotanSIPCmember.
+Table3.38SIPCMemberIndicator
+Note33:Field22F:FINRAMemberIndicator
+Field22Findicateswhetherthebroker/dealerisaFINRAmember(10b–10field).
+Format :4!c/[8c]/4!c
+<TRCN>/<DTCY>/<FINFAmemberindicator>
+TCRN TradeRegulatoryIndicator
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 118
+
+---
+
+## Page 119
+
+Example :22F::TRCN/DTCY/FINY
+:22F::TRCN/DTCY/FINN
+Table3.39showstheFINRAmemberindicatorusedinfield22F.
+Value Description
+FINY Yes,thebroker/dealerisaFINRAmember.
+FINN No,thebroker/dealerisnotaFINRAmember.
+Table3.39FINRAMemberIndicator
+Note34:Field22F:NYSEMemberIndicator
+Field22Findicateswhetherthebroker/dealerisaNYSEmember(10b–10field).
+Format :4!c/[8c]/4!c
+<TRCN>/<DTCY>/<FINFAmemberindicator>
+TCRN TradeRegulatoryIndicator
+Example :22F::TRCN/DTCY/NYSY
+:22F::TRCN/DTCY/NYSN
+Table3.40showstheNYSE memberindicatorusedinfield22F.
+Value Description
+NYSY Yes,thebroker/dealerisaNYSEmember.
+NYSN No,thebroker/dealerisnotaNYSEmember.
+Table3.40NYSEMemberIndicator
+Note35:Field22F:MarketMakerIndicator
+Field22Findicateswhetherthebroker/dealerisamarketmakerinthesecurity(10b–10field).
+Format :4!c/[8c]/4!c
+<TRCN>/<DTCY>/<marketmakerindicator>
+TRCN Traderegulatoryindicator
+Examples :22F::TRCN/DTCY/MKTY
+:22F::TRCN/DTCY/MKTN
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 119
+
+---
+
+## Page 120
+
+Table3.41showsthemarketmakerindicatorusedinfield22F.
+Value Description
+MKTY Yes,thebroker/dealerisamarketmakerinthesecurity.
+MKTN No,thebroker/dealerisnotamarketmakerinthesecurity.
+Table3.41Marketmakerindicator
+Note36:Field22F:ConfirmLegIndicator
+Field22Findicateswhethertheconfirmisa1stlegconfirm,2ndlegconfirm,orboth.
+Format :4!c/[8c]/4!c
+<TTCO>/<DTCY>/<legindicator>
+TTCO TradeTransactionConditionIndicator
+Example :22F::TTCO/DTCY/LGON
+Table3.42showstheconfirmlegindicatorusedinfield22F.
+Value Description
+LGON Legon
+LGOF Legoff
+LGBT Legsboth
+Table3.42ConfirmlegIndicator
+Note37:Field22F:CollateralType
+Field22Fidentifiesthetypeofcollateralinvolvedinthetransaction.Forsecuritieslending,usetheSpecial
+Instructionsfieldtospecifyothercollateraltypesnotsuppliedinthisfield.
+Format :4!c/[8c]/4!c
+<TTCO>/<DTCYCOLT>/<collateraltypecode>
+TTCO TradeTransactionConditionIndicator
+Example :22F::TTCO/DTCYCOLT/CL09
+Table3.43showsthecollateraltypeindicatorsusedinfield22F.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 120
+
+---
+
+## Page 121
+
+Value Description
+CL01 Treasuries
+CL02 Governmentagencies
+CL03 [[Asset]]-backedsecurities
+CL04 CMO
+CL05 Mortgage-backedsecurities
+CL06 Equities
+CL07 Moneymarkets
+CL08 Corporatebonds
+CL09 Municipalbonds
+CL10 WholeLoans
+CL11 Generalcollateral
+CL12 Letterofcredit
+CL13 Privatelabels
+CL14 Cash
+CL15 Sovereignbonds
+CL16 Indexfunds
+CL17 Exchangetradedfunds
+CL99 Other
+Table3.43CollateralTypeIndicators
+Note38:Field22F:CollateralSubstitutionType
+Field22Findicatesthetypeofcollateralsubstitution.
+Format :4!c/[8c]/4!c
+<TTCO>/<DTCYSUBT>/<collateralsubstitutiontype>
+TTCO TypeofTransactionSettlementIndicator
+Example :22F::TTCO/DTCYSUBT/SUBP
+Table3.44showsthethird-partyrenumerationindicatorsusedinfield22F.
+Value Description
+SUBP Par
+SUBM Moneyfilled.
+Table3.44Collateralsubstitutionindicators
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 121
+
+---
+
+## Page 122
+
+Note39:Field22F:Third-PartyRenumerationReceivedIndicator
+Field22Fisa10b–10fieldforthebrokertodenotewhenthebroker/dealerreceivedanythird-party
+remunerationinthetransaction.
+Format :4!c/[8c]/4!c
+<TRCN>/<DTCY>/<renumerationindicator>
+TRCN TradeRegulatoryIndicator
+Example :22F::TRCN/DTCY/REMY
+Table3.45showsthethird-partyrenumerationindicatorsusedinfield22F.
+Value Description
+REMY Yes.Receivedthethird-partyrenumeration.
+REMN No.Didnotreceivethethird-partyrenumeration.
+Table3.45Third-PartyRenumerationIndicators
+Note40:Field22F:ConfirmBacker/DisclosureFoundIndicator
+Field22Findicateswhetherlocatedaconfirmbacker/disclosureURLandreferencenumberonthetrade
+confirmoutput.
+Format :4!c/[8c]/4!c
+<RPOR>/<DTCY>/<disclosurefoundindicator>
+RPOR ConfirmBacker/DisclosureFoundIndicator
+Example :22F::RPOR/DTCY/DFDY
+Table3.46showstheconfirmbacker/disclosurefoundindicatorsusedinfield22F.
+Value Description
+DFDY Locateddisclosureinformation.
+DFDN Nodisclosureinformationlocated.
+DFDU Notsubscribedforconfirmdisclosures.
+Table3.46ConfirmBacker/DisclosureFoundIndicators
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 122
+
+---
+
+## Page 123
+
+Note41:Field22F:ConfirmBacker/DisclosureBypassIndicator
+[[Broker]]/dealersusethisfieldtoinstructtheTradeSuiteIDservicetobypassoroverridetheconfirm
+backer/disclosureenrichment.
+l B=BypassConfirmBacker/DisclosureEnrichment
+l Space=EnrichConfirmBacker/Disclosure
+Note
+Whenthebypassindicatorispopulated,suchaswhenitequalsB,DTCCcreatesthistag.Otherwise,the
+tagisnotcreated.
+Format :4!c/[8c]/4!c
+<TTCO>/<DTCY>/<bypassindicator>
+TTCO TypeofTransactionSettlementIndicator
+Example :22F::TTCO/DTCY/BYPS
+Note42:Field22F:AllocationSourceIndicator
+[[Broker]]/dealersusethisfieldtoidentifyordisclosethesystemormethodthattheinvestmentmanagersent
+theallocationtoprocessthetradeconfirmation.
+Note
+Ifsupplied,enteravalidallocationsourcecode.Spacesindicatethatthereisnocodesupplied.
+Format :4!c/[8c]/4!c
+<TRCN>/<DTCY>/<allocationsourcecode>
+RPOR AllocationSourceIndicator
+Example :22F::RPOR/DTCY/AL02
+Table3.47showstheallocationsourcecodesusedinfield22F.
+Value Description
+AL01 OAYSYS
+AL02 TradeXpress(TradeWeb)
+AL03 FIX
+AL04 MarketAxess
+Table3.47AllocationSourceCodes
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 123
+
+---
+
+## Page 124
+
+Value Description
+AL05 Manual(telephone,fax,oremail)
+AL06 CTM/USDI(outputonly)
+AL07 CTM/USDM(outputonly)
+Table3.47AllocationSourceCodes
+Note43:Field22F:ConfirmPurpose
+Field22Fprovidesthecustomerthereasonfortheconfirmationmessageorthereasonwhyissuinga
+confirm.
+Format :4!c/[8c]/4!c
+<TTCO>/[<DTCYCOPU>]/<confirmpurpose>
+TTCO ConfirmPurpose
+Example :22F::TTCO/DTCYCOPU/CP04
+Table3.48showstheconfirmpurposecodesusedinfield22F.
+Value Definition
+CP00 Unspecified
+CP01 Original
+CP02 Substitution
+CP03 Marginreprice/cashcall
+CP04 Marginreprice/collateralcall
+CP05 Rollover
+CP99 Other
+Table3.48ConfirmPurposeCodes
+SubsequenceC1–ConfirmationParties
+SubsequenceC1isamandatorysequencecontaininginformationaboutconfirmationparties.ForDTCC
+inputprocessingtherearetwoC1subsequences,onefortheinvestmentmanagerandoneforthe
+executingbroker.
+Oninput,theprimaryidentifierinfield95acancontaineitheraDTCIDnumberoraBICidentifier.On
+outputfromDTC,theprimaryidentifiercontainsaBICidentifierintheformatinfield95P.WhenaBIC
+identifierdoesnotexist,oraBICisunavailable,theinitialpartyidentifierFieldcontainsaneight-byteDTC
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 124
+
+---
+
+## Page 125
+
+IDnumberintheSWIFT95Rformat.Ifoninput,aDTCIDnumberinfield95Risaprimaryidentifier,on
+outputitmovestothealternateidentifierformatinfield95Sor95Q.
+Note44:Field95a:InstitutionPrimaryIdentifier:Field95R:PrimaryInstitutionDTCIDorField95P:
+InstitutionBIC
+WhentheprimaryidentifierisaDTCIDnumber,useformat95R,inwhichcasethefieldcancontaina
+maximumofeightwholenumbers.WhentheprimarynumberisaBIC,useformat95P,inwhichcasethe
+fieldcancontain11characters.Whenbothaclearingagentandagentsub-custodianareproviders,the
+DEI1qualifierisused.Otherwise,theDEAGqualifierisused.
+BICvaluesresideonthestandinginstructionsdatabase(theALERTservice).Whenadifferenceexists
+betweentheBICvalueenteredbytheuserandthevalueresidingontheALERTservice,thevalueonthe
+ALERTserviceoverlaystheuserentry.
+Format :4!c/8c/34x
+<qualifier>/<DTCYID>/<institutiondtcid number>
+:4!c//4!a2!a2!c[3!c]
+<qualifier>//<institutionbicidentifier>
+BUYRorSELL InstitutionIdentification
+Example :95R::BUYR/DTCYID/12345
+:95P::SELL//INSTUS12XXX
+Table3.49showsthequalifiersusedinfield95Ror95P.
+Qualifier Description
+BUYR [[Buyer]]
+SELL [[Seller]]
+Table3.49Qualifiers
+Note45:Field95S:AlternateInstitutionDTCIDorInstitutionBIC
+Iftheprecedingprimaryidentifierfield95RcontainsaDTCIDnumber,theInstitutionAlternateIdentifier
+field95ScancontainaBICidentifier.Conversely,iftheprecedingprimaryidentifierfield95Pcontainsa
+BICidentifier,thealternateidentifiercancontainaDTCIDnumber.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 125
+
+---
+
+## Page 126
+
+BICvaluesresideonthestandinginstructionsdatabase(theALERTservice).Whenadifferenceexists
+betweentheBICvalueenteredandthevalueontheALERTservice,thevalueontheALERTservice
+overlaystheuserentry.
+Format :4!c/[8c]/4!c/2!a/30x
+<ALTE>/<CORP>/<countrycode>/<type>/<institutionalternate
+identifier>
+ALTE AlternateIdentifier
+Example :95S::ALTE/CORP/US/[[DTC]]/45678
+:95S::ALTE/CORP/US/BIC/INSTUS02XXX
+Note46:Field97A:InstitutionSafekeepingAccount
+Field97Acontainstheinstitutionsafekeeping(internal)accountnumberthatidentifiesthecustomeron
+whosebehalftheinstitutionexecutedthetrade.
+Format :4!c//35x
+<SAFE>//<institutionsafekeepingaccount>
+SAFE SafekeepingAccount
+Example :97A::SAFE//CUSTOMERAC1234567890123456789012345
+Note47:Field70C:InstitutionContactTelephoneNumberandWireInstructions
+Field70Ccontainstheinstitutioncontacttelephonenumberanduptotwolinesforwireinstructions.Both
+valuesareoptional.
+Format :4!c//35x
+<PACO>//<institutioncontactnumber>
+<wireinstructions1>
+<wireinstructions2>
+PACO ContactTelephone
+Wireinstructions
+Examples :70C::PACO//212-555-1234
+WI:WireInstructionsline1
+WI:WireInstructionsline2
+:70C::PACO//WI:WireInstructionsLine1
+WI:WireInstructionsline2
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 126
+
+---
+
+## Page 127
+
+Note48:Field95a:ClearingBrokerPrimaryIdentifier:Field95R:PrimaryClearingBrokerDTCID
+orField95P:ClearingBrokerBIC
+Theidentificationnumberofthebroker/dealerthatexecutedthetradeonbehalfoftheinvestment
+manager.WhentheprimaryidentifierisaDTCIDnumber,usetheformatinfield95R.Inthiscase,the
+fieldcancontainamaximumofeightwholenumbers.WhentheprimarynumberisaBIC,usetheformatin
+field95P.Inthiscase,thefieldcancontain11characters.
+BICvaluesresideonthestandinginstructionsdatabase(theALERTservice).Whenadifferenceexists
+betweentheBICvalueenteredandthevalueontheALERTservice,thevalueontheALERTservice
+overlaystheuserentry.
+Format :4!c/8c/34x
+<CLBR>/<DTCYID>/<clearingbrokerdtcid number>
+:4!c//4!a2!a2!c[3!c]
+CLBR>//<clearingbrokerbicidentifier>
+CLBR ClearingBrokerDetails
+Examples :95R::CLBR/DTCYID/12345
+:95P::CLBR//CLBRUK01XXX
+Note49:Field95S:AlternateClearingBrokerDTCIDorClearingBrokerBIC
+Iftheprecedingprimaryidentifierinfield95acontainsaDTCIDnumber,theAlternateIdentifierinfield
+95ScancontainaBICidentifier.Conversely,iftheprecedingPrimaryIdentifiercontainsaBICidentifier,
+theAlternateIdentifiercancontainaDTCIDnumber.
+BICvaluesresideonthestandinginstructionsdatabase(theALERTservice).Whenadifferenceexists
+betweentheBICvalueenteredandthevalueontheALERTservice,thevalueontheALERTservice
+overlaystheuserentry.
+Format :4!c/[8c]/4!c/2!a/30x
+<ALTE>/<CORP>/<countrycode>/<type>/<clearingbrokeraltern-
+ateidentifier>
+ALTE AlternateIdentifier
+Example :95S::ALTE/CORP/US/[[DTC]]/45678
+:95S::ALTE/CORP/US/BIC/CLBRUS02XXX
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 127
+
+---
+
+## Page 128
+
+Note50:Field97A:ClearingBrokerSafekeepingAccount
+Field97Aidentifiestheaccounttypeandcustomeroftheclearingbroker.
+Format :4!c//35x
+<SAFE>//<clearingbrokersafekeeping>
+SAFE SafekeepingAccount
+Example :97A::SAFE//12345678901234567890123456789012345
+Note51:Field70E:OperatingProceduresGuideLink
+Field70EidentifiestheOperatingProceduresguidelink,whichisavailableonoutputonlyandcannotbe
+providedoninput;ifprovidedoninput,theinformationisignored.TheOperatingProcedureslinkalways
+beginswiththeTSOP:astringfollowedbytheURLfortheOperatingProceduresGuidesite.(Seeruleon
+specialcharacters.)TheURL,ifover35characterscanspantwolines,foratotalof50characters.Thelink
+isidentifiedbythefirstfivecharacters“TSOP:”.TheURLlinkcannotexceed55characters,withthefirst
+fivecharactersidentifyingthelink.Onoutput,ifthelinkisnotavailable,“TSOP:”appearsandURLisnot
+provided.
+DTCCusesthisTradeSuiteIDlinktoaccesstheinSITE™DisclosurerepositorytoviewtheOperating
+Proceduresineffectonthedateofthetrade.Validvalues:https://insite.[[DTCC]].com/insite/ineui(production)
+andhttps://insitect.[[DTCC]].com/insite/ineui(clienttest).
+Format :4!c//10*35x
+DECL DeclarationDetailsNarrative
+Example 70E::DECL//TSOP:HTTP://INSITE.[[DTCC]].COM
+Note52:Field95a:ExecutingBrokerPrimaryIdentifier:Field95R:PrimaryExecutingBrokerDTC
+IDorField95P:ExecutingBrokerBIC
+Field95acontainstheidentificationnumberofthebroker/dealerthatexecutedthetradeonbehalfofthe
+investmentmanager.WhentheprimaryidentifierisaDTCIDnumber,useformat95R,inwhichcasethe
+fieldcancontainamaximumofeightwholenumbers.WhentheprimarynumberisaBIC,useformat95P,
+inwhichcasethefieldcancontain11characters.
+BICvaluesresideonthestandinginstructionsdatabase(theALERTservice).Whenadifferenceexists
+betweentheBICvalueenteredandthevalueontheALERTservice,thevalueontheALERTservice
+overlaystheuserentry.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 128
+
+---
+
+## Page 129
+
+MatchingrequirestheExecutingBrokerfield.DTCCpublishestheIDnumberforbrokershavingmultiple
+numbersintheIDdirectory.
+Format :4!c/8c/34x
+<qualifier>/<DTCYID>/<executingbrokerdtcid number>
+:4!c//4!a2!a2!c[3!c]
+<qualifier>//<executingbrokerbicidentifier>
+Example :95R::BUYR/DTCYID/45678
+:95P::BUYR//BRKRUS09XXX
+Table3.50showsthequalifiersusedinfield95P.
+Qualifier Description
+BUYR [[Buyer]]
+SELL [[Seller]]
+Table3.50Qualifiersinfield95P
+Note53:Field95S:AlternateExecutingBrokerDTC  IDorExecutingBrokerBIC
+Iftheprecedingprimaryidentifierinfield95acontainsaDTCIDnumber,thealternateidentifierinfield95S
+cancontainaBICidentifier.Conversely,iftheprecedingprimaryidentifiercontainsaBICidentifier,the
+alternateidentifiercancontainaDTCIDnumber.
+BICvaluesresideonthestandinginstructionsdatabase(theALERTservice).Whenadifferenceexists
+betweentheBICvalueenteredandthevalueontheALERTservice,thevalueontheALERTservice
+overlaystheuserentry.
+Format:4!c/[8c]/4!c/2!a/30x
+<ALTE>/<CORP>/<countrycode>/<type>/<executingbrokeralternateiden-
+tifier>
+ALTE AlternateIdentifier
+Example:95S::ALTE/CORP/US/[[DTC]]/12345678
+:95S::ALTE/CORP/US/BIC/BRKRUS09XXX
+Note54:Field97B:ExecutingBrokerSafekeepingAccount
+SubfieldoneismandatoryforDTCCandcontainsthefour-characteraccounttypefield.Subfieldtwo
+containstherequired35-characterbrokersafekeepingaccountnumber.TypeNotSpecifiedwhennot
+usingthebroker/dealernumber.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 129
+
+---
+
+## Page 130
+
+Whenthebroker/dealerinputsasafekeeping(internal)accountnumber,theinformationmaintainedonthe
+ALERTserviceforthiscustomerreplacesorfillstheagentandinstitutionIDnumbersontheoutputrecord.
+Otherwise,supplyallofthepertinentfields.
+Format :4!c/[8c]/4!c/35x
+<SAFE>/<DTCY>/<accounttype>/<executingbrokersafekeeping
+account>
+SAFE SafekeepingAccount
+Example 97B::SAFE/DTCY/DVPA/BROKERNUM01234567890123456789012345
+Table3.51showstheaccounttypesforfield97B.
+Type Description
+DVPA Cash/DVP:settlementonapaymentondelivery(POD)orcollect
+ondelivery(COD)basis.
+MARG [[Margin]]:financingisbythebroker/dealer.
+OTHR Miscellaneousaccounttypes.
+SHOR Shortsale:shortsaleorders.
+PBKR Primebroker
+UNKN Unknown
+Table3.51AccountTypes
+Note55:Field98C:ConfirmProcessingDateandTime
+Field98Cindicatestheconfirmprocessingdateandtime(YYYYMMDDHHMMSS).Thebroker/dealer
+telephonenumberison(PACO)linetwo.Ifbrokersalespersonnumberisblankorunavailable,
+[[Broker]]/dealertelephonenumberison(PACO)lineone.
+Format :4!c//8!n6!n
+<PROC>//<confirmprocessdateandtime>
+PROC ProcessingDateandTime
+Example :98C::PROC//20010329101500
+Note56:Field70E:SpecialInstructions
+Free-formtextfieldstoadd10b–10informationorconfirmbackerinformationforundefinedfields.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 130
+
+---
+
+## Page 131
+
+Line1. SpecialInstructionsline9
+Line2. SpecialInstructionsline10
+Line3. SpecialInstructionsline11
+Line4. SpecialInstructionsline12
+Line5. SpecialInstructionsline13
+Line6. SpecialInstructionsline14
+Line7. SpecialInstructionsline15
+Line8. SpecialInstructionsline16
+Line9. SpecialInstructionsline17
+Line10. SpecialInstructionsline18
+Format :4!c//10*35
+<DECL>//<specialinstructions>
+DECL DeclarationDetailsNarrative
+Example :70E::DECL//SPECIAL-INSTRUCTIONS-9
+SPECIAL-INSTRUCTIONS-10
+SPECIAL-INSTRUCTIONS-11
+SPECIAL-INSTRUCTIONS-12
+SPECIAL-INSTRUCTIONS-13
+SPECIAL-INSTRUCTIONS-14
+SPECIAL-INSTRUCTIONS-15
+SPECIAL-INSTRUCTIONS-16
+SPECIAL-INSTRUCTIONS17
+SPECIAL-INSTRUCTIONS-18
+Note57:Field70C:BrokerSalespersonNumberandBroker/DealerTelephoneNumber
+Field70Cindicatesthebrokercontactinformation.Thebroker/dealer’stelephonenumber.Alphanumeric
+field.Thebroker/dealertelephonenumberison(PACO)linetwo.Ifbrokersalespersonnumberisblankor
+unavailable,[[Broker]]/dealertelephonenumberison(PACO)lineone.
+Format :4!c//4*35x
+<PACO>//<BrokerSalespersonNumber>
+<telephonenumber>
+PACO PartyNarrative
+Examples :70C::PACO//12345678
+PHN:212-855-5333
+:70c::PACO//PHN:212-855-5333
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 131
+
+---
+
+## Page 132
+
+Note58:Field22F:RoleIndicator
+Field22Findicatestherolethebroker/dealerplaysinthetransaction.
+Format :4!c/[8c]/4!c
+<TRCA>//<role>
+TRCA [[Broker]]’sRole
+Example :22F::TRCA//AGEN
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 132
+
+---
+
+## Page 133
+
+Table3.52showstherolecodesusedinfield22FthatDTCCaccepts.
+Note
+SWIFTsupportsonly8ofthe10possiblerolesavailableintheTradeSuiteIDservice.
+SWIFT TradeSuiteID
+Role Code Role Code Abbreviation Description
+AGEN 1 AGNT Executingbroker/dealeractsasagentforthe
+customer.
+PRIN 2 PRIN Executingbroker/dealeractsasprincipalfor
+theirownaccount.
+OAGN 3 OTHR Executingbroker/dealeractsasagentfora
+personotherthanthecustomer.
+BAGN 4 CUST Executingbroker/dealeractsasagentfor
+boththecustomerandanotherperson.
+PRAG 5 AVGR Averagepricetrade.Thebroker/dealeracts
+asprincipalforsomeexecutionsandagent
+forothersinthetransaction.
+PRAG 6 PRAG Executingbroker/dealeractsasbothprin-
+cipalandagentinthetransaction.
+BAGN 7 PAGC Executingbrokeractsasprincipal,agent,and
+agentforanotherpersoninthetransaction.
+CAGN 8 CAGN Crossingasagent.Executingbroker/dealeris
+crossingtransactionasagentonbehalfofthe
+customer.
+CPRN 9 CPRN Crossingasprincipal.Executingbroker-
+/dealeriscrossingtransactionasprincipalfor
+theirownaccount.
+RISP A RISP Actingasrisklessprincipal.Executingbroker-
+/dealeristradingasarisklessprincipal.That
+is,theordertobuy(orsell)hasbeencon-
+temporaneouslyoffsetbyanordertosell(or
+buy)withanotherparty.
+Table3.52RoleCodes
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 133
+
+---
+
+## Page 134
+
+Note59:Field95a:DesignatedAffirmerIdentifier:Field95R:DesignatedAffirmingPartyDTCIDor
+Field95P:DesignatedAffirmingPartyBICIdentifier
+Field95aidentifiestheentitytypedesignatedtoaffirmthetrade.Enteronlyvaluesforanagent(AGNT),
+investmentmanager(INST),andbothagentorinvestmentmanager(BOTH).Identifytheaffirming
+interestedpartybyboththevalue(IPAR)andtheidentifieroftheinterestedparty.
+Whendesignatingtheinterestedpartytoaffirmthetrade,includeboththevalue(IPAR)andtheidentifier
+oftheinterestedparty.BICvaluesresideonthestandinginstructionsdatabase(theALERTservice).
+WhenadifferenceexistsbetweentheBICvalueenteredandthevalueontheALERTservice,thevalueon
+theALERTserviceoverlaystheuserentry.
+Format :4!c//4*35x
+<AFFM>//<affirmingpartybicidentifier>
+:4!c/8c/34x
+<AFFM>/<DTCYID>/<affirmingpartydtcid number>
+AFFM DesignatedAffirmingParty
+Examples :95Q::AFFM//INST
+:95Q::AFFM/IPAR/IPTYUK12XXX
+:95R::AFFM/DTCYID/INST
+Table3.53showsthecodesfortheaffirmingparties.
+AffirmingParties Description
+AGNT Agentaffirms.
+BOTH Investmentmanageroragentaffirms.
+INST Investmentmanageraffirms.
+Table3.53AffirmingParties
+Note60:Field95R:Give-UpBroker
+Field95Ridentifiesthegive-upbroker.Thisfieldindicateswhetherafeeisduetothebrokerthatarranged
+thetransaction.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 134
+
+---
+
+## Page 135
+
+Format :4!c/8c/34x
+<INBR>/<DTCYID>/<give-up [[Broker]]>
+INBR Give-UpBroker
+Example :95R::INBR/DTCYID/0000352
+Note
+Ifthisfieldstartswithoneslash(/)ortwoslashes(//),DTCCrejectstheSWIFTmessage.DTCCreplaces
+alloccurrencesofaslashwithaspacebeforeplacingthisfieldinanoutboundmessage.Inboundmes-
+sagesareunaffectedbecausetheSWIFTnetworkrejectsallfieldsstartingwithaslashorcontainingtwo
+slashes.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 135
+
+---
+
+## Page 136
+
+SequenceC–ConfirmationDetails(continued)
+ThissectioncontainsmorenotesforsequenceC.
+Note61:Field36B:Quantity-[[shares]]/FaceValue
+Field36Bindicatesthetotalsharesorfacevalueofthetradedsecurity.Sharesindicatethequantityof
+equitysharesinvolvedinthetrade.Thefacevalueisthecurrentprincipalvalueofafixedincomesecurity.
+Format :4!c//4!c/15d
+<CONF>//<type>/<quantity>
+CONF Quantity
+Example :36B::CONF//FAMT/10000000,
+:36B::CONF//UNIT/1000,
+Table3.54showsthequantitytypevaluesusedinfield36B.
+TypeValue Description
+FAMT Quantityexpressedasafacevalue.
+UNIT Quantityexpressedasanumber(count).
+Table3.54TypeofQuantityinField36B
+Note62:Field35B:SecurityID  Number
+Field35Bincludestheidentificationnumberassignedtothetradedsecurity.UseavalidCUSIP,SEDOL,
+orISINnumberwhenthesecuritynumberingsystemisUS([[CUSIP]]),GB(SEDOL),orIS(ISIN)
+respectively.
+ISINidentifierscanusetheISIN-formattedfield.Enterallnon-ISINidentifiersonlines1–4ofthenarrative
+field.Whenusinganon-ISINnumber,ensurethattheISOcountrycodeexistsandcontainsthefollowing
+format:/2!a/.UsetheNarrativefieldforasecondsecurityidentifierwithitsISOcode(/2!a/);however,
+DTCCdoesnotvalidatethisfield.Itispossibletouseabilaterallyagreeduponorproprietarynumbering
+scheme(/99/)intheNarrativefield.
+X(02)=ISINcountrycodeforISINonly;otherwise,spaces.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 136
+
+---
+
+## Page 137
+
+X(09)=SecurityNumber:Ifthesecurityidentifierislessthan9bytesinlength,thesecuritynumberisleft-
+justified,space-filledtotheright.
+DTCCdoesnotvalidatethesecurityidentifierwhenthesecuritynumberingsystemisnotCUSIP(U.S.),
+SEDOL(GB),orISIN(IS).
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 137
+
+---
+
+## Page 138
+
+SecurityNumberTranslation.Oninput,whenusingsecuritytranslation,thefirstlinecontainstheuser’s
+inputtedsecuritynumber.Onoutput,thefirsttwolinescontainthefollowingsecuritynumbertypes:
+Line1 Convertedsecuritynumber.
+Line2 Whenline1containsatranslatednumber,line2containstheoriginalsecuritynum-
+berusedoninput.
+Format ISIN1!e12!c]or [/2!a/9!x][4*35x]
+<isinor nationalsecuritynumberingscheme>
+<narrative>
+Example—ISIN :35B:ISINAN620678910Z
+DESCRIPTION
+Example—SEDOL :35B:/GB/SLP2345
+DESCRIPTION
+Example—[[CUSIP]] :35B:/US/OACK56789
+DESCRIPTION
+Example—User-Ori-
+ented
+:35B:/99/GTH123
+DESCRIPTION
+Table3.55showsthecodesusedinfield35B.
+Code Description
+/2!a/9!x ISOtwo-digitcountrycode,followedbythenationalnumbering
+scheme,forexample,[[CUSIP]].FortheISOcountrycodes,see
+Input/OutputInformation.
+/99/12x Bilaterallyagreedorproprietaryscheme.Upto12charactersfor
+thesecurityID.
+Table3.55CodesinField35B
+Table3.56showsthenationalsecuritynumberingschemesusedinfield35B.
+NationalNum-
+beringSchemes
+Description
+AT Wertpapierkennummer(Austria)
+AU Australia
+BE SecretatiatdesValeursMobilieres-SVM(Belgium)
+BR Brazil
+CE CEDEL
+Table3.56NationalSecurityNumberingSchemes
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 138
+
+---
+
+## Page 139
+
+NationalNum-
+beringSchemes
+Description
+CH Valorennummer(Switzerland)
+DE Wertpapierkennummer(Germany)
+DK Fondskode(Denmark)
+ES Spain
+EU Euroclear
+FR SICOVAM(France)
+GB SEDOL(UnitedKingdom)
+IE Ireland
+IS ISIN
+IT CODICEUIC(Italy)
+JP QUICK(Japan)
+LU Luxembourg
+MX Mexico
+NL Netherlands
+NO Norway
+RU Reuters
+SE Sweden
+US [[CUSIP]](UnitedStates)
+XS CommonCode(CEDEL/Euroclear)
+99 UserOriginated
+Table3.56NationalSecurityNumberingSchemes
+Note
+Whenusingauser-originatedorbilaterallyagreeduponorproprietarynumberingscheme(/99/)inthe
+Narrativefield,ensurethatthedefinitionoftheuser-orientedfieldcontainsanagreementbetweenthe
+parties.
+SubsequenceC2–FinancialInstrumentAttributes
+ThissectioncontainsthenotesforsubsequenceC2.Thissubsequenceisarepetitiveoptional
+subsequencecontainingmoreattributesthatfurtherdefinethesecurity.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 139
+
+---
+
+## Page 140
+
+Note63:Field22F:SecurityFormCode
+Field22Fidentifiesadebtinstrumentasbeingabearer,non-bearer,orundeterminedbond.Thisfield
+defaultstozeroanddoesnotappearonoutputifblank.
+Format :4!c/[8c]/4!c
+<FORM>//<securityformcode>
+FORM TypeofSecurity
+Example :22F::FORM//BEAR
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 140
+
+---
+
+## Page 141
+
+Table3.57showsthesecurityformcodesusedinfield22F.
+Type Description
+[[default]] Undetermined
+REGD Non-bearerbond
+BEAR Bearerbond
+Table3.57Securityformcodes
+Note64:Field22F:SubstitutionFrequency
+Field22Findicatesthetimeperiodoverwhichthespecifiednumberofsubstitutionscantakeplace.
+Frequencyisatwo-characterFieldcomposedofanumber(1through9)andaletter(H,Q,M,orW).Each
+validletterrepresentsatimeperiod:
+l H=Half
+l Q=Quarter
+l M=Month
+l W=Week
+Thefirstcharacterrepresentsthenumberoftimeperiodsandthesecondcharacterdefinesthetypeof
+timeperiod.Forexample,1Hisonehalf,2Qistwoquartersand8Wiseightweeks.SWIFTrequiresfour
+charactersforthisfield;therefore,therearetwofillcharacters:XX.
+Format :4!c/[8c]/4!c
+<CFRE>/<DTCY>/XX<substitutionfrequency>
+CFRE SubstitutionFrequency
+Example :22F::CFRE/DTCY/XX1M
+Note65:Field22F:InterestPaymentCalendarFrequency
+Field22Fcontainsthepaymentinterval,suchasthreeorsixmonths,fortheinterestcleanupschedule.
+Frequencyisatwo-characterFieldcomposedofanumber(1through9)andaletter(H,Q,M,orW).Each
+validletterrepresentsatimeperiod:
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 141
+
+---
+
+## Page 142
+
+l H=Half
+l Q=Quarter
+l M=Month
+l W=Week
+Thefirstcharacterrepresentsthenumberoftimeperiodsandthesecondcharacterdefinesthetypeof
+timeperiod.Forexample,1Hisonehalf,2Qistwoquartersand8Wiseightweeks.SWIFTrequiresfour
+charactersforthisfield,therefore,therearetwofillcharacters:XX.
+Format :4!c/[8c]/4!c
+<PFRE>/<DTCY>/XX<interestpaymentfrequency>
+PFRE InterestPaymentFrequency
+Example :22F::PFRE/DTCY/XX3H
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 142
+
+---
+
+## Page 143
+
+Note66:Field98A:MaturityDate
+Field98AisanMSRBfieldthatindicatesthepaymentdate,inYYYYMMDDformat,onwhichthefinal
+principalpaymentisdueandpayabletotheregisteredownerofthesecurity.
+Format :4!c//8!n
+<MATU>//<maturitydate>
+MATU MaturityDate
+Example :98A::MATU//20010329
+Note67:Field98A:Pre-refundedorCallDate
+Field98Aindicatesthepre-refundedorcalldateisanMSRBfieldfixedbythecallnotice,inYYYYMMDD
+format.
+Format :4!c//8!n
+<CALD>//<pre-funded/calldate>
+CALD Pre-refundedorCallDate
+Example :98A::CALD//20010329
+Note68:Field98A:PutBondDate
+Field98AindicatesthattheputbonddateisanMSRBfieldfixedbytheputnotice,inYYYYMMDDformat.
+Format :4!c//8!n
+<PUTT>//<putbonddate>
+PUTT PutBondDate
+Example :98A::PUTT//20010329
+Note69:Field98A:IssueDate
+Field98Aindicatesthemortgage-backedsecurityissueororigindate,inYYYYMMDDformat.Ifsupplied,
+enteravaliddayoftheyear,inclusiveofSaturday,Sunday,andU.S.holidaysforU.S.issues.Ifnot
+supplied,theprogramsetsthisfieldtospaces.
+Format :4!c//8!n
+<ISSU>//<issuedate>
+ISSU IssueDate
+Example :98A::ISSU//20010329
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 143
+
+---
+
+## Page 144
+
+Note70:Field98A:OptionExpirationDate
+Field98Aindicatesthattheoptionexpirationdateisamortgage-backedsecurityfield.Itisthedatewhen
+theoptionistoexpire,inYYYYMMDDformat.Ifsupplied,enteravaliddayoftheyear,inclusiveof
+Saturday,Sunday,andU.S.holidaysforU.S.issues.Ifnotsupplied,programsetsthisfieldtospaces.
+Format :4!c//8!n
+<EXPI>//<optionexpirationdate>
+EXPI Optionexpirationdate
+Example :98A::EXPI//20010329
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 144
+
+---
+
+## Page 145
+
+Note71:Field98A:InterestAccrualDate
+Field98AisanMSRBfieldthatindicatestheinterestaccrualdate,inYYYYMMDDformat.
+Format :4!c//8!n
+<FCOU>//<interestaccrualdate>
+FCOU InterestAccrualDate
+Example :98A::FCOU//20010329
+Note72:Field98A:FirstRateResetDate
+Field98Aindicatesthefirstdateonwhichtobasethescheduleofrateresetdates,inYYYYMMDDformat.
+Format :4!c//8!n
+<FRNR>//<optionexpirationdate>
+FRNR First-RateResetDate
+Example :98A::FRNR//20080329
+Note73:Field98A:DatedDate
+Field98Aprovidestheinformationforthebroker/dealertoidentifythedateddateofthefixedincome
+securityinvolvedinthetransaction,inYYYYMMDDformat.
+Format :4!c//8!n
+<DDTE>//<dateddate>
+DDTE DeletedDate
+Example :98A::DDTE//20080329
+Note74:Field13B:YieldtoMaturity
+Field13Bcontains10b–10fieldinformationforbrokerstodisclosethecurrentyieldofthesecurity.
+Expresstheyieldtomaturityrateasapercent(%),notasadecimalfraction.Useonlynumericvaluesand
+acommatoexpressthedecimalvalue.Forexample,theformatfor12.5%is12,5.
+Oninput,theyieldtomaturitylimitisatotalof11characters.Thislimitincludesthesign“[N]”anddecimal
+“.\”.Ifsendingmorethan11charactersintheSWIFTmessage,theYieldtoMaturityfieldcontainsnon-
+numericcharactersandtheoutputmessagedoesnotincludethefield.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 145
+
+---
+
+## Page 146
+
+Format :4!c//[N]/10d
+<YTMR>//<Yieldto Maturity>
+YTMR YieldtoMaturity
+Example :92A::YTMR//12,5
+:92A::YTMR//N0,5
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 146
+
+---
+
+## Page 147
+
+Note75:Field92A:InterestRate
+Field92AisanMSRBfieldthatindicatestheinterestrate.IfthespecialcouponindicatorfromStandard&
+Poor's(J.J.Kenny)equals0(NoSpecialCoupon)or3(AdjustableRate),DTCCusesthebroker/dealer
+suppliedvaluefortheinterestrateandStandard&Poor's(J.J.Kenny)datadoesnotreplacethevalue.If
+nodataisinputbythebroker/dealer,theStandard&Poor's(J.J.Kenny)dataisused,regardlessofthis
+indicator.
+Format :4!c//[N]15d
+<INTR>//[N]<interestrate>
+INTR InterestRate
+Examples :92A::INTR//12345678901234,
+:92A::INTR//N12345678901234,
+Note76:Field13B:PoolNumber
+Field13BisanMBSfieldthatindicatesthepoolnumber.Itisanagency-assignednumberreferencingthe
+poolofmortgagesthatcollateralizesanMBS.Ifsupplied,entereitherapoolnumberorsecuritynumberfor
+specifiedpoolorgenericpooltrades.Ifnotsupplied,settospaces.PoolNumberisinvalidforgeneric
+TBAs.
+Format :4!c/[8c]/30x
+<POOL>/<poolnumber>
+POOL ReferenceNumber
+Example :13B::POOL/ABCX1234567890
+Note77:Field13B:LotID
+Field13BisanMBSfieldthatindicatesthelotID.Thelotnumberandpoolsequencewithinthelotindicate
+apoolorgroupofpoolsconsistingofone/manygooddeliverymillions.
+Format :4!c/[8c]/30x
+<LOTS>/<lotnumber>
+LOTS LotNumber
+Example :13B::LOTS/ABCX123450
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 147
+
+---
+
+## Page 148
+
+Note78:Field70E:AdditionalConfirmSecurityDescription
+Field70Econtainstheadditionalconfirmsecuritydescriptionandallowsupto10linesof35characters.
+Format :4!c/10*35x
+<FIAN>/<additionalsecuritydescriptionline1>
+<additionalsecuritydescriptionline2>
+<additionalsecuritydescriptionline3>
+<additionalsecuritydescriptionline4>
+<additionalsecuritydescriptionline5>
+<additionalsecuritydescriptionline6>
+<additionalsecuritydescriptionline7>
+<additionalsecuritydescriptionline8>
+<additionalsecuritydescriptionline9>
+<additionalsecuritydescriptionline10>
+FIAN AdditionalSecurity
+Example :70E::FIAN/ABCX123
+ADDITIONALDETAILLINE2
+ADDITIONALDETAILLINE3
+ADDITIONALDETAILLINE4
+ADDITIONALDETAILLINE5
+ADDITIONALDETAILLINE6
+ADDITIONALDETAILLINE7
+ADDITIONALDETAILLINE8
+ADDITIONALDETAILLINE9
+ADDITIONALDETAILLINE10
+SequenceC–ConfirmationDetails(continued)
+ThissectioncontainsmorenotesforsequenceC.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 148
+
+---
+
+## Page 149
+
+Note79:Field13B:ExpandedSecurityType
+Field13Bindicatestheexpandedsecuritytype.Usethemiscellaneous(MSC)codeonlyforconfirmations
+offinancialinstrumentsthatarenotsecurities(forexample,aforeignexchangetrade).
+Format :4!c/[8c]/30x
+<CERT>/<DTCYEST>/<securitytype>
+DTCYEST DisclosureReferenceNumber
+Example :13B::CERT/DTCYEST/SHS
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 149
+
+---
+
+## Page 150
+
+Table3.58showsthesecuritytypesusedinfield13B.
+SecurityType Description
+[[ABS]] [[Asset]]-backedsecurities
+AGS Agencies(forexample,SBA,TVA)
+BAS Banker’sacceptances
+CDS Corporatedebtsecurities
+CER Representativecertificates
+CMO Collateralizedmortgageobligation
+COD Certificateofdeposit
+CON Convertiblebond
+CPA Commercialpaper
+CPN Coupons
+CSH U.S.cashwire
+CS1* U.S.cashwire1
+CS2* U.S.cashwire2
+CS3* U.S.cashwire3
+CS4* U.S.cashwire4
+CS5* U.S.cashwire5
+DFI DTCOMNIBUS
+EBD Eurobonds
+ECD EuroCD
+[[ECP]] EuroCP
+ENT Euronotes
+FFI FixedincomeOMNIBUS
+FIN Financial
+FMR FreddieMacREMICS
+FNM FederalNationalMortgageAssociation(FannieMae)
+FNR FannieMaeREMICS
+FPA Faceorprincipalornominalamount
+FRM FreddieMac
+GDS Governmentdebtsecurities
+GMR GinnieMaeREMICS
+Table3.58SecurityTypes
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 150
+
+---
+
+## Page 151
+
+SecurityType Description
+GNM GovernmentNationalMortgageAssociation(GinnieMae)
+ITS Indexedtreasurysecurities
+MBS Mortgage-backedsecurities
+MMI Moneymarketinstruments
+MSC Miscellaneous
+MTN Mediumtermnotes
+MUN Municipalbonds
+NSD Non-U.S.sovereigndebt
+OMB Othermortgage-backedsecurities(wholeloan)
+OMM Othermoneymarketinstruments
+OPC Optionscontracts
+OPS Optionshares
+PRC Premiumcontracts
+PRS Premiumshares
+RTE Rentes
+RTS Rights
+SHP Equities–preferredshares
+SHS Equities–[[shares]]
+TBI Treasurybills
+TEM Taxexemptmoneymarkets
+TRB Treasurybonds
+TRN Treasurynotes
+TRS Treasurystrips
+UNT Units
+WTS [[Warrants]]
+XCP Taxexemptcommercialpaper
+Table3.58SecurityTypes
+Note
+InTable3.58,DTCCusesthesevalueswithanasterisk(*)toestablishparent/childrelationshipsamong
+securitieswithinthestandinginstructionsdatabase.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 151
+
+---
+
+## Page 152
+
+Note80:Field13B:Amortized/AccreditedFactor
+Field13Bincludestheprorationoftheoutstandingprincipalbalanceonpass-through.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYAAF>/<factor>
+DTCYAAF Amortized/AccreditedFactor
+Example :13B::CERT/DTCYAAF/1,123456789012
+Note81:Field13B:MatchingVariance
+Field13Bindicatesthedifferencebetweenthenetamountsonthetradeconfirmationandtheinstitution
+instruction.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYMAV>/<variance>
+DTCYMAV MatchingVariance
+Example :13B::CERT/DTCYMAV/123,
+:13B::CERT/DTCYMAV/25,75
+Note82:Field13B:MatchingVarianceDiscrepancy
+Field13Bindicateswhethertheinvestmentmanagerorbroker/dealerexceededthematchingvariance.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYVAD>/<variance>
+DTCYVAD VarianceinTradeAmountTolerance
+Example :13B::CERT/DTCYVAD/I
+:13B::CERT/DTCYVAD/B
+Table3.59showsthecodesforthevariancediscrepanciesusedinfield13B.
+Value Description
+I Institutioninstructionnetamountisgreaterthanthebroker-
+/dealertradeinput.
+B [[Broker]]/dealertradeinputnetamountisgreaterthantheinvest-
+mentmanager’snetamount.
+Table3.59VarianceDiscrepancies
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 152
+
+---
+
+## Page 153
+
+Note83:Field13B:SecurityDescriptionType
+Field13Bindicatestheoriginofthesecuritydescriptionsuppliedforthetrade.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYSDT>/<securitydescriptiontype>
+DTCYSDT SecurityDescriptionType
+Example :13B::CERT/DTCYSDT/3
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 153
+
+---
+
+## Page 154
+
+Table3.60showsthesecuritydescriptiontypesusedinfield13B.
+Value Description
+0 Undetermined
+1 [[Broker]]/dealer
+2 Standard&Poor's(J.J.Kenny)
+3 [[DTC]]
+Table3.60SecurityDescriptionTypes
+Note84:Field13B:AdviceofCancellationorCorrectionIndicator
+Field13Bindicatestheprocessingstatusofanadviceofcorrectionorcancellation(AOCC) forthetrade.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYAOC>/<AOCCindicator>
+DTCYAOC AOCCIndicator
+Example :13B::CERT/DTCYAOC/N
+Table3.61showstheAOCC indicatorsusedinfield13B.
+Value Description
+Y ProcessedanAOCC.
+N DidnotprocessanAOCC.
+Table3.61AOCC Indicators
+Note85:Field13B:AOCCProcessDate
+Field13Bisonlyforoutput.Thisfieldindicatestheprocessdate,inYYYYMMDDformat,ofthelaststatus
+updateontheconfirm(affirm,reverseaffirm,AOCC).
+Format :4!c/[8c]/30x
+<CERT>/<DTCYRPD>/<AOCCprocessdate>
+DTCYRPD AOCCProcessDate
+Example :98A::CERT/DTCYRPD/20010329
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 154
+
+---
+
+## Page 155
+
+Note86:Field13B:StartDate
+Field13BindicatesthedatethattheREPOstartedaccruinginterest.Itisequivalenttothesettlementdate
+ofthefirstleg.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYSTRT>/<startdate>
+DTCYSTRT StartDate
+Example :13B::CERT/DTCYSTRT/20081225
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 155
+
+---
+
+## Page 156
+
+Note87:Field13B:SubstitutionNumber
+Field13BindicatesthenumberoftimesthatyoucansubstitutethecollateraloverthelifeoftheREPO.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYSUBN>/<substitutionnumber>
+DTCYSUBN SubstitutionNumber
+Example :13B::CERT/DTCYSUBN/77
+Note88:SubstitutionVariance
+Field13Bindicatesthepercentagebywhichtheprincipalvalueofthereplacementcollateralcandiffer
+fromtheprincipaloftheoriginalasapercent.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYSUBV>/<substitutionvariance>
+DTCYSUBV SubstitutionVariance
+Example :13B::CERT/DTCYSUBV/100,04875
+Note89:Field13B:Face(Par)orCashFillREPO
+Field13BindicatesthebasisfortheREPOcollateralization.Ifthevalueisface,facetimespriceequalsthe
+collateralvalue.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYSUBT>/<REPOvalues>
+DTCYSUBT Face(par)orCashFillREPO
+Example :13B::CERT/DTCYSUBT/FACE
+:13B::CERT/DTCYSUBT/CASH
+Table3.62showstheREPOvaluesusedinfield13B.
+Value Description
+Face Face(par)
+Cash Cashfill
+Table3.62REPOValues
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 156
+
+---
+
+## Page 157
+
+Note90:Field13B:FirstInterestCleanupDate
+Field13Bindicatesthefirstdateonwhichtobasescheduleofinterestcleanuppayments.
+Format :4!c/[8c]/30x
+<CERT>/<ICDT>/<firstinterestcleanupdate>
+DTCYICDT FirstInterestCleanupDate
+Example :13B::CERT/DTCYICDT/20081225
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 157
+
+---
+
+## Page 158
+
+Note91:Field13B:LookbackDays
+Field13Bindicatesthenumberofbusinessdaysbeforefloatingrateresetdatewhenthebenchmarkprice
+iscapturedandusedtodeterminethenewrateuponreset.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYLOOK>/<lookbackdays>
+DTCYLOOK LookbackDays
+Example :13B::CERT/DTCYLOOK/120
+Note92:Field13B:ResetIntervalFrequency
+Field13Bindicatestheresetintervalfrequency,suchasthreeorsixmonths.Thefrequencyisatwo-
+characterfieldcomposedofanumber(1through9)andaletter(H,Q,M,orW).Eachvalidletter
+representsatimeperiod:
+l H=Half
+l Q=Quarter
+l M=Month
+l W=Week
+Thefirstcharacterrepresentsthenumberoftimeperiodsandthesecondcharacterdefinesthetypeof
+timeperiod.Forexample,1Hisonehalf,2Qistwoquarters,and8Wiseightweeks.
+Format :4!c/[8c]/30x
+<CERT><DTCYRSET>/<resetintervalfrequency
+DTCYRSET Resetinterval
+Example :13B::CERT/DTCYRSET/8H
+Note93:Field13B:FlexREPOPaybackFrequency
+Field13Bindicatesthesinglematuritysetmostoftenonapredeterminedpay-downschedule;however,
+themoneygiver’scashcanbereturned.Thefrequencyisatwo-characterfieldcomposedofanumber(1
+through9)andaletter(H,Q,M,orW).Eachvalidletterrepresentsatimeperiod:
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 158
+
+---
+
+## Page 159
+
+l H=Half
+l Q=Quarter
+l M=Month
+l W=Week
+Thefirstcharacterrepresentsthenumberoftimeperiodsandthesecondcharacterdefinesthetypeof
+timeperiod.Forexample,1Hisonehalf,2Qistwoquarters,and8Wiseightweeks.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYFLEX>/<paybackfrequency>
+DTCYFLEX REPOPaybackFrequency
+Example :13B::CERT/DTCYFLEX/8H
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 159
+
+---
+
+## Page 160
+
+Note94:Field13B:User-DefinedDisclosureCode
+Field13Bindicatestheuser-definedreferencecodeorvalueforbroker/dealerstouseasexactcriteriafor
+aconfirmbacker/disclosureenrichment.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYDSCD>/<user-defineddisclosurecode>
+DTCYDSCD User-definedDisclosureCode
+Example :13B::CERT/DTCYDSCD/1234567890123456
+Note95:Field13B:CurrentYield
+Field13Bindicatesthe10b–10fieldinformationforbrokerstodisclosethecurrentyieldofthesecurity.
+Thisfieldallowsonlynumericvaluesforafloatingdecimalinanyposition.Spacesifnotsupplied.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYCYLD>/<currentyield>
+DTCYCYLD CurrentYield
+Example :13B::CERT/DTCYCYLD/.04875
+Note96:Field13B:YieldtoCall/Redemption
+Field13Bindicatesthe10b–10fieldinformationforbrokerstodisclosethecurrentyieldofthesecurity.
+Thisfieldallowsonlynumericvaluesforafloatingdecimalinanyposition.Spacesifnotsupplied.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYYLDR>/<yieldto call>
+DTCYYLDR YieldtoCall
+Example :13B::CERT/DTCYYLDR/.045
+Note97:Field13B:TradeExecutionDate
+Field13Bindicatesthedatethatthedealerbookedthetrade.ThedatemustbeinCCYYMMDDformat.
+Format CERT/DTCYBRDT/CCYYMMDD
+DTCYBRDT TradeExecutionDate
+Example :13B::CERT/DTCYBRDT/20171128
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 160
+
+---
+
+## Page 161
+
+Note98:Field13B:TradeExecutionTimeandTradeExecutionTimeZone
+Field13BindicatestheTradeExecutionTimeandTradeExecutionTimeZonewhentheTradewas
+executed.Therearetwowaysthedatacanbeprovided.Onlyprovideoneinput,basedondataavailability:
+1. TheTradeExecutionTime
+2. TheTradeExecutionTimeandTradeExecutionTimeZone(provideonlyone;theappropriate
+formatisprovideddependentondataavailability).TimezonesupportintheTradeSuiteIDservice
+includes:
+l EST
+l GMT
+l PST
+l CST
+l MST
+l OTH(Other)
+Format CERT/DTCYTMZ/[HHMM[SS]]TMZ
+FIAN TradeExecutionTime
+TradeExecutionTimeZone
+Example :13B::CERT/DTCYTMZ/1504
+:13B::CERT/DTCYTMZ/093010GTM
+:13B::CERT/DTCYTMZ/1504EST
+Note99:Field13B:DisclosureReferenceNumber
+Field13Bcontainsthedisclosurereferencenumberassignedbybacker/disclosurerepositorytoidentify
+thespecificbacker/disclosureassociatedwiththetradeconfirmation.Viewtherequiredinformationabout
+thebacker/disclosuredocumentontherepositoryalongwithcorrespondingURLdisclosurelink.
+Format :4!c/[8c]/30x
+<CERT>/[<DTCYREFN>]/<disclosurereferencenumber>
+DTCYREFN DisclosureReferenceNumber
+Example :13B::CERT/DTCYREFN/1234567890123456
+Note
+TheDisclosureReferenceNumberfieldcansupportupto16characters.However,thecurrentsystem
+configurationonlyproducesan8-characterDisclosureReferenceNumber.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 161
+
+---
+
+## Page 162
+
+Note100:Field13B:CommissionEquivalent
+Field13Breportsanynon-monetarybenefitamountsdisclosedascommissionequivalent,asfaras
+possible,thesameastheamountsandvalueofcommissionpaidinacorrespondingsale.Commission
+equivalentisoftenusedinexecutingrisklessprincipaltrades.
+Format :4!c/[8c]/30x
+CERT/DTCYCME/7d,[2d]
+CME CommissionEquivalent
+Example :13B::CERT/DTCYCOME/1100,35
+Note101:Field13B:TradeSuiteIDOperatingProceduresGuideReferenceNumber
+Field13BTradeSuiteIDOperatingProceduresguidereferencenumberassignedbytherepositoryto
+identifythespecificTradeSuiteIDOperatingProceduresguideassociatedwiththetradeconfirmation.
+RequiredinformationalongwiththecorrespondingOperatingProceduresLinkURL toviewtheTradeSuite
+IDOperatingProceduresguideavailablefromtherepository.
+Format :4!c/[8c]/30x
+CERT/DTCYOPGL/16x
+DTCYOPGL OperatingProceduresGuideReferenceNumber
+Example :13B::CERT/DTCYOPGL/6G6A211C
+Note102:Field13B:DiscountRate
+Field13Bindicatesthediscountrateofthetrade.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYDIR>/<discountrate>
+DTCYDIR DiscountRate
+Example :13B::CERT/DTCYDIR/0,15
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 162
+
+---
+
+## Page 163
+
+Note103:Field13B:LegalStatus
+Field13BindicatesthelegalstatusoftheMSRBsecurity.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYLES>/<legalstatus>
+DTCYLES LegalStatus
+Example :13B::CERT/DTCYDIR/0
+Table3.63showsthelegalstatusindicatorsusedinfield13B.
+Value Description
+0 UndeterminedandnotMunicipalSecuritiesRulemakingBoard
+(MSRB)ex-legal
+1 MSRBex-legal
+Table3.63LegalStatusIndicators
+Note104:Field13B:PaymentStatus
+Field13BindicatesthepaymentstatusoftheMSRBsecurity.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYPAS>/<paymentstatus>
+DTCYPAS PaymentStatus
+Example :13B::CERT/DTCYPAS/2
+Table3.64showsthepaymentstatusindicatorsusedinfield13B.
+Value Description
+0 Undetermined/nopayment.
+1 Noperiodicpayments.
+2 Callablebelowmaturityvalue.
+3 Non-registeredsecurity.
+4 Noperiodicpayments,callablebelowmaturityvalue.
+Table3.64PaymentStatusIndicators
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 163
+
+---
+
+## Page 164
+
+Note105:Field13B:BondTypeCode
+Field13BindicatesthebondtypeoftheMSRBsecurity.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYBTC>/<bondtype>
+DTCYBTC BondType
+Example :13B::CERT/DTCYBTC/3
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 164
+
+---
+
+## Page 165
+
+Table3.65showsthebondtypecodesusedinfield13B.
+Value Description
+0 Undetermined/nobondtype.
+1 Generalobligation.
+2 Revenuebond.
+3 G.O./limitedtax.
+Table3.65BondTypeCodes
+Note106:Field13B:BasisIndicator
+Field13BindicatesthebondbasisoftheMSRBsecurity.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYBAI>/<basisindicator>
+DTCYBAI BasisIndicator
+Example :13B::CERT/DTCYBAI/4
+Table3.66showsthebasisindicatorsusedinfield13B.
+Value Description
+0 Undetermined/nobasis.
+1 Yieldbasis.
+2 Dollarbasis.
+3 Parbasis.
+4 Discountbasis.
+Table3.66BasisIndicators
+Note107:Field13B:ResultIndicator
+Field13BindicatestheresultindicatoroftheMSRBsecurity.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYREI>/<resultindicator>
+DTCYREI ResultIndicator
+Example :13B::CERT/DTCYREI/07
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 165
+
+---
+
+## Page 166
+
+Table3.67showstheresultsindicatorsusedinfield13B.
+Value Description
+00 Undetermined/noresult.
+01 Pricetocall.
+02 Pricetoparoption.
+03 Pricetomaturity.
+04 Yieldtocall.
+05 Yieldtopartoption.
+06 Yieldtomaturity.
+07 Parbasis.
+Table3.67ResultIndicators
+Note108:Field13B:InterestPaymentDate
+Field13BindicatestheinterestpaymentdateoftheMSRBsecurity.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYIAP>/<interestpaymentdate>
+DTCYIAP InterestPaymentDate
+Example :13B::CERT/DTCYIAP/02042008
+Note109:Field13B:OptionCallIndicator
+Field13BindicatestheoptioncallindicatoroftheMSRBsecurity.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYOCI>/<resultindicator>
+DTCYOCI OptionCallIndicator
+Example :13B::CERT/DTCYOCI/06
+Table3.68showstheoptioncallindicatorsusedinfield13B.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 166
+
+---
+
+## Page 167
+
+Value Description
+00 Undeterminedornooptioncall
+01 Callableatapremium
+02 Callableatpar
+03 Callableatadiscount
+04 Pre-refunded
+05 Escrowedtomaturity
+06 Noncallable
+07 Callable,featureunavailable
+Table3.68OptionCallIndicators
+Note110:Field13B:Call/PutFeatureIndicator
+Field13BindicatesthecallorputfeatureoftheMSRBsecurity.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYCPF>/<call/putfeatureindicator>
+DTCYCPF Call/PutIndicator
+Example :13B::CERT/DTCYCPF/1
+Table3.69showsthecall/putfeatureindicatorsusedinfield13B.
+Value Description
+0 Undetermined/Nocall/putfeatures
+1 Callable
+2 Puttable
+3 Callableandputtable
+4 Retired(bondcompletelycalled)
+Table3.69Call/PutFeatureIndicators
+Note111:Field13B:PutBondType
+Field13BindicatestheputbondtypeoftheMSRBsecurity.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 167
+
+---
+
+## Page 168
+
+Format :4!c/[8c]/30x
+<CERT>/<DTCYPBT>/<putbondtype>
+DTCYPBT PutBondType
+Example :13B::CERT/DTCYPBT/02
+Table3.70showstheputbondtypeindicatorsusedinfield13B.
+Value Description
+01 Undeterminedornoputbondtype.
+02 Conditionalput.
+03 Limitedput.
+04 Mandatoryrepurchase.
+05 Mandatoryput.
+Table3.70PutBondTypeIndicators
+Note112:Field13B:PrerefundedorCallPrice
+Field13BindicatestheamountofprefundedorcallpriceoftheMSRBsecurity.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYPCP>/<prefundedor callprice>
+DTCYPCP PrerefundedorCallPrice
+Example :13B::CERT/DTCYPCP/100,00
+Note113:Field13B:PutBondPrice
+Field13Bindicatestheamountoftheputbondprice.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYPBP>/<putbondprice>
+DTCYPBP Putbondprice
+Example :13B::CERT/DTCYPBP/55,52
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 168
+
+---
+
+## Page 169
+
+Note114:Field13B:BondFormCode
+Field13BindicatesthebondformcodeoftheMSRBsecurity.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYPFC>/<bondformcode>
+DTCYPFC BondFormCode
+Example :13B::CERT/DTCYPFC/2
+Table3.71showsthebondformindicatorsusedinfield13B.
+Value Description
+0 Undeterminedornobondform.
+1 Fullyregistered.
+2 Book-entryonly.
+3 Registeredastoonlytheprincipal.
+4 Custodialreceipts.
+Table3.71BondFormCodeIndicators
+Note115:Field13B:InterestPaymentFrequency
+Field13BindicatestheinterestpaymentfrequencyoftheMSRBsecurity.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYIPF>/<interestpaymentfrequency>
+DTCYIPF InterestPaymentFrequency
+Example :13B::CERT/DTCYIPF/2
+Table3.72showstheinterestpaymentfrequencyindicators.
+Value Description
+0 Undeterminedfrequency
+1 Annual
+2 Semi-annual
+Table3.72InterestPaymentFrequencyIndicators
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 169
+
+---
+
+## Page 170
+
+Value Description
+3 Quarterly
+4 Monthly
+5 Weekly
+6 Bi-weekly
+7 Interestatmaturity
+8 Noperiodicinterest
+9 Unknown
+Table3.72InterestPaymentFrequencyIndicators
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 170
+
+---
+
+## Page 171
+
+Note116:Field13B:SpecialCouponIndicator
+Field13BindicatesthespecialcouponindicatoroftheMSRBsecurity.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYSCI>/<specialcouponindicator>
+DTCYSCI SpecialCoupon
+Example :13B::CERT/DTCYSCI/3
+Table3.73showsthespecialcouponindicatorsusedinfield13B.
+Value Description
+0 Undeterminedornospecialcoupon.
+1 Zerocoupon.
+2 Originalissuediscount.
+3 Adjustablerate.
+4 Couponbearing.
+5 Steppedcoupon.
+Table3.73SpecialCouponIndicators
+Note117:Field13B:Flat/DefaultStatus
+Field13Bindicatestheflat/defaultstatusoftheMSRBsecurity.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYFDS>/<flat/defaultstatus>
+DTCYFDS Flat/DefaultStatus
+Example :13B::CERT/DTCYFDS/3
+Table3.74showstheflat/defaultstatusindicatorsusedinfield13B.
+Value Description
+0 Undeterminedornoflatordefaultstatus
+1 Flat
+2 Flatorindefault
+Table3.74Flat/DefaultStatusIndicators
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 171
+
+---
+
+## Page 172
+
+Note118:Field13B:TaxStatus
+Field13BindicatesthetaxstatusoftheMSRBsecurity.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYTAS>/<bondformcode>
+DTCYTAS TaxStatus
+Example :13B::CERT/DTCYTAS/2
+Table3.75showsthetaxstatusindicatorsusedinfield13B.
+Value Description
+0 Undeterminedornotaxstatus
+1 Taxable
+2 Non-taxable
+Table3.75TaxStatusIndicators
+Note119:Field13B:Moody’sCreditRating
+Field13BindicatestheMoody’screditratingcodeoftheMSRBsecurity.Formoreinformationaboutthe
+Moody'screditratingindicatorsusedinfield13B,seeInput/OutputInformation.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYMCR>/<Moody’screditrating>
+DTCYMCR Moody'sCreditRating
+Example :13B::CERT/DTCYMCR/96
+Note120:Field13B:Standard&Poor’sCreditRating
+Field13BindicatestheStandard&Poor’screditratingcodeoftheMSRBsecurity.Formoreinformation
+abouttheStandard&Poor’screditratingindicatorsusedinfield13B,Input/OutputInformation.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYSPC>/<Standard& Poor’screditrating>
+DTCYSPC Standard&Poor’sCreditRating
+Example :13B::CERT/DTCYSPC/99
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 172
+
+---
+
+## Page 173
+
+Note121:Field13B:SubjecttoFederalTax
+Field13BindicateswhethertheMSRBsecurityissubjecttofederaltax.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYSFT>/<subjectto Federaltax>
+DTCYSFT SubjecttoFederalTax
+Example :13B::CERT/DTCYSFT/Y
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 173
+
+---
+
+## Page 174
+
+Table3.76showsthesubjecttofederaltaxindicatorsusedinfield13B.
+Value Description
+0orspaces Undetermined
+Y Yes
+N No
+Table3.76SubjecttoFederalTaxIndicators
+Note122:Field13B:AlternateMinimumTax
+Field13BindicateswhethertheMSRBsecurityissubjecttothealternateminimumtax.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYAMT>/<alternateminimumtax>
+DTCYAMT AlternateMinimumTax
+Example :13B::CERT/DTCYAMT/N
+Table3.77showsthealternateminimumtaxindicatorsusedinfield13B.
+Value Description
+0orspaces Undetermined
+Y Yes
+N No
+Table3.77AlternateMinimumTaxIndicators
+Note123:Field13B:TradeTypeIndicator
+Field13Bindicatesthetradetypeofthemortgage-backedsecurity.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYTTI>/<tradetype>
+DTCHTTI TradeTypeIndicator
+Example :13B::CERT/DTCYTTI/11
+Table3.78showsthetradetypeindicatorsusedinfield13B.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 174
+
+---
+
+## Page 175
+
+Value Description
+01 GenericTBA.
+02 SpecifiedTBA.
+03 SpecifiedpoolTBAtrade.
+11 Specifiedpooltrade.
+12 Genericpooltrade.
+50 Othermortgage-backedsecuritytrade.
+Table3.78TradeTypeIndicators
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 175
+
+---
+
+## Page 176
+
+Note124:Field13B:CurrentFace
+Field13Bindicatesthecurrentunpaidorremainingprincipalofamortgage-backedsecurity.Theamount
+changeseachmonthbytheamountofthepaydownorpay-upassociatedwiththeunderlyingmortgages
+supportingthemortgage-backedsecurity.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYCVF>/<currentface>
+DTCYCFV CurrentFace
+Example :13B::CERT/DTCYCVF/11000
+Note125:Field13B:Factor/EffectiveDate
+Field13Bindicatestheeffectivedateofthefactorused,inYYYYMMDDformat.Enteravaliddayofthe
+year,inclusiveofSaturday,Sunday,andholidays.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYFED>/<factor/effectivedate>
+DTCYFED FactorEffectiveDate
+Example :13B::CERT/DTCYFED/20080112
+Note126:Field13B:Yield
+Field13Bindicatestheannualpercentagereturn,ascomputedinaccordancewithstandardindustry
+practices,thatisearnedonasecurity.Cancontainafloatingdecimalinanyposition;usenumericforall
+otherpositions.Wholenumbersdonotrequireadecimalpoint(10b–10field).Ifthereisnoembedded
+decimal,theTradeSuiteIDserviceassumesawholenumber.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYYLD>/<yield>
+DTCYYLD Yield
+Example :13B::CERT/DTCYYLD/15000
+Note127:Field13B:RelatedReferenceNumber
+Field13Bindicatestheinternalbroker/dealerreferencenumberforaTBA-relatedpoolconfirmation.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 176
+
+---
+
+## Page 177
+
+Format :4!c/[8c]/30x
+<CERT>/<DTCYRRN>/<relatedreferencenumber>
+DTCYRRN RelatedReferenceNumber
+Example :13B::CERT/DTCYRRN/555123
+Note128:Field13B:NumberofDaysAccruedInterest
+Field13Bindicatesthetotalnumberofdaystocalculatetheinterest.Right-justified,zero-filled.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYDAI>/<numberof daysaccruedinterest>
+DTCYDAI NumberofDaysAccruedInterest
+Example :13B::CERT/DTCYDAI/100
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 177
+
+---
+
+## Page 178
+
+Note129:Field13B:SecurityClassCode
+Field13BindicatestheFixedIncomeClearingCorporation([[FICC]])andmortgage-backedsecurityclearing
+corporation(MBSCC)securityidentifier.[[FICC]]/MBSCCmakesthecomponentsavailable.Thecode
+indicatesagency,productcode,coupon,andmaturity.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYSCC>/<securityclasscode>
+DTCYSCC SecurityClassCode
+Example :13B::CERT/DTCYSCC/19012301
+Note130:Field13B:OriginalTradePar
+Field13Bindicatestheparvalueoftheoriginaltrade.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYOTP>/<originaltradepar>
+DTCYOTP OriginalTradePar
+Example :13B::CERT/DTCYOTP/8787
+Note131:Field13B:GoodDeliveryMillions
+Field13BindicatesthenumberofmilliondollarlotsdeliveredinaccordancewithSecuritiesIndustryand
+FinancialMarketsAssociation(SIFMA)guidelines.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYGDM>/<gooddeliverymillions>
+DTCYGDM GoodDeliveryMillions
+Example :13B::CERT/DTCYGDM/4
+Note132:Field13B:DeliveryDate
+Field13Bindicatesthescheduleddeliverydateofthesecuritiestothecontraparty,inYYYYMMDD
+format.Enteravaliddayoftheyear,includingSaturday,Sunday,andholidays.Settospaces.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 178
+
+---
+
+## Page 179
+
+Format :4!c/[8c]/30x
+<CERT>/<DTCYDED>/<deliverydate>
+DTCYDED DeliveryDate
+Example :13B::CERT/DTCYDED/20080418
+Note133:Field13B:EPNTime
+Field13Bindicatesthetimewhentheelectronicpoolnotification(EPN)messenger(gooddeliverytime
+stamp)receivesthemessage,inHH:MM:SSformat.Ifsupplied,enterinmilitaryformat.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYEPT>/<EPNtime>
+DTCYEPT EPNTime
+Example :13B::CERT/DTCYEPT/030104
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 179
+
+---
+
+## Page 180
+
+Note134:Field13B:Terminator
+Field13Bindicatesthevalueofthegooddeliverymillionsoftheprecedinglotofpools.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYTER>/<terminator>
+DTCYTER Terminator
+Example :13B::CERT/DTCYTER/3333
+Note135:Field13B:MessageID
+Field13BindicatestheuniquemessageIDthatEPNassignedtotheoriginalmessage.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYMID>/<messageid>
+DTCYMID MessageID
+Example :13B::CERT/DTCYMID/88868686567
+Note136:Field13B:PossibleDuplicate
+Field13BindicatestotheuserthattheEPNinputmessagemightbeaduplicate.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYPDM>/<possibleduplicate>
+DTCYPDM PossibleDuplicate
+Example :13B::CERT/DTCYPDM/X
+Table3.79showsthepossibleduplicateindicatorsusedinfield13B.
+Value Description
+Space Non-duplicate
+X Duplicate
+Table3.79PossibleDuplicateIndicators
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 180
+
+---
+
+## Page 181
+
+Note137:Field13B:TradeNumber
+Field13BindicatesthenumberreferencingtheMBSCCtradenumber.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYTRN>/<tradenumber>
+DTCYTRN TradeNumber
+Example :13B::CERT/DTCYTRN/7666644444
+Note138:Field13B:NumberofPools
+Field13BindicatesthenumberofpoolscontainedwithintheEPNmessage.Right-justified,zero-filled.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYNOP>/<numberof pools>
+DTCYNOP NumberofPools
+Example :13B::CERT/DTCYNOP/1000
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 181
+
+---
+
+## Page 182
+
+Note139:Field13B:InternalID
+Field13Bindicatestheuniquereferencenumberthatthesubmitterassigned.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYIID>/<internalid>
+DTCYIID InternalID
+Example :13B::CERT/DTCYIID/5456656767
+Note140:Field13B:SubmitterAccountID
+Field13BindicatestheAccountIDoftheaccountsubmittingthemessage.
+Format :4!c/[8c]/4x
+<CERT>/<DTCYSAI>/<submitteraccountid>
+DTCYSAI SubmitterAccountID
+Example :13B::CERT/DTCYSAI/4523
+Note141:Field13B:ServiceType
+Field13BindicatesthetypeofmessageinputtotheMBSCC.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYSRT>/<servicetype>
+DTCYSRT ServiceType
+Example :13B::CERT/DTCYSRT/TFTD
+Table3.80showstheservicetypeindicatorsusedinfield13B.
+Value Description
+Space Non-duplicate.
+TFTD Trade-for-trade.
+SBOD Identifiesalltradesinclasseseligiblefornettingwhenavailingof
+netting.
+Table3.80ServiceTypeIndicators
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 182
+
+---
+
+## Page 183
+
+Value Description
+CMPT Comparisontrade.
+CMPC Comparisontradecancellation.
+OPTN Identifiesalloptiontrades.
+Table3.80ServiceTypeIndicators
+Note142:Field13B:OptionType
+Field13BindicatestheoptiontypefortheMBStrade.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYOPT>/<optiontype>
+DTCYOPT OptionType
+Example :13B::CERT/DTCYOPT/CALL
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 183
+
+---
+
+## Page 184
+
+Table3.81showstheoptiontypeindicatorsusedinfield13B.
+Value Description
+CALL Call
+PUTS Puts
+Table3.81OptionTypeIndicators
+Note143:Field13B:RecordDate
+Field13Bindicatesthedatethatthetrusteesetfordeterminingwhentopayprincipalandinterestona
+security,inYYYYMMDDformat.Enteravaliddayoftheyear,inclusiveofSaturday,Sunday,andholidays.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYRDT>/<recorddate>
+DTCYRDT RecordDate
+Example :13B::CERT/DTCYRDT/20080813
+Note144:Field13B:SpecificationCodeandSpecificationValue
+Field13Bindicatesthespecificationcodeandspecificationvaluerepresentingaconditiontothetrade.A
+mortgage-backedsecuritytradecanhaveupto16(numbers01through16)specificationscodesand
+values.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYSnn>/<specificationcodeandspecification
+value>
+DTCYSnn SpecificationCodeandSpecificationValue
+Example :13B::CERT/DTCYSnn/00102NY
+Table3.82showsthespecificationcodesandvaluesusedinfield13B.TheFieldDefinitioncolumnuses
+thefollowingabbreviations:
+l AL=Alphabetic,left-justifiedN.
+l U=Numeric,right-justifiedC.
+l H=Character,left-justified.
+l DT=Date,inYYYYMMDDformat,left-justified.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 184
+
+---
+
+## Page 185
+
+Specification
+Code
+SpecificationDescription Value
+Length
+FieldDefinition
+001 COLLATERALREGION 02 AL(NY,CA,MA)
+002 COLLATERALREGION
+EXCLUDING
+02 AL(NY,CA,MA)
+003 ISSUANCEREGIONCODE 02 AL(NY,CA,MA)
+004 ISSUANCEREGIONEXCLUDE
+CODE
+02 AL(NY,CA,MA)
+005 ISSUEDATE-EARLIEST 08 DT
+006 ISSUEDATE-LATEST 08 DT
+007 MATURITYDATE-EARLIEST 08 DT
+008 MATURITYDATE-LATEST 08 DT
+020 PIECES-maximumnumberper
+trade
+04 NU
+021 PIECES-minimumnumberper
+trade
+04 NU
+022 POOLS-maximumnumber 04 NU
+023 POOLS-minimumnumber 04 NU
+024 POOLS-maximumCURRENT
+FACEVALUE
+12 AL/NU
+(999,000,000.00-
+999,000M-
+999MM)
+025 POOLS-minimumCURRENT
+FACEVALUE
+12 AL/NU
+(999,000,000.00-
+999,000M-
+999MM)
+026 POOLSPERMILLION-maximum02 NU
+027 POOLSPERMILLION-minimum 02 NU
+040 VARIANCE(FORNON-BMA
+STANDARD)
+12 (X)NU
+(FLOATING
+DECIMAL)
+041 NODOWNSIDEVARIANCE
+(POPULATEY)
+01 (X)NU
+(FLOATING
+DECIMAL)
+050 Weightedaveragecoupon(WAC)
+code-maximumpercent(%)
+05 (X)NU
+(FLOATING
+DECIMAL)
+051 Weightedaveragecoupon(WAC)
+code-minimumpercent(%)
+05 (X)NU
+(FLOATING
+DECIMAL)
+Table3.82SpecificationCodesandValues
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 185
+
+---
+
+## Page 186
+
+Specification
+Code
+SpecificationDescription Value
+Length
+FieldDefinition
+052 Weightedaveragematurity(WAM)
+code-maximumnumberofmonths
+03 NU
+053 WAMcode–minimumnumberof
+months
+03 NU
+054 Weightedaverageloanage
+(WALA)/commercialandgov-
+ernmententity(CAGE)–maximum
+03 NU
+055 WALA/CAGE-minimum 03 NU
+060 INDEX 06 AL/NU
+070 INTERESTRATECAP-maximum06 (X)NU
+(FLOATING
+DECIMAL)
+071 INTERESTRATECAP-minimum06 (X)NU
+(FLOATING
+DECIMAL)
+072 PAYMENTPERCENTAGECAP-
+maximum
+06 (X)NU
+(FLOATING
+DECIMAL)
+073 PAYMENTPERCENTAGECAP-
+minimum
+06 (X)NU
+(FLOATING
+DECIMAL)
+074 PERIODICCAP-maximum 06 (X)NU
+(FLOATING
+DECIMAL)
+075 PERIODICCAP-minimum 06 (X)NU
+(FLOATING
+DECIMAL)
+076 RESETDATE-EARLIEST 08 DT
+077 RESETDATE-LATEST 08 DT
+100 REASSIGNMENT 15 CH
+999 FREEFORMSPECIFICATION15 AL/NU
+Table3.82SpecificationCodesandValues
+Note145:Field13B:MBSInterestRate
+Field13Bindicatestheinterestrateforthemortgage-backedsecurity.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 186
+
+---
+
+## Page 187
+
+Format :4!c/[8c]/30x
+<CERT>/<DTCYMIR>/<MBSinterestrate>
+DTCYMIR MBSInterestRate
+Example :13B::CERT/DTCYMIR/1000
+Note146:Field13B:MBSMaturityDate
+Field13Bindicatesthematuritydateforthemortgage-backedsecurity.
+Format :4!c/[8c]/30x
+<CERT>/<DTCYMMD>/<maturitydate>
+DTCYMMD MaturityDate
+Example :13B::CERT/DTCYMMD/20080702
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 187
+
+---
+
+## Page 188
+
+Note147Field13B:VendorControlID
+Field13BindicatesthecontrolIDassignedbythebroker'svendortoabroker/dealer’strade.
+Format :4!c/[8c]/9x
+<CERT>/<DTCYVCI>/<vendorcontrolID>
+DTCYVCI VendorControlID
+Example :13B::CERT/DTCYVCI/B12345678
+Note148:Field13B:  InstitutionLegalEntity
+Field13BindicatestheLegalEntityIdentifier(LE)oftheinstitutiononthetrade.
+Format CERT/DTCYINLE/20x
+DTCYINLE InstitutionLegalEntity
+Example :13B::CERT/DTCYINLE/549300TGFLH2QZV80T70
+Note149:Field13B:  BrokerLegalEntity
+Field13BindicatestheLegalEntityIdentifier(LE)oftheexecutingbrokeronthetrade.
+Format CERT/DTCYBRLE/20x
+DTCYBRLE BrokerLegalEntity
+Example 13B::CERT/DTCYBRLE/659000GHLFP3UIS97Y33
+Note150:Field13B:  MarkUpPercentorMarkDownPercent
+Field13BindicatestheMarkuporMarkDownpercentage.Thepercentagecanbepositive(markup)or
+negative(markdown).Thevalueisintheformofapercentage,forexample.999,99999,N999,99999
+Format CERT/DTCYMARK/[N]9x
+DTCYMARK MarkUpPercent
+-or-
+MarkDownPercent
+Example :13B::CERT/DTCYMARK/2,20032
+:13B::CERT/DTCYMARK/N015,05015
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 188
+
+---
+
+## Page 189
+
+Note151:Field70E:SpecialInstructionsline1-8andConfirmDisclosureLink
+(outputonly)
+Useeight30-characterlinesofspecialinstructionstospecifymoreinstructionsforreportingorprocessing.
+Ifaspecialinstructionfieldisblankorempty,themessagedoesnotincludetheinstruction.AfterSpecial
+Instructions,uptotwo35-characterlinesexisttoshowtheConfirmDisclosurelink.
+TheConfirmDisclosurelinkalwaysbeginswiththeDCLK:stringfollowedwiththeURLfortheConfirm
+Disclosuresite.Toviewrequiredinformationforthedisclosuredocument,validvalues:
+https://insite.[[DTCC]].com/insite/ineui(production)andhttps://insitect.[[DTCC]].com/insite/ineui(clienttest).
+Format :4!c//10*35x
+<TPRO>/<textline1>
+<textline2>
+…
+<textline10>
+TPRO Specialinstructionandconfirmdisclosurelink
+Example :70E::TPRO//SPECIAL-INSTRUCTIONS-1
+SPECIAL-INSTRUCTIONS-2
+SPECIAL-INSTRUCTIONS-3
+SPECIAL-INSTRUCTIONS-4
+SPECIAL-INSTRUCTIONS-5
+SPECIAL-INSTRUCTIONS-6
+SPECIAL-INSTRUCTIONS-7
+SPECIAL-INSTRUCTIONS-8
+DCLK:HTTP://INSITE.[[DTCC]].COM
+Withsomespecialinstructionfields:
+:70E::TPRO//SPECIAL-INSTRUCTIONS-4
+SPECIAL-INSTRUCTIONS-5
+SPECIAL-INSTRUCTIONS-8
+DCLK:HTTP://insite.[[DTCC]].com
+Withoutspecialinstructions–justURLlink
+:70E::TPRO//DCLK:HTTP://INSITE.[[DTCC]].COM
+SequenceD–SettlementDetails
+SequenceDisamandatorysequencecontainingsettlementdetails.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 189
+
+---
+
+## Page 190
+
+Note152:Field22F:DeliveryMethodIndicator
+Field22Fdeterminesthedeliverymethodbasedonthesecuritytypeorpurposeoftrade.
+Format :4!c/[8c]/4!c
+<STCO>/<DTCYDVMT>/<deliverymethodcode>
+STCO DeliveryMethodIndicator
+Example :22F::STCO/DTCYDVMT/DM04
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 190
+
+---
+
+## Page 191
+
+Table3.83showsthedeliverymethodcodesusedinfield22F.
+Value Description
+DM01 Free
+DM02 Bookentry
+DM03 Physical
+DM04 DVP/RVP
+DM05 Cash
+DM06 Hold-in-[[custody]]
+DM07 Tri-party
+DM08 Quadparty
+DM99 Other
+Table3.83DeliveryMethodCodes
+Note153:Field22F:TradeTypeIndicator
+Field22FismandatoryforSWIFT.TheFINorCOLREPOsecuritytypesrequireacodetoidentifythetype
+ofREPOtrade.Forallothertrades,TRADidentifiesthetrade.
+Format :4!c/[8c]/4!c
+<SETR>/<DTCY>/<REPOtradecode>
+SETR TradeTypeIndicator
+Example :22F::SETR//TRAD
+:22F::SETR/DTCY/REPU
+Table3.84tradetypecodesusedinfield22F.
+Value Description
+REPU REPO
+RVPO ReverseREPO
+SBBK Sell/buyback
+BSBK Buy/sellback
+PART Participation
+SECL Securitylending
+Table3.84TradeTypeCodes
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 191
+
+---
+
+## Page 192
+
+Value Description
+SECB Securityborrowing
+TT99 Other
+Table3.84TradeTypeCodes
+Note154:Field22F:SettlementConditionCodes#1,#2,#3
+Field22Findicatesthesettlementconditioncodesthatdenoteextrasettlementconditionsassociatedwith
+atrade.Therecanbeuptothreerepetitionsofthisfield.
+Format :4!c/[8c]/4!c
+<STCO>/<DTCY>/<settlementconditioncodes>
+STCO SettlementConditionCodes
+Example :22F::STCO/DTCY/SEYB
+Table3.85showsthesettlementconditioncodesusedinfield22F.
+Value Description
+SDAP Deliveryagainstpayment
+SBDN Badnames
+SCDD CUMdividend
+SCOO Countryoforigin
+SCRT CUMrights
+SDDY Delayeddelivery
+SEYB Earlybargain
+SFFR Forforeignregistration(non-U.S.)
+SGDD Guaranteeddelivery
+SLDP Londonpayment
+SNCS Notforcentralsettlement
+ZDFP Deliveryfreeofpayment
+SNWT Newtime
+SNWT Partappointment
+SROO Resultofoption
+SSAD SouthAfricandelivery
+STRF Transmissionfees
+Table3.85SettlementConditionCodes
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 192
+
+---
+
+## Page 193
+
+Value Description
+SEXB Ex-bonus
+SEXD Ex-[[Dividend]]
+SEXR Ex-rights
+SBDL Boardlots
+SCUB CUMbonus
+SCUC CUMcoupon
+SCOT Contingent
+SCCR CUMcapitalrepayment
+SCSH Cash
+SDTT Directtrace
+SITF Intra-firm
+SLDD Londondelivery
+SNBI Nobuy-in
+SNOM Nomarking
+SNSP Nostamp
+SOSD Overseasdelivery
+SOEN Onename
+SFRN Forredemption
+SSPP Specialprice
+SWNI When-Issued
+SEXC Ex-coupon
+SEXP Ex-capitalpayment
+Table3.85SettlementConditionCodes
+Note155:Field22F:BrokerCustodyIndicator
+Field22Findicateswhetherthebroker/dealerisholdingsecuritiesdomesticallyorinternationallyforthe
+tradedsecurity.
+Format :4!c/[8c]/4!c
+<STCO>/<DTCY>/<brokercustodyindicator>
+STCO BrokerCustodyIndicator
+Example :22F::STCO/DTCY/BRCY
+Table3.86showsthebrokercustodyindicatorsusedinfield22F.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 193
+
+---
+
+## Page 194
+
+Value Description
+BRCY [[Broker]]/dealerisholdingsecurities.
+BRCN [[Broker]]/dealerisnotholdingsecurities.
+Table3.86BrokerCustodyIndicators
+Note156:Field22F:SplitCurrencyIndicator
+Field22Fidentifieswhensecuritiesandcashsettleindifferentlocations.Theabsenceofthisfield
+indicatesthatsecuritiesandcashsettleinthesamelocation.Whentheexecutingbroker/dealerisusing
+theALERTserviceandindicatesasplitcurrencyconditionintheALERTservice,thisfieldretrievesthe
+currencysettlementinformationfortheentityreceivingthecurrency,whenavailable.Thisinformation
+replacesthespecialinstructions1,2,3,and4.
+Format :4!c/[8c]/4!c
+<STCO>//<SPST>
+STCO SettlementCondition
+Example :22F::STCO//SPST
+Table3.87showsthesettlementconditionvalueusedinfield22F.
+Value Description
+SPST Splitcurrencysettlement.
+Table3.87SettlementConditionValue
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 194
+
+---
+
+## Page 195
+
+Note157:  Field22F:ALERTOverwriteIndicator
+Field22FindicatesthatoneormorefieldswereoverwrittenwithdatastoredintheALERTservice.
+Format :4!c/[8c]/4!c
+<STCO>/<DTCY>/<indicator>
+STCO Standinginstructionsdatabaseoverwriteindicator
+Example :22F::STCO/DTCY/SOIY
+Table3.88showstheALERTvaluesusedinfield22F.
+Value Description
+SOIN No,theALERTservicedoesnotoverwritetheuserinput.
+SOIY Yes,theALERTserviceoverwritestheuserdata.
+Table3.88ALERTValues
+Note158:Field22F:SettlementConditionIndicator
+Field22Findicateswhenyourequireasettlementinstructionoverride.Thefieldinstructs(SWIFT)[[DTCC]]
+nottousetheALERTservicetoaugment/replacesettlementinstructions.However,allcustomer
+information,inclusiveofinterestedparties,continuestousetheALERTservice.
+Usethistagonlywhenusing:17B::STAN//Y.Ifusing:17B::STAN//N,youdonotneedtousetag22F.
+Format :4!c/[8c]/4!c
+<DBNM/DTCY/BRKR>
+DBNM SettlementConditionIndicator
+Example :22F::DBNM/DTCY/BRKR
+SubsequenceD1–settlementparties
+SubsequenceD1isamandatorysequence.Repetitionsofthesequenceareoptionaloninput.FourD1
+settlementsubsequencesaremandatoryandarepartoftheDTCCoutputmessage:settlementlocation,
+agent,clearingagent,andinvestmentmanager.Extrasettlementpartysequencesareoptional.
+EitheraDTCIDnumberoraBICidentifierinthePrimaryIdentifierfield(95a)identifiesmostpartieson
+input.However,BICexclusivelyidentifiesthesub-custodianCSDsandthecorrespondentbank.Onoutput
+fromDTCC,thePrimaryIdentifierfieldcontainstheBICidentifierin95Pformat.IfyouentertheDTC
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 195
+
+---
+
+## Page 196
+
+Identifierfield(95R)asaprimaryidentifierontheinputrecord,DTCCmovesittotheAlternateIdentifier
+field(format95S)uponexiting.
+WhenaBICidentifierdoesnotexist,oraBICisunavailable,theInitialPartyIdentifierfieldcontainsan
+eight-byteDTCIDnumberintheSWIFT95Rformat.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 196
+
+---
+
+## Page 197
+
+Note159:Field95R:BrokerSettlementLocation,field95P:BrokerSettlementLocationBIC,or
+field95Q:NOTFORSETTLEMENT
+Thebrokersettlementlocationisthecountryordepository(CSD)wherethetradedsecuritysettles.
+Alternately,useISOcountrycodestoindicatethecountryofsettlement.FortheISOcountrycodes,see
+Input/OutputInformation.Ifthesettlementlocationisnotforsettlement(NFS),thetext"NOTFOR
+[[settlement]]"replacesthesettlementlocation.
+Format :4!c//4!a2!a2!c[3!c]
+<PSET>//<BIC>
+:4!c//2!a
+<PSET>//<settlementlocation>
+:4!c//4*35x
+<PSET>//<NOTFORSETTLEMENT>
+PSET SettlementMarket
+Examples :95P::DTCYbic
+:95C::PSET//[[DTC]]
+:95Q::PSET//NOTFORSETTLEMENT
+Table3.89showsthevaluesforthesettlementlocationusedinfield95P.
+Code Country SettlementLocationDescription
+BRC U.S.A. Brokercustody(DTCtradewherebroker/dealerisalsocus-
+todian/agent)
+CED LuxembourgCEDEL
+[[DTC]] U.S.A. TheDepositoryTrustCompany
+EUR Brussels Euroclear
+FED U.S.A. Federalreservebank
+Table3.89SettlementLocation
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 197
+
+---
+
+## Page 198
+
+Note160:Field20C:BrokerSettlementMethod
+Field20Cindicatesthesettlementmethodinwhichasecuritysettlesinaparticularcountryormarketwith
+multipleclearingmethods.
+Format :4!c//16x
+<PROC>//<settlementmethod>
+PROC ProcessingDateandTime
+Example :20C::PROC//PHY
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 198
+
+---
+
+## Page 199
+
+Table3.90showstheacceptablevaluesforsettlementmethods.
+Code Country SettlementMethod
+APK Finland FinnishCentralSecurityDepository
+AUS Australia Austraclear
+BBV Bolivia BolsaBolivianadeValores
+BCB Bolivia BancoCentraldeBolivia
+BKI Italy BANCAD’ITALIA
+BOJ Japan BankofJapanNetting
+BOV Brazil BOVESPA/CALISPA
+BVL Peru BolsadeValoresdeLima
+CDA Croatia CentralDepositoryAgency
+CDC Pakistan CentralDepositoryCompany
+CDE ElSalvador CentraldeDepositodeValoresdeElSalvadorSA
+CDS Canada CanadianDepositoryService
+CDV Argentina CajaDeValoresS.A.
+CED LuxembourgCEDEL
+CEN Nicaragua CENIVAL–BolsadeValoresdeNicaragua
+CEV CostaRica CEVAL–CentraldeValores
+CGO UK CentralGiltsOffice
+CHS Australia CHESS–ClearingHouseElectronicSubregisterSystem
+CHV Honduras CentralHondurenadeValoresyLiquidacion
+CIK Belgium CaisseInterprofessionnelleKassa
+CLR Generic AnotherClearer
+CMO UK CentralMoneymarketsOffice
+CRS UK CRESTE
+CSD Greece CentralSecuritiesDepository
+CVS Argentina MercadoDeValoresdeBuenosAiresSA
+CVV Venezuela CajaVenezolanadeValoresCA
+DBC Germany DeutscheBourseClearingAG
+DCE Ecuador DECEVALE–DepositoCentralizadodeValoresSA
+DCV Chile DepositoCentralDeValoresSA
+DEC Colombia DECEVAL–DepositoCentraldeValores
+Table3.90SettlementMethod
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 199
+
+---
+
+## Page 200
+
+Code Country SettlementMethod
+DKV Germany DeutscherKassenvereinAG
+[[DTC]] U.S.A. TheDepositoryTrustCompany
+ECD Estonia ECDSL–EstonianCentralDepositoryforSecurities
+ECL Belgium Euroclear
+ESO UK EuropeanSettlementsOffice
+FED U.S.A. FederalReserveBank
+FNB UK FirstNationalBankofChicago
+GCV Guatemala CajaDeValoresSA
+GSO Ireland GiltsSettlementOffice
+HKS HongKong CCASS/HKSCC–HongKongSecuritiesClearanceCorp
+HUN Hungary KELER–CentralClearingHouseandDepository
+IND Mexico Indeval
+INS UK InstitutionalNetSettlement
+INT Portugal INTERBOLSA
+ISE Turkey TakasbankISESettlementandCustodyBank
+JAS Japan JapanSecuritiesClearanceCorp
+KDD Slovenia CSCC–CentralSecuritiesClearingCorp.
+KDE Indonesia KDEI–IndonesianSecuritiesCentralDepository
+KDP Poland NationalDepositoryforSecurities
+KIS Bulgaria CDAD–CentralSecuritiesDepositoryAS
+KSC Korea KoreanSecuritiesClearanceCorp
+LCD Latvia LatvianCentralDepository
+LCS Zambia LuseCentralSharesDepository
+LIT Lithuania CSDL–CentralSecuritiesDepositoryofLithuania
+MAL Malta CentralSecuritiesDepository
+MAU Mauritius CentralDepository&SettlementCo
+MCD Malaysia MalaysianCentralDepository
+MDV Argentina MercadoDeValoresdeBuenosAiresSA
+MID Lebanon MIDCLEAR
+MIS Egypt MISRClearing&SettlementDepository
+MON Italy MonteTitoli
+MUS Oman MuscatSecuritiesMarket
+Table3.90SettlementMethod
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 200
+
+---
+
+## Page 201
+
+Code Country SettlementMethod
+NCS Nigeria CentralSecuritiesClearingSystem
+NEC NetherlandsNECIGEF
+NSD India NSDL–NationalSecuritiesDepositoryLimited
+NZC NewZealand NZCSD–NewZealandCentralSecuritiesDepository
+OKB Austria OEKB-OsterreichischeKontrollbankAG
+PAN Panama PANACLEAR–PanamericanClearing&SettlementSystem
+PCD Philippines PhilippinesCentralDepository
+PHY Physical Physicalsettlement/clearance(generic)
+PTC U.S.A. ParticipantTrustCompany
+RGV France RelitGrandeVitesse
+RIT Australia RITS–ReserveBankInformationandTransferSystem
+SAD SouthAfrica CentralDepositoryLtd
+SCD Singapore PTE/SCCS–CentralDepository
+SCP SlovakRep. CentreforSecurities
+SEG Switzerland Intersettle–SEGA
+SET Thailand ThailandSecuritiesDepositoryCo.
+SHE China SSCC–ShenzenExchange
+SHG China SSCCRC–ShanghaiExchange
+SIB Spain EXPACLEAR
+SNC Romania SNCDDDSA–NationalCo.forClearing,[[settlement]]&Depos-
+itoryforSecurities
+STI Tunisia STICODEVAM
+TAS Israel TASE–TelAvivStockExchClearingHouse
+TCS Taiwan TCSD–TaiwanSecuritiesCentralDepositoryCo
+TKD CzechRep. CzechNationalBank
+VP Denmark DanishSecuritiesCentre
+VPC Sweden SwedishCentralSecuritiesDepository
+VPS Norway Verdipapirsentralen
+Table3.90SettlementMethod
+Note161:Field70C:Delivery/Receiver(input)
+Field70Creportsthedelivery/receiverinformation.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 201
+
+---
+
+## Page 202
+
+Format 4!c//4*35x
+<PACO>//<delivery/receiver>
+PACO Delivery/ReceiverInformation
+Example :70C::PACO//ABC12345678
+Note162:Field70D:Sub-CustodianCSDInformation(input)
+Field70Dreportsthesub-custodiancashaccountinformation.
+Format :4!c//6*35x
+<REGI>//<Sub-custodianCashAccount>
+REGI Sub-custodianCashAccountInformation
+Example :70C::REGI//35x
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 202
+
+---
+
+## Page 203
+
+Note163:Field70C:DTCSettlementMode,AffirmingPartyIndicator,AgentSub-CustodianBIC,
+andBrokerSub-CustodianBIC(output)
+Field70CreportstheDTCsettlementmode,ifknown,affirmingpartyindicator,agentsub-custodianBIC(if
+available),andbrokersub-custodianBIC(ifavailable).Eachvalueusesaseparatelineendingwitha
+CRLF.
+Iftheagentsub-custodianBICisavailable,PACOisfollowedbyadoubleslash(//),AGENT-CUST,a
+singleslash(/),andBICinformation.Ifthebrokersub-custodianBICisavailable,thenextlinestartswith
+BROKR-CUST,followedbyasingleslashandBICinformation.
+DTCsettlementmodeindicatorsincludeadoubleslashfollowedbytheindicator:
+l [[DTC]]—PDQDTCsettlement
+l [[CNS]]—CNSNSCCsettlement
+l NET—IDNET
+Affirmingpartyindicatorsincludeadoubleslashfollowedbytheindicator:
+l NAFT—Notaffirm
+l INST—Institution
+l AGNT—Agent
+l DTCI—DTCsettlementandaffirmedbyinstitution
+l DTCA—DTCsettlementandaffirmedbyagent
+l INTP—Interestedparty
+Format 4!c//4*35x
+<PACO>//<DTCSettlementMode>
+//<AffirmingPartyIndicator>
+AGENT-CUST/<AgentSub-custodianBIC>
+BROKR-CUST/<BrokerSub-custodianBIC>
+PACO PartyIndicator
+Example :70C::PACO//[[DTC]]
+//INST
+AGENT-CUST/STNDGB20XXX
+BROKR-CUST/STNDGB20XXX
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 203
+
+---
+
+## Page 204
+
+:70C::PACO//DTCI
+AGENT-CUST/STNDGB20XXX
+BROKR-CUST/STNDGB20XXX
+:70C::PACO//NAFT
+BROKR-CUST/STNDGB20XXX
+Note164:Field70D:AgentSub-CustodianCSDInformation,BrokerSub-CustodianCSDInform-
+ation,DeliveryInstructions(Lines1),andDeliveryInstructions(Line2)
+Field70Dreportstheagentsub-custodiancashaccount,ifavailable,brokersub-custodiancashaccount,
+ifavailable,andtwolinesofdeliveryinstructions,ifavailable.Eachvalueusesaseparatelineendingwith
+aCRLF.
+Iftheagentsub-custodiancashaccountispresent,followREGIbydoubleslashes(//)followedbythe
+AGENT-CASH-ACCOUNT.Thenextlineshowstheagentsub-custodiancashaccountnumber.Ifthe
+brokersub-custodiancashaccountispresent,thefollowinglinecontainstheBROKER-CASH-ACCT.The
+nextlinecontainsthebroker’ssub-custodiancashaccountnumber.
+Forphysicaldeliveries,ifprovided,usethisfieldtospecifythatthenexttwolinesareavailabletoinclude
+thedeliveryinstructions.EachlineofdeliveryinformationbeginswithDI:followedbyalineofdelivery
+instructiondetails.
+Note
+Sub-custodianCSDanddeliveryinstructionfieldssharethesameSWIFTvalue(REGI).Sub-sustodian
+CSDcanhaveuptofourlinesofinformationanddeliveryinstructions(lines1and2)canhavetwolinesof
+information.TheTradeSuiteIDservicecannotguaranteethepositionofthedatabecauseblanklinesare
+notincludedinthemessages.
+Format :4!c//6*35x
+<REGI>//<AgentSub-CustodianCashAccount>
+AGENT-CASH-ACCOUNT<AgentSub-CustodianCashAccount>
+[[Broker]]-CASH-ACCT
+<BrokerSub-CustodianCashAccount>
+DI:<DeliveryInstructionsLine1>
+DI:<DeliveryInstructionsLine2>
+REGI Sub-custodiancashaccountinformation
+Example 70D::REGI//AGENT-CASH-ACCT
+83796785
+[[Broker]]-CASH-ACCT
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 204
+
+---
+
+## Page 205
+
+5637676666
+DI:DeliveryInstructionsLine1
+DI:DeliveryInstructionsLine2
+Note165:Field95a:InstitutionPrimaryIdentifier:Field95R:InstitutionDTCIDorField95P:Insti-
+tutionBIC
+WhentheprimaryidentifierisaDTCIDnumber,useformat95R,inwhichcasethefieldcancontaina
+maximumofeightwholenumbers.WhentheprimarynumberisaBIC,useformat95P,inwhichcasethe
+fieldcancontain11characters.
+BICvaluesresideonthestandinginstructionsdatabase(theALERTservice).Whenadifferenceexists
+betweentheBICvalueenteredandthevalueontheALERTservice,thevalueontheALERTservice
+overlaystheuserentry.
+Format :4!c/8c/34x
+<BUYRor SELL>/<DTCYID>/<institutiondtcid number>
+:4!c//4!a2!a2!c[3!c]
+<BUYRor SELL>//<institutionbicidentifier>
+BUYRor
+SELL
+InstitutionIdentification
+Example :95R::BUYR/DTCYID/12345678
+:95P::SELL//INSTUS12XXX
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 205
+
+---
+
+## Page 206
+
+Table3.91showstheinstitutionindicatorsusedinfield95Ror95P.
+Qualifier Description
+BUYR [[Buyer]]
+SELL [[Seller]]
+Table3.91Buy/SellIndicators
+Note166Field95S:InstitutionAlternateIdentifierorInstitutionAlternateDTCID
+Iftheprimaryidentifierinfield95RcontainsaDTCIDnumber,thealternateidentifierinfield95Scan
+containaBICidentifier.Conversely,iftheprimaryidentifiercontainsaBICidentifier,thealternateidentifier
+cancontainaDTCIDnumber.
+BICvaluesresideonthestandinginstructionsdatabase(theALERTservice).Whenadifferenceexists
+betweentheBICvalueenteredandthevalueontheALERTservice,thevalueontheALERTservice
+overlaystheuserentry.
+Format :4!c/[8c]/4!c/2!a/30x
+<ALTE>/<CORP>/<countrycode>/<type>/<institutionalternate
+identifier>
+ALTE AlternateIdentifier
+Example :95S::ALTE/CORP/US/[[DTC]]/45678
+:95S::ALTE/CORP/US/BIC/INSTUS02XXX
+Note167:Field97A:InstitutionSafekeepingAccount
+Field97Aidentifiesthecustomeronwhosebehalfthetradewasexecuted.
+Format :4!c//35x
+<SAFE>//<institutionsafekeepingaccount>
+SAFE SafekeepingAccount
+Example :97A::SAFE//CUSTOMERAC1234567890123456789012345
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 206
+
+---
+
+## Page 207
+
+Note168:Field70C:InstitutionTelephoneNumberandWireInstructions
+Field70Cidentifiestheinstitution'stelephonenumberandwireinstructionswithacapacityofuptotwo
+lines.Ifthetelephonedoesnotexist,thewireinstructionsstartonthefirstline.
+Format :4!c//4*35x
+<PACO>//<institutiontelephonenumberandwireinstructions>
+PACO PartyNarrative
+Example :70C:://212-888-4654
+WI:WIREINSTRUCTIONLINE1
+WI:WIREINSTRUCTIONLINE2
+Note169:Field70D:Deliver/ReceiverSub-CustodianCSDSafekeepingAccount
+Field70Didentifiestheagent’ssub-custodianordeliveringbroker/dealeraccountnumber.Fora70Dfield
+withavalueofREGI:
+l Whentheagentsub-custodianCSDsafekeepingaccountexists,followREGIbydoubleslashes(//)
+andAGENT-SAFE-ACCT.Thefollowinglinecontainstheagent'ssub-custodianCSDsafekeeping
+accountnumber.
+l Whenthebrokersub-custodianCSDsafekeepingaccountexists,thefollowinglinecontainsBROKR-
+SAFE-ACCT.Thelineafterthatcontainsthebroker'ssub-custodianCSDsafekeepingaccount
+number.
+Format :4!c//4*35x
+<REGI>//<generalinformation>
+REGI SafekeepingAccount
+Example :70D::REGI//AGENT-SAFE-ACCT
+12344556666
+BROKR-SAFE-ACCT
+45566777889
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 207
+
+---
+
+## Page 208
+
+Note170:Field95a:AgentPrimaryID  Number:Field95R:AgentDTCIDorField95P:AgentBIC
+WhentheprimaryidentifierisaDTCIDnumber,useformat95R,inwhichcasethefieldcancontaina
+maximumofeightwholenumbers.WhentheprimarynumberisaBIC,useformat95P,inwhichcasethe
+fieldcancontain11characters.
+BICvaluesresideonthestandinginstructionsdatabase(theALERTservice).Whenadifferenceexists
+betweentheBICvalueenteredandthevalueontheALERTservice,thevalueontheALERTservice
+overlaystheuserentry.
+Format :4!c/8c/34x
+<DECUor RECU>/<DTCYID>/<agentdtcid number>
+DECUor
+RECU
+AgentTradeSuiteID
+Format :4!c//4!a2!a2!c[3!c]
+<DEAGor REAG>//<agentbicidentifier>
+DEAGor
+REAG
+AgentBIC
+Example :95R::DECU/DTCYID/12345678
+:95P::RECU//AGNTUS09XXX
+:95R::DEAG/DTCYID/12345678
+:95P::REAG//AGNTUS09XXX
+Iftheagent,deliverer/receiversub-custodian,andinstitutionblocksarepresent,thequalifiersfortheagent
+showninTable3.92apply.
+Qualifier Description
+DECU Deliverer
+RECU Receiver
+Table3.92AgentQualifiers
+Iftheagentandinstitutionblocksarepresent,thequalifiersfortheagentshowninTable3.93apply.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 208
+
+---
+
+## Page 209
+
+Qualifier Description
+DEAG Deliveringagent
+REAG Receivingagent
+Table3.93AgentQualifiers
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 209
+
+---
+
+## Page 210
+
+Note171:Field95S:AgentAlternateID  Number,AgentDTCID,orAgentBIC
+Iftheprimaryidentifierinfield95acontainsaDTCIDnumber,thealternateidentifierinfield95Scan
+containaBICidentifier.Conversely,iftheprimaryidentifiercontainsaBICidentifier,thealternateidentifier
+cancontainaDTCIDnumber.
+BICvaluesresideonthestandinginstructionsdatabase(ALERT).Whenadifferenceexistsbetweenthe
+BICvalueenteredandthevalueontheALERTservice,thevalueontheALERTserviceoverlaystheuser
+entry.
+Format :4!c/[8c]/4!c/2!a/30x
+<ALTE>/<CORP>/<countrycode>/<type>/<agentalternate
+identifier>
+ALTE AlternateIdentifier
+Example :95S::ALTE/CORP/US/[[DTC]]/45678
+:95S::ALTE/CORP/US/BIC/AGNTUS09XXX
+Note172:Field97A:AgentSafekeepingAccount
+Field97Aidentifiestheagent’ssafekeeping(internal)accountnumberforthecustomer.
+Format :4!c//35x
+<SAFE>//<agentsafekeepingaccount>
+SAFE SafekeepingAccount
+Example :97A::SAFE//AGENTIAN901234567890123456789012345
+Note173:Field70C:SettlementLocation,SettlementMethod,SpecialInstructionsLine19,Special
+InstructionsLine20,andSpecialInstructionsLine21
+Lineone.Statethesettlementlocationandsettlementmethod,delimitedbytwobytespaces.
+Linetwo.SpecialInstructionsLines19(optionaloninput/output).Limitedto32characters.
+Linethree.SpecialInstructionsLines20(optionaloninput/ouput).Limitedto32characters.
+Linefour.SpecialInstructionsLines21(optionaloninput/output).Limitedto32characters.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 210
+
+---
+
+## Page 211
+
+Fieldslocatedin70Careoptional.However,whenusingthesettlementmethodinlinetwo,thesettlement
+locationinlineonebecomesmandatory.Forsettlementvalues,seethebrokersettlementlocationsshown
+inTable3.89andthebrokersettlementmethodsshowninTable3.90.
+Format :4!c//4*35x
+<PACO>//settlementlocation>
+settlementmethod>
+<SpecialInstructionsLine19>
+<SpecialInstructionsLine20>
+<SpecialInstructionsLine21>
+PACO SettlementLocationandMethod
+SpecialInstructionsLine19
+SpecialInstructionsLine20
+SpecialInstructionsLine21
+Example :70C::PACO//AGSL:XYZZAQ
+SpecialInstructionsLine 19
+SpecialInstructionsLine 20
+SpecialInstructionsLine 21
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 211
+
+---
+
+## Page 212
+
+Note174:Field70DFINRAMSRBEMMAURL
+Field70DistheURLlinktotheappropriatewebsites:FINRAorMSRB.Itcanbeavailableoninputor
+output(optional).Ifprovidedoninput,theTradeSuiteIDservicedoesnotverifythelinkasvalid(seerule
+onspecialcharacters).TheURL,ifover35characters,canspantwolines,foratotalof50characters.The
+linkisidentifiedbythefirst5characters“EMMA”Ifthelinkisnotavailableonoutput,“EMMA:”isoutput
+andURLisnotprovided.
+Notes:
+l TheURLonlypointstoonewebaddress.Donotprovidelinkstootherwebsites.
+l Specialcharactersarereplacedwiththefollowing:
+SpecialCharacterReplacement
+@ ??7C
+_ ??6D
+& ??50
+% '??6C
+'= ??7E
+* ??5C
+# ??7B
+$ ??5B
+! ??5A
+^ ??5F
+¬ ??5F
+~ ??A1
+Format REGI//3x35x
+REGI MSRBEMMAURL
+Example :70D::REGI//EMMA:HTTP://WWW.EMMA/MSRB.ORG/[[CUSIP]]
+EMMA:006449ER9
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 212
+
+---
+
+## Page 213
+
+Note175:Field95a:ClearingAgentPrimaryID  Number:Field95R:ClearingAgentDTCIDorField
+95P:ClearingAgentBICIdentifier
+WhentheprimaryidentifierisaDTCIDnumber,useformat95R,inwhichcasethefieldcancontaina
+maximumofeightwholenumbers.WhentheprimarynumberisaBIC,useformat95P,inwhichcasethe
+fieldcancontain11characters.
+BICvaluesresideonthestandinginstructionsdatabase(ALERT).Whenadifferenceexistsbetweenthe
+BICvalueenteredandthevalueinALERT,thevalueinALERToverlaystheuserentry.
+Format :4!c/8c/34x
+<DECUor RECU>/<DTCYID>/<clearingagentdtcid number>
+DECUorRECU AgentTradeSuiteIDIdentifier
+Format :4!c//4!a2!a2!c[3!c]
+<DEAGor REAG>//<clearingagentbicidentifier>
+DEAGorREAG AgentBIC Identifier
+Example :95R::REAG/DTCYID/12345678
+:95P::DEAG//CAGTUK34XXX
+:95R::REI1/DTCYID/12345678
+:95P::DEI1//CAGTUK34XXX
+Iftheagent,deliverer/receiversub-custodian,andinstitutionblocksarepresent,thequalifiersfortheagent
+showninTable3.94apply.
+Qualifier Description
+DEAG Deliveringagent
+REAG Receivingagent
+Table3.94AgentQualifiers
+Iftheagentsub-custodianispresent,thequalifiersforclearingagentinTable3.95apply.
+Qualifier Description
+DEI1 Deliverer
+REI1 Receiver
+Table3.95ClearingAgentQualifiers
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 213
+
+---
+
+## Page 214
+
+Note176:Field95S:ClearingAgentAlternateID  NumberAlternateDTCIDorAlternateBIC
+Iftheprimaryidentifierinfield95acontainsaDTCIDnumber,thealternateidentifierinfield95Scan
+containaBICidentifier.Conversely,iftheprecedingprimaryidentifiercontainsaBICidentifier,the
+alternateidentifiercancontainaDTCIDnumber.
+BICvaluesresideonthestandinginstructionsdatabase(ALERT).Whenadifferenceexistsbetweenthe
+BICvalueenteredandthevalueinALERT,thevalueinALERToverlaystheuserentry.
+Format :4!c/[8c]/4!c/2!a/30x
+<ALTE>/<CORP>/<countrycode>/<type>/<clearingagent
+alternateidentifier>
+ALTE AlternateIdentifier
+Example :95S::ALTE/CORP/US/[[DTC]]/45678
+:95S::ALTE/CORP/US/BIC/CAGTUS09XXX
+Note177:Field97A:ClearingAgentSafekeepingAccount
+Field97Aidentifiestheclearingagent’scustomer.
+Format :4!c//35x
+<SAFE>//<clearingagentsafekeepingaccount>
+SAFE ClearingAgentSafekeepingAccount
+Example :97A::SAFE//CAIAN6789012345678901234356789012345
+Note178:Field95a:DelivererSub-CustodianPrimaryID  Number:Field95R:DelivererSub-Cus-
+todianDTCIDorField95P:DelivererSub-CustodianBIC
+WhentheprimaryidentifierisaDTCIDnumber,useformat95R,inwhichcasethefieldcancontaina
+maximumofeightwholenumbers.WhentheprimarynumberisaBIC,useformat95P,inwhichcasethe
+fieldcancontain11characters.Whenbothaclearingagentandagentsub-custodianareproviders,the
+DEI1qualifierisused.Otherwise,theDEAGqualifierisused.
+BICvaluesresideonthestandinginstructionsdatabase(theALERTservice).Whenadifferenceexists
+betweentheBICvalueenteredandthevalueresidingontheALERTservice,thevalueontheALERT
+serviceoverlaystheuserentry.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 214
+
+---
+
+## Page 215
+
+Format :4!c/8c/34x
+<DEAG>/<DTCYID>/<deliverersub-custodiandtcid number>
+<DEI1>/<DTCYID>/<deliverersub-custodiandtcid number>
+:4!c//4!a2!a2!c[3!c]
+<DEAG/DEI1>//<deliverersub-custodianbicidentifier>
+DEAG DelivererSub-Custodian
+Example :95R::DEAG/DTCYID/21999
+:95R::DEI1/DTCYID/21999
+:95P::DEAG//DVSCUS12XXX
+Note179:Field95S:DelivererSub-custodianAlternateIdentifier
+Iftheprimaryidentifierinfield95acontainsaDTCIDnumber,thealternateidentifierinfield95Scan
+containaBICidentifier.Conversely,ifthePrimaryidentifiercontainsaBICidentifier,thealternateidentifier
+cancontainaDTCIDnumber.
+BICvaluesresideonthestandinginstructionsdatabase(theALERTservice).Whenadifferenceexists
+betweentheBICvalueenteredandthevalueontheALERTservice,thevalueontheALERTservice
+overlaystheuserentry.
+Format :4!c/[8c]/4!c/2!a/30x
+<ALTE>/<CORP>/<countrycode>/<type>/<deliverersub-custodian
+alternateidentifier>
+ALTE AlternateIdentifier
+Example :95S::ALTE/CORP/US/[[DTC]]/12345
+:95S::ALTE/CORP/US/BIC/DVSCUS12XXX
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 215
+
+---
+
+## Page 216
+
+Note180:Field97A:DelivererSub-CustodianSafekeepingAccount
+Field97Aidentifiesthedeliveringbroker/dealeroragent’ssub-custodianaccountnumber.
+Format :4!c//35x
+<SAFE>//<deliverersub-custodiansafekeepingaccount>
+SAFE SafekeepingAccount
+Example :97A::SAFE//DELSUBCUST1234567890123456789012345
+Note181:Field70D:SupplementalInformation
+Field70Dcontainsthesupplementalsub-custodianinformation.Field70Dcontainsfour35-characterfree-
+formlines.
+Format :4!c//4*35x
+<PACO>//<supplementalinformation>
+PACO AdditionalSub-CustodianInformation
+Example :70D::PACO/INSTRUCTIONLINE1
+INSTRUCTIONLINE2
+Note182:Field70D:CashAccount
+Field70Didentifiesthedeliveringbroker/dealeroragent’scashaccountnumberatthesub-custodian.
+Format :4!c//6*35x
+<REGI>//<cashaccount>
+REGI CashAccountInformation
+Example :70D::REGI//CASHACC12345678
+Note183:Field95a:ReceiverSub-custodianPrimaryIdentifier:Field95R:ReceiverSub-Custodian
+DTCIDorField95P:ReceiverSub-CustodianBIC
+WhentheprimaryidentifierisaDTCIDnumber,useformat95R,inwhichcasethefieldcancontaina
+maximumofeightwholenumbers.WhentheprimarynumberisaBIC,useformat95P,inwhichcasethe
+fieldcancontain11characters.Whenbothaclearingagentandagentsub-custodianareproviders,the
+REI1qualifierisused.Otherwise,theREAGqualifierisused.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 216
+
+---
+
+## Page 217
+
+BICvaluesresideonthestandinginstructionsdatabase(theALERTservice).Whenadifferenceexists
+betweentheBICvalueenteredandthevalueresidingontheALERTservice,thevalueontheALERT
+serviceoverlaystheuserentry.
+Format :4!c/8c/34x
+<REAG>/<DTCYID>/<receiversub-custodiandtcid number>
+<REI1>/<DTCYID>/<receiversub-custodiandtcid number>
+:4!c//4!a2!a2!c[3!c]
+<REAG/REI1>//<receiversub-custodianbicidentifier>
+REAG ReceiverSub-custodian
+Example :95R::REAG/DTCYID/21999
+:95R::REI1/DTCYID/21999
+:95P::REAG//RVSCUS12XXX
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 217
+
+---
+
+## Page 218
+
+Note184:Field95S:ReceiverSub-CustodianAlternateIdentifier,AlternateDTCID,orAlternate
+BIC
+Iftheprimaryidentifierinfield95acontainsaDTCIDnumber,thealternateidentifierinfield95Scan
+containaBICidentifier.Conversely,iftheprimaryidentifiercontainsaBICidentifier,thealternateidentifier
+cancontainaDTCIDnumber.
+BICvaluesresideonthestandinginstructionsdatabase(theALERTservice).Whenadifferenceexists
+betweentheBICvalueenteredandthevalueontheALERTservice,thevalueontheALERTservice
+overlaystheuserentry.
+Format :4!c/[8c]/4!c/2!a/30x
+<ALTE>/<CORP>/<countrycode>/<type>/<receiversub-custodian
+alternateidentifier>
+ALTE AlternateIdentifier
+Example :95S::ALTE/CORP/US/[[DTC]]/12345
+:95S::ALTE/CORP/US/BIC/RVCSUS12XXX
+Note185:Field97A:ReceiverSub-custodianSafekeepingAccount
+Field97Aidentifiesthereceivingbroker/dealeroragent’ssub-custodianaccountnumber.
+Format :4!c//35x
+<SAFE>//<receiversub-custodiansafekeepingaccount>
+SAFE SafekeepingAccount
+Example :97A::SAFE//RECSUBCUST1234567890123456789012345
+Note186:Field70D:SupplementalInformation
+Field70Dcontainsthesupplementalsub-custodianinformation.Thisfieldcontainsfour35-characterfree-
+formlines.
+Format :4!c//4*35x
+<PACO>//<narrative>
+PACO AdditionalSub-custodianInformation
+Example :70D::PACO/INFORMATIONLINE1
+INFORMATIONLINE2
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 218
+
+---
+
+## Page 219
+
+Note187:Field70D:CashAccount
+Field70Didentifiesthereceivingbroker/dealeroragent’scashaccountnumberatthesub-custodian.
+Format :4!c//6*35x
+<REGI>//<cashaccount>
+REGI CashAccountInformation
+Example :70D::REGI//CASHACCT123456789
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 219
+
+---
+
+## Page 220
+
+SubsequenceD2–cashparties
+SubsequenceD2isarepetitiveoptionalsequencethatidentifiesthecashaccounts.
+DTCCusesthecorrespondentbanksubsequencewiththesplitcurrencyindicator(field22Finsequence
+D).IfyoudonotsetthisindicatortoSplitCurrencySettlement(SPCS),CorrespondentBankentriesare
+notallowed.
+Note188:Field95R:CorrespondentBankIDorField95P:CorrespondentBankBIC
+Field95PcontainstheBICidentifierdeterminesthecorrespondentbanks.Whenadifferenceexists
+betweentheBICvalueenteredandthevalueontheALERTservice,thevalueontheALERTservice
+overlaystheuserentry.
+Format :4!c/8c/34x
+<ACCW>/<DTCYCB>/<correspondentbankbicidentifier>
+ACCW Identifier
+Example :95R::ACCW/DTCYID/CORRUK12XXX
+:95P::ACCW//THGEUK44XXX
+Note189:Field97A:CorrespondentBankCashAccount
+Field97Aindicatesthecashaccountnumberatthecorrespondentbank.
+Format :4!c//35x
+<CASH>//<correspondentbankcashaccount>
+CASH CashAccount
+Example :97A::CASH//CORRBANK901234567890123456789012345
+SubsequenceD3–Amounts
+SubsequenceD3isarepetitiveconditionalsubsequence.WhentheSettlementTypeindicatorisequalto
+RegularWaytrade,thefollowingamountfieldsaremandatory:[[settlement]](Net)Amount(insequenceCor
+D3)andPrincipalAmount.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 220
+
+---
+
+## Page 221
+
+Entereachamountcategory(field19A)inaseparateblockwithStart-of-BlockandEnd-of-Blockfieldtags.
+Thenumberofdigitsfollowingthecommamustnotexceedthemaximumallowedforthespecified
+currency.
+TheformatusestheISOcurrencycode.FormoreinformationaboutISOcountryandcurrencycodes,see
+Input/OutputInformation.
+Note190:Field19A:Commission
+Field19Acontainstheexecutingbroker’scommissionfeesforthetrade.
+Format :4!c//[N]3!a15d
+<EXEC>//[N]<isocurrencycode><brokercommission>
+EXEC BrokerCommission
+Examples :19A::EXEC//USD12345678901234,
+:19A::EXEC//NUSD12345678901234,
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 221
+
+---
+
+## Page 222
+
+Note191:Field19A:AccruedInterest
+Field19Aspecifiestheinterestearnedonasecurity,butnotyetpaidtotheinvestor.
+Format :4!c//[N]3!a15d
+<ACRU>//[N]<isocurrencycode><accruedinterest>
+ACRU AccruedInterest
+Examples :19A::ACRU//USD12345678901234,
+:19A::ACRU//NUSD12345678901234,
+Note192:Field19A:RegulatoryFees
+Field19Aspecifiesregulatoryfees,suchassecuritiesandexchangefees.
+Format :4!c//[N]3!a15d
+<REGF>//[N]<isocurrencycode><regulatoryfees>
+REGF RegulatoryFees
+Examples :19A::REGF//USD12345678901234,
+:19A::REGF//NUSD12345678901234,
+Note193Field19A:ResearchAmount
+Field19Aspecifiesthechargeorcommissionpaidbytheinvestortoadistributor/intermediaryorother
+serviceproviderfortheprovisionoffinancialresearch.(SWIFTStandardsMT2018changesforMIFIDII
+initiatives).TheLOCLqualifierusedintheoriginalLocalTaxfieldhasbeenreplacedwiththeRSCH
+qualifierintheResearchAmountfield.
+Format :4!c//[N]3!a15d
+<RSCH>//[N]<researchamount>
+CHAR ResearchAmount
+Examples :19A::CHAR//USD123456789012,02
+:19A::CHAR//NUSD123456789012,02
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 222
+
+---
+
+## Page 223
+
+Note194:Field19A:Country/NationalTax
+Field19Aspecifiesthecashamountofanynationaltaxesdue.ThisfieldisalsousedfortheAmerican
+depositaryreceipt([[ADR]])foreigntaxes.
+Format :4!c//[N]3!a15d
+<COUN>//[N]<isocurrencycode><countrytax>
+COUN Country/NationalTax
+Example :19A::COUN//USD123456789012,02
+:19A::COUN//NUSD123456789012,02
+Note195:Field19A:OtherCharges
+Field19Acontainsthesumofanychargesthatapplytothistransactionforwhichnootherfieldis
+designated.
+Format :4!c//[N]3!a15d
+<OTHR>//[N]<isocurrencycode><othercharges>
+OTHR OtherCharges
+Examples :19A::OTHR//USD123456789012,02
+:19A::OTHR//NUSD123456789012,02
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 223
+
+---
+
+## Page 224
+
+Note196:Field19A:PrincipalAmount
+Field19Acontainstheprincipalamount,whichisequaltotheshareorfacevaluemultipliedbytheprice.
+Format :4!c//[N]3!a15d
+<DEAL>//[N]<isocurrencycode><principalamount>
+DEAL PrincipalAmount
+Examples :19A::DEAL//USD123456789012,02
+:19A::DEAL//NUSD123456789012,02
+Thisblockislimitedtotradessettlinginanalternatecurrency.IfusingAlternateSettlementAmount
+sequenceD3toreportanalternatecurrency,omitField19ASETT//insequenceC.
+ToobtainvalidationbytheSWIFTnetwork,ensurethattheExchangeRateandResultantAmountfields
+existinthissubsequence.
+ForDTCCvalidation,ifthetradedsecurityistosettleinacurrencyotherthanthelistedone,usethethree
+fieldsinthefollowingsubsequence:
+l 19A-[[settlement]](Net)Amount
+l 19A-AlternateCurrencyResultantAmount
+l 92B-ExchangeRate
+Tosupplyanexchangerateoraresultingamountforinformationalpurposes,enter0inthefield.
+Note197:Field19A:[[settlement]](Net)Amount
+Field19Acontainsthenetsettlementamountinthecurrencyofthetradehere.Theright-justifiedfield
+containsamaximumof14integersandafloatingdecimalcomma.
+Format :4!c//[N]3!a15d
+<SETT>//[N]<isocurrencycode><netamount>
+SETT [[settlement]](Net)Amount
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 224
+
+---
+
+## Page 225
+
+Examples :19A::SETT//USD12345678901234,
+:19A::SETT//NUSD12345678901234,
+Note198:Field19A:AlternateCurrencyResultantAmount
+Field19Aspecifiestheresultantcashsettlementamountinanalternatecurrency.Forthecurrency,enter
+avalidISOcurrencycode.
+Format :4!c//[N]3!a15d
+<RESU>//[N]<isocurrencycode><alternatecurrencyresultant
+amount>
+RESU AlternateCurrencyResultantAmount
+Examples :19A::RESU//GBP1200,02
+:19A::RESU//NGBP1200,02
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 225
+
+---
+
+## Page 226
+
+Note199:Field92B:ExchangeRate
+Field19Aidentifiestheexchangerateusedtoconvertthecurrencyinfield19A,[[settlement]](net)amountto
+field19A,alternatecurrencyresultantamount.ThisfieldismandatoryforDTCCwhenthetradeistosettle
+inacurrencyotherthantheonespecifiedinthedeal’sprice.
+Format :4!c//[N]3!a15d
+<RESU>//[N]<isocurrencycode><alternatecurrencyresultant
+amount>
+EXCH ExchangeRate
+Examples :92B::EXCH/USD/GBP/0,6184
+Note200:Field19A:LegacySettlement(Net)Amount
+Field19Acontainsthelegacysettlement(net)amountofthetradewhensettlementisintheeuro.
+Format :4!c//[N]3!a15d
+<OCMT>//[N]<isocurrencycode><netamountof legacy
+currency>
+OCMT LegacySettlement(Net) Amount
+Examples :19A::SETT//USD12345678901234,
+:19A::SETT//NUSD12345678901234,
+Note201:Field19A:LegacyCurrencyAmount
+Field19Acontainsthelegacycurrencyofthetradewhensettlementisintheeuro.
+Format :4!c//[N]3!a15d
+<OCMT>//[N]<isocurrencycode><netamountof legacy
+currency>
+OCMT LegacyCurrencyAmount
+Examples :19A::OCMT//DEM123456789012,02
+:19A::OCMT//NDEM123456789012,02
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 226
+
+---
+
+## Page 227
+
+Note202:Field19A:OtherAmounts#1through#5
+Field19Aenablesthebroker/dealertouseuptofiveotheramountfieldstoaddamoredetailed
+breakdownoffees,commissions,andtaxes.Expressnegativeamountsintheseotheramountfields.Use
+aStart-of-BlockandEnd-of-Blockfieldtagforeachsetofotheramountfields.
+Format :4!c//[N]3!a15d
+<qualifier>//[N]<isocurrencycode><amount>
+Examples :19A::MARG//USD123456789012,02
+:19A::ISDI//NUSD123456789012,02
+Table3.96showsthesettlementmarketcodesusedinfield19Aforotheramount#1,otheramount#2,
+otheramount#4,andotheramount#5.
+Code Country
+CHAR Chargesandfees
+ISDI Issuediscountandallowance
+LEVY Paymentlevytax
+LOCO Localbroker'scommission
+MACO Matching/confirmationfee
+MARG Marginamount
+ORGV Originalfacevalue
+SHIP Shipping,includinganypostagecharges
+SPCN Specialconcessions
+STAM Stampduty
+STEX Stockexchangetax
+TRAN Transfertax
+TRAX Transactiontax
+VATA Valueaddedtax
+WITH Withholdingtax
+Table3.96SettlementMarketCodes
+SequenceE–OtherParties
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 227
+
+---
+
+## Page 228
+
+SequenceEisarepetitiveoptionalsequencecontaininginterestedpartiesdetailsfortheexecution.
+MT515Inputallowsyoutoenteruptothreeinterestedparties.EachrepetitionmustuseaStartandEnd
+Blockfieldtag.
+Note203:Field95R:ReportReceiverTypeorField95P:ReportReceiverBIC
+Field95Rorfield95Pidentifiesthereportreceivertype.
+Format :4!c/8c/34x
+<MERE>/DTCYID/<reportreceivertype>
+:4!c//4!a2!a2!c[3!c]
+<MERE>//<reportreceiverBIC>
+MERE ReportReceiverType
+Examples :95R::MERE/DTCYID/12345678
+:95P::MERE//12345678
+Note204:Field95R:ExecutingBroker/DealerIDorField95P:Executing
+[[Broker]]/DealerBIC
+Field95Rorfield95Pidentifiestheexecutingbroker/dealer.
+Format :4!c/8c/34x
+<MEOR>/DTCYID/<executingbrokerdealerID>
+:4!c//4!a2!a2!c[3!c]
+<MEOR>//<executingbrokerdealerBIC>
+MEOR ExecutingBrokerDealer
+Examples :95R::MEOR/DTCYID/12345678
+:95P::MEOR//IPTYUS12XXX
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 228
+
+---
+
+## Page 229
+
+Note205:Field95a:InterestedParty1PrimaryID  Number:Field95R:Interested
+Party1DTCIDorField95P:InterestedParty1BIC
+WhentheprimaryidentifierisaDTCIDnumber,useformat95R,inwhichcasethefieldcancontaina
+maximumofeightwholenumbers.WhentheprimarynumberisaBIC,useformat95P,inwhichcasethe
+fieldcancontain11characters.
+BICvaluesresideonthestandinginstructionsdatabase(theALERTservice).Whenadifferenceexists
+betweentheBICvalueenteredandthevalueontheALERTservice,thevalueontheALERTservice
+overlaystheuserentry.
+Format :4!c/8c/34x
+<INPA>/<DTCYID>/<interestedparty1 dtcid number>
+:4!c//4!a2!a2!c[3!c]
+<INPA>/<DTCYID>/<interestedparty1 bicidentifier>
+INPA InterestedParty1
+Examples :95R::INPA/DTCYID/12345
+:95P::INPA//IPTYUS12XXX
+Note206:Field95S:InterestedParty1AlternateID  Number,InterestedParty
+1  [[DTC]]  [[ID]],orInterestedParty1BIC
+Iftheprimaryidentifierinfield95acontainsaDTCIDnumber,thealternateidentifierinfield95Scan
+containaBICidentifier.Conversely,iftheprimaryidentifiercontainsaBICidentifier,thealternateidentifier
+cancontainaDTCIDnumber.
+BICvaluesresideonthestandinginstructionsdatabase(theALERTservice).Whenadifferenceexists
+betweentheBICvalueenteredandthevalueontheALERTservice,thevalueontheALERTservice
+overlaystheuserentry.
+Format :4!c/[8c]/4!c/2!a/30x
+<ALTE>/<CORP>/<countrycode>/<type>/<interestedparty1
+alternateidentifier>
+ALTE AlternateIdentifier
+Examples :95S::ALTE/CORP/US/[[DTC]]/12345
+:95S::ALTE/CORP/US/BIC/IPTYUS12XXX
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 229
+
+---
+
+## Page 230
+
+Note207:Field97A:InterestedParty1SafekeepingAccount
+Field97AidentifiesInterestedParty1’ssafekeeping(internal)accountnumber.
+Format :4!c//35x
+<SAFE>//<interestedparty1 safekeepingaccount>
+SAFE SafekeepingAccount
+Example :97A::SAFE//INTERESTEDPTY4567890123456789012345
+Note208:Field70C:SupplementalInformation
+Field70Cprovidesadditionalinformationaboutthesub-custodian.
+Format :4!c//4*35x
+<PACO>//<narrative>
+PACO AdditionalSub-custodianInformation
+Example :70C::PACO//BANKNCUS370435445
+Note209:Field95a:InterestedParty2PrimaryID  Number:Field95R:Interested
+Party2DTCIDorField95P:InterestedParty2BIC
+WhentheprimaryidentifierisaDTCIDnumber,useformat95R,inwhichcasethefieldcancontaina
+maximumofeightwholenumbers.WhentheprimarynumberisaBIC,useformat95P,inwhichcasethe
+fieldcancontain11characters.
+BICvaluesresideonthestandinginstructionsdatabase(theALERTservice).Whenadifferenceexists
+betweentheBICvalueenteredandthevalueontheALERTservice,thevalueontheALERTservice
+overlaystheuserentry.
+Format :4!c/8c/34x
+<INPA>/<DTCYID>/<interestedparty2 dtcid number>
+:4!c//4!a2!a2!c[3!c]
+<INPA>//<interestedparty2 bicidentifier>
+INPA InterestedParty2
+Examples :95R::INPA/DTCYID/12345
+:95P::INPA//IPTYUS12XXX
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 230
+
+---
+
+## Page 231
+
+Note210:Field95S:InterestedParty2AlternateID  Number,InterestedParty
+2  [[DTC]]  [[ID]],orInterestedParty2BIC
+Iftheprecedingprimaryidentifierinfield95acontainsaDTCIDnumber,thealternateidentifierinfield95S
+cancontainaBICidentifier.Conversely,iftheprecedingprimaryidentifiercontainsaBICidentifier,the
+alternateidentifiercancontainaDTCIDnumber.
+BICvaluesresideonthestandinginstructionsdatabase(theALERTservice).Whenadifferenceexists
+betweentheBICvalueenteredandthevalueontheALERTservice,thevalueontheALERTservice
+overlaystheuserentry.
+Format :4!c/[8c]/4!c/2!a/30x
+<ALTE>/<CORP>/<countrycode>/<type>/<interestedparty2
+alternateidentifier>
+ALTE AlternateIdentifier
+Example :95S::ALTE/CORP/US/[[DTC]]/12345
+:95S::ALTE/CORP/US/BIC/IPTYUS12XXX
+Note211:Field97A:InterestedParty2SafekeepingAccount
+Field97Aidentifiesthesafekeeping(internal)accountnumberofinterestedparty2.
+Format :4!c//35x
+<SAFE>//<interestedparty2 safekeepingaccount>
+SAFE SafekeepingAccount
+Example :97A::SAFE//INTERESTEDPTY4567890123456789012345
+Note212:Field95a:InterestedParty3PrimaryID  Number:Field95R:Interested
+Party3DTCIDorField95P:InterestedParty3BIC
+WhentheprimaryidentifierisaDTCIDnumber,useformat95R,inwhichcasethefieldcancontaina
+maximumofeightwholenumbers.WhentheprimarynumberisaBIC,useformat95P,inwhichcasethe
+fieldcancontain11characters.
+BICvaluesresideonthestandinginstructionsdatabase(theALERTservice).Whenadifferenceexists
+betweentheBICvalueenteredandthevalueontheALERTservice,thevalueontheALERTservice
+overlaystheuserentry.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 231
+
+---
+
+## Page 232
+
+Format :4!c/8c/34x
+<INPA>/<DTCYID>/<interestedparty3 dtcid number>
+:4!c//4!a2!a2!c[3!c]
+<INPA>//<interestedparty3 bicidentifier>
+INPA InterestedParty3
+Examples :95R::INPA/DTCYID/12345
+:95P::INPA//IPTYUS12XXX
+Note213:Field95S:InterestedParty3AlternateID  Number,InterestedParty
+3  [[DTC]]  [[ID]],orInterestedParty3BIC
+IftheprecedingPrimaryIdentifierinfield95acontainsaDTCIDnumber,theAlternateIdentifierinfield
+95ScancontainaBICidentifier.Conversely,iftheprecedingPrimaryIdentifiercontainsaBICidentifier,
+theAlternateIdentifiercancontainaDTCIDnumber.
+BICvaluesresideonthestandinginstructionsdatabase(theALERTservice).Whenadifferenceexists
+betweentheBICvalueenteredandthevalueontheALERTservice,thevalueontheALERTservice
+overlaystheuserentry.
+Format :4!c/[8c]/4!c/2!a/30x
+<ALTE>/<CORP>/<countrycode>/<type>/<interestedparty3
+alternateidentifier>
+ALTE AlternateIdentifier
+Example :95S::ALTE/CORP/US/[[DTC]]/12345
+:95S::ALTE/CORP/US/BIC/IPTYUS12XXX
+Note214:Field97A:InterestedParty3SafekeepingAccount
+Field97Aidentifiestheinterestedparty3’ssafekeeping(internal)accountnumber.
+Format :4!c//35x
+<SAFE>//<interestedparty3 safekeepingaccount>
+SAFE SafekeepingAccount
+Example :97A::SAFE//INTERESTEDPTY4567890123456789012345
+Note215:Field95R:IDNetNumber
+Field95RidentifiestheIDnetblock.
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 232
+
+---
+
+## Page 233
+
+Format :4!c/8c/34x
+<VEND>/<DTCY>/<idnetblock>
+VEND IDNet
+Example :95R::VEND/DTCY/00000919
+:95R::VEND/DTCY/00000719
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 233
+
+---
+
+## Page 234
+
+Note216:Field95Qor95R:Tri-PartyAgentNumber
+Field95Qidentifiesthetri-partyagent.Usewhenmorethan34charactersofdetailarerequired.Usefield
+95Rinplaceof95Qtoreportthetri-partyagent.
+Format :4!c4!c//4*35x
+:4!c/[8c]/34x
+TRAG Tri-partyAgent
+Example 95Q::TRAG//FirstBank
+463MainStreet
+NewYork,NY 12345
+USA
+95R::TRAG//FirstBank
+Note
+Ifthisfieldstartswithoneslash(/)ortwoslashes(//),DTCCrejectstheSWIFTmessage.DTCCreplaces
+alloccurrencesofaslashwithaspacebeforeplacingthisfieldinanoutboundmessage.Inboundmes-
+sagesareunaffectedbecausetheSWIFTnetworkrejectsallieldsstartingwithaslashorcontainingtwo
+slashes.
+SequenceF–REPO
+SequenceFisanoptionalsequenceforREPOs.
+Note217:Field98A:EndDate/MaturityDate
+Field98AindicatestheclosedateoftheREPOorreverseREPO.TheREPOintereststopsaccruingsix
+monthsaftertheclosingdate.
+Format :4!c//8!n
+<TERM>//<enddate/maturitydate>
+TERM EndDate/MaturityDate
+Example :98A::TERM//20080420
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 234
+
+---
+
+## Page 235
+
+Note218:Field98A:FirstFlexRepaymentDate
+Field98Aindicatesthefirstdateonwhichtobasescheduleofflexrepayments.
+Format :4!c//8!n
+<RERA>//<1stflexrepaymentdate>
+RERA FirstFlexRepaymentDate
+Example :98A::RERA//20080420
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 235
+
+---
+
+## Page 236
+
+Note219:Field22F:FINRateType
+Field22Fspecifieswhethertherateisfixedorvariable.
+Format :4!c/[8c]/4!c
+<RERT>//<ratetype>
+RERT Repurchaserate
+Example :22F::RERT/DTCY/FIXE
+:22F::RERT/DTCY/VARI
+Table3.97indicatestheFINratetypesusedinfield22F.
+Value Description
+FIXE Fixed
+VARI Variable
+Table3.97FINRateTypes
+Note220:Field22F:AccrualMethod
+Field22Findicatesthecalculationtypeusedtoarriveatthetotalinterestpaymentonthetrade.
+Format 4!c/[8]/4c
+<MICO>//<accrualmethodcode>
+MICO AccrualMethod
+Example :22F::/MICO/DTCY/A001
+Table3.98indicatestheaccrualmethodcodesusedinfield22F.
+Value Description
+A000 Notspecified
+A001 30/360
+A002 30/365
+A003 30/Actual
+A004 Actual/360
+A005 Actual/365
+A006 Actual/Actual
+Table3.98AccrualMethodCodes
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 236
+
+---
+
+## Page 237
+
+Value Description
+A007 Actual/365L
+A099 Other
+Table3.98AccrualMethodCodes
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 237
+
+---
+
+## Page 238
+
+Note221:Field20C:AdditionalReferenceNumber1
+Field20ClinksbuysandsellsforSBBandBSBtradeswithintheirowninternalsystemsorforanyother
+referencenumbers.
+Format :4!c//16x
+<REPO>//<referencenumber>
+REPO AdditionalReferenceNumber1
+Example :20C::REPO//1234567890123456
+Note
+Ifthisfieldstartswithoneslash(/)ortwoslashes(//),theSWIFT messageisrejected.DTCCreplacesall
+occurrencesofaslashwithaspacebeforeplacingthisfieldinanoutboundmessage.Inboundmessages
+areunaffectedbecausetheSWIFTnetworkrejectsallfieldsstartingwithoneslashortwoslashes.
+Note222:Field20C:AdditionalReferenceNumber2
+Field20ClinksbuysandsellsforSBBandBSBtradeswithintheirowninternalsystemsorforanyother
+referencenumbers.
+Format :4!c//16x
+<SECO>//<referencenumber>
+SECO AdditionalReferenceNumber2
+Example :20C::SECO//1234567890123456
+Note
+Ifthisfieldstartswithoneslash(/)ortwoslashes(//),DTCCrejectstheSWIFTmessage..[[DTCC]]
+replacesalloccurrencesofaslashwithaspacebeforeplacingthisfieldinanoutboundmessage.
+InboundmessagesareunaffectedbecausetheSWIFTnetworkrejectsallfieldsstartingwithoneslashor
+twoslashes.
+Note223:Field92A:FINRate
+Field92Aindicatestheannualpercentagereturn(ascomputedinaccordancewithstandardindustry
+practices)earnedonasecurity.Ifsupplied,thisfieldmustcontainatleastonewholenumberanda
+decimalcommainanyposition.Usenumericforallotherpositions.Theratesign,positiveornegative,is
+optional.
+Format :4!c//[N]15d
+<REPO>//[N]<finrate>
+REPO FIN Rate
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 238
+
+---
+
+## Page 239
+
+Example :92A::REPO//03
+:92A::REPO//N03
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 239
+
+---
+
+## Page 240
+
+Note224:Field92C:Index(Benchmark)
+Field92Cindicatesthebenchmarkrateofinterestaccrual,associatedwithorconsideredafloatingrate
+REPO.
+Format :4!c/[8c]/24x
+<VASU>/DTCYINDX/<Benchmark.Value>
+VASU SpreadRate
+Example :92C::VASU/DTCYINDX/10
+Table3.99showsthebenchmarkvaluesusedinfield92C.
+Code ShortName Description
+00 - Notspecified
+01 A$SW AustralianDollarSwapRate
+02 C$BA CanadianDollarBankersAcceptances
+03 C$CMT CanadianDollarConstantMaturityTreasury
+04 CMT ConstantMaturityTreasury
+05 FFUND FederalFunds
+06 GB$SW Sterling/USDollarSwapRate
+07 GBSW SterlingSwapRate
+08 JYCMT JapaneseYenConstantMaturityTreasury
+09 JYLIB JapaneseYenLondonInterbankOvernightRate
+10 LIBOR USDollarLondonInterbankOvernightRate
+11 NIKKE NIKKEI300Index
+12 PRIME PrimeRate
+13 STLIB SterlingLondonInterbankOvernightRate
+14 US$SR USDollarSwapRate
+15 INDU DowJonesIndustrialAverage
+16 $TRAN DowJonesTransportationAverage
+17 $UTIL DowJonesUtilitiesAverage
+18 $NDX NASDAQ100Index
+19 $COMPQ NASDAQCompositeIndex
+20 $NYA NYSECompositeIndex
+21 $SPX S&P500StockIndex
+Table3.99BenchmarkValues
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 240
+
+---
+
+## Page 241
+
+Code ShortName Description
+22 $MID S&P400MidcapStockIndex
+23 $OEX S&P100StockIndex
+24 $IXCO NASDAQHighTechnologyIndex
+25 $PSE PSEHighTechnologyIndex
+26 $MSH MorganStanleyHighTechIndex
+27 $SOX SemiconductorIndex
+28 $XMI AMEXMajorMarketIndex
+29 $XAX AMEXCompositeIndex
+30 $TXSX-TC S&P/TSX60INDEX
+31 $TSX-TC S&P/TSXCompositeIndex
+32 $TSXC-TC S&P/TSX300CappedIndex
+33 $TNX 10YearT-NoteInterestRate(X.10)
+34 $TYX 30YearT-BondInterestRate(X.10)
+35 $XAU PHLXGoldAndSilverIndex
+36 $XOI AMEXOilandGas
+37 $XVG ValueLineIndex(Geometric)
+38 $RUI RUSSELL1000
+39 $RUT RUSSELL2000
+40 $RUA RUSSELL3000
+Table3.99BenchmarkValues
+Note225:Field92A:[[Haircut]]%
+Field92AindicatesthemargincollateralassociatedwithREPOtypetransactionstoaccountformarketor
+interestpaymentsontheunderlyingsecurities.Thepercent(%)signisoptional.
+Format :4!c//[N]15d
+<SHAI>//[N]<haircutrate>
+SHAI HaircutRate
+Example :92A::SHAI//03
+:92A::SHAI//N03
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 241
+
+---
+
+## Page 242
+
+Note226:Field92A:SpreadtoIndexorBenchmark
+Field92Aindicatesthebasispointsawayfromthebenchmarkorindexforthefloatingrate.Thebasis
+pointsappliedtothebenchmarkdeterminestherate.Theoptionalratesignisavailablewithintheformat.
+Thisfieldrequiresadecimal(comma).
+Format :4!c//[N]15d
+<RSPR>//[N]<spreadrate>
+RSPR SpreadRate
+Example :92A::RSPR//420,
+:92A::RSPR//N420,
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 242
+
+---
+
+## Page 243
+
+Note227:Field99B:CallDelay
+Field99Bindicatestheminimumnumberofdaysnoticethatacounterpartyneedsforterminatingthe
+transaction.
+Note
+TheSub-custodianSCDandDeliveryInstructionsfieldsshareSWIFTvalue(REGI).Sub-custodianSCD
+providesfourlinesofinformationandthedeliveryinstructions,lines1and2,allowsfortwolinesofinform-
+ation.Thereisnoguaranteeforthepositionofthedatabecausethemessagedoesnotincludeblank
+lines.
+Format :4!c//3!n
+<CADE>//<calldelay>
+CADE CallDelay
+Example :99B::CADE//120
+Note228:Field99B:NumberofCollateralPieces
+Field99Bindicatestheitemcountforthenumberofcollateralpieces.
+Format :4!c//3!n
+<TOCO>//<numberof collateralpieces>
+TOCO CollateralPieces
+Example :99B::TOCO//100
+Note229:Field19A:SecurityLendingFee
+Field19Acontainstheamountofthelendingfee.FormoreinformationaboutISOcountryandcurrency
+codes,seeInput/OutputInformation.
+Note
+SWIFT requiresacommaattheendofthe4!c3!n.
+Format :4!c//[N]3!a15d
+<FORF>//[N]<lendingfee>
+FORF ForfeitAmount
+Example :19A::FORF//USD12345,
+:19A::FORF//NUSD12345,
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 243
+
+---
+
+## Page 244
+
+Note230:Field19A:REPOValue
+Field19Aindicatesthemarketvalueofthesecuritywithhaircutconsidered.DTCCroundsthemarket
+valueusingtheappropriatemarketpracticeconventionforthatparticularinstrumentintheREPOmarket.
+FormoreinformationaboutISOcountryandcurrencycodes,seeInput/OutputInformation.
+Format :4!c//[N]3!
+<DEAL>//[N]<REPOValue>
+DEAL REPOValue
+Example :19A::DEAL//USD12345,68
+:19A::DEAL//NUSD12345,68
+Note231:Field19A:AccruedInterestatMaturity
+Field19AprovidesthecalculatedvaluederivedfromtheREPOrateandthenumberofinterestdays.The
+amountcanbepositiveornegative.FormoreinformationaboutISOcountryandcurrencycodes,see
+Input/OutputInformation.
+Format :4!c//[N]3!a15d
+<ACRU>//[N]<accruedinterest>
+ACRU AccruedInterest
+Example :19A::ACRU//NUSD12345,67
+Note232:Field19A:PremiumAmount
+Field19AindicatesthedifferenceinmoneybetweentheopenandcloselegsofaREPOtransaction.For
+moreinformation,seetheISOcountryandcurrencycodessectionInput/OutputInformation.
+Format :4!c//[N]3!a15d
+<REPP>//[N]<premiumamount>
+REPP PremiumAmount
+Example :19A::REPP//USD12345,00
+:19A::REPP//NUSD12345,00
+TradeSuiteID-SWIFTIntegrationGuide
+3.MT515- TradeConfirmationMessages 244
+
+---
+
+## Page 245
+
+4.MT517- TRADEAFFIRMATION
+MESSAGES
+ThissectiondescribestheSWIFTMT517tradeaffirmationmessages.Thedesignatedaffirmingparty
+sendstheSWIFTMT517tradeaffirmationmessagetoDTCCtoaffirmthetradedetailscontainedina
+tradeconfirmation(MT515).Designatedaffirmingpartiesincludetheinvestmentmanager,agentbank,
+andinterestedparty(ifdesignatedonALERTastheaffirmingparty).Inlocalitieswhereitisanaccepted
+practice,afteraffirmingtheconfirmation,itbecomesalegallybindingcontractforbothparties.
+Theinvestmentmanager,agent,orinterestedpartydesignatedonthestandinginstructiondatabaseand
+registeredatDTCCastheaffirmingpartycanusetheMT517messagetoaffirmatrade.Thebroker/dealer
+orexecutingbroker/dealercanelecttoreceiveanMT517affirmationinsteadofanMT509affirmedstatus
+orMT515affirmedconfirmationmessage.
+Thereceiver’soutputisnotdependentonthesourcenetwork.Thebroker/dealercanreceivetheaffirmed
+confirmationoutputovertheSWIFTnetworkorthroughtheproprietarynetworkofDTCC.
+InputMessageFlow
+Theinvestmentmanager,agent,orinterestedparty(ifdesignatedonALERT)canaffirmatradeby
+sendinganMT517toDTCC.DTCCsendsthefollowingmessagestoallentitieselectingtoreceive
+affirmedtradeconfirmations:
+l AffirmerreceivesanMT509acknowledgmentofasuccessfulaffirmationandcanoptionallyelectto
+receiveanMT515AffirmedConfirmorMT509AffirmedConfirmstatusmessage.
+l Executingbroker/dealercanoptionallyelecttoreceiveanMT515AffirmedConfirm,MT509
+AffirmedConfirmStatusMessage,orMT517Affirmationmessage.
+l Investmentmanager,[[Broker]]/dealer,andinterestedpartiescan,optionally,receiveanMT515
+AffirmedConfirmorMT509AffirmedConfirmstatusmessage.
+l Agent,clearingagent,agentsub-custodian,clearingbroker,andbroker/dealersub-custodian
+can,optionally,receiveanMT515AffirmedConfirmmessageorMT509AffirmedConfirmstatus
+message.
+IftheAffirmer’sinputfailstheeditcriteria,DTCCreturnsanMT509AffirmedConfirmstatusmessageto
+thesenderadvisingoftheediterrors.
+TradeSuiteID-SWIFTIntegrationGuide
+4.MT517- TradeAffirmationMessages 245
+
+---
+
+## Page 246
+
+OutputMessageFlow
+HereistheoutputflowoftheMT517Affirmationmessage.
+l Theinvestmentmanager,agent,orinterestedparty(ifdesignatedontheALERTservice)canaffirma
+tradebysendinganMT517TradeAffirmationmessagetoDTCC.
+l Thebroker/dealercanelecttoreceivetheMT517affirmationfromDTCCinlieuofanMT509affirmed
+statusorMT515AffirmedConfirmmessage.
+FormatSpecifications
+ThissectionexplainstheformatspecificationsforMT517tradeaffirmationmessages.
+Start-of-BlockandEnd-of-BlockFields
+SWIFT’sTIC3messagesarecomposedofaseriesoflinkingblockscontainingrelatedinformation.These
+blocks,calledsequencesandsimilartomathematicalequations,haveanopeningbracket(16R:Start-of-
+Block)andaclosingbracket(16S:End-of-Block).Tomaintaintheirbusinessrelationship,grouprelated
+informationbysequencesandspecificrepetitivefields.Thevaluesassignedtotheblockfieldidentifythe
+typesofinformationgroupedwithintheblock,asshowninTable4.1.
+Sequence Description Value
+A Generalinformation—mandatory GENL
+>>A1 Linktooriginalmessage—mandatory LINK
+Table4.1Sequences
+Thetablesinthissectionincludesomesymbolsandkeylettersthatindicatesequenceandfieldconditions
+orrules.Herearethedescriptionsofthesymbolsandkeyletters.
+l M=Mandatory
+l O=Optional
+l C=Conditional
+l –=Nocorrespondingfield
+TradeSuiteID-SWIFTIntegrationGuide
+4.MT517- TradeAffirmationMessages 246
+
+---
+
+## Page 247
+
+l >> =Repetitivesequencethatrequiresastart-of-blockandend-of-blockfieldtags
+l >=Repetitivefieldwithinasequence
+Note
+Whenthemandatory(M),optional(O),orconditional(C)specificationappearsintheSWIFTorDTCC
+columnsforbothinputandoutputmessages,thespecificationappliesonlytoinputmessages.
+TradeSuiteID-SWIFTIntegrationGuide
+4.MT517- TradeAffirmationMessages 247
+
+---
+
+## Page 248
+
+SequenceA–GeneralInformation(Mandatory)
+Table4.2showsthemandatorygeneralinformationforsequenceAfor517messages.Thissequenceis
+onlyrepetitiveforoutputmessages.
+Field
+Tag
+DTCCValue SWIFT FormatField
+Name
+SWIFT [[DTCC]] Input
+Output
+Notes
+16R GENL 4a StartofGen-
+eralInform-
+ationBlock
+M M Both SeeNote1
+on
+page 250.
+20C SEME//16x :4!c//16x Sender
+Reference
+Number
+M – Input SeeNote2
+on
+page 250.
+SEME//9n :4!c//16x DTCControl
+Number
+– – Output
+23G NEWM :4!c[4!c] MessageType
+Indicator
+M M Both SeeNote3
+on
+page 251.
+95P
+95R
+AFFM//11x :4!c//4!a2!a2!c[3!c]
+:4!c/8c/34x
+Affirming
+PartyBIC
+Affirming
+Party
+TradeSuite
+[[ID]]
+– – Output SeeNote4
+on
+page 251.
+95R AFFM/DTCYI/<party
+type>/<TradeSuiteID>
+AFFM/DTCYB/<party
+type>/<BIC>
+:4!c/8c/34x Affirming
+Partyand
+TradeSuite
+[[ID]]
+Affirming
+Partyand
+BIC
+M M Input SeeNote5
+on
+page 251.
+Table4.2SequenceA-GeneralInformation
+TradeSuiteID-SWIFTIntegrationGuide
+4.MT517- TradeAffirmationMessages 248
+
+---
+
+## Page 249
+
+SubsequenceA1–linktooriginalmessage
+SubsequenceA1ismandatory.Itlinkstheaffirmationmessagetotheoriginalconfirmationand
+confirmationnumber.DTCCprocessesoneaffirmationforeach517message.Table4.3showsthe
+subsequenceA1details.
+Field
+Tag
+DTCCValue SWIFT FormatFieldName SWIFT [[DTCC]] Input
+Output
+Notes
+16R LINK 4a StartofLinkBlock M – Both SeeNote1on
+thenextpage.
+13A <LINK>//<515>:4!c//3!c LinkedTrans-
+action
+O – Both SeeNote6on
+page 253.
+20C RELA//9x :4!c//16x DTCControlNum-
+ber
+M M Output SeeNote7on
+page 253.
+COMM//12x :4!c//16x [[Broker]]/DealerCon-
+firmNumber
+M M Input SeeNote8on
+page 253.
+16S LINK 4a EndofLinkBlock M – Both SeeNote1on
+thenextpage.
+EndofSubsequenceA1LinktoOriginalMessage
+16S GENL 4a EndofGeneral
+InformationBlock
+M – Both SeeNote1on
+thenextpage.
+Table4.3SubsequenceA1-LinktoOriginalMessage
+FieldSpecificationsforMT517AffirmationMessages
+ThissectiondescribesthefieldspecificationsforMT517affirmationmessages.Oninput,thepartieswho
+areauthorizedtoaffirmtheconfirm(investmentmanager,agent,orinterestedparty)cansubmitanMT515
+messagetoaffirmtheconfirm.TheTradeSuiteIDservicevalidatestheaffirmingpartyaswellasother
+businessrulesandchangesthestatusoftheconfirmtoAffirm,ifappropriate.Onoutput,theMT517
+messagesissenttonotifythepartiesoftheaffirmationifthepartyissetupforSWIFT.
+NoteforStartandEndofBlockDelimiters
+EachsequenceandsubsequenceopenswithaStart-of-BlockfieldandcloseswithanEnd-of-Blockfieldto
+delimittheinformation.Acarriagereturn/linefeed(CRLF)delimitseachSWIFTfield/line.Formore
+information,seeStart-of-BlockandEnd-of-BlockFields
+TradeSuiteID-SWIFTIntegrationGuide
+4.MT517- TradeAffirmationMessages 249
+
+---
+
+## Page 250
+
+Note1:  fields16Rand16S:Start-of-BlockandEnd-of-Block
+Hereisthestart-of-blockandend-of-blockformattoopenandcloseeachsequenceandsubsequence.
+Format 4c
+Example :16R:GENL
+:16S:GENL
+SequenceA–GeneralInformation
+SequenceAcontainsgeneraluserinformationandismandatory.
+Note2:Field20C:SenderReferenceNumberorDTCControlNumber
+Inputandoutput.Mandatory.
+Field20CcontainstheinputoftradeaffirmationssenttoDTCC.TheSenderReferenceNumberfieldcan
+containamaximum16-characterreferencenumberthatuniquelyidentifieseachmessage.Inputcannot
+startorendwithaslash(/)andcannotcontaintwoconsecutiveslashes(//).
+FortradeaffirmationoutputfromDTCC,thisfieldcontainstheDTCcontrolnumberinplaceofthesender
+referencenumber.TheDTCcontrolnumberisanine-digitnumbergeneratedbyDTCCtouniquelyidentify
+eachtradeconfirmation(MT515message).ThisfieldistheDTCCreferencefortheaffirmingtrade.Output
+cannotstartorendwithaslash(/)andcannotcontaintwoconsecutiveslashes(//).
+Format
+(Input)
+:4!c//16x
+<SEME>//<senderreference>
+SEME SenderReferenceNumber
+Example :20C::SEME//AFFMBK7890123456
+Format
+(Output)
+:4!c//16x
+<SEME>//<DTCcontrolnumber>
+SEME DTCControlNumber
+Example :20C::SEME//123456789
+TradeSuiteID-SWIFTIntegrationGuide
+4.MT517- TradeAffirmationMessages 250
+
+---
+
+## Page 251
+
+Note3:Field23G:MessageTypeIndicator
+Inputandoutput.Mandatory.
+Field23Gindicatesthemessagetype.TheMessageTypeIndicatorisNEWM.
+Format :4!c[4!c]
+<NEWM>
+NEWM MessageIndicator
+Example :23G:NEWM
+Note4:Field95P:AffirmingPartyBICorfield95R:AffirmingPartyTradeSuiteID
+Output.Mandatory.
+Field95Pindicatestheaffirmingparty’s11-characterbusinessidentifiercode(BIC).Whentheaffirming
+partydoesnothaveaBICortheBICisunavailable,thisfieldcontainsaneight-byteTradeSuiteID
+number.
+Format :4!c//4!a2!a2!c[3!c]or:4!c/8c/34x
+<AFFM>//<bicidentifier>
+or
+<AFFM>/<DTCY>/<TradeSuiteID>
+AFFM Affirmingparty
+Example :95P::AFFM//AFFMUK61xxx
+:95R::AFFM/DTCY/12345678
+Note5:Field95R:AffirmingPartyandTradeSuiteIDorAffirmingPartyandBIC
+Input.Mandatory.
+Field95RindicatestheaffirmingpartycanenteronlyoneofthefollowingnumbersontheMT517
+affirmation:
+TradeSuiteID-SWIFTIntegrationGuide
+4.MT517- TradeAffirmationMessages 251
+
+---
+
+## Page 252
+
+l 8-byteDTCCIDnumberwiththeusercodeDTCYI.
+l 11-characterBICidentifierwiththeusercodeDTCYBastheidentifier.
+BICvaluesresideonthestandinginstructionsdatabase(ALERT).Whenadifferenceexistsbetweenthe
+BICvalueenteredandthevalueresidingontheALERTservice,thevalueontheALERTserviceoverlays
+theuserentry.
+Format :4!c/8c/3!c/34x
+<AFFM>/<DTCYI>/<partytype>/<TradeSuiteID>
+:4!c/8c/3!c/34x
+<AFFM>/<DTCYB>/<partytype>/<BIC>
+AFFM Affirmingparty
+Examples :95R::AFFM/DTCYI/IIA/12345678
+:95R::AFFM/DTCYB/IIA/AFFMUK61MP1
+Table4.4showsthepartycodesusedinfield95R.
+PartyType Description
+IIA Agentistheaffirmer.
+IIV Institutionalinvestoristheaffirmer.
+IPT Interestedpartyistheaffirmer.
+Table4.4PartyTypesinField95R
+TradeSuiteID-SWIFTIntegrationGuide
+4.MT517- TradeAffirmationMessages 252
+
+---
+
+## Page 253
+
+SubsequenceA1–LinktoOriginalMessage
+SubsequenceA1ismandatory.Itlinkstheaffirmationmessagetotheoriginalconfirmationand
+confirmationnumber.DTCCprocessesoneaffirmationperMT517message.
+Note6:Field13A:LinkedTransaction
+Inputandoutput.Optional.
+Field13AindicatesthatthemessagelinkedtotheMT517messageisanMT515tradeconfirmation.
+Format :4!c//3!c
+<LINK>//<515>
+LINK Linkedmessage
+Example :13A::LINK//515
+Note7:Field20C:DTCControlNumber
+Output.Mandatory.
+Field20CcontainsaDTCcontrolnumberforoutputmessages.TheDTCcontrolnumberisanine-digit
+numbergeneratedbytheTradeSuiteIDservicetouniquelyidentifieseachtradeconfirmation(MT515
+message).ThisfieldcontainstheTradeSuiteIDreferencefortheaffirmingtrade.
+Format :4!c//16x
+<RELA>//<DTCcontrolnumber>
+RELA DTCControlNumber
+Examples :20C::RELA//123456789
+Note8:Field20C:[[Broker]]/DealerConfirmNumber
+Input.Mandatory.
+Field20CcontainsaBroker/DealerConfirmNumberforinputmessages.Thebroker/dealerconfirm
+numberisthenumberassignedtotheaffirmingtradebythebroker/dealer.Itcancontainamaximumof12
+charactersthatuniquelyidentifieseachmessage.
+TradeSuiteID-SWIFTIntegrationGuide
+4.MT517- TradeAffirmationMessages 253
+
+---
+
+## Page 254
+
+Format :4!c//16x
+<COMM>//<[[Broker]]/dealerconfirmnumber>
+COMM [[Broker]]/DealerConfirmNumber
+Examples :20C::COMM//AFFMB6789012
+TradeSuiteID-SWIFTIntegrationGuide
+4.MT517- TradeAffirmationMessages 254
+
+---
+
+## Page 255
+
+5.MT541- RECEIVESECURITIESAGAINST
+PAYMENTMESSAGES
+ThissectiondescribestheSWIFTMT541receivesecuritiesagainstpaymentmessages.Usethereceive
+securitiesagainstpaymentmessageto:
+l Instructareceiptoffinancialinstrumentsagainstpaymentfromaspecifiedparty.
+l Requestacancellationagainstapreviouspaymentinstruction.
+l NotifyDTCCofaforthcomingReceiveAgainstPaymentinstruction.
+Usethelinkagessequencetolinktheinstructiontoothersettlementinstructionsortoothertransactions.
+FormatSpecifications
+ThissectionexplainstheformatspecificationsforMT541receivesecurityagainstpaymentmessages.
+Start-of-BlockandEnd-of-BlockFields
+TheSWIFTTIC3messagescontainaseriesoflinkingblockscontainingrelatedinformation.These
+blocks,calledsequencesandsimilartomathematicalequations,haveanopeningbracket(16R:Start-of-
+Block)andaclosingbracket(16S:End-of-Block).Tomaintaintheirbusinessrelationship,grouprelated
+informationbysequencesandspecificrepetitivefields.Thevaluesassignedtotheblockfieldidentifythe
+typesofinformationgroupedwithintheblock,asshowninTable5.1.
+Sequence Description Value
+A Generalinformation.Mandatory. GENL
+A1 Linkages. LINK
+B Tradedetails.Mandatory. TRADDET
+B1 Financialinstrumentattributes. FIA
+C Financialinstrumentaccount. FIAC
+E Settlementdetails. SETDET
+Table5.1Sequences
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 255
+
+---
+
+## Page 256
+
+Sequence Description Value
+E1 Settlementparties SETPRTY
+E3 Amounts AMT
+F Otherparties. OTHRPRTY
+Table5.1Sequences
+DTCCforwardsorreturnsfieldsreceivedoninput,whichcanresultinsomeconversionsandenrichment.
+Thetablesinthissectionincludesomesymbolsandkeylettersthatindicatesequenceandfieldconditions
+orrules.Herearethedescriptionsofthesymbolsandkeyletters.
+l M=Mandatory
+l O=Optional
+l C=Conditional
+l –=Nocorrespondingfield
+l >> =Repetitivesequencethatrequiresastart-of-blockandend-of-blockfieldtags
+l >=Repetitivefieldwithinasequence
+Note
+Whenthemandatory(M),optional(O),orconditional(C)specificationappearsintheSWIFTorDTCC
+columnsforbothinputandoutputmessages,thespecificationappliesonlytoinputmessages.
+SequenceA–GeneralInformation
+Inputandoutput.Mandatory.
+Table5.2showsthemandatorygeneralinformationforinputandoutputMT541messages.
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 256
+
+---
+
+## Page 257
+
+Field
+Tag
+DTCCValue SWIFT
+ Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+(A)NewMessage
+16R GENL 4c StartofGeneralInform-
+ationBlock
+M – Both SeeNote1on
+page 269.
+20C SEME//9d
+SEME//16x
+:4!c//16x DTCControlNumber
+Sender’sReference
+Number
+M M Both SeeNote2on
+page 269.
+23G NEWM 4!c TransactionType M M Both SeeNote3on
+page 270.
+(A)Cancellation
+16R GENL 4c StartofCancellation
+Block
+M – Both SeeNote1on
+page 269.
+20C SEME//9d :4!c//16x DTCControlNumber M M Both SeeNote2on
+page 269.
+23G CANC 4!c TransactionType M M Both SeeNote3on
+page 270.
+22F TRTR/DTCY/C
+nnn
+:4!c/[8c]/4!c CancellationReason
+Code
+M M Both SeeNote4on
+page 270.
+Table5.2SequenceA–GeneralInformation(Mandatory)
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 257
+
+---
+
+## Page 258
+
+SubsequenceA1–LinkedTransactions
+Inputandoutput.Optional.
+Table5.3showstheoptionalrepetitivesubsequenceA1linkagesforinputandoutputMT541messages.
+Field
+Tag
+DTCCValue SWIFT
+ Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+>>(A1)CommonReferenceBlock(Mandatory—[[DTCC]])
+LINK 4c StartofLinkage
+Block
+M – Both SeeNote1
+onpage 269.
+20C COMM//12x
+PREV//12x
+:4!c//16x InstitutionBlock
+ReferenceID
+M M Both SeeNote5on
+page 271.
+16S LINK 4c EndofLinkage
+Block
+M – Both SeeNote1
+onpage 269.
+>>(A1)CommonReferenceBlock—Detail(Mandatory—[[DTCC]])
+16R LINK 4c StartofLinkage
+Block
+M – Both SeeNote1
+onpage 269.
+20C RELA//12x :4!c//16x InstitutionDetail
+ReferenceID
+M M Both SeeNote5
+onpage 271.
+16S LINK 4c EndofLinkage
+Block
+M – Both SeeNote1
+onpage 269.
+>>(A1)InstitutionOrderRoutingBlock(Optional)
+16R LINK 4c StartofLinkage
+Block
+M – Both SeeNote1
+onpage 269.
+22F TRTR/DTCY/IORN:4!c/[8c]/4!c InstitutionOrder
+RoutingNumber
+O – Both SeeNote6
+onpage1.
+20C RELA//12x :4!c//16x InstitutionDetail
+ReferenceID
+M M Both SeeNote7
+on
+page 272.
+16S LINK 4c EndofLinkage
+Block
+M – Both SeeNote1
+onpage 269.
+MandatorySequenceAGeneralInformation(continued)
+16S GENL 4c EndofGeneral
+InformationBlock
+M – Both SeeNote1
+onpage 269.
+Table5.3SubsequenceA1–LinkedTransactions
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 258
+
+---
+
+## Page 259
+
+SequenceB–TradeDetails
+Inputandoutput.Mandatory.
+Table5.4showsthemandatorytradedetailsforinputandoutputMT541messages.
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+16R TRADDET 7c StartofTradeDetails
+Block
+M – Both SeeNote1
+on
+page 269.
+98A
+98B
+SETT//YYYYMMDD
+SETT//WISS
+:4!c//8!n
+:4!c/[8c]/4!c
+SettlementDate
+SettlementType
+O M Both SeeNote8
+on
+page 272.
+98A TRAD//YYYYMMDD:4!c//8!n TradeDate M M Both SeeNote9
+on
+page 273.
+90A
+90B
+DEAL//12d
+DEAL//3x12d
+:4!c//15d
+:4!c//3!a15d
+AveragePrice
+(formatdependent
+onsecuritytype)
+M M Both SeeNote
+10on
+page 273.
+35B ISIN/12a
+Oneormoreofthe
+followingqualifiers:
+l /2!a/9x
+l /TS/31x
+l /XX/31x
+[ISIN1!e12!c]
+[4*35x]
+[4*35x]
+SecurityID Number
+Non-security
+identifierformat:
+l country
+code
+l ticketsym-
+bol
+l proprietary
+schemeor
+security
+description
+M M/O Both SeeNote
+11on
+page 274.
+Table5.4SequenceB–TradeDetails(Mandatory)
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 259
+
+---
+
+## Page 260
+
+SubsequenceB1–FinancialInstrumentAttributes
+Inputandoutput.Mandatory.
+Table5.5showsthemandatoryfinancialinstrumentattributesforinputandoutputMT541messages.
+Field
+Tag
+[[DTCC]]
+Value
+SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+16R FIA 3c StartofFinancialInstru-
+mentsBlock
+M – Both SeeNote1on
+page 269.
+12A CLAS/ISIT/5x:4!c[8c]/30x SecurityTypeorClas-
+sificationTypes
+Both SeeNote12on
+page 276.
+16S FIA 3c EndofFinancialInstru-
+mentsBlock
+M – Both SeeNote1on
+page 269.
+Table5.5SequenceB1–FinancialInstrumentAttributes(Mandatory)
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 260
+
+---
+
+## Page 261
+
+SequenceB–TradeDetails(Continued)
+Inputandoutput.Optional.
+Table5.6showstheoptionaltradedetailsforinputandoutputMT541messages.
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+22F COSB//PERU
+COSB//FLAT
+COSB//PERC
+:4!c/[8c]/4!cAllocationCommission
+TypeIndicator
+O O Both SeeNote13on
+page 279.
+22F TTCO/
+DTCY/CAMI
+:4!c/[8c]/4!cCancellationAfterMatch-
+ingIndicator
+O O Both SeeNote14on
+page 279.
+16S TRADDET 7c EndofTradeDetails
+Block
+M – Both SeeNote1on
+page 269.
+Table5.6SequenceB-TradeDetails(optional)
+SequenceC–FinancialInstrumentAccount
+Inputandoutput.Mandatory.
+Table5.7showsthemandatoryfinancialinstrumentaccountforinputandoutputMT541messages.
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+16R FIAC 4c StartofFinancialInstru-
+mentBlock
+M – Both SeeNote1
+on
+page 269.
+36B SETT//FAMT
+SETT//UNIT
+:4!c//4!c/15dShare/FaceValue M M Both SeeNote
+15on
+page 279.
+Table5.7SequenceC–FinancialInstrumentAccount
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 261
+
+---
+
+## Page 262
+
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+97A SAFE//35x :4!c//35x SafekeepingAccount-
+AgentInternalAccount
+Number
+M – Both SeeNote
+16on
+page 280.
+16S FIAC 4c EndofFinancialInstrument
+Block
+M – Both SeeNote1
+on
+page 269.
+Table5.7SequenceC–FinancialInstrumentAccount
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 262
+
+---
+
+## Page 263
+
+SequenceE–SettlementDetails
+Inputandoutput.Mandatory.
+Table5.8showsthemandatorysettlementdetailsforinputandoutputMT541messages.Fornested
+sequences,ensureeachStart-of-BlockfieldispairedwithanEnd-of-Blockfieldtodelimittheinformation
+withineachblock.
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+16R SETDET 6c StartofSettlementDetails
+Block
+M – Both SeeNote1
+on
+page 269.
+22F STCO//PHYS :4!c//4!c PSETISOCountryCode
+Indicator
+O – Both SeeNote17
+on
+page 281.
+22F STCO//SPST :4!c//4!c SplitCurrencySettlement
+Indicator
+O O Both SeeNote18
+on
+page 281.
+22F SETR//TRAD
+SETR//REPU
+:4!c//4!c TradeIndicator M – Both SeeNote19
+on
+page 281.
+22F TTCO/DTCY/CAMI:4!c/[8c]/4!cCancellationAfterAffirm-
+ation/MatchingIndicator
+O – Both SeeNote20
+on
+page 282.
+Table5.8SequenceE–SettlementDetails(Mandatory)
+SubsequenceE1–settlementparties
+Inputandoutput.Mandatory.
+Table5.9showsthemandatorysettlementpartydetailsforinputandoutputMT541messages.
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 263
+
+---
+
+## Page 264
+
+Field
+Tag
+DTCCValue SWIFT
+Format
+Field
+Name
+SWIFT [[DTCC]] Input
+Output
+Notes
+>>(E1)SettlementLocationBlock(mandatory)
+16R SETPRTY 7c StartofSet-
+tlementLoca-
+tionBlock
+M – Both SeeNote1
+on
+page 269.
+95P
+95C
+PSET/DTCYUS33xxx
+PSET/GB
+:4!a2!a2!c[3!c]
+:4!c//2!a
+[[settlement]]
+Location
+M – Both SeeNote
+21on
+page 282.
+16S SETPRTY 7c EndofSet-
+tlementLoca-
+tionBlock
+M – Both SeeNote1
+on
+page 269.
+>>(E1)AgentIDBlock(mandatory)
+16R SETPRTY 7c StartofAgent
+Block
+M/O – Both SeeNote1
+on
+page 269.
+95R
+95P
+DECU/DTCYID/8n
+DECU//11x
+:4!c/a/[8c]/34x
+:4!c//4!a2!a2!c
+[3!c]
+Agent
+TradeSuite
+[[ID]]
+AgentBIC
+M O Both SeeNote
+22on
+page 282.
+95S ALTE/DTCYID/CORP/US/8n:4!c/a/
+[8c]/4!c/2!a/30xAlternateID
+Numberor
+AgentDTC
+IDNumber
+O O Both SeeNote
+23on
+page 283.
+97A SAFE//16x :4!c//35x AgentInternal
+AccountNum-
+ber
+M/O – Both SeeNote
+24on
+page 283.
+16S SETPRTY 7c EndofAgent
+Block
+M – Both SeeNote1
+on
+page 269.
+>>(E1)ClearingBrokerBlock(mandatory)
+16R SETPRTY 7c StartofClear-
+ingBroker
+Block
+M – Both SeeNote1
+on
+page 269.
+Table5.9SequenceE1–SettlementParties
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 264
+
+---
+
+## Page 265
+
+Field
+Tag
+DTCCValue SWIFT
+Format
+Field
+Name
+SWIFT [[DTCC]] Input
+Output
+Notes
+95R
+95P
+DEAG/DTCYID/8n
+DEAG//11x
+:4!c//4!a2!a2!c
+[3!c]
+:4!c/a/[8c]/34x
+Clearing
+BrokerID#
+Clearing
+BrokerBIC
+M – Both SeeNote
+25on
+page 283.
+95S ALTE/DTCYID/CORP/US/8n:4!c/
+[8c]/4!c/2!a/30x
+Alternate
+Clearing
+BrokerDTCID
+O – Both SeeNote
+26on
+page 284.
+97A SAFE//16x :4!c//35x Clearing
+BrokerInternal
+AccountNum-
+ber
+O – Both SeeNote
+27on
+page 284.
+16S SETPRTY 7c EndofClear-
+ingBroker
+Block
+M – Both SeeNote1
+on
+page 269.
+>>(E1)ExecutingBrokerBlock(mandatory)
+16R SETPRTY 7c StartofExecut-
+ingBroker
+Block
+M – Both SeeNote1
+on
+page 269.
+95R
+95P
+SELL/DTCYID/8n
+SELL//11x
+:4!c/8c/34x
+:4!c//4!a2!a2!c
+[3!c]
+Primary
+Executing
+[[Broker]]
+Number
+Primary
+Executing
+BrokerBIC
+M M Both SeeNote
+28on
+page 285.
+95S ALTE/DTCYID/CORP/US/8n:4!c/
+[8c]/4!c/2!a/30xAlternate
+Executing
+[[Broker]]
+Numberor
+DTCID
+O O Both SeeNote
+29on
+page 285.
+97A SAFE//16x :4!c//35x BrokerInternal
+AccountNum-
+ber
+M/O – Both SeeNote
+30on
+page 285.
+16S SETPRTY 7c EndofExecut-
+ingBroker
+Block
+M – Both SeeNote1
+on
+page 269.
+Table5.9SequenceE1–SettlementParties
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 265
+
+---
+
+## Page 266
+
+SequenceE3–Amounts
+Inputandoutput.Mandatory.
+Table5.10showsthemandatoryamountdetailsforinputandoutputMT541messages.
+Field
+Tag
+DTCCValueSWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+>>(E3)PrincipalAmountBlock(Optional)
+16R AMT 3c StartofPrincipal
+AmountBlock
+M – Both SeeNote1on
+page 269.
+19A DEAL//iso14d:4!c//3!a15dPrincipalAmount O O Both SeeNote31on
+page 286.
+16S AMT 3c EndofPrincipal
+AmountBlock
+M – Both SeeNote1on
+page 269.
+>>(E3)InterestBlock(optional)
+16R AMT 3c StartofInterest
+Block
+M – Both SeeNote1on
+page 269.
+19A ACRU//iso11d:4!c//3!a15dInterest O O Both SeeNote32on
+page 286.
+16S AMT 3c EndofInterest
+Block
+M – Both SeeNote1on
+page 269.
+>>(E3)CommissionBlock(mandatory)
+16R AMT 3c StartofCom-
+missionBlock
+M – Both SeeNote1on
+page 269.
+19A EXEC//iso9d :4!c//3!a15d Commission M M Both SeeNote33on
+page 287.
+16S AMT 3c EndofCommission
+Block
+M – Both SeeNote1on
+page 269.
+>>(E3)ResearchAmountBlock(optional)
+16R AMT 3c StartofResearch
+AmountBlock
+M – Both SeeNote1on
+page 269.
+19A RSCH//iso9d :4!c//3!a15dResearchAmount O O Both SeeNote34on
+page 287.
+16S AMT 3c EndofResearch
+AmountBlock
+M – Both. SeeNote1on
+page 269.
+>>(E3)CountryTaxBlock(optional)
+Table5.10SequenceE3–Amounts
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 266
+
+---
+
+## Page 267
+
+Field
+Tag
+DTCCValueSWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+16R AMT 3c StartofCountryTax
+Block
+M – Both SeeNote1on
+page 269.
+19A COUN//iso9d :4!c//3!a15dCountryTax O O Both SeeNote35on
+page 287.
+16S AMT 3c EndofCountryTax
+Block
+M – Both SeeNote1on
+page 269.
+>>(E3)FeesBlock(optional)
+16R AMT 3c StartofFeesBlock M – Both SeeNote1on
+page 269.
+19A REGF//iso9d :4!c//3!a15dSECFees/Re-
+gistrationandShip-
+pingFees
+O O Both SeeNote36on
+page 288.
+16S AMT 3c EndofFeesBlock M – Both SeeNote1on
+page 269.
+>>(E3)OtherChargesBlock(optional)
+16R AMT 3c StartofOther
+ChargesBlock
+M – Both SeeNote1on
+page 269.
+19A OTHR//iso9d :4!c//3!a15dOtherCharges O O Both SeeNote37on
+page 288.
+16S AMT 3c EndofOther
+ChargesBlock
+M – Both SeeNote1on
+page 269.
+>>(E3)NetAmountBlock(mandatory)
+16R AMT 3c StartofNetAmount
+Block
+M – Both SeeNote1on
+page 269.
+19A SETT//iso14d4!c//3!a15d NetAmount M M Both SeeNote38on
+page 288.
+16S AMT 3c EndofNetAmount
+Block
+M – SeeNote1on
+page 269.
+MandatorySequenceE- settlementdetails(continued)
+16S SETDET 6c EndofSettlement
+DetailsBlock
+M – Both SeeNote1on
+page 269.
+Table5.10SequenceE3–Amounts
+SequenceF–otherparty
+Inputandoutput.Mandatory.
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 267
+
+---
+
+## Page 268
+
+Table5.11showsthemandatoryotherpartydetailsforinputandoutputMT541messages.
+Field
+Tag
+DTCCValue SWIFT
+Format
+Field
+Name
+SWIFT [[DTCC]] Input
+Output
+Notes
+>>(F)MessageReceiptBlock(mandatory)
+16R OTHRPRTY 8c StartofOther
+PartyBlock
+M – Both SeeNote1
+onthenext
+page.
+95R
+95P
+MERE/DTCYID/8n
+MERE/11x
+:4!c/8c/34x
+:4!c//4!a2!a2!c
+[3!c]
+Message
+Recipient
+M – Both SeeNote
+39on
+page 289.
+16S OTHRPRTY 8c EndofOther
+PartyBlock
+M – Both SeeNote1
+onthenext
+page.
+>>(F)InstitutionBlock(mandatory)
+16R OTHRPRTY 8c StartofOther
+PartyBlock
+M – Both SeeNote1
+onthenext
+page.
+95R
+95P
+MEOR/DTCYID/8n
+MEOR//11x
+:4!c/8c/34x
+:4!c//4!a2!a2!c
+[3!c]
+Primary
+Institution
+[[ID]]#
+Institution
+BIC
+M – Both SeeNote
+40on
+page 289.
+95S ALTE/DTCYID/CORP/US/8n:4!c/
+[8c]/4!c/2!a/30x
+AlternateID
+NumberInsti-
+tutionDTCID
+O O Both SeeNote
+41on
+page 289.
+97A SAFE//16x :4!c//35x Institution
+Internal
+Account
+Number
+O – Both SeeNote
+42on
+page 290.
+16S OTHRPRTY 8c EndofOther
+PartyBlock
+M – Both SeeNote1
+onthenext
+page.
+Table5.11SequenceF–OtherParty
+FieldSpecificationsforMT541Messages
+ThissectiondescribesthefieldspecificationsforMT541receivesecuritiesagainstpaymentmessages.
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 268
+
+---
+
+## Page 269
+
+NoteforStartandEndofBlockDelimiters
+EachsequenceandsubsequenceopenswithaStart-of-BlockfieldandcloseswithanEnd-of-Blockfieldto
+delimittheinformation.Acarriagereturn/linefeed(CRLF)delimitseachSWIFTfield/line.Formore
+information,seeStart-of-BlockandEnd-of-BlockFields
+Note1:  Fields16Rand16S:Start-of-BlockorEnd-of-Block
+Hereisthestart-of-blockandend-of-blockformattoopenandcloseeachsequenceandsubsequence.
+Format 4c
+Example :16R:GENL
+:16S:GENL
+NotesforSequenceA–GeneralInformation
+SequenceAcontainsmandatorygeneraluserinformation.
+Note2:Field20C:DTCControlNumberorSender’sReferenceNumber
+Field20CcontainstheDTCcontrolnumberorsender'sreferencenumber.Thetypeofreferencenumber
+inputinthisfielddependsonwhetheritisanewmessageoracancellation.Formoreinformation,see
+ErrorCodes
+NewMessage
+DTCcontrolnumber(ninedigits)orasenderreferencenumber(maximum16characters).
+Format :4!c//16x
+<SEME>//<senderreferenceid>
+SEME SenderReferenceNumber
+Example :20C::SEME//SENDREF890123456
+Cancellation
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 269
+
+---
+
+## Page 270
+
+DTCcontrolnumber(ninedigits)usedforamessagecancellation.
+Format :4!c//16x
+<SEME>//<DTCcontrolnumber>
+SEME SenderReferenceNumber
+Example :20C::SEME//123456789
+Note3:Field23G:TransactionType
+Field23Gindicatesthefunctionofthemessage.Themessagecanbeanewconfirmationorabroker
+cancellationofapreviouslysentMT515.
+Format 4!c
+<messagetype>
+Example :23G:NEWM
+:23G:CANC
+Table5.12showsthetransactiontypes.
+Type Description
+NEWM Newmessageoraresubmission.
+CANC Requesttocancelapreviouslysentconfirmation.TheLinked
+Referencefieldin20Cmustcontaintheoriginalbrokerconfirm
+numberforcancellationsandrejections.Forcancellationmes-
+sages,completeallmandatoryfields.
+Table5.12TransactionTypes
+Note4:Field22F:CancellationReasonCode
+Field22Fcontainsausercodeandvaluesthatdependonthemessagetypeenteredinfield23G.
+Cancellationreasoncodesforcommoncancellationscontainthereasontheinvestmentmanageris
+cancelingapriorallocation.Formoreinformation,seeErrorCodes
+Format :4!c/[8c]/4!c
+<TRTR>/<DTCY>/<valuedependenton messagetype>
+TRTR TradeTransmissionType
+Examples :22F::TRTR/DTCY/C001
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 270
+
+---
+
+## Page 271
+
+:22F::TRTR/DTCY/S001
+Table5.13showsthemessagetypevaluesusedinfield22F.
+Field
+23G
+Qualifier User
+Code
+Value Description
+NEWM TRTR DTCY NEWM Newinstitutioninstructionmes-
+sage.
+NEWM TRTR DTCY REPL DTCerrorreplacementIImes-
+sage.
+NEWM TRTR DTCY SUBS SubstitutionofpreviousIImes-
+sage.
+CANC TRTR DTCY l Cnnn
+l Snnn
+l Investmentman-
+agercancellationof
+theinstitution
+instructioncommon
+record.
+l Investmentman-
+agersubstitutionof
+theinstitution
+instructiondetails.
+Table5.13MessageTypeValues
+SubsequenceA1–LinkedTransactions
+ThissectioncontainsthenotesaboutthelinkedtransactionsforsequenceA1.Formoreinformation,see
+ErrorCodes
+Note5:Field20C:InstitutionBlockReferenceID
+Field20Cspecifiesthereferencenumberassignedtotheoriginalmessage.
+Format :4!c//16x
+<qualifier>//<institutionblockreferenceID>
+COMMorPREV BlockReferenceID
+Example :20C::COMM//123456789012
+:20C::PREV//123456789012
+Table5.14showstheinstitutionblockmessagetypesusedinfield20C.
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 271
+
+---
+
+## Page 272
+
+MessageType Qualifier LengthofreferenceID
+New COMM 12characters
+Cancellation PREV 12characters
+Table5.14InstitutionBlockReferenceID
+Note6:Field22F:InstitutionOrderRoutingNumber
+Field22Fisanoptionalfieldthatenablestheinvestmentmanagertoidentifyorders,routetheorderto
+specificvendorterminals,orboth.IftheInstitutionOrderRoutingNumberCodefieldisblankorcontains
+spaces,thissequence(link)isnotincluded.
+Format :4!c/[8c]/4!c
+<TRTR>/<DTCY>/<institutionorderroutingnumber>
+TRTR OrderRoutingNumber
+Example :22F::TRTR/DTCY/IORN
+Note7:Field20C:InstitutionDetailReferenceID
+Field20Cspecifiesthereferencenumberassignedtotheoriginalmessage.
+Format :4!c//16x
+<RELA>//<institutiondetailreferenceID>
+RELA DetailReferenceNumber
+Example :20C::RELA//123456789012
+NotesforSequenceB–TradeDetails
+ThissectioncontainsthenotesaboutthetradedetailsforsequenceB.
+Note8:Field98A:SettlementDateorfield98B:SettlementType
+Field98A:SettlementDate
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 272
+
+---
+
+## Page 273
+
+Field98Aincludesthedatethetradewassettledorthetradetype.RegularWaytradesrequirethe
+settlementdateinYYYYMMDDformat.When-Issuedtradesusethesettlementtype,notthesettlement
+date.
+Format :4!c//8!n
+<SETT>//<settlementdate>
+SETT [[settlement]]
+Example :98A::20110704
+Field98B:SettlementType
+Field98Bincludesthedatethetradewassettledorthetradetype.Usewhentradesdonothavea
+settlementdateinfield98AandrequireaWISSorWhen-Issuedcode.
+Format :4!c/[8c]//4!c
+<SETT>//<settlementtype>
+SETT SettlementType
+Example :98A::SETT//WISS
+Note9:Field98A:TradeDate
+Field98AincludesthetradedateinYYYYMMDDformat.
+Format :4!c//8!n
+<TRAD>//<tradedate>
+TRAD TradeDate
+Example :98A::TRAD//20110704
+Note10:Field90Aor90B:AveragePrice
+Field90Aor90Bcontainstheaveragepriceforthetrade.Thecurrencycode(90B)isbasedonthe
+currencycode.Otherwise,theformatiswithoutacurrencycode(90A).
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 273
+
+---
+
+## Page 274
+
+Format :4!c//15d
+<DEAL>//<AveragePrice>
+:4!c//3!a15d
+<DEAL>//<currencycode><AveragePrice>
+DEAL AveragePrice
+Examples :90A://DEAL/10000,00
+:90B://DEAL/SSH10000,00
+Note
+FormoreinformationaboutISOcountryandcurrencycodes,seeInput/OutputInformation.
+Note11:Field35B:SecurityIdentifier
+Field35Bindicatestheidentificationnumberassignedtothetradedsecurity.EnteravalidCUSIP,
+SEDOL,orISINnumberwhenthesecuritynumberingsystemisUS([[CUSIP]]),GB(SEDOL),orIS(ISIN)
+respectively.
+ISINidentifierscanusetheISIN-formattedfield;enterallnon-ISINidentifiersonlines1–4ofthenarrative
+field.EnsurethattheISOcountrycodeispresent,in/2!a/format,whenusinganon-ISINnumber.Usethe
+NarrativefieldforasecondsecurityidentifierwithitsISOcode(/2!a/);however,DTCCdoesnotvalidateit.
+Useabilaterallyagreeduponorproprietarynumberingscheme(/XX/)intheNarrativefield.
+X(02)=ISINcountrycodeforISINonly;otherwise,spaces.
+X(09)=SecurityNumber–Ifthesecurityidentifierislessthan9bytesinlength,left-justified,space-filled
+totheright.
+SecurityIdentifierisnotvalidatedwhentheSecurityNumberingsystemisnotCUSIP(U.S.),SEDOL(GB),
+orISIN(IS).
+Securitytranslation–Whenusingthesecuritytranslation,thefirstlinecontainstheuser’sinputtedsecurity
+number.Onoutput,thefirsttwolinesofthenarrativefieldcontainthefollowingsecuritynumbertypes:
+Line1 Convertedsecuritynumber.
+Line2 Whenline1containsatranslatednumber,line2containstheOriginal
+SecurityNumberusedoninput.
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 274
+
+---
+
+## Page 275
+
+Format [ISIN1!e12!c][4*35x]
+[4*35x]
+<isinnumberingscheme>
+<narrative>
+Example—ISIN :35B:ISINAN620678910Z
+DESCRIPTION
+Example—SEDOL:35B:/GB/SLP2345
+DESCRIPTION
+Example—[[CUSIP]]:35B:/US/OACK56789
+DESCRIPTION
+Example—User-
+Oriented :35B:/XX/GTH123
+DESCRIPTION
+Note
+Whenusingauser-originated,bilaterallyagreedupon,orproprietarynumberingscheme(/99/)intheNar-
+rativefield,ensurethatthedefinitionoftheuser-orientedfieldcontainsanagreementbetweenthe
+parties.
+Table5.15showsthecodewordsusedinfield35B.FortheISOcountrycodes,seeInput/Output
+Information.
+CodeWord Description
+/2!a/10!x ISOtwo-digitcountrycode,followedbythenationalnumbering
+scheme,suchasCUSIP.
+/TS/31x Tickersymbol.
+/XX/31x Bilaterallyagreedorproprietaryscheme.
+Table5.15CodeWords
+Table5.16showsthenationalnumberingschemesusedinfield35B.
+NationalNum-
+beringSchemes
+Description
+AT Wertpapierkennummer(Austria)
+AU Australia
+Table5.16NationalNumberingSchemes
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 275
+
+---
+
+## Page 276
+
+NationalNum-
+beringSchemes
+Description
+BE SecretariatdesValeursMobilieres-SVM(Belgium)
+BR Brazil
+CE CEDEL
+CH Valorennummer(Switzerland)
+DE Wertpapierkennummer(Germany)
+DK Fondskode(Denmark)
+ES Spain
+EU Euroclear
+FR SICOVAM(France)
+GB SEDOL(UnitedKingdom)
+IE Ireland
+IS ISIN
+IT CODICEUIC(Italy)
+JP QUICK(Japan)
+LU Luxembourg
+MX Mexico
+NL Netherlands
+NO Norway
+RU Reuters
+SE Sweden
+US [[CUSIP]](UnitedStates)
+XS CommonCode(CEDEL/Euroclear)
+99 UserOriginated
+Table5.16NationalNumberingSchemes
+NotesforSubsequenceB1–FinancialInstrumentAttributes
+Note12:Field12A:SecurityTypeorClassificationTypes
+Field12Acontainsavalidsecuritytype.Matchingnon-[[DTCC]]-eligiblesecuritiesrequiresavalueotherthan
+spaces.UsethemiscellaneousMSCcodeonlyforallocationoffinancialinstrumentsthatarenotsecurities
+(thatis,aforeignexchangetrade).
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 276
+
+---
+
+## Page 277
+
+Format :4!c/[8c]/30x
+<CLAS>/<ISIT>/<securitytype>
+Example :12A::CLAS/ISIT/CS
+Note
+Thesevaluesareusedtoestablishparent/childrelationshipsamongsecuritieswithinthestandinginstruc-
+tionsdatabase.
+Table5.17showsthesecuritytypesusedinfield12A.
+SecurityType Description
+[[ABS]] [[Asset]]-backedsecurities
+AGS Agencies,suchasSBAandTVA
+BAS Banker’sacceptances
+CDS Corporatedebtsecurities
+CER Representativecertificates
+CMO Collateralizedmortgageobligation
+COD Certificateofdeposit
+CON Convertiblebond
+CPA CPAcommercialpaper
+CPN Coupons
+CSH U.S.cashwire
+CS1 U.S.cashwire1
+CS2 U.S.cashwire2
+CS3 U.S.cashwire3
+CS4 U.S.cashwire4
+CS5 U.S.cashwire5
+EBD Eurobonds
+ECD EuroCD
+[[ECP]] EuroCP
+ENT Euronotes
+FIN Financial
+FMR FreddieMacREMICS
+FNM Federalnationalmortgageassociation(FannieMae)
+FNR FannieMaeREMICS
+Table5.17SecurityTypes
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 277
+
+---
+
+## Page 278
+
+SecurityType Description
+FPA Face,principal,ornominalamount
+FRM FreddieMac
+GDS Governmentdebtsecurities
+GMR GinnieMaeREMICS
+GNM Governmentnationalmortgageassociation(GinnieMae)
+ITS Indexedtreasurysecurities
+MBS Mortgage-backedsecurities
+MMI Moneymarketinstruments
+MSC Miscellaneous
+MTN Mediumtermnotes
+MUN Municipalbonds
+NSD Non-U.S.sovereigndebt
+OMB Othermortgage-backedsecurities(wholeloan)
+OMM Othermoneymarketinstruments
+OPC Optionscontracts
+OPS Optionshares
+PRC Premiumcontracts
+PRS Premiumshares
+RTE Rentes
+RTS Rights
+SHS Equities([[shares]])
+TBI Treasurybills
+TEM Taxexemptmoneymarkets
+TRB Treasurybonds
+TRN Treasurynotes
+TRS Treasurystrips
+UNT Units
+WTS [[Warrants]]
+XCP Taxexemptcommercialpaper
+Table5.17SecurityTypes
+NotesforSequenceB–TradeDetails(continued)
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 278
+
+---
+
+## Page 279
+
+Note13:Field22F:AllocationCommissionTypeindicator
+Hereistheformatfortheallocationcommissiontypeindicator.
+Format :4!c/[8c]/4!c
+<COSB>//<AllocationCommissionType>
+COSB AllocationCommissionTypeIndicator
+Example :22F::COSB//PERU
+Table5.18showsthecommissiontypeindicatorusedinfield22F.
+Value Description
+PERU Perunitoffinancialinstrument.Whentheindicatoriscentspershareor
+fixeddollar,thecommissionfeeisnumeric.
+SOFT Commissiontypeisapercentagecommission.
+FLAT Commissionsharingbasisisaflatfeefortheallocation.
+Table5.18CommissionTypeIndicators
+Note14:Field22F:CancellationAfterMatchingindicator
+Field22Findicatestheformatforthecancellationaftermatchingindicator(CAMI).
+Format :4!c/[8c]/4!c
+<TTCO>/<DTCY>/<cancelaftermatch>
+TTCO CancellationAfterMatchingIndicator
+Example :22F::TTCO/DTCY/CAMI
+NotesforSequenceC–FinancialInstrumentAccount
+SequenceCcontainsFinancialInstrumentAccountdetailsforthetradedsecuritiesandismandatory.
+Note15:Field36B:Execution–[[shares]]/FaceValue
+Field36Bindicatesthetotalsharesorfacevalueofthetradedsecurity.Thequalifierindicateswhetherthe
+quantityisinsharesorfaceamount.Validvaluesmustrangebetweenninewholenumbers(plusa
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 279
+
+---
+
+## Page 280
+
+decimalcomma)withfivedecimalplacesand12wholenumbers(plusadecimalcomma)withtwodecimal
+places.Validformatsinclude:
+l 9n,5n
+l 10n,4n
+l 11n,3n
+l 12n,2n
+When-IssuedandWhen-Distributedtradescanbeequaltozero.
+Format :4!c//4!c/15d
+<SETT>//<accounttype>/<amountor quantity>
+SETT QuantityofFinancialInstrumentinNoticeofOrderExecution
+Example :36B::SETT//FAMT/999999999,99999
+:36B::SETT//UNIT/10000
+Table5.19showsthefinancialinstrumentaccounttypesusedinfield36B.
+Value Description
+FAMT Quantityexpressedasafaceamount
+UNIT Quantityexpressedasanumber(count)
+Table5.19FinancialInstrumentAccountTypes
+Note16:Field97A:SafekeepingAccountAgentInternalAccountNumber
+Field97Aindicatesthesafekeepingaccountagentinternalaccountnumber.
+Format :4!c//35x
+<SAFE>//<agentsafekeepingaccount>
+SAFE SafekeepingAccount
+Example :97A::SAFE//AGENTNUM01234567890123456789012345
+NotesforSequenceE–SettlementDetails
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 280
+
+---
+
+## Page 281
+
+Note17:Field22F:PSETISOCountryCodeIndicator
+Inputandoutput.Optional.
+Field22FisrequiredifPSETisanISOcountrycode.OmitthisfieldifPSETreferencesaCSD
+(Depository)BIC.FortheISOcountrycodes,seeInput/OutputInformation.
+Format :4!c//4!c
+<STCO>//<PHYS>
+STCO PSETISOCountryCodeIndicator
+Example :22F::STCO//PHYS
+Note18:Field22F:SplitCurrencySettlementIndicator
+Field22Findicatesthesplitcurrencyindicatorthatidentifieswhensecuritiesandcashsettleindifferent
+locations.IfthesplitcurrencyindicatorequalsY,DTCCincludesthisfield.IfitdoesnotequalY,[[DTCC]]
+omitsthisfieldfromtheoutput.
+Format :4!c//4!c
+<STCO>//<SPST>
+STCO SettlementConditionIndicator
+Example :22F::STCO//SPST
+Note19:Field22F:TradeIndicator
+Field22Fcontainsthetradeindicator.
+Format :4!c//4!c
+<SETR>//<tradeindicator>
+SETR TradeIndicator
+Examples :22F::SETR//TRAD
+:22F::SETR//REPU
+Table5.20showsthetransactiontypesusedinfield22F.
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 281
+
+---
+
+## Page 282
+
+Value Description
+TRAD Trade
+REPU Repurchase
+Table5.20TransactionIndicator
+Note20:Field22F:CancellationAfterAffirmation/MatchingIndicator
+Field22Findicatesthatthebroker/dealerattemptedtocancelatradeaftermatchingoraffirmation.
+Format :4!c/[8c]/4!c
+<TTCO>/<DTCY>/<cancelaftermatch>
+CAMI CancellationAfterMatching
+Example :22F::TTCO/DTCY/CAMI
+NotesforSequenceE1–SettlementParties
+SubsequenceE1containsinformationaboutthesettlementlocation,agent,clearingbroker,andexecuting
+[[Broker]].Itismandatory.
+Note21:Field95Por95C:SettlementLocation
+Field95Por95Cindicatesthesettlementlocation.
+Format :4!a2!a2!c[3!c]or 4!c//2!a
+<PSET>/<placeof [[settlement]]>
+PSET PlaceofSettlement
+Example :95P::PSET/DTCUS33
+:95C::PSET//GB
+Note22:Field95R:AgentTradeSuiteIDorField95P:AgentBIC
+Field95R:AgentTradeSuiteID
+Field95RindicatestheagentTradeSuiteID,uptoeightdigits.
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 282
+
+---
+
+## Page 283
+
+Format :4!c/a/[8c]/34x
+<DECU>/<DTCYID>/<TradeSuiteID>
+DECU TradeSuiteIDorAgentIDNumber
+Example :95R::DECU/DTCYID/12345678
+Field95P:AgentBIC
+Field95PindicatestheAgentBIC.
+Format :4!c//4!a2!a2!c[3!c]
+DECU//<agentBIC>
+DECU AgentBIC
+Example :95P::DECU//AGTFUS34XXX
+Note23:Field95S:AlternateIDNumberorAgentDTCIDNumber
+Field95SindicatesthealternateIDnumberoragentDTCIDnumber.
+Format 4!c/[8c]/4!c/2!a/30x
+<ALTE>/<DTCYID>/<CORP>/<US>/<TradeSuiteID>
+ALTE AlternateIdentifier
+Example :95S::ALTE/DTCYID/CORP/US/12345678
+Note24:Field97A:AgentInternalAccountNumber
+Field97Aindicatestheagentinternalaccountnumber,upto35characters.
+Format :4!c//35x
+<SAFE>//<agentsafekeepingaccount>
+SAFE SafekeepingAccount
+Example :97A::SAFE//ABC456789012345678901
+Note25:Field95R:ClearingBrokerID#orField95P:ClearingBrokerBIC
+Field95R:ClearingBrokerID#
+Field95RindicatestheclearingbrokerTradeSuiteIDnumber,uptoeightdigits.
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 283
+
+---
+
+## Page 284
+
+Format :4!c/a/[8c]/34x
+<DEAG>/<DTCYID>/<TradeSuiteID>
+DEAG DeliveringAgent
+Example :95R::DEAG/DTCYID/12345678
+Field95P:ClearingBrokerBIC
+Field95Pindicatestheclearingbroker/dealerBIC.
+Format :4!c//4!a2!a2!c[3!c]
+<DEAG>//<clearingbrokerBIC>
+DEAG DeliveringAgent
+Example :95P::DEAG//12345678901
+Note26:Field95S:AlternateClearingBrokerDTCID
+Field95SindicatesthealternateclearingbrokerIDnumber.
+Format :4!c/[8c]/4!c/2!a/30x
+<ALTE>/<DTCYID>/<CORP>/<US>/<TradeSuiteID>
+ALTE AlternateIdentifier
+Example :95S::ALTE/DTCYID/CORP/US/12345678
+Note27:Field97A:ClearingBrokerInternalAccountNumber
+Inputandoutput.Optional.
+Field97Aindicatestheclearingbrokerinternalaccountnumber.
+Format :4!c//35x
+<SAFE>//<clearingAgentinternalaccount>
+SAFE SafekeepingAccount
+Example :95S::SAFE//1234567890123456
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 284
+
+---
+
+## Page 285
+
+Note28:Field95R:PrimaryExecutingBrokerNumberorField95P:PrimaryExecutingBrokerBIC
+Field95R:PrimaryExecutingBrokerNumber
+Field95Rindicatestheexecutingbroker/dealerTradeSuiteID,uptoeightdigits.
+Format :4!c/8c/34x
+<SELL>/<DTCYID>/<TradeSuiteID>
+SELL SellerTradeSuiteID
+Example :95R::SELL/DTCYID/12345678
+Field95P:PrimaryExecutingBrokerBIC
+Field95Pindicatestheexecutingbroker/dealerBIC.
+Format :4!c//4!a2!a2!c[3!c]
+<SELL>//<executingbrokerBIC>
+SELL SellerTradeSuiteID
+Example :95P::SELL//XCRCUS97XXX
+Note29:Field95S:AlternateExecutingBrokerNumberorDTCID
+Field95SindicatesthealternateIDnumberoftheexecutingbroker,uptoeightdigits.
+Format :4!c/[8c]/4!c/2!a/30x
+<ALTE>/<DTCYID>/<CORP>/<US>/<TradeSuiteID>
+ALTE AlternateIdentifier
+Example :95S::ALTE/DTCYID/CORP/US/12345678
+Note30:Field97A:BrokerInternalAccountNumber
+Inputandoutput.MandatoryorOptional(SWIFT).
+Field97Aindicatesthebroker/dealerinternalaccountnumber,upto12characters.
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 285
+
+---
+
+## Page 286
+
+Format :4!c//35x
+<SAFE>//<TradeSuiteID>
+SAFE SafekeepingAccount
+Example :95S::SAFE//123456789012
+NotesforsubsequenceE3–Amounts
+SubsequenceE3containsinformationaboutamountssuchasprincipal,interest,commissions,andtaxes.
+Itismandatory.
+Note
+FormoreinformationaboutISOcountryandcurrencycodes,seeInput/OutputInformation.
+Note31:Field19A:PrincipalAmount
+Field19AcontainstheISOcurrencycode,andtradeamount(Share/FacevaluetimesPrice).The
+TradeSuiteIDservicesupportsupto14digitsor13digitsandonecomma.
+Format :4!c//3!a15d
+<DEAL>//<currencycodeandprincipalamount>
+DEAL PrincipalAmount
+Example :19A::DEAL//USD12345678900,12
+Note32:Field19A:Interest
+Field19Aspecifiestheinterestaccruedonabondthatisaccountedforinitssale.TheTradeSuiteID
+servicesupportsupto11digitsor10digitsandonecomma.
+Format :4!c//3!a15d
+<ACRU>//<currencycodeandinterest>
+ACRU Interest
+Example :19A::ACRU//USD12345678,00
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 286
+
+---
+
+## Page 287
+
+Note33:Field19A:Commission
+Field19Aindicatestheamountforthebrokercommission,interest,SECfees,registrationfees,and
+shippingfees,countrytax,othercharges,principalamount,ornetamount,dependingonthequalifier.The
+TradeSuiteIDservicesupportsuptoninedigitsoreightdigitsandonecomma.
+Format :4!c//3!a15d
+<EXEC>//<currencycodeandcommission>
+EXEC BrokerCommission
+Example :19A::EXEC//USD12345678,
+Note34:Field19A:ResearchAmount
+Field19Aspecifiesthechargeorcommissionpaidbytheinvestortoadistributor/intermediaryorother
+serviceproviderfortheprovisionoffinancialresearch(SWIFTStandardsMT2018changesforMIFIDII
+initiatives).TheLOCLqualifierusedintheoriginalLocalTaxfieldhasbeenreplacedwiththeRSCH
+qualifierintheResearchAmountfield.
+Format :4!c//[N]3!a15d
+<RSCH>//[N]<researchamount>
+CHAR ResearchAmount
+Examples :19A::RSCH//USD1234567,12
+:19A::RSCH//NUSD1234567,12
+Note35:Field19A:CountryTax
+Field19AspecifiestheISOcurrencycodeandthecountry,national,orfederaltaxthatappliestothis
+transaction.ThisfieldisalsousedforAmericandepositaryreceipt([[ADR]])foreigntaxes.TheTradeSuiteID
+servicesupportsuptoninedigitsoreightdigitsandonecomma.
+Format :4!c//3!a15d
+<COUN>//<currencycodeandcountrytax>
+COUN Country/NationalTax
+Example :19A::COUN//USD123456,12
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 287
+
+---
+
+## Page 288
+
+Note36:Field19A:SECFees/RegistrationandShippingFees
+Field19AspecifiestheISOcurrencycodeandregulatoryfees,suchassecuritiesfees,exchangefees,
+registrationfees,andshippingamounts.TheTradeSuiteIDservicesupportsuptoninedigitsoreight
+digitsandonecomma.
+Format :4!c//3!a15d
+<REGF>//<currencycodeandfees>
+REGF RegulatoryFees
+Example :19A::REGF//USD123456,12
+Note37:Field19A:OtherCharges
+Field19AcontainstheISOcurrencycodeandthesumofanychargesthatapplytothistransactionfor
+whichnootherfieldisdesignated.TheTradeSuiteIDservicesupportsuptoninedigitsoreightdigitsand
+onecomma.
+Format :4!c//3!a15d
+<OTHR>//<currencycodeandothercharges>
+OTHR OtherCharges
+Example :19A::OTHR//USD123456,12
+Note38:Field19A:NetAmount
+Field19AcontainstheISOcurrencycodeandthecashsettlementamountthatisequaltotheprincipal
+amountplusorminusanycommissions,fees,taxes,orothercharges.TheTradeSuiteIDservicesupports
+upto14digitsor13digitsandonecomma.
+Format :4!c//3!a15d
+<SETT>//<currencycodeandnetamount>
+SETT NetAmount
+Example :19A::SETT//USD12345678900,12
+NotesforSequenceF–otherparty
+SequenceFcontainsinformationaboutotherpartiesandismandatory.
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 288
+
+---
+
+## Page 289
+
+Note39:Field95Ror95P:MessageRecipient
+Field95Ror95Pindicatesthedetailmessagerecipient.
+Format :4!c/8c/34x
+<MERE>/<DTCYID>/<TradeSuiteID>
+:4!a2!a2!c[3!c]
+<MERE>/<DTCYID>/<BIC>
+MERE MessageRecipient
+Example :95R::MERE/DTCYID/12345678
+-or-
+:95P::MERE//GBXVUS37XXX
+Note40:Field95R:PrimaryInstitutionIDorField95P:InstitutionBIC
+Field95R:PrimaryInstitutionID
+Field95Rindicatestheprimaryinvestmentmanageridentifier.
+Format :4!c/8c/34x
+<MEOR>/<DTCYID>/<primaryinstitutionTradeSuiteID>
+MEOR InstitutionTradeSuiteID
+Example :95R::MEOR/DTCYID/12345678
+Field95P:InstitutionBIC
+Field95PindicatestheinvestmentmanagerBIC.
+Format :4!c//4!a2!a2!c[3!c]
+<MEOR>//<institutionBIC>
+MEOR InstitutionBIC
+Example :95P::MEOR//RGHJUS61XXX
+Note41:Field95S:AlternateIDNumber:InstitutionDTCID
+Field95SindicatesthealternateTradeSuiteIDnumberoftheinvestmentmanager.
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 289
+
+---
+
+## Page 290
+
+Format :4!c/[8c]/4!c/2!a/30x
+<ALTE>/<DTCYID>/<CORP>/<US>/<TradeSuiteID>
+ALTE AlternateIdentifier
+Example :95S::ALTE/DTCYID/CORP/US/12345678
+Note42:Field97A:InstitutionInternalAccountNumber
+Field97Aindicatestheinstitutioninternalaccountnumber,upto16characters.
+Format :4!c//35x
+<SAFE>//<institutionalinternalaccount>
+SAFE InstitutionalInternalAccount
+Example :97A::SAFE//ABC4567890123456
+TradeSuiteID-SWIFTIntegrationGuide
+5.MT541- ReceiveSecuritiesAgainstPaymentMessages 290
+
+---
+
+## Page 291
+
+6.MT543- DELIVERSECURITIESAGAINST
+PAYMENTMESSAGES
+ThissectiondescribestheSWIFTMT543deliversecuritiesagainstpaymentmessages.Usethese
+messagesto:
+l Instructthedeliveryoffinancialinstrumentsagainstpaymenttoaspecifiedparty.
+l RequestthecancellationofapreviousDeliverAgainstPaymentinstruction.
+l NotifyDTCCofaforthcomingDeliverAgainstPaymentInstruction.
+Usethelinkagessequencetolinktheinstructiontoothersettlementinstructions,forexampleturnaround,
+back-to-back,orothertransactions,suchasaforeignexchangedeal.
+FormatSpecifications
+ThissectionexplainstheformatspecificationsforMT543deliversecurityagainstpaymentmessages.
+Start-of-BlockandEnd-of-BlockFields
+TheSWIFTTradeInitiationandConfirmation(TIC3)messagescontainaseriesoflinkingblocks
+containingrelatedinformation.Theseblocks,calledsequencesandsimilartomathematicalequations,
+haveanopeningbracket(16R:Start-of-Block)andaclosingbracket(16S:End-of-Block).Tomaintaintheir
+businessrelationship,grouprelatedinformationbysequencesandspecificrepetitivefields.Thevalues
+assignedtotheblockfieldidentifythetypesofinformationgroupedwithintheblock,asshowninTable6.1.
+Sequence Description Value
+A Mandatorygeneralinformation. GENL
+>>A1 Optionallinkedtransactions. LINK
+B Mandatoryandoptionaltradedetails. TRADDET
+B1 Mandatoryfinancialinstrumentattributes. FIA
+C Financialinstrumentaccount. FIAC
+E Mandatorysettlementdetails. SETDET
+Table6.1Sequences
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 291
+
+---
+
+## Page 292
+
+Sequence Description Value
+>>E1 Mandatorysettlementparties. SETPRTY
+>>E3 Amounts. AMT
+>>F Otherparties. OTHRPRTY
+Table6.1Sequences
+DTCCforwardsorreturnsfieldsreceivedoninput,whichcanresultinsomeconversionsandenrichment.
+Thetablesinthissectionincludesomesymbolsandkeylettersthatindicatesequenceandfieldconditions
+orrules.Herearethedescriptionsofthesymbolsandkeyletters.
+l M=Mandatory
+l O=Optional
+l C=Conditional
+l –=Nocorrespondingfield
+l >> =Repetitivesequencethatrequiresastart-of-blockandend-of-blockfieldtags
+l >=Repetitivefieldwithinasequence
+Note
+Whenthemandatory(M),optional(O),orconditional(C)specificationappearsintheSWIFTorDTCC
+columnsforbothinputandoutputmessages,thespecificationappliesonlytoinputmessages.
+SequenceA–GeneralInformation
+Inputandoutput.Mandatory.
+Table6.2showsthesequenceAmandatorygeneralinformationforMT543inputandoutputmessages.
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+(A)NewMessage
+16R GENL 4c StartofGeneralInform-
+ationBlock
+M – Both SeeNote1on
+page 305.
+Table6.2GeneralInformation(Mandatory)
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 292
+
+---
+
+## Page 293
+
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+20C SEME//9d
+SEME//16x
+:4!c//16x DTCControlNumber
+Sender’sReference
+Number
+M M Both SeeNote2on
+page 306.
+23G NEWM 4!c TransactionType M M Both SeeNote3on
+page 306.
+(A)Cancellation
+16R GENL 4c StartofCancellation
+Block
+M – Both SeeNote1on
+page 305.
+20C SEME//9d :4!c//16x DTCControlNumber M M Both SeeNote2on
+page 306.
+23G CANC 4!c TransactionType M M Both SeeNote3on
+page 306.
+22F TRTR/DTCY/C
+nnn
+:4!c/[8c]/4!c TransactionType
+Indicator
+CancellationReason
+Code
+M M Both SeeNote4on
+page 307.
+Table6.2GeneralInformation(Mandatory)
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 293
+
+---
+
+## Page 294
+
+SubsequenceA1–LinkedTransactions
+Inputandoutput.Optional.
+Table6.3showstheoptionalrepetitivesubsequenceA1linkagesforMT543inputandoutputmessages.
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+>>(A1)CommonReferenceBlock(Mandatory—[[DTCC]])
+16R LINK 4c StartofLinkageBlock M – Both SeeNote1on
+page 305.
+20C COMM//12x
+or
+PREV//12x
+:4!c//16x InstitutionBlock
+ReferenceID
+M M Both SeeNote5on
+page 308.
+16S LINK 4c EndofLinkageBlock M – Both SeeNote1on
+page 305.
+>>(A1)CommonReferenceBlock—Detail(Mandatory—[[DTCC]])
+16R LINK 4c StartofLinkageBlock M – Both SeeNote1on
+page 305.
+20C COMM//12x
+PREV//12x
+:4!c//16x InstitutionDetail
+ReferenceID
+M M Both SeeNote6
+on
+page 308.
+16S LINK 4c EndofLinkageBlock M – Both SeeNote1on
+page 305.
+>>(A1)InstitutionOrderRoutingBlock(Optional)
+16R LINK 4c StartofLinkageBlock M – Both SeeNote1on
+page 305.
+22F LINK/DTCY/IORN:4!c/[8c]/4!cInstitutionOrderRouting
+NumberCode
+O – Both SeeNote
+6on
+page 308.
+20C RELA//12x :4!c//16x InstitutionDetailRefer-
+enceID
+M M Both SeeNote7on
+page 308.
+16S LINK 4c EndofLinkageBlock M – Both SeeNote1on
+page 305.
+MandatorySequenceAGeneralInformation(continued)
+16S GENL 4c EndofGeneralDetails
+Block
+M – Both SeeNote1on
+page 305.
+Table6.3SubsequenceA1–LinkedTransactions
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 294
+
+---
+
+## Page 295
+
+SequenceB–TradeDetails
+Inputandoutput.Mandatory.
+Table6.4showsthesequenceBmandatorytradedetailsforMT543inputandoutputmessages.
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+16R TRADDET 7c StartofTradeDetails
+Block
+M – Both SeeNote
+1on
+page 305.
+98A
+98B
+SETT//YYYYMMDD
+SETT//WISS
+:4!c//8!n
+:4!c/[8c]/4!c
+SettlementDate
+SettlementType
+O M Both SeeNote
+8on
+page 309.
+98A TRAD//YYYYMMDD:4!c/8!n TradeDate M M Both SeeNote
+9on
+page 310.
+90A
+90B
+DEAL/12d
+DEAL/3x12d
+:4!c//4!c/15d
+:4!c//4!c/3!a15d
+AveragePrice
+(formatdependent
+onthesecuritytype)
+M M Both SeeNote
+10on
+page 310.
+35B ISIN/12a
+Oneormoreofthe
+followingqualifiers:
+l /2!a/9x
+l /TS/31x
+l /XX/31x
+[ISIN1!e12!c]
+[4*35x]
+[4*35x]
+SecurityIDnumber
+Non-security
+identifierformat:
+l country
+code
+l ticketsym-
+bol
+l proprietary
+schemeor
+security
+description
+M M/O Both SeeNote
+11on
+page 311.
+Table6.4SequenceB–TradeDetails(Mandatory)
+SubsequenceB1–FinancialInstrumentAttributes
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 295
+
+---
+
+## Page 296
+
+Inputandoutput.Mandatory.
+Table6.5showsthesequenceBmandatoryfinancialinstrumentattributesforMT543inputandoutput
+messages.
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] InputOut-
+put
+Notes
+16R FIA 3c StartofFinancialInstru-
+mentBlock
+M – Both SeeNote1
+onpage 305.
+12A CLAS/ISIT/5x :4!c[8c]/30x SecurityTypeor
+ClassificationTypes
+Both SeeNote12
+onpage 313.
+16S FIA 3c EndofFinancialInstru-
+mentBlock
+M – Both SeeNote1
+onpage 305.
+Table6.5SubsequenceB1-financialinstrumentattributes(mandatory)
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 296
+
+---
+
+## Page 297
+
+SequenceB–TradeDetails(Continued)
+Inputandoutput.Optional.
+Table6.6showsthesequenceBoptionaltradedetailsforMT543inputandoutputmessages.
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+22F COSB//PERU
+COSB//FLAT
+COSB//PERC
+:4!c/[8c]/4!cAllocationCom-
+missionTypeIndic-
+ator
+O O Both SeeNote13
+on
+page 316.
+22F TTCO/DTCY/CAMI:4!c/[8c]/4!cCancellationAfter
+MatchingIndicator
+O O Both SeeNote14
+on
+page 316.
+16S TRADDET 7c EndofTradeDetail
+Block
+M – Both SeeNote1
+on
+page 305.
+Table6.6SequenceB-TradeDetails(Optional)
+SequenceC–FinancialInstrumentAccount
+Inputandoutput.Mandatory.
+Table6.7showsthesequenceCmandatoryfinancialinstrumentaccountdetailsforMT543inputand
+outputmessages.
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+16R FIAC 4c StartofFinancial
+Instrument
+AccountBlock
+M – Both SeeNote1on
+page 305.
+36B SETT//FAMT
+SETT//UNIT
+:4!c//4!c/15dShare/FaceValue M M Both SeeNote15on
+page 317.
+Table6.7SequenceC-FinancialInstrumentAccountDetails
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 297
+
+---
+
+## Page 298
+
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+97A SAFE//35x 4!c//35x Safekeeping
+Account-Agent
+InternalAccount
+Number
+M – Both SeeNote16on
+page 317.
+16S FIAC 4c EndofFinancial
+Instrument
+AccountBlock
+M – Both SeeNote1on
+page 305.
+Table6.7SequenceC-FinancialInstrumentAccountDetails
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 298
+
+---
+
+## Page 299
+
+SequenceE–SettlementDetails
+Inputandoutput.Mandatory.
+Table6.8showsthesequenceEmandatorysettlementdetailsforMT543inputandoutputmessages.
+Field
+Tag
+DTCCValue SWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+16R SETDET 6c StartofSettlementDetails
+Block
+M – Both SeeNote1
+on
+page 305.
+22F STCO//PHYS :4!c//4!c PSETISOCountryCode
+Indicator
+O – Both SeeNote17
+on
+page 318.
+22F STCO//SPST :4!c//4!c SplitCurrency
+SettlementIndicator
+O O Both SeeNote18
+on
+page 318.
+22F SETR//TRAD
+SETR//REPU
+:4!c//4!c TradeIndicator M – Both SeeNote19
+on
+page 318.
+22F TTCO/DTCY/CAMI:4!c/[8c]/4!cCancellationAfterAffirm-
+ation/MatchingIndicator
+O – Both SeeNote20
+on
+page 319.
+Table6.8SequenceE-SettlementDetails(Mandatory)
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 299
+
+---
+
+## Page 300
+
+SubsequenceE1–SettlementParties
+Inputandoutput.Mandatory.
+Table6.9showsthesubsequenceE1mandatorysettlementpartiesforMT543inputandoutput
+messages.
+Field
+Tag
+DTCCValue SWIFT
+Format
+Field
+Name
+SWIFT [[DTCC]] Input
+Output
+Notes
+>>(E1)SettlementLocationBlock(mandatory)
+16R SETPRTY 7c StartofSet-
+tlementLoca-
+tionBlock
+M – Both SeeNote1
+on
+page 305.
+95P
+95C
+PSET/DTCYUS33xxx
+PSET/GB
+:4!a2!a2!c[3!c]
+:4!c//2!a
+[[settlement]]
+Location
+M – Both SeeNote
+21on
+page 319.
+16S SETPRTY 7c EndofSet-
+tlementLoca-
+tionBlock
+M – Both SeeNote1
+on
+page 305.
+>>(E1)AgentIDBlock(mandatory)
+16R SETPRTY 7c StartofAgent
+Block
+M – Both SeeNote1
+on
+page 305.
+95R
+95P
+RECU/DTCYID/8n
+RECU//11xx
+:4!c/a/[8c]/34x
+:4!c//4!a2!a2!c
+[3!c]
+AgentID
+AgentBIC
+M O Both SeeNote
+22on
+page 320.
+95S ALTE/DTCYID/CORP/US/8n:4!c/a/
+[8c]/4!c/2!a/30x
+AlternateID
+Numberor
+AgentDTC
+IDNumber
+O O Both SeeNote
+23on
+page 320.
+97A SAFE//16x :4!c//35x Agent
+Internal
+AccountNum-
+ber
+M/O – Both SeeNote
+24on
+page 320.
+16S SETPRTY 7c EndofAgent
+Block
+M – Both SeeNote1
+on
+page 305.
+Table6.9SubsequenceE1-SettlementParties(Mandatory)
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 300
+
+---
+
+## Page 301
+
+Field
+Tag
+DTCCValue SWIFT
+Format
+Field
+Name
+SWIFT [[DTCC]] Input
+Output
+Notes
+>>(E1)ClearingBrokerBlock(mandatory)
+16R SETPRTY 7c StartofClear-
+ingBroker
+Block
+M – Both SeeNote1
+on
+page 305.
+95R
+95P
+REAG/DTCYID/8n
+RECU//11x
+:4!c/a/[8c]/34x
+:4!c//4!a2!a2!c
+[3!c]
+Clearing
+BrokerID
+Clearing
+BrokerBIC
+M – Both SeeNote
+25on
+page 321.
+95S ALTE/DTCYID/CORP/US/8n:4!c/
+[8c]/4!c/2!a/30x
+Alternate
+Clearing
+BrokerDTC
+[[ID]]
+O – Both SeeNote
+26on
+page 321.
+97A SAFE//16x :4!c//35x Clearing
+[[Broker]]
+Internal
+AccountNum-
+ber
+O – Both SeeNote
+27on
+page 321.
+16S SETPRTY 7c EndofClear-
+ingBroker
+Block
+M – Both SeeNote1
+on
+page 305.
+>>(E1)ExecutingBrokerBlock(mandatory)
+16R SETPRTY 7c Startof
+Executing
+BrokerBlock
+M – Both SeeNote1
+on
+page 305.
+95R
+95P
+BUYR/DTCYID/8n
+BUYR//11x
+:4!c/8c/34x
+:4!c//4!a2!a2!c
+[3!c]
+Primary
+Executing
+[[Broker]]
+Number
+Executing
+BrokerBIC
+M M Both SeeNote
+28on
+page 322.
+95S ALTE/DTCYID/CORP/US/8n:4!c/
+[8c]/4!c/2!a/30x
+Alternate
+Executing
+BrokerNum-
+berorDTCID
+Number
+O O Both SeeNote
+29on
+page 322.
+Table6.9SubsequenceE1-SettlementParties(Mandatory)
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 301
+
+---
+
+## Page 302
+
+Field
+Tag
+DTCCValue SWIFT
+Format
+Field
+Name
+SWIFT [[DTCC]] Input
+Output
+Notes
+97A SAFE//16x :4!c//35x [[Broker]]
+Internal
+AccountNum-
+ber
+O – Both SeeNote
+30on
+page 322.
+16S SETPRTY 7c Endof
+Executing
+BrokerBlock
+M – Both SeeNote1
+on
+page 305.
+Table6.9SubsequenceE1-SettlementParties(Mandatory)
+SubsequenceE3–Amounts
+Inputandoutput.Mandatory.
+Table6.10showsthesubsequenceE3mandatoryamountsforMT543inputandoutputmessages.
+Field
+Tag
+DTCCValueSWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+>>(E3)PrincipalAmountBlock(Optional)
+16R AMT 3c StartofPrincipal
+AmountBlock
+M – Both SeeNote1on
+page 305.
+19A DEAL//iso14d:4!c//3!a15dPrincipalAmount O O Both SeeNote31
+onpage 323.
+16S AMT 3c EndofPrincipal
+AmountBlock
+M – Both SeeNote1on
+page 305.
+>>(E3)InterestBlock(Optional)
+16R AMT 3c StartofInterest
+Block
+M – Both SeeNote1on
+page 305.
+19A ACRU//iso11d:4!c//3!a15dInterest O O Both SeeNote32
+onpage 323.
+16S AMT 3c EndofInterest
+Block
+M – Both SeeNote1on
+page 305.
+>>(E3)CommissionBlock(mandatory)
+16R AMT 3c StartofCom-
+missionBlock
+O M Both SeeNote1on
+page 305.
+Table6.10SubsequenceE3-Amounts(Mandatory)
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 302
+
+---
+
+## Page 303
+
+Field
+Tag
+DTCCValueSWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+19A EXEC//iso9d :4!c//3!a15d Commission M M Both SeeNote33
+onpage 323.
+16S AMT 3c EndofCommission
+Block
+M M Both SeeNote1on
+page 305.
+>>(E3)ResearchAmountBlock(Optional)
+16R AMT 3c StartofResearch
+AmountBlock
+M – Both SeeNote1on
+page 305.
+19A RSCH//iso9d :4!c//3!a15dResearchAmount O O Both SeeNote34
+onpage 324.
+16S AMT 3c EndofResearch
+AmountBlock
+M – Both SeeNote1on
+page 305.
+>>(E3)CountryTaxBlock(Optional)
+16R AMT 3c StartofCountryTax
+Block
+M – Both SeeNote1on
+page 305.
+19A COUN//iso9d :4!c//3!a15dCountryTax O O Both SeeNote35
+onpage 325.
+16S AMT 3c EndofCountryTax
+Block
+M – Both SeeNote1on
+page 305.
+>>(E3)FeesBlock(Optional)
+16R AMT 3c StartofFeesBlock M – Both SeeNote1on
+page 305.
+19A REGF//iso9d :4!c//3!a15dSECFees/Re-
+gistrationandShip-
+pingFees
+O O Both SeeNote36
+onpage 325.
+16S AMT 3c EndofFeesBlock M – Both SeeNote1on
+page 305.
+>>(E3)OtherChargesBlock(Optional)
+16R AMT 3c StartofOther
+ChargesBlock
+M – Both SeeNote1on
+page 305.
+19A OTHR//iso9d :4!c//3!a15dOtherCharges O O Both SeeNote37
+onpage 325.
+16S AMT 3c EndofOther
+ChargesBlock
+M – Both SeeNote1on
+page 305.
+>>(E3)NetAmountBlock(mandatory)
+16R AMT 3c StartofNetAmount
+Block
+M – Both SeeNote1on
+page 305.
+Table6.10SubsequenceE3-Amounts(Mandatory)
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 303
+
+---
+
+## Page 304
+
+Field
+Tag
+DTCCValueSWIFT
+Format
+FieldName SWIFT [[DTCC]] Input
+Output
+Notes
+19A SETT//iso14d:4!c//3!a15dNetAmount M M Both SeeNote38
+onpage 325.
+MandatorySequenceE- settlementdetails(continued)
+16S SETDET 6c EndofSettlement
+DetailBlock
+M – Both SeeNote1on
+thenextpage.
+Table6.10SubsequenceE3-Amounts(Mandatory)
+SequenceF–otherparty
+Inputandoutput.Mandatory.
+Table6.11showsthesequenceFmandatoryotherpartydetailsforMT543inputandoutputmessages.
+Field
+Tag
+DTCCValue SWIFT
+Format
+Field
+Name
+SWIFT [[DTCC]] Input
+Output
+Notes
+>>(F)MessageReceiptBlock(mandatory)
+16R OTHRPRTY 8c Startof
+OtherParty
+Block
+M – Both SeeNote
+1onthe
+nextpage.
+95R
+or
+95P
+MERE/DTCYID/8n
+or
+MERE//11x
+:4!c/8c/34x
+or
+:4!c//4!a2!a2!c
+[3!c]
+Message
+Recipient
+M – Both SeeNote
+39on
+page 326.
+16S OTHRPRTY 8c EndofOther
+PartyBlock
+M – Both SeeNote
+1onthe
+nextpage.
+>>(F)InstitutionBlock(mandatory)
+16R OTHRPRTY 8c Startof
+OtherParty
+Block
+M – Both SeeNote
+1onthe
+nextpage.
+Table6.11SequenceF-otherpartydetails(mandatory)
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 304
+
+---
+
+## Page 305
+
+Field
+Tag
+DTCCValue SWIFT
+Format
+Field
+Name
+SWIFT [[DTCC]] Input
+Output
+Notes
+95R
+95P
+MEOR/DTCYID/8n
+MEOR//11x
+:4!c/8c/34x
+:4!c//4!a2!a2!c
+[3!c]
+Primary
+Institution
+IDNumber
+Institution
+BIC
+M – Both SeeNote
+40on
+page 326.
+95S ALTE/DTCYID/CORP/US/8n:4!c/
+[8c]/4!c/2!a/30x
+AlternateID
+NumberInsti-
+tutionDTC
+[[ID]]
+O O Both SeeNote
+41on
+page 327.
+97A SAFE//16x :4!c//35x Institution
+Internal
+Account
+Number
+O – Both SeeNote
+42on
+page 327.
+16S OTHRPRTY 8c EndofOther
+PartyBlock
+M – Both SeeNote
+1below.
+Table6.11SequenceF-otherpartydetails(mandatory)
+FieldSpecificationsforMT543Messages
+ThissectioncontainsthefieldspecificationsusedinMT543deliversecuritiesagainstpaymentmessages.
+NoteforStartandEndofBlockDelimiters
+EachsequenceandsubsequenceopenswithaStart-of-BlockfieldandcloseswithanEnd-of-Blockfieldto
+delimittheinformation.Acarriagereturn/linefeed(CRLF)delimitseachSWIFTfield/line.Formore
+information,seeStart-of-BlockandEnd-of-BlockFields
+Note1:fields16Rand16S:Start-of-BlockorEnd-of-Block
+Hereisthestart-of-blockandend-of-blockformattoopenandcloseeachsequenceandsubsequence.
+Format 4c
+Example :16R:GENL
+:16S:GENL
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 305
+
+---
+
+## Page 306
+
+NotesforSequenceA–GeneralInformation
+SequenceAcontainsmandatorygeneraluserinformation.
+Note2:Field20C:DTCControlNumberorSender’sReferenceNumber
+ThetypeofreferencenumberinputintheSenderReferenceNumberfielddependsonwhetherthe
+messageisneworacancellation.
+NewMessage
+Newmessagescontaineitheranine-digitDTCcontrolnumberoramaximum16charactersender
+referencenumber.
+Format :4!c//16x
+<SEME>//<senderreferenceid>
+SEME SenderReferenceNumber
+Example :20C::SEME//SENDREF890123456
+Cancellation
+Cancellationmessagescontainanine-digitDTCcontrolnumber.
+Format :4!c//16x
+<SEME>//<DTCcontrolnumber>
+SEME SenderReferenceNumber
+Example :20C::SEME//123456789
+Note3:Field23G:TransactionType
+Field23Gindicatesthefunctionofthemessage.Themessagecanbeanewconfirmationorabroker
+cancellationofapreviouslysentMT515.
+Format 4!c
+<messagetype>
+Example :23G:NEWM
+:23G:CANC
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 306
+
+---
+
+## Page 307
+
+Table6.12showsthetransactiontypesusedinfield23G.
+Type Description
+NEWM Newmessageorresubmission.
+CANC Requesttocancelapreviouslysentconfirmation.TheLinked
+Referencefieldin20Cmustcontaintheoriginalbrokerconfirm
+numberforcancellationsandrejections.Cancellationmessages
+mustcontainallmandatoryfields.
+Table6.12TransactionTypes
+Note4:Field22F:CancellationReasonCodeorTradeTransactionType
+Field22Fusercodesandvaluesdependonthemessagetypeenteredinfield23G.Cancellationreason
+codesforcommoncancellationscontainthereasontheinvestmentmanageriscancelingaprior
+allocation.Formoreinformation,seeErrorCodes
+Format :4!c/[8c]/4!c
+<TRTR>/<DTCY>/<valuedependenton messagetype>
+TRTR Tradetransmissiontype
+Example :22F::TRTR/DTCY/C001
+:22F::TRTR/DTCY/S001
+Table6.13showsthemessagetypevaluesusedinfield22F.
+Field
+23G
+Qualifier User
+Code
+Value Description
+NEWM TRTR DTCY NEWM Newinstitutioninstructionmessage.
+NEWM TRTR DTCY REPL DTCerrorreplacementIImessage.
+NEWM TRTR DTCY SUBS SubstitutionofpreviousIImessage.
+CANC TRTR DTCY l Cnnn
+l Snnn
+l Investmentmanager
+cancellationofthe
+institutioninstruction
+commonrecord.
+l Investmentmanager
+substitutionoftheinsti-
+tutioninstruction
+details.
+Table6.13MessageTypeValues
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 307
+
+---
+
+## Page 308
+
+SubsequenceA1–LinkedTransactions
+ThissectioncontainsthenotesaboutthelinkedtransactionsforsequenceA1.Formoreinformation,see
+ErrorCodes
+Note5:Field20C:InstitutionBlockReferenceID
+Field20Cspecifiesthereferencenumberassignedtotheoriginalmessage.
+Format :4!c//16x
+<qualifier>//<referenceID>
+Example :20C::COMM//123456789012
+:20C::PREV//123456789012
+Table6.14showsthemessagetypevaluesusedinfield22F.
+MessageType Qualifier LengthofreferenceID
+New COMM 12characters
+Cancellation PREV 12characters
+Table6.14Messagetypevalues
+Note6:Field22F:InstitutionOrderRoutingNumber
+Field22F,anoptionalfield,enablestheinvestmentmanagertoidentifyorders,routetheordertospecific
+vendorterminals,orboth.Ifthisfieldisblankorcontainsspaces,thissequence(link)isnotincludedinthe
+output.
+Format :4!c/[8c]/4!c
+<LINK>/<DTCY>/<institutionorderroutingnumber>
+Example :22F::TRTR/DTCY/IORN
+Note7:Field20C:InstitutionDetailReferenceID
+Field20Cspecifiesthereferencenumberassignedtotheoriginalmessage.
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 308
+
+---
+
+## Page 309
+
+Format :4!c//16x
+<RELA>//<institutiondetailreferenceID>
+RELA Referencenumber
+Example :20C::RELA//123456789012
+NotesforSequenceB–TradeDetails
+Note8:Field98A:SettlementDateorfield98B:SettlementType
+Field98A:SettlementDate
+Field98Acontainsthesettlementdateorsettlementtypeofthetrade.RegularWaytradesrequirethe
+settlementdate.ForWhen-Issuedtrades,DTCCdoesnotusethesettlementdate,butstillusesthe
+settlementtype.
+Format :4!c//8!n
+<SETT>//<settlementdate>
+SETT SettlementDate
+Example :98A::20110704
+Field98B:SettlementType
+Field98Bcontainsthesettlementdateorsettlementtypeofthetrade.Usewhentradesdonothavea
+settlementdatein98Aand,therefore,requireaWISSorWhen-Issuedcode.
+Format :4!c//[8c]//4!c
+<SETT>//<settlementtype>
+SETT SettlementType
+Example :98A::SETT//WISS
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 309
+
+---
+
+## Page 310
+
+Note9:Field98A:TradeDate
+Field98Acontainsthetradedate.
+Format 4!c//8!n
+<TRAD>//<tradedate>
+TRAD TradeDate
+Example :98A::TRAD//20110704
+Note10:Field90Aor90B:AveragePrice
+Field90Aor90Bcontainstheaveragepriceforthetrade.Thecurrencycode(90B)isbasedonthe
+securitytypesshowninTable6.15.Otherwise,theformatiswithoutthecurrencycode(90A).
+Format :4!c/15d
+:4!c/3!a15d
+<DEAL>//<AveragePrice>
+DEAL AveragePrice
+Example :90A://DEAL/10000,00
+:90B://DEAL/USD10000,00
+Table6.15showsthesecuritytypesusedinfield90B.
+Type Description
+SHS Equities/[[shares]]
+OPC Optionscontracts
+[[ADR]] Americandepositoryreceipts
+SHP Equities-preferredshares
+WTS [[Warrants]]
+MSC Miscellaneous
+PRC Premiumcontracts
+Table6.15SecurityTypes
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 310
+
+---
+
+## Page 311
+
+Type Description
+PRS Premiumshares
+RTE Rentes
+RTS Rights
+CER Representativecertificates
+UNT Units
+CSH UScashwire
+CS1 UScashwirenumber1
+CS2 UScashwirenumber2
+CS3 UScashwirenumber3
+CS4 UScashwirenumber4
+CS5 UScashwirenumber5
+OPS Optionshares
+Note11:Field35B:SecurityIdentifier
+Field35Bcontainstheidentificationnumberassignedtothetradedsecurity.EnteravalidCUSIP,SEDOL,
+orISINnumberwhenthesecuritynumberingsystemisUS([[CUSIP]]),GB(SEDOL),orIS(ISIN)
+respectively.
+ISINidentifierscanusetheISIN-formattedfield.Lines1–4ofthenarrativefieldcontainsallnon-ISIN
+identifiers.Whenusinganon-ISINnumber,ensurethattheISOcountrycodeexists,in/2!a/format.Use
+theNarrativefieldasasecondsecurityidentifierwithitsISOcode(/2!a/);however,DTCCdoesnot
+validateit.IntheNarrativefield,useabilaterallyagreeduponorproprietarynumberingscheme(/XX/).
+X(02)=ISINcountrycodeforISINonly;otherwise,spaces.
+X(09)=SecurityNumber:Ifthesecurityidentifierislessthan9bytesinlength,itmustbeleft-justified,
+space-filledtotheright.
+InvalidsecurityidentifierwhenthesecuritynumberingsystemisnotCUSIP(U.S.),SEDOL(GB),orISIN
+(IS).
+SecurityNumberTranslation:Oninput,whenusingsecuritytranslation,thefirstlinecontainsthe
+securitynumberinputbytheuser.Onoutput,thefirsttwolinescontainthefollowingsecuritynumber
+types:
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 311
+
+---
+
+## Page 312
+
+Line1 Convertedsecuritynumber.
+Line2 Whenline1containsatranslatednumber,line2containstheOriginalSecurity
+Numberusedoninput.
+Format [ISIN1!e12!c]or[/2!a/9!x]
+[4*35x]
+<isinor nationalsecuritynumberingscheme><narrative>
+Example—ISIN :35B:ISINAN620678910Z
+DESCRIPTION
+Example—SEDOL :35B:/GB/SLP2345
+DESCRIPTION
+Example—[[CUSIP]] :35B:/US/OACK56789
+DESCRIPTION
+Example—User-Ori-
+ented
+:35B:/XX/GTH123
+DESCRIPTION
+Table6.16showsthecodewordusedinfield35B.FortheISOcountrycodes,seeInput/Output
+Information.
+CodeWord Description
+/2!a/10!x ISOtwo-digitcountrycode,followedbythenationalnumbering
+scheme,forexample,[[CUSIP]].
+/TS/31x Tickersymbol.
+/XX/31x Proprietaryschemeorsecuritydescription.
+Table6.16Codewords
+Table6.17showsthenationalnumberingschemesusedinfield35B.
+NationalNum-
+beringSchemes
+Description
+AT Wertpapierkennummer(Austria)
+AU Australia
+BE SecretariatdesValeursMobilieres-SVM(Belgium)
+BR Brazil
+CE CEDEL
+CH Valorennummer(Switzerland)
+DE Wertpapierkennummer(Germany)
+DK Fondskode(Denmark)
+Table6.17Nationalnumberingschemes
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 312
+
+---
+
+## Page 313
+
+NationalNum-
+beringSchemes
+Description
+ES Spain
+ES Euroclear
+FR SICOVAM(France)
+GB SEDOL(UnitedKingdom)
+IE Ireland
+IS ISIN
+IT CODICEUIC(Italy)
+JP QUICK(Japan)
+LU Luxembourg
+MX Mexico
+NL Netherlands
+NO Norway
+RU Reuters
+SE Sweden
+US [[CUSIP]](UnitedStates)
+XS CommonCode(CEDEL/Euroclear)
+99 UserOriginated
+Table6.17Nationalnumberingschemes
+Note
+Whenusingauser-originated,bilaterallyagreedupon,orproprietarynumberingscheme(/XX/)intheNar-
+rativefield,partiesmustagreeonthedefinitionofthisuser-orientedfield.
+NotesforsubsequenceB1–FinancialInstrumentAttributes
+ThissectioncontainsthenotesaboutthefinancialinstrumentattributesdetailsforsubsequenceB1.
+Note12:Field12A:SecurityTypeorClassificationTypes
+Field12Aindicatesavalidsecuritytypevalue.Matchingnon-[[DTCC]]-eligiblesecuritiesrequiresavalue
+otherthanspaces.UsethemiscellaneousMSCcodeonlyforallocationoffinancialinstrumentsthatare
+notsecurities(thatis,aforeignexchangetrade).
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 313
+
+---
+
+## Page 314
+
+Format :4!c/[8c]/30x
+<CLAS>/<ISIT>/<securitytype>
+CLAS SecurityorClassification
+Example 12A::CLAS/ISIT/CS
+Table6.18showsthesecuritytypesusedinfield12A.
+SecurityType Description
+[[ABS]] [[Asset]]-backedsecurities
+AGS Agencies,suchasSBAandTVA
+BAS Banker’sacceptances
+CDS Corporatedebtsecurities
+CER Representativecertificates
+CMO Collateralizedmortgageobligation
+CON Certificateofdeposit
+CON Convertiblebond
+CPA Commercialpaper
+CPN Coupons
+CSH U.S.cashwire
+CS1* U.S.cashwire1
+CS2* U.S.cashwire2
+CS3* U.S.cashwire3
+CS4* U.S.cashwire4
+CS5** U.S.cashwire5
+EBD Eurobonds
+ECD EuroCD
+[[ECP]] EuroCP
+ENT Euronotes
+FIN Financial
+FMR FreddieMacREMICS
+FNM Federalnationalmortgageassociation(FannieMae)
+FNR FannieMaeREMICS
+FPA Face,principal,ornominalamount
+FRM FreddieMac
+Table6.18Securitytypes
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 314
+
+---
+
+## Page 315
+
+SecurityType Description
+GDS Governmentdebtsecurities
+GMR GinnieMaeREMICS
+GNM Governmentnationalmortgageassociation(GinnieMae)
+ITS Indexedtreasurysecurities
+MBS Mortgage-backedsecurities
+MMI Moneymarketinstruments
+MSC Miscellaneous
+MTN Mediumtermnotes
+MUN Municipalbonds
+NSD Non-U.S.sovereigndebt
+OMB Othermortgage-backedsecurities(wholeloan)
+OMM Othermoneymarketinstruments
+OPC Optionscontracts
+OPS Optionshares
+PRC Premiumcontracts
+PRS Premiumshares
+RTE Rentes
+RTS Rights
+SHS Equities([[shares]])
+TBI Treasurybills
+TEM Taxexemptmoneymarkets
+TRB Treasurybonds
+TRN Treasurynotes
+TRS Treasurystrips
+UNT Units
+WTS [[Warrants]]
+XCP Taxexemptcommercialpaper
+Note
+Establishparent/childrelationshipsamongsecuritieswithinthestandinginstructionsdatabaseusing
+thesevalues.
+NotesforSequenceB–TradeDetails(continued)
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 315
+
+---
+
+## Page 316
+
+ThissectioncontainsthenotesaboutthetradedetailsforsequenceB.
+Note13:Field22F:AllocationCommissionTypeIndicator
+Field22Fprovidestheallocationcommissiontypeindicator.
+Format :4!c/[8c]/4!c
+<COSB>//<AllocationCommissionType>
+COSB AllocationCommissionTypeIndicator
+Example :22F::COSB//PERU
+Table6.19showsthecommissiontypeindicatorsusedinfield22F.
+Value Description
+PERU Perunitoffinancialinstrument.Whentheindicatoriscentspershareor
+fixeddollar,thecommissionfeeisnumeric.
+FLAT Commissionsharingbasisisaflatfeefortheallocation.
+SOFT Commissiontypeisapercentagecommission.
+Table6.19Commissiontypeindicators
+Note14:Field22F:CancellationAfterMatchingIndicator
+Field22Findicatesthecancellationaftermatchingindicator(CAMI).
+Format :4!c/[8c]/4!c
+<TTCO>/<DTCY>/<cancellationaftermatchingindicator>
+TTCO CancellationAfterMatchingIndicator
+Example :22F::TTCO/DTCY/CAMI
+NotesforSequenceC–FinancialInstrumentAccount
+ThissectioncontainsthenotesaboutthemandatoryfinancialinstrumentaccountdetailsforsequenceC.
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 316
+
+---
+
+## Page 317
+
+Note15:Field36B:Execution–[[shares]]/FaceValue
+Field36Bindicatesthetotalsharesorfacevalueofthesecuritytraded.Thequalifierindicateswhetherthe
+quantityisinsharesorfaceamount.Validvaluesmustrangebetweenninewholenumbers(plusa
+decimalcomma)withfivedecimalplacesand12wholenumbers(plusadecimalcomma)withtwodecimal
+places.Validformatsinclude:
+l 9n,5n
+l 10n,4n
+l 11n,3n
+l 12n,2n
+When-IssuedandWhen-Distributedtradescanbeequaltozero.
+Format :4!c//4!c/15d
+<SETT>//<type>/<amountor quantity>
+SETT QuantityofFinancialInstrumentinNoticeofOrderExecution
+Example :36B::SETT//FAMT/999999999,99999
+:36B::SETT//UNIT/10000
+Table6.20showsthefinancialinstrumentaccounttypesusedinfield36B.
+Value Description
+FAMT Quantityexpressedasafaceamount.
+UNIT Quantityexpressedasanumber(count).
+Table6.20Financialinstrumentaccounttypes
+Note16:Field97A:SafekeepingAccountAgentInternalAccountNumber
+Field97Aprovidesthesafekeepingaccountagentinternalaccountnumber.
+Format :4!c//35x
+<SAFE>//<agentsafekeepingaccount>
+SAFE SafekeepingAccount
+Example :97A::SAFE//AGENTNUM01234567890123456789012345
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 317
+
+---
+
+## Page 318
+
+NotesforSequenceE–SettlementDetails
+ThissectioncontainsthenotesaboutthesettlementdetailsforsequenceE.
+Note17:Field22F:PSETISOCountryCodeIndicator
+Field22FisrequiredifPSETisanISOcountrycode;otherwise,thisfieldisoptionalforinputandoutput
+messages.OmitthisfieldifPSETreferencesaCSD(Depository)BIC.FortheISOcountrycodes,see
+Input/OutputInformation.
+Format :4!c//4!c
+<STCO>//<PHYS>
+STCO PSETISOCountryCodeIndicator
+Example :22F::STCO//PHYS
+Note18:Field22F:SplitCurrencySettlementIndicator
+Field22Fidentifieswhensecuritiesandcashsettleindifferentlocations.Ifthesplitcurrencyindicator
+equalsY,includethisfield.IfitdoesnotequalY,omitthisfieldfromtheoutput.
+Format :4!c//4!c
+<STCO>//<SPST>
+STCO SettlementConditionIndicator
+Example :22F::STCO//SPST
+Note19:Field22F:TradeIndicator
+Field22Fprovidesthetradeindicator.
+Format :4!c//4!c
+<SETR>//<tradeindicator>
+Example :22F::SETR//TRAD
+:22F::SETR//REPU
+Table6.21showsthetransactiontypesusedinfield22F.
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 318
+
+---
+
+## Page 319
+
+Qualifier Description
+TRAD Trade
+REPU Repurchase
+Table6.21TransactionTypes
+Note20:Field22F:CancellationAfterAffirmation/MatchingIndicator
+Field22Findicatesthatthebroker/dealerattemptedtocancelatradeaftermatchingoraffirmation.
+Format :4!c/[8c]/4!c
+<TTCO>/<DTCY>/<cancellationafteraffirmation/matching
+indicator>
+CAMI CancellationAfterMatching
+Example :22F::TTCO/DTCY/CAMI
+NotesforSequenceE1–settlementparties
+SubsequenceE1ismandatoryandcontainsinformationaboutthesettlementlocation,agent,clearing
+[[Broker]],andexecutingbroker.
+Note21:Field95Por95C:SettlementLocation
+Field95Por95Cprovidesthesettlementlocation.
+Format :4!a2!a2!c[3!c]
+:4!c//2!a
+<PSET>/<placeof [[settlement]]>
+PSET SettlementLocation
+Example :95P::PSET/DTCUS33
+:95C::PSET//GB
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 319
+
+---
+
+## Page 320
+
+Note22:Field95R:AgentTradeSuiteIDorField95P:AgentBIC
+Field95R:PrimaryIDNumberorAgentIDNumber
+Field95RindicatestheagentTradeSuiteID,uptoeightdigits.
+Format :4!c/a/[8c]/34x
+<RECU>/<DTCYID>/<TradeSuiteID>
+RECU PrimaryorAgentIDNumber
+Example :95R::RECU/DTCYID/12345678
+Field95P:AgentBIC
+Field95PindicatestheagentBICnumber.
+Format :4!c//4!a2!a2!c[3!c]
+RECU//<agentBIC>
+RECU AgentBIC
+Example :95P::RECU//12345678901
+Note23:Field95S:AlternateIDNumberorAgentDTCIDNumber
+Field95SprovidesthealternateIDnumberoragentDTCIDnumber.
+Format :4!c/[8c]/4!c/2!a/30x
+<ALTE>/<DTCYID>/<CORP>/<US>/<TradeSuiteID>
+ALTE Alternateidentifier
+Example :95S::ALTE/DTCYID/CORP/US/12345678
+Note24:Field97A:AgentInternalAccountNumber
+Field97Aindicatestheagentinternalaccountnumber.
+Format :4!c//35x
+<SAFE>//<agentsafekeepingaccount>
+SAFE SafekeepingAccount
+Example :97A::SAFE//ABC4567890123456
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 320
+
+---
+
+## Page 321
+
+Note25:Field95R:ClearingBrokerIDor95P:ClearingBrokerBIC
+Field95R:ClearingBrokerID
+Field95Rindicatestheclearingbroker/dealerIDnumber.
+Format :4!c/a/[8c]/34x
+<REAG>/<DTCYID>/8n
+REAG Receivingagent
+Example :95P::REAG/DTCYID/12345678
+Field95P:ClearingBrokerBIC
+Field95Pindicatestheclearingbroker/dealerBIC.
+Format :4!c//4!a2!a2!c[3!c]
+<REAG>//11x
+REAG Receivingagent
+Example 95P::REAG//12345678901
+Note26:Field95S:AlternateClearingBrokerDTCID
+Field95SindicatesthealternateclearingbrokerIDnumberoftheclearingbroker.
+Format :4!c/[8c]/4!c/2!a/30x
+<ALTE>/<DTCYID>/<CORP>/<US>/<TradeSuiteID>
+ALTE Alternateidentifier
+Example :95S::ALTE/DTCYID/CORP/US/12345678
+Note27:Field97A:ClearingBrokerInternalAccountNumber
+Field97Aindicatestheoptionalclearingbrokerinternalaccountnumber,upto16characters,forinputand
+outputmessages.
+Format :4!c//35x
+<SAFE>//<clearingbrokerinternalaccountnumber>
+SEME SafekeepingAccount
+Example :95S::SAFE//1234567890123456
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 321
+
+---
+
+## Page 322
+
+Note28:Field95R:PrimaryExecutingBrokerNumberorField95P:ExecutingBrokerBIC
+Field95R:ExecutingBrokerPrimaryIDNumber
+Field95Rindicatestheexecutingbroker/dealer'sTradeSuiteID,uptoeightdigits.
+Format :4!c/8c/34x
+<BUYR>/<DTCYID>/<TradeSuiteID>
+BUYR BuyerTradeSuiteID
+Example :95R::BUYR/DTCYID/12345678
+Field95P:ExecutingBrokerBIC
+Field95Pindicatestheexecutingbroker/dealerBIC.
+Format :4!c//4!a2!a2!c[3!c]
+<BUYR>//<executingbrokerBIC>
+BUYR BuyerBIC
+Example :95P::BUYR//12345678901
+Note29:Field95S:AlternateExecutingBrokerIDNumberorDTCIDNumber
+Field95SindicatesthealternateIDnumberoftheinvestmentmanager.
+Format :4!c/[8c]/4!c/2!a/30x
+<ALTE>/<DTCYID>/<CORP>/<US>/<TradeSuiteID>
+ALTE Alternateidentifier
+Example 95S::ALTE/DTCYID/CORP/US/12345678
+Note30:Field97A:BrokerInternalAccountNumber
+Field95Rindicatesthebroker/dealer'sinternalaccountnumber,upto12characters,forinputandoutput
+messages.ThisfieldismandatoryinDTCC,butoptionalinSWIFT.
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 322
+
+---
+
+## Page 323
+
+Format :4!c//35x
+<SAFE>//<TradeSuiteID>
+SAFE SafekeepingAccount
+Example :95S::SAFE//1234567890123456
+NotesforsubsequenceE3–Amounts
+SubsequenceE3containsinformationaboutamountssuchasprincipal,interest,commissions,andtaxes.
+Thissubsequenceismandatory.Field19AusestheISOcurrencycode.FormoreinformationaboutISO
+countryandcurrencycodes,seeInput/OutputInformation.
+Note31:Field19A:PrincipalAmount
+Field19AcontainstheISOcurrencycode,andtradeamount(share/facevaluetimesprice).The
+TradeSuiteIDservicesupportsupto14digitsor13digitsandonecomma.
+Format :4!c//3!a15d
+<DEAL>//<currencycodeandprincipalamount>
+DEAL PrincipalAmount
+Example :19A::DEAL//USD12345678900,12
+Note32:Field19A:Interest
+Field19Aspecifiestheinterestaccruedonabondthatisaccountedforinitssale.TradeSuiteIDsupports
+upto11digitsor10digitsandonecomma.
+Format :4!c//3!a15d
+<ACRU>//<currencycodeandinterest>
+ACRU Interest
+Example :19A::ACRU//USD12345678,00
+Note33:Field19A:Commission
+Field19Aindicatestheamountofthebrokercommission,interest,SECfees,registrationfees,shipping
+fees,countrytax,othercharges,principalamount,andnetamount,dependingonthequalifier.The
+TradeSuiteIDservicesupportsuptoninedigitsoreightdigitsandonecomma.
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 323
+
+---
+
+## Page 324
+
+Format :4!c//3!a15d
+<EXEC>//<currencycodeandcommission>
+EXEC BrokerCommission
+Example :19A::EXEC//USD12345678
+Note34:Field19A:ResearchAmount
+Field19Aspecifiesthechargeorcommissionpaidbytheinvestortoadistributor/intermediaryorother
+serviceproviderfortheprovisionoffinancialresearch(SWIFTStandardsMT2018changesforMIFIDII
+initiatives).TheLOCLqualifierusedintheoriginalLocalTaxfieldhasbeenreplacedwiththeRSCH
+qualifierintheResearchAmountfield.
+Format :4!c//[N]3!a15d
+<RSCH>//[N]<researchamount>
+CHAR ResearchAmount
+Examples :19A::RSCH//USD1234567,12
+:19A::RSCH//USD1234567,12
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 324
+
+---
+
+## Page 325
+
+Note35:Field19A:CountryTax
+Field19AspecifiestheISOcurrencycodeandthecountry,national,orfederaltaxthatappliestothis
+transaction.ThisfieldisalsousedforAmericandepositaryreceipt([[ADR]])foreigntaxes.TheTradeSuiteID
+servicesupportsuptoninedigitsoreightdigitsandonecomma.
+Format :4!c//3!a15d
+<COUN>//<currencycodeandcountrytax>
+COUN Country/NationalTax
+Example :19A::COUN//USD123456,12
+Note36:Field19A:SECFees/RegistrationandShippingFees
+Field19AspecifiestheISOcurrencycodeandregulatoryfees,suchassecuritiesfees,exchangefees,
+registrationfees,andshippingamounts.TheTradeSuiteIDservicesupportsuptoninedigitsoreight
+digitsandonecomma.
+Format :4!c//3!a15d
+<REGF>//<currencycodeandfees>
+REGF RegulatoryFees
+Example :19A::REGF//USD123456,12
+Note37:Field19A:OtherCharges
+Field19AcontainstheISOcurrencycodeandthesumofanychargesthatapplytothistransactionfor
+whichnootherfieldisdesignated.TheTradeBlottersupportsuptoninedigitsoreightdigitsandone
+comma.
+Format :4!c//3!a15d
+<OTHR>//<currencycodeandothercharges>
+OTHR OtherCharges
+Example :19A::OTHR//USD123456,12
+Note38:Field19A:NetAmount
+Field19AcontainstheISOcurrencycodeandthecashsettlementamountthatisequaltotheprincipal
+amountplusorminusanycommissions,fees,taxes,orothercharges.TheTradeSuiteIDservicesupports
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 325
+
+---
+
+## Page 326
+
+upto14digitsor13digitsandonecomma.
+Format :4!c//3!a15d
+<SETT>//<currencycodeandnetamount>
+SETT NetAmount
+Example :19A::SETT//USD12345678900,12
+NotesforSequenceF–OtherParties
+SequenceFcontainsmandatoryinformationaboutotherparties.
+Note39:Field95Ror95P:MessageRecipient
+Field95Ror95Pindicatesthedetailmessagerecipient.
+Format :4!c/8c/34x
+<MERE>/<DTCYID>/<TradeSuiteID>
+:4!a2!a2!c[3!c]
+<MERE>/<DTCYID>/<BIC>
+MERE MessageRecipient
+Examples :95R::MERE/DTCYID/12345678
+:95P::MERE//GBXVUS37XXX
+Note40:Field95R:PrimaryInstitutionIDNumberorField95P:InstitutionBIC
+Field95R:PrimaryInstitutionID
+Field95Rindicatestheprimaryinvestmentmanageridentifier.
+Format :4!c/8c/34x
+<MEOR>/<DTCYID>/<primaryinstitutionTradeSuiteID>
+MEOR InstitutionTradeSuiteID
+Example :95R::MEOR/DTCYID/12345678
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 326
+
+---
+
+## Page 327
+
+Field95P:InstitutionBIC
+Field95PindicatestheinvestmentmanagerBIC.
+Format :4!c//4!a2!a2!c[3!c]
+<MEOR>//<primaryinstitutionBIC>
+MEOR InstitutionBIC
+Example :95P::MEOR//AUHJUS31XXX
+Note41:Field95S:AlternateIDNumber:InstitutionDTCID
+Field95SindicatesthealternateIDnumberoftheinvestmentmanager.
+Format :4!c/[8c]/4!c/2!a/30x
+<ALTE>/<DTCYID>/<CORP>/<US>/<TradeSuiteID>
+ALTE Alternateidentifier
+Example :95S::ALTE/DTCYID/CORP/US/RGHJUS61XXX
+Note42:Field97A:InstitutionInternalAccountNumber
+Field97Aindicatestheinstitutioninternalaccountnumber,upto16characters.
+Format :4!c//35x
+<SAFE>//<institutionalinternalaccount>
+SAFE Institutionalinternalaccount
+Example :97A::SAFE//ABC4567890123456
+TradeSuiteID-SWIFTIntegrationGuide
+6.MT543- DeliverSecuritiesAgainstPaymentMessages 327
+
+---
+
+## Page 328
+
+A.ERRORCODES
+Thissectioncontains:
+l CommonCancellationCodes
+l DetailCancellationCodes
+l RejectionCodes
+CommonCancellationCodes
+TableA.1liststhecancellationreasoncodesanddescriptionsforthecancellation,rejection,and
+settlementcodes.
+Code Description
+C000 Unspecifiedissue.
+C001 Incorrecttradedate.
+C002 Incorrectsettlementdate.
+C003 Incorrectsecuritynumber.
+C004 Incorrectsecuritynumbersystem.
+C005 Incorrectsecuritytype.
+C006 Incorrectsecuritydescription.
+C007 Incorrectsettlementtype.
+C008 Incorrectsettlementlocation.
+C009 Incorrectbuy/sell.
+C010 Incorrectshares/facevalue.
+C011 Incorrectprice.
+C012 Incorrectprincipalamount.
+C013 Incorrectinterest.
+C014 Incorrectcurrencycode.
+C015 Incorrectaverageprice.
+C016 Incorrectcommission.
+C017 Incorrectsplitindicator.
+TableA.1CancellationReasonCodes
+TradeSuiteID-SWIFTIntegrationGuide
+A.ErrorCodes 328
+
+---
+
+## Page 329
+
+Code Description
+C018 Incorrectsecurity(regulatory)fees.
+C019 Incorrectregistrationorshippingamount.
+C020 Incorrectresearchamount.
+C021 Incorrectcountrytax.
+C022 Incorrectothercharges.
+C023 Incorrectnetamount.
+C024 Incorrectaccountnumber.
+C025 Incorrectcommissionequivalent.
+C026 Incorrectinterestedparty#1.
+C030 Incorrectinterestedparty#2.
+C034 Incorrectinterestedparty#3.
+C038 Incorrectcustomer.
+C040 Incorrectrole.
+C041 Incorrectmarket.
+C042 Incorrectnetprice.
+C043 Incorrectaccounttype.
+C044 Incorrectalternatecurrency.
+C046 Incorrectalternatecurrencyrate.
+C047 Incorrectalternatenetamount.
+C048 Incorrectinstitution(investmentmanager).
+C049 Incorrectagent.
+C050 Incorrectinterestedparty.
+C051 Incorrectbroker/dealersub-custodian.
+C052 Incorrectagentsub-custodian.
+C053 Incorrectamortizationoraccretionfactor.
+C054 Incorrectspecialinstruction.
+C057 Incorrecttickersymbol.
+C059 Don’tknow(DK) execution.
+C060 Incorrectcommissiontype.
+C999 Otherissue.
+TableA.1CancellationReasonCodes
+TradeSuiteID-SWIFTIntegrationGuide
+A.ErrorCodes 329
+
+---
+
+## Page 330
+
+DetailCancellationCodes
+TableA.2liststhedetailcancellationcodesanddescriptions.
+Code Description
+S008 Incorrectsettlementlocation.
+S010 Incorrectshares/facevalue.
+S013 Incorrectinterest.
+S016 Incorrectcommissionorfee.
+S017 Incorrectsplitindicator.
+S019 IncorrectSEC fees,registration,orshippingamount.
+S020 Incorrectresearchamount.
+S021 Incorrectcountrytax.
+S022 Incorrectothercharges.
+S023 Incorrectnetamount.
+S060 Incorrectcommissiontype.
+S062 Incorrectinstitutionaccountnumber.
+S063 Incorrectstep-inbrokerID.
+S064 Incorrectdummyallocation.
+S070 IncorrectagentID.
+S071 Incorrectagentsafekeepingaccount.
+S072 Incorrectprincipalamount.
+S073 IncorrectbrokerofcreditID.
+S074 Incorrectnon-IDbrokercustodyornon-IDcorrespondentbroker.
+S075 Incorrectinstitution(investmentmanager)number.
+S076 Incorrectnon-IDstep-inbroker.
+S077 Incorrectstep-inbrokernotifyindicator.
+S079 Incorrectstep-outreasoncodenumber1.
+S080 Incorrectstep-outreasoncodenumber2.
+S081 Incorrectstep-outreasoncodenumber3.
+S082 Incorrectstep-outreasontext.
+S085 Incorrectbrokerofcreditcommissionorfee.
+S089 Incorrectdetailreferenceidentifier.
+S090 Incorrectallocationreasoncode.
+TableA.2DetailCancellationCodes
+TradeSuiteID-SWIFTIntegrationGuide
+A.ErrorCodes 330
+
+---
+
+## Page 331
+
+RejectionCodes
+TableA.3liststherejectioncodesanddescriptions.
+ErrorCode Description
+R000 Unspecifiedissue.
+R001 Incorrecttradedate.
+R002 Incorrectsettlementdate.
+R003 Incorrectsecurityidentifier.
+R004 Incorrectsecuritynumbersystem.
+R005 Incorrectsecuritytype.
+R006 Incorrectsecuritydescription.
+R007 Incorrectsettlementtype.
+R008 Incorrectsettlementlocation.
+R009 Incorrectbuy/sell.
+R010 Incorrectshares/facevalue.
+R011 Incorrectprice.
+R013 Incorrectinterest.
+R014 Incorrectcurrencycode.
+R015 Incorrectaverageprice.
+R016 Incorrectcommission.
+R057 Incorrecttickersymbol.
+R059 Don’tknow(DK) execution.
+R060 Incorrectcommissiontype.
+R065 Incorrectbranchorexecutingbroker.
+R066 Incorrecttransactiontype.
+R067 Incorrectbranchorbrokernotifyindicator.
+R068 Incorrectinstitution(investmentmanager)blockreferenceID.
+R069 Incorrectsubmittinginstitution(investmentmanager).
+R086 Incorrectnoticeoforderexecutionreferenceidentifier.
+R087 Incorrectinstitution(investmentmanager)orderroutingnumber.
+R088 Incorrectstep-outindicator.
+TableA.3RejectionCodes
+TradeSuiteID-SWIFTIntegrationGuide
+A.ErrorCodes 331
+
+---
+
+## Page 332
+
+©2023Allrightsreserved.[[DTCC]],[[DTCC]](Stylized)andFinancialMarkets.Forward.areregisteredandunregistered
+trademarksofTheDepositoryTrust&ClearingCorporationDTCC.Theservicesdescribedhereinareprovidedunder
+the“[[DTCC]]”brandnamebycertainaffiliatesofTheDepositoryTrust&ClearingCorporation(“[[DTCC]]”).DTCCitself
+doesnotprovidesuchservices.Eachoftheseaffiliatesisaseparatelegalentity,subjecttothelawsandregulationsof
+theparticularcountryorcountriesinwhichsuchentityoperates.Pleaseseewww.[[DTCC]].comformoreinformationon
+[[DTCC]],itsaffiliatesandtheservicestheyoffer.
+DocDate:November21,2023
+PublicationCode:TS260
+Service:TradeSuiteID
+Title:TradeSuiteID-SWIFTIntegrationGuide
+ForMoreInformation
+EmailDTCCLearningat:
+DTCCLearning@[[DTCC]].com
+orvisitusonthewebat:
+www.dtcclearning.com

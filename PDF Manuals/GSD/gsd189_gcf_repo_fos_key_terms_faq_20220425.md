@@ -1,0 +1,101 @@
+---
+title: "GCF Repo Funds-Only Settlement (FOS) Key Terms FAQ"
+source_pdf: "file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/gsd189_gcf_repo_fos_key_terms_faq_20220425.pdf"
+pages: 3
+size: "137.9 KB"
+category: "GSD"
+ingested_on: "2026-06-05"
+---
+
+# GCF Repo Funds-Only Settlement (FOS) Key Terms FAQ
+
+**Original File:** [gsd189_gcf_repo_fos_key_terms_faq_20220425.pdf](file:///Users/robertjenkins/Desktop/DTCC%20Learning%20Materials%20Unorganized/PDF%20Files/gsd189_gcf_repo_fos_key_terms_faq_20220425.pdf)  
+**Category:** GSD  
+**Total Pages:** 3  
+**File Size:** 137.9 KB  
+
+---
+
+## Page 1
+
+GOVERNMENTSECURITIESDIVISION
+GSDGCFREPOFUNDS-ONLYSETTLEMENT(FOS)KEYTERMS
+APRIL25,2022
+GCF  Funds-OnlySettlement(FOS)  KeyTerms
+WhataresomekeytermsassociatedwithGCFRepoFunds-OnlySettlement(FOS)?
+GCFTransactionAdjustmentPayment(TAP)
+ThethetotalinterestonGCFRepoandCCITTransactions,asapplicable,atmaturity(onsettlementdate).
+TheGCFTransactionAdjustmentPaymentcalculationusedforeachtradeis:
+GCFTAP=RepoRate*StartMoney*Totalnumberofdaysinterm/360
+GCFForwardMarkAdjustmentPayment
+ThesumcalculatedfromtheGCFInterestRateMarkandAccruedRepoInterest-to-Date.Eachday,aspartof
+theGCFFOSprocess,GCFForwardMarkispassedfromonepartytoanother(CashLendertoCashBorrower
+andviceversa).
+GCFForwardMarkAdjustmentPaymentReturn
+ThereturnoftheGCFForwardMarkAdjustmentPaymentcollectedorpaidduringthepreviousbusinessday’s
+startofdayFunds-OnlySettlementcycle.
+GCFInterestRateMark
+
+---
+
+## Page 2
+
+GCF Funds-OnlySettlement(FOS) KeyTerms 2
+ThedifferencebetweentheContractRepoRateonthetradeandtheSystemRepoRate,whichisappliedover
+thelifeofthetrade.
+TheGCFInterestRateMarkcalculationis:
+GCFInterestRateMark=(SystemRepoRate–ContractRepoRate)*StartMoney*Remainingdaysinterm/
+360
+SystemRepoRate
+AspecificrateperGCFRepoGenericCUSIPNumberthatisusedformark-to-marketpurposesonin-flightGCF
+RepoTransactionsandCCITTransactions.TheratescanbefoundontheGCFFinanceReportwhichis
+generateddailytotheGCFsectionofFICCReportCenterandisdisplayedunderthe“costofcarryrate”column
+header.
+AccruedRepoInterest-to-Date
+ThedailyaccruedinterestcalculatedonGCFRepo®Transactions.
+TheAccruedRepoInterest-to-Datecalculationis:
+AccruedRepoInterest-to-Date=ContractRepoRate*StartMoney*Numberofdaysbetweenthenext
+businessdateandtheStartDate/360
+GCFInterestAdjustmentPayment
+TheinterestcalculatedontheGCFForwardMarkAdjustmentPaymentcollectedorpaidduringtheprevious
+businessday’sFunds-OnlySettlementcycleusingtheOvernightInvestmentRate,whichiscalculatedasa
+blendedrateonovernightinvestments.
+TheGCFInterestAdjustmentPaymentcalculationis:
+GCFInterestAdjustmentPayment=GCFForwardMarkReturn*OvernightInvestmentRate/360
+CCITDailyRepoInterest
+TheaccruedrepointerestearneddailyonCCITTradessincethepreviousbusinessday,whichiscollectedfrom
+theNettingMemberascounterpartytotheCCITTradeandispayabletotheCCITMember.
+
+---
+
+## Page 3
+
+FORMOREINFORMATION
+EmailDTCCLearningat:
+corelearning@[[DTCC]].com
+orvisitusonthewebat:
+www.dtcclearning.com
+©2022DTCC.Allrightsreserved.[[DTCC]],[[DTCC]](Stylized),ADVANCINGFINANCIALMARKETS.TOGETHER,
+andtheInterlockergraphicareregisteredandunregisteredtrademarksofTheDepositoryTrust&Clearing
+Corporation.
+Theservicesdescribedhereinareprovidedunderthe“[[DTCC]]”brandnamebycertainaffiliatesofTheDepository
+Trust&ClearingCorporation(“[[DTCC]]”).DTCCitselfdoesnotprovidesuchservices.Eachoftheseaffiliatesisa
+separatelegalentity,subjecttothelawsandregulationsoftheparticularcountryorcountriesinwhichsuchentity
+operates.Pleaseseewww.[[DTCC]].comformoreinformationonDTCC,itsaffiliatesandtheservicestheyoffer.
+DocInfo:April25,2022
+PublicationCode:GSD189
+Service:GovernmentSecuritiesDivision
+Title:GSDGCFRepoFunds-OnlySettlement(FOS)KeyTerms
+ThisdocumentisprovidedasaconveniencetoMembersandisforinformationpurposesonly.AlthoughFICCmay
+makethisdocumentavailabletoMembers,itshallbeundernoobligationtodoso,norhavingonceormoredoneso,
+shallFICChaveacontinuingobligationtomakeavailablethisdocumentorotherrelatedinformationofacertaintype.
+FICCdoesnotrepresenttheaccuracy,adequacy,timeliness,completeness,orfitnessforanyparticularpurposeof
+anyinformationprovidedtoMembersinthisdocument,whichisprovidedas-is.FICCshallnotbeliableforanyloss
+relatedtosuchinformation(ortheactorprocessofprovidingsuchinformation)resultingdirectlyorindirectlyfrom
+mistakes,errors,oromissions,otherthanthosecauseddirectlybygrossnegligenceorwillfulmisconductonthepart
+ofFICC.FICCshallnotbeliablefor:(1)anylossresultingdirectlyorindirectlyfrominterruptions,delays,ordefects
+arisingfromorrelatedtoprovidingthisguide;and(2)anyspecial,consequential,exemplary,incidental,orpunitive
+damages.
+Further,theinformationcontainedinthisdocumentissubjecttochange.Membersandotherauthorizedusersofthe
+documentwillfindthemostcurrentversionofthedocumentonDTCC’sLearningCentersite,www.dtcclearning.com.
+FICCshallbearnoresponsibilityforanylossesassociatedwiththefailureofMembersorotherauthorizedusersto
