@@ -11,14 +11,10 @@
             "id": "d667443bb2be1692",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Swap Data Recordkeeping Rule.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Swap Data Recordkeeping Rule"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ]
@@ -41,7 +37,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -180,16 +178,43 @@
       "bases:Create new base": false
     }
   },
-  "active": "d667443bb2be1692",
+  "active": "942a0e8109266dba",
   "lastOpenFiles": [
-    "Overvoting.md",
-    "Tokens.md",
-    "tokenization.md",
-    "Untitled 4 48.jpg.md",
-    "ADR.md",
-    "Beneficial Owner.md",
-    "ABS.md",
-    "my master plan.md",
-    "PDF Manuals/Other/mfs_trust_processing_bp_mfs229_20220418.md"
+    "O.W./ow174_appC-message-flows_2023Dec29.pdf",
+    "O.W./ow175_appD-message-samples_2023Dec29.pdf",
+    "O.W./ow173_appB-iso-header_2023Dec29.pdf",
+    "O.W./ow172_appA-code_tables_2023Dec29.pdf",
+    "O.W./ow171-participant-interactive-messaging_2023Dec29.pdf",
+    "O.W./ow167_mt599_specification_2022Aug31.pdf",
+    "O.W./ow166_mt599_general_format_2022Aug31.pdf",
+    "O.W./ow165_mt598_specifications_2022Aug31.pdf",
+    "O.W./ow164_mt598_general_format_2022Aug31.pdf",
+    "O.W./ow163-mt518-specifications_2022Aug31.pdf",
+    "O.W./ow162-mt518-general-format_2022Aug31.pdf",
+    "FINRA.md",
+    "settlement.md",
+    "PDF Manuals/Networking_FundSERV/fs_02110802_security_master_daily_file_layout_mfs363_20240216.md",
+    "PDF Manuals/Networking_FundSERV/fs_02110335_security_master_weekly_file_layout_mfs362_20240216.md",
+    "PDF Manuals/CNS/cns177_rl_miscl_activity_02040343_02040331_2023Oct26.md",
+    "PDF Manuals/CNS/cns176_rl_02040949_open_pos_day_2023Oct26.md",
+    "PDF Manuals/CNS/cns175_rl_intraday_output_iso15022_2023Oct26.md",
+    "PDF Manuals/CNS/cns174_bond_security_master_02040254_02040257_2023Oct24.md",
+    "PDF Manuals/CNS/cns124_dashboard_ug_2020Apr27.md",
+    "PDF Manuals/CNS/cns-smart-track-cns-ca.md",
+    "PDF Manuals/CBRS/cbrs149-asset-input-2023Aug28.md",
+    "PDF Manuals/CBRS/cbrs150-tax-lot-input-2023Aug28.md",
+    "PDF Manuals/CBRS/cbrs144-daily-deposit-ta-dtf-2023Jun5.md",
+    "PDF Manuals/CBRS/cbrs141_transaction_output_mro_2023Apr27.md",
+    "PDF Manuals/CBRS/cbrs138_cbrs_ug_2023Apr27.md",
+    "PDF Manuals/CBRS/cbrs134_faq_2021Nov25.md",
+    "OCC by-laws section 19.md",
+    "options trading was hard until i understood these three concepts..md",
+    "short position.md",
+    "SHF.md",
+    "NSCC.md",
+    "CNS.md",
+    "Rule 605.md",
+    "Rule 600(b).md",
+    "Reg SHO.md"
   ]
 }
