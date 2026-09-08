@@ -11,10 +11,12 @@
             "id": "d667443bb2be1692",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "pdf",
+              "state": {
+                "file": "O.W./ow167_mt599_specification_2022Aug31.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "ow167_mt599_specification_2022Aug31"
             }
           }
         ]
@@ -178,19 +180,19 @@
       "bases:Create new base": false
     }
   },
-  "active": "942a0e8109266dba",
+  "active": "d667443bb2be1692",
   "lastOpenFiles": [
-    "O.W./ow174_appC-message-flows_2023Dec29.pdf",
-    "O.W./ow175_appD-message-samples_2023Dec29.pdf",
-    "O.W./ow173_appB-iso-header_2023Dec29.pdf",
     "O.W./ow172_appA-code_tables_2023Dec29.pdf",
+    "O.W./ow175_appD-message-samples_2023Dec29.pdf",
+    "O.W./ow140_intraday_eod_record_layout_2022Aug12.pdf",
+    "O.W./ow139_best_practice_20220321.pdf",
+    "O.W./ow138_ug_2022Apr5.pdf",
+    "O.W./ow174_appC-message-flows_2023Dec29.pdf",
+    "O.W./ow173_appB-iso-header_2023Dec29.pdf",
     "O.W./ow171-participant-interactive-messaging_2023Dec29.pdf",
     "O.W./ow167_mt599_specification_2022Aug31.pdf",
     "O.W./ow166_mt599_general_format_2022Aug31.pdf",
     "O.W./ow165_mt598_specifications_2022Aug31.pdf",
-    "O.W./ow164_mt598_general_format_2022Aug31.pdf",
-    "O.W./ow163-mt518-specifications_2022Aug31.pdf",
-    "O.W./ow162-mt518-general-format_2022Aug31.pdf",
     "FINRA.md",
     "settlement.md",
     "PDF Manuals/Networking_FundSERV/fs_02110802_security_master_daily_file_layout_mfs363_20240216.md",
